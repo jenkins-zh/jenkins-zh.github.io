@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/</link>
+    <description>Recent content on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 23 Dec 2018 20:47:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://jenkins-zh.github.io/posts/my-first-post/</link>
+      <pubDate>Sun, 23 Dec 2018 20:47:22 +0800</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/posts/my-first-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/wechat/contributing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/contributing/</guid>
+      <description>Contributing to Jenkins WeChat This page provides information about contributing articles to the Jenkins WeChat subscription account.
+Scope  Translated blogs from jenkins.io Jenkins events Other Jenkins-related articles  How to do Everyone could create a PR what are you hoping to publish to Jenkins WeChat. But you&amp;rsquo;d better do this ahead of schedule one week.
+Copy from the sample.md, then change the content and front matter. All files name only can use numbers, alphabets or -.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/wechat/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/readme/</guid>
+      <description>Jenkins WeChat Jenkins WeChat subscription account will deliver the messages or events from the Jenkins Community.
+All articles should be open-source, every contributor could create a PR. Once we reviewed it, your articles could be released.
+TODO List Pick up a task from here, if you&amp;rsquo;re interesting in contribution. See our contributing guide.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/wechat/images/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/images/readme/</guid>
+      <description>这里用来存放图片素材。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/wechat/management/auto-reply/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/management/auto-reply/readme/</guid>
+      <description>这里存放自动回复的消息。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/wechat/management/auto-reply/keywords/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/management/auto-reply/keywords/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/wechat/management/auto-reply/welcome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/management/auto-reply/welcome/</guid>
+      <description>您好，欢迎关注 Jenkins 中文社区微信公众号！
+Jenkins 官网地址 https://jenkins.io/zh/ 邮件讨论组 jenkinsci-zh@googlegroups.com
+回复关键字：二维码、关于</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/wechat/management/menus/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/management/menus/readme/</guid>
+      <description>这里存存放菜单信息。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/wechat/management/operators/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/management/operators/readme/</guid>
+      <description>About Records about how can publish the Jenkins WeChat articles.
+Request permission If you want to help publish Jenkins WeChat articles, you need to create a PR with the file below. The file name should follow this pattern: githubid-short-term.yaml.
+Example file:
+wechat: wechatid github: linuxsuren terms: - 2018-11-11  Duty All articles should exist in the current git repo. Your job is just copying it then choose the right date to publish.</description>
+    </item>
+    
+    <item>
+      <title>2018年 Jenkins 国内使用情况调查问卷</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-19-jenkins-survey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-19-jenkins-survey/</guid>
+      <description>近年来，在数字化转型的压力之下，以 DevOps 和微服务为代表的云原生技术，作为企业数字化转型的重要支撑，活跃于开源技术的舞台。 而 DevOps 作为一种理念，落地交付必然离不开 CI/CD 等工具的支持。 Jenkins 在此方面的重要作用，相信大家也是有目共睹。Jenkins 之所以深受国内用户的喜爱，不仅因为它开源免费、功能强大、插件众多，其背后社区的开放、包容和活跃，更是其生命力之所在！
+在新的一年里， Jenkins 社区希望能够更好地推广和传播这项技术，使越来越多的 Jenkins 中文用户能在实际工作中体会它的魅力。正因如此，我们发起了 “2018年 Jenkins 国内使用情况调查问卷”，希望通过这份问卷的互动，我们能够更加清晰 Jenkins 社区2019年的发展方向。
+请扫一扫下面的二维码，或者在微信中长按识别，完成下面的问卷。只需要占用您大概1～2分钟的时间。 问卷有效时间，从 2018年12月19日 到 2019年1月9日 截止。
+另外，还有两则好消息与大家分享。
+第一则好消息是 Jenkins 中文站点已经正式上线，大家可以在上面找到入门教程、使用案例以及优秀的技术博客，我们会不断完善相关文档和教程。当然，无论是贡献文档、代码，还是其他任何形式的贡献，非常欢迎大家参与其中。从来没有参与过开源项目的朋友也不用担心，可以通过微信公众号留言给我们，志同道合的小伙伴们会主动与你联系，助你一同踏入精彩的开源世界。
+另一则好消息是我们将通过此官方微信公众号，陆续推出 Jenkins 相关系列视频，由浅入深地为使用者们介绍 Jenkins 相关知识及使用经验。对于“如何构建特定语言的项目”、“如何在 Kubernetes 集群中更好地利用 Jenkins ”以及“如何排查问题”等大家感兴趣的热门话题，都可以从这些视频中得到经验分享。
+最后，欢迎订阅 Jenkins 中文邮件组与我们进行交流和互动。衷心希望能够通过更多小伙伴的加入，不断完善开源社区氛围，深度技术互动，协力共建一个更加开放、更加包容、更加活跃的 Jenkins 社区！
+有内容、有态度的 Jenkins 社区，期待有你同行！</description>
+    </item>
+    
+    <item>
+      <title>Custom WAR Packager</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-5-custom-war-packager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-5-custom-war-packager/</guid>
+      <description>我打算给 Jenkins 管理员和开发者介绍一个新的工具 Custom WAR Packager。该工具可以打包 Jenkins 的自定义 WAR 发行版、 Docker 镜像和 Jenkinsfile Runner 包。 它可以打包 Jenkins、插件以及配置为开箱即用的发行版。 Custom WAR Packager 是我们在博客 A Cloud Native Jenkins(/blog/2018/09/12/speaker-blog-a-cloud-native-jenkins/) 中介绍过的无状态 Jenkins master 工具链的一部分。这个工具链已经在 Jenkins X 中被使用，用于构建 serverless 镜像(https://github.com/jenkins-x/jenkins-x-serverless)。
+在这篇文章中，我将会介绍几种 Custom WAR Packager 常见的使用场景。
+== 历史
+正如 Jenkins 本身一样，Custom WAR Packager 开始于一个小的开发工具。在 Jenkins 内运行集成测试很长时间以来都是一个难题。 对此，我们有三个主要的框架： Jenkins Test Harness, Acceptance Test Harness, 和 Plugin Compatibility Tester. 这些框架都需要一个 Jenkins WAR 文件来运行测试。但是假如你想在类似 AWS 一样的自定义环境中进行 Jenkins 测试呢？ 或者，你希望基于 Pluggable Storage 的环境也可以复用 Jenkins 流水线测试，来确保没有回归缺陷？</description>
+    </item>
+    
+    <item>
+      <title>Jenkins Configuration-as-Code: 看，我都不用手动配置</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/</guid>
+      <description>NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。
+Jenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。
+在某些情况下，“Jenkins 管理员”是一个全职职位。 Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。 维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。
+这就像几年前系统管理员必须要为每个服务管理特定的机器一样。 在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。 需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。 基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。
+在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。
+今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。&amp;rdquo;JCasC&amp;rdquo; 已经升级为顶级 Jenkins 项目。 同时，对应的 Jenkins 增强提案已经被接受。
+== JCasC 能为 Jenkins 管理员做些什么？
+JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 微信订阅号</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/</guid>
+      <description>Jenkins 作为 CI/CD 领域里非常有实力和生命力的平台，不但在国外有很多用户，在国内也有很多的拥趸者。大家拥抱 Jenkins，不仅仅因为它是新的方向，更因为这背后有着一个非常开放、活跃的开源社区。
+为了使更多的 Jenkins 中文用户，能够及时、准确地获得来自官方的最新动态，经过社区贡献者的讨论，大家一致认为，开通 Jenkins 微信订阅号是非常必要也非常有意义的一件事情。同时，Jenkins 的创始人 Kohsuke Kawaguchi 先生对这个想法非常认同，他亲自签名并授权，对我们创建 Jenkins 微信订阅号提供了巨大的支持和鼓励。
+于是，Jenkins 微信订阅号便在今天，正式与您见面了。
+随着 Jenkins 订阅号的开通，我们将有更加直接的平台来与各位分享社区目前在做的一些事情。在这之前，我们早已着手进行 Jenkins 中文本地化的相关工作。目前社区贡献者主要在做的事情包括：创办并维护 Jenkins 以及 Jenkins X 的中文官网、Jenkins Core 以及插件的本地化等。
+如果您愿意和其他 Jenkins 用户进行线下面对面的交流和分享，Jenkins Area Meetups（后文简称“JAM”） 将会是一个不错的选择。目前，在社区贡献者和技术爱好者的共同努力下，我们已经在北京、深圳、西安等地成功举办过多次 JAM 活动。在 JAM 上，您除了可以体验到很多有关 Jenkins 的实际应用、最新特性之外，还可以结识社区里的朋友并进行深度互动。
+Jenkins 社区贡献者们秉承传播 Jenkins 技术、加强互动交流、推动 Jenkins 中文本地化的理念，将在今后定期举办多种多样的线上线下活动。我们尊重任何形式、任何规模的贡献，并热忱地欢迎新贡献者的加⼊，也欢迎您联系我们来分享您的心得、体会，或者共同举办一次 JAM 活动。Jenkins 官网对如何参与有更加详细的说明，有任何问题，欢迎大家留言给我们。
+我们衷心希望，随着 Jenkins 订阅号的开通，能够与更多的小伙伴们一同在线上完善开源社区氛围、线下深度互动，努力构建一个有内容、有态度的优质技术社区。</description>
+    </item>
+    
+    <item>
+      <title>从 Jenkins Master 扩展网络连接</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/</guid>
+      <description>Oleg Nenashev 和我今年将在旧金山的 DevOps World | Jenkins World 上，做从 Jenkins Master 扩展网络连接 的演讲。 多年来，我们一直致力于分析、优化和加强 Remoting channel， 才有了现如今 master 能够协调 agent 的活动，并且接收构建的结果。 尽管许多技术可以改进服务，比如优化代理启动器，但是想要有质的改变，只有从根本上改变传播的内容和方式。
+3月，JENKINS-27035 引入了一个框架，用于检查 Remoting channel 在高级别上的通信。 以前，开发人员只能使用一般的低级工具，例如 Wireshark， 它不能精确的识别 Jenkins 负责通信的代码片段。
+在过去的几个月里，Cloud Native SIG 在解决根本原因方面取得了进展。 Artifact Manager on S3 plugin 已经发布并与 Jenkins Evergreen 整合， 支持在 agent 和 Amazon 服务器之间，进行大制品的上传和下载， 源生插件允许由 agent 生成的所有构建的日志内容（例如在 steps 的 sh 中） 直接定向流到外部存储服务，如 AWS CloudWatch Logs。 与此同时也开始上传 junit 格式的测试结果，这些测试结果有时会变的很大，将直接从 agent 到存储数据库。 所有这些努力都可以减轻 Jenkins Master 和本地网络的负载，而不需要开发人员修改他们的 pipeline 脚本。</description>
+    </item>
+    
+    <item>
+      <title>在 VS Code 中校验 Jenkinsfile</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-11-21-validate-jenkinsfile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-11-21-validate-jenkinsfile/</guid>
+      <description>在日常工作中，我经常需要创建或修改很多 Jenkinsfile，有时还会发生错误。这是一个非常繁琐的流程——修改 Jenkinsfile，提交、推送，然后等 Jenkins 提醒你少加了一个括号。
+Command-line Pipeline Linter(https://jenkins.io/doc/book/pipeline/development/) 可以有效地减少编写 Jenkinsfile 所需要的调试时间，但是它也有一些不方便的地方。你需要使用像 curl 或 ssh 的工具来连接你的 Jenkins，还需要正确地记住验证 Jenkinsfile 的命令。尽管如此，对我来说，这个方案还是不尽如人意。
+鉴于每天都会使用 VS Code，于是我开始着手为此研发插件，使得校验 Jenkinsfile 变得更加友好。
+Jenkins Pipeline Linter Connector 的作用就是，把当前打开的文件推送到你的 Jenkins，然后在 VS Code 中显示校验结果。
+你可以在 VS Code 插件浏览器中或通过下面的地址找到该插件 https://marketplace.visualstudio.com/items?itemName=janjoerke.jenkins-pipeline-linter-connector 。
+该插件会在 VS Code 中添加四个配置选项，你必须要使用这些选项来配置用于验证的 Jenkins。
+ jenkins.pipeline.linter.connector.url 是 Jenkins 期望的 POST 请求地址，包含你要校验的 Jenkinsfile 文件。通常为 *http:///pipeline-model-converter/validate*。 jenkins.pipeline.linter.connector.user 允许指定你的 Jenkins 用户名。 jenkins.pipeline.linter.connector.pass 允许指定你的 Jenkins 密码。 jenkins.pipeline.linter.connector.crumbUrl 当你的 Jenkins 启用了 CRSF 时必须指定。通常为 *http:///crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)*。 ​  </description>
+    </item>
+    
+  </channel>
+</rss>
