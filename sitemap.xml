@@ -3,43 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jenkins-zh.github.io/posts/my-first-post/</loc>
-    <lastmod>2018-12-23T20:47:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/contributing/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/readme/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/images/readme/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/management/auto-reply/readme/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/management/auto-reply/keywords/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/management/auto-reply/welcome/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/management/menus/readme/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/management/operators/readme/</loc>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-19-jenkins-survey/</loc>
   </url>
   
@@ -78,7 +41,6 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/</loc>
-    <lastmod>2018-12-23T20:47:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -98,12 +60,6 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/performance/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/posts/</loc>
-    <lastmod>2018-12-23T20:47:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,68 +1,5 @@
 [
     {
-        "uri": "https://jenkins-zh.github.io/posts/my-first-post/",
-        "title": "My First Post",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/contributing/",
-        "title": "",
-        "tags": [],
-        "description": "",
-        "content": " Contributing to Jenkins WeChat This page provides information about contributing articles to the Jenkins WeChat subscription account.\nScope  Translated blogs from jenkins.io Jenkins events Other Jenkins-related articles  How to do Everyone could create a PR what are you hoping to publish to Jenkins WeChat. But you\u0026rsquo;d better do this ahead of schedule one week.\nCopy from the sample.md, then change the content and front matter. All files name only can use numbers, alphabets or -. The file name should contains the publish date.\nReview All PRs should get at least one approve. If your PR gets no response then please ping @jenkins-infra/chinese-localization-sig.\n"
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/readme/",
-        "title": "",
-        "tags": [],
-        "description": "",
-        "content": " Jenkins WeChat Jenkins WeChat subscription account will deliver the messages or events from the Jenkins Community.\nAll articles should be open-source, every contributor could create a PR. Once we reviewed it, your articles could be released.\nTODO List Pick up a task from here, if you\u0026rsquo;re interesting in contribution. See our contributing guide.\n"
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/images/readme/",
-        "title": "",
-        "tags": [],
-        "description": "",
-        "content": "这里用来存放图片素材。\n"
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/management/auto-reply/readme/",
-        "title": "",
-        "tags": [],
-        "description": "",
-        "content": "这里存放自动回复的消息。\n"
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/management/auto-reply/keywords/",
-        "title": "",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/management/auto-reply/welcome/",
-        "title": "",
-        "tags": [],
-        "description": "",
-        "content": "您好，欢迎关注 Jenkins 中文社区微信公众号！\nJenkins 官网地址 https://jenkins.io/zh/ 邮件讨论组 jenkinsci-zh@googlegroups.com\n回复关键字：二维码、关于\n"
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/management/menus/readme/",
-        "title": "",
-        "tags": [],
-        "description": "",
-        "content": "这里存存放菜单信息。\n"
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/management/operators/readme/",
-        "title": "",
-        "tags": [],
-        "description": "",
-        "content": " About Records about how can publish the Jenkins WeChat articles.\nRequest permission If you want to help publish Jenkins WeChat articles, you need to create a PR with the file below. The file name should follow this pattern: githubid-short-term.yaml.\nExample file:\nwechat: wechatid github: linuxsuren terms: - 2018-11-11  Duty All articles should exist in the current git repo. Your job is just copying it then choose the right date to publish. Formatting is necessary, the content modify is unacceptable.\n"
-    },
-    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-19-jenkins-survey/",
         "title": "2018年 Jenkins 国内使用情况调查问卷",
         "tags": ["survey"],
@@ -149,13 +86,6 @@
     {
         "uri": "https://jenkins-zh.github.io/tags/performance/",
         "title": "Performance",
-        "tags": [],
-        "description": "",
-        "content": ""
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/posts/",
-        "title": "Posts",
         "tags": [],
         "description": "",
         "content": ""
