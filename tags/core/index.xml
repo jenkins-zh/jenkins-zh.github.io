@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Core on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/core/</link>
+    <description>Recent content in Core on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://jenkins-zh.github.io/tags/core/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jenkins 的重要安全更新</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/</guid>
+      <description>我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。
+查看安全报告，了解有哪些被修复。 查看我们的 LTS 2.138.4 升级指导，了解影响范围。
+当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。</description>
+    </item>
+    
+  </channel>
+</rss>

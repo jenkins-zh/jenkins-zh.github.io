@@ -22,6 +22,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/core/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-5-custom-war-packager/</loc>
   </url>
   
@@ -49,6 +54,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/jenkinsworld/</loc>
     <priority>0</priority>
   </url>
@@ -70,6 +79,11 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/scalability/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/security/</loc>
     <priority>0</priority>
   </url>
   

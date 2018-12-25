@@ -50,8 +50,7 @@ Jenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥�
 这就像几年前系统管理员必须要为每个服务管理特定的机器一样。 在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。 需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。 基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。
 在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。
 今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。&amp;rdquo;JCasC&amp;rdquo; 已经升级为顶级 Jenkins 项目。 同时，对应的 Jenkins 增强提案已经被接受。
-== JCasC 能为 Jenkins 管理员做些什么？
-JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。</description>
+JCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。</description>
     </item>
     
     <item>
@@ -67,6 +66,17 @@ JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应�
 如果您愿意和其他 Jenkins 用户进行线下面对面的交流和分享，Jenkins Area Meetups（后文简称“JAM”） 将会是一个不错的选择。目前，在社区贡献者和技术爱好者的共同努力下，我们已经在北京、深圳、西安等地成功举办过多次 JAM 活动。在 JAM 上，您除了可以体验到很多有关 Jenkins 的实际应用、最新特性之外，还可以结识社区里的朋友并进行深度互动。
 Jenkins 社区贡献者们秉承传播 Jenkins 技术、加强互动交流、推动 Jenkins 中文本地化的理念，将在今后定期举办多种多样的线上线下活动。我们尊重任何形式、任何规模的贡献，并热忱地欢迎新贡献者的加⼊，也欢迎您联系我们来分享您的心得、体会，或者共同举办一次 JAM 活动。Jenkins 官网对如何参与有更加详细的说明，有任何问题，欢迎大家留言给我们。
 我们衷心希望，随着 Jenkins 订阅号的开通，能够与更多的小伙伴们一同在线上完善开源社区氛围、线下深度互动，努力构建一个有内容、有态度的优质技术社区。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 的重要安全更新</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/</guid>
+      <description>我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。
+查看安全报告，了解有哪些被修复。 查看我们的 LTS 2.138.4 升级指导，了解影响范围。
+当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。</description>
     </item>
     
     <item>

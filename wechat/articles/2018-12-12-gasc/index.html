@@ -28,44 +28,23 @@
   }
 </style>
 <meta property="og:title" content="Jenkins Configuration-as-Code: 看，我都不用手动配置" />
-<meta property="og:description" content="NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。
-Jenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。
-在某些情况下，“Jenkins 管理员”是一个全职职位。 Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。 维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。
-这就像几年前系统管理员必须要为每个服务管理特定的机器一样。 在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。 需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。 基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。
-在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。
-今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。&rdquo;JCasC&rdquo; 已经升级为顶级 Jenkins 项目。 同时，对应的 Jenkins 增强提案已经被接受。
-== JCasC 能为 Jenkins 管理员做些什么？
-JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。" />
+<meta property="og:description" content="JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/" />
 
 <meta itemprop="name" content="Jenkins Configuration-as-Code: 看，我都不用手动配置">
-<meta itemprop="description" content="NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。
-Jenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。
-在某些情况下，“Jenkins 管理员”是一个全职职位。 Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。 维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。
-这就像几年前系统管理员必须要为每个服务管理特定的机器一样。 在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。 需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。 基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。
-在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。
-今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。&rdquo;JCasC&rdquo; 已经升级为顶级 Jenkins 项目。 同时，对应的 Jenkins 增强提案已经被接受。
-== JCasC 能为 Jenkins 管理员做些什么？
-JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。">
+<meta itemprop="description" content="JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件">
 
 
 
-<meta itemprop="wordCount" content="178">
+<meta itemprop="wordCount" content="176">
 
 
 
 <meta itemprop="keywords" content="configuration-as-code,jenkinsworld,jenkinsworld2018," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins Configuration-as-Code: 看，我都不用手动配置"/>
-<meta name="twitter:description" content="NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。
-Jenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。
-在某些情况下，“Jenkins 管理员”是一个全职职位。 Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。 维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。
-这就像几年前系统管理员必须要为每个服务管理特定的机器一样。 在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。 需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。 基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。
-在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。
-今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。&rdquo;JCasC&rdquo; 已经升级为顶级 Jenkins 项目。 同时，对应的 Jenkins 增强提案已经被接受。
-== JCasC 能为 Jenkins 管理员做些什么？
-JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。"/>
+<meta name="twitter:description" content="JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件"/>
 
 
 
@@ -148,6 +127,18 @@ JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应�
       <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
 	
+		<p class="b">此页面上的内容</p>
+  	<nav id="TableOfContents">
+<ul>
+<li><a href="#jcasc-能为-jenkins-管理员做些什么">JCasC 能为 Jenkins 管理员做些什么？</a>
+<ul>
+<li><a href="#source-yaml">[source, yaml]</a></li>
+<li><a href="#groupidstrategy-casesensitive">groupIdStrategy: CaseSensitive</a></li>
+</ul></li>
+<li><a href="#ok-那么之后呢">Ok, 那么之后呢?</a></li>
+</ul>
+</nav>
+	
 
 	<div date-pref>
 		
@@ -185,6 +176,10 @@ JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应�
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
+    <div class="f4 fw4 lh-copy">
+      JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件
+    </div>
+  
 
   
 </aside>
@@ -213,7 +208,7 @@ Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的
 <p>今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。&rdquo;JCasC&rdquo; 已经升级为<a href="https://jenkins.io/projects/">顶级</a> Jenkins 项目。 同时，对应的
 <a href="https://github.com/jenkinsci/jep/tree/master/jep/201/">Jenkins 增强提案</a>已经被接受。</p>
 
-<p>== JCasC 能为 Jenkins 管理员做些什么？</p>
+<h1 id="jcasc-能为-jenkins-管理员做些什么">JCasC 能为 Jenkins 管理员做些什么？</h1>
 
 <p>JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。
 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。
@@ -261,8 +256,9 @@ Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的
 <p>.他们仍然很可爱，对吧?
 <a href="/image/cow.jpg">Cattle not pets</a></p>
 
-<p>== Ok, 那么之后呢?
-你可以在<a href="https://github.com/jenkinsci/configuration-as-code-plugin">项目</a>中阅读有关 Jenkins Configuration-as-Code 插件的更多信息。
+<h1 id="ok-那么之后呢">Ok, 那么之后呢?</h1>
+
+<p>你可以在<a href="https://github.com/jenkinsci/configuration-as-code-plugin">项目</a>中阅读有关 Jenkins Configuration-as-Code 插件的更多信息。
 与社区和贡献者们交流，加入我们的
 <a href="https://gitter.im/jenkinsci/configuration-as-code-plugin">gitter 频道</a>，
 或者来我们的

@@ -29,6 +29,15 @@
     </item>
     
     <item>
+      <title>Core</title>
+      <link>https://jenkins-zh.github.io/tags/core/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>https://jenkins-zh.github.io/tags/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -88,6 +97,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/scalability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://jenkins-zh.github.io/tags/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/security/</guid>
       <description></description>
     </item>
     

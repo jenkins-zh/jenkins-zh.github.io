@@ -28,6 +28,13 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/core/",
+        "title": "Core",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-5-custom-war-packager/",
         "title": "Custom WAR Packager",
         "tags": ["tools", "docker", "jenkins-x", "cloud-native"],
@@ -45,8 +52,8 @@
         "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/",
         "title": "Jenkins Configuration-as-Code: 看，我都不用手动配置",
         "tags": ["configuration-as-code", "jenkinsworld", "jenkinsworld2018"],
-        "description": "",
-        "content": " NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。\nJenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。\n在某些情况下，“Jenkins 管理员”是一个全职职位。 Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。 维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。\n这就像几年前系统管理员必须要为每个服务管理特定的机器一样。 在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。 需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。 基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。\n在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。\n今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。\u0026rdquo;JCasC\u0026rdquo; 已经升级为顶级 Jenkins 项目。 同时，对应的 Jenkins 增强提案已经被接受。\n== JCasC 能为 Jenkins 管理员做些什么？\nJCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。\n下面是一个例子：\n[source, yaml] jenkins: systemMessage: \u0026ldquo;Jenkins managed by Configuration as Code\u0026rdquo;\nsecurityRealm: ldap: configurations: - server: ldap.acme.com rootDN: dc=acme,dc=fr managerPasswordSecret: ${LDAP_PASSWORD} cache: size: 100 ttl: 10 userIdStrategy: CaseInsensitive\ngroupIdStrategy: CaseSensitive 如你所见，不需要很长的解释你就可以理解这个 YAML 文件如何配置你的 Jenkins master。\n== 优点\nJCasC 最直接的好处就是可重复性。 管理员现在可以使用完全相同的配置通过一个简单的设置来引导新的 Jenkins master。 这允许他们创建一个测试实例并检查升级插件在沙盒环境中的影响。 这也使他们对故障转移和灾难恢复方案更有信心。\n当管理员开始在源代码管理中管理 Jenkins 的 YAML 配置文件时，他们也会感受到类似使用 Terraform 一样的好处。 这样做可以让他们对 Jenkins master 配置进行审核，使其具有可逆性。 他们可以建立一个合理的配置改变运行 Jenkins 实例的工作流，并确保在实际应用任何修改到他们的 Jenkins master 之前配置是健康的。\n最后也是最重要的是，由于能够快速设置 Jenkins master 并且能用一组共享的 YAML 配置文件控制它们，管理员现在可以给每个团队提供一个 Jenkins 实例，并且在安装插件有更高的灵活性。 只要他们还在使用 Jenkinsfiles 管理构建定义（build definition），master 就会或多或少地成为你们团队的短期的基础架构。\n使用 Configuration-as-Code，我们可以不再像对待宠物那样对待我们的 Jenkins master，而像对待牛那样管理它们，你也可以毫不费力地替换它们。 欢迎来到 “as-code” 的世界。\n.他们仍然很可爱，对吧? Cattle not pets\n== Ok, 那么之后呢? 你可以在项目中阅读有关 Jenkins Configuration-as-Code 插件的更多信息。 与社区和贡献者们交流，加入我们的 gitter 频道， 或者来我们的 Jenkins World 一起讨论 JCasC 项目及其未来！\n另外，不要错过 Configuration-as-Code 系列的下一篇文章，我们将会了解 JCasC 如何处理密码及其他凭据等敏感数据。\n"
+        "description": "JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件",
+        "content": " NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。\nJenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。\n在某些情况下，“Jenkins 管理员”是一个全职职位。 Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。 维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。\n这就像几年前系统管理员必须要为每个服务管理特定的机器一样。 在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。 需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。 基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。\n在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。\n今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。\u0026rdquo;JCasC\u0026rdquo; 已经升级为顶级 Jenkins 项目。 同时，对应的 Jenkins 增强提案已经被接受。\nJCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。\n下面是一个例子：\n[source, yaml] jenkins: systemMessage: \u0026ldquo;Jenkins managed by Configuration as Code\u0026rdquo;\nsecurityRealm: ldap: configurations: - server: ldap.acme.com rootDN: dc=acme,dc=fr managerPasswordSecret: ${LDAP_PASSWORD} cache: size: 100 ttl: 10 userIdStrategy: CaseInsensitive\ngroupIdStrategy: CaseSensitive 如你所见，不需要很长的解释你就可以理解这个 YAML 文件如何配置你的 Jenkins master。\n== 优点\nJCasC 最直接的好处就是可重复性。 管理员现在可以使用完全相同的配置通过一个简单的设置来引导新的 Jenkins master。 这允许他们创建一个测试实例并检查升级插件在沙盒环境中的影响。 这也使他们对故障转移和灾难恢复方案更有信心。\n当管理员开始在源代码管理中管理 Jenkins 的 YAML 配置文件时，他们也会感受到类似使用 Terraform 一样的好处。 这样做可以让他们对 Jenkins master 配置进行审核，使其具有可逆性。 他们可以建立一个合理的配置改变运行 Jenkins 实例的工作流，并确保在实际应用任何修改到他们的 Jenkins master 之前配置是健康的。\n最后也是最重要的是，由于能够快速设置 Jenkins master 并且能用一组共享的 YAML 配置文件控制它们，管理员现在可以给每个团队提供一个 Jenkins 实例，并且在安装插件有更高的灵活性。 只要他们还在使用 Jenkinsfiles 管理构建定义（build definition），master 就会或多或少地成为你们团队的短期的基础架构。\n使用 Configuration-as-Code，我们可以不再像对待宠物那样对待我们的 Jenkins master，而像对待牛那样管理它们，你也可以毫不费力地替换它们。 欢迎来到 “as-code” 的世界。\n.他们仍然很可爱，对吧? Cattle not pets\nOk, 那么之后呢? 你可以在项目中阅读有关 Jenkins Configuration-as-Code 插件的更多信息。 与社区和贡献者们交流，加入我们的 gitter 频道， 或者来我们的 Jenkins World 一起讨论 JCasC 项目及其未来！\n另外，不要错过 Configuration-as-Code 系列的下一篇文章，我们将会了解 JCasC 如何处理密码及其他凭据等敏感数据。\n"
     },
     {
         "uri": "https://jenkins-zh.github.io/tags/jenkins-x/",
@@ -68,6 +75,13 @@
         "tags": [],
         "description": "来自 Jenkins 官方的消息",
         "content": "Jenkins 作为 CI/CD 领域里非常有实力和生命力的平台，不但在国外有很多用户，在国内也有很多的拥趸者。大家拥抱 Jenkins，不仅仅因为它是新的方向，更因为这背后有着一个非常开放、活跃的开源社区。\n为了使更多的 Jenkins 中文用户，能够及时、准确地获得来自官方的最新动态，经过社区贡献者的讨论，大家一致认为，开通 Jenkins 微信订阅号是非常必要也非常有意义的一件事情。同时，Jenkins 的创始人 Kohsuke Kawaguchi 先生对这个想法非常认同，他亲自签名并授权，对我们创建 Jenkins 微信订阅号提供了巨大的支持和鼓励。\n于是，Jenkins 微信订阅号便在今天，正式与您见面了。\n随着 Jenkins 订阅号的开通，我们将有更加直接的平台来与各位分享社区目前在做的一些事情。在这之前，我们早已着手进行 Jenkins 中文本地化的相关工作。目前社区贡献者主要在做的事情包括：创办并维护 Jenkins 以及 Jenkins X 的中文官网、Jenkins Core 以及插件的本地化等。\n如果您愿意和其他 Jenkins 用户进行线下面对面的交流和分享，Jenkins Area Meetups（后文简称“JAM”） 将会是一个不错的选择。目前，在社区贡献者和技术爱好者的共同努力下，我们已经在北京、深圳、西安等地成功举办过多次 JAM 活动。在 JAM 上，您除了可以体验到很多有关 Jenkins 的实际应用、最新特性之外，还可以结识社区里的朋友并进行深度互动。\nJenkins 社区贡献者们秉承传播 Jenkins 技术、加强互动交流、推动 Jenkins 中文本地化的理念，将在今后定期举办多种多样的线上线下活动。我们尊重任何形式、任何规模的贡献，并热忱地欢迎新贡献者的加⼊，也欢迎您联系我们来分享您的心得、体会，或者共同举办一次 JAM 活动。Jenkins 官网对如何参与有更加详细的说明，有任何问题，欢迎大家留言给我们。\n我们衷心希望，随着 Jenkins 订阅号的开通，能够与更多的小伙伴们一同在线上完善开源社区氛围、线下深度互动，努力构建一个有内容、有态度的优质技术社区。\n"
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/",
+        "title": "Jenkins 的重要安全更新",
+        "tags": ["core", "security"],
+        "description": "",
+        "content": " 我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。\n查看安全报告，了解有哪些被修复。 查看我们的 LTS 2.138.4 升级指导，了解影响范围。\n当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。\n"
     },
     {
         "uri": "https://jenkins-zh.github.io/tags/jenkinsworld/",
@@ -105,6 +119,13 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/security/",
+        "title": "Security",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/survey/",
         "title": "Survey",
         "tags": [],
@@ -136,7 +157,7 @@
         "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/",
         "title": "从 Jenkins Master 扩展网络连接",
         "tags": ["jenkinsworld", "jenkinsworld2018", "cloud-native", "performance", "scalability", "remoting"],
-        "description": "",
+        "description": "从 Jenkins Master 扩展网络连接",
         "content": "Oleg Nenashev 和我今年将在旧金山的 DevOps World | Jenkins World 上，做从 Jenkins Master 扩展网络连接 的演讲。 多年来，我们一直致力于分析、优化和加强 Remoting channel， 才有了现如今 master 能够协调 agent 的活动，并且接收构建的结果。 尽管许多技术可以改进服务，比如优化代理启动器，但是想要有质的改变，只有从根本上改变传播的内容和方式。\n3月，JENKINS-27035 引入了一个框架，用于检查 Remoting channel 在高级别上的通信。 以前，开发人员只能使用一般的低级工具，例如 Wireshark， 它不能精确的识别 Jenkins 负责通信的代码片段。\n在过去的几个月里，Cloud Native SIG 在解决根本原因方面取得了进展。 Artifact Manager on S3 plugin 已经发布并与 Jenkins Evergreen 整合， 支持在 agent 和 Amazon 服务器之间，进行大制品的上传和下载， 源生插件允许由 agent 生成的所有构建的日志内容（例如在 steps 的 sh 中） 直接定向流到外部存储服务，如 AWS CloudWatch Logs。 与此同时也开始上传 junit 格式的测试结果，这些测试结果有时会变的很大，将直接从 agent 到存储数据库。 所有这些努力都可以减轻 Jenkins Master 和本地网络的负载，而不需要开发人员修改他们的 pipeline 脚本。\n其他方法也在酝酿之中。 虽然“一次性”的 agent 在新的 vm 或容器中运行，可以极大地提高可重复性， 但是每一次构建都需要传输兆字节的 Java 代码，所以 Jenkins 的特征是需要对它们建立预缓存。 使用 Apache Kafka 的工作正在进行中，以使得通道在网络故障时更加健壮。 最引人注目的是，这个提议 Cloud Native Jenkins MVP 将消除单个 Jenkins Master 服务处理数百个构建的瓶颈。\n"
     },
     {
