@@ -39,6 +39,19 @@
     </item>
     
     <item>
+      <title>Docker Hub 上的官方 Jenkins 镜像</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-26-official-docker-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-26-official-docker-image/</guid>
+      <description>目前，在 Docker Hub 上有三个不同的仓库正（或曾经）被当作“官方” Jenkins 镜像。 本文是为了申明哪个是当前的官方镜像(截至2018年12月).
+官方的 [source] docker pull jenkins/jenkins 例如：https://hub.docker.com/r/jenkins/jenkins/ 是正确的仓库。
+在我的博客 对于使用 Jenkins 官方 Docker 镜像推荐的方法 上也有一些记录。
+废弃的 jenkins 已经废弃了很久。 我们停止使用和更新该镜像的简短原因是，我们每次发版时都需要人工参与。 jenkinsci/jenkins 同样已经废弃了很久，但为了过渡，我们会同时更新 jenkins/jenkins（正确的那个） 和 jenkinsci/jenkins。 2018年12月初，我们停止更新 jenkinsci/jenkins（如果您感兴趣的话，查看 INFRA-1934 可以获取更多详情）。
+感谢您的阅读！</description>
+    </item>
+    
+    <item>
       <title>Jenkins Configuration-as-Code: 看，我都不用手动配置</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -66,6 +79,17 @@ JCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或�
 如果您愿意和其他 Jenkins 用户进行线下面对面的交流和分享，Jenkins Area Meetups（后文简称“JAM”） 将会是一个不错的选择。目前，在社区贡献者和技术爱好者的共同努力下，我们已经在北京、深圳、西安等地成功举办过多次 JAM 活动。在 JAM 上，您除了可以体验到很多有关 Jenkins 的实际应用、最新特性之外，还可以结识社区里的朋友并进行深度互动。
 Jenkins 社区贡献者们秉承传播 Jenkins 技术、加强互动交流、推动 Jenkins 中文本地化的理念，将在今后定期举办多种多样的线上线下活动。我们尊重任何形式、任何规模的贡献，并热忱地欢迎新贡献者的加⼊，也欢迎您联系我们来分享您的心得、体会，或者共同举办一次 JAM 活动。Jenkins 官网对如何参与有更加详细的说明，有任何问题，欢迎大家留言给我们。
 我们衷心希望，随着 Jenkins 订阅号的开通，能够与更多的小伙伴们一同在线上完善开源社区氛围、线下深度互动，努力构建一个有内容、有态度的优质技术社区。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 的重要安全更新</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-udpates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-udpates/</guid>
+      <description>我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。
+查看 link:/security/advisory/2018-12-05[安全报告]，了解有哪些被修复。 查看我们的 link:/doc/upgrade-guide/2.138/#upgrading-to-jenkins-lts-2-138-4[LTS 2.138.4 升级指导]，了解影响范围。
+当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。</description>
     </item>
     
     <item>

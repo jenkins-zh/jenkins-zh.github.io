@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Wechats | Jenkins 中文社区</title>
+    <title>Docker Hub 上的官方 Jenkins 镜像 | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -20,7 +20,6 @@
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
       
 
-    <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.github.io/wechat/index.xml">
     <link href='/dist/main.css' rel='stylesheet' type="text/css" /><script src="/js/chart.js"></script>
 <style>
   img.avatar {
@@ -28,17 +27,24 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Wechats" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/" />
+<meta property="og:title" content="Docker Hub 上的官方 Jenkins 镜像" />
+<meta property="og:description" content="正确地使用 Jenkins 镜像" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2018-12-26-official-docker-image/" />
 
-<meta itemprop="name" content="Wechats">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Docker Hub 上的官方 Jenkins 镜像">
+<meta itemprop="description" content="正确地使用 Jenkins 镜像">
 
+
+
+<meta itemprop="wordCount" content="35">
+
+
+
+<meta itemprop="keywords" content="docker," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Wechats"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Docker Hub 上的官方 Jenkins 镜像"/>
+<meta name="twitter:description" content="正确地使用 Jenkins 镜像"/>
 
 
 
@@ -59,7 +65,7 @@
       
         <li class="f5 dib mr4" role="menuitem">
             
-          <a href="/wechat/" class="dim link gray ">
+          <a href="/wechat/" class="dim link light-silver">
             微信
               
             
@@ -114,12 +120,108 @@
     
     <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
       
-  
-  
-  <div class="w-100 ph4 pb5 pb6-ns pt1 mt4 pt3-ns">
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
 
-  <div class="flex">
-    <div class="dn db-l w-20">
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+
+	<div date-pref>
+		
+			<a href="https://jenkins-zh.github.io/wechat/articles/2018-12-5-custom-war-packager/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Custom WAR Packager ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+			<a href="https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins Configuration-as-Code: 看，我都不用手动配置">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center measure-wide-l">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Docker Hub 上的官方 Jenkins 镜像</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      正确地使用 Jenkins 镜像
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p>目前，在 Docker Hub 上有三个不同的仓库正（或曾经）被当作“官方” Jenkins 镜像。
+本文是为了申明哪个是当前的官方镜像(截至2018年12月).</p>
+
+<h2 id="官方的">官方的</h2>
+
+<h2 id="source">[source]</h2>
+
+<h2 id="docker-pull-jenkins-jenkins">docker pull jenkins/jenkins</h2>
+
+<p>例如：<a href="https://hub.docker.com/r/jenkins/jenkins/">https://hub.docker.com/r/jenkins/jenkins/</a> 是正确的仓库。</p>
+
+<p>在我的博客
+<a href="https://batmat.net/2018/09/07/how-to-run-and-upgrade-jenkins-using-the-official-docker-image/">对于使用 Jenkins 官方 Docker 镜像推荐的方法</a>
+上也有一些记录。</p>
+
+<h2 id="废弃的">废弃的</h2>
+
+<p><a href="https://hub.docker.com/_/jenkins/"><code>jenkins</code></a>
+已经废弃了很久。
+我们停止使用和更新该镜像的简短原因是，我们每次发版时都需要人工参与。
+<a href="https://hub.docker.com/r/jenkinsci/jenkins"><code>jenkinsci/jenkins</code></a>
+同样已经废弃了很久，但为了过渡，我们会同时更新 <code>jenkins/jenkins</code>（正确的那个） 和 <code>jenkinsci/jenkins</code>。
+2018年12月初，我们停止更新 <code>jenkinsci/jenkins</code>（如果您感兴趣的话，查看 <a href="https://issues.jenkins-ci.org/browse/INFRA-1934">INFRA-1934</a> 可以获取更多详情）。</p>
+
+<p>感谢您的阅读！</p>
+
+</div>
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+        </div>
+      </div>
+      <div class="order-0 w-20 dn db-l">
         
 <nav role="navigation">
   <ul class="list pa0 nl2">
@@ -127,259 +229,69 @@
   </ul>
 </nav>
 
-    </div>
-
-    <div class="w-100 w-80-l ph0 ph4-l">
-      <article class="w-100 nested-copy-line-height nested-links nested-img">
-        <h1 class="primary-color-dark f2">
-          Wechats
-        </h1>
-        <div class=" mid-gray f5 f4-l">
-          
-        </div>
-      </article>
-
-      
-
-      <div class="flex flex-wrap">
-        
-        <section class="flex-ns flex-wrap justify-between w-100">
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-12-19-jenkins-survey/" class="link primary-color dim">2018年 Jenkins 国内使用情况调查问卷</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          共建开放、包容、活跃的 Jenkins 社区
-        
-
-        <a href="/wechat/articles/2018-12-19-jenkins-survey/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-12-5-custom-war-packager/" class="link primary-color dim">Custom WAR Packager</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          打造你自己的 Jenkins！了解自定义 WAR/Docker Packager
-        
-
-        <a href="/wechat/articles/2018-12-5-custom-war-packager/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-12-26-official-docker-image/" class="link primary-color dim">Docker Hub 上的官方 Jenkins 镜像</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          正确地使用 Jenkins 镜像
-        
-
-        <a href="/wechat/articles/2018-12-26-official-docker-image/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-12-12-gasc/" class="link primary-color dim">Jenkins Configuration-as-Code: 看，我都不用手动配置</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件
-        
-
-        <a href="/wechat/articles/2018-12-12-gasc/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-11-14-first-voice/" class="link primary-color dim">Jenkins 微信订阅号</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          来自 Jenkins 官方的消息
-        
-
-        <a href="/wechat/articles/2018-11-14-first-voice/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-12-26-security-udpates/" class="link primary-color dim">Jenkins 的重要安全更新</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          重要安全更新
-        
-
-        <a href="/wechat/articles/2018-12-26-security-udpates/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-12-26-security-updates/" class="link primary-color dim">Jenkins 的重要安全更新</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。
-查看安全报告，了解有哪些被修复。 查看我们的 LTS 2.138.4 升级指导，了解影响范围。
-当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。
-      
-
-        <a href="/wechat/articles/2018-12-26-security-updates/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-12-19-scaling-network-connections/" class="link primary-color dim">从 Jenkins Master 扩展网络连接</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          从 Jenkins Master 扩展网络连接
-        
-
-        <a href="/wechat/articles/2018-12-19-scaling-network-connections/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-0">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2018-11-21-validate-jenkinsfile/" class="link primary-color dim">在 VS Code 中校验 Jenkinsfile</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          VS Code 中的 Jenkinsfile 插件
-        
-
-        <a href="/wechat/articles/2018-11-21-validate-jenkinsfile/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-        </section>
       </div>
 
     </div>
+  </article>
 
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2018-12-26-official-docker-image/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “Docker Hub 上的官方 Jenkins 镜像”
+  </a> was last updated: January 1, 0001
+</h6>
+
+      <a href="https://github.com/LinuxSuRen/jenkins-chat/edit/master/content/wechat/articles/2018-12-26-official-docker-image.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">改善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/docker">
+              docker
+            </a>
+          </li>
+        
+              
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2018-12-5-custom-war-packager/" class="link">
+              Custom WAR Packager
+            </a>
+          </li>
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+      
+    </ul>
   </div>
 
-</div>
+
+    </div>
+  </div>
+</main>
 
     </main>
 
