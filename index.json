@@ -84,18 +84,11 @@
         "content": "Jenkins 作为 CI/CD 领域里非常有实力和生命力的平台，不但在国外有很多用户，在国内也有很多的拥趸者。大家拥抱 Jenkins，不仅仅因为它是新的方向，更因为这背后有着一个非常开放、活跃的开源社区。\n为了使更多的 Jenkins 中文用户，能够及时、准确地获得来自官方的最新动态，经过社区贡献者的讨论，大家一致认为，开通 Jenkins 微信订阅号是非常必要也非常有意义的一件事情。同时，Jenkins 的创始人 Kohsuke Kawaguchi 先生对这个想法非常认同，他亲自签名并授权，对我们创建 Jenkins 微信订阅号提供了巨大的支持和鼓励。\n于是，Jenkins 微信订阅号便在今天，正式与您见面了。\n随着 Jenkins 订阅号的开通，我们将有更加直接的平台来与各位分享社区目前在做的一些事情。在这之前，我们早已着手进行 Jenkins 中文本地化的相关工作。目前社区贡献者主要在做的事情包括：创办并维护 Jenkins 以及 Jenkins X 的中文官网、Jenkins Core 以及插件的本地化等。\n如果您愿意和其他 Jenkins 用户进行线下面对面的交流和分享，Jenkins Area Meetups（后文简称“JAM”） 将会是一个不错的选择。目前，在社区贡献者和技术爱好者的共同努力下，我们已经在北京、深圳、西安等地成功举办过多次 JAM 活动。在 JAM 上，您除了可以体验到很多有关 Jenkins 的实际应用、最新特性之外，还可以结识社区里的朋友并进行深度互动。\nJenkins 社区贡献者们秉承传播 Jenkins 技术、加强互动交流、推动 Jenkins 中文本地化的理念，将在今后定期举办多种多样的线上线下活动。我们尊重任何形式、任何规模的贡献，并热忱地欢迎新贡献者的加⼊，也欢迎您联系我们来分享您的心得、体会，或者共同举办一次 JAM 活动。Jenkins 官网对如何参与有更加详细的说明，有任何问题，欢迎大家留言给我们。\n我们衷心希望，随着 Jenkins 订阅号的开通，能够与更多的小伙伴们一同在线上完善开源社区氛围、线下深度互动，努力构建一个有内容、有态度的优质技术社区。\n"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-udpates/",
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/",
         "title": "Jenkins 的重要安全更新",
         "tags": ["core", "security"],
         "description": "重要安全更新",
         "content": " 我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。\n查看 link:/security/advisory/2018-12-05[安全报告]，了解有哪些被修复。 查看我们的 link:/doc/upgrade-guide/2.138/#upgrading-to-jenkins-lts-2-138-4[LTS 2.138.4 升级指导]，了解影响范围。\n当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。\n"
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/",
-        "title": "Jenkins 的重要安全更新",
-        "tags": ["core", "security"],
-        "description": "",
-        "content": " 我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。\n查看安全报告，了解有哪些被修复。 查看我们的 LTS 2.138.4 升级指导，了解影响范围。\n当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。\n"
     },
     {
         "uri": "https://jenkins-zh.github.io/tags/jenkinsworld/",
