@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>Jenkins Configuration-as-Code: 看，我都不用手动配置 | Jenkins 中文社区</title>
+    <title>行为规范 | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,24 +27,24 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins Configuration-as-Code: 看，我都不用手动配置" />
-<meta property="og:description" content="JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件" />
+<meta property="og:title" content="行为规范" />
+<meta property="og:description" content="行为规范" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/" />
+<meta property="og:url" content="https://jenkins-zh.github.io/about/code-of-conduct/" />
 
-<meta itemprop="name" content="Jenkins Configuration-as-Code: 看，我都不用手动配置">
-<meta itemprop="description" content="JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件">
-
-
-
-<meta itemprop="wordCount" content="176">
+<meta itemprop="name" content="行为规范">
+<meta itemprop="description" content="行为规范">
 
 
 
-<meta itemprop="keywords" content="configuration-as-code,jenkinsworld,jenkinsworld2018," />
+<meta itemprop="wordCount" content="17">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins Configuration-as-Code: 看，我都不用手动配置"/>
-<meta name="twitter:description" content="JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件"/>
+<meta name="twitter:title" content="行为规范"/>
+<meta name="twitter:description" content="行为规范"/>
 
 
 
@@ -143,29 +143,18 @@
 		<p class="b">此页面上的内容</p>
   	<nav id="TableOfContents">
 <ul>
-<li><a href="#jcasc-能为-jenkins-管理员做些什么">JCasC 能为 Jenkins 管理员做些什么？</a>
-<ul>
-<li><a href="#source-yaml">[source, yaml]</a></li>
-<li><a href="#groupidstrategy-casesensitive">groupIdStrategy: CaseSensitive</a></li>
-</ul></li>
-<li><a href="#ok-那么之后呢">Ok, 那么之后呢?</a></li>
+<li><a href="#留言">留言</a></li>
+<li><a href="#提问">提问</a></li>
+<li><a href="#github">GitHub</a></li>
 </ul>
 </nav>
 	
 
 	<div date-pref>
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2018-12-26-official-docker-image/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Docker Hub 上的官方 Jenkins 镜像 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 微信订阅号">
+			<a href="https://jenkins-zh.github.io/about/about-site/" class="dib f6 pr1 hover-bg-light-gray br-100" title="关于本站">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -184,13 +173,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins Configuration-as-Code: 看，我都不用手动配置</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">行为规范</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件
+      行为规范
     </div>
   
 
@@ -203,81 +192,30 @@
 
 
 
-<p>NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。</p>
+<h1 id="留言">留言</h1>
 
-<p>Jenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。</p>
+<p>留言之前需要使用 
 
-<p>在某些情况下，“Jenkins 管理员”是一个全职职位。
-Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。
-维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。</p>
+<a href="https://github.com" target="_blank">GitHub</a>
+ 账号登陆。大家要注意文明用语，严禁攻击、诋毁、灌水、广告等无关的话。对于违反人，一经发现将会被拉入黑名单。</p>
 
-<p>这就像几年前系统管理员必须要为每个服务管理特定的机器一样。
-在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。
-需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。
-基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。</p>
+<h1 id="提问">提问</h1>
 
-<p>在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。</p>
+<p>欢迎每一位朋友在这里提出与 Jenkins 或相关领域的技术问题，但是，在提问之前建议先在搜索引擎和本站中进行搜索。</p>
 
-<p>今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。&rdquo;JCasC&rdquo; 已经升级为<a href="https://jenkins.io/projects/">顶级</a> Jenkins 项目。 同时，对应的
-<a href="https://github.com/jenkinsci/jep/tree/master/jep/201/">Jenkins 增强提案</a>已经被接受。</p>
+<p>问题至少要包含如下部分：</p>
 
-<h1 id="jcasc-能为-jenkins-管理员做些什么">JCasC 能为 Jenkins 管理员做些什么？</h1>
+<ul>
+<li>场景以及问题是如何发生的，方便阅读的人复现</li>
+<li>软件、环境相关版本信息</li>
+<li>日志、截图等（建议使用附件的方式）</li>
+</ul>
 
-<p>JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。
-与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。
-这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。</p>
+<p>出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。</p>
 
-<p>下面是一个例子：</p>
+<h1 id="github">GitHub</h1>
 
-<h2 id="source-yaml">[source, yaml]</h2>
-
-<p>jenkins:
- systemMessage: &ldquo;Jenkins managed by Configuration as Code&rdquo;</p>
-
-<p>securityRealm:
-   ldap:
-     configurations:
-       - server: ldap.acme.com
-         rootDN: dc=acme,dc=fr
-         managerPasswordSecret: ${LDAP_PASSWORD}
-     cache:
-       size: 100
-       ttl: 10
-     userIdStrategy: CaseInsensitive</p>
-
-<h2 id="groupidstrategy-casesensitive">groupIdStrategy: CaseSensitive</h2>
-
-<p>如你所见，不需要很长的解释你就可以理解这个 YAML 文件如何配置你的 Jenkins master。</p>
-
-<p>== 优点</p>
-
-<p>JCasC 最直接的好处就是可重复性。
-管理员现在可以使用完全相同的配置通过一个简单的设置来引导新的 Jenkins master。
-这允许他们创建一个测试实例并检查升级插件在沙盒环境中的影响。
-这也使他们对故障转移和灾难恢复方案更有信心。</p>
-
-<p>当管理员开始在源代码管理中管理 Jenkins 的 YAML 配置文件时，他们也会感受到类似使用 Terraform 一样的好处。
-这样做可以让他们对 Jenkins master 配置进行审核，使其具有可逆性。
-他们可以建立一个合理的配置改变运行 Jenkins 实例的工作流，并确保在实际应用任何修改到他们的 Jenkins master 之前配置是健康的。</p>
-
-<p>最后也是最重要的是，由于能够快速设置 Jenkins master 并且能用一组共享的 YAML 配置文件控制它们，管理员现在可以给每个团队提供一个 Jenkins 实例，并且在安装插件有更高的灵活性。
-只要他们还在使用 Jenkinsfiles 管理构建定义（build definition），master 就会或多或少地成为你们团队的短期的基础架构。</p>
-
-<p>使用 Configuration-as-Code，我们可以不再像对待宠物那样对待我们的 Jenkins master，而像对待牛那样管理它们，你也可以毫不费力地替换它们。
-欢迎来到 “as-code” 的世界。</p>
-
-<p>.他们仍然很可爱，对吧?
-<a href="/image/cow.jpg">Cattle not pets</a></p>
-
-<h1 id="ok-那么之后呢">Ok, 那么之后呢?</h1>
-
-<p>你可以在<a href="https://github.com/jenkinsci/configuration-as-code-plugin">项目</a>中阅读有关 Jenkins Configuration-as-Code 插件的更多信息。
-与社区和贡献者们交流，加入我们的
-<a href="https://gitter.im/jenkinsci/configuration-as-code-plugin">gitter 频道</a>，
-或者来我们的
-<a href="https://www.cloudbees.com/devops-world">Jenkins World</a> 一起讨论 JCasC 项目及其未来！</p>
-
-<p>另外，不要错过 Configuration-as-Code 系列的下一篇文章，我们将会了解 JCasC 如何处理密码及其他凭据等敏感数据。</p>
+<p>请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</p>
 
 </div>
 
@@ -312,55 +250,18 @@ Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/about/code-of-conduct/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins Configuration-as-Code: 看，我都不用手动配置”
+    “行为规范”
   </a> was last updated: January 1, 0001
 </h6>
 
-      <a href="https://github.com/LinuxSuRen/jenkins-chat/edit/master/content/wechat/articles/2018-12-12-gasc.md" class="
+      <a href="https://github.com/LinuxSuRen/jenkins-chat/edit/master/content/about/code-of-conduct.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
       
-
-  
-  
-  
-
-  <div class="nested-lh-copy">
-    <ul class="list dib nested-links ml0 pl0">
-      
-        <li class="db mb2 b">
-          Tags:
-        </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/configuration-as-code">
-              configuration-as-code
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jenkinsworld">
-              jenkinsworld
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jenkinsworld2018">
-              jenkinsworld2018
-            </a>
-          </li>
-        
-              
-      
-        
-        
-      
-    </ul>
-  </div>
 
 
     </div>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/about/</link>
+    <description>Recent content on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://jenkins-zh.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>行为规范</title>
+      <link>https://jenkins-zh.github.io/about/code-of-conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/about/code-of-conduct/</guid>
+      <description>留言 留言之前需要使用 GitHub 账号登陆。大家要注意文明用语，严禁攻击、诋毁、灌水、广告等无关的话。对于违反人，一经发现将会被拉入黑名单。
+提问 欢迎每一位朋友在这里提出与 Jenkins 或相关领域的技术问题，但是，在提问之前建议先在搜索引擎和本站中进行搜索。
+问题至少要包含如下部分：
+ 场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
+GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>关于本站</title>
+      <link>https://jenkins-zh.github.io/about/about-site/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/about/about-site/</guid>
+      <description>Jenkins 中文社区站点是基于 Hugo 生成的静态文件，托管在 GitHub Page 上。下面列出相关的源码位置：
+ 网站内容 网站主题 微信订阅号  </description>
+    </item>
+    
+  </channel>
+</rss>

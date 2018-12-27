@@ -3,6 +3,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jenkins-zh.github.io/about/code-of-conduct/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/about/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-19-jenkins-survey/</loc>
   </url>
   
@@ -113,6 +121,10 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/about/about-site/</loc>
   </url>
   
   <url>
