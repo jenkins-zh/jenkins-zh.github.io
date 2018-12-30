@@ -25,6 +25,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/community/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/configuration-as-code/</loc>
     <priority>0</priority>
   </url>
@@ -129,6 +134,10 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/about/about-site/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-25-year-in-review/</loc>
   </url>
   
   <url>

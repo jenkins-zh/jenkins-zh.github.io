@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>在 VS Code 中校验 Jenkinsfile | Jenkins 中文社区</title>
+    <title>Community | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -20,6 +20,7 @@
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
       
 
+    <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.github.io/tags/community/index.xml">
     <link href='/dist/main.css' rel='stylesheet' type="text/css" /><script src="/js/chart.js"></script>
 <style>
   img.avatar {
@@ -27,24 +28,17 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="在 VS Code 中校验 Jenkinsfile" />
-<meta property="og:description" content="VS Code 中的 Jenkinsfile 插件" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2018-11-21-validate-jenkinsfile/" />
+<meta property="og:title" content="Community" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jenkins-zh.github.io/tags/community/" />
 
-<meta itemprop="name" content="在 VS Code 中校验 Jenkinsfile">
-<meta itemprop="description" content="VS Code 中的 Jenkinsfile 插件">
+<meta itemprop="name" content="Community">
+<meta itemprop="description" content="">
 
-
-
-<meta itemprop="wordCount" content="68">
-
-
-
-<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="在 VS Code 中校验 Jenkinsfile"/>
-<meta name="twitter:description" content="VS Code 中的 Jenkinsfile 插件"/>
+<meta name="twitter:title" content="Community"/>
+<meta name="twitter:description" content=""/>
 
 
 
@@ -133,96 +127,12 @@
     
     <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
       
-<main>
-  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
-    <div class="flex-l">
-
-      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
-<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-
-	<div date-pref>
-		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2018-12-25-year-in-review/" class="dib f6 pl1 hover-bg-light-gray br-100" title="回顾 2018: 革新的一年 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
-
-		
-	</div>
-
-</aside>
-</div>
-
-      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
-        <div class="documentation-copy center measure-wide-l">
-          <div id="readout" class="fixed right-0 bottom-0">
-          </div>
-          <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">在 VS Code 中校验 Jenkinsfile</h1>
-</header>
-
-<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
-    <div class="f4 fw4 lh-copy">
-      VS Code 中的 Jenkinsfile 插件
-    </div>
-  
+  <div class="w-100 ph4 pb5 pb6-ns pt1 mt4 pt3-ns">
 
-  
-</aside>
-
-
-
-<div class="prose" id="prose">
-
-<p>在日常工作中，我经常需要创建或修改很多 Jenkinsfile，有时还会发生错误。这是一个非常繁琐的流程——修改 Jenkinsfile，提交、推送，然后等 Jenkins 提醒你少加了一个括号。</p>
-
-<p>Command-line Pipeline Linter(<a href="https://jenkins.io/doc/book/pipeline/development/">https://jenkins.io/doc/book/pipeline/development/</a>) 可以有效地减少编写 Jenkinsfile 所需要的调试时间，但是它也有一些不方便的地方。你需要使用像 curl 或 ssh 的工具来连接你的 Jenkins，还需要正确地记住验证 Jenkinsfile 的命令。尽管如此，对我来说，这个方案还是不尽如人意。</p>
-
-<p>鉴于每天都会使用 VS Code，于是我开始着手为此研发插件，使得校验 Jenkinsfile 变得更加友好。</p>
-
-<p><code>Jenkins Pipeline Linter Connector</code> 的作用就是，把当前打开的文件推送到你的 Jenkins，然后在 VS Code 中显示校验结果。</p>
-
-<p><img src="/images/vscode-pipeline-linter/example1.gif" alt="Jenkins Pipeline Linter Connector | 示例 1" /></p>
-
-<p><img src="/images/vscode-pipeline-linter/example2.gif" alt="Jenkins Pipeline Linter Connector | 示例 2" /></p>
-
-<p>你可以在 VS Code 插件浏览器中或通过下面的地址找到该插件 <a href="https://marketplace.visualstudio.com/items?itemName=janjoerke.jenkins-pipeline-linter-connector">https://marketplace.visualstudio.com/items?itemName=janjoerke.jenkins-pipeline-linter-connector</a> 。</p>
-
-<p>该插件会在 VS Code 中添加四个配置选项，你必须要使用这些选项来配置用于验证的 Jenkins。</p>
-
-<ul>
-<li><code>jenkins.pipeline.linter.connector.url</code> 是 Jenkins 期望的 POST 请求地址，包含你要校验的 Jenkinsfile 文件。通常为  *http://<your_jenkins_server:port>/pipeline-model-converter/validate*。</li>
-<li><code>jenkins.pipeline.linter.connector.user</code> 允许指定你的 Jenkins 用户名。</li>
-<li><code>jenkins.pipeline.linter.connector.pass</code> 允许指定你的 Jenkins 密码。</li>
-<li><code>jenkins.pipeline.linter.connector.crumbUrl</code> 当你的 Jenkins 启用了 CRSF 时必须指定。通常为 *http://<your_jenkins_server:port>/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)*。
-​</li>
-</ul>
-
-</div>
-
-
-
-<script src="https://utteranc.es/client.js"
-        repo="jenkins-zh/jenkins-zh.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="linuxsuren"
-        async>
-</script>
-
-
-          
-
-        </div>
-      </div>
-      <div class="order-0 w-20 dn db-l">
+  <div class="flex">
+    <div class="dn db-l w-20">
         
 <nav role="navigation">
   <ul class="list pa0 nl2">
@@ -230,31 +140,57 @@
   </ul>
 </nav>
 
-      </div>
-
     </div>
-  </article>
 
-  <div class="w-100 bg-light-gray">
-    <div class="mw7 pa4 center nested-lh-copy lh-copy">
-      <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2018-11-21-validate-jenkinsfile/" class="hide-child link primary-color">
-  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-</span>
-    “在 VS Code 中校验 Jenkinsfile”
-  </a> was last updated: January 1, 0001
-</h6>
-
-      <a href="https://github.com/LinuxSuRen/jenkins-chat/edit/master/content/wechat/articles/2018-11-21-validate-jenkinsfile.md" class="
-f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
-" target="_blank">改善此页</a>
+    <div class="w-100 w-80-l ph0 ph4-l">
+      <article class="w-100 nested-copy-line-height nested-links nested-img">
+        <h1 class="primary-color-dark f2">
+          Tag: Community
+        </h1>
+        <div class=" mid-gray f5 f4-l">
+          
+        </div>
+      </article>
 
       
 
+      <div class="flex flex-wrap">
+        
+        <section class="flex-ns flex-wrap justify-between w-100">
+          
+            <div class="relative  weight-0">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/wechat/articles/2018-12-25-year-in-review/" class="link primary-color dim">回顾 2018: 革新的一年</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          Jenkins 创始人 KK 先生的年终总结
+        
+
+        <a href="/wechat/articles/2018-12-25-year-in-review/" class="f6 mt2 db link primary-color dim">
+          查看更多 &raquo;
+        </a>
 
     </div>
+
+
   </div>
-</main>
+</div>
+
+          
+        </section>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
     </main>
 
