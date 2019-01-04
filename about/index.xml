@@ -6,6 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Fri, 04 Jan 2019 21:13:30 +0800</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
@@ -21,6 +22,18 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>交流</title>
+      <link>https://jenkins-zh.github.io/about/channels/</link>
+      <pubDate>Fri, 04 Jan 2019 21:13:30 +0800</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/about/channels/</guid>
+      <description>为了方便各位 Jenkins 的爱好者、用户以及贡献者之间互相交流，我这里列出来一些途径：
+ 邮件组 在本站留言  邮件组 Jenkins 社区有很多 邮件组 ，感兴趣的童鞋请自行翻阅。本文仅介绍中文相关的邮件组：
+           Jenkins 中文用户邮件组  查看历史  订阅 取消订阅   Jenkins 中文本地化兴趣邮件组  查看历史  订阅 取消订阅     注意：点击上面的订阅或者取消都应该会弹出一个发送邮件的窗口，请不要做任何修改直接发送即可。邮件发送成功后，会收到确认的回复。鉴于邮件组是由 Google 提供的服务，无法科学上网的童鞋是无法查看历史邮件的。
+  留言 本站的留言系统建立在 Github 提供的 Issues 上。欢迎大家在遵守社区行为规范的基础上积极地留言互动。</description>
     </item>
     
     <item>
