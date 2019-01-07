@@ -64,6 +64,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/evergreen/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/about/meetups/</loc>
   </url>
   
@@ -142,6 +147,10 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</loc>
   </url>
   
   <url>

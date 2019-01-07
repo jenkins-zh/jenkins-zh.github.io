@@ -36,5 +36,21 @@ JCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或�
 在过去的几个月里，Cloud Native SIG 在解决根本原因方面取得了进展。 Artifact Manager on S3 plugin 已经发布并与 Jenkins Evergreen 整合， 支持在 agent 和 Amazon 服务器之间，进行大制品的上传和下载， 源生插件允许由 agent 生成的所有构建的日志内容（例如在 steps 的 sh 中） 直接定向流到外部存储服务，如 AWS CloudWatch Logs。 与此同时也开始上传 junit 格式的测试结果，这些测试结果有时会变的很大，将直接从 agent 到存储数据库。 所有这些努力都可以减轻 Jenkins Master 和本地网络的负载，而不需要开发人员修改他们的 pipeline 脚本。</description>
     </item>
     
+    <item>
+      <title>使用 Evergreen 持续提供易于使用的 Jenkins</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</guid>
+      <description>当我第一次写 Jenkins Evergreen 相关的文章， 后来被称为 &amp;ldquo;Jenkins Essentials&amp;rdquo;，我提到的一系列的未来的发展在接下来的几个月里已经变成了 现实 。 今年在旧金山举办的 DevOps World - Jenkins World 会议上，我会介绍 Jenkins Evergreen 背后哲学的更多细节，展示我们已经做了什么，并且讨论这个激进的 Jenkins 发行版的走向。
+image::/images/post-images/2019-01-09-jenkins-evergreen/magician_256.png[Jenkins Evergreen]
+正如我在第一篇博客以及JEP-300中所讨论的Jenkins Evergreen 的前两大支柱是我们关注的要点.
+自动更新的发行版 不出所料, 实现安全、自动地更新Jenkins发行版（包括核心和插件）所需的机制需要很多的工作。 在Baptiste&amp;rsquo;s 的演讲中他将讨论如何使 Evergreen &amp;ldquo;走起来&amp;rdquo;，而我会讨论 为何 自动更新的发行版很重要。
+持续集成和持续交付变得越来越普遍，并且是现代软件工程的基础 ，在不同的组织当中有两种不同的方式使用 Jenkins 。在一些组织当中，Jenkins 通过 Chef ，Puppet 等自动化工具有条不紊的被管理和部署着。然而在许多其他组织当中， Jenkins 更像是一个 设备 ，与办公室的无线路由器不同。当安装完毕，只要它能继续完成工作，人们就不会太多的关注这个设备。
+Jenkins Evergreen 发行版通过确保最新的功能更新，bug 修复以及安全性修复始终能安装到 Jenkins当中,&amp;ldquo;让 Jenkins 更像是一个设备&amp;rdquo;。
+除此之外, 我相信 Evergreen 能够向一些我们现在没有完全服务的团队提供良好的服务:这些团体希望能够以 服务 的形式使用 Jenkins 。我们暂时没有考虑提供公有云版本的 Jenkins 。我们意识到了自动接收增量更新，使用户可以在无需考虑更新 Jenkins 的情况下进行持续开发的好处。
+我相信 Jenkins Evergreen 可以并且可以提供相同的体验。</description>
+    </item>
+    
   </channel>
 </rss>
