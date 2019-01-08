@@ -150,10 +150,6 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</loc>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.github.io/about/about-site/</loc>
   </url>
   
@@ -163,6 +159,10 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-11-21-validate-jenkinsfile/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</loc>
   </url>
   
 </urlset>

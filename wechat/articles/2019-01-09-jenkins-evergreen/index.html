@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>使用 Evergreen 持续提供易于使用的 Jenkins | Jenkins 中文社区</title>
+    <title>自动更新、易于使用的 Jenkins | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,24 +27,24 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="使用 Evergreen 持续提供易于使用的 Jenkins" />
-<meta property="og:description" content="自动更新、易于使用的 Jenkins" />
+<meta property="og:title" content="自动更新、易于使用的 Jenkins" />
+<meta property="og:description" content="借助 Evergreen 持续提供易于使用的 Jenkins" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/" />
 
-<meta itemprop="name" content="使用 Evergreen 持续提供易于使用的 Jenkins">
-<meta itemprop="description" content="自动更新、易于使用的 Jenkins">
+<meta itemprop="name" content="自动更新、易于使用的 Jenkins">
+<meta itemprop="description" content="借助 Evergreen 持续提供易于使用的 Jenkins">
 
 
 
-<meta itemprop="wordCount" content="111">
+<meta itemprop="wordCount" content="121">
 
 
 
 <meta itemprop="keywords" content="jenkinsworld,jenkinsworld2018,evergreen," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="使用 Evergreen 持续提供易于使用的 Jenkins"/>
-<meta name="twitter:description" content="自动更新、易于使用的 Jenkins"/>
+<meta name="twitter:title" content="自动更新、易于使用的 Jenkins"/>
+<meta name="twitter:description" content="借助 Evergreen 持续提供易于使用的 Jenkins"/>
 
 
 
@@ -165,7 +165,7 @@
 
 	<div date-pref>
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/" class="dib f6 pl1 hover-bg-light-gray br-100" title="从 Jenkins Master 扩展网络连接 ">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2018-11-21-validate-jenkinsfile/" class="dib f6 pl1 hover-bg-light-gray br-100" title="在 VS Code 中校验 Jenkinsfile ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -174,14 +174,6 @@
 			</a>
 		
 
-		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2018-12-25-year-in-review/" class="dib f6 pr1 hover-bg-light-gray br-100" title="回顾 2018: 革新的一年">
-			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
 		
 	</div>
 
@@ -194,13 +186,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用 Evergreen 持续提供易于使用的 Jenkins</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">自动更新、易于使用的 Jenkins</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      自动更新、易于使用的 Jenkins
+      借助 Evergreen 持续提供易于使用的 Jenkins
     </div>
   
 
@@ -213,37 +205,55 @@
 
 
 
-<p>当我第一次<a href="https://jenkins.io/blog/2018/04/06/jenkins-essentials/">写 Jenkins Evergreen 相关的文章</a>， 后来被称为 &ldquo;Jenkins Essentials&rdquo;，我提到的一系列的未来的发展在接下来的几个月里已经变成了 <strong>现实</strong> 。 今年在旧金山举办的 DevOps World - Jenkins World 会议上，我会介绍 Jenkins Evergreen 背后哲学的更多细节，展示我们已经做了什么，并且讨论这个激进的 Jenkins 发行版的走向。</p>
+<p>当我第一次
 
-<p>image::/images/post-images/2019-01-09-jenkins-evergreen/magician_256.png[Jenkins Evergreen]</p>
+<a href="https://jenkins.io/blog/2018/04/06/jenkins-essentials/" target="_blank">写 Jenkins Evergreen 相关的文章</a>
+， 后来被称为 &ldquo;Jenkins Essentials&rdquo;，我提到的一系列的未来的发展在接下来的几个月里已经变成了 <strong>现实</strong> 。 今年在旧金山举办的 DevOps World - Jenkins World 会议上，我会介绍 Jenkins Evergreen 背后哲学的更多细节，展示我们已经做了什么，并且讨论这个激进的 Jenkins 发行版的走向。</p>
 
-<p>正如我在第一篇博客以及<a href="https://github.com/jenkinsci/jep/tree/master/jep/300">JEP-300</a>中所讨论的Jenkins Evergreen 的前两大支柱是我们关注的要点.</p>
+<img src="/images/evergreen/magician_256.png" height="" style="width: auto;"/>
 
-<h3 id="自动更新的发行版">自动更新的发行版</h3>
+<p>正如我在第一篇博客以及
 
-<p>不出所料, 实现安全、自动地更新Jenkins发行版（包括核心和插件）所需的机制需要很多的工作。 在<a href="https://jenkins.io/blog/2018/09/13/speaker-blog-evergreen-safely-upgrading/">Baptiste&rsquo;s 的演讲中</a>他将讨论如何使 Evergreen &ldquo;走起来&rdquo;，而我会讨论 <strong>为何</strong> 自动更新的发行版很重要。</p>
+<a href="https://github.com/jenkinsci/jep/tree/master/jep/300" target="_blank">JEP-300</a>
+中所讨论的 Jenkins Evergreen 的前两大支柱是我们关注的要点.</p>
+
+<h1 id="自动更新的发行版">自动更新的发行版</h1>
+
+<p>不出所料, 实现安全、自动地更新Jenkins发行版（包括核心和插件）所需的机制需要很多的工作。在
+
+<a href="https://jenkins.io/blog/2018/09/13/speaker-blog-evergreen-safely-upgrading/" target="_blank">Baptiste 的演讲中</a>
+他将讨论如何使 Evergreen &ldquo;走起来&rdquo;，而我会讨论 <strong>为何</strong> 自动更新的发行版很重要。</p>
 
 <p>持续集成和持续交付变得越来越普遍，并且是现代软件工程的基础 ，在不同的组织当中有两种不同的方式使用 Jenkins 。在一些组织当中，Jenkins 通过 Chef ，Puppet 等自动化工具有条不紊的被管理和部署着。然而在许多其他组织当中， Jenkins 更像是一个 <strong>设备</strong> ，与办公室的无线路由器不同。当安装完毕，只要它能继续完成工作，人们就不会太多的关注这个设备。</p>
 
-<p>Jenkins Evergreen 发行版通过确保最新的功能更新，bug 修复以及安全性修复始终能安装到 Jenkins当中,&ldquo;让 Jenkins 更像是一个设备&rdquo;。</p>
+<p>Jenkins Evergreen 发行版通过确保最新的功能更新，bug 修复以及安全性修复始终能安装到 Jenkins 当中,&ldquo;让 Jenkins 更像是一个设备&rdquo;。</p>
 
 <p>除此之外, 我相信 Evergreen 能够向一些我们现在没有完全服务的团队提供良好的服务:这些团体希望能够以 <strong>服务</strong> 的形式使用 Jenkins 。我们暂时没有考虑提供公有云版本的 Jenkins 。我们意识到了自动接收增量更新，使用户可以在无需考虑更新 Jenkins 的情况下进行持续开发的好处。</p>
 
 <p>我相信 Jenkins Evergreen 可以并且可以提供相同的体验。</p>
 
-<h3 id="自动配置默认值">自动配置默认值</h3>
+<h1 id="自动配置默认值">自动配置默认值</h1>
 
 <p>Jenkins 平台真正强大的地方是可以为不同的组织提供不同的模式和做法。对于很多新用户来说，或一些只希望使用通用案例的用户来说， Jenkins 的灵活性与让用户做出合适的选择形成了悖论。使用 Jenkins Evergreen，很多常用的配置将自动配置，使 Jenkins 变成开箱即用的工具。</p>
 
 <p>默认情况下将包括 Jenkins 流水线和 Jenkins Blue Ocean，我们也删除了一些 Jenkins 的遗留功能。</p>
 
-<p>我们同样在使用非常棒的<a href="https://jenkins.io/projects/jcasc/">Configuration as Code</a>进行工作, Configuration as Code 现在已经完成了1.0版本的发布, 我们通过它实现自动进行默认配置。</p>
+<p>我们同样在使用非常棒的
 
-<h2 id="现状">现状</h2>
+<a href="https://jenkins.io/projects/jcasc/" target="_blank">Configuration as Code</a>
+进行工作, Configuration as Code 现在已经完成了1.0版本的发布, 我们通过它实现自动进行默认配置。</p>
 
-<p>迄今为止，这个项目取得了重大的进展，我们非常高兴有用户开始尝试 Jenkins Evergreen，现在<a href="https://jenkins.io/projects/evergreen">Jenkins Evergreen</a>已经可以被 <strong>早期使用者</strong> 尝试. 不过我们现在 <strong>不</strong> 推荐在生产环境中使用 Jenkins Evergreen 。</p>
+<h1 id="现状">现状</h1>
 
-<p>我们希望能够得到您的反馈和想法在我们的<a href="https://gitter.im/jenkins-infra/evergreen">Gitter channel</a> !</p>
+<p>迄今为止，这个项目取得了重大的进展，我们非常高兴有用户开始尝试 Jenkins Evergreen，现在
+
+<a href="https://jenkins.io/projects/evergreen" target="_blank">Jenkins Evergreen</a>
+已经可以被 <strong>早期使用者</strong> 尝试. 不过我们现在 <strong>不</strong> 推荐在生产环境中使用 Jenkins Evergreen 。</p>
+
+<p>我们希望能够得到您的反馈和想法在我们的
+
+<a href="https://gitter.im/jenkins-infra/evergreen" target="_blank">Gitter channel</a>
+!</p>
 
 </div>
 
@@ -281,7 +291,7 @@
   <a href="https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “使用 Evergreen 持续提供易于使用的 Jenkins”
+    “自动更新、易于使用的 Jenkins”
   </a> was last updated: January 1, 0001
 </h6>
 
