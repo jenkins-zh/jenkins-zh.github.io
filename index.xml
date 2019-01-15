@@ -119,6 +119,18 @@ JCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或�
     </item>
     
     <item>
+      <title>Jenkins 中文语言包</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-16-localization-zh-cn-plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-16-localization-zh-cn-plugin/</guid>
+      <description>部分 Jenkins 中文用户可能已经发现，在最近升级 Jenkins 版本，或下载较新的 Jenkins 后，界面上很多部分显示的是英文。对此，我简单介绍一下原因以及如何安装中文插件。
+各种语言的本地化资源文件都是集中存放在 Jenkins Core 及其插件中，这对于要做本地化贡献的人来说，需要向很多代码仓库中提交 PR。最明显的一个现象就是，这些仓库不一定都会有熟悉中文的维护者，因此导致 PR 无法真实、及时地进行 Review 以及合并发布。基于以上的考虑，我开发了简体中文插件，并从 Jenkins 2.145 版本中把大部分的中文本地化资源文件迁移到了该插件中。而且，最终会对 Jenkins Core 以及流行的插件中所有的中文本地化资源文件进行迁移。
+安装简体中文插件也很简单，只要在 Jenkins 的插件管理界面上，搜索*中文*就能找到该插件。安装并重启后就能看到中文界面。
+更多细节请查看 变更记录 。欢迎对中文本地化工作感兴趣的同学加入我们！</description>
+    </item>
+    
+    <item>
       <title>Jenkins 微信订阅号</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -196,10 +208,10 @@ Jenkins Pipeline Linter Connector 的作用就是，把当前打开的文件推�
     
     <item>
       <title>在安全防火墙内通过 WebHook 触发构建</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-07-webhook-firewalls/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-16-webhook-firewalls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-07-webhook-firewalls/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-16-webhook-firewalls/</guid>
       <description>在这篇文章中，我将向大家展示，如何让运行在防火墙内的 Jenkins 依然可以实时地收到 GitHub 的 WebHook。当然，你也可以把这个方法应用到如 BitBucket、 DockerHub 或任何可以推送 WebHook 的其他服务中。但是，下面的步骤仅适用于托管在 GitHub 上的项目。
 什么是 WebHook 简单地描述下什么是 WebHook：事件消息（通常是 JSON，也可以是其他的）由服务端以 HTTP(S) 协议发送到监听的客户端。
 事件流自左到右，Jenkins 会监听类似 /github-webhook/ 或 /dockerhub-webhook/ 等路径上的 HTTP 请求，唤醒并执行一些任务。

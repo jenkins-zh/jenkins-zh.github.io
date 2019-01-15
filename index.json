@@ -133,6 +133,13 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019-01-16-localization-zh-cn-plugin/",
+        "title": "Jenkins 中文语言包",
+        "tags": [],
+        "description": "Jenkins 中文版本升级通知",
+        "content": "部分 Jenkins 中文用户可能已经发现，在最近升级 Jenkins 版本，或下载较新的 Jenkins 后，界面上很多部分显示的是英文。对此，我简单介绍一下原因以及如何安装中文插件。\n各种语言的本地化资源文件都是集中存放在 Jenkins Core 及其插件中，这对于要做本地化贡献的人来说，需要向很多代码仓库中提交 PR。最明显的一个现象就是，这些仓库不一定都会有熟悉中文的维护者，因此导致 PR 无法真实、及时地进行 Review 以及合并发布。基于以上的考虑，我开发了简体中文插件，并从 Jenkins 2.145 版本中把大部分的中文本地化资源文件迁移到了该插件中。而且，最终会对 Jenkins Core 以及流行的插件中所有的中文本地化资源文件进行迁移。\n安装简体中文插件也很简单，只要在 Jenkins 的插件管理界面上，搜索*中文*就能找到该插件。安装并重启后就能看到中文界面。\n更多细节请查看 变更记录 。欢迎对中文本地化工作感兴趣的同学加入我们！\n"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/",
         "title": "Jenkins 微信订阅号",
         "tags": [],
@@ -252,7 +259,7 @@
         "content": "在日常工作中，我经常需要创建或修改很多 Jenkinsfile，有时还会发生错误。这是一个非常繁琐的流程——修改 Jenkinsfile，提交、推送，然后等 Jenkins 提醒你少加了一个括号。\nCommand-line Pipeline Linter(https://jenkins.io/doc/book/pipeline/development/) 可以有效地减少编写 Jenkinsfile 所需要的调试时间，但是它也有一些不方便的地方。你需要使用像 curl 或 ssh 的工具来连接你的 Jenkins，还需要正确地记住验证 Jenkinsfile 的命令。尽管如此，对我来说，这个方案还是不尽如人意。\n鉴于每天都会使用 VS Code，于是我开始着手为此研发插件，使得校验 Jenkinsfile 变得更加友好。\nJenkins Pipeline Linter Connector 的作用就是，把当前打开的文件推送到你的 Jenkins，然后在 VS Code 中显示校验结果。\n你可以在 VS Code 插件浏览器中或通过下面的地址找到该插件 https://marketplace.visualstudio.com/items?itemName=janjoerke.jenkins-pipeline-linter-connector 。\n该插件会在 VS Code 中添加四个配置选项，你必须要使用这些选项来配置用于验证的 Jenkins。\n jenkins.pipeline.linter.connector.url 是 Jenkins 期望的 POST 请求地址，包含你要校验的 Jenkinsfile 文件。通常为 *http:///pipeline-model-converter/validate*。 jenkins.pipeline.linter.connector.user 允许指定你的 Jenkins 用户名。 jenkins.pipeline.linter.connector.pass 允许指定你的 Jenkins 密码。 jenkins.pipeline.linter.connector.crumbUrl 当你的 Jenkins 启用了 CRSF 时必须指定。通常为 *http:///crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)*。 ​  "
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019-01-07-webhook-firewalls/",
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019-01-16-webhook-firewalls/",
         "title": "在安全防火墙内通过 WebHook 触发构建",
         "tags": ["jenkins", "webhooks", "security"],
         "description": "谁说局域网里就不能带 GitHub 的 WebHook 玩？",
