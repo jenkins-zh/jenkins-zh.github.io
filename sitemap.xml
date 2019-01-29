@@ -97,6 +97,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-01-30-k8s-jenkins-secet-agent/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/</loc>
   </url>
   
@@ -111,6 +115,11 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkinsworld2018/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/kubernetes/</loc>
     <priority>0</priority>
   </url>
   
