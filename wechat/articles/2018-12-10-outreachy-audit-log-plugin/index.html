@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>交流 | Jenkins 中文社区</title>
+    <title>Outreachy 实习生提供了 Jenkins 对审计日志的支持 | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,26 +27,24 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="交流" />
-<meta property="og:description" content="Jenkins 中文社区交流指南" />
+<meta property="og:title" content="Outreachy 实习生提供了 Jenkins 对审计日志的支持" />
+<meta property="og:description" content="运行在 K8S 上的 Jenkins 动态节点" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/about/channels/" /><meta property="article:published_time" content="2019-01-04T21:13:30&#43;08:00"/>
-<meta property="article:modified_time" content="2019-01-04T21:13:30&#43;08:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2018-12-10-outreachy-audit-log-plugin/" />
 
-<meta itemprop="name" content="交流">
-<meta itemprop="description" content="Jenkins 中文社区交流指南">
-
-
-<meta itemprop="datePublished" content="2019-01-04T21:13:30&#43;08:00" />
-<meta itemprop="dateModified" content="2019-01-04T21:13:30&#43;08:00" />
-<meta itemprop="wordCount" content="38">
+<meta itemprop="name" content="Outreachy 实习生提供了 Jenkins 对审计日志的支持">
+<meta itemprop="description" content="运行在 K8S 上的 Jenkins 动态节点">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="wordCount" content="56">
+
+
+
+<meta itemprop="keywords" content="community,outreachy,outreachy2018," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="交流"/>
-<meta name="twitter:description" content="Jenkins 中文社区交流指南"/>
+<meta name="twitter:title" content="Outreachy 实习生提供了 Jenkins 对审计日志的支持"/>
+<meta name="twitter:description" content="运行在 K8S 上的 Jenkins 动态节点"/>
 
 
 
@@ -137,6 +135,8 @@
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
@@ -162,15 +162,6 @@
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
 	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li><a href="#邮件组">邮件组</a></li>
-<li><a href="#即时聊天">即时聊天</a></li>
-<li><a href="#留言">留言</a></li>
-</ul>
-</nav>
-	
 
 	<div date-pref>
 		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
@@ -182,7 +173,7 @@
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/about/how-to-involve/" class="dib f6 pl1 hover-bg-light-gray br-100" title="如何参与 ">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2018-12-26-security-updates/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 的重要安全更新 ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -192,7 +183,7 @@
 		
 
 		
-			<a href="https://jenkins-zh.github.io/about/meetups/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins Area Meetup">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/" class="dib f6 pr1 hover-bg-light-gray br-100" title="从 Jenkins Master 扩展网络连接">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -211,13 +202,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">交流</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Outreachy 实习生提供了 Jenkins 对审计日志的支持</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 中文社区交流指南
+      运行在 K8S 上的 Jenkins 动态节点
     </div>
   
 
@@ -228,85 +219,23 @@
 
 <div class="prose" id="prose">
 
+<p>今年是 Jenkins 项目首次参与 <a href="https://www.outreachy.org/">Outreachy</a>. Outreachy 是一个类似于 Google Summer of Code (GSoC) 的项目，
+实习生有偿地为开源项目工作。
+关键的不同之处在于，Outreachy 面向那些在他们国家的技术行业中受到歧视或偏见的小众群体。
+当我了解到这个项目后，由于它的包容性与社区建设与我的理念相符就立即自愿作为导师来参与。
+我很高兴地说，Jenkins 项目和我的雇主 <a href="https://www.cloudbees.com">CloudBees</a> 对此非常支持。</p>
 
+<p>基于我们之前在 GSoC 上指导学生的付出，今年我们已经加入 Outreachy 并指导了两个实习生。
+在 Outreachy 的这次活动中，我们的实习生 <a href="https://github.com/Lathaguna[Latha Gunasekar] and https://github.com/davidolorundare">David Olorundare</a> 将与我一起研发 <a href="https://github.com/jenkinsci/audit-log-plugin">Jenkins 对审计日志的支持</a>。
+我很高兴欢迎 David 和 Latha, 并期待他们能在软件工程专业和对开源社区的贡献上都有所收获。
+请继续关注后续博客对他们的介绍。</p>
 
-<p>为了方便各位 Jenkins 的爱好者、用户以及贡献者之间互相交流，我这里列出来一些途径：</p>
+<p>该审计日志支持项目在 Jenkins 和 <a href="https://logging.apache.org/log4j/2.x/">Apache Log4j</a> 之间形成了一个新的链接，这给予我们的实习生学习
+更多有关开源治理和认识新朋友的机会。
+作为奖金，该项目旨在为支持高级的业务检测提供便利，例如：在认证事件中检测潜在的入侵尝试。
+我们也会编写一个 <a href="https://github.com/jenkinsci/jep">JEP</a> 来描述由插件提供的审计日志 API,以及其他插件如何定义并记录除 Jenkins 核心以外插件的审计事件。</p>
 
-<ul>
-<li>邮件组</li>
-<li>即时聊天</li>
-<li>在本站留言</li>
-</ul>
-
-<h1 id="邮件组">邮件组</h1>
-
-<p>Jenkins 社区有很多
-
-<a href="https://jenkins.io/zh/mailing-lists/" target="_blank">邮件组</a>
-，感兴趣的童鞋请自行翻阅。本文仅介绍中文相关的邮件组：</p>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Jenkins 中文用户邮件组</td>
-<td>
-
-<a href="http://groups.google.com/group/jenkinsci-zh/topics" target="_blank">查看历史</a>
-</td>
-<td><a href="mailto:jenkinsci-zh+subscribe@googlegroups.com">订阅</a></td>
-<td><a href="mailto:jenkinsci-zh+unsubscribe@googlegroups.com">取消订阅</a></td>
-<td><a href="mailto:jenkinsci-zh@googlegroups.com">求助</a></td>
-</tr>
-
-<tr>
-<td>Jenkins 中文本地化兴趣邮件组</td>
-<td>
-
-<a href="http://groups.google.com/group/jenkins-chinese-localization-sig/topics" target="_blank">查看历史</a>
-</td>
-<td><a href="mailto:jenkins-chinese-localization-sig+subscribe@googlegroups.com">订阅</a></td>
-<td><a href="mailto:jenkins-chinese-localization-sig+unsubscribe@googlegroups.com">取消订阅</a></td>
-<td><a href="mailto:jenkins-chinese-localization-sig@googlegroups.com">求助</a></td>
-</tr>
-</tbody>
-</table>
-
-<aside class="admonition note">
-	<div class="note-icon">
-		
-	</div>
-	
-	
-	<div class="admonition-content"><p><em>注意：点击上面的订阅或者取消都应该会弹出一个发送邮件的窗口，请不要做任何修改，邮件正文保持空白（不要添加邮件签名等内容）直接发送即可。邮件发送成功后，会收到确认的回复。鉴于邮件组是由 Google 提供的服务，无法科学上网的童鞋是无法查看历史邮件的。</em></p>
-</div>
-</aside>
-
-
-<h1 id="即时聊天">即时聊天</h1>
-
-<p>及时聊天是一种很方便的线上交流方式，你有可能及时地收到大家的帮助，但是不要认为其他人有回答问题的义务。你没有能及时地得到帮助，可能是因为大家在忙、消息太多而被忽略、问题描述的不够详细等等。因此，建议大家在提问之前尽可能保证自己已经对问题理解的很清楚，并在提问时尽可能地给出上下文、复现步骤；当没有及时得到回答的话，可以把问题发送到邮件组（发送之前，请在邮件组中搜索其他人是否已经解决过类似问题），相信遇到过类似问题的人也会尽可能帮助你。</p>
-
-<p>
-
-<a href="https://gitter.im/jenkinsci/chinese?utm_source=share-link&amp;utm_medium=link&amp;utm_campaign=share-link" target="_blank">Jenkins Gitter 中文聊天室</a>
-欢迎你!</p>
-
-<h1 id="留言">留言</h1>
-
-<p>本站的留言系统建立在 Github 提供的 
-
-<a href="https://github.com/jenkins-zh/jenkins-zh.github.io/issues" target="_blank">Issues</a>
-  上。欢迎大家在<a href="https://jenkins-zh.github.io/about/code-of-conduct/">遵守社区行为规范</a>的基础上积极地留言互动。</p>
+<p>我期待我们将会一起完成了不起的作品，而且我希望在将来能够帮助更多的 Outreachy 实习生！</p>
 
 </div>
 
@@ -347,18 +276,68 @@
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/about/channels/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2018-12-10-outreachy-audit-log-plugin/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “交流”
-  </a> was last updated: January 4, 2019
+    “Outreachy 实习生提供了 Jenkins 对审计日志的支持”
+  </a> was last updated: January 1, 0001
 </h6>
 
-      <a href="https://github.com/LinuxSuRen/jenkins-chat/edit/master/content/about/channels.md" class="
+      <a href="https://github.com/LinuxSuRen/jenkins-chat/edit/master/content/wechat/articles/2018-12-10-outreachy-audit-log-plugin.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
       
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/community">
+              community
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/outreachy">
+              outreachy
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/outreachy2018">
+              outreachy2018
+            </a>
+          </li>
+        
+              
+      
+        
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2018-12-25-year-in-review/" class="link">
+              回顾 2018: 革新的一年
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
 
 
     </div>

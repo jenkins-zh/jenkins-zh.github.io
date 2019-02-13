@@ -124,6 +124,20 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/outreachy/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-10-outreachy-audit-log-plugin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/outreachy2018/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/performance/</loc>
     <priority>0</priority>
   </url>
