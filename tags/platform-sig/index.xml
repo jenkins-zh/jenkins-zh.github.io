@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Platform Sig on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/platform-sig/</link>
+    <description>Recent content in Platform Sig on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://jenkins-zh.github.io/tags/platform-sig/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java 11 预览支持已在 Jenkins 2.155&#43; 中可用</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-14-java11-preview-availability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-14-java11-preview-availability/</guid>
+      <description>NOTE: 这是由 Java 11 支持团队 联合撰写的博客。 在 12 月 18 号（UTC时间下午4点）我们也会在 Jenkins 在线 Meetup 展示对 Java 11 的预览支持。（链接）
+ Jenkins 作为领先的开源自动化服务器之一，目前仍然只支持到 Java 8。在 9 月 25 日 OpenJDK 11 发布了。这是一个长期支持版本，并将持续多年，我们想要在 Jenkins 项目中对这个版本进行全面的支持。在过去的一年中，许多贡献者一直致力于在项目中支持 Java 11（Jenkins JEP-211）。这是一条艰辛的道路，但是现在，代表 Jenkins Platform SIG，我们很高兴的宣布在 Jenkins 每周发布提供 Java 11 预览！
+为什么我们需要 Java 11 的预览？
+这是因为它可以提供给 Jenkins 贡献者和早期使用者一个在明年年初（译者注：此文发布于 2018 年）GA 发布之前尝试这些变化的途径。它也可以帮助我们进行更多的探索性测试，并且有希望在 Jenkins 正式地提供 Java 11 支持之前，解决大部分的问题。
+在这篇文章中，我们将会介绍如何在 Java 11 环境下运行 Jenkins，还有如何调查兼容性问题并报告它们。
+背景 你可能还记得，在 2018 年 6 月我们举办了一个针对 Java 10+ 支持的在线黑客马拉松。作为黑客马拉松的一部分，我们提供了 Java 11 的实验性支持。这次活动对我们来说非常成功。我们可以在 Java 10 和 Java 11-ea 环境下运行 Jenkins 以及一些主要的功能 —— 包括流水线、JobDSL、Docker/Kubernetes plugin、Configuration as Code、BlueOcean 等。它让我们相信我们可以在 Jenkins 中提供Java 11支持而不会发生破坏性变化。在这场马拉松之后 Oleg Nenashev 创建了 &amp;ldquo;Java 10+ support in Jenkins&amp;rdquo;（之后修改为只针对支持 Java 11）。Jenkins Platform SIG 也已成立，以协调 Java 11 的支持工作和其他平台的支持工作（打包，操作系统支持等）。</description>
+    </item>
+    
+  </channel>
+</rss>

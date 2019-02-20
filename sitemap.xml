@@ -55,6 +55,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/developer/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/docker/</loc>
     <priority>0</priority>
   </url>
@@ -65,6 +70,15 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/evergreen/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-14-java11-preview-availability/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/java11/</loc>
     <priority>0</priority>
   </url>
   
@@ -101,6 +115,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-10-outreachy-audit-log-plugin/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/</loc>
   </url>
   
@@ -129,10 +147,6 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-10-outreachy-audit-log-plugin/</loc>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.github.io/tags/outreachy2018/</loc>
     <priority>0</priority>
   </url>
@@ -144,6 +158,11 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/pipeline/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/platform-sig/</loc>
     <priority>0</priority>
   </url>
   

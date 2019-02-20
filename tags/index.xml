@@ -47,6 +47,15 @@
     </item>
     
     <item>
+      <title>Developer</title>
+      <link>https://jenkins-zh.github.io/tags/developer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/developer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>https://jenkins-zh.github.io/tags/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -61,6 +70,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/evergreen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java11</title>
+      <link>https://jenkins-zh.github.io/tags/java11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/java11/</guid>
       <description></description>
     </item>
     
@@ -142,6 +160,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Platform Sig</title>
+      <link>https://jenkins-zh.github.io/tags/platform-sig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/platform-sig/</guid>
       <description></description>
     </item>
     
