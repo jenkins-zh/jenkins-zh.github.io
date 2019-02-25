@@ -22,6 +22,34 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/event/readme/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/event/beijing-2019-11/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/event/hangzhou-2019-05/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/event/shanghai-2019-06/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/event/shenzhen/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/sponsor/alauda/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-19-jenkins-survey/</loc>
   </url>
   
@@ -178,6 +206,11 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/security/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/sponsor/</loc>
     <priority>0</priority>
   </url>
   
