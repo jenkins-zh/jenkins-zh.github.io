@@ -7,6 +7,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-02-20-java11-preview-availability/</loc>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-02-13-outreachy-audit-log-plugin/</loc>
+    <lastmod>2019-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/about/how-to-involve/</loc>
     <lastmod>2019-01-05T22:56:04+08:00</lastmod>
   </url>
@@ -65,6 +75,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/community/</loc>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -75,6 +86,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/core/</loc>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -84,6 +96,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/developer/</loc>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -102,11 +115,8 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-14-java11-preview-availability/</loc>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.github.io/tags/java11/</loc>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -130,7 +140,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/</loc>
-    <lastmod>2019-01-05T22:56:04+08:00</lastmod>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,10 +150,6 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019-01-30-k8s-jenkins-secet-agent/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/articles/2018-12-10-outreachy-audit-log-plugin/</loc>
   </url>
   
   <url>
@@ -171,11 +177,13 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/outreachy/</loc>
+    <lastmod>2019-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/outreachy2018/</loc>
+    <lastmod>2019-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -191,6 +199,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/platform-sig/</loc>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -221,6 +230,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/</loc>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -236,6 +246,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
+    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
