@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>在安全防火墙内通过 WebHook 触发构建 | Jenkins 中文社区</title>
+    <title>批量修改 Jenkins 任务的技巧 | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,24 +27,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="在安全防火墙内通过 WebHook 触发构建" />
-<meta property="og:description" content="谁说局域网里就不能带 GitHub 的 WebHook 玩？" />
+<meta property="og:title" content="批量修改 Jenkins 任务的技巧" />
+<meta property="og:description" content="Jenkins 脚本命令行的一种实践" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019-01-16-webhook-firewalls/" />
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019-02-27-jenkins-script-console-in-practice/" /><meta property="article:published_time" content="2019-02-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-02-27T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="在安全防火墙内通过 WebHook 触发构建">
-<meta itemprop="description" content="谁说局域网里就不能带 GitHub 的 WebHook 玩？">
-
-
-
-<meta itemprop="wordCount" content="188">
+<meta itemprop="name" content="批量修改 Jenkins 任务的技巧">
+<meta itemprop="description" content="Jenkins 脚本命令行的一种实践">
 
 
+<meta itemprop="datePublished" content="2019-02-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-02-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="184">
 
-<meta itemprop="keywords" content="jenkins,webhooks,security," />
+
+
+<meta itemprop="keywords" content="Jenkins," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="在安全防火墙内通过 WebHook 触发构建"/>
-<meta name="twitter:description" content="谁说局域网里就不能带 GitHub 的 WebHook 玩？"/>
+<meta name="twitter:title" content="批量修改 Jenkins 任务的技巧"/>
+<meta name="twitter:description" content="Jenkins 脚本命令行的一种实践"/>
 
 
 
@@ -146,23 +148,21 @@
 
 
 
-
-
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib">
-            Zhao Xiaojie
+            翟志军
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60">
-          Contributor of @jenkinsci . Jenkins press contact in China.
+          show me the code
         </p>
       
-      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -172,17 +172,6 @@
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li><a href="#什么是-webhook">什么是 WebHook</a></li>
-<li><a href="#内网环境">内网环境</a></li>
-<li><a href="#问题可能也是机会">问题可能也是机会</a></li>
-<li><a href="#一个-webhook-转发服务">一个 WebHook 转发服务</a></li>
-<li><a href="#设置">设置</a></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -195,17 +184,9 @@
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2018-11-21-validate-jenkinsfile/" class="dib f6 pl1 hover-bg-light-gray br-100" title="在 VS Code 中校验 Jenkinsfile ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/" class="dib f6 pr1 hover-bg-light-gray br-100" title="自动更新、易于使用的 Jenkins">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019-02-20-java11-preview-availability/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Java 11 预览支持已在 Jenkins 2.155&#43; 中可用">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -224,13 +205,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">在安全防火墙内通过 WebHook 触发构建</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">批量修改 Jenkins 任务的技巧</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      谁说局域网里就不能带 GitHub 的 WebHook 玩？
+      Jenkins 脚本命令行的一种实践
     </div>
   
 
@@ -243,102 +224,68 @@
 
 
 
-<p>在这篇文章中，我将向大家展示，如何让运行在防火墙内的 Jenkins 依然可以实时地收到 GitHub 的 WebHook。当然，你也可以把这个方法应用到如 BitBucket、 DockerHub 或任何可以推送 WebHook 的其他服务中。但是，下面的步骤仅适用于托管在 GitHub 上的项目。</p>
+<h3 id="通过脚本命令行批量修改-jenkins-任务">通过脚本命令行批量修改 Jenkins 任务</h3>
 
-<h1 id="什么是-webhook">什么是 WebHook</h1>
+<p>最近，笔者所在团队的 Jenkins 所在的服务器经常报硬盘空间不足。经查发现很多任务没有设置“丢弃旧的构建”。通知所有的团队检查自己的 Jenkins 任务有没有设置丢弃旧的构建，有些不现实。</p>
 
-<p>简单地描述下什么是 WebHook：事件消息（通常是 JSON，也可以是其他的）由服务端以 HTTP(S) 协议发送到监听的客户端。</p>
+<p>一开始想到的是使用 Jenkins 的 API 来实现批量修改所有的 Jenkins 任务。笔者对这个解决方案不满意，经 Google 发现有同学和我遇到了同样的问题。他使用的更“技巧”的方式：在 Jenkins 脚本命令行中，通过执行 Groovy 代码操作 Jenkins 任务。</p>
 
-<img src="/images/2019-01-07-webhook-firewalls/webhooks.png" height="" style="width: auto;"/>
+<p>总的来说，就两步：</p>
 
-<p>事件流自左到右，Jenkins 会监听类似 <code>/github-webhook/</code> 或 <code>/dockerhub-webhook/</code> 等路径上的 HTTP 请求，唤醒并执行一些任务。</p>
+<ol>
+<li>进入菜单：<em>系统管理 &ndash;&gt; 脚本命令行</em></li>
 
-<p>GitHub 或 BitBucket 可能会报告一个新的提交或 PR，DockerHub 报告一个上游的镜像发生了变更。这些事情的共同之处在于，它们会推送给 Jenkins，并期待可以推送成功（例如：可以访问到 Jenkins）。在网络是开放的情况下时，例如 GitHub 企业版 或 Jenkins 在监听公网时，这是可以正常工作的。</p>
+<li><p>在输入框中，粘贴如下代码：</p>
 
-<h1 id="内网环境">内网环境</h1>
+<pre><code class="language-groovy">import jenkins.model.Jenkins
+import hudson.model.Job
+import jenkins.model.BuildDiscarderProperty
+import hudson.tasks.LogRotator
+// 遍历所有的任务
+Jenkins.instance.allItems(Job).each { job -&gt;
 
-<p>当有东西挡在中间时，也就是防火墙：</p>
+    if ( job.isBuildable() &amp;&amp; job.supportsLogRotator() &amp;&amp; job.getProperty(BuildDiscarderProperty) == null) {
+        println &quot; \&quot;${job.fullDisplayName}\&quot; 处理中&quot;
 
-<img src="/images/2019-01-07-webhook-firewalls/firewalls.png" height="" style="width: auto;"/>
+        job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10)))
+        println &quot;$job.name 已更新&quot;
+    }
+}
+return;
 
-<p>（_按照行业标准，所有防火墙都必须能起到屏障的作用。因此，无论如何，请不要在你的组织内搞破坏_）</p>
+/**
+LogRotator构造参数分别为：
+daysToKeep:  If not -1, history is only kept up to this days.
+numToKeep: If not -1, only this number of build logs are kept.
+artifactDaysToKeep: If not -1 nor null, artifacts are only kept up to this days.
+artifactNumToKeep: If not -1 nor null, only this number of builds have their artifacts kept.
+**/
 
-<p>当你在笔记本电脑上运行 Jenkins 并希望从 GitHub 接收 WebHook 时，这也是一样的。可能是为了测试你的设置，也可能是为了在 Mac 上运行 iOS 版本构建，又或者是部分网络没有暴露在互联网中，这都是合理的。 除非你的笔记本电脑可以让整个互联网访问到（这当然不太可能），或者你的网络配置得恰到好处，否则网络连接将无法流动，此时 WebHook是不可用的。</p>
+</code></pre></li>
+</ol>
 
-<p>没关系，我们可以退而求其次，使用轮询变更的方式。只是这样很糟糕。你会用尽 API 配额，还无法实时地获取变更，这真的不是一个好方法。</p>
+<h3 id="脚本命令行介绍">脚本命令行介绍</h3>
 
-<h1 id="问题可能也是机会">问题可能也是机会</h1>
+<p>脚本命令行（Jenkins Script Console），它是 Jenkins 的一个特性，允许你在 Jenkins master 和 Jenkins agent 的运行时环境执行任意的 Groovy 脚本。这意味着，我们可以在脚本命令行中做任何的事情，包括关闭 Jenkins，执行操作系统命令 <code>rm -rf /</code>（所以不能使用 root 用户运行 Jenkins agent）等危险操作。</p>
 
-<p>我们可以解决这个问题，但也可以把这个视为一个机会。有的东西在互联网中不可访问，或者以某些默认的方法锁定是一个特色，不是一个 Bug。你可以很大程度上减少你的攻击面，同时可以进行深度防护：</p>
+<p>除了上文中的，使用界面来执行 Groovy 脚本，还可以通过 Jenkins HTTP API：<code>/script</code>执行。具体操作，请参考 <a href="https://wiki.jenkins.io/display/JENKINS/Jenkins+Script+Console">官方文档</a>。</p>
 
-<img src="/images/2019-01-07-webhook-firewalls/exposed.png" height="" style="width: auto;"/>
+<h3 id="问题-代码执行完成后-对任务的修改有没有被持久化">问题：代码执行完成后，对任务的修改有没有被持久化？</h3>
 
-<h1 id="一个-webhook-转发服务">一个 WebHook 转发服务</h1>
+<p>当我们代码<code>job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10)))</code>执行后，这个修改到底有没有持久化到文件系统中呢（Jenkins 的所有配置默认都持久化在文件系统中）？我们看下 hudson.model.Job 的源码，在<code>addProperty</code>方法背后是有进行持久化的：</p>
 
-<p>输入 link:<a href="https://smee.io/[Smee">https://smee.io/[Smee</a>] 这个很容易记住的名字。这是一个由 GitHub 提供的 link:<a href="https://github.com/probot/smee[开源软件项目]，还能以服务的方式托管在">https://github.com/probot/smee[开源软件项目]，还能以服务的方式托管在</a> GitHub 上。这可以为你捕获并转发 WebHook。我会用一个图来给你解释它。</p>
+<pre><code class="language-groovy">public void addProperty(JobProperty&lt;? super JobT&gt; jobProp) throws IOException {
+    ((JobProperty)jobProp).setOwner(this);
+    properties.add(jobProp);
+    save();
+}
+</code></pre>
 
-<img src="/images/2019-01-07-webhook-firewalls/forwarding.png" height="" style="width: auto;"/>
+<h3 id="小结">小结</h3>
 
-<p>GitHub 把一个事件（该场景下是通过 HTTPS/json）推送给 Smee.io（也就是圆圈标记的部分，暴露在互联网上并能被 GitHub 访问到），而 Jenkins 通过一个客户端使用一个向外的连接订阅 Smee 。注意箭头的方向：Jenkins 只有一个向外的连接。</p>
+<p>本文章只介绍了批量修改“丢弃旧的构建”的配置，如果还希望修改其它配置，可以参考 hudson.model.Job <a href="https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/model/Job.java">源码</a>。</p>
 
-<p>这一点很重要，只要防火墙允许向外访问就可以工作（像 NAT 以及其他网络通常就是这样的）。如果 Jenkins 无法访问外部的任何服务，那么，本文也就当然不会有什么帮助了（但是这通常不会出现的）。</p>
-
-<h1 id="设置">设置</h1>
-
-<p>步骤1:首先，访问 <a href="https://smee.io/">https://smee.io/</a> 并点击 “Start a new channel”:</p>
-
-<img src="/images/2019-01-07-webhook-firewalls/smee.png" height="" style="width: auto;"/>
-
-<p>你会得到一个唯一的 URL（你应该拷贝出来以便后续使用）：</p>
-
-<img src="/images/2019-01-07-webhook-firewalls/config1.png" height="" style="width: auto;"/>
-
-<p>然后，在你运行 Jenkins 的地方安装 smee 客户端：</p>
-
-<p><code>npm install --global smee-client</code></p>
-
-<p>（这让 smee 命令行客户端可以接收并转发 WebHook）。</p>
-
-<p>现在，启动 smee 客户端并指向你的 Jenkins。在该案例中，我的 Jenkins 运行在 8080 端口（这是默认的，如果在你的笔记本上运行的话，根据需要修改端口和 smee 地址）：</p>
-
-<p><code>smee --url https://smee.io/GSm1B40sRfBvSjYS --path /github-webhook/ --port 8080</code></p>
-
-<p>这样的话，会连接 smee 服务并转发 WebHook 到 /github-webhook/（最后的斜线很重要，不要丢了）。当运行起来，你将会从日志里看到，它已经连接并转发 WebHook。只要你希望能收到 WebHook 就需要保持该命令的运行。</p>
-
-<p>下一步，你需要配置一个使用 GitHub 的流水线。这里我从头开始配置。如果你已经有了一个的话，可以跳过：</p>
-
-<img src="/images/2019-01-07-webhook-firewalls/newpipeline.png" height="" style="width: auto;"/>
-
-<p>我选择 GitHub 作为代码仓库：</p>
-
-<img src="/images/2019-01-07-webhook-firewalls/choice.png" height="" style="width: auto;"/>
-
-<p>然后，选择你的仓库。这将会设置好来准备接收来自 GitHub 的 WebHook（如果你已经有了流水线，并使用 GitHub 作为 SCM 源，那么也是可以的）。</p>
-
-<p>最后一步，是告诉 GitHub 为那个仓库（或组织也可以）发送 WebHook 事件给 Smee（最终会由 Jenkins 接收到）。</p>
-
-<p>选择你的 GitHub 仓库设置选项卡，并点击 “add webhook”：</p>
-
-<img src="/images/2019-01-07-webhook-firewalls/addwebhook.png" height="" style="width: auto;"/>
-
-<p>然后，配置 WebHook：</p>
-
-<ul>
-<li>粘贴从上面步骤中拷贝的 smee 的 URL</li>
-<li>选择 <code>application/json</code> 作为内容类型</li>
-<li>选择 <code>send everything</code>（你可以选择你想要的事件，但我只是处于简单这么做）。</li>
-<li>点击 Add Webhook（或 update）</li>
-</ul>
-
-<p>它看起来应该像这样：</p>
-
-<img src="/images/2019-01-07-webhook-firewalls/config2.png" height="" style="width: auto;"/>
-
-<p>好，现在 WebHook 应该可以了。你可以在你的仓库中添加一个变更，并稍后检查构建状态：</p>
-
-<img src="/images/2019-01-07-webhook-firewalls/running.png" height="" style="width: auto;"/>
-
-<p>祝你好运！</p>
+<p>不得不提醒读者朋友，Jenkins 脚本命令行是一把双刃剑，大家操作前，请考虑清楚影响范围。如果有必要，请提前做好备份。</p>
 
 </div>
 
@@ -379,14 +326,14 @@
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019-01-16-webhook-firewalls/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019-02-27-jenkins-script-console-in-practice/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “在安全防火墙内通过 WebHook 触发构建”
-  </a> was last updated: January 1, 0001
+    “批量修改 Jenkins 任务的技巧”
+  </a> was last updated: February 27, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019-01-16-webhook-firewalls.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019-02-27-jenkins-script-console-in-practice.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -405,19 +352,7 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
           <li class="db dib-l mr3">
             <a class="tag" href="/tags/jenkins">
-              jenkins
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/webhooks">
-              webhooks
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/security">
-              security
+              Jenkins
             </a>
           </li>
         
@@ -425,18 +360,18 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
-            </a>
-          </li>
-        
       
         
           <li class="db b mt4 mb2 mr2">
             Related entries:
           </li>
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019-01-16-webhook-firewalls/" class="link">
+              在安全防火墙内通过 WebHook 触发构建
+            </a>
+          </li>
         
       
     </ul>

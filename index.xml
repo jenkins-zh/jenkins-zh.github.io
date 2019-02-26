@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,19 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>批量修改 Jenkins 任务的技巧</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-02-27-jenkins-script-console-in-practice/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-02-27-jenkins-script-console-in-practice/</guid>
+      <description>通过脚本命令行批量修改 Jenkins 任务 最近，笔者所在团队的 Jenkins 所在的服务器经常报硬盘空间不足。经查发现很多任务没有设置“丢弃旧的构建”。通知所有的团队检查自己的 Jenkins 任务有没有设置丢弃旧的构建，有些不现实。
+一开始想到的是使用 Jenkins 的 API 来实现批量修改所有的 Jenkins 任务。笔者对这个解决方案不满意，经 Google 发现有同学和我遇到了同样的问题。他使用的更“技巧”的方式：在 Jenkins 脚本命令行中，通过执行 Groovy 代码操作 Jenkins 任务。
+总的来说，就两步：
+ 进入菜单：系统管理 &amp;ndash;&amp;gt; 脚本命令行 在输入框中，粘贴如下代码：
+import jenkins.model.Jenkins import hudson.model.Job import jenkins.model.BuildDiscarderProperty import hudson.tasks.LogRotator // 遍历所有的任务 Jenkins.instance.allItems(Job).each { job -&amp;gt; if ( job.isBuildable() &amp;amp;&amp;amp; job.supportsLogRotator() &amp;amp;&amp;amp; job.getProperty(BuildDiscarderProperty) == null) { println &amp;quot; \&amp;quot;${job.fullDisplayName}\&amp;quot; 处理中&amp;quot; job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10))) println &amp;quot;$job.name 已更新&amp;quot; } } return; /** LogRotator构造参数分别为： daysToKeep: If not -1, history is only kept up to this days.</description>
     </item>
     
     <item>
@@ -124,6 +137,15 @@ Jenkins 的 简体中文语言插件 也热切地期待你的 Pull Request 。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/event/shenzhen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/event/wuhang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/event/wuhang/</guid>
       <description></description>
     </item>
     
