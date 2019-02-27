@@ -75,6 +75,15 @@
     </item>
     
     <item>
+      <title>Installers</title>
+      <link>https://jenkins-zh.github.io/tags/installers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/installers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Java11</title>
       <link>https://jenkins-zh.github.io/tags/java11/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
@@ -224,6 +233,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/webhooks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://jenkins-zh.github.io/tags/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/windows/</guid>
       <description></description>
     </item>
     

@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-02-27-contribution-inspire/</loc>
+    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019-02-20-java11-preview-availability/</loc>
     <lastmod>2019-02-20T00:00:00+00:00</lastmod>
   </url>
@@ -120,6 +125,11 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/evergreen/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/installers/</loc>
     <priority>0</priority>
   </url>
   
@@ -258,6 +268,15 @@
     <loc>https://jenkins-zh.github.io/wechat/</loc>
     <lastmod>2019-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/windows/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-02-27-windows-installers/</loc>
   </url>
   
   <url>

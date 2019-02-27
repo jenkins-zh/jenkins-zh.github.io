@@ -14,6 +14,13 @@
         "content": " 通过脚本命令行批量修改 Jenkins 任务 最近，笔者所在团队的 Jenkins 所在的服务器经常报硬盘空间不足。经查发现很多任务没有设置“丢弃旧的构建”。通知所有的团队检查自己的 Jenkins 任务有没有设置丢弃旧的构建，有些不现实。\n一开始想到的是使用 Jenkins 的 API 来实现批量修改所有的 Jenkins 任务。笔者对这个解决方案不满意，经 Google 发现有同学和我遇到了同样的问题。他使用的更“技巧”的方式：在 Jenkins 脚本命令行中，通过执行 Groovy 代码操作 Jenkins 任务。\n总的来说，就两步：\n 进入菜单：系统管理 \u0026ndash;\u0026gt; 脚本命令行 在输入框中，粘贴如下代码：\nimport jenkins.model.Jenkins import hudson.model.Job import jenkins.model.BuildDiscarderProperty import hudson.tasks.LogRotator // 遍历所有的任务 Jenkins.instance.allItems(Job).each { job -\u0026gt; if ( job.isBuildable() \u0026amp;\u0026amp; job.supportsLogRotator() \u0026amp;\u0026amp; job.getProperty(BuildDiscarderProperty) == null) { println \u0026quot; \\\u0026quot;${job.fullDisplayName}\\\u0026quot; 处理中\u0026quot; job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10))) println \u0026quot;$job.name 已更新\u0026quot; } } return; /** LogRotator构造参数分别为： daysToKeep: If not -1, history is only kept up to this days. numToKeep: If not -1, only this number of build logs are kept. artifactDaysToKeep: If not -1 nor null, artifacts are only kept up to this days. artifactNumToKeep: If not -1 nor null, only this number of builds have their artifacts kept. **/   脚本命令行介绍 脚本命令行（Jenkins Script Console），它是 Jenkins 的一个特性，允许你在 Jenkins master 和 Jenkins agent 的运行时环境执行任意的 Groovy 脚本。这意味着，我们可以在脚本命令行中做任何的事情，包括关闭 Jenkins，执行操作系统命令 rm -rf /（所以不能使用 root 用户运行 Jenkins agent）等危险操作。\n除了上文中的，使用界面来执行 Groovy 脚本，还可以通过 Jenkins HTTP API：/script执行。具体操作，请参考 官方文档。\n问题：代码执行完成后，对任务的修改有没有被持久化？ 当我们代码job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10)))执行后，这个修改到底有没有持久化到文件系统中呢（Jenkins 的所有配置默认都持久化在文件系统中）？我们看下 hudson.model.Job 的源码，在addProperty方法背后是有进行持久化的：\npublic void addProperty(JobProperty\u0026lt;? super JobT\u0026gt; jobProp) throws IOException { ((JobProperty)jobProp).setOwner(this); properties.add(jobProp); save(); }  小结 本文章只介绍了批量修改“丢弃旧的构建”的配置，如果还希望修改其它配置，可以参考 hudson.model.Job 源码。\n不得不提醒读者朋友，Jenkins 脚本命令行是一把双刃剑，大家操作前，请考虑清楚影响范围。如果有必要，请提前做好备份。\n"
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019-02-27-contribution-inspire/",
+        "title": "社区贡献激励活动",
+        "tags": [],
+        "description": "Jenkins 中文社区送福利",
+        "content": "自 Jenkins 官方微信公众号开通以来，收到了很多热心、愿意参与开源社区的同学的贡献。这里，包括有 Jenkins 官方博客中的博文翻译，也有 Jenkins 中文站点维护的 Pull Request。我能够看到的是，有些同学从英文技术文章的翻译过程中，对 Jenkins 相关技术的理解更加深入了；而有的则从对 GitHub 不甚了解到逐渐熟悉社区贡献的大致流程；对于深度参与社区贡献的同学，更是能够在“中文本地化”以及 Jenkins 其他的特别兴趣小组（SIG）会议讨论上获得最新的动态。\n本着给社区贡献者谋福利的想法，Jenkins 中文社区携手“人民邮电出版社”给大家提供三本技术相关的书籍。从19年3月开始，截止到5月，我们会给予三名贡献者每人一本书。我们会在下次公众号文章中介绍评选规则，欢迎任何一位认可开源、希望参与开源的朋友提出你的建议，不要吝惜你的 PR。获选的同学，按照贡献量可以从下面的列表中依次任选一本：\n最后，再次让我们对“人民邮电出版社”给予开源社区的大力支持表示感谢。\n"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019-02-20-java11-preview-availability/",
         "title": "Java 11 预览支持已在 Jenkins 2.155+ 中可用",
         "tags": ["core", "developer", "java11", "community", "platform-sig"],
@@ -177,6 +184,13 @@
     {
         "uri": "https://jenkins-zh.github.io/tags/evergreen/",
         "title": "Evergreen",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/installers/",
+        "title": "Installers",
         "tags": [],
         "description": "",
         "content": ""
@@ -369,6 +383,20 @@
         "tags": [],
         "description": "",
         "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/windows/",
+        "title": "Windows",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019-02-27-windows-installers/",
+        "title": "Windows 安装程序更新",
+        "tags": ["windows", "platform-sig", "installers"],
+        "description": "平台特别兴趣小组提供了 Windows 安装程序的更新",
+        "content": " Jenkins 的 Windows 安装程序已经存在很多年了，它是用户在 Windows 上安装 Jenkins Master 作为服务的一种方式。 从被开发出来至今，它还没有什么新特性，但现在是时候做出改变了。\n首先，让我们瞧瞧现版本安装程序的使用经验。\n第1步 启动安装程序 这是使用 WiX Toolset Windows 安装程序的默认界面外观，算不上太好看，而且没有太多对安装程序进行说明的品牌信息。\n第2步 安装目录 同样，没有太多的品牌信息。\n第3步 安装 除了选择安装位置外，安装程序大体上没有提供一些安装 Jenkins 的选项。\n问题 现在的安装程序存在一些问题，平台特别兴趣小组会修复这些问题，并为用户提供新的安装体验。\n 安装程序只支持32位安装。 用户不能选择 Jenkins 作为 Windows 服务启动时的端口以及账户。 安装程序捆绑了32位的 Java Runtime，而没有使用已存在的 JRE。 安装程序不支持 Jenkins for Java 11中的实验性支持。 JENKINS_HOME 目录并不适合现代 Windows。 安装程序中没有品牌。  前进 使用实验性的 Jenkins Windows 安装程序，大部分问题都已解决！\n 安装程序将只支持64位系统，这也是如今大多数 Windows 系统的现状，所以能让更多的用户能够使用安装包来安装 Jenkins。 用户能够为服务输入用户信息，同时选择端口以便于 Jenkins 验证端口是否可用。 安装程序不再捆绑 JRE 而是在操作系统中寻找合适的 JRE。如果用户想要使用一个不同的 JRE，可以在安装时指定。 安装程序已经支持 Java 11，包括在 Java 11 预览上面列出的组件。 JENKINS_HOME 目录被放置在启动服务用户的 LocalAppData 目录下，这与现代 Windows 文件系统布局一致。 安装程序已经升级带有品牌了，这让它看起来更酷并能提供一个更好的用户体验。  截图 以下是新安装程序的系列屏幕截图：\n第1步 启动安装程序 Jenkins logo 现在是安装程序 UI 的重要组成部分。\n第2步 安装目录 在安装程序的所有阶段，Jenkins logo 和名称都出现在标题中。\n第3步 选择账户 安装程序现在允许您指定要运行的帐户的用户名/密码，并检查该帐户是否具有 LogonAsService 权限。\n第4步 端口选择 安装程序还允许您指定 Jenkins 运行的端口，并且在输入和测试有效端口之前不会继续。\n第5步 JRE 选择 安装程序现在不再捆绑 JRE，而是在系统上搜索兼容的 JRE （现在是 JRE 8）。 如果你想使用与安装程序搜索到不同的 JRE，你可以浏览目录并指定它。只支持 JRE 8 和 JRE 11 Runtime。如果发现选定的 JRE 是版本11，安装程序将自动添加必要的参数和其他 jar 文件，以便在 Java 11下运行。\n第6步 安装 用户能在安装程序中输入的所有选项也可以在命令行上覆盖以进行自动部署。可以覆盖的完整属性列表即将推出。\n接下来的步骤 新版本安装程序正在被平台特别兴趣小组的成员 Review 中，但我们需要人测试安装程序并给予反馈。你过你对测试新安装程序感兴趣的话，请加入平台特别兴趣小组 gitter room 获取更多信息。\n在新安装程序中还使用了许多一些正在研发的东西（例如，在进行升级时保留端口和其他选择）,但它已接近发布。\n除了基于 MSI 的 Windows 安装程序的更新之外，平台特别兴趣小组还在努力接管 Chocolatey Jenkins 软件包并为每次更新发布一个版本。\n"
     },
     {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/",

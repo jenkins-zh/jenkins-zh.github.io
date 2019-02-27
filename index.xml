@@ -38,6 +38,17 @@ import jenkins.model.Jenkins import hudson.model.Job import jenkins.model.BuildD
     </item>
     
     <item>
+      <title>社区贡献激励活动</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-02-27-contribution-inspire/</link>
+      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-02-27-contribution-inspire/</guid>
+      <description>自 Jenkins 官方微信公众号开通以来，收到了很多热心、愿意参与开源社区的同学的贡献。这里，包括有 Jenkins 官方博客中的博文翻译，也有 Jenkins 中文站点维护的 Pull Request。我能够看到的是，有些同学从英文技术文章的翻译过程中，对 Jenkins 相关技术的理解更加深入了；而有的则从对 GitHub 不甚了解到逐渐熟悉社区贡献的大致流程；对于深度参与社区贡献的同学，更是能够在“中文本地化”以及 Jenkins 其他的特别兴趣小组（SIG）会议讨论上获得最新的动态。
+本着给社区贡献者谋福利的想法，Jenkins 中文社区携手“人民邮电出版社”给大家提供三本技术相关的书籍。从19年3月开始，截止到5月，我们会给予三名贡献者每人一本书。我们会在下次公众号文章中介绍评选规则，欢迎任何一位认可开源、希望参与开源的朋友提出你的建议，不要吝惜你的 PR。获选的同学，按照贡献量可以从下面的列表中依次任选一本：
+最后，再次让我们对“人民邮电出版社”给予开源社区的大力支持表示感谢。</description>
+    </item>
+    
+    <item>
       <title>Java 11 预览支持已在 Jenkins 2.155&#43; 中可用</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019-02-20-java11-preview-availability/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
@@ -275,6 +286,22 @@ Jenkins 社区贡献者们秉承传播 Jenkins 技术、加强互动交流、推
       <description>我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。
 查看 link:/security/advisory/2018-12-05[安全报告]，了解有哪些被修复。 查看我们的 link:/doc/upgrade-guide/2.138/#upgrading-to-jenkins-lts-2-138-4[LTS 2.138.4 升级指导]，了解影响范围。
 当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。</description>
+    </item>
+    
+    <item>
+      <title>Windows 安装程序更新</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-02-27-windows-installers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-02-27-windows-installers/</guid>
+      <description>Jenkins 的 Windows 安装程序已经存在很多年了，它是用户在 Windows 上安装 Jenkins Master 作为服务的一种方式。 从被开发出来至今，它还没有什么新特性，但现在是时候做出改变了。
+首先，让我们瞧瞧现版本安装程序的使用经验。
+第1步 启动安装程序 这是使用 WiX Toolset Windows 安装程序的默认界面外观，算不上太好看，而且没有太多对安装程序进行说明的品牌信息。
+第2步 安装目录 同样，没有太多的品牌信息。
+第3步 安装 除了选择安装位置外，安装程序大体上没有提供一些安装 Jenkins 的选项。
+问题 现在的安装程序存在一些问题，平台特别兴趣小组会修复这些问题，并为用户提供新的安装体验。
+ 安装程序只支持32位安装。 用户不能选择 Jenkins 作为 Windows 服务启动时的端口以及账户。 安装程序捆绑了32位的 Java Runtime，而没有使用已存在的 JRE。 安装程序不支持 Jenkins for Java 11中的实验性支持。 JENKINS_HOME 目录并不适合现代 Windows。 安装程序中没有品牌。  前进 使用实验性的 Jenkins Windows 安装程序，大部分问题都已解决！
+ 安装程序将只支持64位系统，这也是如今大多数 Windows 系统的现状，所以能让更多的用户能够使用安装包来安装 Jenkins。 用户能够为服务输入用户信息，同时选择端口以便于 Jenkins 验证端口是否可用。 安装程序不再捆绑 JRE 而是在操作系统中寻找合适的 JRE。如果用户想要使用一个不同的 JRE，可以在安装时指定。 安装程序已经支持 Java 11，包括在 Java 11 预览上面列出的组件。 JENKINS_HOME 目录被放置在启动服务用户的 LocalAppData 目录下，这与现代 Windows 文件系统布局一致。 安装程序已经升级带有品牌了，这让它看起来更酷并能提供一个更好的用户体验。  截图 以下是新安装程序的系列屏幕截图：</description>
     </item>
     
     <item>

@@ -25,5 +25,21 @@
 背景 你可能还记得，在 2018 年 6 月我们举办了一个针对 Java 10+ 支持的在线黑客马拉松。作为黑客马拉松的一部分，我们提供了 Java 11 的实验性支持。这次活动对我们来说非常成功。我们可以在 Java 10 和 Java 11-ea 环境下运行 Jenkins 以及一些主要的功能 —— 包括流水线、JobDSL、Docker/Kubernetes plugin、Configuration as Code、BlueOcean 等。它让我们相信我们可以在 Jenkins 中提供Java 11支持而不会发生破坏性变化。在这场马拉松之后 Oleg Nenashev 创建了 &amp;ldquo;Java 10+ support in Jenkins&amp;rdquo;（之后修改为只针对支持 Java 11）。Jenkins Platform SIG 也已成立，以协调 Java 11 的支持工作和其他平台的支持工作（打包，操作系统支持等）。</description>
     </item>
     
+    <item>
+      <title>Windows 安装程序更新</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-02-27-windows-installers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-02-27-windows-installers/</guid>
+      <description>Jenkins 的 Windows 安装程序已经存在很多年了，它是用户在 Windows 上安装 Jenkins Master 作为服务的一种方式。 从被开发出来至今，它还没有什么新特性，但现在是时候做出改变了。
+首先，让我们瞧瞧现版本安装程序的使用经验。
+第1步 启动安装程序 这是使用 WiX Toolset Windows 安装程序的默认界面外观，算不上太好看，而且没有太多对安装程序进行说明的品牌信息。
+第2步 安装目录 同样，没有太多的品牌信息。
+第3步 安装 除了选择安装位置外，安装程序大体上没有提供一些安装 Jenkins 的选项。
+问题 现在的安装程序存在一些问题，平台特别兴趣小组会修复这些问题，并为用户提供新的安装体验。
+ 安装程序只支持32位安装。 用户不能选择 Jenkins 作为 Windows 服务启动时的端口以及账户。 安装程序捆绑了32位的 Java Runtime，而没有使用已存在的 JRE。 安装程序不支持 Jenkins for Java 11中的实验性支持。 JENKINS_HOME 目录并不适合现代 Windows。 安装程序中没有品牌。  前进 使用实验性的 Jenkins Windows 安装程序，大部分问题都已解决！
+ 安装程序将只支持64位系统，这也是如今大多数 Windows 系统的现状，所以能让更多的用户能够使用安装包来安装 Jenkins。 用户能够为服务输入用户信息，同时选择端口以便于 Jenkins 验证端口是否可用。 安装程序不再捆绑 JRE 而是在操作系统中寻找合适的 JRE。如果用户想要使用一个不同的 JRE，可以在安装时指定。 安装程序已经支持 Java 11，包括在 Java 11 预览上面列出的组件。 JENKINS_HOME 目录被放置在启动服务用户的 LocalAppData 目录下，这与现代 Windows 文件系统布局一致。 安装程序已经升级带有品牌了，这让它看起来更酷并能提供一个更好的用户体验。  截图 以下是新安装程序的系列屏幕截图：</description>
+    </item>
+    
   </channel>
 </rss>
