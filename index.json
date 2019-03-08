@@ -7,6 +7,13 @@
         "content": " 留言 留言之前需要使用 GitHub 账号登陆。大家要注意文明用语，严禁攻击、诋毁、灌水、广告等无关的话。对于违反人，一经发现将会被拉入黑名单。\n提问 欢迎每一位朋友在这里提出与 Jenkins 或相关领域的技术问题，但是，在提问之前建议先在搜索引擎和本站中进行搜索。\n问题至少要包含如下部分：\n 场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。\nGitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。\n"
     },
     {
+        "uri": "https://jenkins-zh.github.io/about/star-plan/",
+        "title": "社区贡献激励方案",
+        "tags": [],
+        "description": "激励可以让社区活动更有趣",
+        "content": "统计的基础分数为：GitHub 账号首页上 jenkinsci 、 jenkins-infra 、 jenkins-zh 、 jenkins-x 四个组织的贡献数和。\n附加分，统计发表在 Jenkins 公众号上的文章的阅读数，该数字除以100得到的整倍数。例如：某篇文章的阅读数为120，那么得分为1；阅读数为90，则没有得分。\n加权，是为了鼓励更多的原创。原创文章的加权数为1.2，例如：某篇原创文章的阅读数为230，那么最终得分为2.4。\n"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019-02-27-jenkins-script-console-in-practice/",
         "title": "批量修改 Jenkins 任务的技巧",
         "tags": ["Jenkins"],

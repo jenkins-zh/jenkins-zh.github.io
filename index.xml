@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 27 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,17 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>社区贡献激励方案</title>
+      <link>https://jenkins-zh.github.io/about/star-plan/</link>
+      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/about/star-plan/</guid>
+      <description>统计的基础分数为：GitHub 账号首页上 jenkinsci 、 jenkins-infra 、 jenkins-zh 、 jenkins-x 四个组织的贡献数和。
+附加分，统计发表在 Jenkins 公众号上的文章的阅读数，该数字除以100得到的整倍数。例如：某篇文章的阅读数为120，那么得分为1；阅读数为90，则没有得分。
+加权，是为了鼓励更多的原创。原创文章的加权数为1.2，例如：某篇原创文章的阅读数为230，那么最终得分为2.4。</description>
     </item>
     
     <item>
