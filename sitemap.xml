@@ -7,6 +7,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-03-13-electron-pipeline-demo/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</loc>
+    <lastmod>2019-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/about/star-plan/</loc>
     <lastmod>2019-03-03T00:00:00+00:00</lastmod>
   </url>
@@ -129,6 +139,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/electron/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/evergreen/</loc>
     <priority>0</priority>
   </url>
@@ -146,7 +162,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -165,7 +181,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/</loc>
-    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -219,6 +235,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/pipeline/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -240,6 +257,12 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/security/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/shared-library/</loc>
+    <lastmod>2019-03-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -271,7 +294,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

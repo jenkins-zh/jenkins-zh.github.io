@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shared Library on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/shared-library/</link>
+    <description>Recent content in Shared Library on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 06 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.github.io/tags/shared-library/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MPL - 模块化的流水线库</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</guid>
+      <description>MPL - 模块化的流水线库 尽管通过自动化部署加快了开发速度，但由于在 DevOps 方面缺少协作，我们一个客户正因此而放慢产品的上市时间。虽然他们也投入了资源来做 DevOps ，但每条生产流水线都是独立设置的，迫使团队为每个项目重新造轮子。更糟糕的是，由于没有跨团队协作，平台中的任何错误又会出现在每条新的流水线中。许多客户都有类似的问题存在，因此我们决定开发一个既能帮助现有客户，又能适应未来使用需求的通用工具。使用通用框架且标准化的 CI/CD 平台是最显而易见的选择，但这将导致缺少灵活性的单体结构（monolithic structure），最终会变得举步维艰。每个团队都需要在自己的流水线上工作，基于此，我们开发了一个方便 DevOps 流水线的每个可重用部分可供以后使用的解决方案 — Jenkins 驱动的模块化流水线库。
+解决方案：模块化流水线库 模块化流水线库（译注：modular pipeline library，简称 MPL）是一个高度灵活的 Jenkins 流水线共享库，它可以轻松将最佳实践共享到整个公司。它具有清晰的模块化结构，先进的测试框架，多级嵌套的能力，流水线配置系统，被改进了的错误处理机制以及许多其他有用的组件。
+我们将通过以下几部分内容深入了解并解释 MPL 是如何工作的：
+ 探索用于构建 MPL 的技术和工具 回顾MPL，并说明它为何有效 一步一步在流水线样例中使用 MPL 深入研究 MPL 的一些重要的组件，例如测试框架和嵌套库  首先，让我们介绍构建 MPL 时使用到的关键技术。
+使用共享库和 Jenkins 流水线构建 MPL 我们的 Jenkins 自动化平台最近收到了一些 Jenkins 流水线的更新。这些更新允许我们创建一个 Jenkinsfile 文件来描述整条流水线，并用于执行一系列不言自明的脚本。这提高了最终用户对 CI/CD 自动化流程的可视化程度，并提高了 DevOps 团队对流水线的可支持性。
+然而，流水线存在一个很大的问题：很难用唯一的流水线支持多个 Jenkinsfile 文件（因此存在多少个项目就存在多少个 Jenkinsfile 文件）。我们需要一个地方存放公共逻辑，这正是 Jenkins 共享库能够实现的。共享库用于存放流水线公共的部分，它定义在 Jenkinsfile 文件中，并允许在其中使用接口简化自动化脚本。
+虽然共享库允许你存储公共逻辑并操作 Jenkins，但它们并没有提供一种好的方式去使用这些公共逻辑。所以，MPL 通过允许用户创建易于理解的流程描述来优化流水线和共享库，然后方便其他团队使用。
+MPL 致力于创建跨团队协作 DevOps 流程 通过 MPL，我们现在能够跨团队协作和共享 DevOps 实践，轻松地为特定的项目指定特定的流水线，并能在将它们集成到 MPL 库中之前进行调试和测试。每个团队都可以创建一个嵌套库，在其中增加流水线和模块，并在流水线中使用，这样还可以提高流水线的可视化程度。MPL 能够适用于任何包含 Jenkinsfile 文件的项目，还可以根据项目团队的需要灵活地管理它。</description>
+    </item>
+    
+  </channel>
+</rss>

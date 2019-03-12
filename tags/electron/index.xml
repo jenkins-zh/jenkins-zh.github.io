@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electron on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/electron/</link>
+    <description>Recent content in Electron on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Electron 应用的流水线设计</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-electron-pipeline-demo/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-electron-pipeline-demo/</guid>
+      <description>面向读者：最好是了解 Jenkins 流水线的基本语法。
+Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。
+本文将介绍 Electron 桌面应用的流水线的设计。
+但是如何介绍呢？倒是个大问题。笔者尝试直接贴代码，在代码注释中讲解。这是一次尝试，希望得到你的反馈。
+完整代码 pipeline { // 我们决定每一个阶段指定 agent，所以， // 流水线的 agent 设置为 none，这样不会占用 agent agent none // 指定整条流水线的环境变量 environment { APP_VERSION = &amp;quot;&amp;quot; APP_NAME = &amp;quot;electron-webpack-quick-start&amp;quot; } stages { stage(&amp;quot;生成版本号&amp;quot;){ agent {label &amp;quot;linux&amp;quot; } steps{ script{ APP_VERSION = generateVersion(&amp;quot;1.0.0&amp;quot;) echo &amp;quot;version is ${APP_VERSION}&amp;quot; }} } stage(&#39;并行构建&#39;) { // 快速失败，只要其中一个平台构建失败， // 整次构建算失败 failFast true // parallel 闭包内的阶段将并行执行 parallel { stage(&#39;Windows平台下构建&#39;) { agent {label &amp;quot;windows &amp;amp;&amp;amp; nodejs&amp;quot; } steps { echo &amp;quot;${APP_VERSION}&amp;quot; } } stage(&#39;Linux平台下构建&#39;) { agent {label &amp;quot;linux &amp;amp;&amp;amp; nodejs&amp;quot; } // 不同平台可能存在不同的环境变量 // environment 支持阶段级的环境变量 environment{ SUFFIX = &amp;quot;tar.</description>
+    </item>
+    
+  </channel>
+</rss>

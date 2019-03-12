@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>Electron</title>
+      <link>https://jenkins-zh.github.io/tags/electron/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/electron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Evergreen</title>
       <link>https://jenkins-zh.github.io/tags/evergreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -95,7 +104,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.github.io/tags/jenkins/</link>
-      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
       <description></description>
@@ -167,7 +176,7 @@
     <item>
       <title>Pipeline</title>
       <link>https://jenkins-zh.github.io/tags/pipeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/pipeline/</guid>
       <description></description>
@@ -206,6 +215,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shared Library</title>
+      <link>https://jenkins-zh.github.io/tags/shared-library/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/shared-library/</guid>
       <description></description>
     </item>
     
