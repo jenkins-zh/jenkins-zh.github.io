@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cdf</title>
+      <link>https://jenkins-zh.github.io/tags/cdf/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/cdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cicd</title>
+      <link>https://jenkins-zh.github.io/tags/cicd/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/cicd/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cloud Native</title>
@@ -75,11 +93,38 @@
     </item>
     
     <item>
+      <title>Events</title>
+      <link>https://jenkins-zh.github.io/tags/events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/events/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Evergreen</title>
       <link>https://jenkins-zh.github.io/tags/evergreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/evergreen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gsoc</title>
+      <link>https://jenkins-zh.github.io/tags/gsoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/gsoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gsoc2019</title>
+      <link>https://jenkins-zh.github.io/tags/gsoc2019/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/gsoc2019/</guid>
       <description></description>
     </item>
     
@@ -143,6 +188,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opensource</title>
+      <link>https://jenkins-zh.github.io/tags/opensource/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/opensource/</guid>
       <description></description>
     </item>
     

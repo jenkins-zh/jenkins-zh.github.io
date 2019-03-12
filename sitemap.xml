@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-03-13-ready-for-cdf/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</loc>
     <lastmod>2019-03-06T00:00:00+00:00</lastmod>
   </url>
@@ -98,6 +103,18 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/cdf/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/cicd/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/cloud-native/</loc>
     <priority>0</priority>
   </url>
@@ -145,7 +162,22 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/events/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/evergreen/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/gsoc/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/gsoc2019/</loc>
     <priority>0</priority>
   </url>
   
@@ -194,6 +226,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/</loc>
   </url>
   
@@ -213,6 +249,12 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/kubernetes/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/opensource/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -278,7 +320,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/</loc>
-    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

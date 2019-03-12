@@ -14,6 +14,13 @@
         "content": " 面向读者：最好是了解 Jenkins 流水线的基本语法。\nElectron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。\n本文将介绍 Electron 桌面应用的流水线的设计。\n但是如何介绍呢？倒是个大问题。笔者尝试直接贴代码，在代码注释中讲解。这是一次尝试，希望得到你的反馈。\n完整代码 pipeline { // 我们决定每一个阶段指定 agent，所以， // 流水线的 agent 设置为 none，这样不会占用 agent agent none // 指定整条流水线的环境变量 environment { APP_VERSION = \u0026quot;\u0026quot; APP_NAME = \u0026quot;electron-webpack-quick-start\u0026quot; } stages { stage(\u0026quot;生成版本号\u0026quot;){ agent {label \u0026quot;linux\u0026quot; } steps{ script{ APP_VERSION = generateVersion(\u0026quot;1.0.0\u0026quot;) echo \u0026quot;version is ${APP_VERSION}\u0026quot; }} } stage('并行构建') { // 快速失败，只要其中一个平台构建失败， // 整次构建算失败 failFast true // parallel 闭包内的阶段将并行执行 parallel { stage('Windows平台下构建') { agent {label \u0026quot;windows \u0026amp;\u0026amp; nodejs\u0026quot; } steps { echo \u0026quot;${APP_VERSION}\u0026quot; } } stage('Linux平台下构建') { agent {label \u0026quot;linux \u0026amp;\u0026amp; nodejs\u0026quot; } // 不同平台可能存在不同的环境变量 // environment 支持阶段级的环境变量 environment{ SUFFIX = \u0026quot;tar.xz\u0026quot; APP_PLATFORM = \u0026quot;linux\u0026quot; ARTIFACT_PATH = \u0026quot;dist/${APP_NAME}-${APP_PLATFORM}-${APP_VERSION}.${SUFFIX}\u0026quot; } steps { script{ // Jenkins nodejs 插件提供的 nodejs 包装器 // 包装器内可以执行 npm 命令。 // nodejs10.15.2 是在 Jenkins 的全局工具配置中添加的 NodeJS 安装器 nodejs(nodeJSInstallationName: 'nodejs10.15.2') { // 执行具体的构建命令 sh \u0026quot;npm install yarn\u0026quot; sh \u0026quot;yarn version --new-version ${APP_VERSION}\u0026quot; sh \u0026quot;yarn install\u0026quot; sh \u0026quot;yarn dist --linux deb ${SUFFIX}\u0026quot; // 上传制品 uploadArtifact(\u0026quot;${APP_NAME}\u0026quot;, \u0026quot;${APP_VERSION}\u0026quot;, \u0026quot;${ARTIFACT_PATH}\u0026quot;) }}} // 将括号合并是为了让代码看起来紧凑，提升阅读体验。下同。 } stage('Mac平台下构建') { agent {label \u0026quot;mac \u0026amp;\u0026amp; nodejs\u0026quot; } stages { stage('mac 下阶段1') { steps { echo \u0026quot;staging 1\u0026quot; } } stage('mac 下阶段2') { steps { echo \u0026quot;staging 2\u0026quot; } } } } } } stage(\u0026quot;其它阶段，读者可根据情况自行添加\u0026quot;){ agent {label \u0026quot;linux\u0026quot;} steps{ echo \u0026quot;发布\u0026quot; } } } post { always { cleanWs() } } // 清理工作空间 } def generateVersion(def ver){ def gitCommitId = env.GIT_COMMIT.take(7) return \u0026quot;${ver}-${gitCommitId}.${env.BUILD_NUMBER}\u0026quot; } def uploadArtifact(def appName, def appVersion, def artifactPath){ echo \u0026quot;根据参数将制品上传到制品库中，待测试\u0026quot; }  代码补充说明 因为 Electron 是跨平台的，我们需要将构建过程分别放到 Windows、Linux、Mac 各平台下执行。所以，不同平台的构建任务需要执行在不同的 agent 上。我们通过在 stage 内定义 agent 实现。如在“Mac平台下构建”的阶段中，agent {label \u0026quot;mac \u0026amp;\u0026amp; nodejs\u0026quot; } 指定了只有 label 同时包括了 mac 和 nodejs 的 agent 才能执行构建。\n多平台的构建应该是并行的，以提升流水线的效率。我们通过 parallel 指令实现。\n另外，默认 Electron 应用使用的三段式版本号设计，即 Major.Minor.Patch。但是笔者认为三段式的版本号信息还不够追踪应用与构建之间的关系。笔者希望版本号能反应出构建号和源代码的 commit id。函数 generateVersion 用于生成此类版本号。生成的版本号，看起来类似这样：1.0.0-f7b06d0.28。\n完整源码地址：https://github.com/zacker330/electronjs-pipeline-demo\n小结 上例中，Electron 应用的流水线设计思路，不只是针对 Electron 应用，所有的跨平台应用的流水线都可以参考此思路进行设计。设计思路大概如下： 1. 多平台构建并行化。本文只有操作系统的类型这个维度进行了说明。现实中，还需要考虑其它维度，如系统位数（32位、64位）、各操作系统下的各版本。 2. 各平台下的构建只做一次编译打包。并将制品上传到制品库，以方便后续步骤或阶段使用。 3. 全局变量与平台相关变量进行分离。\n最后，希望能给读者带来一些启发。\n参考：  持续交付的八大原则：https://blog.csdn.net/tony1130/article/details/6673741 Jenkins nodejs 插件：https://plugins.jenkins.io/nodejs Electron 版本管理：https://electronjs.org/docs/tutorial/electron-versioning#semver  审校  LinuxSuRen（https://github.com/LinuxSuRen）  "
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019-03-13-ready-for-cdf/",
+        "title": "为 Continuous Delivery Foundation 的成立感到兴奋",
+        "tags": ["cdf", "cicd", "jenkins", "opensource"],
+        "description": "CDF 就要来啦",
+        "content": "大概十一年前，我就开始为现在被称为 Jenkins 的项目做贡献，自己当时其实也并不知道在做什么。但是接下来发生的事情令人感觉难以置信，数以百计的贡献者加入，成千上万的新用户开始使用 Jenkins，每天都会运行数以百万条的流水线。这样的增长是充满挑战性的，用户的增长意味着问题的增长，问题的增长就意味着需要新的解决方式。 在大约两年半之前，我在2017年的 Jenkins World Contributor Summit 大会上面对一大群 Jenkins 的贡献者们，为我的所谓的 \u0026lsquo;Jenkins软件基金会\u0026rsquo; 做了宣传，那就是，不要羞于从 Python 社区汲取思想，在我的朋友 Chris Aniszczyk 和 Linux 基金会的帮助下，这个基金会变成了一个更加全面的 *持续交付基金会*（CDF），我的同事 Tracy Miranda 一直在领导这项工作，帮助推动 CDF 的成立。\nKohsuke 为 jenkinsci-dev@ mailing list 撰写了一篇很好的概述文章，其中列举了如果 Jenkins 项目一旦建立后就应该加入 Continuous Delivery Foundation 的原因。如果你对 Jenkins 项目感兴趣，但是还没有阅读过这边文章的话，那我认为你应该花些时间来阅读 Kohsuke 的这份邮件。但是在 这篇文章 中，我 想分享我愿意帮助建立持续交付基金会（CDF）的原因。\n持续交付（CD）已经成为我职业生涯中不可或缺的一部分，甚至在 Jez Humble 将此概念清晰地表述之前，我就开始学习 CD 并且对它一直充满热情。我认为它对软件的开发实践至关重要，当有人说他们没有练习使用 CI 或 CD 时，我感觉这就像回到了原始社会。想象一下，如果有人说 \u0026ldquo;呃，我们在这里有一个采用 Source Control 的项目，但领导们觉得这个东西不太靠谱\u0026rdquo;，我想你肯定会惊掉下巴。\u0026rdquo;在这个时代竟然还有开发团队都不使用源代码管理？\u0026rdquo;。总体来说，我认为CD已经是现代软件开发的基础了。\n持续交付也 不是 说只依赖于 Jenkins 这样的单一工具，它也是依赖于其他的用于协同工作的许多工具。虽然我可能觉得 Jenkins 是所有工具中占最中心位置的工具，但也不是说 Jenkins 是这些工具中唯一优秀的一款工具。但是不幸的是，像 Jenkins 这样的许多开源社区往往对他们的世界有着一定的狭隘观点。他们只专注于他们的事情，虽然这是有道理的，但这及可能导致错失交叉合作产生新价值的机会。\n我们所依赖 CD 的许多工具现在都是完全支持的，或者一小部分由不同的供应商支持。Jenkins 从 CloudBees、微软和 Red Hat 获得了大量投资。在过去的五年中，我逐渐认识到像 CDF 这样的基金会需要在这些不同公司中保持中立的位置。我们为企业贡献者提供一套指导方针，规则和期望，这样开源项目就会更有可能从他们那里获得支持。无论是宣传，代码或是现金，帮助企业贡献者在与我们其他人在一个相同的中立立场上，都会有助于确保开源工作的长久性。而且基金会制定规则的附加好处是，公司的参与者不会有意或无意地想要去超越对方或某个贡献者。\n在免费和开源项目的早期阶段，我们自欺欺人地认为每个人都会阅读我们的许可证，订阅我们的“开源精神”，提出问题并修复问题，或者为我们贡献代码。但 现实情况是，运营大型开源社区其实需要更多的资源。它不仅需要人，需要基础设施，而且还需要钱。像 CDF 这样的基金会为依赖项目或以其他方式投资项目的组织提供了一种有意义的参与方式。 Jenkins 项目的资金预算很紧张，我们每年的花费大约在10,000-15,000美元之间。如果我们要将我们捐赠的资产，提供的免费服务或我过去十一年来所做的事情都收取报酬的话，那么这个数字每年在60,000-80,000美元之间。 Kohsuke 可以证明我有能力为 Jenkins 项目提供免费的东西，但免费的东西并不是每年都保证会有的。为了更好的发展，Jenkins 需要一个稳定的预算，类似于像 FreeBSD Foundation 这样的大型基金会，这样我们便可以投资于服务和人员。\n如果您发现自己在担心开源的可持续性，那么请查看不同的社区，众筹或其他意识形态工具（如许可变更），并且请允许我帮助您。一致的预算是让大型开源项目可持续发展的重要因素。因为开源项目靠的是 *人*。确保有才能的作家，开发人员，营销人员，测试人员和设计师继续提供支持，就代表着他们雇主必须代表他们投入时间的成本，或者他们需要通过其他方式获得报酬。我坚信开源基金会能够为更大的免费和开源项目发展提供解决 预算 问题的途径。\nCDF虽然尚未启动，但我已经对它的潜力感到兴奋。因为这个基金会不仅适用于Jenkins项目，还适用于整个持续交付领域。\n"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/",
         "title": "MPL - 模块化的流水线库",
         "tags": ["jenkins", "pipeline", "shared-library"],
@@ -147,6 +154,20 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/cdf/",
+        "title": "Cdf",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/cicd/",
+        "title": "Cicd",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/cloud-native/",
         "title": "Cloud Native",
         "tags": [],
@@ -210,8 +231,29 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/events/",
+        "title": "Events",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/evergreen/",
         "title": "Evergreen",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/gsoc/",
+        "title": "Gsoc",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/gsoc2019/",
+        "title": "Gsoc2019",
         "tags": [],
         "description": "",
         "content": ""
@@ -280,6 +322,13 @@
         "content": " 最近我们构建和部署服务的方式与原来相比简直就是突飞猛进，像那种笨拙的、单一的、用于构建单体式应用程序的方式已经是过去式了。我们努力了这么久，终于达到了现在的效果。现在的应用为了提供更好的拓展性和可维护性，都会去拆解成各种相互依赖小、解耦性强的微服务，这些服务有各自的依赖和进度。如果你想去构建你所负责的服务，那么从一开始，就应该使用 CI/CD 的方式；当然，如果你走上了这条路， Jenkins 就是你的良师益友。\n如果你是做微服务的话，那让我们在开始之前先花些时间想一想。如果你只在 Jenkins 上构建单体式应用程序，那你肯定每天都会运行很多 Jenkins job, 而且还要不厌其烦地运行很多次。所以，我们应该好好想清楚怎么样来做出一些改变来适应这种事情。其实只需要付出一些努力，Jenkins 就可以帮我们很好地解决这种事情。\n我的 Jenkins 的进阶之路 作为一个 Devops 从业者，我遇到的最大问题是如何管理并优化自己的 Jenkins agent 结构。如果只是用 Jenkins 玩玩，实验性地跑一些流水线，那根本不用考虑 agent 的事情。如果你每天要跑成百上千条流水线的话，那考虑怎么去做优化就是一件非常非常重要的事情了。在 Jenkins 进阶之路中，我也尝试了各种不同的方式来寻找最好的 Jenkins agent 的使用方式。相信如果你也和我一样经历过，那下面这些事情你一定会很熟悉喽。\n下面是我在这些年中使用 Jenkins 的各个阶段.\n 所有的构建都在 master 节点上跑，在这个节点上运行所有的组件. (我给这个阶段起了个可爱的名字， Hello Jenkins) 创建一个 Jenkins EC2 代理，并且在这个代理上运行所有的构建，怎么说呢， 就是大而全，这个节点什么都能做。如果需要同时做多条任务，那就把这个大而全的节点克隆一份。 (这个阶段我起的名字是 Monster Agent.) 为每种服务创建不同的 Jenkins EC2 的节点 (这个阶段我起的名字叫做 Snowflake Agent.) 在容器中运行流水线的所有步骤。 打个比方，在 Jenkins 中使用 Docker Plugin 这个插件将代理挂载到容器中，或者使用 multi-stage Dockerfiles 把所有构建，测试打包的流程都封装起来。这两种方法都是很好的容器抽象化的开端，并且允许您轻松地将制品从一个容器复制到另一个容器。当然了，每一种方法都是需要访问 Docker engine 的。为了让我的 Jenkins 代理能够正常工作，现在我用以下几种方式来管理 docker host 在我的 Jenkins 主容器中运行一个Docker engine - Docker in Docker (DinD) 把主机上的 Docker socket 挂载到我的容器中来，让我的容器能够以 sidecar 的方式运行。 为 Jenkins 主服务器配置单个外部 EC2 Docker 主机，以用于在容器中启动构建 使用 EC2 插件和包含 Docker Engine 的 AMI 动态启动代理，然后运行多阶段 Dockerfile 中的所有步骤  以上这些阶段各有利弊，但都是为了让我们从管理 Jenkins 节点中解放出来。不过，最近我又进阶到了另外一个阶段：Jenkins on Kubernetes.\n一旦你在 Jenkins 中把构建节点和 job 都容器化了的话，迁移工作平台将变的十分简单易行。在这里郑重声明一下，在我用这个方法之前我一直没有接触过 Kubernetes，一次也没有。也就是说，在 Google Cloud Platform（GCP）GKE 中创建 Kubernetes 集群，使用 Helm Chart启动 Jenkins master ,并在 Kubernetes 集群中的 Jenkins 代理中运行构建是非常简单的。\n流水线脚本中启动 K8s 中的代理 这篇文章就是为了向大家说明，如何配置 Jenkins 才能使流水线脚本能够在 K8s 集群中启动 Jenkins 节点。首先你要先安装 Kubernetes plugin 这个插件。有意思的是，当我用 Helm chart 来安装我的 Jenkins 时，安装好的 Jenkins 里面已经有了这个插件。还有一个前提，是你启动的 Jenkins 节点要和你的 Jenkins master 在同一个 K8s 集群里。\n一旦在 K8s 中运行了你的 Jenkins master 节点，那只需要再简单地配置几步，就能启动一个小构建啦。\n配置 Jenkins Master 为了保证 Jenkins 能够访问 K8s 集群的资源，首先你需要按照以下步骤创建一些凭据：\n 进入 Jenkins 的 UI 界面，点击左边导航栏里的凭据链接 点击 Stores scoped to Jenkins 列表下 global 中的 Add credentials (将鼠标悬停在链接旁边即可看到箭头) 点击添加凭证 写好 Kubernetes Service Account 将范围设置为全局 点击 OK 按钮  这样之后 Jenkins 就可以使用这个凭据去访问 K8s 的资源啦\n在 Jenkins Master 中配置云 下一步就是在 Jenkins 中设置云的配置\n 进入 Jenkins UI 界面，点击 系统管理 → 系统设置 进入管理界面后查找 『云』，一般在下面，然后点击 『新增一个云』，选择 kubernetes 类型 然后这些是必填的参数 Name: 这个自定义， 默认的是kubernetes Kubernetes URL: https://kubernetes.default- 这个一般是从你的 service account 自动配置的 Kubernetes Namespace: 一般是 default 除非你要在一个特殊的命名空间 ，否则不要动他 Credentials: 选择上一步你创建的凭据 Jenkins URL: http://\u0026lt;your_jenkins_hostname\u0026gt;:8080 Jenkins tunnel: \u0026lt;your_jenkins_hostname\u0026gt;:5555 - 这就是用来和 Jenkins 启动的 agent 进行交互的端口  你看，只需要几个参数就能在 K8s 集群中启动一些节点了，当然你的环境有需要的话，你也可以做一些其他的调整\n现在你已经可以通过定义一些 pod 来让 Jenkins master 访问 K8s 集群了。pod其实是 K8s 中的概念，在一个 pod 中里面会有一个或者多个容器，它们共享网络还有存储，然后我们可以在这个 pod 中执行一些构建工作。每一个 Jenkins 节点都是作为 K8s pod 来启动的。这个 pod 里面经常都会包含一个默认的 JNLP 的容器，还有一些你在 pod 模板中定义的容器。现在有至少两种方法来定义你的 pod template。\n通过 Jenkins UI 配置一个 pod template  还是老地方 Manage Jenkins → Configure Systems 还是老地方 找到之前配置 Jenkins K8s 的地方 点击 Add Pod Template button 选择 Kubernetes Pod Template 输入下面的值   Name:自定义 Namespace: default-除非你想换个你在上一步自定义的命名空间 Labels: 自定义 - 这个将用来匹配你在 jenkinsfile 中的 label 值 Usage: 如果你想让这个 pod 作为默认节点的话，就选择 \u0026ldquo;Use this node as much as possible\u0026rdquo;， 如果选择 \u0026ldquo;Only build jobs with label matching expressions matching this node\u0026rdquo; 的话 那就是只有在 Jenkins 脚本中定义的label匹配的构建才能使用这个节点 The name of the pod template to inherit from: - 这个可以置空. 现在还用不到 Containers: 你想在这个 pod 中启动的容器，在下面会有详细的介绍 EnvVars: 你想在 pod 中注入的环境变量 下面会有接受 Volumes: 你想在 pod 中挂载的任何一种的卷  需要记住，在一个 pod 中会有不止一个容器，它们都是同生共死的。如果你是用 Helm chart 安装 Jenkins 的话，pod 中就会包含 JNLP 这个容器，这个容器也是 Jenkins agent 中必须包含的。然而为了完成更多的服务的构建，你还需要添加一些其他工具链的容器。\n添加容器模板  进入 Jenkins UI 界面，回到上一步创建 pod template 的地方 点击 Add Container 按钮， 选择 Container Template 输入下面的值 Name:自定义 Docker image: 根据你自己的需求来写，比如你在构建一个用 go 写的应用，那你就可以输入 golang:1.11-alpine3.8 Label: 表明要用在流水线脚本中引用此容器模板的标签字符串 Always pull image: - 如果你想让 pod 启动的时候都去拉取镜像 那就选择这个  你可以保留其他参数的默认值，但是你可以看到该插件可以对你的 pod 以及在其中运行的各个容器进行很详细地控制。你可以通过此插件设置在 Kubernetes pod 配置中的任何值。你还可以通过输入原始 YAML 来注入配置数据。你无需因选项过多而分心，选择配置它们中得一小部分就可以获得工作环境啦。\n您可以单击容器模板中的“添加环境变量”按钮，将环境变量注入特定容器，也可以单击模板中的“添加环境变量”按钮，将环境变量注入所有的容器。 以下环境变量会自动注入默认的 JNLP 容器，来保障它能自动连接到 Jenkins 主服务器：\n JENKINS_URL: Jenkins 网页界面网址 JENKINS_JNLP_URL: Jenkins 特定 slave 中 jnlp 的 url JENKINS_SECRET: 身份验证的密钥 JENKINS_NAME: Jenkins 代理的名称  如果单击“添加卷”按钮，您将看到几个用于添加卷的选项,在这里我使用 Host Path Volume 选项将 docker socket 安装在 pod 中。然后，我可以运行安装了 Docker 客户端的容器，并且来构建和推送 Docker 镜像。\n此时，我们为 Kubernetes 集群创建了一个云配置，并定义了一个由一个或多个容器组成的 pod。现在，我们如何使用它来运行 Jenkins 工作？ 很简单，只需要我们在 Jenkins 流水线脚本中通过标签引用 pod 和容器就可以了。 本文中的示例是使用脚本流水线，当然您可以使用声明式流水线语法实现相同的结果：\nnode('test-pod') { stage('Checkout') { checkout scm } stage('Build'){ container('go-agent') { // This is where we build our code. } } }  用 jenkinsfile 来实现相同的功能 通过 UI 配置插件现在看起来是很不错的。但是有一个明显的问题是，配置不能像源代码一样能够进行版本控制和存储。幸运的是，您可以直接在 Jenkinsfile 中创建整个 pod 定义。哈哈，在 Jenkinsfile 中有什么你不能做的???\n可以将 UI 或 YAML 定义中可用的任何配置参数添加到 podTemplate 和 containerTemplate 部分。 在下面的示例中，我已经定义了一个包含两个容器模板的 pod。 pod 标签将会用于节点，表示我们想要启动此 pod 的实例。 直接在节点内定义但没有在容器块中定义的任何步骤，都可以在默认的 JNLP 容器中运行。\n容器块用于表示该容器块内的步骤应在具有给定标签的容器内运行。我已经定义了一个标签为 golang 的容器模板，我将用它来构建 Go 可执行文件，我最终将其打包成 Docker 镜像。在 volumes 中，我已经指出我想要挂载主机的 Docker 套接字，但我仍然需要 Docker 客户端使用 Docker API 与它进行交互。因此，我已经定义了一个标签为 docker 的容器模板，该模板使用安装了 Docker 客户端的镜像。\npodTemplate( name: 'test-pod', label: 'test-pod', containers: [ containerTemplate(name: 'golang', image: 'golang:1.9.4-alpine3.7'), containerTemplate(name: 'docker', image:'trion/jenkins-docker-client'), ], volumes: [ hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock', ], { //node = the pod label node('test-pod'){ //container = the container label stage('Build'){ container('golang'){ // This is where we build our code. } } stage('Build Docker Image'){ container(‘docker’){ // This is where we build the Docker image } } } })  在我的基于 Docker 的流水线脚本中，我构建了 Docker 镜像并将它们推送到了 Docker 仓库，对我来说，能够复制这些配置信息非常重要。完成后，我已准备好使用 gcloud（Google Cloud SDK）构建我的镜像，并将该镜像推送到 Google Container Registry，以便部署到我的 K8s 群集。\n为此，我使用 gcloud 镜像指定了一个容器模板，并将我的 docker 命令更改为 gcloud 命令。 就这么简单！\npodTemplate( name: 'test-pod', label: 'test-pod', containers: [ containerTemplate(name: 'golang', image: 'golang:1.9.4-alpine3.7'), containerTemplate(name: 'gcloud', image:'gcr.io/cloud-builders/gcloud'), ], { //node = the pod label node('test-pod'){ //container = the container label stage('Build'){ container('golang'){ // This is where we build our code. } } stage('Build Docker Image'){ container(‘gcloud’){ //This is where we build and push our Docker image. } } } })  在 Kubernetes 上运行 Jenkins master、 Jenkins 代理，构建和部署示例应用程序其实只花了我几个小时。但这之后，我花了一个周末的时间才深入了解了平台。如果你学得够快，我相信你在几天内就可以完全掌握并且灵活运用这个平台了。\n"
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/",
+        "title": "Jenkins 已经被 Google Summer Of Code 2019 接受！",
+        "tags": ["gsoc", "gsoc2019", "events", "community"],
+        "description": "19年的 Google Summer Of Code 正式起航",
+        "content": " 作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在2019年的 Google Summer of Code上 已经被接受。 今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。\n这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。 我们有25个项目想法，而且有超过30个准导师（不断增多！）。 这已经超过了2016年以及2018年的总和。 有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！\n下一步？ GSoC 已经正式启动，请期待更多的学生在我们的Gitter 频道和邮件列表中联系项目。 在特别兴趣小组和子项目频道中已经有了很多沟通。 我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。 然后，我们将会继续这个申请，选择项目并分配导师团队。\n所有关于 Jenkins GSoC 的信息都可以在子项目页面上找到。\n我是一个学生。如何申请？ 在/projects/gsoc/students[学生的信息]页面中有完整的申请指导。\n我们鼓励感兴趣的学生尽早联系 Jenkins 社区并开始探索项目。所有的项目在对应的页面上都有聊天室与邮件列表。 我们也会为学生组织工作日的会议，在这些会议上你可以见到管理员和导师，并向他们提问。 另外，加入我们的Gitter 频道和邮件列表，以便收到项目中即将到来的事情。\n3月25日开放申请，但你现在就可以准备了！利用这段申请前的时间来讨论并改进你的项目提议。 我们也建议你着手熟悉 Jenkins 并开始探索你的提议的领域。项目的想法包括快速开始的指导，以及有助于初期研究时对新手友好的问题。 如果没有看到任何感兴趣的，你可以提出你自己的项目想法或者 查看由其他参与 GSoC 的组织提出的想法。\n我想要成为一名导师。会不会太晚了？ 不晚！我们正在寻找更多的项目想法，以及 Jenkins 的贡献者或用户中对 Jenkins 富有热情并想要指导学生的人。 无须底层经验，导师可以和学生一起研究项目并给出技术指导。 我们尤其对 Java 技术栈方向感兴趣，以及一些新的技术和领域（例如：Kubernetes, IoT, Python, Go 或者其他的）。\n你可以提议一个新项目或者加入已有的。查看博客寻找导师以及导师的信息中的细节。 如果你想要提议一个新项目，那么请在3月11日之前完成，以便学生有时间探索并准备他们的提议。\n今年，导师并不必须要有 Jenkins 开发上的很强的专业知识。目标是指导学生参与到 Jenkins 社区。 如果需要特殊的专业知识，GSoC 组织管理员会帮助寻找顾问。\n重要的日期  3月11日 - 停止新的 GSoC 项目提议 4月9日 - 停止接受学生的申请 5月6日 - 宣布接受了的项目，团队开始社区合作以及编码 8月26日 - 结束编码 9月3日 - 宣布结果  查看 GSoC 时间线了解更多信息。 在 GSoC 期间和之后，我们也会组织 Jenkins 相关的特别活动（例如：在 Jenkins World 上）。\n"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2018-11-14-first-voice/",
         "title": "Jenkins 微信订阅号",
         "tags": [],
@@ -310,6 +359,13 @@
     {
         "uri": "https://jenkins-zh.github.io/tags/kubernetes/",
         "title": "Kubernetes",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/opensource/",
+        "title": "Opensource",
         "tags": [],
         "description": "",
         "content": ""

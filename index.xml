@@ -38,6 +38,18 @@ Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台
     </item>
     
     <item>
+      <title>为 Continuous Delivery Foundation 的成立感到兴奋</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-ready-for-cdf/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-ready-for-cdf/</guid>
+      <description>大概十一年前，我就开始为现在被称为 Jenkins 的项目做贡献，自己当时其实也并不知道在做什么。但是接下来发生的事情令人感觉难以置信，数以百计的贡献者加入，成千上万的新用户开始使用 Jenkins，每天都会运行数以百万条的流水线。这样的增长是充满挑战性的，用户的增长意味着问题的增长，问题的增长就意味着需要新的解决方式。 在大约两年半之前，我在2017年的 Jenkins World Contributor Summit 大会上面对一大群 Jenkins 的贡献者们，为我的所谓的 &amp;lsquo;Jenkins软件基金会&amp;rsquo; 做了宣传，那就是，不要羞于从 Python 社区汲取思想，在我的朋友 Chris Aniszczyk 和 Linux 基金会的帮助下，这个基金会变成了一个更加全面的 *持续交付基金会*（CDF），我的同事 Tracy Miranda 一直在领导这项工作，帮助推动 CDF 的成立。
+Kohsuke 为 jenkinsci-dev@ mailing list 撰写了一篇很好的概述文章，其中列举了如果 Jenkins 项目一旦建立后就应该加入 Continuous Delivery Foundation 的原因。如果你对 Jenkins 项目感兴趣，但是还没有阅读过这边文章的话，那我认为你应该花些时间来阅读 Kohsuke 的这份邮件。但是在 这篇文章 中，我 想分享我愿意帮助建立持续交付基金会（CDF）的原因。
+持续交付（CD）已经成为我职业生涯中不可或缺的一部分，甚至在 Jez Humble 将此概念清晰地表述之前，我就开始学习 CD 并且对它一直充满热情。我认为它对软件的开发实践至关重要，当有人说他们没有练习使用 CI 或 CD 时，我感觉这就像回到了原始社会。想象一下，如果有人说 &amp;ldquo;呃，我们在这里有一个采用 Source Control 的项目，但领导们觉得这个东西不太靠谱&amp;rdquo;，我想你肯定会惊掉下巴。&amp;rdquo;在这个时代竟然还有开发团队都不使用源代码管理？&amp;rdquo;。总体来说，我认为CD已经是现代软件开发的基础了。
+持续交付也 不是 说只依赖于 Jenkins 这样的单一工具，它也是依赖于其他的用于协同工作的许多工具。虽然我可能觉得 Jenkins 是所有工具中占最中心位置的工具，但也不是说 Jenkins 是这些工具中唯一优秀的一款工具。但是不幸的是，像 Jenkins 这样的许多开源社区往往对他们的世界有着一定的狭隘观点。他们只专注于他们的事情，虽然这是有道理的，但这及可能导致错失交叉合作产生新价值的机会。</description>
+    </item>
+    
+    <item>
       <title>MPL - 模块化的流水线库</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
@@ -300,6 +312,24 @@ JCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或�
 我的 Jenkins 的进阶之路 作为一个 Devops 从业者，我遇到的最大问题是如何管理并优化自己的 Jenkins agent 结构。如果只是用 Jenkins 玩玩，实验性地跑一些流水线，那根本不用考虑 agent 的事情。如果你每天要跑成百上千条流水线的话，那考虑怎么去做优化就是一件非常非常重要的事情了。在 Jenkins 进阶之路中，我也尝试了各种不同的方式来寻找最好的 Jenkins agent 的使用方式。相信如果你也和我一样经历过，那下面这些事情你一定会很熟悉喽。
 下面是我在这些年中使用 Jenkins 的各个阶段.
  所有的构建都在 master 节点上跑，在这个节点上运行所有的组件. (我给这个阶段起了个可爱的名字， Hello Jenkins) 创建一个 Jenkins EC2 代理，并且在这个代理上运行所有的构建，怎么说呢， 就是大而全，这个节点什么都能做。如果需要同时做多条任务，那就把这个大而全的节点克隆一份。 (这个阶段我起的名字是 Monster Agent.) 为每种服务创建不同的 Jenkins EC2 的节点 (这个阶段我起的名字叫做 Snowflake Agent.) 在容器中运行流水线的所有步骤。 打个比方，在 Jenkins 中使用 Docker Plugin 这个插件将代理挂载到容器中，或者使用 multi-stage Dockerfiles 把所有构建，测试打包的流程都封装起来。这两种方法都是很好的容器抽象化的开端，并且允许您轻松地将制品从一个容器复制到另一个容器。当然了，每一种方法都是需要访问 Docker engine 的。为了让我的 Jenkins 代理能够正常工作，现在我用以下几种方式来管理 docker host 在我的 Jenkins 主容器中运行一个Docker engine - Docker in Docker (DinD) 把主机上的 Docker socket 挂载到我的容器中来，让我的容器能够以 sidecar 的方式运行。 为 Jenkins 主服务器配置单个外部 EC2 Docker 主机，以用于在容器中启动构建 使用 EC2 插件和包含 Docker Engine 的 AMI 动态启动代理，然后运行多阶段 Dockerfile 中的所有步骤  以上这些阶段各有利弊，但都是为了让我们从管理 Jenkins 节点中解放出来。不过，最近我又进阶到了另外一个阶段：Jenkins on Kubernetes.</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 已经被 Google Summer Of Code 2019 接受！</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</guid>
+      <description>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在2019年的 Google Summer of Code上 已经被接受。 今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。
+这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。 我们有25个项目想法，而且有超过30个准导师（不断增多！）。 这已经超过了2016年以及2018年的总和。 有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！
+下一步？ GSoC 已经正式启动，请期待更多的学生在我们的Gitter 频道和邮件列表中联系项目。 在特别兴趣小组和子项目频道中已经有了很多沟通。 我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。 然后，我们将会继续这个申请，选择项目并分配导师团队。
+所有关于 Jenkins GSoC 的信息都可以在子项目页面上找到。
+我是一个学生。如何申请？ 在/projects/gsoc/students[学生的信息]页面中有完整的申请指导。
+我们鼓励感兴趣的学生尽早联系 Jenkins 社区并开始探索项目。所有的项目在对应的页面上都有聊天室与邮件列表。 我们也会为学生组织工作日的会议，在这些会议上你可以见到管理员和导师，并向他们提问。 另外，加入我们的Gitter 频道和邮件列表，以便收到项目中即将到来的事情。
+3月25日开放申请，但你现在就可以准备了！利用这段申请前的时间来讨论并改进你的项目提议。 我们也建议你着手熟悉 Jenkins 并开始探索你的提议的领域。项目的想法包括快速开始的指导，以及有助于初期研究时对新手友好的问题。 如果没有看到任何感兴趣的，你可以提出你自己的项目想法或者 查看由其他参与 GSoC 的组织提出的想法。
+我想要成为一名导师。会不会太晚了？ 不晚！我们正在寻找更多的项目想法，以及 Jenkins 的贡献者或用户中对 Jenkins 富有热情并想要指导学生的人。 无须底层经验，导师可以和学生一起研究项目并给出技术指导。 我们尤其对 Java 技术栈方向感兴趣，以及一些新的技术和领域（例如：Kubernetes, IoT, Python, Go 或者其他的）。
+你可以提议一个新项目或者加入已有的。查看博客寻找导师以及导师的信息中的细节。 如果你想要提议一个新项目，那么请在3月11日之前完成，以便学生有时间探索并准备他们的提议。
+今年，导师并不必须要有 Jenkins 开发上的很强的专业知识。目标是指导学生参与到 Jenkins 社区。 如果需要特殊的专业知识，GSoC 组织管理员会帮助寻找顾问。</description>
     </item>
     
     <item>
