@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019-03-13-ready-for-cdf/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
   </url>
@@ -121,7 +126,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/community/</loc>
-    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -163,6 +168,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/events/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -173,11 +179,13 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/gsoc/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/gsoc2019/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -223,10 +231,6 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019-01-30-k8s-jenkins-secet-agent/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</loc>
   </url>
   
   <url>

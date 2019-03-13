@@ -6,6 +6,7 @@
     <description>Recent content in Gsoc on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +14,7 @@
     <item>
       <title>Jenkins 已经被 Google Summer Of Code 2019 接受！</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</guid>
       <description>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在2019年的 Google Summer of Code上 已经被接受。 今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。

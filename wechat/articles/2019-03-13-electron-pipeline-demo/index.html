@@ -39,7 +39,7 @@
 
 <meta itemprop="datePublished" content="2019-03-13T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="294">
+<meta itemprop="wordCount" content="291">
 
 
 
@@ -186,7 +186,7 @@
 		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019-03-13-ready-for-cdf/" class="dib f6 pr1 hover-bg-light-gray br-100" title="为 Continuous Delivery Foundation 的成立感到兴奋">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 已经被 Google Summer Of Code 2019 接受！">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -224,7 +224,7 @@
 
 
 
-<p>面向读者：最好是了解 Jenkins 流水线的基本语法。</p>
+<p>面向读者：需要了解 Jenkins 流水线的基本语法。</p>
 
 <p>Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。</p>
 
@@ -332,10 +332,13 @@ def uploadArtifact(def appName, def appVersion, def artifactPath){
 
 <h3 id="小结">小结</h3>
 
-<p>上例中，Electron 应用的流水线设计思路，不只是针对 Electron 应用，所有的跨平台应用的流水线都可以参考此思路进行设计。设计思路大概如下：
-1. 多平台构建并行化。本文只有操作系统的类型这个维度进行了说明。现实中，还需要考虑其它维度，如系统位数（32位、64位）、各操作系统下的各版本。
-2. 各平台下的构建只做一次编译打包。并将制品上传到制品库，以方便后续步骤或阶段使用。
-3. 全局变量与平台相关变量进行分离。</p>
+<p>上例中，Electron 应用的流水线设计思路，不只是针对 Electron 应用，所有的跨平台应用的流水线都可以参考此思路进行设计。设计思路大概如下：</p>
+
+<ol>
+<li>多平台构建并行化。本文只有操作系统的类型这个维度进行了说明。现实中，还需要考虑其它维度，如系统位数（32位、64位）、各操作系统下的各版本。</li>
+<li>各平台下的构建只做一次编译打包。并将制品上传到制品库，以方便后续步骤或阶段使用。</li>
+<li>全局变量与平台相关变量进行分离。</li>
+</ol>
 
 <p>最后，希望能给读者带来一些启发。</p>
 

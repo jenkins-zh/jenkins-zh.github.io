@@ -30,11 +30,29 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-electron-pipeline-demo/</guid>
-      <description>面向读者：最好是了解 Jenkins 流水线的基本语法。
+      <description>面向读者：需要了解 Jenkins 流水线的基本语法。
 Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。
 本文将介绍 Electron 桌面应用的流水线的设计。
 但是如何介绍呢？倒是个大问题。笔者尝试直接贴代码，在代码注释中讲解。这是一次尝试，希望得到你的反馈。
 完整代码 pipeline { // 我们决定每一个阶段指定 agent，所以， // 流水线的 agent 设置为 none，这样不会占用 agent agent none // 指定整条流水线的环境变量 environment { APP_VERSION = &amp;quot;&amp;quot; APP_NAME = &amp;quot;electron-webpack-quick-start&amp;quot; } stages { stage(&amp;quot;生成版本号&amp;quot;){ agent {label &amp;quot;linux&amp;quot; } steps{ script{ APP_VERSION = generateVersion(&amp;quot;1.0.0&amp;quot;) echo &amp;quot;version is ${APP_VERSION}&amp;quot; }} } stage(&#39;并行构建&#39;) { // 快速失败，只要其中一个平台构建失败， // 整次构建算失败 failFast true // parallel 闭包内的阶段将并行执行 parallel { stage(&#39;Windows平台下构建&#39;) { agent {label &amp;quot;windows &amp;amp;&amp;amp; nodejs&amp;quot; } steps { echo &amp;quot;${APP_VERSION}&amp;quot; } } stage(&#39;Linux平台下构建&#39;) { agent {label &amp;quot;linux &amp;amp;&amp;amp; nodejs&amp;quot; } // 不同平台可能存在不同的环境变量 // environment 支持阶段级的环境变量 environment{ SUFFIX = &amp;quot;tar.</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 已经被 Google Summer Of Code 2019 接受！</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</guid>
+      <description>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在2019年的 Google Summer of Code上 已经被接受。 今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。
+这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。 我们有25个项目想法，而且有超过30个准导师（不断增多！）。 这已经超过了2016年以及2018年的总和。 有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！
+下一步？ GSoC 已经正式启动，请期待更多的学生在我们的Gitter 频道和邮件列表中联系项目。 在特别兴趣小组和子项目频道中已经有了很多沟通。 我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。 然后，我们将会继续这个申请，选择项目并分配导师团队。
+所有关于 Jenkins GSoC 的信息都可以在子项目页面上找到。
+我是一个学生。如何申请？ 在/projects/gsoc/students[学生的信息]页面中有完整的申请指导。
+我们鼓励感兴趣的学生尽早联系 Jenkins 社区并开始探索项目。所有的项目在对应的页面上都有聊天室与邮件列表。 我们也会为学生组织工作日的会议，在这些会议上你可以见到管理员和导师，并向他们提问。 另外，加入我们的Gitter 频道和邮件列表，以便收到项目中即将到来的事情。
+3月25日开放申请，但你现在就可以准备了！利用这段申请前的时间来讨论并改进你的项目提议。 我们也建议你着手熟悉 Jenkins 并开始探索你的提议的领域。项目的想法包括快速开始的指导，以及有助于初期研究时对新手友好的问题。 如果没有看到任何感兴趣的，你可以提出你自己的项目想法或者 查看由其他参与 GSoC 的组织提出的想法。
+我想要成为一名导师。会不会太晚了？ 不晚！我们正在寻找更多的项目想法，以及 Jenkins 的贡献者或用户中对 Jenkins 富有热情并想要指导学生的人。 无须底层经验，导师可以和学生一起研究项目并给出技术指导。 我们尤其对 Java 技术栈方向感兴趣，以及一些新的技术和领域（例如：Kubernetes, IoT, Python, Go 或者其他的）。
+你可以提议一个新项目或者加入已有的。查看博客寻找导师以及导师的信息中的细节。 如果你想要提议一个新项目，那么请在3月11日之前完成，以便学生有时间探索并准备他们的提议。
+今年，导师并不必须要有 Jenkins 开发上的很强的专业知识。目标是指导学生参与到 Jenkins 社区。 如果需要特殊的专业知识，GSoC 组织管理员会帮助寻找顾问。</description>
     </item>
     
     <item>
@@ -312,24 +330,6 @@ JCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或�
 我的 Jenkins 的进阶之路 作为一个 Devops 从业者，我遇到的最大问题是如何管理并优化自己的 Jenkins agent 结构。如果只是用 Jenkins 玩玩，实验性地跑一些流水线，那根本不用考虑 agent 的事情。如果你每天要跑成百上千条流水线的话，那考虑怎么去做优化就是一件非常非常重要的事情了。在 Jenkins 进阶之路中，我也尝试了各种不同的方式来寻找最好的 Jenkins agent 的使用方式。相信如果你也和我一样经历过，那下面这些事情你一定会很熟悉喽。
 下面是我在这些年中使用 Jenkins 的各个阶段.
  所有的构建都在 master 节点上跑，在这个节点上运行所有的组件. (我给这个阶段起了个可爱的名字， Hello Jenkins) 创建一个 Jenkins EC2 代理，并且在这个代理上运行所有的构建，怎么说呢， 就是大而全，这个节点什么都能做。如果需要同时做多条任务，那就把这个大而全的节点克隆一份。 (这个阶段我起的名字是 Monster Agent.) 为每种服务创建不同的 Jenkins EC2 的节点 (这个阶段我起的名字叫做 Snowflake Agent.) 在容器中运行流水线的所有步骤。 打个比方，在 Jenkins 中使用 Docker Plugin 这个插件将代理挂载到容器中，或者使用 multi-stage Dockerfiles 把所有构建，测试打包的流程都封装起来。这两种方法都是很好的容器抽象化的开端，并且允许您轻松地将制品从一个容器复制到另一个容器。当然了，每一种方法都是需要访问 Docker engine 的。为了让我的 Jenkins 代理能够正常工作，现在我用以下几种方式来管理 docker host 在我的 Jenkins 主容器中运行一个Docker engine - Docker in Docker (DinD) 把主机上的 Docker socket 挂载到我的容器中来，让我的容器能够以 sidecar 的方式运行。 为 Jenkins 主服务器配置单个外部 EC2 Docker 主机，以用于在容器中启动构建 使用 EC2 插件和包含 Docker Engine 的 AMI 动态启动代理，然后运行多阶段 Dockerfile 中的所有步骤  以上这些阶段各有利弊，但都是为了让我们从管理 Jenkins 节点中解放出来。不过，最近我又进阶到了另外一个阶段：Jenkins on Kubernetes.</description>
-    </item>
-    
-    <item>
-      <title>Jenkins 已经被 Google Summer Of Code 2019 接受！</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-gsoc2019-announcement/</guid>
-      <description>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在2019年的 Google Summer of Code上 已经被接受。 今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。
-这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。 我们有25个项目想法，而且有超过30个准导师（不断增多！）。 这已经超过了2016年以及2018年的总和。 有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！
-下一步？ GSoC 已经正式启动，请期待更多的学生在我们的Gitter 频道和邮件列表中联系项目。 在特别兴趣小组和子项目频道中已经有了很多沟通。 我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。 然后，我们将会继续这个申请，选择项目并分配导师团队。
-所有关于 Jenkins GSoC 的信息都可以在子项目页面上找到。
-我是一个学生。如何申请？ 在/projects/gsoc/students[学生的信息]页面中有完整的申请指导。
-我们鼓励感兴趣的学生尽早联系 Jenkins 社区并开始探索项目。所有的项目在对应的页面上都有聊天室与邮件列表。 我们也会为学生组织工作日的会议，在这些会议上你可以见到管理员和导师，并向他们提问。 另外，加入我们的Gitter 频道和邮件列表，以便收到项目中即将到来的事情。
-3月25日开放申请，但你现在就可以准备了！利用这段申请前的时间来讨论并改进你的项目提议。 我们也建议你着手熟悉 Jenkins 并开始探索你的提议的领域。项目的想法包括快速开始的指导，以及有助于初期研究时对新手友好的问题。 如果没有看到任何感兴趣的，你可以提出你自己的项目想法或者 查看由其他参与 GSoC 的组织提出的想法。
-我想要成为一名导师。会不会太晚了？ 不晚！我们正在寻找更多的项目想法，以及 Jenkins 的贡献者或用户中对 Jenkins 富有热情并想要指导学生的人。 无须底层经验，导师可以和学生一起研究项目并给出技术指导。 我们尤其对 Java 技术栈方向感兴趣，以及一些新的技术和领域（例如：Kubernetes, IoT, Python, Go 或者其他的）。
-你可以提议一个新项目或者加入已有的。查看博客寻找导师以及导师的信息中的细节。 如果你想要提议一个新项目，那么请在3月11日之前完成，以便学生有时间探索并准备他们的提议。
-今年，导师并不必须要有 Jenkins 开发上的很强的专业知识。目标是指导学生参与到 Jenkins 社区。 如果需要特殊的专业知识，GSoC 组织管理员会帮助寻找顾问。</description>
     </item>
     
     <item>
