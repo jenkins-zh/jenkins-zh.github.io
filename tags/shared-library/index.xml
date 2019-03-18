@@ -13,10 +13,10 @@
     
     <item>
       <title>MPL - 模块化的流水线库</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</guid>
       <description>MPL - 模块化的流水线库 尽管通过自动化部署加快了开发速度，但由于在 DevOps 方面缺少协作，我们一个客户正因此而放慢产品的上市时间。虽然他们也投入了资源来做 DevOps ，但每条生产流水线都是独立设置的，迫使团队为每个项目重新造轮子。更糟糕的是，由于没有跨团队协作，平台中的任何错误又会出现在每条新的流水线中。许多客户都有类似的问题存在，因此我们决定开发一个既能帮助现有客户，又能适应未来使用需求的通用工具。使用通用框架且标准化的 CI/CD 平台是最显而易见的选择，但这将导致缺少灵活性的单体结构（monolithic structure），最终会变得举步维艰。每个团队都需要在自己的流水线上工作，基于此，我们开发了一个方便 DevOps 流水线的每个可重用部分可供以后使用的解决方案 — Jenkins 驱动的模块化流水线库。
 解决方案：模块化流水线库 模块化流水线库（译注：modular pipeline library，简称 MPL）是一个高度灵活的 Jenkins 流水线共享库，它可以轻松将最佳实践共享到整个公司。它具有清晰的模块化结构，先进的测试框架，多级嵌套的能力，流水线配置系统，被改进了的错误处理机制以及许多其他有用的组件。
 我们将通过以下几部分内容深入了解并解释 MPL 是如何工作的：

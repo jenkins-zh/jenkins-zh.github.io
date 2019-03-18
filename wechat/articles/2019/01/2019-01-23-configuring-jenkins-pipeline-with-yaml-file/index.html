@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    
+    <link rel="preload" href="https://jenkins-zh.github.io/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.github.io/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.github.io/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     
+    <title>使用 YAML 文件配置 Jenkins 流水线 | Jenkins 中文社区</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     <meta name="generator" content="Hugo 0.52" />
+
+      
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      
+
+    <link href='/dist/main.css' rel='stylesheet' type="text/css" /><script src="/js/chart.js"></script>
+<style>
+  img.avatar {
+    width: 32px;
+    display: inline;
+  }
+</style>
+<meta property="og:title" content="使用 YAML 文件配置 Jenkins 流水线" />
+<meta property="og:description" content="这也是一种自定义流水线 DSL 的方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/" />
+
+<meta itemprop="name" content="使用 YAML 文件配置 Jenkins 流水线">
+<meta itemprop="description" content="这也是一种自定义流水线 DSL 的方法">
+
+
+
+<meta itemprop="wordCount" content="680">
+
+
+
+<meta itemprop="keywords" content="pipeline," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 YAML 文件配置 Jenkins 流水线"/>
+<meta name="twitter:description" content="这也是一种自定义流水线 DSL 的方法"/>
+
+
+
+
+  </head>
+  <body class="ma0 sans-serif bg-primary-color-light">
+    
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://jenkins-zh.github.io/" class="link white">
+         Jenkins 中文社区
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/wechat/" class="dim link light-silver"
+            >
+            微信
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/event/" class="dim link light-silver"
+            >
+            活动
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/about/" class="dim link light-silver"
+            >
+            关于我们
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="http://jenkins.io/zh" class="dim link light-silver"
+            target="_blank">
+            Jenkins 官网
+              
+            
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="email-address">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+      placeholder="搜索文档" type="text"
+      name="email-address" value="" style="background-image:url('/images/icon-search.png');background-size:16px 16px;">
+  </fieldset>
+</form>
+</div>
+
+    <div class="list ma0 pa0 dn dib-l"></div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/jenkins-zh/jenkins-zh/" data-size="large" data-show-count="false" aria-label="Star Jenkins WeChat GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+    
+    <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+      
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+
+  <aside class="mw5 br3 mv3 nested-links">
+    
+    
+      
+        <h3 class="f4 dib">
+            翟志军
+        </h3>
+
+      
+      
+        <p class="lh-copy measure center mt0 f6 black-60">
+          show me the code
+        </p>
+      
+      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+        <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
+<path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
+</svg>
+
+      </a>
+  </aside>
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">此页面上的内容</p>
+  	<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#安装jenkins和docker">安装Jenkins和Docker</a></li>
+<li><a href="#从-github-上自动添加项目">从 GitHub 上自动添加项目</a></li>
+<li><a href="#易于修改的配置">易于修改的配置</a></li>
+<li><a href="#jenkinsfile的成与败">Jenkinsfile的成与败</a></li>
+<li><a href="#通过-yaml-配置-jenkins-流水线">通过 YAML 配置 Jenkins 流水线</a></li>
+<li><a href="#jenkinsfile-shared-libraries-woloxci">Jenkinsfile + Shared Libraries = WoloxCI</a></li>
+<li><a href="#wolox-ci介绍">Wolox-CI介绍</a></li>
+<li><a href="#config-yml-各部分介绍">config.yml 各部分介绍</a>
+<ul>
+<li><a href="#config部分">config部分</a></li>
+<li><a href="#services-部分">Services 部分</a></li>
+<li><a href="#steps-部分">Steps 部分</a></li>
+<li><a href="#environment-部分">Environment 部分</a></li>
+</ul></li>
+<li><a href="#总结">总结</a></li>
+<li><a href="#译者小结">译者小结</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-windows-installers/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Windows 安装程序更新 ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="dib f6 pr1 hover-bg-light-gray br-100" title="在安全防火墙内通过 WebHook 触发构建">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用 YAML 文件配置 Jenkins 流水线</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      这也是一种自定义流水线 DSL 的方法
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p>几年前，我们的 CTO 写了一篇关于 <a href="https://medium.com/wolox-driving-innovation/ruby-on-rails-continuous-integration-with-jenkins-and-docker-compose-8dfd24c3df57">使用 Jenkins 和 Docker 为 Ruby On Rails 应用提供持续集成服务</a> 的文章。这些年，我们一直使用这个 CI 流水线解决方案，直到我们最近决定做一次升级。为什么呢？</p>
+
+<ul>
+<li>Jenkins 的版本过低，已经很难升级</li>
+<li><a href="http://www.wolox.co/">Wolox</a> 过去几年增长显著，一直面临着如何伸缩的问题</li>
+<li>只有极少数人如何修复 Jenkins 服务的问题</li>
+<li>配置 Jenkins 任务不是一件简单的任务，使我们的项目启动过程变慢</li>
+<li>更改每个作业运行的命令也不是一件简单的任务，并且有权限更改的人并不多。 Wolox 拥有广泛的项目，语言种类繁多，使得这个问题尤为突显。</li>
+</ul>
+
+<p>考虑到这些问题，我们开始深入研究最新版的 Jenkins，看看如何提升我们的 CI 服务。我们需要构建一个新的CI服务，至少要解决以下问题：</p>
+
+<ul>
+<li>支持 Docker 构建。我们的项目依赖的一个或多个 Docker 镜像的执行（应用，数据库，Redis 等）</li>
+<li>如有必要，易于配置和复制</li>
+<li>易于增加新项目</li>
+<li>易于修改构建步骤。工作在项目上的所有人都应该能修改它，如果他们希望执行 <code>npm install</code> 或 <code>yarn install</code></li>
+</ul>
+
+<h3 id="安装jenkins和docker">安装Jenkins和Docker</h3>
+
+<p>安装 Jenkins 非常简单，直接从 <a href="https://jenkins.io/download/">官方教程</a> 选择一种方式安装。</p>
+
+<p>以下是我们在 AWS 上的安装步骤：</p>
+
+<pre><code class="language-shell">sudo rpm — import https://pkg.jenkins.io/debian/jenkins.io.key
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo
+sudo yum install java-1.8.0 -y
+sudo yum remove java-1.7.0-openjdk -y
+sudo yum install jenkins -y
+sudo yum update -y
+sudo yum install -y docker
+</code></pre>
+
+<h3 id="从-github-上自动添加项目">从 GitHub 上自动添加项目</h3>
+
+<p>从 Github 上自动添加项目可以通过 <a href="https://plugins.jenkins.io/github-branch-source">GitHub Branch Source</a> 插件实现。它能将 GitHub 的组织中符合规则的项目自动添加到 Jenkins 中。唯一的约束就是在每一个分支下都必须有一个 Jenkinsfile，用于描述如何构建项目。</p>
+
+<h3 id="易于修改的配置">易于修改的配置</h3>
+
+<p>我们之前使用 Jenkins 最痛苦的是修改项目的构建步骤。在 Jenkins 任务中，你会看到像以下代码（用于构建）：</p>
+
+<pre><code class="language-shell">#!/bin/bash +x
+set -e
+
+# Remove unnecessary files
+echo -e &quot;\033[34mRemoving unnecessary files...\033[0m&quot;
+rm -f log/*.log &amp;&gt; /dev/null || true &amp;&gt; /dev/null
+rm -rf public/uploads/* &amp;&gt; /dev/null || true &amp;&gt; /dev/null
+
+# Build Project
+echo -e &quot;\033[34mBuilding Project...\033[0m&quot;
+docker-compose --project-name=${JOB_NAME} build
+
+# Prepare test database
+COMMAND=&quot;bundle exec rake db:drop db:create db:migrate&quot;
+echo -e &quot;\033[34mRunning: $COMMAND\033[0m&quot;
+docker-compose --project-name=${JOB_NAME} run  \
+        -e RAILS_ENV=test web $COMMAND
+
+# Run tests
+COMMAND=&quot;bundle exec rspec spec&quot;
+echo -e &quot;\033[34mRunning: $COMMAND\033[0m&quot;
+unbuffer docker-compose --project-name=${JOB_NAME} run web $COMMAND
+
+# Run rubocop lint
+COMMAND=&quot;bundle exec rubocop app spec -R --format simple&quot;
+echo -e &quot;\033[34mRunning: $COMMAND\033[0m&quot;
+unbuffer docker-compose --project-name=${JOB_NAME} run -e RUBYOPT=&quot;-Ku&quot; web $COMMAND
+</code></pre>
+
+<p>在构建步骤后，执行 Docker 构建的清理工作：</p>
+
+<pre><code class="language-shell">#!/bin/bash +x
+docker-compose --project-name=${JOB_NAME} stop &amp;&gt; /dev/null || true &amp;&gt; /dev/null
+docker-compose --project-name=${JOB_NAME} rm --force &amp;&gt; /dev/null || true &amp;&gt; /dev/null
+docker stop `docker ps -a -q -f status=exited` &amp;&gt; /dev/null || true &amp;&gt; /dev/null
+docker rm -v `docker ps -a -q -f status=exited` &amp;&gt; /dev/null || true &amp;&gt; /dev/null
+docker rmi `docker images --filter 'dangling=true' -q --no-trunc` &amp;&gt; /dev/null || true &amp;&gt; /dev/null
+</code></pre>
+
+<p>尽管这些命令并不复杂，但是更改其中的任何命令都需要具有权限的人员来操作相应的 Jenkins 任务，并清楚知道自己需要做什么。</p>
+
+<h3 id="jenkinsfile的成与败">Jenkinsfile的成与败</h3>
+
+<p>使用当前的 Jenkins 版本，我们可以利用 <a href="https://jenkins.io/doc/book/pipeline/">Jenkins pipeline</a> 对我们的构建流进行建模，并保存到一个文件中。 该文件会被签入代码库。因此，任何有权访问它的人都可以修改其中的步骤。棒极了。</p>
+
+<p>Jenkins 流水线还支持：</p>
+
+<ul>
+<li>Docker 及多个镜像可用于构建</li>
+<li>使用 <code>withEnv</code> 设置环境变量，还支持很多其它内建的 <a href="https://jenkins.io/doc/pipeline/steps/workflow-basic-steps/">函数</a></li>
+</ul>
+
+<p>这为 Wolox 提供了完美的用例。我们可以将构建配置写入到一个被检入到代码库的文件中，并且允许任务有权限访问的人修改。但是，一个简单的 Rails 项目的 Jenkinsfile 看起来却像这样：</p>
+
+<pre><code class="language-groovy"># sample Jenkinsfile. Might not compile
+node {
+    checkout scm
+    withEnv(['MYTOOL_HOME=/usr/local/mytool']) {
+        docker.image(&quot;postgres:9.2&quot;).withRun() { db -&gt;
+            withEnv(['DB_USERNAME=postgres', 'DB_PASSWORD=', &quot;DB_HOST=db&quot;, &quot;DB_PORT=5432&quot;]) {
+                docker.image(&quot;redis:X&quot;).withRun() { redis -&gt;
+                    withEnv([&quot;REDIS_URL=redis://redis&quot;]) {
+                        docker.build(imageName, &quot;--file .woloxci/Dockerfile .&quot;).inside(&quot;--link ${db.id}:postgres --link ${redis.id}:redis&quot;) {
+                            sh &quot;rake db:create&quot;
+                            sh &quot;rake db:migrate&quot;
+                            sh &quot;bundle exec rspec spec&quot;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>这样的文件不仅难以理解，还难以修改。这样的构建逻辑非常容易被破坏，如果你不熟悉 Groovy。如果你对 Jenkins 流水线是如何工作的一无所知，就更容易了。这样，修改或增加一个新的 Docker 镜像就变得不简单，也容易导致混淆。</p>
+
+<h3 id="通过-yaml-配置-jenkins-流水线">通过 YAML 配置 Jenkins 流水线</h3>
+
+<p>就个人而言，我总是期望为 CI 配置简单的配置文件。这次我们有机会构建使用 YAML 文件配置的 CI。经过分析，我们总结出以下这样的 YAML，它已经能满足我们的需求：</p>
+
+<pre><code class="language-yaml">config:
+  dockerfile: .woloxci/Dockerfile
+  project_name: some-project-name
+
+services:
+  - postgresql
+  - redis
+
+steps:
+  analysis:
+    - bundle exec rubocop -R app spec --format simple
+    - bundle exec rubycritic --path ./analysis --minimum-score 80 --no-browser
+  setup_db:
+    - bundle exec rails db:create
+    - bundle exec rails db:schema:load
+  test:
+    - bundle exec rspec
+  security:
+    - bundle exec brakeman --exit-on-error
+  audit:
+    - bundle audit check --update
+
+environment:
+  RAILS_ENV: test
+  GIT_COMMITTER_NAME: a
+  GIT_COMMITTER_EMAIL: b
+  LANG: C.UTF-8
+</code></pre>
+
+<p>它描述了项目基本的配置、构建过程中需要的环境变量、依赖的服务、还有构建步骤。</p>
+
+<h3 id="jenkinsfile-shared-libraries-woloxci">Jenkinsfile + Shared Libraries = WoloxCI</h3>
+
+<p>经过调研 Jenkins 和流水线之后，我们发现可以通过扩展共享库（shared libraries）来实现。共享库是用 Groovy 编写的，可以导入到流水线中，并在必要时执行。</p>
+
+<p>如果你细心观察以下 Jenkinsfile，你会看到代码是一个接收闭包的方法调用链，我们执行另一个方法将一个新的闭包传递给它。</p>
+
+<pre><code class="language-groovy"># sample Jenkinsfile. Might not compile
+node {
+    checkout scm
+    withEnv(['MYTOOL_HOME=/usr/local/mytool']) {
+        docker.image(&quot;postgres:9.2&quot;).withRun() { db -&gt;
+            withEnv(['DB_USERNAME=postgres', 'DB_PASSWORD=', &quot;DB_HOST=db&quot;, &quot;DB_PORT=5432&quot;]) {
+                docker.image(&quot;redis:X&quot;).withRun() { redis -&gt;
+                    withEnv([&quot;REDIS_URL=redis://redis&quot;]) {
+                        docker.build(imageName, &quot;--file .woloxci/Dockerfile .&quot;).inside(&quot;--link ${db.id}:postgres --link ${redis.id}:redis&quot;) {
+                            sh &quot;rake db:create&quot;
+                            sh &quot;rake db:migrate&quot;
+                            sh &quot;bundle exec rspec spec&quot;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Groovy 语言足够灵活，能在在运行时创建声明式代码，这使我们能使用 YAML 来配置我们的流水线！</p>
+
+<h3 id="wolox-ci介绍">Wolox-CI介绍</h3>
+
+<p>wolox-ci 诞生于 Jenkins 的共享库。以下是关于 <a href="https://github.com/Wolox/wolox-ci">Wolox-CI</a> 的具体使用方式。</p>
+
+<p>使用 wolox-ci，Jenkinsfile 被精简成：</p>
+
+<pre><code class="language-groovy">@Library('wolox-ci') _
+node {
+  checkout scm
+  woloxCi('.woloxci/config.yml');
+}
+</code></pre>
+
+<p>它会检出代码，然后调用 wolox-ci。共享库代码会读取到 YAML 文件，如下：</p>
+
+<pre><code class="language-yaml">config:
+ dockerfile: .woloxci/Dockerfile
+ project_name: some-project-name
+
+services:
+ - postgresql
+ - redis
+
+steps:
+ analysis:
+ - bundle exec rubocop -R app spec –format simple
+ - bundle exec rubycritic –path ./analysis –minimum-score 80 –no-browser
+ setup_db:
+ - bundle exec rails db:create
+ - bundle exec rails db:schema:load
+ test:
+ - bundle exec rspec
+ security:
+ - bundle exec brakeman –exit-on-error
+ audit:
+ - bundle audit check –update
+
+environment:
+ RAILS_ENV: test
+ GIT_COMMITTER_NAME: a
+ GIT_COMMITTER_EMAIL: b
+ LANG: C.UTF-8
+</code></pre>
+
+<p>然后，Jenkins 就会执行你的构建任务。</p>
+
+<p>共享库有一个好处是我们可以集中扩展和修改我们的共享库代码。一旦添加新代码，Jenkins 就会自动更新它，还会通知所有的任务。</p>
+
+<p>由于我们有不同语言的项目，我们使用 Docker 来构建测试环境。WoloxCI 假设有一个 Dockerfile 要构建，并将在容器内运行所有指定的命令。</p>
+
+<h3 id="config-yml-各部分介绍">config.yml 各部分介绍</h3>
+
+<h4 id="config部分">config部分</h4>
+
+<p>这是 config.yml 的第一部分，用于指定基本配置，包括项目的名称，Dockerfile 的路径。Dockerfile 用于构建镜像，所有的命令都运行在该镜像的容器中。</p>
+
+<h4 id="services-部分">Services 部分</h4>
+
+<p>这部分定义了哪些服务被暴露到容器中。WoloxCI 支持以下开箱即用的服务：postgresql、mssql 和 redis。你还可以指定 Docker 镜像的版本。</p>
+
+<p>增加一个新的服务类型也不难。你只需要在该目录下（<a href="https://github.com/Wolox/wolox-ci/tree/development/vars）添加，然后告诉共享库该服务是如何被转换的，如https://github.com/Wolox/wolox-ci/blob/development/src/com/wolox/parser/ConfigParser.groovy#L76">https://github.com/Wolox/wolox-ci/tree/development/vars）添加，然后告诉共享库该服务是如何被转换的，如https://github.com/Wolox/wolox-ci/blob/development/src/com/wolox/parser/ConfigParser.groovy#L76</a></p>
+
+<h4 id="steps-部分">Steps 部分</h4>
+
+<p>在此部分列出的命令，都会被运行在 Docker 容器中。你可以在 Jenkins 界面上看到每一步的执行结果。</p>
+
+<img src="/images/pipeline/stages-ui.png" height="" style="width: auto;"/>
+
+<h4 id="environment-部分">Environment 部分</h4>
+
+<p>如果构建过程需要一些环境变量，你可以在这部分指定它们。Steps 部分中描述的步骤执行过程中，Docker 容器会提供你设置好的所有环境变量。</p>
+
+<h3 id="总结">总结</h3>
+
+<p>目前，WoloxCI 还在我们所有项目中一小部分项目进行测试。这让有权限访问它的人通过 YAML 文件更改构建步骤。这是对我们 CI 工作流程来说是一个重大改进。</p>
+
+<p>Docker 使我们轻松更换编程语言，而不用对 Jenkins 安装做任何的更改。并且，当检查到 GitHub 组织中的新项目（项目中有 Jenkinsfile）时，Jenkins GitHub Branch Source 插件会自动添加新的 Jenkins 项目。</p>
+
+<p>所有这些改进节约了我们维护 Jenkins 的大量时间，并使我们可以轻松扩展而无需任何额外配置。</p>
+
+<h3 id="译者小结">译者小结</h3>
+
+<p>本文最大的亮点是它介绍了一种实现自定义构建语言的方式。通过 Jenkins 的共享库技术，将构建逻辑从 Jenkinsfile 中移到了 YAML 文件中。同样的，我们可以将构建逻辑移动 JSON 文件中，或者任何格式的文件中，只你的共享库能解析它，并将它转换成 Jenkins 能理解的格式。</p>
+
+</div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “使用 YAML 文件配置 Jenkins 流水线”
+  </a> was last updated: January 1, 0001
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">改善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/pipeline">
+              pipeline
+            </a>
+          </li>
+        
+              
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
+              MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+</main>
+
+    </main>
+
+    <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    <div class="pb3 pt4 w-100 w-50-ns">
+
+      <div class="b f3  light-gray mb3 nested-links tc">
+        由 <a href="https://github.com/jenkins-zh/jenkins-zh/graphs/contributors" target="_blank" class="link">Jenkins 社区贡献者</a> 维护<br/>
+      </div>
+
+      <ul class="center f6 list ma0 mv3 pa0 tc" style="display:none"><li class="dib mr3"><a href="https://github.com/jenkins-zh/jenkins-zh/issues/new" class="dim link light-gray pv2">File an Issue</a></li></ul>
+
+      <ul class="center f6 list ma0 mv4 pa0 tc">
+        <li class="dib mr3">
+          <a href="https://twitter.com/suren69811254" target="_blank" class="dim link light-gray pv2">@suren69811254</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://www.youtube.com/channel/UC63xz3pq26BBgwB3cnwCoqQ" target="_blank" class="dim link light-gray pv2">YouTube</a>
+        </li>
+      </ul>
+
+      
+    </div>
+
+    <div>
+      <a href="https://mp.weixin.qq.com/s/vifdduC3kRGSIMpyL03yVA" target="_blank">
+        <img src="https://jenkins.io/images/jenkins-wechat.png" with="100" height="100">
+      </a>
+    </div>
+
+  </div>
+
+  <div class="f7 gray mb5 mb0-ns ph3 w-100" style="display:none"> 
+    <p class="dib mr4">Jenkins&reg; is a registered trademark of <a href="https://www.spi-inc.org/" class="link">Software in the Public Interest, Inc.</a></p>
+    <p class="dib">Copyright 2018–2019 the original authors.</p>
+  </div>
+
+
+  <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu pb3 dn">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/wechat/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          微信
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/event/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          活动
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/about/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          关于我们
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="http://jenkins.io/zh" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Jenkins 官网
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu pb3 dn">
+    
+
+<ul class="list dib ph0 ma0 scrolling-touch tc">
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Docs Menu</button>
+</div>
+</div>
+
+</footer>
+
+    
+<link href="/dist/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/jenkins-zh.github.io\/";
+    
+</script>
+<script src="/dist/lunr.js"></script>
+<script src="/dist/autocomplete.js"></script>
+<script src="/dist/jquery-3.2.1.min.js"></script>
+<script src="/dist/search.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+  </body>
+</html>

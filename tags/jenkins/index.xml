@@ -13,10 +13,10 @@
     
     <item>
       <title>Electron 应用的流水线设计</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-electron-pipeline-demo/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-electron-pipeline-demo/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</guid>
       <description>面向读者：需要了解 Jenkins 流水线的基本语法。
 Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。
 本文将介绍 Electron 桌面应用的流水线的设计。
@@ -26,10 +26,10 @@ Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台
     
     <item>
       <title>为 Continuous Delivery Foundation 的成立感到兴奋</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-ready-for-cdf/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-ready-for-cdf/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-ready-for-cdf/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-ready-for-cdf/</guid>
       <description>大概十一年前，我就开始为现在被称为 Jenkins 的项目做贡献，自己当时其实也并不知道在做什么。但是接下来发生的事情令人感觉难以置信，数以百计的贡献者加入，成千上万的新用户开始使用 Jenkins，每天都会运行数以百万条的流水线。这样的增长是充满挑战性的，用户的增长意味着问题的增长，问题的增长就意味着需要新的解决方式。 在大约两年半之前，我在2017年的 Jenkins World Contributor Summit 大会上面对一大群 Jenkins 的贡献者们，为我的所谓的 &amp;lsquo;Jenkins软件基金会&amp;rsquo; 做了宣传，那就是，不要羞于从 Python 社区汲取思想，在我的朋友 Chris Aniszczyk 和 Linux 基金会的帮助下，这个基金会变成了一个更加全面的 *持续交付基金会*（CDF），我的同事 Tracy Miranda 一直在领导这项工作，帮助推动 CDF 的成立。
 Kohsuke 为 jenkinsci-dev@ mailing list 撰写了一篇很好的概述文章，其中列举了如果 Jenkins 项目一旦建立后就应该加入 Continuous Delivery Foundation 的原因。如果你对 Jenkins 项目感兴趣，但是还没有阅读过这边文章的话，那我认为你应该花些时间来阅读 Kohsuke 的这份邮件。但是在 这篇文章 中，我 想分享我愿意帮助建立持续交付基金会（CDF）的原因。
 持续交付（CD）已经成为我职业生涯中不可或缺的一部分，甚至在 Jez Humble 将此概念清晰地表述之前，我就开始学习 CD 并且对它一直充满热情。我认为它对软件的开发实践至关重要，当有人说他们没有练习使用 CI 或 CD 时，我感觉这就像回到了原始社会。想象一下，如果有人说 &amp;ldquo;呃，我们在这里有一个采用 Source Control 的项目，但领导们觉得这个东西不太靠谱&amp;rdquo;，我想你肯定会惊掉下巴。&amp;rdquo;在这个时代竟然还有开发团队都不使用源代码管理？&amp;rdquo;。总体来说，我认为CD已经是现代软件开发的基础了。
@@ -38,10 +38,10 @@ Kohsuke 为 jenkinsci-dev@ mailing list 撰写了一篇很好的概述文章，�
     
     <item>
       <title>MPL - 模块化的流水线库</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-08-mpl-modular-pipeline-library/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</guid>
       <description>MPL - 模块化的流水线库 尽管通过自动化部署加快了开发速度，但由于在 DevOps 方面缺少协作，我们一个客户正因此而放慢产品的上市时间。虽然他们也投入了资源来做 DevOps ，但每条生产流水线都是独立设置的，迫使团队为每个项目重新造轮子。更糟糕的是，由于没有跨团队协作，平台中的任何错误又会出现在每条新的流水线中。许多客户都有类似的问题存在，因此我们决定开发一个既能帮助现有客户，又能适应未来使用需求的通用工具。使用通用框架且标准化的 CI/CD 平台是最显而易见的选择，但这将导致缺少灵活性的单体结构（monolithic structure），最终会变得举步维艰。每个团队都需要在自己的流水线上工作，基于此，我们开发了一个方便 DevOps 流水线的每个可重用部分可供以后使用的解决方案 — Jenkins 驱动的模块化流水线库。
 解决方案：模块化流水线库 模块化流水线库（译注：modular pipeline library，简称 MPL）是一个高度灵活的 Jenkins 流水线共享库，它可以轻松将最佳实践共享到整个公司。它具有清晰的模块化结构，先进的测试框架，多级嵌套的能力，流水线配置系统，被改进了的错误处理机制以及许多其他有用的组件。
 我们将通过以下几部分内容深入了解并解释 MPL 是如何工作的：
@@ -54,10 +54,10 @@ MPL 致力于创建跨团队协作 DevOps 流程 通过 MPL，我们现在能够
     
     <item>
       <title>批量修改 Jenkins 任务的技巧</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-02-27-jenkins-script-console-in-practice/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/</link>
       <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-02-27-jenkins-script-console-in-practice/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/</guid>
       <description>通过脚本命令行批量修改 Jenkins 任务 最近，笔者所在团队的 Jenkins 所在的服务器经常报硬盘空间不足。经查发现很多任务没有设置“丢弃旧的构建”。通知所有的团队检查自己的 Jenkins 任务有没有设置丢弃旧的构建，有些不现实。
 一开始想到的是使用 Jenkins 的 API 来实现批量修改所有的 Jenkins 任务。笔者对这个解决方案不满意，经 Google 发现有同学和我遇到了同样的问题。他使用的更“技巧”的方式：在 Jenkins 脚本命令行中，通过执行 Groovy 代码操作 Jenkins 任务。
 总的来说，就两步：
@@ -67,10 +67,10 @@ import jenkins.model.Jenkins import hudson.model.Job import jenkins.model.BuildD
     
     <item>
       <title>在安全防火墙内通过 WebHook 触发构建</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-16-webhook-firewalls/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-webhook-firewalls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-16-webhook-firewalls/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-webhook-firewalls/</guid>
       <description>在这篇文章中，我将向大家展示，如何让运行在防火墙内的 Jenkins 依然可以实时地收到 GitHub 的 WebHook。当然，你也可以把这个方法应用到如 BitBucket、 DockerHub 或任何可以推送 WebHook 的其他服务中。但是，下面的步骤仅适用于托管在 GitHub 上的项目。
 什么是 WebHook 简单地描述下什么是 WebHook：事件消息（通常是 JSON，也可以是其他的）由服务端以 HTTP(S) 协议发送到监听的客户端。
 事件流自左到右，Jenkins 会监听类似 /github-webhook/ 或 /dockerhub-webhook/ 等路径上的 HTTP 请求，唤醒并执行一些任务。

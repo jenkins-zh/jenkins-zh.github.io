@@ -11,26 +11,11 @@
     
     
     <item>
-      <title>Jenkins Configuration-as-Code: 看，我都不用手动配置</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-12-gasc/</guid>
-      <description>NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。
-Jenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。
-在某些情况下，“Jenkins 管理员”是一个全职职位。 Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。 维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。
-这就像几年前系统管理员必须要为每个服务管理特定的机器一样。 在 2018 年，通过使用基础架构自动化工具和虚拟化，一切都可以作为代码进行管理。 需要一个新的应用服务器作为你的应用的暂存环境吗？那你只需要部署一个 Docker 容器。 基础设施缺少资源吗？那就在你喜欢的云服务上分配更多资源来使用 Terraform。
-在这种情况下，Jenkins 管理员的角色怎么样？他们是否还要花费数小时来点击网页表单上的复选框？也许他们已经采用了一些自动化、依赖于 Groovy 脚本或一些自己写的 XML 模板。
-今年早些时候我们发布了第一个 alpha 版本的 “Jenkins Configuration-as-Code” （JCasC），它是一种基于 YAML 配置文件和自动模型发现的 Jenkins 配置管理新方法。&amp;rdquo;JCasC&amp;rdquo; 已经升级为顶级 Jenkins 项目。 同时，对应的 Jenkins 增强提案已经被接受。
-JCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或通过 web UI 按需在 Jenkins master 上应用一组 YAML 文件。 与 Jenkins 用于实际储存配置的详细 XML 文件相比，这些配置文件非常简洁易读。 这些文件还有用户友好的命名约定，使管理员能够轻松地配置所有 Jenkins 组件。</description>
-    </item>
-    
-    <item>
       <title>Jenkins 和 Kubernetes -云上的神秘代理</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-30-k8s-jenkins-secet-agent/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-30-k8s-jenkins-secet-agent/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</guid>
       <description>最近我们构建和部署服务的方式与原来相比简直就是突飞猛进，像那种笨拙的、单一的、用于构建单体式应用程序的方式已经是过去式了。我们努力了这么久，终于达到了现在的效果。现在的应用为了提供更好的拓展性和可维护性，都会去拆解成各种相互依赖小、解耦性强的微服务，这些服务有各自的依赖和进度。如果你想去构建你所负责的服务，那么从一开始，就应该使用 CI/CD 的方式；当然，如果你走上了这条路， Jenkins 就是你的良师益友。
 如果你是做微服务的话，那让我们在开始之前先花些时间想一想。如果你只在 Jenkins 上构建单体式应用程序，那你肯定每天都会运行很多 Jenkins job, 而且还要不厌其烦地运行很多次。所以，我们应该好好想清楚怎么样来做出一些改变来适应这种事情。其实只需要付出一些努力，Jenkins 就可以帮我们很好地解决这种事情。
 我的 Jenkins 的进阶之路 作为一个 Devops 从业者，我遇到的最大问题是如何管理并优化自己的 Jenkins agent 结构。如果只是用 Jenkins 玩玩，实验性地跑一些流水线，那根本不用考虑 agent 的事情。如果你每天要跑成百上千条流水线的话，那考虑怎么去做优化就是一件非常非常重要的事情了。在 Jenkins 进阶之路中，我也尝试了各种不同的方式来寻找最好的 Jenkins agent 的使用方式。相信如果你也和我一样经历过，那下面这些事情你一定会很熟悉喽。
@@ -39,22 +24,11 @@ JCasC 能为 Jenkins 管理员做些什么？ JCasC 允许我们在启动时或�
     </item>
     
     <item>
-      <title>从 Jenkins Master 扩展网络连接</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/wechat/articles/2018-12-19-scaling-network-connections/</guid>
-      <description>Oleg Nenashev 和我今年将在旧金山的 DevOps World | Jenkins World 上，做从 Jenkins Master 扩展网络连接 的演讲。 多年来，我们一直致力于分析、优化和加强 Remoting channel， 才有了现如今 master 能够协调 agent 的活动，并且接收构建的结果。 尽管许多技术可以改进服务，比如优化代理启动器，但是想要有质的改变，只有从根本上改变传播的内容和方式。
-3月，JENKINS-27035 引入了一个框架，用于检查 Remoting channel 在高级别上的通信。 以前，开发人员只能使用一般的低级工具，例如 Wireshark， 它不能精确的识别 Jenkins 负责通信的代码片段。
-在过去的几个月里，Cloud Native SIG 在解决根本原因方面取得了进展。 Artifact Manager on S3 plugin 已经发布并与 Jenkins Evergreen 整合， 支持在 agent 和 Amazon 服务器之间，进行大制品的上传和下载， 源生插件允许由 agent 生成的所有构建的日志内容（例如在 steps 的 sh 中） 直接定向流到外部存储服务，如 AWS CloudWatch Logs。 与此同时也开始上传 junit 格式的测试结果，这些测试结果有时会变的很大，将直接从 agent 到存储数据库。 所有这些努力都可以减轻 Jenkins Master 和本地网络的负载，而不需要开发人员修改他们的 pipeline 脚本。</description>
-    </item>
-    
-    <item>
       <title>自动更新、易于使用的 Jenkins</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</guid>
       <description>当我第一次 写 Jenkins Evergreen 相关的文章 ， 后来被称为 &amp;ldquo;Jenkins Essentials&amp;rdquo;，我提到的一系列的未来的发展在接下来的几个月里已经变成了 现实 。 今年在旧金山举办的 DevOps World - Jenkins World 会议上，我会介绍 Jenkins Evergreen 背后哲学的更多细节，展示我们已经做了什么，并且讨论这个激进的 Jenkins 发行版的走向。
 正如我在第一篇博客以及 JEP-300 中所讨论的 Jenkins Evergreen 的前两大支柱是我们关注的要点.
 自动更新的发行版 不出所料, 实现安全、自动地更新Jenkins发行版（包括核心和插件）所需的机制需要很多的工作。在 Baptiste 的演讲中 他将讨论如何使 Evergreen &amp;ldquo;走起来&amp;rdquo;，而我会讨论 为何 自动更新的发行版很重要。

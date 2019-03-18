@@ -12,10 +12,10 @@
     
     <item>
       <title>自动更新、易于使用的 Jenkins</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-01-09-jenkins-evergreen/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</guid>
       <description>当我第一次 写 Jenkins Evergreen 相关的文章 ， 后来被称为 &amp;ldquo;Jenkins Essentials&amp;rdquo;，我提到的一系列的未来的发展在接下来的几个月里已经变成了 现实 。 今年在旧金山举办的 DevOps World - Jenkins World 会议上，我会介绍 Jenkins Evergreen 背后哲学的更多细节，展示我们已经做了什么，并且讨论这个激进的 Jenkins 发行版的走向。
 正如我在第一篇博客以及 JEP-300 中所讨论的 Jenkins Evergreen 的前两大支柱是我们关注的要点.
 自动更新的发行版 不出所料, 实现安全、自动地更新Jenkins发行版（包括核心和插件）所需的机制需要很多的工作。在 Baptiste 的演讲中 他将讨论如何使 Evergreen &amp;ldquo;走起来&amp;rdquo;，而我会讨论 为何 自动更新的发行版很重要。

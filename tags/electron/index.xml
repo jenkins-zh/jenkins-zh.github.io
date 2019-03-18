@@ -13,10 +13,10 @@
     
     <item>
       <title>Electron 应用的流水线设计</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019-03-13-electron-pipeline-demo/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019-03-13-electron-pipeline-demo/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</guid>
       <description>面向读者：需要了解 Jenkins 流水线的基本语法。
 Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。
 本文将介绍 Electron 桌面应用的流水线的设计。
