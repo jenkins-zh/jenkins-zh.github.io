@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,32 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>持续集成的收益与挑战</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</guid>
+      <description>毫无疑问，持续集成（ CI ）已成为一个软件开发的主流原则。CI 的收益在业界众所周知的，并且很难找到反对实施它的人。
+在这里，我想把那些收益收集起来放到一个中心化的地方。但是我认为扮演反面角色并试图找出持续集成的弊端或挑战也是很有趣的。
+什么是持续集成？ 从根本上说， 持续集成（ CI ）是一种开发实践，开发人员每天都要将代码集成到共享的仓库中。在该仓库中，代码被自动构建进行验证用来在这个流程中检验尽早的发现任何问题。这允许团队花更少的时间回溯，而花更多的时间构建新特性。
+持续集成的收益 1、缓解风险 据 Martin Fowler 说，持续集成的最大收益是减轻风险。由于延迟了代码集成，团队将不断增加合并冲突的数量和严重性。当团队频繁集成（使用自动构建），他们减轻了潜在风险的数量，因为他们总是知道系统的当前状态。
+2、质量保证 实施持续集成的团队对他们的操作更有信心。他们知道自动构建会立即捕获缺陷，这使他们能够保证质量。 他们也不会猜测系统中 bug 的数量，这允许他们能够向队友提供准确的数量，并为客户提供更好的服务。
+3、提高可见性和加强团队合作 自动构建为团队提供了对其系统的完全可见性。他们知道问题的数量，并能快速的解决问题。提高可见性可以让团队有机会在小问题变成大之前通过协作解决。
+持续集成的挑战 1、组织文化变革 一些企业更喜欢传统的方法，并且可能很难实施持续集成。 他们必须对员工进行再培训，这就意味着要对现有的业务进行大修。管理者可能会抵制因为持续集成并不能帮助他们实现公司的直接目标（例如：金钱在质量之上）。
+2、难以维护 构建一个自动化的代码仓库不是一个简单的任务。 团队必须构建适当的测试套件，并花时间编写测试用例，而不是开发代码。 起初，这可能会让他们放慢速度，让他们对按时完成自己的项目失去信心。如果测试套件不稳定，它可能在某些天内完美地工作，但其他天可能不起作用。 然后团队将不得不花费更多的时间来弄清楚发生了什么。
+3、大量的错误信息 对于较大的开发团队，他们可能每天都会看到 CI 错误消息，并开始忽略它们，因为它们还有其他任务和关注点。 他们可能会开始将一个破坏的构建视为一个正常的事情，并且缺陷可能开始堆积在一起。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 更新通知</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-18-weekly-version/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-18-weekly-version/</guid>
+      <description>Jenkins LTS 2.164.1 更新内容如下：  Java 11 现已全面支持。 自 2.150.x 开始在 Java 11 上运行 Jenkins 的多项改进，包括：支持插件在它们的元数据中申明最小 Java 版本，并拒绝加载不兼容的插件，以及当运行在 Java11 上时安装新的 JAXB 插件后允许使用 JAXB 的 API. (博客发布的申明, 运行在 Java 11, 升级到 Java 11, issue 52012, issue 52282, issue 55076, issue 55048, issue 55980, issue 55681, issue 52285) 当列出一个指定目录时 list-jobs 不再进行递归。 (issue 48220) 增加一个新的 CLI 命令 disable-plugin 来禁用一个或多个已安装的插件，并可以选择同时重启 Jenkins. (issue 27177) 更新 Trilead SSH 库以支持 OpenSSH 使用 AES256-CTR 加密。 (issue 47603, issue 47458, issue 55133, issue 53653) 在 Jenkins CLI 中增加对 ed25519 关键算法的支持。 (issue 45318) 减少以 ZIP 格式下载归档或者工作空间文件时 SECURITY-904 对性能的影响。 (issue 55050) 在插件向导中增加语言分类，并会根据浏览器的语言设置自动安装本地化插件。 (pull 3626) Windows Service Wrapper 从 2.</description>
     </item>
     
     <item>
@@ -41,15 +67,6 @@ Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基
   因此，我希望你能明白为什么我们会对此感到如此兴奋！
 实际上，对我们来说，已经为这个想法努力了将近两年。毫不夸张地说，整个 CDF 的想法 源自 Jenkins 项目。
 为此，已经有很多人在幕后做了大量的工作。但有些人扮演了举足轻重的角色，我须亲自感谢他们。为 Chris Aniszczyk 的耐心、坚持，R. Tyler Croy 酝酿并推动着这个想法，Tracy Miranda 将这些想法变成事实。</description>
-    </item>
-    
-    <item>
-      <title>MPL - 模块化的流水线库</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-18-weekly-version/</link>
-      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-18-weekly-version/</guid>
-      <description>Jenkins LTS 2.164.1 更新内容如下：  Java 11 现已全面支持。 自 2.150.x 开始在 Java 11 上运行 Jenkins 的多项改进，包括：支持插件在它们的元数据中申明最小 Java 版本，并拒绝加载不兼容的插件，以及当运行在 Java11 上时安装新的 JAXB 插件后允许使用 JAXB 的 API. (博客发布的申明, 运行在 Java 11, 升级到 Java 11, issue 52012, issue 52282, issue 55076, issue 55048, issue 55980, issue 55681, issue 52285) 当列出一个指定目录时 list-jobs 不再进行递归。 (issue 48220) 增加一个新的 CLI 命令 disable-plugin 来禁用一个或多个已安装的插件，并可以选择同时重启 Jenkins. (issue 27177) 更新 Trilead SSH 库以支持 OpenSSH 使用 AES256-CTR 加密。 (issue 47603, issue 47458, issue 55133, issue 53653) 在 Jenkins CLI 中增加对 ed25519 关键算法的支持。 (issue 45318) 减少以 ZIP 格式下载归档或者工作空间文件时 SECURITY-904 对性能的影响。 (issue 55050) 在插件向导中增加语言分类，并会根据浏览器的语言设置自动安装本地化插件。 (pull 3626) Windows Service Wrapper 从 2.</description>
     </item>
     
     <item>

@@ -7,12 +7,17 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-20-cdf-launch/</loc>
-    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</loc>
+    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-18-weekly-version/</loc>
+    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-20-cdf-launch/</loc>
     <lastmod>2019-03-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -124,6 +129,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/ci/</loc>
+    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/cicd/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -137,6 +148,12 @@
   <url>
     <loc>https://jenkins-zh.github.io/tags/community/</loc>
     <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/continuous-integration/</loc>
+    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -210,7 +227,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/</loc>
-    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -296,7 +313,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

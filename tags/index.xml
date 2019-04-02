@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Ci</title>
+      <link>https://jenkins-zh.github.io/tags/ci/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cicd</title>
       <link>https://jenkins-zh.github.io/tags/cicd/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
@@ -44,6 +53,15 @@
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Continuous Integration</title>
+      <link>https://jenkins-zh.github.io/tags/continuous-integration/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/continuous-integration/</guid>
       <description></description>
     </item>
     
