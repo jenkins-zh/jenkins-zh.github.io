@@ -189,6 +189,13 @@
         "content": " 这里存放的是 Jenkins 官方微信公众号文章，文件采用 Markdown 格式，但包含一些必要的描述性字段。文章的校对、审核、排期等都通过 Pull Request 来完成。PR 合并后会发布到 Jenkins 中文社区网站。\n目录 文章以发布的排期来存放，层级为：年份/月份。如果月份为个位数的话，要以0开头，例如：01。\n文件名 文件名前缀为“年月日”，中间部分需要以英文来描述。例如：2019-01-01-sample.md。\n字段 文件中的字段，是为了描述文章相关的必要信息。具体的说明请参考：sample.md。\n"
     },
     {
+        "uri": "https://jenkins-zh.github.io/weibo/weibo-operating-charter/",
+        "title": "",
+        "tags": [],
+        "description": "",
+        "content": " Jenkins 官方微博运营章程 该文旨在说明 Jenkins 官方微博运营规范。\n需要讨论的问题  运营者选取形式\n志愿或其他形式 发布的内容\n同步微信公众号/同步 Twitter/类似其他机构官方账号与粉丝互动 发布内容的形式（分享/原创长微博）\n微博官方提供了分享微博和发布长微博的接口。 发布的时间/频率 微博的自动化\n 维护 Jenkins weibo plugin，需要进一步测试（较长时间无人维护，可能存在接口变动）\n 开发新的插件  对评论的回复  "
+    },
+    {
         "uri": "https://jenkins-zh.github.io/categories/",
         "title": "Categories",
         "tags": [],
@@ -471,6 +478,13 @@
     {
         "uri": "https://jenkins-zh.github.io/tags/weekly/",
         "title": "Weekly",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/weibo/",
+        "title": "Weibos",
         "tags": [],
         "description": "",
         "content": ""
