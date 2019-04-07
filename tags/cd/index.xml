@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cd on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/cd/</link>
+    <description>Recent content in Cd on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.github.io/tags/cd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
+      <description>Docker 已经非常出名并且更多的组织正在转向基于 Docker 的应用开发和部署。这里有一个关于如何容器化现有 Java Web 应用以及使用 Jenkins 为它建立一个端到端部署流水线的快速指南。
+为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。
+步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。
+这里是可用于以上步骤的 Jenkins 流水线代码：
+node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-world.git&#39; stage &#39;build&#39; sh &#39;mvn clean install&#39; stage(&#39;Results - 1&#39;) { junit &#39;**/target/surefire-reports/TEST-*.xml&#39; archive &#39;target/*.jar&#39; } stage &#39;bake image&#39; docker.withRegistry(&#39;https://registry.hub.docker.com&#39;,&#39;docker-hub-credentials&#39;) { def image = docker.build(&amp;quot;ravisankar/ravisankardevops:${env.BUILD_TAG}&amp;quot;,&#39;.&#39;) stage &#39;test image&#39; image.withRun(&#39;-p 8888:8888&#39;) {springboot -&amp;gt; sh &#39;while !</description>
+    </item>
+    
+  </channel>
+</rss>

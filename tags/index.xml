@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cd</title>
+      <link>https://jenkins-zh.github.io/tags/cd/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/cd/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cdf</title>
@@ -23,7 +32,7 @@
     <item>
       <title>Ci</title>
       <link>https://jenkins-zh.github.io/tags/ci/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/ci/</guid>
       <description></description>
@@ -50,7 +59,7 @@
     <item>
       <title>Community</title>
       <link>https://jenkins-zh.github.io/tags/community/</link>
-      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/community/</guid>
       <description></description>
@@ -66,6 +75,15 @@
     </item>
     
     <item>
+      <title>Contributing</title>
+      <link>https://jenkins-zh.github.io/tags/contributing/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/contributing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Core</title>
       <link>https://jenkins-zh.github.io/tags/core/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
@@ -77,9 +95,18 @@
     <item>
       <title>Developer</title>
       <link>https://jenkins-zh.github.io/tags/developer/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/developer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://jenkins-zh.github.io/tags/docker/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -158,7 +185,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.github.io/tags/jenkins/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
       <description></description>
@@ -192,6 +219,15 @@
     </item>
     
     <item>
+      <title>Newcomer</title>
+      <link>https://jenkins-zh.github.io/tags/newcomer/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/newcomer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Opensource</title>
       <link>https://jenkins-zh.github.io/tags/opensource/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
@@ -221,7 +257,7 @@
     <item>
       <title>Pipeline</title>
       <link>https://jenkins-zh.github.io/tags/pipeline/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/pipeline/</guid>
       <description></description>

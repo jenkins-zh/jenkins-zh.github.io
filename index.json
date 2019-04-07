@@ -7,6 +7,20 @@
         "content": " 留言 留言之前需要使用 GitHub 账号登陆。大家要注意文明用语，严禁攻击、诋毁、灌水、广告等无关的话。对于违反人，一经发现将会被拉入黑名单。\n提问 欢迎每一位朋友在这里提出与 Jenkins 或相关领域的技术问题，但是，在提问之前建议先在搜索引擎和本站中进行搜索。\n问题至少要包含如下部分：\n 场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。\nGitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。\n"
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/",
+        "title": "Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线",
+        "tags": ["cd", "ci", "docker", "jenkins", "pipeline"],
+        "description": "本文是容器化现有 Java 应用以及使用 Jenkins 建立一个端到端部署流水线的指南",
+        "content": " Docker 已经非常出名并且更多的组织正在转向基于 Docker 的应用开发和部署。这里有一个关于如何容器化现有 Java Web 应用以及使用 Jenkins 为它建立一个端到端部署流水线的快速指南。\n为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。\n步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。\n这里是可用于以上步骤的 Jenkins 流水线代码：\nnode { stage 'checkout' git 'https://gitlab.com/RavisankarCts/hello-world.git' stage 'build' sh 'mvn clean install' stage('Results - 1') { junit '**/target/surefire-reports/TEST-*.xml' archive 'target/*.jar' } stage 'bake image' docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials') { def image = docker.build(\u0026quot;ravisankar/ravisankardevops:${env.BUILD_TAG}\u0026quot;,'.') stage 'test image' image.withRun('-p 8888:8888') {springboot -\u0026gt; sh 'while ! httping -qc1 http://localhost:8888/info; do sleep 1; done' git 'https://github.com/RavisankarCts/petclinicacceptance.git' sh 'mvn clean verify' } stage('Results') { junit '**/target/surefire-reports/TEST-*.xml' archive 'target/*.jar' } stage 'push image' image.push() } }  最初的步骤只是检出代码并运行构建。有趣的部分从这个步骤开始，它使用 dockerhub 凭证在 Docker 上下文中运行。\nstep 3 'bake image' docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials')  这个步骤构建 Docker 镜像。Docker build 命令将 dockerhub 仓库名称和 tag 名称作为一个参数，而构建位置作为另一个参数。\ndef image = docker.build(\u0026quot;dockerhub registry name\u0026quot;:\u0026quot;tag name\u0026quot;,'location of docker file') def image = docker.build(\u0026quot;ravisankar/ravisankardevops:${env.BUILD_TAG}\u0026quot;,'.')  这里使用 Dockerfile 来构建 Docker 镜像。 Dockerfile 的内容如下：\nFROM tomcat:8 ADD target/*.war /usr/local/tomcat/webapps  下一步是运行镜像并执行测试：\nstage 'test image' image.withRun('-p 8888:8888') { springboot -\u0026gt; sh 'while ! httping -qc1 http://localhost:8888/info; do sleep 1; done' git 'https://github.com/RavisankarCts/petclinicacceptance.git' sh 'mvn clean verify' }  withRun 步骤用来帮你运行你刚才构建的 Docker 镜像并暴露应用可以暴露的端口。我有另一个测试代码库，它被构建和执行，将对正在运行的镜像运行测试。\n最后一步是推送该镜像到一个 dockerhub registry 或者你的组织建立的任何内部 registry 。\nstage('Results') { junit '**/target/surefire-reports/TEST-*.xml' archive 'target/*.jar' } stage 'push image' image.push()  "
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/",
+        "title": "介绍：成为一名 Jenkins 贡献者的旅程",
+        "tags": ["jenkins", "community", "developer", "contributing", "newcomer"],
+        "description": "如何从零开始成为开源社区贡献者",
+        "content": " 作为一名软件工程师，这些年来在我工作过的不同公司里用到过许多开源软件（包括框架、库、工具等）。 然而，在此之前我从没有以一名贡献者的身份参与过开源项目。\n自从我向 Jenkins 提交第一个简单又滑稽的 commit 已经过去六个月（2018 年 9 月）了， 我也尝试过作出更多贡献。然而总的来说，向开源项目贡献代码是具有挑战的， 特别是像 Jenkins 这样有着很长生命周期的项目，项目中不乏遗留代码和系统知识。 它通常难以入手，也很难想到一个计划来持续贡献使你的付出从长远看来是有意义的。\n对于 Jenkins 社区来说，我在尝试加入社区时所遇到的困难是其它人也有可能会面临的， 因此我决定分享我成为 Jenkins 活跃贡献者的心路历程。\n我计划大概每月发布一篇博文来描述我的这段旅程，我将从简单容易入手的项目开始， 随着时间推移再介绍更加复杂的项目。\n从哪开始 jenkins.io 要成为 Jenkins 的贡献者，首先会看到的就是 jenkins.io, 在顶部导航中\u0026rdquo;社区\u0026rdquo;下拉列表里第一个\u0026rdquo;参与\u0026rdquo;的链接就能将我们带到\u0026rdquo;参与和贡献\u0026rdquo;这个页面。\n在这个页面中列举了我们能够参与 Jenkins 项目和社区的许多方式。尽管它展示了所有可能的选项供读者选择，但一下子看上去令人有些无所适从。\n这个页面被分成了左右两个部分，左边提供了参与社区的方法，右边是向社区贡献的方法。\n参与社区的建议 在“参与和贡献”页面的左侧是有关参与社区的建议，其中包括结交他人、审阅修改或者提供反馈信息。\n这里面最让我困惑的是沟通渠道，里面列出的沟通渠道有 几个邮件列表 还有 IRC 和 Gitter 频道。\n当我第一次尝试参与时，我订阅了许多邮件列表和几个 IRC 和 Gitter 频道，但我很快发现里面有重要的讨论正在进行， 并且活跃的讨论中多数是关于特定的用户或开发者的问题。因此，我不建议你一开始在这上面花太多时间， 除非你是要为其他用户提供帮助（当你是经验丰富的 Jenkins 用户时可能会有这种情况）或者你已经有一个明确的问题需要提问。\n看一看社区成员如何互相帮助是好事，但是对新人来说它的信息量过于庞大。如果你的兴趣在于向 Jenkins 项目作贡献（不管是翻译、文档还是代码）， 这些对话不会对你有太大的帮助。\n向社区贡献的建议 在“参与和贡献”页面的右侧有一些关于如何贡献的建议，主要分为：编写代码，翻译，文档和测试。\n在之后的博客中，我将介绍所有的这些贡献类型，以及如何参与的建议包括如何审阅 Pull Requests（PRs）或提供反馈 （反馈问题或者复现其它用户反映过的问题，提供额外信息来帮助维护者复现和修复它们。）\n开源之旅的第一次贡献 当看到「参与和贡献」页面时，我发现我可以帮助改进这个页面的一些内容。本来我打算选择其中一个作为这篇文章的第一个例子，但当我阅读贡献指南时， 我发现了一个更简单的贡献。我认为它可以更好的说明开始贡献社区是多么的简单，于是我决定就用它来当例子。\n网站代码仓库 在「文档」菜单中有一个链接 jenkins.io 的贡献指南， 这个 CONTRIBUTING 文件是大多数开源项目代码仓库的根目录中都会有的常见文件。\n点击链接跳转到 jenkins.io 代码仓库，这个仓库包含了网站的源代码其中也包括这篇文章。 事实上，我首先查看的是贡献指南，以便了解如何为网站做出贡献的相关信息。\n找到一个失效链接 通过阅读贡献指南，我了解了 Awestruct 静态站点生成器，它是用于将代码仓库中的 AsciiDoc 源文件转换为网页的工具。 然而，当我点击链接想查看更多信息时，我发现这个链接失效了——域名已经过期。\n为何不修复它? 这是一个好机会，我用它来向新人展示开始贡献是多么容易。\n创建代码仓库分支 第一步，通常是 fork 代码仓库，并克隆到本地。\n进行修改 下一步就是对相应文件进行修改。我创建了一个新的分支 “alternative-awestruct-link” 并对它作了如下修改：\n确保构建正确并且通过测试 尽管在这次的情况下，我的贡献并不针对网站的实际页面，而是对贡献指南（因此不太可能造成什么破坏），但是最好习惯每个贡献都遵循规范流程， 这样才能确保之后有所改变时构建也能够正常进行。\n如贡献指南所述，要构建此项目，我们只需在代码仓库的根目录中以默认的 “make” 作为 target 来运行构建命令。\n一旦命令执行完成，如果没有出现报错，我们就可以进行下一步：创建 Pull Request\n创建 PR 把我的改动 commit 并 push 到远程库以后，我就需要创建一个 PR 了。 有一个简单的方法，只需单击推送完成后在 git 日志中显示的链接，如果愿意的话也可以通过 GitHub UI 创建 PR; 或者甚至可以使用 GitHub CLI 的 “hub” 来完成它。\n这次我直接点击了链接，它将我跳转到 Github 的创建 PR 页面，我在这个页面上添加描述并创建了 PR。\n当创建这个代码仓库的 PR 后，可以发现有一些检查开始运行。Jenkins 代码仓库配置了 “Jenkins on Jenkins”， 它会为每个代码仓库运行 Jenkinsfile 中描述的相应 CI 流水线。\n检查结束后，可以在 PR 中看到结果：\n如果想看到执行的细节，可以点击 “Show all checks” 链接：\nPR review 现在我们已经创建好了 PR 并通过了自动测试，只需要等待代码 review 了。\n一旦 PR 被审核通过然后被 merge，你的贡献就会被整合到代码仓库的主分支并成为下次版本更新的一部分。\n我已经作出了贡献! 我做的这个贡献是微不足道的，它的复杂性很小，如果你的目标在于为 Jenkins 项目本身贡献代码，它可能看起来不是很有趣。\n然而对于我作为一名贡献者，这是一个熟悉代码库、贡献指南、jenkins.io 网站背后的技术的很好的方式; 并且最重要的是，我开始“放下恐惧”，为 Jenkins 这样的开源项目做出了贡献。\n因此，如果你同我一样，请不要犹豫。来吧，找到你自己的第一个贡献。每一个细节都很重要！\n"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/",
         "title": "持续集成的收益与挑战",
         "tags": ["continuous integration", "ci"],
@@ -95,14 +109,14 @@
         "title": "如何参与",
         "tags": [],
         "description": "不满意只做吃瓜群众的请看过来",
-        "content": " 参与开源社区真的不只有 Coding 一条路可选。只要你认同“开源”，有热情，就可以！任何岗位、校大学生、甚至\u0026rdquo;不懂\u0026rdquo;技术都能够加入我们。走过路过的朋友们别错过，下面的参与方式总有一种能把你带上开源事业的“不归路”，如果真的没有包含你希望的参与方式，也可以从现在就发起一个 Pull Request 开始：\nJenkins 本地化  Jenkins 中文官网 有很多的 翻译任务 需要各路英雄自由领取。无规矩不成方圆，在享受自由的同时，也请牢记如下几点：\n 认真、负责第一位 翻译任务通常不建议超过两周  翻译规范   翻译包括 Jenkins 官网的本地化，以及 博客 的翻译。翻译完成后，提交 Pull Request 并等待 Review。对于质量较高、或者适合在微信公众号上发布的文章，需要另外提交一个 Pull Request 。\nJenkins 的 简体中文语言插件 也热切地期待你的 Pull Request 。\n新手 Bug 如果你之前没有参与过 Jenkins 的贡献或者对如何开始不太情况，可以查看 新手 Bug 。这是一些相对比较简单，容易修改的问题。\n分享 你可以在本站或者 Mettup 上分享你在使用 Jenkins 或者相关技术时总结的经验、教训、成果等。\n维护本站点 你可以从了解本站的架构开始。小到错别字修正，大到站点风格、架构完善都需要你的参与。\n"
+        "content": " 参与开源社区真的不只有 Coding 一条路可选。只要你认同“开源”，有热情，就可以！任何岗位、校大学生、甚至\u0026rdquo;不懂\u0026rdquo;技术都能够加入我们。走过路过的朋友们别错过，下面的参与方式总有一种能把你带上开源事业的“不归路”，如果真的没有包含你希望的参与方式，也可以从现在就发起一个 Pull Request 开始：\nJenkins 本地化  Jenkins 中文官网 有很多的 翻译任务 需要各路英雄自由领取。无规矩不成方圆，在享受自由的同时，也请牢记如下几点：\n 认真、负责第一位 翻译任务通常不建议超过两周  翻译规范   翻译包括 Jenkins 官网的本地化，以及 博客 的翻译。翻译完成后，提交 Pull Request 并等待 Review。对于质量较高、或者适合在微信公众号上发布的文章，需要另外提交一个 Pull Request 。\nJenkins 的 简体中文语言插件 也热切地期待你的 Pull Request 。\n新手 Bug 如果你之前没有参与过 Jenkins 的贡献或者对如何开始不太情况，可以查看 新手 Bug 。这是一些相对比较简单，容易修改的问题。\n分享 你可以在本站或者 Meetup 上分享你在使用 Jenkins 或者相关技术时总结的经验、教训、成果等。\n维护本站点 你可以从了解本站的架构开始。小到错别字修正，大到站点风格、架构完善都需要你的参与。\n"
     },
     {
         "uri": "https://jenkins-zh.github.io/about/channels/",
         "title": "交流",
         "tags": [],
         "description": "Jenkins 中文社区交流指南",
-        "content": " 为了方便各位 Jenkins 的爱好者、用户以及贡献者之间互相交流，我这里列出来一些途径：\n 邮件组 即时聊天 在本站留言  邮件组 Jenkins 社区有很多 邮件组 ，感兴趣的童鞋请自行翻阅。本文仅介绍中文相关的邮件组：\n            Jenkins 中文用户邮件组  查看历史  订阅 取消订阅 求助   Jenkins 中文本地化兴趣邮件组  查看历史  订阅 取消订阅 求助     注意：点击上面的订阅或者取消都应该会弹出一个发送邮件的窗口，请不要做任何修改，邮件正文保持空白（不要添加邮件签名等内容）直接发送即可。邮件发送成功后，会收到确认的回复。鉴于邮件组是由 Google 提供的服务，无法科学上网的童鞋是无法查看历史邮件的。\n  即时聊天 及时聊天是一种很方便的线上交流方式，你有可能及时地收到大家的帮助，但是不要认为其他人有回答问题的义务。你没有能及时地得到帮助，可能是因为大家在忙、消息太多而被忽略、问题描述的不够详细等等。因此，建议大家在提问之前尽可能保证自己已经对问题理解的很清楚，并在提问时尽可能地给出上下文、复现步骤；当没有及时得到回答的话，可以把问题发送到邮件组（发送之前，请在邮件组中搜索其他人是否已经解决过类似问题），相信遇到过类似问题的人也会尽可能帮助你。\n Jenkins Gitter 中文聊天室 欢迎你!\n留言 本站的留言系统建立在 Github 提供的 Issues 上。欢迎大家在遵守社区行为规范的基础上积极地留言互动。\n"
+        "content": " 为了方便各位 Jenkins 的爱好者、用户以及贡献者之间互相交流，我这里列出来一些途径：\n 邮件组 即时聊天 在本站留言  邮件组 Jenkins 社区有很多 邮件组 ，感兴趣的童鞋请自行翻阅。本文仅介绍中文相关的邮件组：\n            Jenkins 中文用户邮件组  查看历史  订阅 取消订阅 求助   Jenkins 中文本地化兴趣邮件组  查看历史  订阅 取消订阅 求助     注意：点击上面的订阅或者取消都应该会弹出一个发送邮件的窗口，请不要做任何修改，邮件正文保持空白（不要添加邮件签名等内容）直接发送即可。邮件发送成功后，会收到确认的回复。鉴于邮件组是由 Google 提供的服务，无法科学上网的童鞋是无法查看历史邮件的。\n  即时聊天 即时聊天是一种很方便的线上交流方式，你有可能及时地收到大家的帮助，但是不要认为其他人有回答问题的义务。你没有能及时地得到帮助，可能是因为大家在忙、消息太多而被忽略、问题描述的不够详细等等。因此，建议大家在提问之前尽可能保证自己已经对问题理解的很清楚，并在提问时尽可能地给出上下文、复现步骤；当没有及时得到回答的话，可以把问题发送到邮件组（发送之前，请在邮件组中搜索其他人是否已经解决过类似问题），相信遇到过类似问题的人也会尽可能帮助你。\n Jenkins Gitter 中文聊天室 欢迎你!\n留言 本站的留言系统建立在 Github 提供的 Issues 上。欢迎大家在遵守社区行为规范的基础上积极地留言互动。\n"
     },
     {
         "uri": "https://jenkins-zh.github.io/about/",
@@ -182,6 +196,13 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/cd/",
+        "title": "Cd",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/cdf/",
         "title": "Cdf",
         "tags": [],
@@ -224,6 +245,13 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/contributing/",
+        "title": "Contributing",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/core/",
         "title": "Core",
         "tags": [],
@@ -233,6 +261,13 @@
     {
         "uri": "https://jenkins-zh.github.io/tags/developer/",
         "title": "Developer",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/docker/",
+        "title": "Docker",
         "tags": [],
         "description": "",
         "content": ""
@@ -345,6 +380,13 @@
     {
         "uri": "https://jenkins-zh.github.io/tags/kubernetes/",
         "title": "Kubernetes",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/newcomer/",
+        "title": "Newcomer",
         "tags": [],
         "description": "",
         "content": ""

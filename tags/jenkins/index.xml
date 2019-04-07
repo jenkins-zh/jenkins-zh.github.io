@@ -6,10 +6,46 @@
     <description>Recent content in Jenkins on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
+      <description>Docker 已经非常出名并且更多的组织正在转向基于 Docker 的应用开发和部署。这里有一个关于如何容器化现有 Java Web 应用以及使用 Jenkins 为它建立一个端到端部署流水线的快速指南。
+为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。
+步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。
+这里是可用于以上步骤的 Jenkins 流水线代码：
+node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-world.git&#39; stage &#39;build&#39; sh &#39;mvn clean install&#39; stage(&#39;Results - 1&#39;) { junit &#39;**/target/surefire-reports/TEST-*.xml&#39; archive &#39;target/*.jar&#39; } stage &#39;bake image&#39; docker.withRegistry(&#39;https://registry.hub.docker.com&#39;,&#39;docker-hub-credentials&#39;) { def image = docker.build(&amp;quot;ravisankar/ravisankardevops:${env.BUILD_TAG}&amp;quot;,&#39;.&#39;) stage &#39;test image&#39; image.withRun(&#39;-p 8888:8888&#39;) {springboot -&amp;gt; sh &#39;while !</description>
+    </item>
+    
+    <item>
+      <title>介绍：成为一名 Jenkins 贡献者的旅程</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</guid>
+      <description>作为一名软件工程师，这些年来在我工作过的不同公司里用到过许多开源软件（包括框架、库、工具等）。 然而，在此之前我从没有以一名贡献者的身份参与过开源项目。
+自从我向 Jenkins 提交第一个简单又滑稽的 commit 已经过去六个月（2018 年 9 月）了， 我也尝试过作出更多贡献。然而总的来说，向开源项目贡献代码是具有挑战的， 特别是像 Jenkins 这样有着很长生命周期的项目，项目中不乏遗留代码和系统知识。 它通常难以入手，也很难想到一个计划来持续贡献使你的付出从长远看来是有意义的。
+对于 Jenkins 社区来说，我在尝试加入社区时所遇到的困难是其它人也有可能会面临的， 因此我决定分享我成为 Jenkins 活跃贡献者的心路历程。
+我计划大概每月发布一篇博文来描述我的这段旅程，我将从简单容易入手的项目开始， 随着时间推移再介绍更加复杂的项目。
+从哪开始 jenkins.io 要成为 Jenkins 的贡献者，首先会看到的就是 jenkins.io, 在顶部导航中&amp;rdquo;社区&amp;rdquo;下拉列表里第一个&amp;rdquo;参与&amp;rdquo;的链接就能将我们带到&amp;rdquo;参与和贡献&amp;rdquo;这个页面。
+在这个页面中列举了我们能够参与 Jenkins 项目和社区的许多方式。尽管它展示了所有可能的选项供读者选择，但一下子看上去令人有些无所适从。
+这个页面被分成了左右两个部分，左边提供了参与社区的方法，右边是向社区贡献的方法。
+参与社区的建议 在“参与和贡献”页面的左侧是有关参与社区的建议，其中包括结交他人、审阅修改或者提供反馈信息。
+这里面最让我困惑的是沟通渠道，里面列出的沟通渠道有 几个邮件列表 还有 IRC 和 Gitter 频道。
+当我第一次尝试参与时，我订阅了许多邮件列表和几个 IRC 和 Gitter 频道，但我很快发现里面有重要的讨论正在进行， 并且活跃的讨论中多数是关于特定的用户或开发者的问题。因此，我不建议你一开始在这上面花太多时间， 除非你是要为其他用户提供帮助（当你是经验丰富的 Jenkins 用户时可能会有这种情况）或者你已经有一个明确的问题需要提问。
+看一看社区成员如何互相帮助是好事，但是对新人来说它的信息量过于庞大。如果你的兴趣在于向 Jenkins 项目作贡献（不管是翻译、文档还是代码）， 这些对话不会对你有太大的帮助。
+向社区贡献的建议 在“参与和贡献”页面的右侧有一些关于如何贡献的建议，主要分为：编写代码，翻译，文档和测试。
+在之后的博客中，我将介绍所有的这些贡献类型，以及如何参与的建议包括如何审阅 Pull Requests（PRs）或提供反馈 （反馈问题或者复现其它用户反映过的问题，提供额外信息来帮助维护者复现和修复它们。）
+开源之旅的第一次贡献 当看到「参与和贡献」页面时，我发现我可以帮助改进这个页面的一些内容。本来我打算选择其中一个作为这篇文章的第一个例子，但当我阅读贡献指南时， 我发现了一个更简单的贡献。我认为它可以更好的说明开始贡献社区是多么的简单，于是我决定就用它来当例子。
+网站代码仓库 在「文档」菜单中有一个链接 jenkins.io 的贡献指南， 这个 CONTRIBUTING 文件是大多数开源项目代码仓库的根目录中都会有的常见文件。</description>
+    </item>
     
     <item>
       <title>Electron 应用的流水线设计</title>
