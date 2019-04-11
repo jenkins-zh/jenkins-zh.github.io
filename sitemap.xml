@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/</loc>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</loc>
     <lastmod>2019-04-10T00:00:00+00:00</lastmod>
   </url>
@@ -249,7 +254,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins/</loc>
-    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -259,7 +264,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/</loc>
-    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -351,7 +356,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -373,6 +378,10 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-windows-installers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/</loc>
   </url>
   
   <url>
