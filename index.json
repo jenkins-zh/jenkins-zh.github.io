@@ -7,6 +7,20 @@
         "content": " 留言 留言之前需要使用 GitHub 账号登陆。大家要注意文明用语，严禁攻击、诋毁、灌水、广告等无关的话。对于违反人，一经发现将会被拉入黑名单。\n提问 欢迎每一位朋友在这里提出与 Jenkins 或相关领域的技术问题，但是，在提问之前建议先在搜索引擎和本站中进行搜索。\n问题至少要包含如下部分：\n 场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。\nGitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。\n"
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/",
+        "title": "使用 Zabbix 监控 Jenkins",
+        "tags": ["jenkins", "zabbix"],
+        "description": "介绍了如何使用 Zabbix 监控 Jenkins",
+        "content": "  本文假设读者已经了解 Jenkins 基本概念及插件安装，Zabbix 基础概念。基于 Zabbix 3.4，Jenkins 2.8 做实验\n 笔者最近的工作涉及到使用 Zabbix 监控 Jenkins。在谷歌上搜索到的文章非常少，能操作的就更少了。所以决定写一篇文章介绍如何使用 Zabbix 监控 Jenkins。\n下图为整体架构图：\n整体并不复杂，大体步骤如下：\n 在 Jenkins 上安装 Metrics 插件，使 Jenkins 暴露 metrics api。 配置 Zabbix server 及 agent 以实现监控及告警  为方便读者实验，笔者将自己做实验的代码上传到了 GitHub，链接在文章末尾。使用的是 Docker Compose 技术（方便一次性启动所有的系统）。\n接下来，我们详细介绍 Metrics插件及如何实现 Zabbix 监控 Jenkins。\n1. 使 Jenkins 暴露 metrics api 安装 Metrics 插件，在系统配置中，会多出“Metrics”的配置，如下图： 配置项不复杂。我们需要点击“Generate\u0026hellip;”生成一个 Access Key（生成后，记得要保存）。这个 Key 用于身份校验，后面我们会用到。\n保存后，我们在浏览器中输入URL：http://localhost:8080/metrics/\u0026lt;刚生成的 Access Key\u0026gt; 验证 Jenkins 是否已经暴露 metrics。如果看到如下图，就说明可以进行下一步了。\n1.1 Metrics 插件介绍 Metrics 插件是基于 dropwizard/metrics 实现。它通过4个接口暴露指标数据：/metrics，/ping，/threads，/healthcheck。\n1.2 Metrics 插件：/metrics 接口介绍 点击上图中的metric链接（http://localhost:8080/metrics/\u0026lt;Access Key\u0026gt;/metrics），它暴露了以下指标数据：\n{ version: \u0026quot;3.0.0\u0026quot;, gauges: {...}, counters: {...}, histograms: {...}, meters: {...}, timers: {...} }  从数据结构中可以看出它将指标分成 5 种数据类型： * Gauges：某项指标的瞬时值，例如：当前 Jenkins executor 的总个数（jenkins.executor.count.value） * Counters：某项指标的总数值，例如：http 请求活动连接数（http.activeRequests） * Meters：一段时间内，某事件的发生概率，例如：Jenkins成功执行的任务每分钟的执行次数（jenkins.runs.success.m1_rate） * Histogram：统计指标的分布情况。例如：Jenkins executor 数量的分布（jenkins.executor.count.history） * Timer：某项指标的持续时间。例如：Jenkins 任务等待时间（jenkins.job.waiting.duration）\n由于指标非常之多，我们就不分别介绍了。具体有哪些指标，读者朋友可以从代码仓库中的 metrics.json 文件了解。\n1.2 Metrics 插件其它接口介绍  /ping：接口返回 pong 代表 Jenkins 存活，如下图：  /threads：返回 Jenkins 的线程信息 /healthcheck：返回以下指标：  { disk-space: { healthy: true }, plugins: { healthy: true, message: \u0026quot;No failed plugins\u0026quot; }, temporary-space: { healthy: true }, thread-deadlock: { healthy: true } }  2. 配置 Zabbix server 与 agent 实现监控及告警 Zabbix server 通过与 Zabbix agent 进行通信实现数据的采集。而 Zabbix agent 又分为被动和主动两种模式。我们使用的是被动模式，也就是Zabbix server 向 agent 索要数据。\n所以，我们需要在 Zabbix agent 所在机器放一个获取 Jenkins 指标数据的脚本。再配置 Zabbix server 定时从该 agent 获取数据，最后配置触发器（trigger）实现告警。\n接下来的关于 Zabbix 的配置，基于我的 jenkins-zabbix 实验环境，读者朋友需要根据自己的实际情况变更。\n2.1 配置 Zabbix server 如何从 agent 获取指标数据 首先，我们需要告诉 Zabbix server 要与哪些 Zabbix agent 通信。所以，第一步是创建主机，如下图： 第二步，在主机列表中点击“Iterms”进行该主机的监控项设置： 第三步，进入创建监控项页面： 第四步，创建监控项： 这里需要解释其中几个选项为什么要那样填： * Type：是 Zabbix server 采集指标的类型，我们选择的是 Zabbix agent，如上文所说。 * Key：由于我们要监控的指标并不是 Zabbix 预定义的。所以，需要使用用户自定义参数来实现监控 Jenkins 指标。Key 填的值为：jenkins.metrics[gauges.jenkins.node.count.value.value]。jenkins.metrics是需要执行的真正的 Key 名称。而 [] 内是传给该 Key 对应的命令的参数。对于初学者，Zabbix 这部分概念非常不好理解。也许这样会更好理解：在使用用户自定义参数来实现监控的情况下，Zabbix server 会将这个 Key 发送给 agent，然后 agent 根据这个 Key 执行指定的 逻辑 以获取指标数据。这个 逻辑 通常是一段脚本（shell命令或Python脚本等）。而脚本也是可以传参的，[]中的值就是传给脚本的参数。具体更多细节，下文会继续介绍。 * Type of information：监控数据的数据类型，由于我们监控的是 Jenkins node 节点的个数，所以，使用数字整型。 * Update interval：指 Zabbix server 多长时间向 agent 获取一次数据，为方便实验，我们设置为 2s。\n到此，Zabbix server 端已经配置完成。\n2.2 配置 Zabbix agent 使其有能力从 Jenkins 获取指标数据 当 Zabbix agent 接收到 server 端的请求，如 jenkins.metrics[gauges.jenkins.node.count.value.value]。Zabbix agent 会读取自己的配置（agent 启动时会配置），配置内容如下：\n## Zabbix Agent Configuration File for Jenkins Master UserParameter=jenkins.metrics[*], python /usr/lib/zabbix/externalscripts/jenkins.metrics.py $1  根据 Key 名称（jenkins.metrics）找到相应的命令，即：python /usr/lib/zabbix/externalscripts/jenkins.metrics.py $1。并执行它，同时将参数 gauges.jenkins.node.count.value.value 传入到脚本 jenkins.metrics.py 中。jenkins.metrics.py 需要我们在 Jenkins agent 启动前放到 /usr/lib/zabbix/externalscripts/ 目录下。\njenkins.metrics.py 的源码在 jenkins-zabbix 实验环境中可以找到，篇幅有限，这里就简单介绍一下其中的逻辑。\njenkins.metrics.py 所做的事情，无非就是从 Jenkins master 的 metrics api 获取指标数据。但是由于 api 返回的是 JSON 结构，并不是 Zabbix server 所需要的格式。所以，jenkins.metrics.py 还做了一件事情，就是将 JSON 数据进行扁平化，比如原来的数据为：{\u0026quot;gauges\u0026quot;:{\u0026quot;jenkins.node.count.value\u0026quot;: { \u0026quot;value\u0026quot;: 1 }}} 扁平化后变成： gauges.jenkins.node.count.value.value=1。\n如果 jenkins.metrics.py 脚本没有接收参数的执行，它将一次性返回所有的指标如：\n...... histograms.vm.memory.pools.Metaspace.used.window.15m.stddev=0.0 histograms.vm.file.descriptor.ratio.x100.window.5m.p75=0.0 histograms.vm.memory.pools.PS-Old-Gen.used.window.5m.count=4165 gauges.vm.runnable.count.value=10 timers.jenkins.task.waiting.duration.mean=0.0 histograms.vm.memory.non-heap.committed.history.p99=123797504.0 gauges.vm.memory.pools.PS-Eden-Space.used.value=19010928 gauges.jenkins.node.count.value.value=1 histograms.vm.memory.pools.Code-Cache.used.window.15m.mean=44375961.6 ......  但是，如果接收到具体参数，如 gauges.jenkins.node.count.value.value ，脚本只返回该参数的值。本例中，它将只返回 1。\njenkins.metrics.py 脚本之所以对 JSON 数据进行扁平化，是因为 Zabbix server 一次只拿一个指标的值（这点需要向熟悉 Zabbix 的人求证，笔者从文档中没有找到明确的说明）。\n注意：在 2.1 节中，如果 Key 值设置为：jenkins.metrics，Zabbix server 不会拿 jenkins.metrics.py 返回的所有的指标值自动创建对应的监控项。所以，Key 值必须设置为类似于 jenkins.metrics[gauges.jenkins.node.count.value.value] 这样的值。\n3. 配置 Zabbix server 监控指标，并告警 在经过 2.2 节的配置后，如果 Zabbix server 采集到数据，可通过_Monitoring -\u0026gt; Latest data -\u0026gt; Graph_菜单（如下图），看到图形化的报表：\n图形化的报表： 有了指标数据就可以根据它进行告警了。告警在 Zabbix 中称为触发器（trigger）。如下图，我们创建了一个当 Jenkins node 小于 2 时，就触发告警的触发器：\n至于最终触发器的后续行为是发邮件，还是发短信，属于细节部分，读者朋友可根据自己的情况进行设置。\n小结 在理解了 Zabbix server 与 agent 之间的通信原理的前提下，使用 Zabbix 监控 Jenkins 是不难的。笔者认为难点在于自动化整个过程。上文中，我们创建主机和添加监控项的过程，是手工操作的。虽然 Zabbix 能通过自动发现主机，自动关联模板来自动化上述过程，但是创建”自动化发现主机“和”自动关联动作“依然是手工操作。这不符合”自动化一切“的”追求“。\n最后，如果读者朋友不是历史包袱原因而选择 Zabbix，笔者在这里推荐 Prometheus，一款《Google 运维解密》推荐的开源监控系统。\n附录  Metrics 插件：https://wiki.jenkins.io/display/JENKINS/Metrics+Plugin dropwizard/metrics：https://metrics.dropwizard.io/4.0.0/ Zabbix 监控项类型：https://www.zabbix.com/documentation/3.4/zh/manual/config/items/itemtypes metrics.json： https://github.com/zacker330/jenkins-zabbix/blob/master/metrics.json jenkins-zabbix 实验环境：https://github.com/zacker330/jenkins-zabbix Prometheus：https://prometheus.io/  "
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/about/social-media/",
+        "title": "Jenkins 中文社区的社交媒体",
+        "tags": [],
+        "description": "",
+        "content": "社区所有的技术、活动类的文章都会同步发布到下面的社交媒体平台上。\n   媒体 负责人     微信公众号  LinuxSuRen    开源中国  donhui    CSDN  P01son6415    简书  yJunS    掘金  zacker330     "
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/",
         "title": "简析 Jenkins 专有用户数据库加密算法",
         "tags": ["jenkins"],
@@ -224,6 +238,13 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/cdsummit/",
+        "title": "Cdsummit",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/ci/",
         "title": "Ci",
         "tags": [],
@@ -364,6 +385,13 @@
         "content": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/",
+        "title": "Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴",
+        "tags": ["cloud-native", "kubernetes", "kubecon", "ci", "cd", "cdsummit"],
+        "description": "",
+        "content": " KubeCon + CloudNativeCon | Open Source Summit | 持续交付峰会 中国2019 2019年4月10日，旧金山 - Linux基金会是一家以开源促进大众创新的非营利组织，今天公布将于2019年6月24至26日在中国上海举行的 KubeCon + CloudNativeCon + Open Source Summit 中国2019日程。\nOpen Source Summit 中国2019前身为 LinuxCon + ContainerCon + CloudOpen 中国（LC3），是开源社区寻求合作、共享信息、了解当今最有影响力的开源技术和议题的重要平台，包括：云原生、无服务器、微服务、物联网、人工智能、网络、Linux 等。\n2019年，首次将Open Source Summit中国和KubeCon + CloudNativeCon中国整合成一项活动，只需购票一次即可参加KubeCon + CloudNativeCon + Open Source Summit中国。\n本届持续交付峰会将由 CNCF 承办在大会的第 0 天举行，汇聚了各个开源 CI/CD 社区。\nJenkins 中文社区成员在大会上将进行分享 Jenkins 中文社区成员夏润泽（北京优帆科技有限公司）将在大会上作为演讲嘉宾为大家带来主题为 Jenkins X 在 kubernetes 之上运行的无服务器 Jenkins 的分享。\nJenkins 中文社区邀您参与社区共同成长 在开源盛会开展的同时，我们希望能够与更多的小伙伴们一同在线上完善开源社区氛围、线下深度互动，努力构建一个有内容、有态度的优质技术社区。\n"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-localization-zh-cn-plugin/",
         "title": "Jenkins 中文语言包",
         "tags": [],
@@ -387,6 +415,13 @@
     {
         "uri": "https://jenkins-zh.github.io/tags/jenkinsworld2018/",
         "title": "Jenkinsworld2018",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/kubecon/",
+        "title": "Kubecon",
         "tags": [],
         "description": "",
         "content": ""
@@ -436,6 +471,13 @@
     {
         "uri": "https://jenkins-zh.github.io/tags/platform-sig/",
         "title": "Platform Sig",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/plugins/",
+        "title": "Plugins",
         "tags": [],
         "description": "",
         "content": ""
@@ -511,6 +553,13 @@
         "content": " Jenkins 的 Windows 安装程序已经存在很多年了，它是用户在 Windows 上安装 Jenkins Master 作为服务的一种方式。 从被开发出来至今，它还没有什么新特性，但现在是时候做出改变了。\n首先，让我们瞧瞧现版本安装程序的使用经验。\n第1步 启动安装程序 这是使用 WiX Toolset Windows 安装程序的默认界面外观，算不上太好看，而且没有太多对安装程序进行说明的品牌信息。\n第2步 安装目录 同样，没有太多的品牌信息。\n第3步 安装 除了选择安装位置外，安装程序大体上没有提供一些安装 Jenkins 的选项。\n问题 现在的安装程序存在一些问题，平台特别兴趣小组会修复这些问题，并为用户提供新的安装体验。\n 安装程序只支持32位安装。 用户不能选择 Jenkins 作为 Windows 服务启动时的端口以及账户。 安装程序捆绑了32位的 Java Runtime，而没有使用已存在的 JRE。 安装程序不支持 Jenkins for Java 11中的实验性支持。 JENKINS_HOME 目录并不适合现代 Windows。 安装程序中没有品牌。  前进 使用实验性的 Jenkins Windows 安装程序，大部分问题都已解决！\n 安装程序将只支持64位系统，这也是如今大多数 Windows 系统的现状，所以能让更多的用户能够使用安装包来安装 Jenkins。 用户能够为服务输入用户信息，同时选择端口以便于 Jenkins 验证端口是否可用。 安装程序不再捆绑 JRE 而是在操作系统中寻找合适的 JRE。如果用户想要使用一个不同的 JRE，可以在安装时指定。 安装程序已经支持 Java 11，包括在 Java 11 预览上面列出的组件。 JENKINS_HOME 目录被放置在启动服务用户的 LocalAppData 目录下，这与现代 Windows 文件系统布局一致。 安装程序已经升级带有品牌了，这让它看起来更酷并能提供一个更好的用户体验。  截图 以下是新安装程序的系列屏幕截图：\n第1步 启动安装程序 Jenkins logo 现在是安装程序 UI 的重要组成部分。\n第2步 安装目录 在安装程序的所有阶段，Jenkins logo 和名称都出现在标题中。\n第3步 选择账户 安装程序现在允许您指定要运行的帐户的用户名/密码，并检查该帐户是否具有 LogonAsService 权限。\n第4步 端口选择 安装程序还允许您指定 Jenkins 运行的端口，并且在输入和测试有效端口之前不会继续。\n第5步 JRE 选择 安装程序现在不再捆绑 JRE，而是在系统上搜索兼容的 JRE （现在是 JRE 8）。 如果你想使用与安装程序搜索到不同的 JRE，你可以浏览目录并指定它。只支持 JRE 8 和 JRE 11 Runtime。如果发现选定的 JRE 是版本11，安装程序将自动添加必要的参数和其他 jar 文件，以便在 Java 11下运行。\n第6步 安装 用户能在安装程序中输入的所有选项也可以在命令行上覆盖以进行自动部署。可以覆盖的完整属性列表即将推出。\n接下来的步骤 新版本安装程序正在被平台特别兴趣小组的成员 Review 中，但我们需要人测试安装程序并给予反馈。你过你对测试新安装程序感兴趣的话，请加入平台特别兴趣小组 gitter room 获取更多信息。\n在新安装程序中还使用了许多一些正在研发的东西（例如，在进行升级时保留端口和其他选择）,但它已接近发布。\n除了基于 MSI 的 Windows 安装程序的更新之外，平台特别兴趣小组还在努力接管 Chocolatey Jenkins 软件包并为每次更新发布一个版本。\n"
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/zabbix/",
+        "title": "Zabbix",
+        "tags": [],
+        "description": "",
+        "content": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/",
         "title": "什么是 CI/CD?",
         "tags": ["ci", "cd"],
@@ -537,6 +586,13 @@
         "tags": ["jenkins", "webhooks", "security"],
         "description": "谁说局域网里就不能带 GitHub 的 WebHook 玩？",
         "content": " 在这篇文章中，我将向大家展示，如何让运行在防火墙内的 Jenkins 依然可以实时地收到 GitHub 的 WebHook。当然，你也可以把这个方法应用到如 BitBucket、 DockerHub 或任何可以推送 WebHook 的其他服务中。但是，下面的步骤仅适用于托管在 GitHub 上的项目。\n什么是 WebHook 简单地描述下什么是 WebHook：事件消息（通常是 JSON，也可以是其他的）由服务端以 HTTP(S) 协议发送到监听的客户端。\n事件流自左到右，Jenkins 会监听类似 /github-webhook/ 或 /dockerhub-webhook/ 等路径上的 HTTP 请求，唤醒并执行一些任务。\nGitHub 或 BitBucket 可能会报告一个新的提交或 PR，DockerHub 报告一个上游的镜像发生了变更。这些事情的共同之处在于，它们会推送给 Jenkins，并期待可以推送成功（例如：可以访问到 Jenkins）。在网络是开放的情况下时，例如 GitHub 企业版 或 Jenkins 在监听公网时，这是可以正常工作的。\n内网环境 当有东西挡在中间时，也就是防火墙：\n（_按照行业标准，所有防火墙都必须能起到屏障的作用。因此，无论如何，请不要在你的组织内搞破坏_）\n当你在笔记本电脑上运行 Jenkins 并希望从 GitHub 接收 WebHook 时，这也是一样的。可能是为了测试你的设置，也可能是为了在 Mac 上运行 iOS 版本构建，又或者是部分网络没有暴露在互联网中，这都是合理的。 除非你的笔记本电脑可以让整个互联网访问到（这当然不太可能），或者你的网络配置得恰到好处，否则网络连接将无法流动，此时 WebHook是不可用的。\n没关系，我们可以退而求其次，使用轮询变更的方式。只是这样很糟糕。你会用尽 API 配额，还无法实时地获取变更，这真的不是一个好方法。\n问题可能也是机会 我们可以解决这个问题，但也可以把这个视为一个机会。有的东西在互联网中不可访问，或者以某些默认的方法锁定是一个特色，不是一个 Bug。你可以很大程度上减少你的攻击面，同时可以进行深度防护：\n一个 WebHook 转发服务 输入 link:https://smee.io/[Smee] 这个很容易记住的名字。这是一个由 GitHub 提供的 link:https://github.com/probot/smee[开源软件项目]，还能以服务的方式托管在 GitHub 上。这可以为你捕获并转发 WebHook。我会用一个图来给你解释它。\nGitHub 把一个事件（该场景下是通过 HTTPS/json）推送给 Smee.io（也就是圆圈标记的部分，暴露在互联网上并能被 GitHub 访问到），而 Jenkins 通过一个客户端使用一个向外的连接订阅 Smee 。注意箭头的方向：Jenkins 只有一个向外的连接。\n这一点很重要，只要防火墙允许向外访问就可以工作（像 NAT 以及其他网络通常就是这样的）。如果 Jenkins 无法访问外部的任何服务，那么，本文也就当然不会有什么帮助了（但是这通常不会出现的）。\n设置 步骤1:首先，访问 https://smee.io/ 并点击 “Start a new channel”:\n你会得到一个唯一的 URL（你应该拷贝出来以便后续使用）：\n然后，在你运行 Jenkins 的地方安装 smee 客户端：\nnpm install --global smee-client\n（这让 smee 命令行客户端可以接收并转发 WebHook）。\n现在，启动 smee 客户端并指向你的 Jenkins。在该案例中，我的 Jenkins 运行在 8080 端口（这是默认的，如果在你的笔记本上运行的话，根据需要修改端口和 smee 地址）：\nsmee --url https://smee.io/GSm1B40sRfBvSjYS --path /github-webhook/ --port 8080\n这样的话，会连接 smee 服务并转发 WebHook 到 /github-webhook/（最后的斜线很重要，不要丢了）。当运行起来，你将会从日志里看到，它已经连接并转发 WebHook。只要你希望能收到 WebHook 就需要保持该命令的运行。\n下一步，你需要配置一个使用 GitHub 的流水线。这里我从头开始配置。如果你已经有了一个的话，可以跳过：\n我选择 GitHub 作为代码仓库：\n然后，选择你的仓库。这将会设置好来准备接收来自 GitHub 的 WebHook（如果你已经有了流水线，并使用 GitHub 作为 SCM 源，那么也是可以的）。\n最后一步，是告诉 GitHub 为那个仓库（或组织也可以）发送 WebHook 事件给 Smee（最终会由 Jenkins 接收到）。\n选择你的 GitHub 仓库设置选项卡，并点击 “add webhook”：\n然后，配置 WebHook：\n 粘贴从上面步骤中拷贝的 smee 的 URL 选择 application/json 作为内容类型 选择 send everything（你可以选择你想要的事件，但我只是处于简单这么做）。 点击 Add Webhook（或 update）  它看起来应该像这样：\n好，现在 WebHook 应该可以了。你可以在你的仓库中添加一个变更，并稍后检查构建状态：\n祝你好运！\n"
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/",
+        "title": "春季安全清查",
+        "tags": ["plugins", "security"],
+        "description": "",
+        "content": "今天我们公布了一个 安全报告， 主要是关于 Jenkins 的插件中 还没有被修复 的问题。 发生了什么？\nJenkins 安全团队将 漏洞反馈分类发布在 Jira 和我们的非公开邮件列表中。 一旦我们确定它不是由 Jenkins 安全团队成员维护的插件，我们会尝试将该问题通知插件维护者，以帮助我们开发，审查和发布修复。\n这种情况下，我们会发布 安全报告，将这些问题告知用户，即使没有发布修复版本。 这样可以让管理员作出决定，是否继续使用具有未解决的安全漏洞的插件。 今天发布的报告里大多数都是这样的安全问题。\n在这个列表中看到您感兴趣的插件并且想要帮忙？了解如何 认领一个插件。\n"
     },
     {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/",

@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Apr 2019 14:26:05 +0800</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,16 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 中文社区的社交媒体</title>
+      <link>https://jenkins-zh.github.io/about/social-media/</link>
+      <pubDate>Fri, 12 Apr 2019 14:26:05 +0800</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/about/social-media/</guid>
+      <description>社区所有的技术、活动类的文章都会同步发布到下面的社交媒体平台上。
+   媒体 负责人     微信公众号  LinuxSuRen    开源中国  donhui    CSDN  P01son6415    简书  yJunS    掘金  zacker330     </description>
     </item>
     
     <item>

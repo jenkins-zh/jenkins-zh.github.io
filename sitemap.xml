@@ -7,6 +7,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/</loc>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/about/social-media/</loc>
+    <lastmod>2019-04-12T14:26:05+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/</loc>
     <lastmod>2019-04-12T00:00:00+00:00</lastmod>
   </url>
@@ -93,7 +103,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/about/</loc>
-    <lastmod>2019-03-03T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-12T14:26:05+08:00</lastmod>
   </url>
   
   <url>
@@ -150,6 +160,11 @@
   <url>
     <loc>https://jenkins-zh.github.io/tags/cdf/</loc>
     <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/cdsummit/</loc>
     <priority>0</priority>
   </url>
   
@@ -254,7 +269,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins/</loc>
-    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -264,8 +279,12 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/</loc>
-    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</loc>
   </url>
   
   <url>
@@ -283,6 +302,11 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkinsworld2018/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/kubecon/</loc>
     <priority>0</priority>
   </url>
   
@@ -328,6 +352,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/plugins/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/security/</loc>
     <priority>0</priority>
   </url>
@@ -356,7 +385,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -381,6 +410,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/zabbix/</loc>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/</loc>
   </url>
   
@@ -394,6 +429,10 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-webhook-firewalls/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</loc>
   </url>
   
   <url>

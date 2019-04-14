@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Cdsummit</title>
+      <link>https://jenkins-zh.github.io/tags/cdsummit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/cdsummit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ci</title>
       <link>https://jenkins-zh.github.io/tags/ci/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
@@ -185,7 +194,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.github.io/tags/jenkins/</link>
-      <pubDate>Fri, 12 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
       <description></description>
@@ -206,6 +215,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkinsworld2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubecon</title>
+      <link>https://jenkins-zh.github.io/tags/kubecon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/kubecon/</guid>
       <description></description>
     </item>
     
@@ -273,6 +291,15 @@
     </item>
     
     <item>
+      <title>Plugins</title>
+      <link>https://jenkins-zh.github.io/tags/plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/plugins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Security</title>
       <link>https://jenkins-zh.github.io/tags/security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -314,6 +341,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zabbix</title>
+      <link>https://jenkins-zh.github.io/tags/zabbix/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/zabbix/</guid>
       <description></description>
     </item>
     

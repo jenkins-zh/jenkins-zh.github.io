@@ -6,10 +6,27 @@
     <description>Recent content in Jenkins on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 12 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Zabbix 监控 Jenkins</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/</guid>
+      <description>本文假设读者已经了解 Jenkins 基本概念及插件安装，Zabbix 基础概念。基于 Zabbix 3.4，Jenkins 2.8 做实验
+ 笔者最近的工作涉及到使用 Zabbix 监控 Jenkins。在谷歌上搜索到的文章非常少，能操作的就更少了。所以决定写一篇文章介绍如何使用 Zabbix 监控 Jenkins。
+下图为整体架构图：
+整体并不复杂，大体步骤如下：
+ 在 Jenkins 上安装 Metrics 插件，使 Jenkins 暴露 metrics api。 配置 Zabbix server 及 agent 以实现监控及告警  为方便读者实验，笔者将自己做实验的代码上传到了 GitHub，链接在文章末尾。使用的是 Docker Compose 技术（方便一次性启动所有的系统）。
+接下来，我们详细介绍 Metrics插件及如何实现 Zabbix 监控 Jenkins。
+1. 使 Jenkins 暴露 metrics api 安装 Metrics 插件，在系统配置中，会多出“Metrics”的配置，如下图： 配置项不复杂。我们需要点击“Generate&amp;hellip;”生成一个 Access Key（生成后，记得要保存）。这个 Key 用于身份校验，后面我们会用到。
+保存后，我们在浏览器中输入URL：http://localhost:8080/metrics/&amp;lt;刚生成的 Access Key&amp;gt; 验证 Jenkins 是否已经暴露 metrics。如果看到如下图，就说明可以进行下一步了。
+1.1 Metrics 插件介绍 Metrics 插件是基于 dropwizard/metrics 实现。它通过4个接口暴露指标数据：/metrics，/ping，/threads，/healthcheck。</description>
+    </item>
     
     <item>
       <title>简析 Jenkins 专有用户数据库加密算法</title>
