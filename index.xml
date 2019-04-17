@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,24 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>AIOps：DevOps 的未来</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/</link>
+      <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/</guid>
+      <description>DevOps 和云技术正在逼近极限 范式转变往往会产生意想不到的后果，这些后果可能需要数年才能被完全消化。 云计算就是一个很好的例子。 云计算迎来了灵活的基础设施和低资本要求的时代，由于资源只是一个API调用，工程师们无需等待部署。 然而，这一切只是开始。
+敏捷的公司利用云来打破开发和运维之间的隔阂，并采用敏捷方法以缩短开发周期，从而创造战略优势。 他们将应用程序生命周期中的工程师团队分工从之前的开发和测试变为部署和运维， 并创建了需要一系列新技能的职位。这些公司使用 CI/CD 和 DevOps 进一步推动自动化流水线， 以实现更快的交付。
+这样有隐患吗？去问你的 DevOps 团队 DevOps 团队的任务是维护一个工具链，以便自动交付新代码，按需扩展，以及五个 9 的正常运行时间。 在空闲时间，他们致力于提高性能和控制成本。 对于大的应用程序，可以有数千个虚拟机或容器，每个虚拟机或容器都有一堆软件， 还有负载平衡器和自动扩容等云服务，所有这些都必须进行配置和维护。 这一切都在不断发展中。
+我之前了解过的一个大型独角兽公司拥有数百名开发人员，每天更新代码超过 100 次， 云上有超过 4000 台虚拟机，每月收集数 PB 的数据。 而他们的 DevOps 团队只有十几个人手，直到去年才有 VP。 对他们来说，这是一个艰巨且繁重的任务。
+应付这无数的挑战已经超出了人类的能力范围。
+幸好，AIOps 正在成为一种解决方案。
+AIOps 一词是由 Gartner 创造的， 他将其解释为：
+AIOps 结合了大数据，机器学习和可视化技术，通过更强的洞察力来优化 IT 运维。 IT 的领导者应该开始部署 AIOps，以优化当前的性能分析，
+并在未来两到五年内将使用范围扩展到 IT 服务管理和自动化。 虽然 Gartner 创造了这个术语，但以我拙见，这还没达到标准。 他的定义以循环中的人为中心，以他的描述 AIOps 基本上是一种高级的大数据分析。 要解决 DevOps 困境，我们要定一个更高的目标。
+那么，AIOps 应该是什么？ 我们先从它不应该是什么开始：一个对现有的运维系统的修饰，软件供应商将&amp;rdquo;以 AI 驱动&amp;rdquo;作为卖点。 这种情况已经发生了，当新的技术威胁到现有利益时，往往会发生这种情况。 仅仅向已有工具添加一个 API 是不够的，如果决策需要人为干预，那就不能算是 AIOps。</description>
     </item>
     
     <item>
