@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 17 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cd</title>
+      <link>https://jenkins-zh.github.io/tags/cd/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://jenkins-zh.github.io/tags/devops/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://jenkins-zh.github.io/tags/jenkins/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ai</title>
@@ -21,38 +48,11 @@
     </item>
     
     <item>
-      <title>devops</title>
-      <link>https://jenkins-zh.github.io/tags/devops/</link>
-      <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jenkins</title>
-      <link>https://jenkins-zh.github.io/tags/jenkins/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>zabbix</title>
       <link>https://jenkins-zh.github.io/tags/zabbix/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/zabbix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cd</title>
-      <link>https://jenkins-zh.github.io/tags/cd/</link>
-      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/cd/</guid>
       <description></description>
     </item>
     

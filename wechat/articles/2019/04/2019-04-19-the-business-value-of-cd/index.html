@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>简析 Jenkins 专有用户数据库加密算法 | Jenkins 中文社区</title>
+    <title>持续交付的商业价值 | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,27 +27,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="简析 Jenkins 专有用户数据库加密算法" />
-<meta property="og:description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析" />
+<meta property="og:title" content="持续交付的商业价值" />
+<meta property="og:description" content="了解整体的持续交付如何帮助你的组织以更低的风险更快地交付和更新软件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" />
-<meta property="article:published_time" content="2019-04-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" />
+<meta property="article:published_time" content="2019-04-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-19T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="简析 Jenkins 专有用户数据库加密算法">
-<meta itemprop="description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析">
-
-
-<meta itemprop="datePublished" content="2019-04-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="291">
+<meta itemprop="name" content="持续交付的商业价值">
+<meta itemprop="description" content="了解整体的持续交付如何帮助你的组织以更低的风险更快地交付和更新软件">
 
 
+<meta itemprop="datePublished" content="2019-04-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="84">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="cd,devops,jenkins," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="简析 Jenkins 专有用户数据库加密算法"/>
-<meta name="twitter:description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析"/>
+<meta name="twitter:title" content="持续交付的商业价值"/>
+<meta name="twitter:description" content="了解整体的持续交付如何帮助你的组织以更低的风险更快地交付和更新软件"/>
 
 
 
@@ -149,6 +149,8 @@
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
@@ -185,17 +187,9 @@
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="dib f6 pl1 hover-bg-light-gray br-100" title="使用 Zabbix 监控 Jenkins ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/" class="dib f6 pr1 hover-bg-light-gray br-100" title="AIOps：DevOps 的未来">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -214,13 +208,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">简析 Jenkins 专有用户数据库加密算法</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">持续交付的商业价值</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      本文对 Jenkins 专有用户数据库加密算法进行简要分析
+      了解整体的持续交付如何帮助你的组织以更低的风险更快地交付和更新软件
     </div>
   
 
@@ -231,104 +225,57 @@
 
 <div class="prose" id="prose">
 
+<p>持续交付使你能够以更低地风险、更快低交付新软件或是更新已有软件。</p>
 
+<p>降低风险很重要，但是，支持持续交付的流程将转化为对业务更重要的价值：
+- 加速价值时间。
+一个小企业不需要一个 MBA 就可以认识到持续交付可以帮助他们完成工作。
+一家大型企业已经规划了其价值流，
+并且在整个大型组织中拥有复杂的投资和合约，
+将发现持续交付有助于加速实现价值的时间。
+- 数据驱动决策。
+部署、度量和调整。
+你仍然可以推动更大规模的发布，但你的流程将更适合于持续的数据收集。
+这将缩短与客户的反馈循环。
+它提高了你的反应能力，计划你的下一步行动，并保持领先的竞争力。
+- 质量。
+你持续发布的行为使你必须提高你的质量标准以及完全的自动化测试实践。
+更好的质量意味着更快乐的客户、更低的成本、更少的消防演习和更少的计划外工作。
+- 试验 = 创新。
+开发人员和业务线可以自由地以较低的成本尝试新的想法，
+从而释放出长期高投资发布周期背后的创新想法。
+- 降低成本。
+大的发布会有巨大的成本，如果出现错误会有严重的后果。
+保持可交付成果处于可发布状态会降低交付成本。</p>
 
-<h3 id="认识jenkins专有用户数据库">认识Jenkins专有用户数据库</h3>
+<p>对企业来说，这些价值一起使持续交付成为真正的游戏变革者。
+尽管可以在团队或项目级别开始采用和验证，但持续交付的本质是它以需要真正投资和自上而下承诺的方式跨越了组织边界。
+选择与现有投资互补并共存的持续交付工具链是走向成功的关键一步，
+特别是因为 CD 可以引导你的组织采用 DevOps 文化。</p>
 
-<p>Jenkins 访问控制分为：安全域（即认证）与授权策略。</p>
+<p>持续交付为创建更好的软件开辟了全新的道路。
+CD 是商业层面的热门话题，这有很多的原因：
+- 早期的采用者已经证明了它的价值。
+主流采用者都观察到了它的优势，并感觉到竞争的刺痛，因为他们更灵活的竞争对手超过了他们。
+- DevOps 作为一种运动获得了关注。
+业务人员理解，在开发和运营之间有一个共同的理解，打破孤立的行为，并在整个组织内发展一种责任文化，是提高效率和上市时间的关键步骤。
+在许多方面，持续交付等同于 DevOps 。
+- 随着软件“吞噬世界”，商业领袖们越来越清楚 IT 必须被用作战略资产。
+在正确处理安全性、可用性和合规性的同时，能够缩短交付时间、提高质量并快速适应变化是一项挑战。
+持续交付，强调自动化和尽早的、直接的反馈，是实现这些目标的方法。
+- 当你通过持续交付实现廉价的、低风险的试验时，你可以用更多的信息指导业务投资，并发现你可能完全错过的机会。</p>
 
-<p>其中，安全域可以采用三种形式，分别为：Jenkins 专有用户数据库、LDAP、Servlet 容器代理。
-<img src="../../../images/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/jenkins-security-realm.png" alt="jenkins-security-realm.png" /></p>
+<p>持续交付正在改变企业使用其 IT 资产与客户和合作伙伴联系的方式。
+CD 建立在多年来之不易的敏捷过程和持续集成经验的基础上，
+将这些好处提升到业务级别，而不是简单地成为开发团队使用的技术，
+<strong>并最终导致 DevOps</strong> 。
+随着开发和运营人员学习如何协作和分担责任时，许多成功的关键都植根于组织和文化的变革。
+无论是在组织范围内还是在本地，实现这种变革的技术工具链可能包括 Jenkins 。
+CloudBees Jenkins 企业版，通过扩展开源 Jenkins 的使用范围，
+提供了一个支持 Jenkins 混合模型（本地部署、云上部署或混合部署）的平台，
+是组织在今天转向持续交付和在不久的将来实施 DevOps 的必要工具。</p>
 
-<h3 id="在哪里看到加密后的用户密码信息">在哪里看到加密后的用户密码信息？</h3>
-
-<p>Jenkins 专有用户的数据信息存放位置：$JENKINS_HOME/users/</p>
-
-<p>每个用户的相关信息存放在各自的 config.xml 文件中： $JENKINS_HOME/users/$user/config.xml</p>
-
-<p>在 config.xml 文件中的 passwordHash 节点可以看到用户密码加密后的密文哈希值：
-<img src="../../../images/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/jenkins-user-config.png" alt="jenkins-user-config.png" /></p>
-
-<h3 id="用户密码是用什么算法加密的呢">用户密码是用什么算法加密的呢？</h3>
-
-<p>那么问题来了，用户密码是用何种加密方式加密的呢？可否通过解密密文得到明文呢？</p>
-
-<p>在 <a href="https://github.com/jenkinsci/jenkins">GitHub</a> 上查看其源码，通过关键字 #jbcrypt 搜索定位到 HudsonPrivateSecurityRealm.java 这个文件。
-HudsonPrivateSecurityRealm.java 具体路径是：jenkins/core/src/main/java/hudson/security/HudsonPrivateSecurityRealm.java</p>
-
-<p>源码片段如下：</p>
-
-<pre><code class="language-java">    /**
-     * {@link PasswordEncoder} that uses jBCrypt.
-     */
-    private static final PasswordEncoder JBCRYPT_ENCODER = new PasswordEncoder() {
-        public String encodePassword(String rawPass, Object _) throws DataAccessException {
-            return BCrypt.hashpw(rawPass,BCrypt.gensalt());
-        }
-
-        public boolean isPasswordValid(String encPass, String rawPass, Object _) throws DataAccessException {
-            return BCrypt.checkpw(rawPass,encPass);
-        }
-    };
-    /**
-     * Combines {@link #JBCRYPT_ENCODER} and {@link #CLASSIC} into one so that we can continue
-     * to accept {@link #CLASSIC} format but new encoding will always done via {@link #JBCRYPT_ENCODER}.
-     */
-    public static final PasswordEncoder PASSWORD_ENCODER = new PasswordEncoder() {
-        /*
-            CLASSIC encoder outputs &quot;salt:hash&quot; where salt is [a-z]+, so we use unique prefix '#jbcyrpt&quot;
-            to designate JBCRYPT-format hash.
-            '#' is neither in base64 nor hex, which makes it a good choice.
-         */
-        public String encodePassword(String rawPass, Object salt) throws DataAccessException {
-            return JBCRYPT_HEADER+JBCRYPT_ENCODER.encodePassword(rawPass,salt);
-        }
-
-        public boolean isPasswordValid(String encPass, String rawPass, Object salt) throws DataAccessException {
-            if (encPass.startsWith(JBCRYPT_HEADER))
-                return JBCRYPT_ENCODER.isPasswordValid(encPass.substring(JBCRYPT_HEADER.length()),rawPass,salt);
-            else
-                return CLASSIC.isPasswordValid(encPass,rawPass,salt);
-        }
-
-        private static final String JBCRYPT_HEADER = &quot;#jbcrypt:&quot;;
-    };
-</code></pre>
-
-<p>通过分析该源码得知：
-1. 明文通过 jbcrypt 算法得到密文 encPass
-2. 密文的格式为：salt: encPass，其中以 #jbcrypt 表示 salt 作为数据头</p>
-
-<h3 id="jbcrypt-是什么">jbcrypt 是什么？</h3>
-
-<p><a href="http://www.mindrot.org/projects/jBCrypt/">jbcrypt</a> 是 bcrypt 加密工具的 java 实现。
-它的 API 非常简单，DEMO 如下，在 HudsonPrivateSecurityRealm.java 中可以看到加密和校验时使用了如下 API：</p>
-
-<pre><code class="language-java">// Hash a password for the first time 
-String hashed = BCrypt.hashpw(password, BCrypt.gensalt()); 
-
-// gensalt's log_rounds parameter determines the complexity the work factor is 2**log_rounds, and the default is 10 
-String hashed = BCrypt.hashpw(password, BCrypt.gensalt(12)); 
-
-// Check that an unencrypted password matches one that has previously been hashed 
-if (BCrypt.checkpw(candidate, hashed)) 
-  System.out.println(&quot;It matches&quot;); 
-else 
-  System.out.println(&quot;It does not match&quot;);
-</code></pre>
-
-<p>经验证，用 jbcrypt 对同一个明文加密后因为 salt 一般不同，加密后的密文一般不同。</p>
-
-<h3 id="bcrypt-精要概况">bcrypt 精要概况</h3>
-
-<ol>
-<li>bcrypt 是不可逆的加密算法，无法通过解密密文得到明文。</li>
-<li>bcrypt 和其他对称或非对称加密方式不同的是，不是直接解密得到明文，也不是二次加密比较密文，而是把明文和存储的密文一块运算得到另一个密文，如果这两个密文相同则验证成功。</li>
-</ol>
-
-<h3 id="总结">总结</h3>
-
-<p>综上， Jenkins 专有用户数据库使用了 jbcrypt 加密， jbcrypt 加密是不可逆的，而且对于同一个明文的加密结果一般不同。</p>
+<p><a href="https://pages.cloudbees.com/Website_BizValue-Continuous-Delivery.html?lsd=BizValue-Continuous-Delivery">更多内容请参见白皮书：持续交付的商业价值</a></p>
 
 </div>
 
@@ -361,14 +308,14 @@ else
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “简析 Jenkins 专有用户数据库加密算法”
-  </a> was last updated: April 12, 2019
+    “持续交付的商业价值”
+  </a> was last updated: April 19, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -386,6 +333,18 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
+            <a class="tag" href="/tags/cd">
+              cd
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/devops">
+              devops
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
             <a class="tag" href="/tags/jenkins">
               jenkins
             </a>
@@ -395,29 +354,11 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="link">
-              持续交付的商业价值
-            </a>
-          </li>
-        
       
         
           <li class="db b mt4 mb2 mr2">
             Related entries:
           </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="link">
-              使用 Zabbix 监控 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-      
         
         
           <li class="db dib-l mb2 mr3">
@@ -430,8 +371,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
-              介绍：成为一名 Jenkins 贡献者的旅程
+            <a href="/wechat/articles/2019/04/2019-04-15-kubecon-cn/" class="link">
+              Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴
             </a>
           </li>
         
@@ -439,44 +380,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-ready-for-cdf/" class="link">
-              为 Continuous Delivery Foundation 的成立感到兴奋
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
-              MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link">
-              在安全防火墙内通过 WebHook 触发构建
+            <a href="/wechat/articles/2019/04/2019-04-12-what-is-cicd/" class="link">
+              什么是 CI/CD?
             </a>
           </li>
         
