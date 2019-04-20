@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ai</title>
+      <link>https://jenkins-zh.github.io/tags/ai/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://jenkins-zh.github.io/tags/devops/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cd</title>
@@ -21,29 +39,11 @@
     </item>
     
     <item>
-      <title>devops</title>
-      <link>https://jenkins-zh.github.io/tags/devops/</link>
-      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>jenkins</title>
       <link>https://jenkins-zh.github.io/tags/jenkins/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ai</title>
-      <link>https://jenkins-zh.github.io/tags/ai/</link>
-      <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/ai/</guid>
       <description></description>
     </item>
     
