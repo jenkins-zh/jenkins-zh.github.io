@@ -6,10 +6,28 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 22 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于 Jenkins master 共享 JENKINS_HOME 目录的实验</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/</link>
+      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/</guid>
+      <description>审校：王冬辉，linuxsuren
+ Jenkins master 的高可用是个老大难的问题。和很多人一样，笔者也想过两个 Jenkins master 共享同一个 JENKINS_HOME 的方案。了解 Jenkins 原理的人，都会觉得这个方案不可行。但是真的不可行吗？
+由于工作原因，笔者需要亲自验证以上猜想。
+JENKINS_HOME 介绍 Jenkins 所有状态数据都存放文件系统的目录中，这个目录被称为 JENKINS_HOME 目录。
+实验环境介绍 笔者通过 Docker compose 启动两个独立的 Jenkins master，分别为 jenkins-a 和 jenkins-b。它们共用同一个 JENKINS_HOME 目录。相应的代码仓库的链接放在文章底部。
+将代码克隆到本地后，进入仓库，执行 docker-compose up -d 即可启动实验环境。启动完成，在浏览器中输入 http://localhost:7088 可访问 jenkins-a，jenkins-b 的地址是 http://localhost:7089 。但是你会发现它们启动后的界面显示是不一样的。
+jenkins-b 的界面如下图所示：
+而 jenkins-a 的界面如下图所示：
+这时，将 jenkins-a 日志中的解锁密码（Unlock password）输入到 jenkins-b 的页面中，会得到报错信息：
+ERROR: The password entered is incorrect, please check the file for the correct password  这时，再次 jenkins-b 日志中的解锁密码（Unlock password）输入到表单中即可进入下一步。接下来就是按照提示一步步完成了。在 jenkins-b 安装步骤的最后一步，我们设置了管理员的用户名密码：admin/admin。然后就算完成任务了。</description>
+    </item>
     
     <item>
       <title>Jenkins 2.173 发布通知</title>
@@ -176,7 +194,8 @@ Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</guid>
-      <description>面向读者：需要了解 Jenkins 流水线的基本语法。
+      <description>审校：LinuxSuRen（https://github.com/LinuxSuRen）
+ 面向读者：需要了解 Jenkins 流水线的基本语法。
 Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。
 本文将介绍 Electron 桌面应用的流水线的设计。
 但是如何介绍呢？倒是个大问题。笔者尝试直接贴代码，在代码注释中讲解。这是一次尝试，希望得到你的反馈。
