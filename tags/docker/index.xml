@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on Jenkins 中文社区</title>
+    <title>Docker on Jenkins 中文社区</title>
     <link>https://jenkins-zh.github.io/tags/docker/</link>
-    <description>Recent content in docker on Jenkins 中文社区</description>
+    <description>Recent content in Docker on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
@@ -22,6 +22,32 @@
 步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。
 这里是可用于以上步骤的 Jenkins 流水线代码：
 node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-world.git&#39; stage &#39;build&#39; sh &#39;mvn clean install&#39; stage(&#39;Results - 1&#39;) { junit &#39;**/target/surefire-reports/TEST-*.xml&#39; archive &#39;target/*.jar&#39; } stage &#39;bake image&#39; docker.withRegistry(&#39;https://registry.hub.docker.com&#39;,&#39;docker-hub-credentials&#39;) { def image = docker.build(&amp;quot;ravisankar/ravisankardevops:${env.BUILD_TAG}&amp;quot;,&#39;.&#39;) stage &#39;test image&#39; image.withRun(&#39;-p 8888:8888&#39;) {springboot -&amp;gt; sh &#39;while !</description>
+    </item>
+    
+    <item>
+      <title>Custom WAR Packager</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-5-custom-war-packager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-5-custom-war-packager/</guid>
+      <description>我打算给 Jenkins 管理员和开发者介绍一个新的工具 Custom WAR Packager。该工具可以打包 Jenkins 的自定义 WAR 发行版、 Docker 镜像和 Jenkinsfile Runner 包。 它可以打包 Jenkins、插件以及配置为开箱即用的发行版。 Custom WAR Packager 是我们在博客 A Cloud Native Jenkins(/blog/2018/09/12/speaker-blog-a-cloud-native-jenkins/) 中介绍过的无状态 Jenkins master 工具链的一部分。这个工具链已经在 Jenkins X 中被使用，用于构建 serverless 镜像(https://github.com/jenkins-x/jenkins-x-serverless)。
+在这篇文章中，我将会介绍几种 Custom WAR Packager 常见的使用场景。
+== 历史
+正如 Jenkins 本身一样，Custom WAR Packager 开始于一个小的开发工具。在 Jenkins 内运行集成测试很长时间以来都是一个难题。 对此，我们有三个主要的框架： Jenkins Test Harness, Acceptance Test Harness, 和 Plugin Compatibility Tester. 这些框架都需要一个 Jenkins WAR 文件来运行测试。但是假如你想在类似 AWS 一样的自定义环境中进行 Jenkins 测试呢？ 或者，你希望基于 Pluggable Storage 的环境也可以复用 Jenkins 流水线测试，来确保没有回归缺陷？</description>
+    </item>
+    
+    <item>
+      <title>Docker Hub 上的官方 Jenkins 镜像</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-26-official-docker-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-26-official-docker-image/</guid>
+      <description>目前，在 Docker Hub 上有三个不同的仓库正（或曾经）被当作“官方” Jenkins 镜像。 本文是为了申明哪个是当前的官方镜像(截至2018年12月).
+官方的 docker pull jenkins/jenkins
+例如：https://hub.docker.com/r/jenkins/jenkins/ 是正确的仓库。
+在我的博客 对于使用 Jenkins 官方 Docker 镜像推荐的方法 上也有一些记录。
+废弃的 jenkins 已经废弃了很久。 我们停止使用和更新该镜像的简短原因是，我们每次发版时都需要人工参与。 jenkinsci/jenkins 同样已经废弃了很久，但为了过渡，我们会同时更新 jenkins/jenkins（正确的那个） 和 jenkinsci/jenkins。 2018年12月初，我们停止更新 jenkinsci/jenkins（如果您感兴趣的话，查看 INFRA-1934 可以获取更多详情）。
+感谢您的阅读！</description>
     </item>
     
   </channel>

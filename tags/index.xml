@@ -6,76 +6,13 @@
     <description>Recent content in Tags on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>flagger</title>
-      <link>https://jenkins-zh.github.io/tags/flagger/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/flagger/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>istio</title>
-      <link>https://jenkins-zh.github.io/tags/istio/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/istio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>k8s</title>
-      <link>https://jenkins-zh.github.io/tags/k8s/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://jenkins-zh.github.io/tags/kubernetes/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>progressive delivery</title>
-      <link>https://jenkins-zh.github.io/tags/progressive-delivery/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/progressive-delivery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shipper</title>
-      <link>https://jenkins-zh.github.io/tags/shipper/</link>
-      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/shipper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jenkins</title>
-      <link>https://jenkins-zh.github.io/tags/jenkins/</link>
-      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ai</title>
+      <title>Ai</title>
       <link>https://jenkins-zh.github.io/tags/ai/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -84,16 +21,7 @@
     </item>
     
     <item>
-      <title>devops</title>
-      <link>https://jenkins-zh.github.io/tags/devops/</link>
-      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cd</title>
+      <title>Cd</title>
       <link>https://jenkins-zh.github.io/tags/cd/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -102,88 +30,7 @@
     </item>
     
     <item>
-      <title>zabbix</title>
-      <link>https://jenkins-zh.github.io/tags/zabbix/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/zabbix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ci</title>
-      <link>https://jenkins-zh.github.io/tags/ci/</link>
-      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/ci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://jenkins-zh.github.io/tags/docker/</link>
-      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pipeline</title>
-      <link>https://jenkins-zh.github.io/tags/pipeline/</link>
-      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/pipeline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>community</title>
-      <link>https://jenkins-zh.github.io/tags/community/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/community/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>contributing</title>
-      <link>https://jenkins-zh.github.io/tags/contributing/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/contributing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>developer</title>
-      <link>https://jenkins-zh.github.io/tags/developer/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/developer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>newcomer</title>
-      <link>https://jenkins-zh.github.io/tags/newcomer/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/newcomer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>continuous integration</title>
-      <link>https://jenkins-zh.github.io/tags/continuous-integration/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/continuous-integration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cdf</title>
+      <title>Cdf</title>
       <link>https://jenkins-zh.github.io/tags/cdf/</link>
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
@@ -192,20 +39,110 @@
     </item>
     
     <item>
-      <title>general</title>
-      <link>https://jenkins-zh.github.io/tags/general/</link>
-      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      <title>Cdsummit</title>
+      <link>https://jenkins-zh.github.io/tags/cdsummit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/tags/general/</guid>
+      <guid>https://jenkins-zh.github.io/tags/cdsummit/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>weekly</title>
-      <link>https://jenkins-zh.github.io/tags/weekly/</link>
-      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      <title>Ci</title>
+      <link>https://jenkins-zh.github.io/tags/ci/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/tags/weekly/</guid>
+      <guid>https://jenkins-zh.github.io/tags/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cicd</title>
+      <link>https://jenkins-zh.github.io/tags/cicd/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud Native</title>
+      <link>https://jenkins-zh.github.io/tags/cloud-native/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/cloud-native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Community</title>
+      <link>https://jenkins-zh.github.io/tags/community/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration as Code</title>
+      <link>https://jenkins-zh.github.io/tags/configuration-as-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/configuration-as-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Continuous Integration</title>
+      <link>https://jenkins-zh.github.io/tags/continuous-integration/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/continuous-integration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contributing</title>
+      <link>https://jenkins-zh.github.io/tags/contributing/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/contributing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Core</title>
+      <link>https://jenkins-zh.github.io/tags/core/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Developer</title>
+      <link>https://jenkins-zh.github.io/tags/developer/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/developer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>https://jenkins-zh.github.io/tags/devops/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://jenkins-zh.github.io/tags/docker/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -219,16 +156,7 @@
     </item>
     
     <item>
-      <title>cicd</title>
-      <link>https://jenkins-zh.github.io/tags/cicd/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/cicd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>events</title>
+      <title>Events</title>
       <link>https://jenkins-zh.github.io/tags/events/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
@@ -237,106 +165,7 @@
     </item>
     
     <item>
-      <title>gsoc</title>
-      <link>https://jenkins-zh.github.io/tags/gsoc/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/gsoc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gsoc2019</title>
-      <link>https://jenkins-zh.github.io/tags/gsoc2019/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/gsoc2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>opensource</title>
-      <link>https://jenkins-zh.github.io/tags/opensource/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/opensource/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shared-library</title>
-      <link>https://jenkins-zh.github.io/tags/shared-library/</link>
-      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/shared-library/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>core</title>
-      <link>https://jenkins-zh.github.io/tags/core/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/core/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java11</title>
-      <link>https://jenkins-zh.github.io/tags/java11/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/java11/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>platform-sig</title>
-      <link>https://jenkins-zh.github.io/tags/platform-sig/</link>
-      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/platform-sig/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>outreachy</title>
-      <link>https://jenkins-zh.github.io/tags/outreachy/</link>
-      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/outreachy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>outreachy2018</title>
-      <link>https://jenkins-zh.github.io/tags/outreachy2018/</link>
-      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/outreachy2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cdsummit</title>
-      <link>https://jenkins-zh.github.io/tags/cdsummit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/cdsummit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cloud-native</title>
-      <link>https://jenkins-zh.github.io/tags/cloud-native/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/tags/cloud-native/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>evergreen</title>
+      <title>Evergreen</title>
       <link>https://jenkins-zh.github.io/tags/evergreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -345,7 +174,43 @@
     </item>
     
     <item>
-      <title>installers</title>
+      <title>Flagger</title>
+      <link>https://jenkins-zh.github.io/tags/flagger/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/flagger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>General</title>
+      <link>https://jenkins-zh.github.io/tags/general/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gsoc</title>
+      <link>https://jenkins-zh.github.io/tags/gsoc/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/gsoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gsoc2019</title>
+      <link>https://jenkins-zh.github.io/tags/gsoc2019/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/gsoc2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Installers</title>
       <link>https://jenkins-zh.github.io/tags/installers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -354,7 +219,43 @@
     </item>
     
     <item>
-      <title>jenkinsworld</title>
+      <title>Istio</title>
+      <link>https://jenkins-zh.github.io/tags/istio/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/istio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java11</title>
+      <link>https://jenkins-zh.github.io/tags/java11/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/java11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>https://jenkins-zh.github.io/tags/jenkins/</link>
+      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins X</title>
+      <link>https://jenkins-zh.github.io/tags/jenkins-x/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/jenkins-x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkinsworld</title>
       <link>https://jenkins-zh.github.io/tags/jenkinsworld/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -363,7 +264,7 @@
     </item>
     
     <item>
-      <title>jenkinsworld2018</title>
+      <title>Jenkinsworld2018</title>
       <link>https://jenkins-zh.github.io/tags/jenkinsworld2018/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -372,7 +273,16 @@
     </item>
     
     <item>
-      <title>kubecon</title>
+      <title>K8s</title>
+      <link>https://jenkins-zh.github.io/tags/k8s/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubecon</title>
       <link>https://jenkins-zh.github.io/tags/kubecon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -381,7 +291,79 @@
     </item>
     
     <item>
-      <title>plugins</title>
+      <title>Kubernetes</title>
+      <link>https://jenkins-zh.github.io/tags/kubernetes/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Newcomer</title>
+      <link>https://jenkins-zh.github.io/tags/newcomer/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/newcomer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opensource</title>
+      <link>https://jenkins-zh.github.io/tags/opensource/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/opensource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Outreachy</title>
+      <link>https://jenkins-zh.github.io/tags/outreachy/</link>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/outreachy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Outreachy2018</title>
+      <link>https://jenkins-zh.github.io/tags/outreachy2018/</link>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/outreachy2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>https://jenkins-zh.github.io/tags/performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pipeline</title>
+      <link>https://jenkins-zh.github.io/tags/pipeline/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Platform Sig</title>
+      <link>https://jenkins-zh.github.io/tags/platform-sig/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/platform-sig/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plugins</title>
       <link>https://jenkins-zh.github.io/tags/plugins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -390,7 +372,34 @@
     </item>
     
     <item>
-      <title>security</title>
+      <title>Progressive Delivery</title>
+      <link>https://jenkins-zh.github.io/tags/progressive-delivery/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/progressive-delivery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Remoting</title>
+      <link>https://jenkins-zh.github.io/tags/remoting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/remoting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scalability</title>
+      <link>https://jenkins-zh.github.io/tags/scalability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/scalability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
       <link>https://jenkins-zh.github.io/tags/security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -399,7 +408,43 @@
     </item>
     
     <item>
-      <title>webhooks</title>
+      <title>Shared Library</title>
+      <link>https://jenkins-zh.github.io/tags/shared-library/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/shared-library/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shipper</title>
+      <link>https://jenkins-zh.github.io/tags/shipper/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/shipper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Survey</title>
+      <link>https://jenkins-zh.github.io/tags/survey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/survey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://jenkins-zh.github.io/tags/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webhooks</title>
       <link>https://jenkins-zh.github.io/tags/webhooks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -408,11 +453,29 @@
     </item>
     
     <item>
-      <title>windows</title>
+      <title>Weekly</title>
+      <link>https://jenkins-zh.github.io/tags/weekly/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/weekly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
       <link>https://jenkins-zh.github.io/tags/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zabbix</title>
+      <link>https://jenkins-zh.github.io/tags/zabbix/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/zabbix/</guid>
       <description></description>
     </item>
     
