@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>关于 Jenkins master 共享 JENKINS_HOME 目录的实验 | Jenkins 中文社区</title>
+    <title>Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署 | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,27 +27,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验" />
-<meta property="og:description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？" />
+<meta property="og:title" content="Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署" />
+<meta property="og:description" content="本文介绍 Kubernetes 中与渐进式交付相关的三个有趣的项目：Shipper、Istio 以及 Flagger " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" />
-<meta property="article:published_time" content="2019-04-23T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-23T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/" />
+<meta property="article:published_time" content="2019-04-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-24T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验">
-<meta itemprop="description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？">
-
-
-<meta itemprop="datePublished" content="2019-04-23T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="234">
+<meta itemprop="name" content="Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署">
+<meta itemprop="description" content="本文介绍 Kubernetes 中与渐进式交付相关的三个有趣的项目：Shipper、Istio 以及 Flagger ">
 
 
+<meta itemprop="datePublished" content="2019-04-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="398">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="progressive delivery,kubernetes,k8s,shipper,istio,flagger," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验"/>
-<meta name="twitter:description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？"/>
+<meta name="twitter:title" content="Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署"/>
+<meta name="twitter:description" content="本文介绍 Kubernetes 中与渐进式交付相关的三个有趣的项目：Shipper、Istio 以及 Flagger "/>
 
 
 
@@ -149,22 +149,23 @@
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib">
-            翟志军
+            donghui
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          make a difference
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -174,27 +175,6 @@
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#jenkins-home-介绍">JENKINS_HOME 介绍</a></li>
-<li><a href="#实验环境介绍">实验环境介绍</a></li>
-<li><a href="#实验1-创建任务">实验1：创建任务</a></li>
-<li><a href="#实验2-任务结果可见性">实验2：任务结果可见性</a></li>
-<li><a href="#实验3-两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</a></li>
-<li><a href="#实验4-编辑任务">实验4：编辑任务</a></li>
-<li><a href="#实验5-定时任务的结果是什么">实验5：定时任务的结果是什么？</a></li>
-<li><a href="#小结">小结</a></li>
-<li><a href="#附录">附录</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -207,17 +187,9 @@
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 2.173 发布通知">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" class="dib f6 pr1 hover-bg-light-gray br-100" title="关于 Jenkins master 共享 JENKINS_HOME 目录的实验">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -236,13 +208,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">关于 Jenkins master 共享 JENKINS_HOME 目录的实验</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？
+      本文介绍 Kubernetes 中与渐进式交付相关的三个有趣的项目：Shipper、Istio 以及 Flagger
     </div>
   
 
@@ -255,94 +227,241 @@
 
 
 
-<blockquote>
-<p>审校：<a href="https://github.com/donhui">王冬辉</a>，<a href="https://github.com/LinuxSuRen">linuxsuren</a></p>
-</blockquote>
+<p><a href="https://redmonk.com/jgovernor/2018/08/06/towards-progressive-delivery/">渐进式交付</a>是持续交付的下一步，
+它将新版本部署到用户的一个子集，并在将其滚动到全部用户之前对其正确性和性能进行评估，
+如果不匹配某些关键指标，则进行回滚。</p>
 
-<p>Jenkins master 的高可用是个老大难的问题。和很多人一样，笔者也想过两个 Jenkins master 共享同一个 JENKINS_HOME 的方案。了解 Jenkins 原理的人，都会觉得这个方案不可行。但是真的不可行吗？</p>
+<p><img src="../../../images/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/kubernetes.png" alt="" /></p>
 
-<p>由于工作原因，笔者需要亲自验证以上猜想。</p>
+<p>这里有一些有趣的项目，使得渐进式交付在 Kubernetes 中变得更简单。
+我将使用一个 <a href="https://github.com/carlossg/croc-hunter-jenkinsx-serverless">Jenkins X 示例项目</a>
+对它们之中的三个进行讨论：Shipper、Istio 以及 Flagger。</p>
 
-<h3 id="jenkins-home-介绍">JENKINS_HOME 介绍</h3>
+<h2 id="shipper">Shipper</h2>
 
-<p>Jenkins 所有状态数据都存放文件系统的目录中，这个目录被称为 JENKINS_HOME 目录。</p>
+<p><a href="https://github.com/bookingcom/shipper">shipper</a> 是来自 booking.com 的一个项目，
+它对 Kubernetes 进行了扩展，添加了复杂的部署策略和多集群编排（<a href="https://docs.shipper-k8s.io/en/latest/index.html">文档</a>）。
+它支持从一个集群到多个集群的部署，允许多区域部署。</p>
 
-<h3 id="实验环境介绍">实验环境介绍</h3>
+<p>Shipper 通过一个 shipperctl 命令行进行<a href="https://docs.shipper-k8s.io/en/latest/start/install.html">安装</a>。
+它增加不同集群的配置文件来进行管理。
+请注意这个与 GKE 上下文相关的<a href="https://github.com/bookingcom/shipper/issues/61">问题</a>。</p>
 
-<p>笔者通过 Docker compose 启动两个独立的 Jenkins master，分别为 jenkins-a 和 jenkins-b。它们共用同一个 JENKINS_HOME 目录。相应的代码仓库的链接放在文章底部。</p>
+<p>Shipper 使用 Helm 包来部署，但是它们没有随着 Helm 一起安装，它们不会在 helm list 的输出显示。
+同样地，deployments 的版本必须是 apps/v1 ，
+否则 shipper 将不能编辑 deployment 来添加正确的标签和副本数量。</p>
 
-<p>将代码克隆到本地后，进入仓库，执行 <code>docker-compose up -d</code> 即可启动实验环境。启动完成，在浏览器中输入 <a href="http://localhost:7088">http://localhost:7088</a> 可访问 jenkins-a，jenkins-b 的地址是 <a href="http://localhost:7089">http://localhost:7089</a> 。但是你会发现它们启动后的界面显示是不一样的。</p>
+<p>使用 shipper 部署都是与从旧版本(<strong>现有版本</strong>)过渡到新版本(<strong>竞争版本</strong>)相关。
+这是通过创建一个新的<a href="https://docs.shipper-k8s.io/en/latest/user/rolling-out.html#application-object">应用对象</a>实现的，
+它定义了部署需要通过的多个阶段。例如下面 3 个步骤过程：
+1. Staging：部署新版本到一个 pod ，没有流量
+2. 50 / 50：部署新版本到 50% 的 pods，50% 的流量
+3. Full on：部署新版本到全部的 pods，全部的流量</p>
 
-<p>jenkins-b 的界面如下图所示：</p>
-
-<p><img src="../../../images/articles/2019/04/2019-04-23-jenkins-master-shared-home/292372-fd4b85d5b9c8bdf6.png" alt="" /></p>
-
-<p>而 jenkins-a 的界面如下图所示：</p>
-
-<p><img src="../../../images/articles/2019/04/2019-04-23-jenkins-master-shared-home/292372-1bfd4e033b6c25c8.png" alt="" /></p>
-
-<p>这时，将 jenkins-a 日志中的解锁密码（Unlock password）输入到 jenkins-b 的页面中，会得到报错信息：</p>
-
-<pre><code>ERROR: The password entered is incorrect, please check the file for the correct password
+<pre><code class="language-yaml">strategy:
+  steps:
+  - name: staging
+    capacity:
+      contender: 1
+      incumbent: 100
+    traffic:
+      contender: 0
+      incumbent: 100
+  - name: 50/50
+    capacity:
+      contender: 50
+      incumbent: 50
+    traffic:
+      contender: 50
+      incumbent: 50
+  - name: full on
+    capacity:
+      contender: 100
+      incumbent: 0
+    traffic:
+      contender: 100
+      incumbent: 0
 </code></pre>
 
-<p>这时，再次 jenkins-b 日志中的解锁密码（Unlock password）输入到表单中即可进入下一步。接下来就是按照提示一步步完成了。在 jenkins-b 安装步骤的最后一步，我们设置了管理员的用户名密码：admin/admin。然后就算完成任务了。</p>
+<p>如果发布的某个步骤没有将流量发送到 pods ，
+则可以使用 kubectl port-forward 访问它们，如：kubectl port-forward mypod 8080:8080，
+这对于在用户看到新版本之前进行测试非常有用。</p>
 
-<p>然后我们再在 jenkins-a 使用 admin/admin 进行登录，登录是报错的：用户密码不正确。</p>
+<p>Shipper 支持多集群的概念，但是以相同的方式对待所有集群，仅使用区域并通过 capabilities （配置在集群对象中）进行筛选，
+所有对一个应用对象来说，这里没有一个 dev, staging, prod 集群的选项。
+但是我们可以有两个应用对象：
+- myapp-staging 部署到 &ldquo;staging&rdquo; 区域
+- myapp 部署到其它区域</p>
 
-<p>接下来，执行 <code>docker-compose restart jenkins-a</code> 命令重启 jenkins-a。再次使用 admin/admin 就可以登录成功了。</p>
+<p>在 GKE 中，你可以轻松地配置<a href="https://cloud.google.com/kubernetes-engine/docs/how-to/multi-cluster-ingress">多集群 ingress </a>，
+该入口将公开在多个集群中运行的服务，并从离你所在位置最近的集群提供服务。</p>
 
-<p>当两个 Jenkins 启动完成后，接下来开始做实验。</p>
+<h2 id="局限性">局限性</h2>
 
-<h3 id="实验1-创建任务">实验1：创建任务</h3>
+<p>Shipper 中的主要的局限性有：
+- Chart 限制：Chart 必须有一个部署对象。
+Deployment 的名称必须使用 {{.Release.Name}} 模板化。
+Deployment 对象应该有 apiVersion：apps/v1 。
+- 基于 Pod 的流量切换：这里没有细粒度的流量路由，例如：发送 1% 的流量到新版本，它基于正在运行的 Pod 数量。
+- 如果 Shipper 不工作了，新的 Pod 将获取不到流量。</p>
 
-<p>在 jenkins-a 创建任务 x，刷新 jenkins-b 的页面，jenkins-b 上会不会显示出任务 x ？</p>
+<h2 id="istio">Istio</h2>
 
-<p>结果：jenkins-b 不会出现任务 x。重启 jenkins-b 后，任务 x 出现在任务列表中。</p>
+<p><a href="https://istio.io/">Istio</a> 不是<a href="https://istio.io/docs/concepts/what-is-istio/">一个部署工具，而是一个服务网格</a>。
+然而，它很令人感兴趣，因为它已经变得非常流行，并且允许流量管理，例如，将一定比例的流量发送到不同的服务和其他高级网络。</p>
 
-<h3 id="实验2-任务结果可见性">实验2：任务结果可见性</h3>
+<p>在 GKE 中，只需在集群配置中选中复选框即可启用 Istio 。
+在其它集群中，<a href="https://istio.io/docs/setup/kubernetes/quick-start/">可以通过 Helm 手动安装</a>。</p>
 
-<p>jenkins-a 上任务执行，jenkins-b 上能否看到任务执行结果？</p>
+<p>有了 Istio ，我们可以创建一个网关，通过 Ingress 网关处理所有外部流量，并创建<a href="https://istio.io/docs/reference/config/istio.networking.v1alpha3/#VirtualService">虚拟服务</a>来管理到我们服务的路由。
+为此，只需找到 <a href="https://istio.io/docs/tasks/traffic-management/ingress/#determining-the-ingress-ip-and-ports">ingress 网关的 ip 地址</a>并为其配置通配符 DNS 。
+然后创建一个网关，通过 Ingress 网关路由所有外部流量。</p>
 
-<p>jenkins-a 执行任务 x，并且执行成功。刷新 jenkins-b 看不到任何执行记录。重启 jenkins-b 后，可看到执行记录。</p>
-
-<h3 id="实验3-两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</h3>
-
-<p>分别在两个 Jenkins master 上（几乎）开始同一个任务 x。其中一个任务的 build number 会更新，但是另一个不会。</p>
-
-<p>其中 jenkins-a 任务 x 的 build number 会升到 2，而 jenkins-b 保持的是 1。这时，单独执行 jenkins-b 的任务 x，日志会出现错误：</p>
-
-<pre><code>jenkins-b_1  | WARNING: A new build could not be created in job x
-jenkins-b_1  | java.lang.IllegalStateException: JENKINS-23152: /var/jenkins_home/jobs/x/builds/2 already existed; will not overwrite with x #2
+<pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+ name: public-gateway
+ namespace: istio-system
+spec:
+ selector:
+   istio: ingressgateway
+ servers:
+ - port:
+     number: 80
+     name: http
+     protocol: HTTP
+   hosts:
+   - &quot;*&quot;
 </code></pre>
 
-<h3 id="实验4-编辑任务">实验4：编辑任务</h3>
+<p>Isito 不管理应用的生命周期，只管理网络。
+我们可以创建一个虚拟服务，为所有进入 ingress 网关的请求
+向 pull request 或 master 分支中部署的服务发送 1% 的流量。</p>
 
-<p>jenkins-a 上设置任务 x 定时执行，刷新 jenkins-b 页面，任务 x 中并没有定时执行的设置。重启 jenkins-b 后，任务 x 更新。</p>
+<pre><code class="language-yaml">apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+ name: croc-hunter-jenkinsx
+ namespace: jx-production
+spec:
+ gateways:
+ - public-gateway.istio-system.svc.cluster.local
+ - mesh
+ hosts:
+ - croc-hunter.istio.example.org
+ http:
+ - route:
+   - destination:
+       host: croc-hunter-jenkinsx.jx-production.svc.cluster.local
+       port:
+         number: 80
+     weight: 99
+   - destination:
+       host: croc-hunter-jenkinsx.jx-staging.svc.cluster.local
+       port:
+         number: 80
+     weight: 1
+</code></pre>
 
-<h3 id="实验5-定时任务的结果是什么">实验5：定时任务的结果是什么？</h3>
+<h2 id="flagger">Flagger</h2>
 
-<p>如果 jenkins-a 和 jenkins-b 两个任务均为定时任务，而且都生效了。它们运行结果是什么的呢？</p>
+<p><a href="https://github.com/stefanprodan/flagger">Flagger</a> 是一个由 Weaveworks 赞助的使用了 Istio 的项目，
+该项目使用 Prometheus 的指标进行自动化金丝雀发布和回滚。
+它超越了 Isito 提供了基于指标的自动化渐进式发布和回滚。</p>
 
-<p>看到的现象是，两个任务都会按时执行，但是只有一个任务能将运行结果写入到磁盘中。界面如下图：</p>
+<p>Flager 需要将 <a href="https://docs.flagger.app/install/install-istio">Istio与 Prometheus、Servicegraph</a> 和某些系统的配置一起安装，
+另外还要<a href="https://docs.flagger.app/install/install-flagger">安装 Flager 控制器</a>本身。
+它也提供了一个 <a href="https://docs.flagger.app/install/install-grafana">Grfana 面板</a>来监控部署进度。</p>
 
-<p><img src="../../../images/articles/2019/04/2019-04-23-jenkins-master-shared-home/292372-38c7a7f8aade0793.png" alt="" /></p>
+<p><img src="../../../images/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/grafana-canary-analysis.png" alt="grafana-canary-analysis.png" /></p>
 
-<p>另，从日志中，可以确认 jenkins-a 和 jenkins-b 确实按时执行了。如下图日志中，看出 jenkins-a 定时执行 #6 次构建时报错，因为 jenkins-b 已经执行过 #6 次构建了：</p>
+<p><a href="https://docs.flagger.app/usage/progressive-delivery">部署 rollout </a>通过 Canary 对象定义，
+它会生成主要的和金丝雀 Deployment 对象。
+编辑 Deployment 时，例如要使用新的镜像版本，
+ Flagger 控制器将负载从 0% 切换到 50% ，每分钟增加 10% ，然后它将切换到新的 deployment
+ 或者如果响应错误和请求持续时间等指标失败则进行回滚。</p>
 
-<p><img src="../../../images/articles/2019/04/2019-04-23-jenkins-master-shared-home/292372-55e80e61f0d36dfb.png" alt="" /></p>
+<h2 id="比较">比较</h2>
 
-<h3 id="小结">小结</h3>
+<p>此表总结了 Shipper 和 Flagger 在几个渐进式交付特性方面的优势和劣势。</p>
 
-<p>可以确认的是，当两个 Jenkins 进程共用同一个 JENKINS_HOME 目录时，其中一个 Jenkins 进程更新了 JENKINS_HOME 的内容，另一个是不会实时更新的。所以，同时启动两个 Jenkins master 共用同一个 JENKINS_HOME 的方案是不可行的。我们不能在 jenkins-a 挂了后，直接将流量切到 jenkins-b。因为 jenkins-b 必须重启。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Shipper</th>
+<th>Flagger</th>
+</tr>
+</thead>
 
-<p>最后结论：多个 Jenkins master 共享同一个 JENKINS_HOME 的方案是无法使用 Jenkins master 的高可用。</p>
+<tbody>
+<tr>
+<td>流量路由</td>
+<td>k8s 原生的按 Pods 的百分比进行均衡</td>
+<td>基于 Istio 的高级流量路由（请求的百分比）</td>
+</tr>
 
-<h3 id="附录">附录</h3>
+<tr>
+<td>部署进度 UI</td>
+<td>无</td>
+<td>Grafana 面板</td>
+</tr>
 
-<ul>
-<li>Jenkins standby 实验环境：<a href="https://github.com/zacker330/jenkins-standby-experiment">https://github.com/zacker330/jenkins-standby-experiment</a></li>
-</ul>
+<tr>
+<td>支持的 Deployments</td>
+<td>具有较强<a href="https://docs.shipper-k8s.io/en/latest/limitations.html">限制</a>的 Helm charts</td>
+<td>任何 Deployment</td>
+</tr>
+
+<tr>
+<td>多集群部署</td>
+<td>是</td>
+<td>否</td>
+</tr>
+
+<tr>
+<td>在不同命名空间（如 jx-staging 和 jx-production ）的金丝雀部署或蓝绿部署</td>
+<td>否</td>
+<td>否，但是要做到它可以手动编辑<a href="https://istio.io/docs/reference/config/istio.networking.v1alpha3/">虚拟服务</a></td>
+</tr>
+
+<tr>
+<td>在不同集群的金丝雀部署或蓝绿部署</td>
+<td>是，但是有点极客，使用一个新应用并将它链接到新区域</td>
+<td>也许可以使用 <a href="https://istio.io/docs/setup/kubernetes/multicluster-install/">Istio 多集群</a>?</td>
+</tr>
+
+<tr>
+<td>自动部署</td>
+<td>否，操作者必须手动完成这些步骤</td>
+<td>是，每分钟增加 10% 的流量，可配置的</td>
+</tr>
+
+<tr>
+<td>自动回滚</td>
+<td>否，操作者必须发现错误并手动完成这些步骤</td>
+<td>是，基于 Prometheus 指标</td>
+</tr>
+
+<tr>
+<td>必需品</td>
+<td>无</td>
+<td>Istio，Prometheus</td>
+</tr>
+
+<tr>
+<td>告警</td>
+<td></td>
+<td><a href="https://docs.flagger.app/usage/alerting">Slack</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>综上所述，我看到了 Shipper 在多集群管理和简单性方面的价值，它不需要 Kubernetes 以外的任何东西，但是它有一些严重的局限性。</p>
+
+<p>Flager 确实在自动部署和回滚以及对流量进行细粒度控制的过程中付出了额外的努力，它以更高的复杂性成本提供了所需的所有额外服务（ Isito、Prometheus ）。</p>
+
+<p>这里可以查看 <a href="https://github.com/carlossg/croc-hunter-jenkinsx-serverless/tree/master/shipper">Shipper</a>、<a href="https://github.com/carlossg/croc-hunter-jenkinsx-serverless/tree/master/istio">Isito</a> 和 <a href="https://github.com/carlossg/croc-hunter-jenkinsx-serverless/tree/master/flagger">Flager</a> 的示例代码。</p>
 
 </div>
 
@@ -375,14 +494,14 @@ jenkins-b_1  | java.lang.IllegalStateException: JENKINS-23152: /var/jenkins_home
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “关于 Jenkins master 共享 JENKINS_HOME 目录的实验”
-  </a> was last updated: April 23, 2019
+    “Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署”
+  </a> was last updated: April 24, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -400,108 +519,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jenkins">
-              jenkins
+            <a class="tag" href="/tags/progressive-delivery">
+              progressive delivery
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/kubernetes">
+              kubernetes
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/k8s">
+              k8s
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/shipper">
+              shipper
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/istio">
+              istio
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/flagger">
+              flagger
             </a>
           </li>
         
               
       
         
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="link">
-              持续交付的商业价值
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="link">
-              使用 Zabbix 监控 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="link">
-              简析 Jenkins 专有用户数据库加密算法
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="link">
-              Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
-              介绍：成为一名 Jenkins 贡献者的旅程
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-ready-for-cdf/" class="link">
-              为 Continuous Delivery Foundation 的成立感到兴奋
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
-              MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link">
-              在安全防火墙内通过 WebHook 触发构建
-            </a>
-          </li>
         
       
     </ul>

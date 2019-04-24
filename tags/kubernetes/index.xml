@@ -6,9 +6,24 @@
     <description>Recent content in kubernetes on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/</guid>
+      <description>渐进式交付是持续交付的下一步， 它将新版本部署到用户的一个子集，并在将其滚动到全部用户之前对其正确性和性能进行评估， 如果不匹配某些关键指标，则进行回滚。
+这里有一些有趣的项目，使得渐进式交付在 Kubernetes 中变得更简单。 我将使用一个 Jenkins X 示例项目 对它们之中的三个进行讨论：Shipper、Istio 以及 Flagger。
+Shipper shipper 是来自 booking.com 的一个项目， 它对 Kubernetes 进行了扩展，添加了复杂的部署策略和多集群编排（文档）。 它支持从一个集群到多个集群的部署，允许多区域部署。
+Shipper 通过一个 shipperctl 命令行进行安装。 它增加不同集群的配置文件来进行管理。 请注意这个与 GKE 上下文相关的问题。
+Shipper 使用 Helm 包来部署，但是它们没有随着 Helm 一起安装，它们不会在 helm list 的输出显示。 同样地，deployments 的版本必须是 apps/v1 ， 否则 shipper 将不能编辑 deployment 来添加正确的标签和副本数量。
+使用 shipper 部署都是与从旧版本(现有版本)过渡到新版本(竞争版本)相关。 这是通过创建一个新的应用对象实现的， 它定义了部署需要通过的多个阶段。例如下面 3 个步骤过程： 1. Staging：部署新版本到一个 pod ，没有流量 2. 50 / 50：部署新版本到 50% 的 pods，50% 的流量 3. Full on：部署新版本到全部的 pods，全部的流量</description>
+    </item>
     
     <item>
       <title>Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴</title>
