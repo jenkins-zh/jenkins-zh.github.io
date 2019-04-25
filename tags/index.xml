@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Ansible</title>
+      <link>https://jenkins-zh.github.io/tags/ansible/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cd</title>
       <link>https://jenkins-zh.github.io/tags/cd/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
@@ -239,7 +248,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.github.io/tags/jenkins/</link>
-      <pubDate>Tue, 23 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
       <description></description>
@@ -305,6 +314,15 @@
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/newcomer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://jenkins-zh.github.io/tags/nginx/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/nginx/</guid>
       <description></description>
     </item>
     
