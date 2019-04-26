@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/</loc>
     <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url>
@@ -341,7 +346,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/flagger/</loc>
-    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -370,7 +375,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/istio/</loc>
-    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -382,7 +387,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins/</loc>
-    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -396,12 +401,13 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins-x/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.github.io/</loc>
-    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -437,7 +443,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/k8s/</loc>
-    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -448,7 +454,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/kubernetes/</loc>
-    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -506,7 +512,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/progressive-delivery/</loc>
-    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -533,7 +539,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/shipper/</loc>
-    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -565,7 +571,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
