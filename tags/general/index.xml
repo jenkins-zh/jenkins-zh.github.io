@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>General on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/general/</link>
+    <link>https://jenkins-zh.cn/tags/general/</link>
     <description>Recent content in General on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/general/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/general/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 正在加入持续交付基金会</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-20-cdf-launch/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-20-cdf-launch/</link>
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-20-cdf-launch/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-20-cdf-launch/</guid>
       <description>今天Linux 基金会与 CloudBees、Google 和一些其他公司启动了一个新的开源软件基金会，也就是持续交付基金会(CDF). CDF 相信持续交付的力量，它旨在培养与支持开源生态，以及厂商中立的项目。
 Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基金会。 实际上，这样的讨论持续了多年，大致的动机简洁摘要在这里。
 此时，作为一名用户，又意味着什么呢？

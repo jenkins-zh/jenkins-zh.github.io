@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Configuration as Code on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/configuration-as-code/</link>
+    <link>https://jenkins-zh.cn/tags/configuration-as-code/</link>
     <description>Recent content in Configuration as Code on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/configuration-as-code/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/configuration-as-code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins Configuration-as-Code: 看，我都不用手动配置</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-12-gasc/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-12-gasc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-12-gasc/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-12-gasc/</guid>
       <description>NOTE: 这篇文章是 Configuration-as-Code 系列的第一部分。
 Jenkins 非常灵活，如今已成为实现 CI/CD 的事实标准，同时拥有一个活跃的社区来维护几乎所有工具和用例的插件。但是灵活也是要付出代价的：除了 Jenkins 核心之外，许多插件需要一些系统级别的设置才能正常工作。
 在某些情况下，“Jenkins 管理员”是一个全职职位。 Jenkins 管理员在负责维护基础设施的同时，还要为一个巨大的 Jenkins master 提供数百个已安装的插件和数千个托管作业。 维护最新的插件版本是一项挑战，故障转移（failover）也会是一场噩梦。

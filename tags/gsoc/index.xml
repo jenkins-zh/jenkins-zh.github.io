@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gsoc on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/gsoc/</link>
+    <link>https://jenkins-zh.cn/tags/gsoc/</link>
     <description>Recent content in Gsoc on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 已经被 Google Summer Of Code 2019 接受！</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</guid>
       <description>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在2019年的 Google Summer of Code上 已经被接受。 今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。
 这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。 我们有25个项目想法，而且有超过30个准导师（不断增多！）。 这已经超过了2016年以及2018年的总和。 有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！
 下一步？ GSoC 已经正式启动，请期待更多的学生在我们的Gitter 频道和邮件列表中联系项目。 在特别兴趣小组和子项目频道中已经有了很多沟通。 我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。 然后，我们将会继续这个申请，选择项目并分配导师团队。

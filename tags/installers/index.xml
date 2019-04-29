@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Installers on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/installers/</link>
+    <link>https://jenkins-zh.cn/tags/installers/</link>
     <description>Recent content in Installers on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/installers/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/installers/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows 安装程序更新</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-windows-installers/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-windows-installers/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</guid>
       <description>Jenkins 的 Windows 安装程序已经存在很多年了，它是用户在 Windows 上安装 Jenkins Master 作为服务的一种方式。 从被开发出来至今，它还没有什么新特性，但现在是时候做出改变了。
 首先，让我们瞧瞧现版本安装程序的使用经验。
 第1步 启动安装程序 这是使用 WiX Toolset Windows 安装程序的默认界面外观，算不上太好看，而且没有太多对安装程序进行说明的品牌信息。

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/about/</link>
+    <link>https://jenkins-zh.cn/about/</link>
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 12 Apr 2019 14:26:05 +0800</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>行为规范</title>
-      <link>https://jenkins-zh.github.io/about/code-of-conduct/</link>
+      <link>https://jenkins-zh.cn/about/code-of-conduct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/code-of-conduct/</guid>
+      <guid>https://jenkins-zh.cn/about/code-of-conduct/</guid>
       <description>留言 留言之前需要使用 GitHub 账号登陆。大家要注意文明用语，严禁攻击、诋毁、灌水、广告等无关的话。对于违反人，一经发现将会被拉入黑名单。
 提问 欢迎每一位朋友在这里提出与 Jenkins 或相关领域的技术问题，但是，在提问之前建议先在搜索引擎和本站中进行搜索。
 问题至少要包含如下部分：
@@ -26,20 +26,20 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     
     <item>
       <title>社交媒体</title>
-      <link>https://jenkins-zh.github.io/about/social-media/</link>
+      <link>https://jenkins-zh.cn/about/social-media/</link>
       <pubDate>Fri, 12 Apr 2019 14:26:05 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/social-media/</guid>
+      <guid>https://jenkins-zh.cn/about/social-media/</guid>
       <description>社区所有的技术、活动类的文章都会同步发布到下面的社交媒体平台上。
    媒体 负责人     微信公众号  LinuxSuRen    开源中国  donhui    CSDN  P01son6415    简书  yJunS    掘金  zacker330    腾讯 云+社区  LinuxSuRen     </description>
     </item>
     
     <item>
       <title>社区贡献激励方案</title>
-      <link>https://jenkins-zh.github.io/about/star-plan/</link>
+      <link>https://jenkins-zh.cn/about/star-plan/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/star-plan/</guid>
+      <guid>https://jenkins-zh.cn/about/star-plan/</guid>
       <description>统计的基础分数为：GitHub 账号首页上 jenkinsci 、 jenkins-infra 、 jenkins-zh 、 jenkins-x 四个组织的贡献数和。
 附加分，统计发表在 Jenkins 公众号上的文章的阅读数，该数字除以100得到的整倍数。例如：某篇文章的阅读数为120，那么得分为1；阅读数为90，则没有得分。
 加权，是为了鼓励更多的原创。原创文章的加权数为1.2，例如：某篇原创文章的阅读数为230，那么最终得分为2.4。</description>
@@ -47,10 +47,10 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     
     <item>
       <title>如何参与</title>
-      <link>https://jenkins-zh.github.io/about/how-to-involve/</link>
+      <link>https://jenkins-zh.cn/about/how-to-involve/</link>
       <pubDate>Sat, 05 Jan 2019 22:56:04 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/how-to-involve/</guid>
+      <guid>https://jenkins-zh.cn/about/how-to-involve/</guid>
       <description>参与开源社区真的不只有 Coding 一条路可选。只要你认同“开源”，有热情，就可以！任何岗位、校大学生、甚至&amp;rdquo;不懂&amp;rdquo;技术都能够加入我们。走过路过的朋友们别错过，下面的参与方式总有一种能把你带上开源事业的“不归路”，如果真的没有包含你希望的参与方式，也可以从现在就发起一个 Pull Request 开始：
 Jenkins 本地化  Jenkins 中文官网 有很多的 翻译任务 需要各路英雄自由领取。无规矩不成方圆，在享受自由的同时，也请牢记如下几点：
  认真、负责第一位 翻译任务通常不建议超过两周  翻译规范   翻译包括 Jenkins 官网的本地化，以及 博客 的翻译。翻译完成后，提交 Pull Request 并等待 Review。对于质量较高、或者适合在微信公众号上发布的文章，需要另外提交一个 Pull Request 。
@@ -62,10 +62,10 @@ Jenkins 的 简体中文语言插件 也热切地期待你的 Pull Request 。
     
     <item>
       <title>交流</title>
-      <link>https://jenkins-zh.github.io/about/channels/</link>
+      <link>https://jenkins-zh.cn/about/channels/</link>
       <pubDate>Fri, 04 Jan 2019 21:13:30 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/channels/</guid>
+      <guid>https://jenkins-zh.cn/about/channels/</guid>
       <description>为了方便各位 Jenkins 的爱好者、用户以及贡献者之间互相交流，我这里列出来一些途径：
  邮件组 即时聊天 在本站留言  邮件组 Jenkins 社区有很多 邮件组 ，感兴趣的童鞋请自行翻阅。本文仅介绍中文相关的邮件组：
             Jenkins 中文用户邮件组  查看历史  订阅 取消订阅 求助   Jenkins 中文本地化兴趣邮件组  查看历史  订阅 取消订阅 求助     注意：点击上面的订阅或者取消都应该会弹出一个发送邮件的窗口，请不要做任何修改，邮件正文保持空白（不要添加邮件签名等内容）直接发送即可。邮件发送成功后，会收到确认的回复。鉴于邮件组是由 Google 提供的服务，无法科学上网的童鞋是无法查看历史邮件的。
@@ -76,10 +76,10 @@ Jenkins 的 简体中文语言插件 也热切地期待你的 Pull Request 。
     
     <item>
       <title>Jenkins Area Meetup</title>
-      <link>https://jenkins-zh.github.io/about/meetups/</link>
+      <link>https://jenkins-zh.cn/about/meetups/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/meetups/</guid>
+      <guid>https://jenkins-zh.cn/about/meetups/</guid>
       <description>我们欢迎每一位愿意一起合作、组织的个人、企业、社区，形式包括但不局限于：
  案例、经验分享 工作坊，实际操作演练 活动拍照、录像 茶歇、场地赞助 礼品、奖品赞助  下面是目前收集到的，在国内组织过 Meetup 的城市。
   北京   上海   西安   杭州   成都   深圳   广州   </description>
@@ -87,10 +87,10 @@ Jenkins 的 简体中文语言插件 也热切地期待你的 Pull Request 。
     
     <item>
       <title>关于本站</title>
-      <link>https://jenkins-zh.github.io/about/about-site/</link>
+      <link>https://jenkins-zh.cn/about/about-site/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/about-site/</guid>
+      <guid>https://jenkins-zh.cn/about/about-site/</guid>
       <description>Jenkins 中文社区站点是基于 Hugo 生成的静态文件，托管在 GitHub Page 上。下面列出相关的源码位置：
  网站内容 网站主题 微信订阅号  </description>
     </item>

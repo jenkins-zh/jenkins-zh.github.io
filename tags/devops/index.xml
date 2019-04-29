@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Devops on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/devops/</link>
+    <link>https://jenkins-zh.cn/tags/devops/</link>
     <description>Recent content in Devops on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>我们为什么需要 DevSecOps 和制品仓库？</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-28-devsecops/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-28-devsecops/</link>
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-28-devsecops/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-28-devsecops/</guid>
       <description>Helen Beal 曾经在一次讨论什么是 DevSecOps 工程师的会议上发言。令她惊讶的是，在与会人员中，许多人都没有将安全机制引入 DevOps。在与人们讨论之后，她将大家的问题总结为三类：安全机制会制造额外的隔阂；组织中的人很难理解 DevOps，因此安全机制可能会造成更多困惑；可能没有为安全机制预留空间。
 当然，Helen 不同意这些观点。她在技术领域从业近20年，专注于软件开发生命周期，对于 DevOps 和DevSecOps 有一些自己的理解。她自称为 Ranger4 的 「DevOpsologist」，因为她帮助那里的组织实现 DevOps。她在世界各地分享知识，并且她将参加我们在 2018 年的 Nexus User Conference ，讨论工具仓库及其在 DevSecOps 工具链中的角色。
 从高层次来看，Helen 为 DevSecOps 提出了一些重要建议：
@@ -29,10 +29,10 @@
     
     <item>
       <title>Jenkins 2.173 发布通知</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</guid>
       <description>本次更新移除了一些不太推荐的功能，请管理员及时关注，如果希望能恢复的旧的形态，可以按照下面的提示操作。
 另外，有一项重要的更新，使得我们可以把所有的中文本地化资源文件从 Jenkins 核心中移除。因此， 请关注 Jenkins 简体中文插件后续的动态，我们会及时完成所有的迁移。
  移除对 CCtray 文件的内置支持。
@@ -44,10 +44,10 @@
     
     <item>
       <title>持续交付的商业价值</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</guid>
       <description>持续交付使你能够以更低地风险、更快低交付新软件或是更新已有软件。
 降低风险很重要，但是，支持持续交付的流程将转化为对业务更重要的价值： - 加速价值时间。 一个小企业不需要一个 MBA 就可以认识到持续交付可以帮助他们完成工作。 一家大型企业已经规划了其价值流， 并且在整个大型组织中拥有复杂的投资和合约， 将发现持续交付有助于加速实现价值的时间。 - 数据驱动决策。 部署、度量和调整。 你仍然可以推动更大规模的发布，但你的流程将更适合于持续的数据收集。 这将缩短与客户的反馈循环。 它提高了你的反应能力，计划你的下一步行动，并保持领先的竞争力。 - 质量。 你持续发布的行为使你必须提高你的质量标准以及完全的自动化测试实践。 更好的质量意味着更快乐的客户、更低的成本、更少的消防演习和更少的计划外工作。 - 试验 = 创新。 开发人员和业务线可以自由地以较低的成本尝试新的想法， 从而释放出长期高投资发布周期背后的创新想法。 - 降低成本。 大的发布会有巨大的成本，如果出现错误会有严重的后果。 保持可交付成果处于可发布状态会降低交付成本。
 对企业来说，这些价值一起使持续交付成为真正的游戏变革者。 尽管可以在团队或项目级别开始采用和验证，但持续交付的本质是它以需要真正投资和自上而下承诺的方式跨越了组织边界。 选择与现有投资互补并共存的持续交付工具链是走向成功的关键一步， 特别是因为 CD 可以引导你的组织采用 DevOps 文化。
@@ -57,10 +57,10 @@
     
     <item>
       <title>AIOps：DevOps 的未来</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/</link>
       <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/</guid>
       <description>DevOps 和云技术正在逼近极限 范式转变往往会产生意想不到的后果，这些后果可能需要数年才能被完全消化。 云计算就是一个很好的例子。 云计算迎来了灵活的基础设施和低资本要求的时代，由于资源只是一个API调用，工程师们无需等待部署。 然而，这一切只是开始。
 敏捷的公司利用云来打破开发和运维之间的隔阂，并采用敏捷方法以缩短开发周期，从而创造战略优势。 他们将应用程序生命周期中的工程师团队分工从之前的开发和测试变为部署和运维， 并创建了需要一系列新技能的职位。这些公司使用 CI/CD 和 DevOps 进一步推动自动化流水线， 以实现更快的交付。
 这样有隐患吗？去问你的 DevOps 团队 DevOps 团队的任务是维护一个工具链，以便自动交付新代码，按需扩展，以及五个 9 的正常运行时间。 在空闲时间，他们致力于提高性能和控制成本。 对于大的应用程序，可以有数千个虚拟机或容器，每个虚拟机或容器都有一堆软件， 还有负载平衡器和自动扩容等云服务，所有这些都必须进行配置和维护。 这一切都在不断发展中。

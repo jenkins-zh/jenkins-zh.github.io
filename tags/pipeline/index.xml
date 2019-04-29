@@ -2,21 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pipeline on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/pipeline/</link>
+    <link>https://jenkins-zh.cn/tags/pipeline/</link>
     <description>Recent content in Pipeline on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/pipeline/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/pipeline/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>应该使用什么 CI/CD 工具？</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</guid>
+      <description>在我们正在进行的 Kubernetes FAQ 系列中，我们回答了社区中一些常见的问题，本周我们将讨论在选择 CI/CD 工具时需要考虑什么。
+目前已经有大量的 CI/CD 工具可供选择-开源解决方案和商业解决方案。在这里，我们重点介绍在设置持续交付流水线时要考虑的一些最重要的注意事项。
+在这篇文章中你将学到： - 为什么需要自动化流水线 - 部署典型流水线的组件 - CD 流水线功能需要考虑 - 如何合并 GitOps
+为什么要创建自动化 CI/CD 流水线？ 自动化 CI/CD 流水线有许多好处： - 将您的上线时间从数周或数月减少到数天或数小时。通过自动化流水线，开发团队可以提高发布的速度以及代码的质量。以小增量连续添加的新功能和修复可以使产品具有更少的缺陷。 - 一个强大的开发团队。由于交付流水线的所有阶段都可供团队中的任何人检查、改进和验证，因此可以创建对构建的所有权，从而鼓励整个组织的强大团队合作和协作能力。 - 降低软件开发的风险和成本。自动化鼓励开发人员在继续前进之前分阶段验证代码更改，从而减少了缺陷最终出现在生产中的机会。 - 减少进展中的工作量。CD 流水线提供从开发到客户的快速反馈循环。这个迭代周期不仅可以帮助您构建正确的产品，而且还允许开发人员更快地进行产品改进，从而减少正在进行的工作。 典型的部署流水线 CD 流水线由几个不同的阶段组成; 一个工具不能满足所有这些步骤。
+以下是构成大多数自动化流水线的步骤： 1. 在笔记本电脑上编写代码，将其推入源代码仓库(如 Git)。 2. 代码通过单元、集成和其他自动化测试。如果测试通过，将构建成新的 Docker 镜像。 3. 将镜像推送到镜像仓库。 4. 将新镜像推送到集群中。 思考 CD 流水线的特性 创建流水线的困难之一是成功地将您想要使用的工具粘合在一起。这些是为流水线选择工具时要考虑的主要功能： - 端到端的安全性 - 能够使用完全可重现的审计跟踪进行回滚 - 内置可观察性和警报功能 - 平均快速部署时间以及平均快速恢复时间 - 简单的开发人员经验和工作流程
+流水线端到端的安全性 在市场上的 CI/CD 工具中，有些工具将 CI 和 CD 部分合并为一个工具。或者更糟糕的是，那些负责创建 CI/CD 流水线的人将组装一系列手工锻造的脚本，这些脚本可以在一个方向上通过流水线推送代码，或执行被称为CIOP 流水线。</description>
+    </item>
+    
+    <item>
       <title>Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
       <description>Docker 已经非常出名并且更多的组织正在转向基于 Docker 的应用开发和部署。这里有一个关于如何容器化现有 Java Web 应用以及使用 Jenkins 为它建立一个端到端部署流水线的快速指南。
 为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。
 步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。
@@ -26,10 +40,10 @@ node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-
     
     <item>
       <title>Electron 应用的流水线设计</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</guid>
       <description>审校：LinuxSuRen（https://github.com/LinuxSuRen）
  面向读者：需要了解 Jenkins 流水线的基本语法。
 Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。
@@ -40,10 +54,10 @@ Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台
     
     <item>
       <title>MPL - 模块化的流水线库</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</guid>
       <description>MPL - 模块化的流水线库 尽管通过自动化部署加快了开发速度，但由于在 DevOps 方面缺少协作，我们一个客户正因此而放慢产品的上市时间。虽然他们也投入了资源来做 DevOps ，但每条生产流水线都是独立设置的，迫使团队为每个项目重新造轮子。更糟糕的是，由于没有跨团队协作，平台中的任何错误又会出现在每条新的流水线中。许多客户都有类似的问题存在，因此我们决定开发一个既能帮助现有客户，又能适应未来使用需求的通用工具。使用通用框架且标准化的 CI/CD 平台是最显而易见的选择，但这将导致缺少灵活性的单体结构（monolithic structure），最终会变得举步维艰。每个团队都需要在自己的流水线上工作，基于此，我们开发了一个方便 DevOps 流水线的每个可重用部分可供以后使用的解决方案 — Jenkins 驱动的模块化流水线库。
 解决方案：模块化流水线库 模块化流水线库（译注：modular pipeline library，简称 MPL）是一个高度灵活的 Jenkins 流水线共享库，它可以轻松将最佳实践共享到整个公司。它具有清晰的模块化结构，先进的测试框架，多级嵌套的能力，流水线配置系统，被改进了的错误处理机制以及许多其他有用的组件。
 我们将通过以下几部分内容深入了解并解释 MPL 是如何工作的：
@@ -56,10 +70,10 @@ MPL 致力于创建跨团队协作 DevOps 流程 通过 MPL，我们现在能够
     
     <item>
       <title>使用 YAML 文件配置 Jenkins 流水线</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/</guid>
       <description>几年前，我们的 CTO 写了一篇关于 使用 Jenkins 和 Docker 为 Ruby On Rails 应用提供持续集成服务 的文章。这些年，我们一直使用这个 CI 流水线解决方案，直到我们最近决定做一次升级。为什么呢？
  Jenkins 的版本过低，已经很难升级 Wolox 过去几年增长显著，一直面临着如何伸缩的问题 只有极少数人如何修复 Jenkins 服务的问题 配置 Jenkins 任务不是一件简单的任务，使我们的项目启动过程变慢 更改每个作业运行的命令也不是一件简单的任务，并且有权限更改的人并不多。 Wolox 拥有广泛的项目，语言种类繁多，使得这个问题尤为突显。  考虑到这些问题，我们开始深入研究最新版的 Jenkins，看看如何提升我们的 CI 服务。我们需要构建一个新的CI服务，至少要解决以下问题：
  支持 Docker 构建。我们的项目依赖的一个或多个 Docker 镜像的执行（应用，数据库，Redis 等） 如有必要，易于配置和复制 易于增加新项目 易于修改构建步骤。工作在项目上的所有人都应该能修改它，如果他们希望执行 npm install 或 yarn install  安装Jenkins和Docker 安装 Jenkins 非常简单，直接从 官方教程 选择一种方式安装。

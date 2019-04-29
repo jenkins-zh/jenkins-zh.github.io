@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/ai/</link>
+    <link>https://jenkins-zh.cn/tags/ai/</link>
     <description>Recent content in Ai on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 22 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 2.173 发布通知</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</guid>
       <description>本次更新移除了一些不太推荐的功能，请管理员及时关注，如果希望能恢复的旧的形态，可以按照下面的提示操作。
 另外，有一项重要的更新，使得我们可以把所有的中文本地化资源文件从 Jenkins 核心中移除。因此， 请关注 Jenkins 简体中文插件后续的动态，我们会及时完成所有的迁移。
  移除对 CCtray 文件的内置支持。
@@ -28,10 +28,10 @@
     
     <item>
       <title>AIOps：DevOps 的未来</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/</link>
       <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/</guid>
       <description>DevOps 和云技术正在逼近极限 范式转变往往会产生意想不到的后果，这些后果可能需要数年才能被完全消化。 云计算就是一个很好的例子。 云计算迎来了灵活的基础设施和低资本要求的时代，由于资源只是一个API调用，工程师们无需等待部署。 然而，这一切只是开始。
 敏捷的公司利用云来打破开发和运维之间的隔阂，并采用敏捷方法以缩短开发周期，从而创造战略优势。 他们将应用程序生命周期中的工程师团队分工从之前的开发和测试变为部署和运维， 并创建了需要一系列新技能的职位。这些公司使用 CI/CD 和 DevOps 进一步推动自动化流水线， 以实现更快的交付。
 这样有隐患吗？去问你的 DevOps 团队 DevOps 团队的任务是维护一个工具链，以便自动交付新代码，按需扩展，以及五个 9 的正常运行时间。 在空闲时间，他们致力于提高性能和控制成本。 对于大的应用程序，可以有数千个虚拟机或容器，每个虚拟机或容器都有一堆软件， 还有负载平衡器和自动扩容等云服务，所有这些都必须进行配置和维护。 这一切都在不断发展中。

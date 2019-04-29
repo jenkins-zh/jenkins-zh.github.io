@@ -2,21 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ci on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/ci/</link>
+    <link>https://jenkins-zh.cn/tags/ci/</link>
     <description>Recent content in Ci on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/ci/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>应该使用什么 CI/CD 工具？</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</guid>
+      <description>在我们正在进行的 Kubernetes FAQ 系列中，我们回答了社区中一些常见的问题，本周我们将讨论在选择 CI/CD 工具时需要考虑什么。
+目前已经有大量的 CI/CD 工具可供选择-开源解决方案和商业解决方案。在这里，我们重点介绍在设置持续交付流水线时要考虑的一些最重要的注意事项。
+在这篇文章中你将学到： - 为什么需要自动化流水线 - 部署典型流水线的组件 - CD 流水线功能需要考虑 - 如何合并 GitOps
+为什么要创建自动化 CI/CD 流水线？ 自动化 CI/CD 流水线有许多好处： - 将您的上线时间从数周或数月减少到数天或数小时。通过自动化流水线，开发团队可以提高发布的速度以及代码的质量。以小增量连续添加的新功能和修复可以使产品具有更少的缺陷。 - 一个强大的开发团队。由于交付流水线的所有阶段都可供团队中的任何人检查、改进和验证，因此可以创建对构建的所有权，从而鼓励整个组织的强大团队合作和协作能力。 - 降低软件开发的风险和成本。自动化鼓励开发人员在继续前进之前分阶段验证代码更改，从而减少了缺陷最终出现在生产中的机会。 - 减少进展中的工作量。CD 流水线提供从开发到客户的快速反馈循环。这个迭代周期不仅可以帮助您构建正确的产品，而且还允许开发人员更快地进行产品改进，从而减少正在进行的工作。 典型的部署流水线 CD 流水线由几个不同的阶段组成; 一个工具不能满足所有这些步骤。
+以下是构成大多数自动化流水线的步骤： 1. 在笔记本电脑上编写代码，将其推入源代码仓库(如 Git)。 2. 代码通过单元、集成和其他自动化测试。如果测试通过，将构建成新的 Docker 镜像。 3. 将镜像推送到镜像仓库。 4. 将新镜像推送到集群中。 思考 CD 流水线的特性 创建流水线的困难之一是成功地将您想要使用的工具粘合在一起。这些是为流水线选择工具时要考虑的主要功能： - 端到端的安全性 - 能够使用完全可重现的审计跟踪进行回滚 - 内置可观察性和警报功能 - 平均快速部署时间以及平均快速恢复时间 - 简单的开发人员经验和工作流程
+流水线端到端的安全性 在市场上的 CI/CD 工具中，有些工具将 CI 和 CD 部分合并为一个工具。或者更糟糕的是，那些负责创建 CI/CD 流水线的人将组装一系列手工锻造的脚本，这些脚本可以在一个方向上通过流水线推送代码，或执行被称为CIOP 流水线。</description>
+    </item>
+    
+    <item>
       <title>Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
       <description>Docker 已经非常出名并且更多的组织正在转向基于 Docker 的应用开发和部署。这里有一个关于如何容器化现有 Java Web 应用以及使用 Jenkins 为它建立一个端到端部署流水线的快速指南。
 为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。
 步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。
@@ -26,10 +40,10 @@ node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-
     
     <item>
       <title>持续集成的收益与挑战</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</guid>
       <description>毫无疑问，持续集成（ CI ）已成为一个软件开发的主流原则。CI 的收益在业界众所周知的，并且很难找到反对实施它的人。
 在这里，我想把那些收益收集起来放到一个中心化的地方。但是我认为扮演反面角色并试图找出持续集成的弊端或挑战也是很有趣的。
 什么是持续集成？ 从根本上说， 持续集成（ CI ）是一种开发实践，开发人员每天都要将代码集成到共享的仓库中。在该仓库中，代码被自动构建进行验证用来在这个流程中检验尽早的发现任何问题。这允许团队花更少的时间回溯，而花更多的时间构建新特性。
@@ -43,10 +57,10 @@ node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-
     
     <item>
       <title>Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/</guid>
       <description>KubeCon + CloudNativeCon | Open Source Summit | 持续交付峰会 中国2019 2019年4月10日，旧金山 - Linux基金会是一家以开源促进大众创新的非营利组织，今天公布将于2019年6月24至26日在中国上海举行的 KubeCon + CloudNativeCon + Open Source Summit 中国2019日程。
 Open Source Summit 中国2019前身为 LinuxCon + ContainerCon + CloudOpen 中国（LC3），是开源社区寻求合作、共享信息、了解当今最有影响力的开源技术和议题的重要平台，包括：云原生、无服务器、微服务、物联网、人工智能、网络、Linux 等。
 2019年，首次将Open Source Summit中国和KubeCon + CloudNativeCon中国整合成一项活动，只需购票一次即可参加KubeCon + CloudNativeCon + Open Source Summit中国。
@@ -57,10 +71,10 @@ Jenkins 中文社区邀您参与社区共同成长 在开源盛会开展的同�
     
     <item>
       <title>什么是 CI/CD?</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/</guid>
       <description>CI/CD 的出现改变了开发人员和测试人员发布软件的方式。本文是描述这一变化的系列文章第一篇， 这些文章将提供各种工具和流程的讲解，以帮助开发人员更好的使用 CI/CD。
 从最初的 瀑布模型， 到后来的 敏捷开发， 再到今天的 DevOps， 这是现代开发人员构建出色产品的技术路线。 随着 DevOps 的兴起，出现了持续集成，持续交付（CI/CD）和持续部署的新方法， 而传统的软件开发和交付方式在迅速变得过时。过去的敏捷时代里， 大多数公司的软件发布周期是每月、每季度甚至每年（还记得那些日子吗？）， 而在现在 DevOps 时代，每周、每天甚至每天多次都是常态。 当 SaaS 成为业界主流后尤其如此，您可以轻松地动态更新应用程序， 而无需强迫用户下载更新组件。很多时候，用户甚至都不会注意到正在发生变化。
 开发团队通过软件交付流水线（Pipeline）实现自动化，以缩短交付周期， 大多数团队都有自动化流程来检查代码并部署到新环境。 我们一直在关注自动化测试流程，但这将在之后的文章中介绍。 今天，我们将介绍什么是 CI/CD/CD ，以及现代软件公司如何使用工具将部署代码的流程自动化。
