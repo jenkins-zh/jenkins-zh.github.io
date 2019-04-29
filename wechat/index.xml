@@ -476,7 +476,7 @@ wechat: wechatid github: linuxsuren terms: - 2018-11-11  Duty All articles shoul
       
       <guid>https://jenkins-zh.cn/wechat/management/operators/readme/</guid>
       <description>关于 本文描述如何发布 Jenkins 官方微信公众号文章。
-发布时间 我们在每周一、三、五下午六点发布文章。
+发布时间 我们在每周一、三、五晚上九至十点发布文章。
 每次发布，同一类型的文章只能包含一篇。需要在同一天发布多篇文章的话，顺序如下：
  活动、通知 原创 翻译 转载  申请权限 如果您愿意帮忙发布 Jenkins 微信公众号文章，您需要新建（或更新）如下的示例文件，并创建一个 PR 。文件名的格式如：githubid-short-term.yaml.
 示例文件：
