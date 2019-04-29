@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,22 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>使用 Jenkins X 渐进式交付：自动化金丝雀部署</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/</guid>
+      <description>这是渐进式交付系列的第三篇文章，前两篇请参见： - Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署 - 使用 Jenkins X 渐进式交付
+渐进式交付被 Netflix， Facebook 以及其它公司使用用来减轻部署的风险。 但是现在你可以在使用Jenkins X时采用它。
+渐进式交付是持续交付的下一步，它将新版本部署到用户的一个子集，并在将其滚动到全部用户之前对其正确性和性能进行评估，如果不匹配某些关键指标，则进行回滚。
+尤其是，我们聚焦金丝雀发布，并让它在你的 Jenkins X 应用中变得易于采用。 金丝雀发布包括向应用程序的新版本发送一小部分流量，并在向其他用户发布之前验证这里没有错误。 Facebook 就是这样做的，首先向内部员工提供新版本，然后是一小部分用户，然后是其他所有用户，但是你要采用它并不需要成为 Facebook ！
+你可以在 Martin Fowler 的网站阅读更多与金丝雀发布相关信息。
+Jenkins X 如果在 Jenkins X 中你已经有一个应用，那么你知道的你可以 通过 jx promote myapp --version 1.0 --env production 命令 promote 它到&amp;rdquo;生产&amp;rdquo;环境。 但是，在检查新版本是否失败的同时，它也可以自动并逐步地向一定比例的用户推出。 如果发生失败，应用程序将自动回滚。
+整个过程中完全没有人为干预。 注意：这个新功能是非常新的，在将来这些步骤将不再需要，因为它们也将由 Jenkins X 自动化了。
+作为第一步，三个 Jenkins X 插件需要被安装： - Istio : 一种服务网格容许我们管理我们服务的流量。 - Prometheus ：Kubernetes 中最流行的监控系统。 - Flagger ：一个使用 Istio 的项目，该项目使用 Prometheus 的指标自动化进行金丝雀发布和回滚。</description>
     </item>
     
     <item>
@@ -522,7 +538,8 @@ TODO List Pick up a task from here, if you&amp;rsquo;re interesting in contribut
       <guid>https://jenkins-zh.github.io/wechat/articles/readme/</guid>
       <description>这里存放的是 Jenkins 官方微信公众号文章，文件采用 Markdown 格式，但包含一些必要的描述性字段。文章的校对、审核、排期等都通过 Pull Request 来完成。PR 合并后会发布到 Jenkins 中文社区网站。
 目录 文章以发布的排期来存放，层级为：年份/月份。如果月份为个位数的话，要以0开头，例如：01。
-文件名 文件名前缀为“年月日”，中间部分需要以英文来描述。例如：2019-01-01-sample.md。
+排期 为了尽可能满足你期望的发布日期，可以自行选择，但同时需要满足如下的条件：
+ 为保障大家有足够的时间进行 Review，建议排到一周以后 工作日 避免同一天有相同类型的文章  文件名 文件名前缀为“年月日”，中间部分需要以英文来描述。例如：2019-01-01-sample.md。
 字段 文件中的字段，是为了描述文章相关的必要信息。具体的说明请参考：sample.md。</description>
     </item>
     
