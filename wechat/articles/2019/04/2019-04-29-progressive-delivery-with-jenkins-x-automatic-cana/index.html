@@ -262,13 +262,10 @@ Facebook 就是这样做的，首先向内部员工提供新版本，然后是�
 
 <p>如果在 Jenkins X 中你已经有一个应用，那么你知道的你可以 通过 <code>jx promote myapp --version 1.0 --env production</code> 命令 promote 它到&rdquo;生产&rdquo;环境。
 但是，在检查新版本是否失败的同时，它也可以自动并逐步地向一定比例的用户推出。
-如果发生失败，应用程序将自动回滚。</p>
-
-<h2 id="整个过程中完全没有人为干预">整个过程中完全没有人为干预。</h2>
+如果发生失败，应用程序将自动回滚。
+整个过程中完全没有人为干预。</p>
 
 <p>注意：这个新功能是非常新的，在将来这些步骤将不再需要，因为它们也将由 Jenkins X 自动化了。</p>
-
-<hr />
 
 <p>作为第一步，三个 Jenkins X 插件需要被安装：
 - <a href="https://istio.io/">Istio</a> : <a href="https://istio.io/docs/concepts/what-is-istio/">一种服务网格</a>容许我们管理我们服务的流量。
