@@ -6,10 +6,25 @@
     <description>Recent content in Jenkins on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/</link>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/</guid>
+      <description>本文介绍了笔者首个 Jenkins 插件开发的旅程， 包括从产生 idea 开始，然后经过插件定制开发， 接着申请将代码托管到 jenkinsci GitHub 组织， 最后将插件发布到 Jenkins 插件更新中心的过程。
+鉴于文章篇幅过长，将分为上下两篇进行介绍。
+从一个 idea 说起 前几天和朋友聊天时，聊到了 Maven 版本管理领域的 SNAPSHOT 版本依赖问题， 这给他带来了一些困扰，消灭掉历史遗留应用的 SNAPSHOT 版本依赖并非易事。
+类似问题也曾经给笔者带来过困扰，在最初没能去规避问题， 等到再想去解决问题时却发现困难重重，牵一发而动全身， 导致这个问题一直被搁置，而这也给笔者留下深刻的印象。
+等到再次制定 Maven 规范时，从一开始就考虑 强制禁止 SNAPSHOT 版本依赖发到生产环境。
+这里是通过在 Jenkins 构建时做校验实现的。 因为没有找到提供类似功能的 Jenkins 插件， 目前这个校验通过 shell 脚本来实现的， 具体的做法是在 Jenkins 任务中 Maven 构建之前增加一个 Execute shell 的步骤， 来判断 pom.xml 中是否包含 SNAPSHOT 关键字，如果包含，该次构建状态将被标记为失败。 脚本内容如下：
+#!/bin/bash if [[ ` grep -R --include=&amp;quot;pom.xml&amp;quot; SNAPSHOT .` =~ &amp;quot;SNAPSHOT&amp;quot; ]]; then echo &amp;quot;SNAPSHOT check failed&amp;quot; &amp;amp;&amp;amp; grep -R --include=&amp;quot;pom.</description>
+    </item>
     
     <item>
       <title>使用 Jenkins X 渐进式交付：自动化金丝雀部署</title>
