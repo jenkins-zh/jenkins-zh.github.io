@@ -6,10 +6,19 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 版本发布</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-09-jenkins-release/</link>
+      <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-09-jenkins-release/</guid>
+      <description> 2.175 (2019-04-28)  当构建完成后，更新状态图标 (issue 16750) 插件管理页面提供了更方便的插件更新选项，包括：“全选”、“兼容的“或”全不选“。 “兼容”的选择（之前为“全选”）已经不再包括含有任何兼容性警告的插件。 (issue 56477) 从连接 Jenkins 节点的界面上移除会误导到 Java Web Start 和 JNLP 的链接等引用。 (pull 3998) 再次启用 Stapler 请求分发 telemetry。 (pull 3999) 确保远程对象仅通过远程通道被序列化。 确定永远不会设计以 XML 形式持久化到磁盘中的类包括： FilePath, [Stream]TaskListener, and ProcessTree. (issue 47896) 修复在 Linux 代理安装器中看到的一些错误。 (issue 57071) 使得 Debian/Ubuntu 启动器脚本对 Java 11 兼容。 (issue 57096) 开发者：使得 mvn -f war hudson-dev:run支持${port}。 (pull 3984)  2.174 (2019-04-21)  重命名一个代理节点，保持旧的配置，导致重启后旧的代理节点再次出现。 (issue 56403) 嵌套的视图现在也可以根据名称搜索了。 (issue 43322)  </description>
+    </item>
     
     <item>
       <title>Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)</title>

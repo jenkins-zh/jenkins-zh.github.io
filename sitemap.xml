@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-09-jenkins-release/</loc>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/</loc>
     <lastmod>2019-05-08T00:00:00+00:00</lastmod>
   </url>
@@ -412,7 +417,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -432,7 +437,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -554,6 +559,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/release/</loc>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/remoting/</loc>
     <priority>0</priority>
   </url>
@@ -609,7 +620,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
