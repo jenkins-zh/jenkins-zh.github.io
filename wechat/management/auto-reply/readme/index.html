@@ -30,24 +30,33 @@
   }
 </style>
 <meta property="og:title" content="" />
-<meta property="og:description" content="这里存放自动回复的消息。" />
+<meta property="og:description" content="通过微信公众号的 API 接口实现部分功能，这里主要是存放自动回复的消息。
+我们的 API 后端代码是基于 Golang 编写的。
+支持的消息类型包括：
+ 文本 图片 文章（公众号中的）  上面提到的消息类型，也就是字段 msgType 的值，包括：text、image、news。 更多的细节可以参考源码。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jenkins-zh.cn/wechat/management/auto-reply/readme/" />
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="这里存放自动回复的消息。">
+<meta itemprop="description" content="通过微信公众号的 API 接口实现部分功能，这里主要是存放自动回复的消息。
+我们的 API 后端代码是基于 Golang 编写的。
+支持的消息类型包括：
+ 文本 图片 文章（公众号中的）  上面提到的消息类型，也就是字段 msgType 的值，包括：text、image、news。 更多的细节可以参考源码。">
 
 
 
-<meta itemprop="wordCount" content="1">
+<meta itemprop="wordCount" content="16">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="这里存放自动回复的消息。"/>
+<meta name="twitter:description" content="通过微信公众号的 API 接口实现部分功能，这里主要是存放自动回复的消息。
+我们的 API 后端代码是基于 Golang 编写的。
+支持的消息类型包括：
+ 文本 图片 文章（公众号中的）  上面提到的消息类型，也就是字段 msgType 的值，包括：text、image、news。 更多的细节可以参考源码。"/>
 
 
 
@@ -205,7 +214,20 @@
 
 <div class="prose" id="prose">
 
-<p>这里存放自动回复的消息。</p>
+<p>通过微信公众号的 API 接口实现部分功能，这里主要是存放自动回复的消息。</p>
+
+<p>我们的 API <a href="https://github.com/jenkins-zh/wechat-backend">后端代码</a>是基于 Golang 编写的。</p>
+
+<p>支持的消息类型包括：</p>
+
+<ul>
+<li>文本</li>
+<li>图片</li>
+<li>文章（公众号中的）</li>
+</ul>
+
+<p>上面提到的消息类型，也就是字段 <code>msgType</code> 的值，包括：<code>text</code>、<code>image</code>、<code>news</code>。
+更多的细节可以<a href="https://github.com/jenkins-zh/wechat-backend/blob/master/pkg/reply/core.go">参考源码</a>。</p>
 
 </div>
 

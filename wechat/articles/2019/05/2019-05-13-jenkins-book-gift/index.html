@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>批量修改 Jenkins 任务的技巧 | Jenkins 中文社区</title>
+    <title>Jenkins 公众号送书福利 | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="description" content="共建开放、包容、活跃的 Jenkins 社区">
@@ -29,27 +29,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="批量修改 Jenkins 任务的技巧" />
-<meta property="og:description" content="Jenkins 脚本命令行的一种实践" />
+<meta property="og:title" content="Jenkins 公众号送书福利" />
+<meta property="og:description" content="赠送 5 本《Jenkins 2.x实践指南》" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" />
-<meta property="article:published_time" content="2019-02-27T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-02-27T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/" />
+<meta property="article:published_time" content="2019-05-13T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-13T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="批量修改 Jenkins 任务的技巧">
-<meta itemprop="description" content="Jenkins 脚本命令行的一种实践">
-
-
-<meta itemprop="datePublished" content="2019-02-27T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-02-27T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="184">
+<meta itemprop="name" content="Jenkins 公众号送书福利">
+<meta itemprop="description" content="赠送 5 本《Jenkins 2.x实践指南》">
 
 
+<meta itemprop="datePublished" content="2019-05-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="14">
 
-<meta itemprop="keywords" content="Jenkins," />
+
+
+<meta itemprop="keywords" content="jenkins," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="批量修改 Jenkins 任务的技巧"/>
-<meta name="twitter:description" content="Jenkins 脚本命令行的一种实践"/>
+<meta name="twitter:title" content="Jenkins 公众号送书福利"/>
+<meta name="twitter:description" content="赠送 5 本《Jenkins 2.x实践指南》"/>
 
 
 
@@ -188,17 +188,9 @@
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="dib f6 pl1 hover-bg-light-gray br-100" title="MPL - 模块化的流水线库 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-contribution-inspire/" class="dib f6 pr1 hover-bg-light-gray br-100" title="社区贡献激励活动">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-cdf-call-for-papers/" class="dib f6 pr1 hover-bg-light-gray br-100" title="持续交付峰会 Call For Papers">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -217,13 +209,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">批量修改 Jenkins 任务的技巧</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 公众号送书福利</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 脚本命令行的一种实践
+      赠送 5 本《Jenkins 2.x实践指南》
     </div>
   
 
@@ -236,68 +228,28 @@
 
 
 
-<h3 id="通过脚本命令行批量修改-jenkins-任务">通过脚本命令行批量修改 Jenkins 任务</h3>
+<p>Jenkins 中文社区是一个开放、包容、活跃的社区，包含大量的 Jenkins 干货。</p>
 
-<p>最近，笔者所在团队的 Jenkins 所在的服务器经常报硬盘空间不足。经查发现很多任务没有设置“丢弃旧的构建”。通知所有的团队检查自己的 Jenkins 任务有没有设置丢弃旧的构建，有些不现实。</p>
+<p>当然，它也会为公众号的粉丝们发放福利。</p>
 
-<p>一开始想到的是使用 Jenkins 的 API 来实现批量修改所有的 Jenkins 任务。笔者对这个解决方案不满意，经 Google 发现有同学和我遇到了同样的问题。他使用的更“技巧”的方式：在 Jenkins 脚本命令行中，通过执行 Groovy 代码操作 Jenkins 任务。</p>
+<p>本次福利是《Jenkins 2.x实践指南》x 5，以下是介绍：</p>
 
-<p>总的来说，就两步：</p>
+<p><img src="../../../images/articles/2019/05/2019-05-13-jenkins-book-gift/book-introduce.jpeg" alt="image.png" /></p>
+
+<p>本次活动书籍均由博文视点（Broadview）提供，特此感谢。</p>
+
+<h3 id="参与方式">参与方式：</h3>
 
 <ol>
-<li>进入菜单：<em>系统管理 &ndash;&gt; 脚本命令行</em></li>
-
-<li><p>在输入框中，粘贴如下代码：</p>
-
-<pre><code class="language-groovy">import jenkins.model.Jenkins
-import hudson.model.Job
-import jenkins.model.BuildDiscarderProperty
-import hudson.tasks.LogRotator
-// 遍历所有的任务
-Jenkins.instance.allItems(Job).each { job -&gt;
-
-    if ( job.isBuildable() &amp;&amp; job.supportsLogRotator() &amp;&amp; job.getProperty(BuildDiscarderProperty) == null) {
-        println &quot; \&quot;${job.fullDisplayName}\&quot; 处理中&quot;
-
-        job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10)))
-        println &quot;$job.name 已更新&quot;
-    }
-}
-return;
-
-/**
-LogRotator构造参数分别为：
-daysToKeep:  If not -1, history is only kept up to this days.
-numToKeep: If not -1, only this number of build logs are kept.
-artifactDaysToKeep: If not -1 nor null, artifacts are only kept up to this days.
-artifactNumToKeep: If not -1 nor null, only this number of builds have their artifacts kept.
-**/
-
-</code></pre></li>
+<li>关注本公众号，并在后台回复【抽奖】，根据二维码进入小程序抽奖。</li>
+<li>开奖时间为：5月19日晚上7点自动开奖（记得填自己的手机号，地址以便中奖后邮寄发出）。</li>
 </ol>
 
-<h3 id="脚本命令行介绍">脚本命令行介绍</h3>
+<p>中奖的同学，不要忘记发朋友圈分享支持噢~</p>
 
-<p>脚本命令行（Jenkins Script Console），它是 Jenkins 的一个特性，允许你在 Jenkins master 和 Jenkins agent 的运行时环境执行任意的 Groovy 脚本。这意味着，我们可以在脚本命令行中做任何的事情，包括关闭 Jenkins，执行操作系统命令 <code>rm -rf /</code>（所以不能使用 root 用户运行 Jenkins agent）等危险操作。</p>
+<p>等不急的同学，还可以扫二维码直接购买：</p>
 
-<p>除了上文中的，使用界面来执行 Groovy 脚本，还可以通过 Jenkins HTTP API：<code>/script</code>执行。具体操作，请参考 <a href="https://wiki.jenkins.io/display/JENKINS/Jenkins+Script+Console">官方文档</a>。</p>
-
-<h3 id="问题-代码执行完成后-对任务的修改有没有被持久化">问题：代码执行完成后，对任务的修改有没有被持久化？</h3>
-
-<p>当我们代码<code>job.addProperty(new BuildDiscarderProperty(new LogRotator (2, 10, 2, 10)))</code>执行后，这个修改到底有没有持久化到文件系统中呢（Jenkins 的所有配置默认都持久化在文件系统中）？我们看下 hudson.model.Job 的源码，在<code>addProperty</code>方法背后是有进行持久化的：</p>
-
-<pre><code class="language-groovy">public void addProperty(JobProperty&lt;? super JobT&gt; jobProp) throws IOException {
-    ((JobProperty)jobProp).setOwner(this);
-    properties.add(jobProp);
-    save();
-}
-</code></pre>
-
-<h3 id="小结">小结</h3>
-
-<p>本文章只介绍了批量修改“丢弃旧的构建”的配置，如果还希望修改其它配置，可以参考 hudson.model.Job <a href="https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/model/Job.java">源码</a>。</p>
-
-<p>不得不提醒读者朋友，Jenkins 脚本命令行是一把双刃剑，大家操作前，请考虑清楚影响范围。如果有必要，请提前做好备份。</p>
+<p><img src="../../../images/articles/2019/05/2019-05-13-jenkins-book-gift/book-qrcode.png" alt="image.png" /></p>
 
 </div>
 
@@ -330,17 +282,17 @@ artifactNumToKeep: If not -1 nor null, only this number of builds have their art
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “批量修改 Jenkins 任务的技巧”
-  </a> 更新于：February 27, 2019
+    “Jenkins 公众号送书福利”
+  </a> 更新于：May 13, 2019
   <div>
-    原文作者：<a href="https://showme.codes/2019-02-23/jenkins-script-console-in-practice/" target="_blank">zacker330</a>
+    原文作者：<a href="" target="_blank">zacker330</a>
   </div>
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-13-jenkins-book-gift.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -359,19 +311,13 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
           <li class="db dib-l mr3">
             <a class="tag" href="/tags/jenkins">
-              Jenkins
+              jenkins
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/" class="link">
-              Jenkins 公众号送书福利
-            </a>
-          </li>
         
       
         
@@ -523,6 +469,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
       
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
+            </a>
+          </li>
         
       
         

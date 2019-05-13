@@ -6,10 +6,35 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 公众号送书福利</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/</guid>
+      <description>Jenkins 中文社区是一个开放、包容、活跃的社区，包含大量的 Jenkins 干货。
+当然，它也会为公众号的粉丝们发放福利。
+本次福利是《Jenkins 2.x实践指南》x 5，以下是介绍：
+本次活动书籍均由博文视点（Broadview）提供，特此感谢。
+参与方式：  关注本公众号，并在后台回复【抽奖】，根据二维码进入小程序抽奖。 开奖时间为：5月19日晚上7点自动开奖（记得填自己的手机号，地址以便中奖后邮寄发出）。  中奖的同学，不要忘记发朋友圈分享支持噢~
+等不急的同学，还可以扫二维码直接购买：</description>
+    </item>
+    
+    <item>
+      <title>持续交付峰会 Call For Papers</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-cdf-call-for-papers/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-cdf-call-for-papers/</guid>
+      <description>持续交付峰会是一个为期一天的活动，将开源 CI/CD 社区汇集在一起。这一天将包括主题演讲，项目展示和终端用户的故事，以及 BoF 会议。与同行会面并推动未来持续交付的方向。
+重要日期  CFP 开始：4月29日，星期一 CFP 关闭：太平洋标准时间 5月17日，23:59，星期五 CFP 通知：5月29日，星期三 日程通知：5月30日，星期一 幻灯片截止：6月17日，星期四 活动时间：6月24日  建议的话题  CDF 的项目  Jenkins Jenkins X Tekton 和 Spinnaker 讲述你正在使用的这些项目的功能或者集成的功能，分享你为什么要使用以及如何利用这些项目解决了哪些问题  你们团队的持续交付  我们希望能听到真实项目中的使用，以及你们团队所推荐的持续交付实践  安全与合规性最佳实践  分享在持续交付中改善你们的软件供应链中的安全性的案例和技巧  帮助我们的同时也帮助自己 描绘你希望看到的 CI/CD 景象   点击这里提交你的演讲题目
+点击这里查看其他更多的同场活动。</description>
+    </item>
     
     <item>
       <title>Jenkins 版本发布</title>
@@ -494,7 +519,10 @@ TODO List Pick up a task from here, if you&amp;rsquo;re interesting in contribut
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/management/auto-reply/readme/</guid>
-      <description>这里存放自动回复的消息。</description>
+      <description>通过微信公众号的 API 接口实现部分功能，这里主要是存放自动回复的消息。
+我们的 API 后端代码是基于 Golang 编写的。
+支持的消息类型包括：
+ 文本 图片 文章（公众号中的）  上面提到的消息类型，也就是字段 msgType 的值，包括：text、image、news。 更多的细节可以参考源码。</description>
     </item>
     
     <item>
