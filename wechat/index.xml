@@ -6,10 +6,26 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基于 Jenkins 的 DevOps 平台应该如何设计凭证管理</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/</guid>
+      <description>背景 了解到行业内有些团队是基于 Jenkins 开发 DevOps 平台。而基于 Jenkins 实现的 DevOps 平台，就不得不考虑凭证的管理问题。
+本文就此问题进行讨论，尝试找出相对合理的管理凭证的方案。
+一开始我们想到的方案可能是这样的：用户在 DevOps 平台增加凭证后，DevOps 再将凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，使用的是存储在 Jenkins 上的凭证，而不是 DevOps 平台上的。
+但是，仔细想想，这样做会存在以下问题： * Jenkins 与 DevOps 平台之间的凭证数据会存在不一致问题。 * 存在一定的安全隐患。通过 Jenkins 脚本命令行很容易就把所有密码的明文拿到。哪天 Jenkins 被注入了，所有的凭证一下子就被扒走。 * 无法实现 Jenkins 高可用，因为凭证存在 Jenkins master 机器上。
+那么，有没有更好的办法呢？
+期望实现的目标 先定我们觉得更合理的目标，然后讨论如何实现。以下是笔者觉得合理的目标： &amp;gt; 用户还是在 DevOps 管理自己的凭证。但是 DevOps 不需要将自己凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，从 DevOps 上取。
+实现方式 Jenkins 有一个 Credentials Binding Plugin 插件，在 Jenkins pipeline 中的用法如下：
+withCredentials([usernameColonPassword(credentialsId: &#39;mylogin&#39;, variable: &#39;USERPASS&#39;)]) { sh &#39;&#39;&#39; curl -u &amp;quot;$USERPASS&amp;quot; https://private.</description>
+    </item>
     
     <item>
       <title>Jenkins 公众号送书福利</title>
@@ -499,6 +515,7 @@ TODO List Pick up a task from here, if you&amp;rsquo;re interesting in contribut
       <guid>https://jenkins-zh.cn/wechat/articles/readme/</guid>
       <description>这里存放的是 Jenkins 官方微信公众号文章，文件采用 Markdown 格式，但包含一些必要的描述性字段。文章的校对、审核、排期等都通过 Pull Request 来完成。PR 合并后会发布到 Jenkins 中文社区网站。
 目录 文章以发布的排期来存放，层级为：年份/月份。如果月份为个位数的话，要以0开头，例如：01。
+以文章的文件名前缀作为图片的目录，例如：文章的文件名为 2019-01-01-sample.md，我们需要在同级目录下创建文件夹 2019-05-01-sample ， 并在里面保存当前文章中的图片（封面、插图等）。
 排期 为了尽可能满足你期望的发布日期，可以自行选择，但同时需要满足如下的条件：
  为保障大家有足够的时间进行 Review，建议排到一周以后 工作日 避免同一天有相同类型的文章  文件名 文件名前缀为“年月日”，中间部分需要以英文来描述。例如：2019-01-01-sample.md。
 字段 文件中的字段，是为了描述文章相关的必要信息。具体的说明请参考：sample.md。</description>

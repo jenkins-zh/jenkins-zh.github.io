@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,22 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>基于 Jenkins 的 DevOps 平台应该如何设计凭证管理</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/</guid>
+      <description>背景 了解到行业内有些团队是基于 Jenkins 开发 DevOps 平台。而基于 Jenkins 实现的 DevOps 平台，就不得不考虑凭证的管理问题。
+本文就此问题进行讨论，尝试找出相对合理的管理凭证的方案。
+一开始我们想到的方案可能是这样的：用户在 DevOps 平台增加凭证后，DevOps 再将凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，使用的是存储在 Jenkins 上的凭证，而不是 DevOps 平台上的。
+但是，仔细想想，这样做会存在以下问题： * Jenkins 与 DevOps 平台之间的凭证数据会存在不一致问题。 * 存在一定的安全隐患。通过 Jenkins 脚本命令行很容易就把所有密码的明文拿到。哪天 Jenkins 被注入了，所有的凭证一下子就被扒走。 * 无法实现 Jenkins 高可用，因为凭证存在 Jenkins master 机器上。
+那么，有没有更好的办法呢？
+期望实现的目标 先定我们觉得更合理的目标，然后讨论如何实现。以下是笔者觉得合理的目标： &amp;gt; 用户还是在 DevOps 管理自己的凭证。但是 DevOps 不需要将自己凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，从 DevOps 上取。
+实现方式 Jenkins 有一个 Credentials Binding Plugin 插件，在 Jenkins pipeline 中的用法如下：
+withCredentials([usernameColonPassword(credentialsId: &#39;mylogin&#39;, variable: &#39;USERPASS&#39;)]) { sh &#39;&#39;&#39; curl -u &amp;quot;$USERPASS&amp;quot; https://private.</description>
     </item>
     
     <item>
@@ -525,8 +541,7 @@ Jenkins 的 简体中文语言插件 也热切地期待你的 Pull Request 。
       <guid>https://jenkins-zh.cn/about/channels/</guid>
       <description>为了方便各位 Jenkins 的爱好者、用户以及贡献者之间互相交流，我这里列出来一些途径：
  邮件组 即时聊天 在本站留言  邮件组 Jenkins 社区有很多 邮件组 ，感兴趣的童鞋请自行翻阅。本文仅介绍中文相关的邮件组：
-            Jenkins 中文用户邮件组  查看历史  订阅 取消订阅 求助   Jenkins 中文本地化兴趣邮件组  查看历史  订阅 取消订阅 求助     注意：点击上面的订阅或者取消都应该会弹出一个发送邮件的窗口，请不要做任何修改，邮件正文保持空白（不要添加邮件签名等内容）直接发送即可。邮件发送成功后，会收到确认的回复。鉴于邮件组是由 Google 提供的服务，无法科学上网的童鞋是无法查看历史邮件的。
-  即时聊天 即时聊天是一种很方便的线上交流方式，你有可能及时地收到大家的帮助，但是不要认为其他人有回答问题的义务。你没有能及时地得到帮助，可能是因为大家在忙、消息太多而被忽略、问题描述的不够详细等等。因此，建议大家在提问之前尽可能保证自己已经对问题理解的很清楚，并在提问时尽可能地给出上下文、复现步骤；当没有及时得到回答的话，可以把问题发送到邮件组（发送之前，请在邮件组中搜索其他人是否已经解决过类似问题），相信遇到过类似问题的人也会尽可能帮助你。
+            Jenkins 中文用户邮件组  查看历史  订阅 取消订阅 求助   Jenkins 中文本地化兴趣邮件组  查看历史  订阅 取消订阅 求助     *注意：点击上面的订阅或者取消都应该会弹出一个发送邮件的窗口，请不要做任何修改，邮件正文保持空白（不要添加邮件签名等内容）直接发送即可。邮件发送成功后，会收到确认的回复。鉴于邮件组是由 Google 提供的服务，无法科学上网的童鞋是无法查看历史邮件的。*   即时聊天 即时聊天是一种很方便的线上交流方式，你有可能及时地收到大家的帮助，但是不要认为其他人有回答问题的义务。你没有能及时地得到帮助，可能是因为大家在忙、消息太多而被忽略、问题描述的不够详细等等。因此，建议大家在提问之前尽可能保证自己已经对问题理解的很清楚，并在提问时尽可能地给出上下文、复现步骤；当没有及时得到回答的话，可以把问题发送到邮件组（发送之前，请在邮件组中搜索其他人是否已经解决过类似问题），相信遇到过类似问题的人也会尽可能帮助你。
  Jenkins Gitter 中文聊天室 欢迎你!
 留言 本站的留言系统建立在 Github 提供的 Issues 上。欢迎大家在遵守社区行为规范的基础上积极地留言互动。</description>
     </item>
@@ -637,6 +652,7 @@ TODO List Pick up a task from here, if you&amp;rsquo;re interesting in contribut
       <guid>https://jenkins-zh.cn/wechat/articles/readme/</guid>
       <description>这里存放的是 Jenkins 官方微信公众号文章，文件采用 Markdown 格式，但包含一些必要的描述性字段。文章的校对、审核、排期等都通过 Pull Request 来完成。PR 合并后会发布到 Jenkins 中文社区网站。
 目录 文章以发布的排期来存放，层级为：年份/月份。如果月份为个位数的话，要以0开头，例如：01。
+以文章的文件名前缀作为图片的目录，例如：文章的文件名为 2019-01-01-sample.md，我们需要在同级目录下创建文件夹 2019-05-01-sample ， 并在里面保存当前文章中的图片（封面、插图等）。
 排期 为了尽可能满足你期望的发布日期，可以自行选择，但同时需要满足如下的条件：
  为保障大家有足够的时间进行 Review，建议排到一周以后 工作日 避免同一天有相同类型的文章  文件名 文件名前缀为“年月日”，中间部分需要以英文来描述。例如：2019-01-01-sample.md。
 字段 文件中的字段，是为了描述文章相关的必要信息。具体的说明请参考：sample.md。</description>
