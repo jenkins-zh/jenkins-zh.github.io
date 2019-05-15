@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>从 Jenkins Master 扩展网络连接 | Jenkins 中文社区</title>
+    <title>与云无关的用于 Kubernetes 的自动化 CI/CD  | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="description" content="共建开放、包容、活跃的 Jenkins 社区">
@@ -29,25 +29,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="从 Jenkins Master 扩展网络连接" />
-<meta property="og:description" content="从 Jenkins Master 扩展网络连接" />
+<meta property="og:title" content="与云无关的用于 Kubernetes 的自动化 CI/CD " />
+<meta property="og:description" content="请看看您可能想要用来设置与云无关的生产和开发环境的一些工具和流程。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-scaling-network-connections/" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/" />
+<meta property="article:published_time" content="2019-05-16T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-16T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="与云无关的用于 Kubernetes 的自动化 CI/CD ">
+<meta itemprop="description" content="请看看您可能想要用来设置与云无关的生产和开发环境的一些工具和流程。">
 
 
-<meta itemprop="name" content="从 Jenkins Master 扩展网络连接">
-<meta itemprop="description" content="从 Jenkins Master 扩展网络连接">
+<meta itemprop="datePublished" content="2019-05-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="319">
 
 
 
-<meta itemprop="wordCount" content="96">
-
-
-
-<meta itemprop="keywords" content="jenkinsworld,jenkinsworld2018,cloud-native,performance,scalability,remoting," />
+<meta itemprop="keywords" content="cd,ci,kubernetes," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="从 Jenkins Master 扩展网络连接"/>
-<meta name="twitter:description" content="从 Jenkins Master 扩展网络连接"/>
+<meta name="twitter:title" content="与云无关的用于 Kubernetes 的自动化 CI/CD "/>
+<meta name="twitter:description" content="请看看您可能想要用来设置与云无关的生产和开发环境的一些工具和流程。"/>
 
 
 
@@ -155,8 +157,17 @@
     
     
       
+        <h3 class="f4 dib">
+            donghui
+        </h3>
+
       
-      <a href="" target="_blank" class="link dim v-mid dib">
+      
+        <p class="lh-copy measure center mt0 f6 black-60">
+          make a difference
+        </p>
+      
+      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -178,17 +189,9 @@
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/" class="dib f6 pl1 hover-bg-light-gray br-100" title="什么是 CI/CD? ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/" class="dib f6 pr1 hover-bg-light-gray br-100" title="使用 YAML 文件配置 Jenkins 流水线">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/" class="dib f6 pr1 hover-bg-light-gray br-100" title="19年 GSoC 中 Jenkins 的七个项目">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -207,13 +210,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">从 Jenkins Master 扩展网络连接</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">与云无关的用于 Kubernetes 的自动化 CI/CD </h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      从 Jenkins Master 扩展网络连接
+      请看看您可能想要用来设置与云无关的生产和开发环境的一些工具和流程。
     </div>
   
 
@@ -224,31 +227,114 @@
 
 <div class="prose" id="prose">
 
-<p><img src="../../../images/conferences/devops-world-2018.jpg" alt="DevOps World | Jenkins World 2018" /></p>
 
-<p>Oleg Nenashev 和我今年将在旧金山的 DevOps World | Jenkins World 上，做<a href="https://devopsworldjenkinsworld2018.sched.com/event/F9NP">从 Jenkins Master 扩展网络连接</a> 的演讲。
-多年来，我们一直致力于分析、优化和加强 Remoting channel，
-才有了现如今 master 能够协调 agent 的活动，并且接收构建的结果。
-尽管许多技术可以改进服务，比如优化代理启动器，但是想要有质的改变，只有从根本上改变传播的内容和方式。</p>
 
-<p>3月，JENKINS-27035 引入了一个框架，用于检查 Remoting channel 在高级别上的通信。
-以前，开发人员只能使用一般的低级工具，例如 Wireshark，
-它不能精确的识别 Jenkins 负责通信的代码片段。</p>
+<p><img src="../../../images/articles/2019/04/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/blue.jpg" alt="blue" /></p>
 
-<p>在过去的几个月里，<a href="https://jenkins.io/sigs/cloud-native/">Cloud Native SIG</a> 在解决根本原因方面取得了进展。
-<a href="https://plugins.jenkins.io/artifact-manager-s3">Artifact Manager on S3 plugin</a> 已经发布并与 Jenkins Evergreen 整合，
-支持在 agent 和 Amazon 服务器之间，进行大制品的上传和下载，
-源生插件允许由 agent 生成的所有构建的日志内容（例如在 steps 的 sh 中）
-直接定向流到外部存储服务，如 AWS CloudWatch Logs。
-与此同时也开始上传 junit 格式的测试结果，这些测试结果有时会变的很大，将直接从 agent 到存储数据库。
-所有这些努力都可以减轻 Jenkins Master 和本地网络的负载，而不需要开发人员修改他们的 pipeline 脚本。</p>
+<p>在本文中，我想讨论一种在云环境中为 Kubernetes 工作负载实现自动化端到端 CI/CD 的方法。
+这里可能有其它解决方案，而像 AWS、Microsoft Azure 和 GCP 这样的云提供商也提供了自己的一套框架，以实现与 Kubernetes 相同的目标。</p>
 
-<p>其他方法也在酝酿之中。
-虽然“一次性”的 agent 在新的 vm 或容器中运行，可以极大地提高可重复性，
-但是每一次构建都需要传输兆字节的 Java 代码，所以 Jenkins 的特征是需要对它们建立预缓存。
-使用 Apache Kafka 的工作正在进行中，以使得通道在网络故障时更加健壮。
-最引人注目的是，这个提议
-<a href="https://jenkins.io/blog/2018/08/31/shifting-gears/#cloud-native-jenkins-mvp">Cloud Native Jenkins MVP</a> 将消除单个 Jenkins Master 服务处理数百个构建的瓶颈。</p>
+<p>它的部署模型的核心是 Rancher，Rancher 负责为托管在不同云环境和裸机环境中的多个 Kubernetes 集群提供集中管理与运营的能力。
+根据应用程序和业务需要，这里提到的工具可以替换为自己选择的工具。</p>
+
+<p>在详细介绍之前，这里有张部署模型的快照：</p>
+
+<p><img src="../../../images/articles/2019/04/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/cloud-agnostic-deployment.png" alt="cloud-agnostic-deployment" /></p>
+
+<h2 id="持续集成组件">持续集成组件</h2>
+
+<p>我们使用 JIRA、BitBucket、Bamboo 和 Nexus 作为自动化持续集成组件。
+需求和用户故事来自 JIRA ；
+开发人员将他们的代码放进 BitBucket ；
+代码被代码评审工具和静态分析工具构建与集成，Bamboo 生成的 Docker 镜像被推送到 Nexus。
+这些镜像会经过特定的容器安全检查。</p>
+
+<p>当你有许多微服务/应用程序需要构建时，那么处理 Kubernetes 集群工作负载的部署、升级和回滚可能会复杂。
+版本控制是我们需要考虑的另一个挑战。
+Helm 有助于克服这些大多数挑战，并使部署变得简单。</p>
+
+<p>如果你想知道你是否需要有一个 chart 将所有 deployments 包含在其中，
+或者允许每个应用程序和微服务都有一个单独的 chart ，
+那么我们希望将这些 charts 放到特定的应用程序或微服务的仓库中，
+这样我们就不需要有单独的仓库来维护 Helm 制品。
+这就省去了为实际的代码和 Helm 模板维护两个独立仓库的工作。
+开发人员可以对任何应用程序代码更改所需的模板更改有更多的控制权。</p>
+
+<p>Nexus 作为 Docker 镜像和 Helm chart（使用的是 Helm Nexus 插件）的仓库。
+每次成功构建应用程序后，镜像和 chart 都是可用的并被推送到 Nexus 。</p>
+
+<h2 id="持续部署组件">持续部署组件</h2>
+
+<p>为了实现与云无关的准备，我们选择了 Terraform ，因为它易于学习并易于部署。
+我们发现对于准备后的配置管理/维护活动， Terraform 并不是非常有用，所以我们还放置了一些 Ansible 脚本。
+我们也曾考虑 Ansible 用于准备，但是使用 Terraform 可以让我们更好地控制启动实例，
+这些实例可以作为 Rancher Server/节点，并且可以被自动的添加到自动伸缩组中。
+我们使用启动脚本功能实现了这一点。</p>
+
+<p>我们认为可以将为 AWS 编写的大多数 Terraform 脚本重用到 Azure 中，但事实并非如此。
+我们必须做出相当大的改变。</p>
+
+<p>我们部署了一个运行在三个不同实例上的高可用的 Rancher Server ，前面有一个 NGINX Server 来为这三个实例做负载均衡。
+部署是使用 Terraform 和启动脚本完成的。
+脚本使用 RKE ( Rancher Kubenetes 引擎)和 Rancher API 调用来启动集群(高可用的 Rancher Server )。</p>
+
+<p>Rancher 提供了各种选项来在不同的云提供商上添加 Kubernetes 集群。
+您可以从选项中进行选择，使用托管的 Kubernetes 提供商，或者使用基础设施提供商的节点或自定义节点。
+在这个场景中，我们选择使用 AWS 和 Azure 上的自定义节点，而不是托管的 Kubernetes 提供商。
+这帮助我们向自动伸缩组添加一组工作节点，并使用集群自动伸缩器进行节点伸缩。</p>
+
+<p>所有这些都是通过启动脚本和 Rancher API 调用自动完成的，因此任何通过 ASG (和自动伸缩器)添加的新节点都会自动注册为一个 Rancher/Kubernetes 节点。
+通过启动脚本自动执行的一些活动包括:
+- 安装和配置所需的 Docker 版本
+- 在所有实例上安装和配置 Zabbix 代理(稍后将在监控中使用)
+- 安装所需的 GlusterFS 客户端组件
+- 安装所需的 kubectl 客户端
+- 后端数据库集群所需的任何其他自定义配置
+- 自动挂载额外的 EBS 卷和 GlusterFS 卷
+- 为 Rancher 代理/Kubernetes 节点运行 Docker 容器并附加特定的角色( etcd/controlplane/worker )
+- 检查以确保 Rancher 代理可用、启动和运行。</p>
+
+<p>GlusterFS 被考虑可以处理 EBS 和 Azure 中不可用的 ReadWriteMany 磁盘卷类型。
+这对于我们部署的许多应用程序都是必需的。</p>
+
+<p>一个 ELK stack ( ElasticSearch、Logstash 和 Kibana )使用 Helm charts 部署在 Kubernetes 上，
+并被配置为通过 logstash 推送容器日志、审计和其他自定义日志。</p>
+
+<p>HAProxy 和 NGINX 被用于两个不同的目的。
+NGINX 是在 Rancher Server HA 设置期间所提供的默认 ingress controller 。
+这用于三个 Rancher Server 的负载均衡。
+我们在 Kubernetes 集群上部署了一个 HAProxy Ingress Controller，
+这样我们就可以通过这些特定的节点(其 IPs 映射到特定的 FQDNs)暴露应用程序的 end points 。
+HAProxy ingress controller 被部署为 daemonset ，因此对于任何额外的负载，节点的数量会基于自动伸缩组和自动伸缩器自动增加。</p>
+
+<h2 id="持续监控组件">持续监控组件</h2>
+
+<p>我们部署了 Prometheus、Grafana 和 Alertmanager 套件，用于容量规划以及监控 Rancher/Kubernetes 集群的状态。
+这再次通过 Rancher Helm Chart Provisioner 部署。
+我们也可以通过常规的/稳定的 Helm charts 来部署它。
+它确实有助于我们监控和收集开发环境中诸如 CPU、内存利用率和 IO 操作之类的指标，并据此为 staging 环境和生产环境进行容量规划。</p>
+
+<p>我们还在集群上部署了 Zabbix Server，它用于为部署的所有节点监控各种操作系统级别的和应用程序特定的指标和警告。
+这包括任何后端数据库集群节点、Kubernetes 节点、Rancher servers、文件服务器或通过 Terraform 提供的任何其他服务器。
+Zabbix Server 被配置为节点/代理自动注册，以便通过自动缩放组或自动缩放器添加到集群中的任何新节点都可用于监控。</p>
+
+<h2 id="结论">结论</h2>
+
+<p>这是我们为 Kubernetes 工作负载构建完整的 CI/CD 工具链所遵循的方法之一。
+这个模型帮助我们自动化所有的三个环境的准备。
+通过 Rancher ，我们能够提供一个开发环境，每个开发人员都可以使用这个项目概念。
+每个开发人员都有一个节点和一个项目，它由 RBAC 控制，这样他们就可以部署和测试他们自己的更改。
+没有人可以看到项目/节点的详细信息，也不会妨碍其他开发人员部署的 Kubernetes 工作负载。
+由于节点自动注册到 Rancher Server，系统重新启动不会影响节点的可用性。
+即使在最坏的情况下，如果节点丢失，也很容易在几分钟内打开一个新节点。
+应用程序可以使用 Helm charts 进行部署，也可以使用 Rancher 提供的内置的 Helm charts 进行部署。</p>
+
+<p>这些是我们部署的来管理整个环境的一些高级组件。
+我们考虑的其他方面是高可用性集群环境，用于 Rancher servers、Kubernetes 集群、Gluster 文件服务器集群或任何其他后端集群。
+在提出此方法时，需要考虑生产级环境所需的更改和更新。
+还考虑了其他方面，例如对集群实例的安全访问、升级、备份和恢复，以及根据行业标准提出的分层体系结构建议。</p>
+
+<p>希望本文为您提供一些参考，当您计划为多个云提供商提供生产级环境准备时，可以考虑这些参考。</p>
 
 </div>
 
@@ -281,17 +367,17 @@
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-scaling-network-connections/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “从 Jenkins Master 扩展网络连接”
-  </a> 更新于：January 1, 0001
+    “与云无关的用于 Kubernetes 的自动化 CI/CD ”
+  </a> 更新于：May 16, 2019
   <div>
-    原文作者：<a href="" target="_blank">jglick</a>
+    原文作者：<a href="https://dzone.com/articles/cloud-agnostic-automated-cicd-for-k8s" target="_blank">Ravi Sarma Kasibhatla</a>
   </div>
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2018/12/2018-12-19-scaling-network-connections.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -309,50 +395,26 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jenkinsworld">
-              jenkinsworld
+            <a class="tag" href="/tags/cd">
+              cd
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jenkinsworld2018">
-              jenkinsworld2018
+            <a class="tag" href="/tags/ci">
+              ci
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/cloud-native">
-              cloud-native
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/performance">
-              performance
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/scalability">
-              scalability
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/remoting">
-              remoting
+            <a class="tag" href="/tags/kubernetes">
+              kubernetes
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2018/12/2018-12-12-gasc/" class="link">
-              Jenkins Configuration-as-Code: 看，我都不用手动配置
-            </a>
-          </li>
         
       
         
@@ -362,20 +424,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/" class="link">
-              Jenkins 和 Kubernetes -云上的神秘代理
+            <a href="/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/" class="link">
+              应该使用什么 CI/CD 工具？
             </a>
           </li>
         
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="link">
+              持续交付的商业价值
+            </a>
+          </li>
+        
       
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/" class="link">
-              自动更新、易于使用的 Jenkins
+            <a href="/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="link">
+              Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-15-kubecon-cn/" class="link">
+              Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-12-what-is-cicd/" class="link">
+              什么是 CI/CD?
             </a>
           </li>
         

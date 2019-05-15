@@ -13,10 +13,10 @@
     
     <item>
       <title>与云无关的用于 Kubernetes 的自动化 CI/CD </title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</link>
       <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</guid>
       <description>在本文中，我想讨论一种在云环境中为 Kubernetes 工作负载实现自动化端到端 CI/CD 的方法。 这里可能有其它解决方案，而像 AWS、Microsoft Azure 和 GCP 这样的云提供商也提供了自己的一套框架，以实现与 Kubernetes 相同的目标。
 它的部署模型的核心是 Rancher，Rancher 负责为托管在不同云环境和裸机环境中的多个 Kubernetes 集群提供集中管理与运营的能力。 根据应用程序和业务需要，这里提到的工具可以替换为自己选择的工具。
 在详细介绍之前，这里有张部署模型的快照：
