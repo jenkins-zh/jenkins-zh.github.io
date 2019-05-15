@@ -6,10 +6,25 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>与云无关的用于 Kubernetes 的自动化 CI/CD </title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</guid>
+      <description>在本文中，我想讨论一种在云环境中为 Kubernetes 工作负载实现自动化端到端 CI/CD 的方法。 这里可能有其它解决方案，而像 AWS、Microsoft Azure 和 GCP 这样的云提供商也提供了自己的一套框架，以实现与 Kubernetes 相同的目标。
+它的部署模型的核心是 Rancher，Rancher 负责为托管在不同云环境和裸机环境中的多个 Kubernetes 集群提供集中管理与运营的能力。 根据应用程序和业务需要，这里提到的工具可以替换为自己选择的工具。
+在详细介绍之前，这里有张部署模型的快照：
+持续集成组件 我们使用 JIRA、BitBucket、Bamboo 和 Nexus 作为自动化持续集成组件。 需求和用户故事来自 JIRA ； 开发人员将他们的代码放进 BitBucket ； 代码被代码评审工具和静态分析工具构建与集成，Bamboo 生成的 Docker 镜像被推送到 Nexus。 这些镜像会经过特定的容器安全检查。
+当你有许多微服务/应用程序需要构建时，那么处理 Kubernetes 集群工作负载的部署、升级和回滚可能会复杂。 版本控制是我们需要考虑的另一个挑战。 Helm 有助于克服这些大多数挑战，并使部署变得简单。
+如果你想知道你是否需要有一个 chart 将所有 deployments 包含在其中， 或者允许每个应用程序和微服务都有一个单独的 chart ， 那么我们希望将这些 charts 放到特定的应用程序或微服务的仓库中， 这样我们就不需要有单独的仓库来维护 Helm 制品。 这就省去了为实际的代码和 Helm 模板维护两个独立仓库的工作。 开发人员可以对任何应用程序代码更改所需的模板更改有更多的控制权。
+Nexus 作为 Docker 镜像和 Helm chart（使用的是 Helm Nexus 插件）的仓库。 每次成功构建应用程序后，镜像和 chart 都是可用的并被推送到 Nexus 。</description>
+    </item>
     
     <item>
       <title>19年 GSoC 中 Jenkins 的七个项目</title>
