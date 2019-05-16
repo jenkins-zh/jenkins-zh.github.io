@@ -19,7 +19,7 @@
      <meta name="generator" content="Hugo 0.54.0" />
 
       
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
     <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/tags/ci/index.xml">
@@ -44,6 +44,30 @@
 <meta name="twitter:title" content="Ci"/>
 <meta name="twitter:description" content=""/>
 
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
 
 
 
@@ -158,6 +182,31 @@
         
         <section class="flex-ns flex-wrap justify-between w-100">
           
+            
+            <div class="relative  weight-0" style="max-width: 350px">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/" class="link primary-color dim">与云无关的用于 Kubernetes 的自动化 CI/CD </a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          请看看您可能想要用来设置与云无关的生产和开发环境的一些工具和流程。
+        
+
+        <a href="/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/" class="f6 mt2 db link primary-color dim">
+          查看更多 &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
             
           
             
