@@ -6,10 +6,23 @@
     <description>Recent content in Jenkins X on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/jenkins-x/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>从 Jenkins 到 Jenkins X</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</link>
+      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</guid>
+      <description>这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事。
+我们的上下文 在 dailymotion ，我们坚信 devops 最佳实践，并且在 Kubernetes 投入了大量投资。 我们的部分产品已经部署在 Kubernetes 上，但并不是全部。 因此，当迁移我们的广告技术平台的时候，我们想要完全采用“ Kubernetes 式”——或者云原生，以追随技术趋势！ 这意味着要重新定义整个 CI/CD 流水线，从静态/永久环境迁移，转向动态按需分配环境。 我们的目标是授权给我们的开发人员，缩短我们的上线时间以及降低我们的运营成本。
+对于新的 CI/CD 平台我们的初始需求是: - 尽可能避免从零开始：我们的开发人员已经习惯使用 Jenkins 和声明式流水线，并且它们可以很好地满足我们当前的需求。 - 以公有云基础设施为目标——Google 云平台和 Kubernetes 集群 - 与 gitops 方法论兼容——因为我们喜欢版本控制、同行评审和自动化
+在 CI/CD 生态系统中有相当多的参与者，但是只有一个符合我们的需求，Jenkins X ，它基于 Jenkins 和 Kubernetes ，原生支持预览环境和 gitops
+Kubernetes 之上的 Jenkins Jenkins X 的设置相当简单，并且在他们的官方网站上已经有很好的文档（译注：译者曾对 Jenkins X 文档中文本地化做了一些贡献，同时也期待更多的人参与以完善中文文档）。 由于我们已经使用了 Google Kubernetes Engine (GKE)，所以 jx 命令行工具自己创建了所有东西，包括 Kubernetes 集群。 这里有一个小小的*哇哦效果*，在几分钟内获得一个完整的工作系统是非常令人印象深刻的。</description>
+    </item>
     
     <item>
       <title>使用 Jenkins X 渐进式交付</title>

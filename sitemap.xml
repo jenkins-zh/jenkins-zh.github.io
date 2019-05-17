@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</loc>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</loc>
     <lastmod>2019-05-16T00:00:00+00:00</lastmod>
   </url>
@@ -300,7 +305,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/cd/</loc>
-    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -323,7 +328,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/ci/</loc>
-    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -379,7 +384,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -453,7 +458,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -467,13 +472,13 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins-x/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -526,7 +531,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -656,7 +661,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
