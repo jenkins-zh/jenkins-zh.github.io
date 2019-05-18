@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 12 Apr 2019 14:26:05 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 May 2019 20:30:05 +0800</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/about/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,16 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>插件列表</title>
+      <link>https://jenkins-zh.cn/about/plugins/</link>
+      <pubDate>Wed, 15 May 2019 20:30:05 +0800</pubDate>
+      
+      <guid>https://jenkins-zh.cn/about/plugins/</guid>
+      <description>下面的列表是由 Jenkins 中文社区的成员维护的插件：
+   插件 GitHub 仓库 版本 安装量 主要维护者     Simplified Chinese Plugin jenkinsci/localization-zh-cn-plugin    LinuxSuRen    Hugo Plugin jenkinsci/hugo-plugin    LinuxSuRen    Maven SNAPSHOT Check Plugin jenkinsci/maven-snapshot-check-plugin    donhui    Code Coverage API Plugin jenkinsci/code-coverage-api-plugin    cizezsy     同时也期待有更多的贡献者增砖添瓦。</description>
     </item>
     
     <item>

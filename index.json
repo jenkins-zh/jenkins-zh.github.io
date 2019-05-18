@@ -39,6 +39,19 @@
         "poster": "../../../images/articles/2019/04/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/blue.jpg"
     },
     {
+        "uri": "https://jenkins-zh.cn/about/plugins/",
+        "title": "插件列表",
+        "type": "about",
+        "date": "2019-05-15 20:30:05 +0800 +0800",
+        "tags": [],
+        "description": "Jenkins 中文社区维护的插件",
+        "content": "下面的列表是由 Jenkins 中文社区的成员维护的插件：\n   插件 GitHub 仓库 版本 安装量 主要维护者     Simplified Chinese Plugin jenkinsci/localization-zh-cn-plugin    LinuxSuRen    Hugo Plugin jenkinsci/hugo-plugin    LinuxSuRen    Maven SNAPSHOT Check Plugin jenkinsci/maven-snapshot-check-plugin    donhui    Code Coverage API Plugin jenkinsci/code-coverage-api-plugin    cizezsy     同时也期待有更多的贡献者增砖添瓦。\n",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/",
         "title": "19年 GSoC 中 Jenkins 的七个项目",
         "type": "wechat",
@@ -523,7 +536,7 @@
         "uri": "https://jenkins-zh.cn/about/",
         "title": "",
         "type": "about",
-        "date": "2019-04-12 14:26:05 +0800 +0800",
+        "date": "2019-05-15 20:30:05 +0800 +0800",
         "tags": [],
         "description": "",
         "content": "我们是由 Jenkins 社区在国内的爱好者、贡献者组成。\n请准守我们的行为规范，文明留言。\n",

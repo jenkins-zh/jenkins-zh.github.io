@@ -53,6 +53,16 @@ Nexus 作为 Docker 镜像和 Helm chart（使用的是 Helm Nexus 插件）的�
     </item>
     
     <item>
+      <title>插件列表</title>
+      <link>https://jenkins-zh.cn/about/plugins/</link>
+      <pubDate>Wed, 15 May 2019 20:30:05 +0800</pubDate>
+      
+      <guid>https://jenkins-zh.cn/about/plugins/</guid>
+      <description>下面的列表是由 Jenkins 中文社区的成员维护的插件：
+   插件 GitHub 仓库 版本 安装量 主要维护者     Simplified Chinese Plugin jenkinsci/localization-zh-cn-plugin    LinuxSuRen    Hugo Plugin jenkinsci/hugo-plugin    LinuxSuRen    Maven SNAPSHOT Check Plugin jenkinsci/maven-snapshot-check-plugin    donhui    Code Coverage API Plugin jenkinsci/code-coverage-api-plugin    cizezsy     同时也期待有更多的贡献者增砖添瓦。</description>
+    </item>
+    
+    <item>
       <title>19年 GSoC 中 Jenkins 的七个项目</title>
       <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/</link>
       <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
