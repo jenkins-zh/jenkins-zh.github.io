@@ -19,7 +19,7 @@
      <meta name="generator" content="Hugo 0.54.0" />
 
       
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
     <link href='/dist/main.css' rel='stylesheet' type="text/css" /><script src="/js/chart.js"></script>
@@ -73,6 +73,30 @@ wechat: wechatid github: linuxsuren terms: - 2018-11-11  根据微信公众号�
 长期运营者 有至少三次的短期运营者经历，并经过小组全体成员同意。
 职责 所有的文章，都需要提交到该仓库中。您的任务是从该仓库中拷贝文章，然后在公众号平台上创建，进行必要的排版处理。在发布之前，需要把预览链接发送到给大家进行审查。最后，没问题的话，设置发送时间。注意，公众号中的内容必须与该仓库保持一致。"/>
 
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
 
 
 

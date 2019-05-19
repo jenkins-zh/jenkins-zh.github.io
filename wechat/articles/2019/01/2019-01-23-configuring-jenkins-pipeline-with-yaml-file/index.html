@@ -19,7 +19,7 @@
      <meta name="generator" content="Hugo 0.54.0" />
 
       
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
     <link href='/dist/main.css' rel='stylesheet' type="text/css" /><script src="/js/chart.js"></script>
@@ -49,6 +49,30 @@
 <meta name="twitter:title" content="使用 YAML 文件配置 Jenkins 流水线"/>
 <meta name="twitter:description" content="这也是一种自定义流水线 DSL 的方法"/>
 
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
 
 
 

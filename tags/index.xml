@@ -23,7 +23,7 @@
     <item>
       <title>Ansible</title>
       <link>https://jenkins-zh.cn/tags/ansible/</link>
-      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/ansible/</guid>
       <description></description>
@@ -257,7 +257,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -476,6 +476,24 @@
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/shipper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spec</title>
+      <link>https://jenkins-zh.cn/tags/spec/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/spec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Springboot</title>
+      <link>https://jenkins-zh.cn/tags/springboot/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/springboot/</guid>
       <description></description>
     </item>
     

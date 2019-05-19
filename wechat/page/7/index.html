@@ -19,7 +19,7 @@
      <meta name="generator" content="Hugo 0.54.0" />
 
       
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
     <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/wechat/index.xml">
@@ -43,6 +43,30 @@
 <meta name="twitter:title" content="Wechats"/>
 <meta name="twitter:description" content=""/>
 
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
 
 
 
@@ -156,6 +180,60 @@
       <div class="flex flex-wrap">
         
         <section class="flex-ns flex-wrap justify-between w-100">
+          
+          
+            <div class="relative  weight-0" style="max-width: 350px">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/wechat/articles/2018/11/2018-11-21-validate-jenkinsfile/" class="link primary-color dim">在 VS Code 中校验 Jenkinsfile</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          VS Code 中的 Jenkinsfile 插件
+        
+
+        <a href="/wechat/articles/2018/11/2018-11-21-validate-jenkinsfile/" class="f6 mt2 db link primary-color dim">
+          查看更多 &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+            
+          
+          
+            <div class="relative  weight-0" style="max-width: 350px">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link primary-color dim">在安全防火墙内通过 WebHook 触发构建</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          谁说局域网里就不能带 GitHub 的 WebHook 玩？
+        
+
+        <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="f6 mt2 db link primary-color dim">
+          查看更多 &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+            
           
           
             <div class="relative  weight-0" style="max-width: 350px">

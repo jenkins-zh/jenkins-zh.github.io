@@ -19,7 +19,7 @@
      <meta name="generator" content="Hugo 0.54.0" />
 
       
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
     <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/tags/index.xml">
@@ -44,6 +44,30 @@
 <meta name="twitter:title" content="Tags"/>
 <meta name="twitter:description" content=""/>
 
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
 
 
 
@@ -185,6 +209,12 @@
                   ansible <span class="f6 gray"> &#8599;</span>
                 </a>
               </h2>
+              
+                <h3>
+                  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="link blue">
+                    使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101
+                  </a>
+                </h3>
               
                 <h3>
                   <a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" class="link blue">
@@ -805,6 +835,12 @@
                   jenkins <span class="f6 gray"> &#8599;</span>
                 </a>
               </h2>
+              
+                <h3>
+                  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="link blue">
+                    使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101
+                  </a>
+                </h3>
               
                 <h3>
                   <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link blue">
@@ -1481,6 +1517,38 @@
                 <h3>
                   <a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/" class="link blue">
                     Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署
+                  </a>
+                </h3>
+              
+            </div>
+
+          
+            <div class="break-inside-avoid-l nested-copy-line-height mb5">
+              <h2 class="f3">
+                <a href="/tags/spec" class="link black hover-blue">
+                  spec <span class="f6 gray"> &#8599;</span>
+                </a>
+              </h2>
+              
+                <h3>
+                  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-translation-norms/" class="link blue">
+                    转载规范及声明
+                  </a>
+                </h3>
+              
+            </div>
+
+          
+            <div class="break-inside-avoid-l nested-copy-line-height mb5">
+              <h2 class="f3">
+                <a href="/tags/springboot" class="link black hover-blue">
+                  springboot <span class="f6 gray"> &#8599;</span>
+                </a>
+              </h2>
+              
+                <h3>
+                  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="link blue">
+                    使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101
                   </a>
                 </h3>
               

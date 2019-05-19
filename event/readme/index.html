@@ -19,7 +19,7 @@
      <meta name="generator" content="Hugo 0.54.0" />
 
       
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
     <link href='/dist/main.css' rel='stylesheet' type="text/css" /><script src="/js/chart.js"></script>
@@ -58,6 +58,30 @@
 分享人 对某个活动感兴趣的同学，请在目录 content/speaker 下以 JSON 格式增加自己的个人信息，文件名为 GitHub 账户 ID。然后在您感兴趣的活动中的 speakers 下添加您的 ID。
 赞助 如果您所在的企业、出版社、社区等对某个活动感兴趣，打算给 Jenkins 开源社区活动一定的赞助，请参考“分享人”的流程添加自己的信息。"/>
 
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
 
 
 

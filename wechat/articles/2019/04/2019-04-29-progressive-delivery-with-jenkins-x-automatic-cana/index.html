@@ -19,7 +19,7 @@
      <meta name="generator" content="Hugo 0.54.0" />
 
       
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
     <link href='/dist/main.css' rel='stylesheet' type="text/css" /><script src="/js/chart.js"></script>
@@ -51,6 +51,30 @@
 <meta name="twitter:title" content="使用 Jenkins X 渐进式交付：自动化金丝雀部署"/>
 <meta name="twitter:description" content="为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。"/>
 
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
 
 
 
@@ -409,8 +433,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link">
-              从 Jenkins 到 Jenkins X
+            <a href="/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="link">
+              使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101
             </a>
           </li>
         
@@ -419,6 +443,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db b mt4 mb2 mr2">
             Related entries:
           </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link">
+              从 Jenkins 到 Jenkins X
+            </a>
+          </li>
+        
+      
         
         
           <li class="db dib-l mb2 mr3">

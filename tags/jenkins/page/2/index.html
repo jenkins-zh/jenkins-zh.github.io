@@ -19,7 +19,7 @@
      <meta name="generator" content="Hugo 0.54.0" />
 
       
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
     <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/tags/jenkins/index.xml">
@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jenkins-zh.cn/tags/jenkins/" />
 
-<meta property="og:updated_time" content="2019-04-25T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2019-04-26T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="Jenkins">
 <meta itemprop="description" content="">
@@ -44,6 +44,30 @@
 <meta name="twitter:title" content="Jenkins"/>
 <meta name="twitter:description" content=""/>
 
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
 
 
 
@@ -157,6 +181,8 @@
       <div class="flex flex-wrap">
         
         <section class="flex-ns flex-wrap justify-between w-100">
+          
+          
           
           
             <div class="relative  weight-0" style="max-width: 350px">
