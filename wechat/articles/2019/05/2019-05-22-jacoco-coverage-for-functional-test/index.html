@@ -9,7 +9,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-    <title>基于 Jenkins 的 DevOps 平台应该如何设计凭证管理 | Jenkins 中文社区</title>
+    <title>基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计 | Jenkins 中文社区</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="description" content="共建开放、包容、活跃的 Jenkins 社区">
@@ -29,27 +29,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="基于 Jenkins 的 DevOps 平台应该如何设计凭证管理" />
-<meta property="og:description" content="一种基于 Jenkins 的 DevOps 平台建设思路" />
+<meta property="og:title" content="基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计" />
+<meta property="og:description" content="本文对 JaCoCo 进行简要介绍，并借助 Jenkins 实现功能测试代码覆盖率统计" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" />
-<meta property="article:published_time" content="2019-05-14T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-14T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/" />
+<meta property="article:published_time" content="2019-05-22T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-22T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="基于 Jenkins 的 DevOps 平台应该如何设计凭证管理">
-<meta itemprop="description" content="一种基于 Jenkins 的 DevOps 平台建设思路">
-
-
-<meta itemprop="datePublished" content="2019-05-14T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="164">
+<meta itemprop="name" content="基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计">
+<meta itemprop="description" content="本文对 JaCoCo 进行简要介绍，并借助 Jenkins 实现功能测试代码覆盖率统计">
 
 
+<meta itemprop="datePublished" content="2019-05-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="380">
 
-<meta itemprop="keywords" content="jenkins,devops," />
+
+
+<meta itemprop="keywords" content="jenkins,jacoco,ci,coverage," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="基于 Jenkins 的 DevOps 平台应该如何设计凭证管理"/>
-<meta name="twitter:description" content="一种基于 Jenkins 的 DevOps 平台建设思路"/>
+<meta name="twitter:title" content="基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计"/>
+<meta name="twitter:description" content="本文对 JaCoCo 进行简要介绍，并借助 Jenkins 实现功能测试代码覆盖率统计"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -177,17 +177,16 @@ var trackOutboundLink = function(id, url) {
     
       
         <h3 class="f4 dib">
-            翟志军
+            donghui
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          make a difference
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -197,27 +196,6 @@ var trackOutboundLink = function(id, url) {
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#背景">背景</a></li>
-<li><a href="#期望实现的目标">期望实现的目标</a></li>
-<li><a href="#实现方式">实现方式</a></li>
-<li><a href="#会遇到的坑">会遇到的坑</a>
-<ul>
-<li><a href="#需要适配只认-jenkins-凭证的插件">需要适配只认 Jenkins 凭证的插件</a></li>
-<li><a href="#对凭证本身的加密">对凭证本身的加密</a></li>
-</ul></li>
-<li><a href="#小结">小结</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -230,17 +208,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/" class="dib f6 pl1 hover-bg-light-gray br-100" title="19年 GSoC 中 Jenkins 的七个项目 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 公众号送书福利">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="dib f6 pr1 hover-bg-light-gray br-100" title="使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -259,13 +229,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">基于 Jenkins 的 DevOps 平台应该如何设计凭证管理</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      一种基于 Jenkins 的 DevOps 平台建设思路
+      本文对 JaCoCo 进行简要介绍，并借助 Jenkins 实现功能测试代码覆盖率统计
     </div>
   
 
@@ -278,73 +248,158 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="../../../images/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/devops-platform-lock-jenkins.png" alt="" /></p>
+<p><img src="./2019-05-22-jacoco-coverage-for-functional-test/hangzhou.jpg" alt="hangzhou" /></p>
 
-<h3 id="背景">背景</h3>
+<h2 id="使用-jacoco-统计功能测试代码覆盖率">使用 JaCoCo 统计功能测试代码覆盖率？</h2>
 
-<p>了解到行业内有些团队是基于 Jenkins 开发 DevOps 平台。而基于 Jenkins 实现的 DevOps 平台，就不得不考虑凭证的管理问题。</p>
+<p>对于 JaCoCo，有所了解但又不是很熟悉。
+&ldquo;有所了解&rdquo;指的是在 CI 实践中已经使用 JaCoCo 对单元测试代码覆盖率统计：
+当代码 push 到代码仓库后，用 JaCoCo 进行单元测试代码覆盖率统计，并将相应数据推送到 SonarQube。
+&ldquo;不是很熟&rdquo;指的是应用场景也仅限于此，并未进行过多研究与实践。</p>
 
-<p>本文就此问题进行讨论，尝试找出相对合理的管理凭证的方案。</p>
+<p>前不久，有测试同事提出，想要在实际测试时，用 JaCoCo 统计功能测试代码覆盖率。
+其主要目的是在经过功能测试后，通过查看代码覆盖率统计的相关指标，增强对软件质量的信心。
+经查阅资料，证明这是可行的。</p>
 
-<p>一开始我们想到的方案可能是这样的：用户在 DevOps 平台增加凭证后，DevOps 再将凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，使用的是存储在 Jenkins 上的凭证，而不是 DevOps 平台上的。</p>
+<p>由于对 JaCoCo 不甚了解，于是查阅官网资料对 JaCoCo 进一步了解。</p>
 
-<p>但是，仔细想想，这样做会存在以下问题：
-* Jenkins 与 DevOps 平台之间的凭证数据会存在不一致问题。
-* 存在一定的安全隐患。通过 Jenkins 脚本命令行很容易就把所有密码的明文拿到。哪天 Jenkins 被注入了，所有的凭证一下子就被扒走。
-* 无法实现 Jenkins 高可用，因为凭证存在 Jenkins master 机器上。</p>
+<h2 id="进一步了解-jacoco">进一步了解 JaCoCo</h2>
 
-<p>那么，有没有更好的办法呢？</p>
+<p><a href="https://www.eclemma.org/jacoco/index.html">JaCoCo</a>，即 Java Code Coverage，是一款开源的 Java 代码覆盖率统计工具。
+它由 EclEmma 团队根据多年来使用和集成现有库的经验教训而创建。</p>
 
-<h3 id="期望实现的目标">期望实现的目标</h3>
+<h3 id="jacoco-愿景">JaCoCo 愿景</h3>
 
-<p>先定我们觉得更合理的目标，然后讨论如何实现。以下是笔者觉得合理的目标：
-&gt; 用户还是在 DevOps 管理自己的凭证。但是 DevOps 不需要将自己凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，从 DevOps 上取。</p>
+<p>JaCoCo 应该为基于 Java VM 的环境中的代码覆盖率分析提供标准技术。
+重点是提供一个轻量级的、灵活的、文档良好的库，以便与各种构建和开发工具集成。</p>
 
-<h3 id="实现方式">实现方式</h3>
+<h3 id="jacoco-产品功能">JaCoCo 产品功能</h3>
 
-<p>Jenkins 有一个 <a href="[https://jenkins.io/doc/pipeline/steps/credentials-binding/](https://jenkins.io/doc/pipeline/steps/credentials-binding/)">Credentials Binding Plugin</a> 插件，在 Jenkins pipeline 中的用法如下：</p>
+<ul>
+<li>指令(C0)、分支(C1)、行、方法、类型和圈复杂度的覆盖率分析。</li>
+<li>基于 Java 字节码，因此也可以在没有源文件的情况下工作。</li>
+<li>通过基于 Java agent 的实时检测进行简单集成。其他集成场景(如自定义类加载器)也可以通过 API 实现。</li>
+<li>框架无关性：平稳地与基于 Java VM 的应用程序集成，比如普通 Java 程序、OSGi 框架、web 容器或 EJB 服务器。</li>
+<li>兼容所有已发布的 Java 类文件版本。</li>
+<li>支持不同的 JVM 语言。</li>
+<li>支持几种报告格式( HTML、XML、CSV )。</li>
+<li>远程协议和 JMX 控件，以便在任何时间点从覆盖率 agent 请求执行数据 dump 。</li>
+<li>Ant 任务，用于收集和管理执行数据并创建结构化覆盖报告。</li>
+<li>Maven 插件，用于收集覆盖信息并在Maven构建中创建报告。</li>
+</ul>
 
-<pre><code class="language-groovy">withCredentials([usernameColonPassword(credentialsId: 'mylogin', variable: 'USERPASS')]) {
-    sh '''
-      curl -u &quot;$USERPASS&quot; https://private.server/ &gt; output
-    '''
-  }
+<h3 id="非功能特性">非功能特性</h3>
+
+<ul>
+<li>使用简单和与现有构建脚本和工具集成。</li>
+<li>良好的性能和最小的运行时开销，特别是对大型项目。</li>
+<li>轻量级实现，对外部库和系统资源的依赖性最小。</li>
+<li>全面的文档。</li>
+<li>完整文档化的 API ( JavaDoc ) 和用于与其他工具集成的示例。</li>
+<li>回归测试基于 JUnit 测试用例，具有完整的功能测试覆盖率。</li>
+</ul>
+
+<p>对 JaCoCo 可以与现有构建脚本和工具进行集成这里做进一步说明：
+官方提供了 Java API、Java Agent 、CLI、Ant 、Maven、Eclipse 这几种集成方式；
+第三方提供了诸如与 Gradle、IDEA、Jenkins 等其它工具的集成方式。</p>
+
+<h2 id="抛开理论-开始实践">抛开理论，开始实践</h2>
+
+<p>JaCoCo 不仅支持统计本地服务的代码覆盖率，也支持统计远程服务的代码覆盖率。
+单元测试覆盖率统计就是统计本地服务的代码覆盖率，代码和运行的服务在一台机器上，笔者这里通过使用 JaCoCo Maven 插件完成的。
+而功能测试代码覆盖率统计则是统计远程服务的代码覆盖率，代码和运行的服务一般不在一台机器上，这里需要借助 JaCoCo Java agent 实现。
+&gt; 备注：实际上，JaCoCo Maven 插件也使用了 JaCoCo Java agent，不过用户不需要直接关系 Java agent 及其选项，Maven 插件都透明地处理了。</p>
+
+<h3 id="1-下载-jacoco-分发包">1、下载 JaCoCo 分发包</h3>
+
+<p>可以从 <a href="https://www.eclemma.org/jacoco/">JaCoCo 官网</a>下载分发包，也可以从 Maven 仓库（中央仓库或私服）下载。
+分发包的 lib 目录下，包括以下库：</p>
+
+<h3 id="2-java-应用启动脚本添加-jacocoagent-相关-jvm-参数">2、Java 应用启动脚本添加 jacocoagent 相关 JVM 参数</h3>
+
+<p>需要将 jacocoagent.jar 推送到部署应用的服务器上，笔者这里用 Ansible 进行了批量推送。
+Java 应用启动脚本需要加入类似下面的 JVM 参数：</p>
+
+<pre><code>JAVA_OPTS=&quot;$JAVA_OPTS -javaagent:/path/jacocoagent.jar=includes=*,output=tcpserver,append=false,address=$IP,port=$JACOCO_PORT&quot;
 </code></pre>
 
-<p><code>withCredentials</code> 方法做的事情就是从 Jenkins 的凭证列表中取出 id 为 mylogin 的凭证，并将值赋到变量名为 USERPASS 的变量中。接下来，你就可以在闭包中使用该变量了。</p>
+<p>这样在应用成功启动后，会暴露一个 TCP 服务，客户端可以连接到这个服务并获取执行数据文件。</p>
 
-<p>说到这里，不知道读者朋友是否已经有思路了？</p>
+<p>相关属性说明如下：
+- append：其中 append=false 表示 dump 每次会生成一个新的执行数据文件，如果 append=true，dump 时则会将数据追加到已存在的执行数据文件。
+其中 output=tcpserver 表示 agent 监听来自被 adrress 和 port 属性指定的TCP 端口的连接，执行数据被写到这个连接；
+- output：如果 output=tcpclient 则表示在启动时，agent 连接到被 adrress 和 port 属性指定的TCP 端口，执行数据被写到这个连接；
+如果 output=file 则表示在 JVM 终止时，执行数据被写到被 destfile 属性指定的文件。output 默认值为 file 。
+- address：当 output 为 tcpserver 时绑定到的 IP 地址或主机名，或者当 output 为 tcpclient 时连接到的 IP 地址或主机名。
+在 tcpserver 模式下，值为“*”导致代理只接受本机地址上的连接。address 默认值为 127.0.0.1 。
+- port：当 output 方式为 tcpserver 时绑定到该端口，或者当 output 方式为 tcpclient 时连接到该端口。
+在 tcpserver 模式下，端口必须可用，这意味着如果多个 JaCoCo agent 在同一台机器上运行，则必须指定不同的端口。port 默认值为 6300 。</p>
 
-<p>思路就是实现一个和 Credentials Binding Plugin 插件类似功能的方法，比如叫 <code>zWithCredentials</code>（后文还会提到）。与 <code>withCredentials</code> 不同的是，<code>zWithCredentials</code> 根据凭证 id 获取凭证时，不是从 Jenkins 上获取，而是从 DevOps 平台获取。</p>
+<h3 id="3-创建及配置-jenkins-pipeline-任务">3、创建及配置 Jenkins Pipeline 任务</h3>
 
-<h3 id="会遇到的坑">会遇到的坑</h3>
+<p>Jenkins 任务大致有几个步骤：拉取代码，构建，dump 应用执行数据（ jacoco.exec ），解析 JaCoCo 产生的 jacoco.exec 文件，然后生成覆盖率报告（HTML 格式）。
+拉取代码这里无需多说，配置下从代码仓库（SVN/Git）和分支地址就可以了，比较简单。
+构建这里用了 Jenkins Pipeline Maven Integration Plugin ，笔者这里所用的 Maven 命令是 mvn clean package -Dmaven.test.skip=true 。
+dump 应用执行数据这里有多种方式：Ant、CLI、Maven，因为Java 应用是用 Maven 构建的，这里选择了 Maven Jacoco Plugin。
+解析 JaCoCo 产生的 jacoco.exec 文件，然后生成覆盖率报告（HTML 格式）笔者这里使用了 Jenkins Jacoco Plugin。</p>
 
-<h4 id="需要适配只认-jenkins-凭证的插件">需要适配只认 Jenkins 凭证的插件</h4>
+<p>Jenkins Pipeline 案例如下：</p>
 
-<p><code>withCredentials</code> 方法是将凭证的内容存到变量中，这可以满足一大部分场景。但是有一种场景是无法满足的。就是某些 Jenkins 插件的步骤接收参数时，参数值必须是 Jenkins 凭证管理系统中的 id。比如 git 步骤中 credentialsId 参数：</p>
-
-<pre><code class="language-groovy">git branch: 'master',
-    credentialsId: '12345-1234-4696-af25-123455',
-    url: 'ssh://git@bitbucket.org:company/repo.git'
+<pre><code>pipeline {
+    agent any
+    tools {
+        jdk 'JDK1.8'
+    }
+    stages {
+        stage('Checkout'){
+            steps{
+                git branch: '${GIT_BRANCH}', credentialsId: 'xxx-xxx-xx-xx-xxx', url: '${GIT_URL}'
+            }
+        }
+        stage('Build') {
+            steps{
+                withMaven(maven: 'maven'){
+                      sh &quot;mvn clean package -Dmaven.test.skip=true&quot;
+                }
+            }
+        }
+        stage('DumpFromServer'){
+            steps {
+                withMaven(maven: 'maven'){
+                      sh 'mvn org.jacoco:jacoco-maven-plugin:0.8.4:dump -Djacoco.address=${SERVER_IP} -Djacoco.port=${JACOCO_PORT}'
+                }
+            }
+        }
+        stage('JacocoPublisher') {
+            steps {
+                 jacoco()
+            }
+        }
+    }
+}
 </code></pre>
 
-<p>这种情况，我们不可能修改现有的插件。因为那样做的成本太高了。</p>
+<p>JaCoCo 覆盖率报告，部分截图如下：</p>
 
-<p>那怎么办呢？</p>
+<p><img src="./2019-05-22-jacoco-coverage-for-functional-test/coverage-summary.png" alt="coverage-summary" /></p>
 
-<p>笔者想到的办法是在 <code>zWithCredentials</code> 中做一些 hack 操作。也就是 <code>zWithCredentials</code> 除了从 DevOps 平台获取凭证，还在 Jenkins 中创建一个 Jenkins 凭证。在 Jenkins 任务执行完成后，再将这个临时凭证删除。这样就可以适配那些只认 Jenkins 凭证 id 的插件了。</p>
+<h2 id="总结">总结</h2>
 
-<h4 id="对凭证本身的加密">对凭证本身的加密</h4>
+<p>笔者所实现的方式并未覆盖任何场景，但是大同小异，相关工具的使用详情可以查看官网文档，因为它是最全面的。
+笔者希望这个实践能给有类似诉求的同行一些参考，当然笔者也希望能够和大家互相交流。
+同时笔者的 JaCoCo 实践之路并未结束，可能在使用的过程中会有一些问题需要解决，
+后续也将考虑使用 Jenkins API 为需要统计功能测试代码覆盖率的 Java 应用实例自动生成一个对应的 Jenkins 任务，
+并在 Java 应用实例销毁后，对相应的 Jenkins 任务进行清理等其它功能。</p>
 
-<p>DevOps 平台在存储凭证、传输凭证给 Jenkins 时，都需要对凭证进行加密。至于使用何种加密方式，交给读者思考了。</p>
+<h2 id="参考">参考</h2>
 
-<h3 id="小结">小结</h3>
-
-<p>以上解决方案对 Jenkins 本身的改造几乎没有，我们只通过一个插件就解耦了 Jenkins 的凭证管理和 DevOps 平台的凭证管理。</p>
-
-<p>思路已经有了。具体怎么实现，由于一些原因不能开源，虽然实现起来不算难。还请读者见谅。</p>
-
-<p>最后，希望能和遇到同样问题的同学进行交流。看看是否还可以有更好的设计思路。</p>
+<ul>
+<li><a href="https://www.eclemma.org/jacoco/index.html">https://www.eclemma.org/jacoco/index.html</a></li>
+<li><a href="https://www.jacoco.org/jacoco/trunk/doc/integrations.html">https://www.jacoco.org/jacoco/trunk/doc/integrations.html</a></li>
+<li><a href="https://www.jacoco.org/jacoco/trunk/doc/agent.html">https://www.jacoco.org/jacoco/trunk/doc/agent.html</a></li>
+<li><a href="https://www.jacoco.org/jacoco/trunk/doc/counters.html">https://www.jacoco.org/jacoco/trunk/doc/counters.html</a></li>
+<li><a href="https://www.eclemma.org/jacoco/trunk/doc/mission.html">https://www.eclemma.org/jacoco/trunk/doc/mission.html</a></li>
+</ul>
 
 </div>
 
@@ -377,17 +432,17 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “基于 Jenkins 的 DevOps 平台应该如何设计凭证管理”
-  </a> 更新于：May 14, 2019
+    “基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计”
+  </a> 更新于：May 22, 2019
   <div>
-    原文作者：<a href="" target="_blank">zacker330</a>
+    原文作者：<a href="" target="_blank">donhui</a>
   </div>
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -411,20 +466,26 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/devops">
-              devops
+            <a class="tag" href="/tags/jacoco">
+              jacoco
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/ci">
+              ci
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/coverage">
+              coverage
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/" class="link">
-              基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计
-            </a>
-          </li>
         
       
         
@@ -459,6 +520,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
       
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" class="link">
+              基于 Jenkins 的 DevOps 平台应该如何设计凭证管理
+            </a>
+          </li>
         
       
         
