@@ -758,10 +758,10 @@ Copy from the sample.md, then change the content and front matter. All files nam
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/readme/</guid>
-      <description>Jenkins WeChat Jenkins WeChat subscription account will deliver the messages or events from the Jenkins Community.
+      <description>Jenkins WeChat WeChat is similar with Twitter. Almost everyone have their own account with WeChat in China.
+Jenkins WeChat subscription account will deliver the messages or events from the Jenkins Community.
 All articles should be open-source, every contributor could create a PR. Once we reviewed it, your articles could be released.
-We have a robot who can reply to your messages automatically. Unfortunately, its ability is very limitation. It just can understand a few words from here.
-TODO List Pick up a task from here, if you&amp;rsquo;re interesting in contribution.</description>
+We have a robot who can reply to your messages automatically. Unfortunately, its ability is very limitation. It just can understand a few words from here.</description>
     </item>
     
     <item>
