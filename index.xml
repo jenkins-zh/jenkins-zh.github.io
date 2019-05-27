@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 24 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,20 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 文档特别兴趣小组</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/</guid>
+      <description>我们很高兴地宣布 Jenkins 文档特别兴趣小组的成立。 文档特别兴趣小组鼓励贡献者和外部社区创建和 review Jenkins 文档。
+更多详情和计划，请参见：文档特别兴趣小组简介。
+我能帮什么忙呢？ Jenkins 文档特别兴趣小组希望从以下方面得到您的帮助：
+ review 及修复 打开的 bug 报告 review Jenkins 文档 pull requests review Jenkins X 文档 pull requests  我该如何修复文档 bug？ 关于如何为 Jenkins 文档做贡献的说明，请参见站点仓库中的 CONTRIBUTING 文件。 按照说明文件，提交 pull requests 以供 review 。
+关于如何为 Jenkins X 文档做贡献的说明，请参见站点仓库中的 Jenkins X 文档站点。 按照说明文件，提交 pull requests 以供 review 。
+我该如何评估 pull request？ Jenkins 项目的 pull requests 会在 Jenkins 文档仓库进行 review 。 使用您的凭据登录到 GitHub，向 pull requests 中添加评论。</description>
     </item>
     
     <item>

@@ -95,7 +95,7 @@
     <item>
       <title>Community</title>
       <link>https://jenkins-zh.cn/tags/community/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/community/</guid>
       <description></description>
@@ -170,6 +170,24 @@
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docs</title>
+      <link>https://jenkins-zh.cn/tags/docs/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/docs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Documentation</title>
+      <link>https://jenkins-zh.cn/tags/documentation/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/documentation/</guid>
       <description></description>
     </item>
     

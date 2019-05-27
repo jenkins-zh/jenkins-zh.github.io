@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</loc>
     <lastmod>2019-05-24T00:00:00+00:00</lastmod>
   </url>
@@ -375,7 +380,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/community/</loc>
-    <lastmod>2019-04-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -432,6 +437,18 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-26-official-docker-image/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/docs/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/documentation/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -520,7 +537,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -721,7 +738,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
