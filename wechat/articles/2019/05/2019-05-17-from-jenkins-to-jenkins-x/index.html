@@ -262,7 +262,7 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="2019-05-17-from-jenkins-to-jenkins-x/journey.jpeg" alt="journey" /></p>
+<p><img src="journey.jpeg" alt="journey" /></p>
 
 <p>这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事。</p>
 
@@ -307,7 +307,7 @@ var trackOutboundLink = function(id, url) {
 
 <p>这些天将给我们带来一个有趣的话题：在 Kubernetes 集群中构建容器镜像。</p>
 
-<p><img src="2019-05-17-from-jenkins-to-jenkins-x/build-image.jpeg" alt="build-image" /></p>
+<p><img src="build-image.jpeg" alt="build-image" /></p>
 
 <p>Jenkins X 附带了一组&rdquo;构建打包&rdquo;，使用 &ldquo;Docker in Docker&rdquo; 从容器内部构建镜像。
 但是随着新的容器运行时的到来，Kubernetes 推出了它的<a href="https://kubernetes.io/docs/setup/cri/">容器运行时接口( CRI )</a>，我们想要探索其他的选择。
@@ -334,7 +334,7 @@ Kaniko 维护者是很愿意帮忙的，并且快速地合并了修复，所以�
 
 <h2 id="声明所需资源的重要性">声明所需资源的重要性</h2>
 
-<p><img src="2019-05-17-from-jenkins-to-jenkins-x/containers.jpeg" alt="containers" /></p>
+<p><img src="containers.jpeg" alt="containers" /></p>
 
 <p>我们在之前的 Jenkins 平台中遇到的一个主要问题来自静态的代理/执行器，在高峰时间有时构建队列很长。
 Kubernetes 之上的 Jenkins 使这个问题很容易解决，主要是在 Kubernetes 集群上运行时，它能支持<a href="https://github.com/kubernetes/autoscaler">集群自动伸缩</a>。
@@ -368,7 +368,7 @@ spec:
 <p>现在我们已经拥有了所有的工具，并且能够为我们的应用程序构建一个镜像，
 我们准备下一步：将它部署到&rdquo;预览环境&rdquo;！</p>
 
-<p><img src="2019-05-17-from-jenkins-to-jenkins-x/preview.jpeg" alt="preview" /></p>
+<p><img src="preview.jpeg" alt="preview" /></p>
 
 <p>Jenkins X 通过重用现有的工具——主要是 Helm ，使得部署预览环境变得很容易，
 只要你遵循一些约定，例如用于镜像标签的值的名称。
@@ -422,7 +422,7 @@ Jenkins X 团队已经<a href="https://jenkins-x.io/news/helm-without-tiller/">�
 
 <h2 id="迁移">迁移</h2>
 
-<p><img src="2019-05-17-from-jenkins-to-jenkins-x/sunset.jpeg" alt="sunset" /></p>
+<p><img src="sunset.jpeg" alt="sunset" /></p>
 
 <p>我们故事的另一个有趣的部分是从 Jenkins 到 Jenkins X 的实际迁移。
 以及我们如何使用两个构建系统处理仓库。
@@ -455,7 +455,7 @@ Jenkins X 团队已经<a href="https://jenkins-x.io/news/helm-without-tiller/">�
 这就是我们喜欢 Jenkins X 的原因：因为它遵循相同的模式。
 那么，你在等待什么来开始你自己的旅程呢？</p>
 
-<p><img src="2019-05-17-from-jenkins-to-jenkins-x/sea-and-canoe.jpeg" alt="sea-and-canoe" /></p>
+<p><img src="sea-and-canoe.jpeg" alt="sea-and-canoe" /></p>
 
 <blockquote>
 <p>译注：译者曾对 Jenkins X 文档中文本地化做了一些贡献，同时也期待更多的人在 Jenkins X 旅程中，
