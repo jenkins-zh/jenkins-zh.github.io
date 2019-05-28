@@ -6,10 +6,23 @@
     <description>Recent content in Jenkins on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 22 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何对 Jenkins 共享库进行单元测试</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/</guid>
+      <description>Jenkins 共享库是除了 Jenkins 插件外，另一种扩展 Jenkins 流水线的技术。通过它，可以轻松地自定义步骤，还可以对现有的流水线逻辑进行一定程度的抽象与封装。至于如何写及如何使用它，读者朋友可以移步附录中的官方文档。
+对共享库进行单元测试的原因 但是如何对它进行单元测试呢？共享库越来越大时，你不得不考虑这个问题。因为如果你不在早期就开始单元测试，共享库后期可能就会发展成如下图所示的“艺术品”——能工作，但是脆弱到没有人敢动。
+[图片来自网络，侵权必删]
+这就是代码越写越慢的原因之一。后人要不断地填前人有意无意挖的坑。
+共享库单元测试搭建 共享库官方文档介绍的代码仓库结构 (root) +- src # Groovy source files | +- org | +- foo | +- Bar.groovy # for org.foo.Bar class +- vars | +- foo.groovy # for global &#39;foo&#39; variable | +- foo.txt # help for &#39;foo&#39; variable +- resources # resource files (external libraries only) | +- org | +- foo | +- bar.json # static helper data for org.</description>
+    </item>
     
     <item>
       <title>基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计</title>
