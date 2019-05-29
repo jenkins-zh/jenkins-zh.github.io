@@ -6,10 +6,19 @@
     <description>Recent content in Release on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/release/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 2.176~2.178版本更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-29-jenkins-release/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-29-jenkins-release/</guid>
+      <description>2.178 (2019-05-20)  将 jmDNS 从3.4.0-jenkins-3更新到3.5.5，以防止不必要的 DNS 组播错误消息。 (issue 25369) 将 WinP 从1.27更新到1.28，以修复 Windows 优雅进程关闭逻辑中缺少 DLL 和控制台窗口闪烁的问题。 (issue 57477, 完整的变更日志) 确保独立的插件(插件曾经是 Jenkins 本身的一部分功能)在 Jenkins 启动时(需要时)作为已经存在的其他插件的隐含依赖项安装。 这简化了不使用更新中心的特殊安装场景的兼容性，例如当 Jenkins 从预先打包了一些插件的 Docker 镜像运行时。 (issue 57528) 将脚本安全插件的捆绑版本与最新的安全警告一起更新，在不太可能的情况下，它确实是从 WAR 而不是更新中心安装的。 (pull 4000)  2.177 (2019-05-12)  支持在流水线或其它任务类型的 fingerprint() 构建步骤中设置排除和区分大小写。 (文档, pull 3915) 允许通过不同的阴影构建球区分新任务、禁用的任务和中止构建的任务。 (pull 3997) 将 Windows 代理安装程序从1.10.0更新到1.11，当在 .NET 4.6 或更新版本运行时，在代理下载时启用 TLS 1.2。 (issue 51577, 完整的变更日志) 将 Winstone-Jetty 从5.2更新到5.3以更新 Jetty 到 9.4.18。 (pull 4016, 完整的变更日志, Jetty 9.</description>
+    </item>
     
     <item>
       <title>19年 GSoC 中 Jenkins 的七个项目</title>
