@@ -101,7 +101,7 @@
         "auhtor": "zacker330",
         "translator": "",
         "original": "",
-        "poster": "../../../images/articles/2019/05/2019-05-20-jenkins-ansible-springboot/poster.png"
+        "poster": "./2019-05-20-jenkins-ansible-springboot/poster.png"
     },
     {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-translation-norms/",
@@ -179,7 +179,7 @@
         "auhtor": "zacker330",
         "translator": "",
         "original": "",
-        "poster": "../../../images/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/devops-platform-lock-jenkins.png"
+        "poster": "./2019-05-14-devops-jenkins-credential-manage/devops-platform-lock-jenkins.png"
     },
     {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/",
@@ -192,7 +192,7 @@
         "auhtor": "zacker330",
         "translator": "",
         "original": "",
-        "poster": "../../../images/articles/2019/05/2019-05-13-jenkins-book-gift/poster.png"
+        "poster": "./2019-05-13-jenkins-book-gift/poster.png"
     },
     {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-cdf-call-for-papers/",
@@ -231,7 +231,7 @@
         "auhtor": "donhui",
         "translator": "",
         "original": "",
-        "poster": "../../../images/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/sunset.png"
+        "poster": "./2019-05-08-jenkins-plugin-develop-within-two-days-part02/sunset.png"
     },
     {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/",
@@ -244,7 +244,7 @@
         "auhtor": "zacker330",
         "translator": "",
         "original": "",
-        "poster": "../../../images/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/poster.png"
+        "poster": "./2019-05-07-jenkins-install-plugins-shell/poster.png"
     },
     {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/",
@@ -257,7 +257,7 @@
         "auhtor": "donhui",
         "translator": "",
         "original": "",
-        "poster": "../../../images/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/huashan.png"
+        "poster": "./2019-05-06-jenkins-plugin-develop-within-two-days-part01/huashan.png"
     },
     {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/",
