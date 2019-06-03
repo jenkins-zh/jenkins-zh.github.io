@@ -301,11 +301,11 @@ var trackOutboundLink = function(id, url) {
 
 <p>jenkins-b 的界面如下图所示：</p>
 
-<p><img src="../../../images/articles/2019/04/2019-04-23-jenkins-master-shared-home/292372-fd4b85d5b9c8bdf6.png" alt="" /></p>
+<p><img src="292372-fd4b85d5b9c8bdf6.png" alt="" /></p>
 
 <p>而 jenkins-a 的界面如下图所示：</p>
 
-<p><img src="../../../images/articles/2019/04/2019-04-23-jenkins-master-shared-home/292372-1bfd4e033b6c25c8.png" alt="" /></p>
+<p><img src="292372-1bfd4e033b6c25c8.png" alt="" /></p>
 
 <p>这时，将 jenkins-a 日志中的解锁密码（Unlock password）输入到 jenkins-b 的页面中，会得到报错信息：</p>
 
@@ -352,11 +352,11 @@ jenkins-b_1  | java.lang.IllegalStateException: JENKINS-23152: /var/jenkins_home
 
 <p>看到的现象是，两个任务都会按时执行，但是只有一个任务能将运行结果写入到磁盘中。界面如下图：</p>
 
-<p><img src="../../../images/articles/2019/04/2019-04-23-jenkins-master-shared-home/292372-38c7a7f8aade0793.png" alt="" /></p>
+<p><img src="292372-38c7a7f8aade0793.png" alt="" /></p>
 
 <p>另，从日志中，可以确认 jenkins-a 和 jenkins-b 确实按时执行了。如下图日志中，看出 jenkins-a 定时执行 #6 次构建时报错，因为 jenkins-b 已经执行过 #6 次构建了：</p>
 
-<p><img src="../../../images/articles/2019/04/2019-04-23-jenkins-master-shared-home/292372-55e80e61f0d36dfb.png" alt="" /></p>
+<p><img src="292372-55e80e61f0d36dfb.png" alt="" /></p>
 
 <h3 id="小结">小结</h3>
 

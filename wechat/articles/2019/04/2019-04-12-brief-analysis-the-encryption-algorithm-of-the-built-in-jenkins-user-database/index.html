@@ -264,7 +264,7 @@ var trackOutboundLink = function(id, url) {
 <p>Jenkins 访问控制分为：安全域（即认证）与授权策略。</p>
 
 <p>其中，安全域可以采用三种形式，分别为：Jenkins 专有用户数据库、LDAP、Servlet 容器代理。
-<img src="../../../images/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/jenkins-security-realm.png" alt="jenkins-security-realm.png" /></p>
+<img src="jenkins-security-realm.png" alt="jenkins-security-realm.png" /></p>
 
 <h3 id="在哪里看到加密后的用户密码信息">在哪里看到加密后的用户密码信息？</h3>
 
@@ -273,7 +273,7 @@ var trackOutboundLink = function(id, url) {
 <p>每个用户的相关信息存放在各自的 config.xml 文件中： $JENKINS_HOME/users/$user/config.xml</p>
 
 <p>在 config.xml 文件中的 passwordHash 节点可以看到用户密码加密后的密文哈希值：
-<img src="../../../images/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/jenkins-user-config.png" alt="jenkins-user-config.png" /></p>
+<img src="jenkins-user-config.png" alt="jenkins-user-config.png" /></p>
 
 <h3 id="用户密码是用什么算法加密的呢">用户密码是用什么算法加密的呢？</h3>
 

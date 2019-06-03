@@ -279,7 +279,7 @@ var trackOutboundLink = function(id, url) {
 
 <p>这里是可用于以上步骤的 Jenkins 流水线代码：</p>
 
-<p><img src="../../../images/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/pipeline.png" alt="pipeline.png" /></p>
+<p><img src="pipeline.png" alt="pipeline.png" /></p>
 
 <pre><code class="language-yaml">node {
     stage 'checkout'
@@ -315,7 +315,7 @@ var trackOutboundLink = function(id, url) {
 docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials')
 </code></pre>
 
-<p><img src="../../../images/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/docker-hub-credentials.png" alt="docker-hub-credentials.png" /></p>
+<p><img src="docker-hub-credentials.png" alt="docker-hub-credentials.png" /></p>
 
 <p>这个步骤构建 Docker 镜像。Docker build 命令将 dockerhub 仓库名称和 tag 名称作为一个参数，而构建位置作为另一个参数。</p>
 
@@ -343,7 +343,7 @@ ADD target/*.war /usr/local/tomcat/webapps
 
 <p>最后一步是推送该镜像到一个 dockerhub registry 或者你的组织建立的任何内部 registry 。</p>
 
-<p><img src="../../../images/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/docker-hub.png" alt="docker-hub.png" /></p>
+<p><img src="docker-hub.png" alt="docker-hub.png" /></p>
 
 <pre><code class="language-yaml">stage('Results') {
          junit '**/target/surefire-reports/TEST-*.xml'
