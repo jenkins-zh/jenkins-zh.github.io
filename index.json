@@ -637,6 +637,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/about/course/",
+        "title": "Jenkins 培训",
+        "type": "slide",
+        "date": "2019-01-03 22:50:02 +0800 +0800",
+        "tags": [],
+        "description": "Jenkins 培训大纲",
+        "content": " class: center, middle\nJenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器环境  插件管理 构建任务  流水线 多分支流水线 API  计算节点管理  静态 动态   大纲  日志、任务外部存储 权限、认证体系 安全防护 备份、恢复 集成 社区介绍  Gitter \u0026amp;\u0026amp; 邮件组 Meetup 特别兴趣小组（SIG） 基础设施   安装、部署 Jenkins 的版本分为长期支持版（LTS）和每周更新版。\n 安装手册 Docker  插件管理  介绍 仓库 托管  计算节点管理  节点类型  固定 动态（虚拟机、Docker、Kubernetes）  通道  SSH JNLP  标签（label）  表达式   流水线（Pipeline） Jenkins 流水线采用 Groovy 来编写，通常会保存在代码库根目录下名为 Jenkinsfile 的文件中。根据写法不同，分为：脚本式、申明式流水线。\n快速入手，参考：\n 语法生成器 步骤列表 例子 复用 IDE 插件  .left[.footnote[https://linuxsuren.github.io/blog/devops/jenkins/pipeline/]]\n多分支流水线（Multi-branch Pipeline） 对于使用 Git 作为代码仓库的团队来说，Jenkins 的多分支流水线能够充分地利用 Git 的分支功能，简化重复的工作。简单来说，它可以根据既定的策略动态地创建、删除流水线。而对于部分 Git 服务，还能很好地支持 Pull Request 的流水线构建。\nAPI Jenkins 的大部分操作支持通过 HTTP API 进行调用，可以返回 JSON、XML 的数据格式。\nclass: center, middle\n社区介绍 Jenkins Community\n沟通交流 推荐的交流途径包括：Gitter、Google 邮件组。不同的主题，会有不同频道、组。\n 普通用户（中文、英文） 开发者 特别兴趣小组  .left[.footnote[https://remarkjs.com]]\nMeetup 线上、线下交流活动。每年，在国内很多城市都组织一些线下交流活动。\n 北京 西安 上海 深圳  分享的主题通常包括：特性介绍、案例分享、工作坊等。\n.left[.footnote[https://www.meetup.com/Beijing-Jenkins-Area-Meetup/]]\nclass: center, middle\n特别兴趣小组 Jenkins Special Interest Groups\n.left[.footnote[SIGs]]\n??? here is the note\n中文本地化 致力于改善 Jenkins 的中文用户的使用体验。涉及的范围包括： Jenkins 核心和插件以及官方网站。欢迎加入！\n 官网（Jenkins、JX） Jenkins 及其插件 Jenkins 官方微信公众号 定期会议  .footnote[Chinese Localization]\n宣传与推广 平台 ",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/event/readme/",
         "title": "",
         "type": "event",

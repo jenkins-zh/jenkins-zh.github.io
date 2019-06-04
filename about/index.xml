@@ -85,6 +85,17 @@ Jenkins 的 简体中文语言插件 也热切地期待你的 Pull Request 。
     </item>
     
     <item>
+      <title>Jenkins 培训</title>
+      <link>https://jenkins-zh.cn/about/course/</link>
+      <pubDate>Thu, 03 Jan 2019 22:50:02 +0800</pubDate>
+      
+      <guid>https://jenkins-zh.cn/about/course/</guid>
+      <description>class: center, middle
+Jenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器环境  插件管理 构建任务  流水线 多分支流水线 API  计算节点管理  静态 动态   大纲  日志、任务外部存储 权限、认证体系 安全防护 备份、恢复 集成 社区介绍  Gitter &amp;amp;&amp;amp; 邮件组 Meetup 特别兴趣小组（SIG） 基础设施   安装、部署 Jenkins 的版本分为长期支持版（LTS）和每周更新版。
+ 安装手册 Docker  插件管理  介绍 仓库 托管  计算节点管理  节点类型  固定 动态（虚拟机、Docker、Kubernetes）  通道  SSH JNLP  标签（label）  表达式   流水线（Pipeline） Jenkins 流水线采用 Groovy 来编写，通常会保存在代码库根目录下名为 Jenkinsfile 的文件中。根据写法不同，分为：脚本式、申明式流水线。</description>
+    </item>
+    
+    <item>
       <title>Jenkins Area Meetup</title>
       <link>https://jenkins-zh.cn/about/meetups/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  .footnote {
+    position: absolute;
+    bottom: 3em;
+  }
+  li p { line-height: 1.25em; }
+  .red { color: #fa0000; }
+  .large { font-size: 2em; }
+  a, a > code {
+    color: rgb(249, 38, 114);
+    text-decoration: none;
+  }
+  code {
+    background: #e7e8e2;
+    border-radius: 5px;
+  }
+  .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+  .remark-code-line-highlighted     { background-color: #373832; }
+  .pull-left {
+    float: left;
+    width: 47%;
+  }
+  .pull-right {
+    float: right;
+    width: 47%;
+  }
+  .pull-right ~ p {
+    clear: both;
+  }
+  #slideshow .slide .content code {
+    font-size: 0.8em;
+  }
+  #slideshow .slide .content pre code {
+    font-size: 0.9em;
+    padding: 15px;
+  }
+  .inverse {
+    background: #272822;
+    color: #777872;
+    text-shadow: 0 0 20px #333;
+  }
+  .inverse h1, .inverse h2 {
+    color: #f3f3f3;
+    line-height: 0.8em;
+  }
+
+   
+  #slide-inverse .footnote {
+    bottom: 12px;
+    left: 20px;
+  }
+  #slide-how .slides {
+    font-size: 0.9em;
+    position: absolute;
+    top:  151px;
+    right: 140px;
+  }
+  #slide-how .slides h3 {
+    margin-top: 0.2em;
+  }
+  #slide-how .slides .first, #slide-how .slides .second {
+    padding: 1px 20px;
+    height: 90px;
+    width: 120px;
+    -moz-box-shadow: 0 0 10px #777;
+    -webkit-box-shadow: 0 0 10px #777;
+    box-shadow: 0 0 10px #777;
+  }
+  #slide-how .slides .first {
+    background: #fff;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 1;
+  }
+  #slide-how .slides .second {
+    position: relative;
+    background: #fff;
+    z-index: 0;
+  }
+
+   
+  .left-column {
+    color: #777;
+    width: 20%;
+    height: 92%;
+    float: left;
+  }
+    .left-column h2:last-of-type, .left-column h3:last-child {
+      color: #000;
+    }
+  .right-column {
+    width: 75%;
+    float: right;
+    padding-top: 1em;
+  }
+  </style>
+  <script src="/remark-latest.min.js"></script>
+</head>
+<body>
+  <textarea id="source">
+
+class: center, middle
+
+# Jenkins 培训
+
+---
+
+# 大纲
+
+* Jenkins 项目介绍
+* 安装、部署
+    * 传统环境
+    * 容器环境
+* 插件管理
+* 构建任务
+    * 流水线
+    * 多分支流水线
+    * API
+* 计算节点管理
+    * 静态
+    * 动态
+
+---
+
+# 大纲
+
+* 日志、任务外部存储
+* 权限、认证体系
+* 安全防护
+* 备份、恢复
+* 集成
+* 社区介绍
+    * Gitter &amp;&amp; 邮件组
+    * Meetup
+    * 特别兴趣小组（SIG）
+    * 基础设施
+
+---
+
+# 安装、部署
+
+Jenkins 的版本分为长期支持版（LTS）和每周更新版。
+
+* &lt;a href=&#34;https://jenkins.io/zh/doc/book/installing/&#34; target=&#34;_blank&#34;&gt;安装手册&lt;/a&gt;
+* &lt;a href=&#34;https://hub.docker.com/r/jenkins/jenkins/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt;
+
+---
+
+## 插件管理
+
+* &lt;a href=&#34;https://linuxsuren.github.io/blog/devops/jenkins/jenkins-plugin/&#34; target=&#34;_blank&#34;&gt;介绍&lt;/a&gt;
+* &lt;a href=&#34;https://plugins.jenkins.io/&#34; target=&#34;_blank&#34;&gt;仓库&lt;/a&gt;
+* &lt;a href=&#34;https://linuxsuren.github.io/blog/devops/jenkins/basic/jenkins-host/&#34; target=&#34;_blank&#34;&gt;托管&lt;/a&gt;
+
+---
+
+## 计算节点管理
+
+* &lt;a href=&#34;https://linuxsuren.github.io/blog/devops/jenkins/basic/jenkins-agent/&#34; target=&#34;_blank&#34;&gt;节点类型&lt;/a&gt;
+    * 固定
+    * 动态（虚拟机、Docker、Kubernetes）
+* 通道
+    * SSH
+    * JNLP 
+* &lt;a href=&#34;https://linuxsuren.github.io/blog/devops/jenkins/basic/jenkins-label/&#34; target=&#34;_blank&#34;&gt;标签（label）&lt;/a&gt;
+    * 表达式
+
+---
+
+## 流水线（Pipeline）
+
+Jenkins 流水线采用 Groovy 来编写，通常会保存在代码库根目录下名为 Jenkinsfile 的文件中。根据写法不同，分为：脚本式、申明式流水线。
+
+快速入手，参考：
+
+* 语法生成器
+* 步骤列表
+* 例子
+* 复用
+* IDE 插件
+
+.left[.footnote[https://linuxsuren.github.io/blog/devops/jenkins/pipeline/]]
+
+---
+
+## 多分支流水线（Multi-branch Pipeline）
+
+对于使用 Git 作为代码仓库的团队来说，Jenkins 的多分支流水线能够充分地利用 Git 的分支功能，简化重复的工作。简单来说，它可以根据既定的策略动态地创建、删除流水线。而对于部分 Git 服务，还能很好地支持 Pull Request 的流水线构建。
+
+---
+
+# API
+
+Jenkins 的大部分操作支持通过 &lt;a href=&#34;https://linuxsuren.github.io/blog/devops/jenkins/api/&#34; target=&#34;_blank&#34;&gt;HTTP API&lt;/a&gt; 进行调用，可以返回 JSON、XML 的数据格式。
+
+---
+class: center, middle
+
+# 社区介绍
+Jenkins Community
+
+---
+
+## 沟通交流
+
+推荐的交流途径包括：Gitter、Google 邮件组。不同的主题，会有不同频道、组。
+
+* 普通用户（中文、英文）
+* 开发者
+* 特别兴趣小组
+
+.left[.footnote[https://remarkjs.com]]
+
+---
+
+## Meetup
+
+线上、线下交流活动。每年，在国内很多城市都组织一些线下交流活动。
+
+* 北京
+* 西安
+* 上海
+* 深圳
+
+分享的主题通常包括：特性介绍、案例分享、工作坊等。
+
+.left[.footnote[https://www.meetup.com/Beijing-Jenkins-Area-Meetup/]]
+
+---
+
+class: center, middle
+
+# 特别兴趣小组
+
+Jenkins Special Interest Groups
+
+.left[.footnote[&lt;a href=&#34;https://jenkins.io/zh/sigs/&#34; target=&#34;_blank&#34;&gt;SIGs&lt;/a&gt;]]
+
+???
+here is the note
+
+---
+
+## 中文本地化
+
+致力于改善 Jenkins 的中文用户的使用体验。涉及的范围包括： Jenkins 核心和插件以及官方网站。欢迎加入！
+
+* 官网（Jenkins、JX）
+* Jenkins 及其插件
+* Jenkins 官方微信公众号
+* 定期会议
+
+.footnote[&lt;a href=&#34;https://jenkins.io/zh/sigs/chinese-localization/&#34; target=&#34;_blank&#34;&gt;Chinese Localization&lt;/a&gt;]
+
+---
+
+## 宣传与推广
+
+---
+
+## 平台
+
+  </textarea>
+  <script>
+    var slideshow = remark.create({});
+  </script>
+</body>
+</html>
