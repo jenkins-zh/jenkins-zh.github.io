@@ -676,6 +676,19 @@
         "poster": "/images/meetup/cloud-native-community-day.jpeg"
     },
     {
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-06-22/",
+        "title": "",
+        "type": "meetup",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": "/images/meetup/ci-cd.jpeg"
+    },
+    {
         "uri": "https://jenkins-zh.cn/event/beijing-2019-11/",
         "title": "",
         "type": "meetup",
