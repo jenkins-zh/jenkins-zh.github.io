@@ -6,10 +6,26 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2019年 DevOps 面临的挑战以及如何战胜它们</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/</guid>
+      <description>随着 DevOps 逐渐成为主流，许多团队都在问自己应该从哪里开始采用 DevOps ， 他们将在此过程中面临哪些挑战，以及如何解决那些挑战。 每年都有越来越多的公司希望从传统的瀑布式方法转向 DevOps 。
+许多软件开发公司将 DevOps 看作是一个公司在效率方面所能达到的顶峰，并且这有点难。 应对挑战可能大大降低你的生产力，同时适应 DevOps 方法会导致各种自动化工具和开发过程之间缺乏协调。
+在本文中，我们将讨论 DevOps 在2019年面临的一些重大挑战，以及可以采取哪些措施来战胜它们。
+关注遗留的应用程序和系统 DevOps 团队面临的第一个和主要挑战涉及到遗留应用程序的构建， 这些应用程序是在没有考虑 DevOps 的情况下构建的。 这似乎看起来有益无害，但这对于转变来说是相当棘手的。 即使你关注使用 DevOps 的新应用程序和系统，你也需要维护这些遗留系统。
+对于遗留应用程序的转变这里还有其他原因。 一开始，你需要努力逐步将淘汰它们，或者逐渐将客户转移到使用 DevOps 系统维护的新版本。 否则，你可以尝试创建一个新的系统来维护遗留的应用程序，它不会干扰你的 DevOps 系统。 你也可以使用 Scala 性能度量工具，比如 AppOptics ，它有助于逐步淘汰非 DevOps 系统。
+选择适合的项目 对于一个新的 DevOps 团队来说，为每个新项目选择 DevOps 似乎很明智，但事实并非总是如此。 DevOps 不是强制性的，因为如果没有正确地实现 DevOps ，有时会降低整个生产过程的速度。 因此，在选择要使用 DevOps 的项目时，你应该非常勤奋。 在考虑 DevOps 是否必要时，最好记住 DevOps 是一种运营策略，并不总是适合的。
+如果你正在努力快速规模化的软件，并从其敏捷性中获得更快的速度，那么 DevOps 是一个明智的选择。 同样地，DevOps 并不是一直起作用，所以不应该把它当作解决所有问题的首选解决方案。 例如，如果你正在使用一个较旧的系统，那么最好坚持使用旧的方法和流程，因为不可能总是为这些方法和流程找到自动化的系统。
+除此之外，规划和设计工作被认为不适合 DevOps ，因为进行设计和 UX 是处理流程的更成功的方法，而不是不断改进。</description>
+    </item>
     
     <item>
       <title>Jenkins 2.176~2.178版本更新</title>

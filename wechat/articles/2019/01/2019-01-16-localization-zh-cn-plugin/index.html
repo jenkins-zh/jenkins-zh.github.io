@@ -177,13 +177,13 @@ var trackOutboundLink = function(id, url) {
     
     
       
-        <h3 class="f4 dib">
+        <h3 class="f4 dib author">
             Zhao Xiaojie
         </h3>
 
       
       
-        <p class="lh-copy measure center mt0 f6 black-60">
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
           Contributor of @jenkinsci . Jenkins press contact in China.
         </p>
       
@@ -193,6 +193,8 @@ var trackOutboundLink = function(id, url) {
 </svg>
 
       </a>
+
+  
   </aside>
 
 
@@ -236,6 +238,7 @@ var trackOutboundLink = function(id, url) {
 </div>
 
       <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
         <div class="documentation-copy center mw8">
           <div id="readout" class="fixed right-0 bottom-0">
           </div>
@@ -305,9 +308,6 @@ var trackOutboundLink = function(id, url) {
 </span>
     “Jenkins 中文语言包”
   </a> 更新于：January 1, 0001
-  <div>
-    原文作者：<a href="" target="_blank">linuxsuren</a>
-  </div>
 </h6>
 
       <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/01/2019-01-16-localization-zh-cn-plugin.md" class="
@@ -320,6 +320,92 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
     </div>
   </div>
 </main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/01\/2019-01-16-localization-zh-cn-plugin\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
 
     </main>
 
