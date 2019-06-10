@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-09-github-share/</loc>
+    <lastmod>2019-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/</loc>
     <lastmod>2019-06-05T00:00:00+00:00</lastmod>
   </url>
@@ -568,7 +573,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -769,7 +774,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -830,6 +835,12 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-16-webhook-firewalls/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2019-06-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
