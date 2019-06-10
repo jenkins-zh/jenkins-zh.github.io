@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/</loc>
+    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-09-github-share/</loc>
     <lastmod>2019-06-09T00:00:00+00:00</lastmod>
   </url>
@@ -553,7 +558,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -573,7 +578,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -673,7 +678,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/pipeline/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -774,7 +779,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
