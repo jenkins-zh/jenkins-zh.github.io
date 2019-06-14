@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/</loc>
+    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/</loc>
     <lastmod>2019-06-10T00:00:00+00:00</lastmod>
   </url>
@@ -404,7 +409,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/ci/</loc>
-    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -558,7 +563,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -578,7 +583,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -779,7 +784,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

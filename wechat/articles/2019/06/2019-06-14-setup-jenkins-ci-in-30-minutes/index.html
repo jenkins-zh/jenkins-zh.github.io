@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Electron 应用的流水线设计 - Jenkins 中文社区</title>
+     <title>30分钟搞定 Jenkins CI - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="跨平台构建的流水线 demo">
+    <meta name="description" content="设置新的 Jenkins CI，以便可以开始测试新的 Jenkins 插件">
     
     
-    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+    <meta name="keywords" content="Jenkins CI">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,27 +32,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Electron 应用的流水线设计" />
-<meta property="og:description" content="跨平台构建的流水线 demo" />
+<meta property="og:title" content="30分钟搞定 Jenkins CI" />
+<meta property="og:description" content="设置新的 Jenkins CI，以便可以开始测试新的 Jenkins 插件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" />
-<meta property="article:published_time" content="2019-03-13T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-03-13T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/" />
+<meta property="article:published_time" content="2019-06-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-06-15T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Electron 应用的流水线设计">
-<meta itemprop="description" content="跨平台构建的流水线 demo">
-
-
-<meta itemprop="datePublished" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="290">
+<meta itemprop="name" content="30分钟搞定 Jenkins CI">
+<meta itemprop="description" content="设置新的 Jenkins CI，以便可以开始测试新的 Jenkins 插件">
 
 
+<meta itemprop="datePublished" content="2019-06-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="525">
 
-<meta itemprop="keywords" content="Jenkins,Pipeline,Electron," />
+
+
+<meta itemprop="keywords" content="jenkins,ci," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Electron 应用的流水线设计"/>
-<meta name="twitter:description" content="跨平台构建的流水线 demo"/>
+<meta name="twitter:title" content="30分钟搞定 Jenkins CI"/>
+<meta name="twitter:description" content="设置新的 Jenkins CI，以便可以开始测试新的 Jenkins 插件"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -186,22 +186,23 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            翟志军
+            Yanjun Shi
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          Life is short, let life be brilliant and colorful
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/yJunS" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -209,10 +210,37 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
+  <div>
+    作者：<span class="originalAuthor">Gunter Rotsaert</span>
+    <div>
+      <a class="originalLink" href="https://dzone.com/articles/setup-jenkins-ci-in-30-minutes" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">此页面上的内容</p>
+  	<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-先决条件">1.先决条件</a></li>
+<li><a href="#2-运行-jenkins-ci">2.运行 Jenkins CI</a></li>
+<li><a href="#3-配置-jenkins-以供首次使用">3.配置 Jenkins 以供首次使用</a></li>
+<li><a href="#4-安装所需的工具">4.安装所需的工具</a>
+<ul>
+<li><a href="#4-1-安装-jdk-11">4.1 安装 JDK 11</a></li>
+<li><a href="#4-2-安装-maven">4.2 安装 Maven</a></li>
+<li><a href="#4-3-配置-docker">4.3 配置 Docker</a></li>
+</ul></li>
+<li><a href="#5-创建构建工作">5.创建构建工作</a></li>
+<li><a href="#6-结论">6.结论</a></li>
+</ul></li>
+</ul>
+</nav>
 	
 
 	<div date-pref>
@@ -225,17 +253,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-20-cdf-launch/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 正在加入持续交付基金会 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 已经被 Google Summer Of Code 2019 接受！">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/" class="dib f6 pr1 hover-bg-light-gray br-100" title="还在苦恼不会写 Jenkins 流水线？来场工作坊！">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -255,13 +275,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Electron 应用的流水线设计</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">30分钟搞定 Jenkins CI</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      跨平台构建的流水线 demo
+      设置新的 Jenkins CI，以便可以开始测试新的 Jenkins 插件
     </div>
   
 
@@ -274,135 +294,217 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<blockquote>
-<p>审校：LinuxSuRen（<a href="https://github.com/LinuxSuRen">https://github.com/LinuxSuRen</a>）</p>
-</blockquote>
+<p>你想在本地设置中使用 Jenkins CI 进行实验吗？在本文中，我们将设置一个本地 Jenkins CI 服务，为一个简单的 Spring Boot Maven 项目创建一个构建工作，并将创建的 Docker 镜像推送到 DockerHub。这将是一个本地实验的设置，但如果你想尝试一个 Jenkins 插件，它会非常方便。</p>
 
-<p>面向读者：需要了解 Jenkins 流水线的基本语法。</p>
+<h2 id="1-先决条件">1.先决条件</h2>
 
-<p>Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。</p>
+<p>开始之前，我们需要以下先决条件：</p>
 
-<p>本文将介绍 Electron 桌面应用的流水线的设计。</p>
+<ul>
+<li>我们使用了 Ubuntu 18.04；</li>
+<li>必须安装 Docker，有关安装说明，请参见<a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">此处</a>；</li>
+<li>我们需要在 Docker registry 来推送我们的 Docker 镜像。最简单的方法是在<a href="https://hub.docker.com/">DockerHub</a>上创建一个帐户。你可以免费创建帐户。也不会收到垃圾广告邮件；</li>
 
-<p>但是如何介绍呢？倒是个大问题。笔者尝试直接贴代码，在代码注释中讲解。这是一次尝试，希望得到你的反馈。</p>
+<li><p>构建工作的 Spring Boot 应用程序。我们将使用前一篇<a href="https://mydeveloperplanet.com/2018/05/16/build-and-deploy-a-spring-boot-app-on-minikube-part-1/">文章</a>中的 Spring Boot MVC 应用程序。源代码可以在<a href="https://github.com/mydeveloperplanet/mykubernetesplanet">GitHub</a>上找到，相应的Docker图像可以在<a href="https://github.com/mydeveloperplanet/mykubernetesplanet">DockerHub</a>上找到。该应用程序包含 <code>http://localhost:8080/hello</code> 上的一个 HTTP 端点，并只返回一条 <code>Hello Kubernetes</code> 欢迎消息。</p>
 
-<h3 id="完整代码">完整代码</h3>
+<h2 id="2-运行-jenkins-ci">2.运行 Jenkins CI</h2>
 
-<pre><code class="language-groovy">pipeline {
-// 我们决定每一个阶段指定 agent，所以，
-// 流水线的 agent 设置为 none，这样不会占用 agent
-agent none
-// 指定整条流水线的环境变量
-environment {
-  APP_VERSION = &quot;&quot;
-  APP_NAME = &quot;electron-webpack-quick-start&quot;
-}
+<p>我们将使用 <a href="https://hub.docker.com/r/jenkins/jenkins/">Jenkins CI Docker</a> 官方镜像运行 Jenkins 服务。完整的文档可以在<a href="https://github.com/jenkinsci/docker/blob/master/README.md">这里</a>找到。用以下命令启动容器:</p></li>
+</ul>
 
-stages {
-  stage(&quot;生成版本号&quot;){
-    agent {label &quot;linux&quot; }
-    steps{
-      script{
-          APP_VERSION = generateVersion(&quot;1.0.0&quot;)
-          echo &quot;version is ${APP_VERSION}&quot;
-    }}
+<pre><code>$ docker run -p 8080:8080 --name myjenkins -v jenkins_home:/var/jenkins_home -v jenkins_downloads:/var/jenkins_home/downloads jenkins/jenkins:lts
+</code></pre>
+
+<p>让我们来仔细看看我们正在做什么:</p>
+
+<ul>
+<li>-p 8080:8080：我们将内部 Jenkins 端口（冒号后）映射到外部端口，该端口可从我们的 Docker 主机访问；</li>
+<li>&ndash;name myjenkins：我们为容器提供一个名称；否则，Docker将为你生成一个名称。最好给它起个名字；这样，你可以轻松地启动和停止容器；</li>
+<li>-v jenkins_home:/var/jenkins_home：我们希望将内部 Jenkins 主目录(冒号之后)映射到 Docker 主机上的一个目录。通过这种方式，Jenkins 数据将被保存在我们的主机上，这让我们有机会备份数据；</li>
+<li>-v jenkins_downloads:/var/jenkins_home/downloads：我们需要在Jenkins中安装额外的工具； 因此，我们创建一个目录来复制 <code>*.tar.gz</code> 文件。在这篇文章的后面，我们将清楚地知道我们将使用目录做什么；</li>
+<li>jenkins/jenkins:lts：要使用的 Docker 镜像。我们将使用 LTS 版本，但如果你愿意，也可以使用不太稳定的版本。在撰写本文时，v2.150.1 是 LTS 版本。
+在此之后，你可以通过其名称停止和启动容器：</li>
+</ul>
+
+<p>···
+$ docker stop myjenkins
+$ docker start myjenkins
+···</p>
+
+<h2 id="3-配置-jenkins-以供首次使用">3.配置 Jenkins 以供首次使用</h2>
+
+<p>一旦容器启动后，我们就可以访问 Jenkins Web 控制台了。当然，我们需要知道 Jenkins 实例的 IP 地址。因此，请执行以下命令：</p>
+
+<pre><code>$ docker inspect myjenkins
+</code></pre>
+
+<p>这将显示一些 JSON 输出。转到该 <code>Networks</code> 部分，参数 <code>IPAddress</code> 显示我们的 Jenkins IP 地址（在我们的例子中为172.17.0.3）：</p>
+
+<pre><code>&quot;Networks&quot;: {
+  &quot;bridge&quot;: {
+    &quot;IPAMConfig&quot;: null,
+    ...
+    &quot;IPAddress&quot;: &quot;172.17.0.3&quot;,
+    ...
+    &quot;DriverOpts&quot;: null
   }
-  stage('并行构建') {
-    // 快速失败，只要其中一个平台构建失败，
-    // 整次构建算失败
-    failFast true
-    // parallel 闭包内的阶段将并行执行
-    parallel {
-      stage('Windows平台下构建') {
-        agent {label &quot;windows &amp;&amp; nodejs&quot; }
-        steps {
-          echo &quot;${APP_VERSION}&quot;
-        }
-      }
-      stage('Linux平台下构建') {
-        agent {label  &quot;linux &amp;&amp; nodejs&quot; }
-        // 不同平台可能存在不同的环境变量
-        // environment 支持阶段级的环境变量
-        environment{
-            SUFFIX = &quot;tar.xz&quot;
-            APP_PLATFORM = &quot;linux&quot;
-            ARTIFACT_PATH = &quot;dist/${APP_NAME}-${APP_PLATFORM}-${APP_VERSION}.${SUFFIX}&quot;
-        }
-        steps {
-          script{
-            // Jenkins nodejs 插件提供的 nodejs 包装器
-            // 包装器内可以执行 npm 命令。
-            // nodejs10.15.2 是在 Jenkins 的全局工具配置中添加的 NodeJS 安装器
-            nodejs(nodeJSInstallationName: 'nodejs10.15.2') {
-              // 执行具体的构建命令
-              sh &quot;npm install yarn&quot;
-              sh &quot;yarn version --new-version ${APP_VERSION}&quot;
-              sh &quot;yarn install&quot;
-              sh &quot;yarn dist --linux deb ${SUFFIX}&quot;
-              // 上传制品
-              uploadArtifact(&quot;${APP_NAME}&quot;, &quot;${APP_VERSION}&quot;, &quot;${ARTIFACT_PATH}&quot;)
-        }}} // 将括号合并是为了让代码看起来紧凑，提升阅读体验。下同。
-      }
-      stage('Mac平台下构建') {
-        agent {label &quot;mac &amp;&amp; nodejs&quot; }
-        stages {
-          stage('mac 下阶段1') {
-            steps { echo &quot;staging 1&quot; }
-          }
-          stage('mac 下阶段2') {
-            steps { echo &quot;staging 2&quot; }
-          }
-        }
-  } } } 
-  stage(&quot;其它阶段，读者可根据情况自行添加&quot;){
-    agent {label &quot;linux&quot;}
-    steps{
-        echo &quot;发布&quot;
-    } } 
-}
-post {
-  always { cleanWs() } } // 清理工作空间
-}
-
-def generateVersion(def ver){
-  def gitCommitId = env.GIT_COMMIT.take(7)
-  return &quot;${ver}-${gitCommitId}.${env.BUILD_NUMBER}&quot;
-}
-
-def uploadArtifact(def appName, def appVersion, def artifactPath){
-  echo &quot;根据参数将制品上传到制品库中，待测试&quot;
 }
 </code></pre>
 
-<h3 id="代码补充说明">代码补充说明</h3>
+<p>Jenkins Web 控制台可通过浏览器访问 <a href="http://172.17.0.3:8080/"><code>http://172.17.0.3:8080/</code></a>。</p>
 
-<p>因为 Electron 是跨平台的，我们需要将构建过程分别放到 Windows、Linux、Mac 各平台下执行。所以，不同平台的构建任务需要执行在不同的 agent 上。我们通过在 <code>stage</code> 内定义 <code>agent</code> 实现。如在“Mac平台下构建”的阶段中，<code>agent {label &quot;mac &amp;&amp; nodejs&quot; }</code> 指定了只有 label 同时包括了 mac 和 nodejs 的 agent 才能执行构建。</p>
+<p>这将向我们显示以下页面：</p>
 
-<p>多平台的构建应该是并行的，以提升流水线的效率。我们通过 <code>parallel</code> 指令实现。</p>
+<p><img src="jenkins-first-login.png" alt="jenkins-first-login" /></p>
 
-<p>另外，默认 Electron 应用使用的三段式版本号设计，即 Major.Minor.Patch。但是笔者认为三段式的版本号信息还不够追踪应用与构建之间的关系。笔者希望版本号能反应出构建号和源代码的 commit id。函数 <code>generateVersion</code> 用于生成此类版本号。生成的版本号，看起来类似这样：<code>1.0.0-f7b06d0.28</code>。</p>
+<p>我们使用临时密码，启动容器后在控制台输出中显示:</p>
 
-<p>完整源码地址：<a href="https://github.com/zacker330/electronjs-pipeline-demo">https://github.com/zacker330/electronjs-pipeline-demo</a></p>
+<pre><code>*************************************************************
+*************************************************************
+*************************************************************
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+f586346583e04fa78e2cc8edbf7566e1
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+*************************************************************
+*************************************************************
+*************************************************************
+</code></pre>
 
-<h3 id="小结">小结</h3>
+<p>输入临时密码后，将显示一个页面，在这里我们可以选择要安装的默认插件集或自定义插件集。我们将选择默认设置。</p>
 
-<p>上例中，Electron 应用的流水线设计思路，不只是针对 Electron 应用，所有的跨平台应用的流水线都可以参考此思路进行设计。设计思路大概如下：</p>
+<p><img src="jenkins-plugins.png" alt="jenkins-plugins" /></p>
 
-<ol>
-<li>多平台构建并行化。本文只有操作系统的类型这个维度进行了说明。现实中，还需要考虑其它维度，如系统位数（32位、64位）、各操作系统下的各版本。</li>
-<li>各平台下的构建只做一次编译打包。并将制品上传到制品库，以方便后续步骤或阶段使用。</li>
-<li>全局变量与平台相关变量进行分离。</li>
-</ol>
+<p>现在，坐等插件安装好:</p>
 
-<p>最后，希望能给读者带来一些启发。</p>
+<p><img src="jenkins-install-plugins.png" alt="jenkins-install-plugins" /></p>
 
-<h3 id="参考">参考：</h3>
+<p>接下来，创建第一个管理员用户：</p>
 
-<ul>
-<li>持续交付的八大原则：<a href="https://blog.csdn.net/tony1130/article/details/6673741">https://blog.csdn.net/tony1130/article/details/6673741</a></li>
-<li>Jenkins nodejs 插件：<a href="https://plugins.jenkins.io/nodejs">https://plugins.jenkins.io/nodejs</a></li>
-<li>Electron 版本管理：<a href="https://electronjs.org/docs/tutorial/electron-versioning#semver">https://electronjs.org/docs/tutorial/electron-versioning#semver</a></li>
-</ul>
+<p><img src="jenkins-create-first-user.png" alt="jenkins-create-first-user" /></p>
+
+<p>最后，配置 Jenkins 实例：</p>
+
+<p><img src="jenkins-instance-configuration.png" alt="jenkins-instance-configuration" /></p>
+
+<p>太棒了！Jenkins 现在已经准备好可以使用了:</p>
+
+<p><img src="jenkins-up-and-running.png" alt="jenkins-up-and-running" /></p>
+
+<h2 id="4-安装所需的工具">4.安装所需的工具</h2>
+
+<p>我们的构建需要在 Jenkins 中提供一些工具。我们需要 JDK11，Maven 和 Docker。在下一节中，我们将展示如何在容器中使用这些属性。</p>
+
+<p>在启动容器期间，我们在容器中创建了 <code>/var/jenkins_home/downloads</code> 的挂载卷。首先，我们将验证是否可以从容器中访问此路径。执行以下命令：</p>
+
+<p>···
+$ docker exec -it myjenkins ls -l /var/jenkins_home/downloads
+total 0
+···</p>
+
+<p>如上所述返回0个结果时，那么我们就可以继续了。否则，你必须检查在启动容器期间是否输入正确。</p>
+
+<h3 id="4-1-安装-jdk-11">4.1 安装 JDK 11</h3>
+
+<p>我们将使用 Adopt OpenJDK 11，可在<a href="https://adoptopenjdk.net/">此处</a>下载。我们必须将下载的 *.tar.gz 文件复制到已安装在主机上的卷 jenkins_home/downloads 中。为了检索我们机器上的路径，我们再次执行 <code>docker inspect</code> 命令，就像以前检索Jenkins IP地址一样。这一次，转到分段 <code>Mounts</code>：</p>
+
+<pre><code>&quot;Mounts&quot;: [
+  ...
+  {
+    &quot;Type&quot;: &quot;volume&quot;,
+    &quot;Name&quot;: &quot;jenkins_downloads&quot;,
+    &quot;Source&quot;: &quot;/var/lib/docker/volumes/jenkins_downloads/_data&quot;,
+    &quot;Destination&quot;: &quot;/var/jenkins_home/downloads&quot;,
+    ...
+  }
+],
+</code></pre>
+
+<p>在我们的示例中，卷位于 <code>/var/lib/docker/volumes/jenkins_downloads/_data</code> 上。将 <code>*.tar.gz</code> 文件复制到此位置。</p>
+
+<p>跳转到 <em>Manage Jenkins – Global Tool Configuration</em> 和 *JDK 安装部分*。单击 <em>Add JDK</em> 按钮。默认情况下，<code>java.sun.com</code> 会添加安装程序。我们不会使用这个，所以删除它并添加一个 <code>Extract *.zip/*.tar.gzinstaller</code>。根据下面的屏幕截图填写字段。二进制存档的路径是 <code>file:/var/jenkins_home/downloads/OpenJDK11U-jdk_x64_linux_hotspot_11.0.1_13.tar.gz</code>。<code>Label</code> 留空是很重要的；否则，JDK的安装将失败。</p>
+
+<p><img src="jenkins-install-jdk.png" alt="jenkins-install-jdk" /></p>
+
+<p>跳转到 *Manage Jenkins – Configure System*，到 <em>Global properties</em> 部分并启用 *环境变量*。为其添加环境变量 <code>JAVA_HOME</code> 并填充路径 <code>/var/jenkins_home/tools/hudson.model.JDK/JDK11/jdk-11.0.1+13</code>。</p>
+
+<p><img src="jenkins-java_home-1.png" alt="jenkins-java_home-1" /></p>
+
+<h3 id="4-2-安装-maven">4.2 安装 Maven</h3>
+
+<p>我们将使用 Maven 3.6.0，可以在<a href="https://maven.apache.org/download.cgi">这里</a>下载。安装过程与 JDK 安装相同：下载 <code>*.tar.gz</code> 文件并将其复制到 <code>jenkins_home/downloads</code>。</p>
+
+<p>转到 <em>Manage Jenkins – Global Tool Configuration</em> 和 Maven 安装部分。单击 <em>Add Maven</em> 按钮。默认情况下，<code>Apache</code> 会添加安装程序。我们不会使用这个，所以删除它并添加一个 <code>Extract *.zip/*.tar.gzinstaller</code>。根据下面的屏幕截图填写字段。二进制存档的路径是 <code>file:/var/jenkins_home/downloads/apache-maven-3.6.0-bin.tar.gz</code>。<code>Label</code> 留空是很重要的；否则，Maven 的安装将失败。将<code>子目录</code>设置为 <code>apache-maven-3.6.0</code> 也很重要；否则，Maven 主目录没有正确设置，mvn 可执行文件将无法找到。</p>
+
+<p><img src="jenkins-install-maven-1.png" alt="jenkins-install-maven-1" /></p>
+
+<h3 id="4-3-配置-docker">4.3 配置 Docker</h3>
+
+<p>在 Docker 内部安装 Docker 不是一个好主意，请参阅<a href="https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/">本文</a>。因此，我们将使用宿主机的 Docker 安装，并将宿主机的 Docker 套接字挂载到容器。实际上，这也不是一个好主意，但是对于我们的 Jenkins 实验环境来说，这是可以的，但是出于安全原因，永远不要以这种方式暴露 Docker 套接字。</p>
+
+<p>我们删除现有的容器（这不是有害的，因为我们的所有数据都保存在我们的主机上，我们不会丢失任何数据），然后使用 <code>-v /var/run/docker.sock:/var/run/docker.sock</code> 重新启动容器。</p>
+
+<pre><code>$ docker rm myjenkins
+$ docker run -p 8080:8080 --name myjenkins -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -v jenkins_downloads:/var/jenkins_home/downloads jenkins/jenkins:lts
+</code></pre>
+
+<p>为了使其工作，我们还必须设置 <code>docker.sock</code> 的权限给 <code>jenkins</code> 用户。默认情况下，它被挂载为 <code>root</code>，因此，由于 <code>Permission Denied</code> 错误，我们的构建将失败。</p>
+
+<p>以 <code>root</code> 身份登录 Docker 容器:</p>
+
+<pre><code>$ docker exec -it -u root myjenkins
+</code></pre>
+
+<p>检查权限 <code>docker.sock</code>，这表明它拥有者 <code>root</code>：</p>
+
+<pre><code>$ ls -l /var/run/docker.sock
+srw-rw---- 1 root 999 0 Jan 6 11:45 /var/run/docker.sock
+</code></pre>
+
+<p>让 <code>jenkins</code> 成为新所有者，并再次列出权限:</p>
+
+<pre><code>$ chown jenkins: /var/run/docker.sock
+$ ls -l /var/run/docker.sock
+srw-rw---- 1 jenkins jenkins 0 Jan 6 11:45 /var/run/docker.sock
+</code></pre>
+
+<p>现在，<code>jenkins</code> 是所有者，我们不会再得到 <code>Permission Denied</code> 的错误。</p>
+
+<p>为了将 Docker 镜像推入 Docker registry，我们需要通过 <code>settings.xml</code> 将凭据提供给 Maven。我们可以通过配置文件提供程序插件轻松地提供 <code>settings.xml</code>。去 <em>Manage Jenkins – Manage plugins</em> 并安装插件(不重启安装)。</p>
+
+<p>转到 *Manage Jenkins – Managed files*，然后单击 *Add a new Config*。创建 <em>Global Maven settings.xml</em> 并使用 DockerHub 帐户凭据添加以下部分：</p>
+
+<pre><code>&lt;servers&gt;
+  &lt;server&gt;
+    &lt;id&gt;docker.io&lt;/id&gt;
+    &lt;username&gt;docker_username&lt;/username&gt;
+    &lt;password&gt;docker_password&lt;/password&gt;
+  &lt;/server&gt;
+&lt;/servers&gt;
+</code></pre>
+
+<h2 id="5-创建构建工作">5.创建构建工作</h2>
+
+<p>最后要做的是创建我们的构建工作。转到 Jenkins CI 主页，然后单击 *New Item*。我们将把构建工作命名为 *MyKubernetesPlanet*，并选择一个 *Freestyle Project*。</p>
+
+<p>在构建工作的配置部分，我们转到 <em>Source Code Management</em> 部分，并填写 Git URL <a href="https://github.com/mydeveloperplanet/mykubernetesplanet.git">https://github.com/mydeveloperplanet/mykubernetesplanet.git</a> 和 branch <code>*/feature/jenkinsci</code>。</p>
+
+<p><img src="jenkins-job-scm.png" alt="jenkins-job-scm" /></p>
+
+<p>在 <em>Build</em> 部分，我们添加了一个 <em>Invoke top-level Maven targets</em> 的构建步骤。我们将调用以下 Maven 目标来构建我们的应用程序并将 Docker 镜像推送到 Docker registry：</p>
+
+<pre><code>$ clean install dockerfile:push
+</code></pre>
+
+<p>我们还需要设置之前创建的 <em>Maven版本</em> 和 *全局配置文件*。</p>
+
+<p><img src="jenkins-job-build-1.png" alt="jenkins-job-build-1" /></p>
+
+<p>手动为我们的工作启动构建，这将创建 jar 文件，创建我们的 Docker 镜像，并将其推送到 Docker registry。</p>
+
+<h2 id="6-结论">6.结论</h2>
+
+<p>在本文中，我们提供了一种让 Jenkins 实例运行的快速方法，包括执行 Maven 构建、创建 Docker 镜像并将其推入 Docker registry 的构建作业。请注意，这不是一种安全的方法，但是对于实验用例来说，它并没有太大的危害。现在我们已经有了一个完全运行的 Jenkins 实例，我们可以使用它来测试新的 Jenkins 插件。</p>
 
 </div>
 
@@ -435,14 +537,14 @@ def uploadArtifact(def appName, def appVersion, def artifactPath){
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Electron 应用的流水线设计”
-  </a> 更新于：March 13, 2019
+    “30分钟搞定 Jenkins CI”
+  </a> 更新于：June 15, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -461,31 +563,19 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
           <li class="db dib-l mr3">
             <a class="tag" href="/tags/jenkins">
-              Jenkins
+              jenkins
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/pipeline">
-              Pipeline
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/electron">
-              Electron
+            <a class="tag" href="/tags/ci">
+              ci
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/" class="link">
-              30分钟搞定 Jenkins CI
-            </a>
-          </li>
         
       
         
@@ -692,6 +782,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
       
         
         
@@ -753,7 +849,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/03\/2019-03-13-electron-pipeline-demo\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/06\/2019-06-14-setup-jenkins-ci-in-30-minutes\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
