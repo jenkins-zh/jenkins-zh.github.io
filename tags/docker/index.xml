@@ -6,10 +6,25 @@
     <description>Recent content in Docker on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>10节课带你深入学习 DevOps 工程</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</guid>
+      <description>DevOps 现在真的很热门，对于杰出的工程师和 DevOps 专业人员来说有许多工作机会。 如果你想成为一名 DevOps 工程师，那么你来对地方了。在本文中，我将分享一下最好的在线培训课程， 让你成为 DevOps 专业人员。
+Devops 最重要的优势，它可以帮助你更好地发布软件并且利用现代自动化工具对环境和软件开发过程中提供更多控制。这就是 DevOps 专业人员需求呈指数增长的原因。除了 Data Science 和 Machine Learning 外，它也是薪酬最高的 IT 工作之一。
+根据 Glassdoor 的数据，DevOps 的工程师每年的收入从105000美元到146000美元不等。这意味着，如果你正在寻找加薪或想在美好年纪从事一些令人兴奋的工作赚更多的钱，学习 DevOps 可能是一个不错的选择。
+学习像 Jenkins 这样的持续集成工具和像 Docker 这样的容器以及一般的 DevOps 技能，在技术领域获得了巨大的动力。这与几年前的移动应用程序开发类似。
+公司希望新的开发人员能够管理 Web 应用程序的整个生命周期。这意味着开发和部署应用程序。
+为了成为一名有效的 DevOps 工程师，您必须扩展对软件开发中使用的不同工具的知识，包括构建工具（如 Maven、 Ant 和 Gradle ）、单元测试工具（如 Junit 和 Selenium ）、部署工具（如 Docker ）、监控工具（如 New Relic ）、基础设施自动化工具（如 Chef 和 Puppet ）、源代码控制工具，如 Git 和 Github，以及持续集成工具，如 Jenkins 和 TeamCity。这些课程为基本的 DevOps 工具提供了很好的介绍。
+十节面向经验丰富的开发人员 DevOps 课程 在不浪费更多时间的情况下，这里列出了一些学习 DevOps 的最佳课程以及在软件开发和部署过程中实现自动化所需的基本工具。</description>
+    </item>
     
     <item>
       <title>Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线</title>

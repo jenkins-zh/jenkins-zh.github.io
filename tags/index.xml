@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Aws</title>
+      <link>https://jenkins-zh.cn/tags/aws/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cd</title>
       <link>https://jenkins-zh.cn/tags/cd/</link>
       <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
@@ -158,7 +167,7 @@
     <item>
       <title>Devops</title>
       <link>https://jenkins-zh.cn/tags/devops/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/devops/</guid>
       <description></description>
@@ -167,7 +176,7 @@
     <item>
       <title>Docker</title>
       <link>https://jenkins-zh.cn/tags/docker/</link>
-      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/docker/</guid>
       <description></description>
@@ -233,6 +242,15 @@
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://jenkins-zh.cn/tags/git/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/git/</guid>
       <description></description>
     </item>
     

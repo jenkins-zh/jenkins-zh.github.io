@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/</loc>
     <lastmod>2019-06-14T00:00:00+00:00</lastmod>
   </url>
@@ -380,6 +385,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/aws/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/categories/</loc>
     <priority>0</priority>
   </url>
@@ -471,13 +482,13 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2019-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/docker/</loc>
-    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -523,6 +534,12 @@
   <url>
     <loc>https://jenkins-zh.cn/tags/general/</loc>
     <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/git/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -583,7 +600,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -784,7 +801,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
