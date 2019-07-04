@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     
+     <title>介绍 Jenkins 模板引擎 - Jenkins 中文社区</title>
+     <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    
+    <meta name="description" content="这是 StevenTerrana 的客座帖子，他是 Booz Allen Hamilton 的首席技术专家，也是模板引擎插件的首席工程师。他参加了流水线设计特别兴趣小组">
+    
+    
+    <meta name="keywords" content="模板引擎">
+    
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     <meta name="generator" content="Hugo 0.54.0" />
+
+      
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      
+
+    <link href='/dist/main.css' rel='stylesheet' type="text/css" /><style>
+  img.avatar {
+    width: 32px;
+    display: inline;
+  }
+</style>
+<meta property="og:title" content="介绍 Jenkins 模板引擎" />
+<meta property="og:description" content="这是 StevenTerrana 的客座帖子，他是 Booz Allen Hamilton 的首席技术专家，也是模板引擎插件的首席工程师。他参加了流水线设计特别兴趣小组" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" />
+<meta property="article:published_time" content="2019-07-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-01T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="介绍 Jenkins 模板引擎">
+<meta itemprop="description" content="这是 StevenTerrana 的客座帖子，他是 Booz Allen Hamilton 的首席技术专家，也是模板引擎插件的首席工程师。他参加了流水线设计特别兴趣小组">
+
+
+<meta itemprop="datePublished" content="2019-07-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="398">
+
+
+
+<meta itemprop="keywords" content="JTE,pipeline,plugin,pipeline-authoring," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="介绍 Jenkins 模板引擎"/>
+<meta name="twitter:description" content="这是 StevenTerrana 的客座帖子，他是 Booz Allen Hamilton 的首席技术专家，也是模板引擎插件的首席工程师。他参加了流水线设计特别兴趣小组"/>
+
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
+  </head>
+  <body class="ma0 sans-serif bg-primary-color-light">
+    
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://jenkins-zh.cn/" class="link white">
+         Jenkins 中文社区
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/wechat/" class="dim link light-silver"
+            >
+            博客
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/event/" class="dim link light-silver"
+            >
+            活动
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/partner/" class="dim link light-silver"
+            >
+            合作伙伴
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/about/" class="dim link light-silver"
+            >
+            关于我们
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="http://jenkins.io/zh" class="dim link light-silver"
+            target="_blank">
+            Jenkins 官网
+              
+            
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="email-address">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+      placeholder="搜索文档" type="text"
+      name="email-address" value="" style="background-image:url('/images/icon-search.png');background-size:16px 16px;">
+  </fieldset>
+</form>
+</div>
+
+    <div class="list ma0 pa0 dn dib-l"></div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/jenkins-zh/jenkins-zh/" data-size="large" data-show-count="false" aria-label="Star Jenkins WeChat GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+    
+    <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+      
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+
+  <aside class="mw5 br3 mv3 nested-links">
+    
+    
+      
+      
+      <a href="https://github.com/linan607" target="_blank" class="link dim v-mid dib">
+        <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
+<path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
+</svg>
+
+      </a>
+
+  
+  <div>
+    作者：<span class="originalAuthor">Steven Terrana</span>
+    <div>
+      <a class="originalLink" href="https://jenkins.io/blog/2019/05/09/templating-engine/" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
+  </aside>
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">此页面上的内容</p>
+  	<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#流水线模板">流水线模板</a></li>
+<li><a href="#jte-实战">JTE 实战</a></li>
+<li><a href="#实现模板">实现模板</a>
+<ul>
+<li><a href="#步骤1-创建流水线配置存储库">步骤1、创建流水线配置存储库</a></li>
+<li><a href="#步骤2-创建流水线模板">步骤2、创建流水线模板</a></li>
+<li><a href="#步骤3-创建库">步骤3、 创建库</a></li>
+<li><a href="#步骤4-实施步骤">步骤4、实施步骤</a></li>
+<li><a href="#步骤5-创建配置文件">步骤5、创建配置文件</a></li>
+<li><a href="#步骤6-在-jenkins-中配置治理层">步骤6、在 Jenkins 中配置治理层</a></li>
+<li><a href="#步骤7-为两个应用程序创建多分支流水线">步骤7、为两个应用程序创建多分支流水线</a></li>
+<li><a href="#步骤8-运行流水线">步骤8、运行流水线</a></li>
+</ul></li>
+<li><a href="#模板引擎的好处">模板引擎的好处</a></li>
+<li><a href="#应用组织治理">应用组织治理</a></li>
+<li><a href="#优化代码重用">优化代码重用</a></li>
+<li><a href="#简化流水线可维护性">简化流水线可维护性</a></li>
+<li><a href="#参与进来">参与进来！</a></li>
+<li><a href="#高级功能">高级功能</a></li>
+<li><a href="#更多资源">更多资源</a>
+<ul>
+<li><a href="#对于这个演示">对于这个演示</a></li>
+<li><a href="#其他资源">其他资源</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 插件的微基准测试框架 ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="dib f6 pr1 hover-bg-light-gray br-100" title="使用Active-Choices-Plugin插件将十个Job合成一个">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">介绍 Jenkins 模板引擎</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      这是 StevenTerrana 的客座帖子，他是 Booz Allen Hamilton 的首席技术专家，也是模板引擎插件的首席工程师。他参加了流水线设计特别兴趣小组
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p><img src="JTE.jpg" alt="JTE" /></p>
+
+<p>在企业范围内实施 DevSecOps 实践具有挑战性。由于组织内的不同应用程序正在使用多种编程语言、自动化测试框架和安全遵从性安全合规工具，因此每个团队构建和维护流水线变得很难。</p>
+
+<p>无论应用程序使用哪个特定的技术栈，大多数流水线都将遵循相同的通用工作流。<a href="https://plugins.jenkins.io/templating-engine">模板引擎插件</a>（简写为 JTE ，用于 Jenkins 模板引擎）允许您通过创建不依赖于工具的模板化工作流来获取效率，每个团队都可以重用这些工作流。</p>
+
+<p>作为公共部门和私营部门客户的技术顾问，我们在 Booz Allen 发现，每个新项目都要从头开始建造 DevSecOps 流水线。通过开发 Jenkins 模板引擎，我们已经看到流水线开发从几个月减少到几天，现在我们可以重用工具集成，同时为 Jenkins 流水线带来新的治理级别。</p>
+
+<h2 id="流水线模板">流水线模板</h2>
+
+<p>组织受益于让应用程序开发人员专注于他们最擅长的工作：构建应用程序。支持这个，意味着建立一个集中式的 DevOps 团队，负责维护平台基础设施，并创建开发团队使用的 CI/CD 流水线。</p>
+
+<p>随着基于微服务的体系结构的兴起，一个集中的 DevOps 团队可以同时支持许多不同的开发团队；所有这些团队都可能利用不同的编程语言和自动化测试工具。</p>
+
+<p>虽然开发团队之间的工具可能不同，但工作流通常是相同的：单元测试、静态代码分析、构建和发布制品、部署它，然后针对部署的应用程序执行不同类型的测试。</p>
+
+<blockquote>
+<p>模板引擎插件允许您从每个被团队定义可继承通用工作流的存储库中删除 Jenkinsfile 。作为替代每个存储库需定义整个流水线，团队提供一个使用工作流的工具配置文件。</p>
+</blockquote>
+
+<h2 id="jte-实战">JTE 实战</h2>
+
+<p>让我们通过一个简单的示例来演示模板的可重用性：
+      流水线模板例子：
+      <code>
+      unit_test()
+      build()
+      static_code_analysis()
+</code>
+模板利用库提供的步骤概述工作流团队必须实现的步骤。虽然模板的执行方式与任何其他 <code>Jenkinsfile</code> 都一样（这意味着支持标准的脚本化和声明性语法），但模板的目标应该是以纯英语的方式阅读，并避免任何技术实现。</p>
+
+<blockquote>
+<p>通过这种方式利用模板，您可以将流水线的业务逻辑（应该在什么时候发生）与技术实现（实际将要发生什么）分开。其结果是一个 CI/CD 管道，当同时支持多个团队时，该流水线被证明非常容易管理。</p>
+</blockquote>
+
+<p>此模板（ <code>unit_test</code> 、 <code>build</code> 和 <code>static_code_analysis</code> ）概述的步骤是专门命名的。通过这种方式，团队可以使用的不同库共享同一流水线。</p>
+
+<h2 id="实现模板">实现模板</h2>
+
+<p>使用模板引擎实现可共享流水线需要几个关键组件：
+1.  <strong>流水线模板</strong>：概述要执行的工作流
+2.  <strong>库</strong>：提供工作流步骤的技术实现
+3.  <strong>配置文件</strong>：指定要使用的库及其配置</p>
+
+<h3 id="步骤1-创建流水线配置存储库">步骤1、创建流水线配置存储库</h3>
+
+<p>流水线配置存储库用于存储团队继承的常见配置和流水线模板。</p>
+
+<p>这个<a href="https://github.com/steven-terrana/example-jte-configuration">示例流水线配置存储库</a>稍后将被配置为<a href="https://boozallen.github.io/jenkins-templating-engine/pages/Governance/index.html#governance-tier">治理层</a>的一部分：JTE 的机制中允许您构建表示组织的层次结构配置。</p>
+
+<p>治理层包含三个方面：
+1.  流水线模板
+2.  库资源清单
+3.  层的配置文件( <code>pipeline_config.groovy</code> )</p>
+
+<blockquote>
+<p>治理层的流水线模板和配置文件存储在流水线配置存储库中。</p>
+</blockquote>
+
+<p>在 Jenkins 中配置治理层时，您将为包含上述组件的存储库以及可以找到这些制品的基本目录提供源代码管理位置。</p>
+
+<h3 id="步骤2-创建流水线模板">步骤2、创建流水线模板</h3>
+
+<p>接下来，我们将为治理层创建一个 <code>Jenkinsfile</code> 。在 JTE 中， <code>Jenkinsfile</code> 是执行将使用的默认流水线模板。</p>
+
+<pre><code>Jenkinsfile
+unit_test()
+build()
+static_code_analysis()
+</code></pre>
+
+<h3 id="步骤3-创建库">步骤3、 创建库</h3>
+
+<p>模板引擎插件实现了一个版本的 Jenkins 共享库，以增强库的可重用性。库是源代码存储库中的根目录，并且该存储库已在治理层上配置为库源。</p>
+
+<p>在我们的示例中，流水线模板需要执行单元测试、打包制品和运行静态代码分析。</p>
+
+<p>假设我们有一些团队使用 <strong>Gradle</strong> ，一些团队使用 <strong>Maven</strong> 来构建和测试他们的应用程序，但是他们都将使用 SonarQube 来执行静态代码分析。</p>
+
+<p>在这个场景中，我们应该创建 <code>gradle</code> 、 <code>maven</code> 和 <code>sonarqube</code> 库。</p>
+
+<pre><code>|- gradle/
+  \-- build.groovy
+  \-- unit_test.groovy
+|- maven/
+  \-- build.groovy
+  \-- unit_test.groovy
+|- sonarqube/
+  \-- static_code_analysis.groovy
+</code></pre>
+
+<h3 id="步骤4-实施步骤">步骤4、实施步骤</h3>
+
+<p>实现库步骤与将常规全局变量作为默认 Jenkins 共享库的一部分写入完全相同。</p>
+
+<p>为了这个演示的目的，我们将让每个步骤打印出步骤名称和贡献库。</p>
+
+<pre><code class="language-groovy">gradle/build.groovy
+void call(){
+    println &quot;gradle: build()&quot;
+}
+</code></pre>
+
+<blockquote>
+<p>读更多关于 <a href="https://boozallen.github.io/jenkins-templating-engine/pages/Library_Development/index.html">JTE 开发库</a>。</p>
+</blockquote>
+
+<h3 id="步骤5-创建配置文件">步骤5、创建配置文件</h3>
+
+<p>JTE 的配置文件名为 <code>pipeline_config.groovy</code> 。</p>
+
+<p>在治理层，我们将建立一个配置文件，具体说明应用程序之间的共同配置。在此情况下，两种应用都是使用 <code>sonarqube</code>  库。</p>
+
+<pre><code class="language-groovy">pipeline_config.groovy
+libraries{
+  merge = true // allow individual apps to contribute additional libraries
+  sonarqube
+}
+</code></pre>
+
+<p>接下来，我们将创建另外两个表示 <a href="https://github.com/steven-terrana/example-jte-app-maven">Maven</a> 和 <a href="https://github.com/steven-terrana/example-jte-app-gradle">Gradle</a> 应用程序的存储库。在这些存储库中，我们只需要一个特定的 <code>pipeline_config.groovy</code> 文件。</p>
+
+<p>这些存储库都包含应用程序 <code>pipeline_config.groovy</code> 配置文件。</p>
+
+<pre><code class="language-groovy">maven app: pipeline_config.groovy
+libraries{
+    maven
+}
+</code></pre>
+
+<pre><code class="language-groovy">gradle app: pipeline_config.groovy
+libraries{
+    gradle
+}
+</code></pre>
+
+<h3 id="步骤6-在-jenkins-中配置治理层">步骤6、在 Jenkins 中配置治理层</h3>
+
+<p>既然我们有了<a href="https://github.com/steven-terrana/example-jte-configuration">流水线配置存储库</a>和<a href="https://github.com/steven-terrana/example-jte-libraries">库源存储库</a>，那么就可以在 Jenkins 中配置<a href="https://boozallen.github.io/jenkins-templating-engine/pages/Governance/index.html#governance-tier">治理层</a>：</p>
+
+<p><img src="governance_tier.png" alt="governance_tier" /></p>
+
+<blockquote>
+<p>上图中显示的配置可以在以下找到 <code>Manage Jenkins &gt;&gt; Configure System</code> 。</p>
+
+<p>通过模板引擎，您可以通过 Jenkins 中的文件夹表示此结构，从而创建与组织分类相匹配的流水线治理层次结构。</p>
+</blockquote>
+
+<h3 id="步骤7-为两个应用程序创建多分支流水线">步骤7、为两个应用程序创建多分支流水线</h3>
+
+<p>当为每个应用程序创建多分支流水线项目时，模板引擎插件提供一个名为 <strong>Jenkins 模板引擎</strong>的新 <code>Project Recognizer</code> 。项目设置为在存储库中的所有分支使用模板引擎框架。。</p>
+
+<p><img src="project_recognizer.png" alt="project_recognizer" /></p>
+
+<blockquote>
+<p>您还可以为 GitHub 组织项目设置 <strong>Jenkins 模板引擎</strong>项目识别器，使您能够轻松地在整个 GitHub 组织中共享相同的流水线！</p>
+</blockquote>
+
+<h3 id="步骤8-运行流水线">步骤8、运行流水线</h3>
+
+<p>就这样！现在，这两个应用程序将利用完全相同的流水线模板，同时具有选择工作流每个阶段应使用哪些工具的灵活性。</p>
+
+<p>下面是两个应用程序运行流水线的控制台日志的示例输出：</p>
+
+<pre><code>Gradle:
+[JTE] Obtained Template Configuration File pipeline_config.groovy from git https://github.com/steven-terrana/example-jte-configuration
+[JTE] Obtained Template Configuration File pipeline_config.groovy from git https://github.com/steven-terrana/example-jte-app-gradle.git
+[JTE] Loading Library sonarqube from git https://github.com/steven-terrana/example-jte-libraries.git
+[JTE] Loading Library gradle from git https://github.com/steven-terrana/example-jte-libraries.git
+...
+[JTE] Obtained Template Jenkinsfile from git https://github.com/steven-terrana/example-jte-configuration
+[JTE][Step - gradle/unit_test]
+[Pipeline] echo
+gradle: unit_test()
+[JTE][Step - gradle/build]
+[Pipeline] echo
+gradle: build()
+[JTE][Step - sonarqube/static_code_analysis]
+[Pipeline] echo
+sonarqube: static_code_analysis()
+[Pipeline] End of Pipeline
+</code></pre>
+
+<pre><code>Maven:
+[JTE] Obtained Template Configuration File pipeline_config.groovy from git https://github.com/steven-terrana/example-jte-configuration
+[JTE] Obtained Template Configuration File pipeline_config.groovy from git https://github.com/steven-terrana/example-jte-app-maven.git
+[JTE] Loading Library sonarqube from git https://github.com/steven-terrana/example-jte-libraries.git
+[JTE] Loading Library maven from git https://github.com/steven-terrana/example-jte-libraries.git
+...
+[JTE] Obtained Template Jenkinsfile from git https://github.com/steven-terrana/example-jte-configuration
+[JTE][Step - maven/unit_test]
+[Pipeline] echo
+maven: unit_test()
+[JTE][Step - maven/build]
+[Pipeline] echo
+maven: build()
+[JTE][Step - sonarqube/static_code_analysis]
+[Pipeline] echo
+sonarqube: static_code_analysis()
+[Pipeline] End of Pipeline
+</code></pre>
+
+<h2 id="模板引擎的好处">模板引擎的好处</h2>
+
+<p><img src="jte_benefits.png" alt="jte_benefits" /></p>
+
+<h2 id="应用组织治理">应用组织治理</h2>
+
+<p>利用模板引擎插件，您可以定义企业级的、经过批准的工作流，无论使用什么工具，团队都可以使用这些工作流。这种自上而下的方法使得在组织中扩展和执行 DevSecOps 原则变得非常容易。</p>
+
+<h2 id="优化代码重用">优化代码重用</h2>
+
+<p>实际上，组织中的每个团队都不需要反复思考如何做相同的事情。在 Booz Allen ，我们已经看到流水线开发时间从几个月减少到几天，因为我们不断地重复使用和扩展模板引擎库组合，作为解决方案交付平台的一部分。</p>
+
+<h2 id="简化流水线可维护性">简化流水线可维护性</h2>
+
+<p>通常，DevOps 工程师会发现自己同时为多个开发团队构建和支持流水线。通过将工作流与技术实现分离，并将流水线定义合并到一个集中的位置，模板引擎插件允许 DevOps 工程师更快地扩展。</p>
+
+<h2 id="参与进来">参与进来！</h2>
+
+<p><a href="https://plugins.jenkins.io/templating-engine">模板引擎插件</a>是开源的，并在 Jenkins 更新中心提供。</p>
+
+<p>我们总是感谢反馈和贡献！如果你有一个有趣的用例或者想问一些问题，可以试试 <a href="https://gitter.im/jenkinsci/templating-engine-plugin">Gitter 上的模板引擎插件</a>。</p>
+
+<h2 id="高级功能">高级功能</h2>
+
+<ul>
+<li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Governance/conditional_inheritance.html">配置文件条件继承</a></li>
+<li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Library_Development/externalizing_config.html">外部化库配置</a></li>
+<li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Library_Development/lifecycle_hooks.html">面向方面的生命周期钩子</a></li>
+<li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Governance/index.html#pipeline-template-selection">多个流水线模板</a></li>
+<li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Templating/configuration_files/default_step_implementation.html">默认步骤实现</a></li>
+<li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Templating/configuration_files/sandboxing.html">配置文件 DSL 沙盒</a></li>
+</ul>
+
+<h2 id="更多资源">更多资源</h2>
+
+<h3 id="对于这个演示">对于这个演示</h3>
+
+<ul>
+<li><a href="https://github.com/steven-terrana/example-jte-configuration">Pipeline 配置存储库</a></li>
+<li><a href="https://github.com/steven-terrana/example-jte-libraries">示例库</a></li>
+<li><a href="https://github.com/steven-terrana/example-jte-app-maven">Maven 存储库示例</a></li>
+<li><a href="https://github.com/steven-terrana/example-jte-app-gradle">Gradle 存储库示例</a></li>
+</ul>
+
+<h3 id="其他资源">其他资源</h3>
+
+<ul>
+<li><a href="https://boozallen.github.io/jenkins-templating-engine/">模板引擎文档</a></li>
+<li><a href="https://github.com/jenkinsci/templating-engine-plugin">源代码</a></li>
+<li><a href="https://github.com/boozallen/sdp-libraries">Booz Allen 的 SDP 流水线库</a></li>
+<li><a href="https://boozallen.com/">博思艾伦咨询公司</a></li>
+</ul>
+
+</div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “介绍 Jenkins 模板引擎”
+  </a> 更新于：July 1, 2019
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">改善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/jte">
+              JTE
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/pipeline">
+              pipeline
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/plugin">
+              plugin
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/pipeline-authoring">
+              pipeline-authoring
+            </a>
+          </li>
+        
+              
+      
+        
+        
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/07\/2019-07-01-introducing-the-jenkins-templating-engine\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
+
+    </main>
+
+    <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    <div class="pb3 pt4 w-100 w-50-ns">
+
+      <div class="b f3  light-gray mb3 nested-links tc">
+        由 <a href="https://github.com/jenkins-zh/jenkins-zh/graphs/contributors" target="_blank" class="link">Jenkins 社区贡献者</a> 维护<br/>
+      </div>
+
+      <ul class="center f6 list ma0 mv3 pa0 tc" style="display:none"><li class="dib mr3"><a href="https://github.com/jenkins-zh/jenkins-zh/issues/new" class="dim link light-gray pv2">File an Issue</a></li></ul>
+
+      <ul class="center f6 list ma0 mv4 pa0 tc">
+        <li class="dib mr3">
+          <a href="https://twitter.com/suren69811254" target="_blank" class="dim link light-gray pv2">@suren69811254</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://www.youtube.com/channel/UC63xz3pq26BBgwB3cnwCoqQ" target="_blank" class="dim link light-gray pv2">YouTube</a>
+        </li>
+      </ul>
+
+      
+    </div>
+
+    <div>
+      <a href="https://mp.weixin.qq.com/s/vifdduC3kRGSIMpyL03yVA" target="_blank">
+        <img src="https://jenkins.io/images/jenkins-wechat.png" with="100" height="100">
+      </a>
+    </div>
+
+  </div>
+
+  <div class="f7 gray mb5 mb0-ns ph3 w-100" style="display:none"> 
+    <p class="dib mr4">Jenkins&reg; is a registered trademark of <a href="https://www.spi-inc.org/" class="link">Software in the Public Interest, Inc.</a></p>
+    <p class="dib">Copyright 2018–2019 the original authors.</p>
+  </div>
+
+
+  <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu pb3 dn">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/wechat/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          博客
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/event/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          活动
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/partner/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          合作伙伴
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/about/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          关于我们
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="http://jenkins.io/zh" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Jenkins 官网
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu pb3 dn">
+    
+
+<ul class="list dib ph0 ma0 scrolling-touch tc">
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Docs Menu</button>
+</div>
+</div>
+
+</footer>
+
+    
+<link href="/dist/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/jenkins-zh.cn\/";
+    
+</script>
+<script src="/dist/lunr.js"></script>
+<script src="/dist/autocomplete.js"></script>
+<script src="/dist/jquery-3.2.1.min.js"></script>
+<script src="/dist/search.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6db234f713318730f0e5f6a95bdd8d47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?6276dcef5c15f276644151772390c1f9":"https://jspassport.ssl.qhimg.com/11.0.1.js?6276dcef5c15f276644151772390c1f9";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  </body>
+</html>

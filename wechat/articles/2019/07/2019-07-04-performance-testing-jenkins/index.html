@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     
+     <title>Jenkins 插件的微基准测试框架 - Jenkins 中文社区</title>
+     <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    
+    <meta name="description" content="本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试">
+    
+    
+    <meta name="keywords" content="Jenkins 微基准测试框架,Jenkins">
+    
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     <meta name="generator" content="Hugo 0.54.0" />
+
+      
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      
+
+    <link href='/dist/main.css' rel='stylesheet' type="text/css" /><style>
+  img.avatar {
+    width: 32px;
+    display: inline;
+  }
+</style>
+<meta property="og:title" content="Jenkins 插件的微基准测试框架" />
+<meta property="og:description" content="本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" />
+<meta property="article:published_time" content="2019-07-04T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-04T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Jenkins 插件的微基准测试框架">
+<meta itemprop="description" content="本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试">
+
+
+<meta itemprop="datePublished" content="2019-07-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="356">
+
+
+
+<meta itemprop="keywords" content="jmh,plugins,benchmark,performance,developer,gsoc,gsoc2019," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jenkins 插件的微基准测试框架"/>
+<meta name="twitter:description" content="本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试"/>
+
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
+  </head>
+  <body class="ma0 sans-serif bg-primary-color-light">
+    
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://jenkins-zh.cn/" class="link white">
+         Jenkins 中文社区
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/wechat/" class="dim link light-silver"
+            >
+            博客
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/event/" class="dim link light-silver"
+            >
+            活动
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/partner/" class="dim link light-silver"
+            >
+            合作伙伴
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/about/" class="dim link light-silver"
+            >
+            关于我们
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="http://jenkins.io/zh" class="dim link light-silver"
+            target="_blank">
+            Jenkins 官网
+              
+            
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="email-address">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+      placeholder="搜索文档" type="text"
+      name="email-address" value="" style="background-image:url('/images/icon-search.png');background-size:16px 16px;">
+  </fieldset>
+</form>
+</div>
+
+    <div class="list ma0 pa0 dn dib-l"></div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/jenkins-zh/jenkins-zh/" data-size="large" data-show-count="false" aria-label="Star Jenkins WeChat GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+    
+    <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+      
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+
+  <aside class="mw5 br3 mv3 nested-links">
+    
+    
+      
+        <h3 class="f4 dib author">
+            Donghui Wang
+        </h3>
+
+      
+      
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
+          a long-time Jenkins user and contributor
+        </p>
+      
+      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
+        <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
+<path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
+</svg>
+
+      </a>
+
+  
+  <div>
+    作者：<span class="originalAuthor">abhyudayasharma</span>
+    <div>
+      <a class="originalLink" href="https://jenkins.io/blog/2019/06/21/performance-testing-jenkins/" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
+  </aside>
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">此页面上的内容</p>
+  	<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#jenkins-插件的微基准测试框架">Jenkins 插件的微基准测试框架</a>
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#示例基准">示例基准</a>
+<ul>
+<li><a href="#无需任何特别的设置">无需任何特别的设置</a></li>
+<li><a href="#使用配置即代码">使用配置即代码</a></li>
+<li><a href="#更多示例">更多示例</a></li>
+</ul></li>
+<li><a href="#运行基准测试">运行基准测试</a>
+<ul>
+<li><a href="#从-maven-运行基准测试">从 Maven 运行基准测试</a></li>
+<li><a href="#在-ci-jenkins-io-运行基准测试">在 ci.jenkins.io 运行基准测试</a></li>
+</ul></li>
+<li><a href="#可视化基准测试结果">可视化基准测试结果</a></li>
+<li><a href="#一些提示与技巧">一些提示与技巧</a></li>
+<li><a href="#链接及反馈">链接及反馈</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+
+		
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" class="dib f6 pr1 hover-bg-light-gray br-100" title="介绍 Jenkins 模板引擎">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 插件的微基准测试框架</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p><img src="reflection.jpg" alt="reflection" /></p>
+
+<h2 id="jenkins-插件的微基准测试框架">Jenkins 插件的微基准测试框架</h2>
+
+<p>作为我 <a href="https://jenkins.io/projects/gsoc/2019/role-strategy-performance/">Google 编程夏令营</a>的一部分，我一直致力于改进角色策略插件（Role Strategy Plugin）的性能。
+由于没有现有的方法来度量性能以及在 Jenkins 插件上做基准测试，
+我在项目第一阶段的工作是创建一个框架在一个 Jenkins 实例中运行 Jenkins 插件中的基准测试。
+为了让我们的工作更容易些，我们选择了 <a href="http://openjdk.java.net/jeps/230">Java微基准测试工具</a>来运行这些基准。
+这使我们能够可靠地度量对时间要求严格的功能的性能，将有助于让 Jenkins 为每个人更快的运转。</p>
+
+<p>最近在 Jenkins 单元测试工具<a href="https://github.com/jenkinsci/jenkins-test-harness/releases/tag/jenkins-test-harness-2.50">2.50</a>中发布了微基准测试框架。
+下面的博客文章展示了如何在插件中运行基准测试。</p>
+
+<h3 id="介绍">介绍</h3>
+
+<p>该框架通过为 JMH 基准的每个 fork 启动一个临时的 Jenkins 实例来运行，
+就像 Jenkins 测试工具中的 <code>JenkinsRule</code>。
+基准测试是直接从 JUnit 测试运行的，它允许在运行过程中失败构建，并且很容易从 IDE 中运行基准测试，就像单元测试一样。
+你可以很容易地通过使用 Java 方法或使用 Jenkins plugin:configuration-as-code:[配置即代码插件]来配置基准并将路径传递到 YAML 文件。</p>
+
+<p>要从您的插件运行基准测试，您需要做以下工作：</p>
+
+<ul>
+<li>将所需的最低 Jenkins 版本升级到2.60.3或更高版本</li>
+<li>将 Plugin-POM 升级到 ≥ 3.46 的版本或手动更新 Jenkins 测试工具到 ≥ 2.51 的版本</li>
+</ul>
+
+<p>现在，要运行基准测试，您需要有一个包含 <code>@Test</code> 的基准测试运行程序，以便它可以像 JUnit 测试一样运行。
+从测试方法内部，可以使用 JMH 提供的 <code>OptionsBuilder</code> 来配置基准。
+例如：</p>
+
+<pre><code class="language-java">public class BenchmarkRunner {
+    @Test
+    public void runJmhBenchmarks() throws Exception {
+        ChainedOptionsBuilder options = new OptionsBuilder()
+                .mode(Mode.AverageTime)
+                .forks(2)
+                .result(&quot;jmh-report.json&quot;);
+
+        // Automatically detect benchmark classes annotated with @JmhBenchmark
+        new BenchmarkFinder(getClass()).findBenchmarks(options);
+        new Runner(options.build()).run();
+    }
+}
+</code></pre>
+
+<h3 id="示例基准">示例基准</h3>
+
+<p>现在，你可以编写第一个基准：</p>
+
+<h4 id="无需任何特别的设置">无需任何特别的设置</h4>
+
+<pre><code class="language-java">@JmhBenchmark
+public class JmhStateBenchmark {
+    public static class MyState extends JmhBenchmarkState {
+    }
+
+    @Benchmark
+    public void benchmark(MyState state) {
+        // benchmark code goes here
+        state.getJenkins().setSystemMessage(&quot;Hello world&quot;);
+    }
+}
+</code></pre>
+
+<h4 id="使用配置即代码">使用配置即代码</h4>
+
+<p>要使用配置即代码，除了上面的依赖外，还需要在你的 <code>pom.xml</code> 添加如下内容：</p>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;io.jenkins&lt;/groupId&gt;
+    &lt;artifactId&gt;configuration-as-code&lt;/artifactId&gt;
+    &lt;version&gt;1.21&lt;/version&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.jenkins&lt;/groupId&gt;
+    &lt;artifactId&gt;configuration-as-code&lt;/artifactId&gt;
+    &lt;version&gt;1.21&lt;/version&gt;
+    &lt;classifier&gt;tests&lt;/classifier&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>现在配置一个基准很简单，只需提供 YAML 文件的路径并指定包含基准状态的类。</p>
+
+<pre><code class="language-java">@JmhBenchmark
+public class SampleBenchmark {
+    public static class MyState extends CascJmhBenchmarkState {
+        @Nonnull
+        @Override
+        protected String getResourcePath() {
+            return &quot;config.yml&quot;;
+        }
+
+        @Nonnull
+        @Override
+        protected Class&lt;?&gt; getEnclosingClass() {
+            return SampleBenchmark.class;
+        }
+    }
+
+    @Benchmark
+    public void benchmark(MyState state) {
+        Jenkins jenkins = state.getJenkins(); // jenkins is configured and ready to be benchmarked.
+        // your benchmark code goes here...
+    }
+}
+</code></pre>
+
+<h4 id="更多示例">更多示例</h4>
+
+<p>作为这个项目的一部分，在角色策略插件（Role Strategy Plugin）中创建了一些基准测试，它们展示了为各种情况配置实例。
+你可以在<a href="https://github.com/jenkinsci/role-strategy-plugin/tree/master/src/test/java/jmh/benchmarks">这里</a>找到它们。</p>
+
+<h3 id="运行基准测试">运行基准测试</h3>
+
+<h4 id="从-maven-运行基准测试">从 Maven 运行基准测试</h4>
+
+<p>为了方便从 Maven 运行基准测试，创建了一个 Maven 配置文件来运行基准测试，并且可以从 Plugin-POM 3.45 版本开始使用。
+然后你可以使用 <code>mvn test -Dbenchmark</code> 从命令行运行基准测试。</p>
+
+<h4 id="在-ci-jenkins-io-运行基准测试">在 ci.jenkins.io 运行基准测试</h4>
+
+<p>如果您的插件托管在 ci.jenkins.io 上，那么可以直接从 Jenkinsfile 轻松地运行基准测试。
+通过在 Jenkinsfile 中的 <code>buildPlugin()</code> 步骤后使用 <code>runBenchmarks()</code> 方法，该步骤现在在
+<a href="https://github.com/jenkins-infra/pipeline-library">Jenkins 流水线库</a>。
+此函数还接受生成的 JMH 基准报告的路径作为可选的参数并存档基准结果。
+在 pull request 构建中运行基准测试允许您不断地进行测试监视给定更改的性能影响。
+例如，来自角色策略插件（Role Strategy Plugin）的 Jenkinsfile ：</p>
+
+<pre><code class="language-grovvy">buildPlugin()
+runBenchmarks('jmh-report.json')
+</code></pre>
+
+<h3 id="可视化基准测试结果">可视化基准测试结果</h3>
+
+<p>可以使用 plugin:jmh-report[JMH 报告插件]或将基准测试报告传递给 <a href="https://jmh.morethan.io">JMH 可视化工具</a> web 服务来可视化生成的基准报告（JSON格式）。
+举个例子，这里有一些来自角色策略插件（Role Strategy Plugin）中基准测试的可视化报告:</p>
+
+<p><img src="jmh-visualizer.png" alt="由 JMH 可视化工具可视化的角色策略插件基准测试" /></p>
+
+<p>上面所看到的这些改进是通过对插件的一个小的 <a href="https://github.com/jenkinsci/role-strategy-plugin/pull/81">pull request</a> 获得的，并展示了即使是看起来很小的更改也可以带来很大的性能改进。
+微基准测试有助于找到这些热点，并估计更改的影响。</p>
+
+<h3 id="一些提示与技巧">一些提示与技巧</h3>
+
+<ul>
+<li>由于上面示例中的 <code>BenchmarkRunner</code> 类名不符合 Maven Surefire 插件的测试条件命名约定，基准测试不会干扰 JUnit 测试。</li>
+<li>基准测试方法需要用 <code>@Benchmark</code> 进行注解，以便 JMH 检测它们。</li>
+<li>当注解为 <code>@JmhBenchmark</code> 时，包含基准的类由 <code>BenchmarkFinder</code> 自动找到。</li>
+<li>对 Jenkins 实例的引用可以通过 <code>JmhBenchmarkState#getJenkins()</code> 或通过 <code>Jenkins.getInstance()</code>  获得，就像您在其他情况下会做的那样。</li>
+<li><code>JmhBenchmarkState</code> 提供了 <code>setup()</code> 和 <code>tearDown()</code> 方法，根据您的基准测试的需求，可以重写这些方法来配置 Jenkins 实例。</li>
+<li>由于 <code>highmem</code> 节点的可用性有限，基于 ci.jenkins.io 的基准测试目前被限流。</li>
+<li>基准框架在 Jenkins 测试工具2.50中提供，建议使用<a href="https://github.com/jenkinsci/jenkins-test-harness/releases/tag/jenkins-test-harness-2.51">2.51</a>版本，因为它包含一些错误修复。</li>
+</ul>
+
+<h3 id="链接及反馈">链接及反馈</h3>
+
+<p>如果您有任何反馈、评论或问题，
+请通过<a href="https://gitter.im/jenkinsci/role-strategy-plugin">角色策略插件（Role Strategy Plugin） Gitter 聊天室</a>
+或通过 <a href="mailto:jenkinsci-dev@googlegroups.com">Jenkins 开发者邮件列表</a>随时与我联系。</p>
+
+<ul>
+<li><a href="https://drive.google.com/file/d/1gig6u64rzvSzGKjN_PTTXTkSXQ9Ah7E5/view?usp=sharing">演示幻灯片</a></li>
+<li><a href="https://youtu.be/lyfbmhQd0Ag?t=847">在平台 SIG 会议中的示例</a></li>
+<li>微基准测试框架的文档：
+
+<ul>
+<li><a href="https://github.com/jenkinsci/jenkins-test-harness/blob/master/docs/jmh-benchmarks.adoc">编写基准测试 (Jenkins 测试工具)</a></li>
+<li><a href="https://github.com/jenkinsci/configuration-as-code-plugin/blob/master/docs/benchmarks/jmh-benchmarks.md">使用 JCasC 预配置基准</a></li>
+<li><a href="https://github.com/jenkinsci/plugin-pom#running-benchmarks">使用 Plugin POM profile 运行基准测试</a></li>
+<li><a href="https://github.com/jenkins-infra/pipeline-library#runbenchmarks">在 ci.jenkins.io 上运行基准测试的构建步骤</a></li>
+</ul></li>
+</ul>
+
+</div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+<h2>参考</h2>
+<ul>
+	
+	<li><a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/">Jenkins 文档特别兴趣小组</a></li>
+	
+</ul>
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “Jenkins 插件的微基准测试框架”
+  </a> 更新于：July 4, 2019
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">改善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/jmh">
+              jmh
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/plugins">
+              plugins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/benchmark">
+              benchmark
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/performance">
+              performance
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/developer">
+              developer
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/gsoc">
+              gsoc
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/gsoc2019">
+              gsoc2019
+            </a>
+          </li>
+        
+              
+      
+        
+        
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/07\/2019-07-04-performance-testing-jenkins\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
+
+    </main>
+
+    <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    <div class="pb3 pt4 w-100 w-50-ns">
+
+      <div class="b f3  light-gray mb3 nested-links tc">
+        由 <a href="https://github.com/jenkins-zh/jenkins-zh/graphs/contributors" target="_blank" class="link">Jenkins 社区贡献者</a> 维护<br/>
+      </div>
+
+      <ul class="center f6 list ma0 mv3 pa0 tc" style="display:none"><li class="dib mr3"><a href="https://github.com/jenkins-zh/jenkins-zh/issues/new" class="dim link light-gray pv2">File an Issue</a></li></ul>
+
+      <ul class="center f6 list ma0 mv4 pa0 tc">
+        <li class="dib mr3">
+          <a href="https://twitter.com/suren69811254" target="_blank" class="dim link light-gray pv2">@suren69811254</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://www.youtube.com/channel/UC63xz3pq26BBgwB3cnwCoqQ" target="_blank" class="dim link light-gray pv2">YouTube</a>
+        </li>
+      </ul>
+
+      
+    </div>
+
+    <div>
+      <a href="https://mp.weixin.qq.com/s/vifdduC3kRGSIMpyL03yVA" target="_blank">
+        <img src="https://jenkins.io/images/jenkins-wechat.png" with="100" height="100">
+      </a>
+    </div>
+
+  </div>
+
+  <div class="f7 gray mb5 mb0-ns ph3 w-100" style="display:none"> 
+    <p class="dib mr4">Jenkins&reg; is a registered trademark of <a href="https://www.spi-inc.org/" class="link">Software in the Public Interest, Inc.</a></p>
+    <p class="dib">Copyright 2018–2019 the original authors.</p>
+  </div>
+
+
+  <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu pb3 dn">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/wechat/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          博客
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/event/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          活动
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/partner/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          合作伙伴
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/about/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          关于我们
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="http://jenkins.io/zh" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Jenkins 官网
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu pb3 dn">
+    
+
+<ul class="list dib ph0 ma0 scrolling-touch tc">
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Docs Menu</button>
+</div>
+</div>
+
+</footer>
+
+    
+<link href="/dist/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/jenkins-zh.cn\/";
+    
+</script>
+<script src="/dist/lunr.js"></script>
+<script src="/dist/autocomplete.js"></script>
+<script src="/dist/jquery-3.2.1.min.js"></script>
+<script src="/dist/search.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6db234f713318730f0e5f6a95bdd8d47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?6276dcef5c15f276644151772390c1f9":"https://jspassport.ssl.qhimg.com/11.0.1.js?6276dcef5c15f276644151772390c1f9";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  </body>
+</html>

@@ -45,7 +45,7 @@
 
 <meta itemprop="datePublished" content="2019-06-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-06-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="525">
+<meta itemprop="wordCount" content="521">
 
 
 
@@ -312,13 +312,12 @@ var trackOutboundLink = function(id, url) {
 <li>我们使用了 Ubuntu 18.04；</li>
 <li>必须安装 Docker，有关安装说明，请参见<a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">此处</a>；</li>
 <li>我们需要在 Docker registry 来推送我们的 Docker 镜像。最简单的方法是在<a href="https://hub.docker.com/">DockerHub</a>上创建一个帐户。你可以免费创建帐户。也不会收到垃圾广告邮件；</li>
-
-<li><p>构建工作的 Spring Boot 应用程序。我们将使用前一篇<a href="https://mydeveloperplanet.com/2018/05/16/build-and-deploy-a-spring-boot-app-on-minikube-part-1/">文章</a>中的 Spring Boot MVC 应用程序。源代码可以在<a href="https://github.com/mydeveloperplanet/mykubernetesplanet">GitHub</a>上找到，相应的Docker图像可以在<a href="https://github.com/mydeveloperplanet/mykubernetesplanet">DockerHub</a>上找到。该应用程序包含 <code>http://localhost:8080/hello</code> 上的一个 HTTP 端点，并只返回一条 <code>Hello Kubernetes</code> 欢迎消息。</p>
+<li>构建工作的 Spring Boot 应用程序。我们将使用前一篇<a href="https://mydeveloperplanet.com/2018/05/16/build-and-deploy-a-spring-boot-app-on-minikube-part-1/">文章</a>中的 Spring Boot MVC 应用程序。源代码可以在<a href="https://github.com/mydeveloperplanet/mykubernetesplanet">GitHub</a>上找到，相应的Docker图像可以在<a href="https://github.com/mydeveloperplanet/mykubernetesplanet">DockerHub</a>上找到。该应用程序包含 <code>http://localhost:8080/hello</code> 上的一个 HTTP 端点，并只返回一条 <code>Hello Kubernetes</code> 欢迎消息。</li>
+</ul>
 
 <h2 id="2-运行-jenkins-ci">2.运行 Jenkins CI</h2>
 
-<p>我们将使用 <a href="https://hub.docker.com/r/jenkins/jenkins/">Jenkins CI Docker</a> 官方镜像运行 Jenkins 服务。完整的文档可以在<a href="https://github.com/jenkinsci/docker/blob/master/README.md">这里</a>找到。用以下命令启动容器:</p></li>
-</ul>
+<p>我们将使用 <a href="https://hub.docker.com/r/jenkins/jenkins/">Jenkins CI Docker</a> 官方镜像运行 Jenkins 服务。完整的文档可以在<a href="https://github.com/jenkinsci/docker/blob/master/README.md">这里</a>找到。用以下命令启动容器:</p>
 
 <pre><code>$ docker run -p 8080:8080 --name myjenkins -v jenkins_home:/var/jenkins_home -v jenkins_downloads:/var/jenkins_home/downloads jenkins/jenkins:lts
 </code></pre>
@@ -334,10 +333,9 @@ var trackOutboundLink = function(id, url) {
 在此之后，你可以通过其名称停止和启动容器：</li>
 </ul>
 
-<p>···
-$ docker stop myjenkins
+<pre><code>$ docker stop myjenkins
 $ docker start myjenkins
-···</p>
+</code></pre>
 
 <h2 id="3-配置-jenkins-以供首次使用">3.配置 Jenkins 以供首次使用</h2>
 
@@ -405,10 +403,9 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 <p>在启动容器期间，我们在容器中创建了 <code>/var/jenkins_home/downloads</code> 的挂载卷。首先，我们将验证是否可以从容器中访问此路径。执行以下命令：</p>
 
-<p>···
-$ docker exec -it myjenkins ls -l /var/jenkins_home/downloads
+<pre><code>$ docker exec -it myjenkins ls -l /var/jenkins_home/downloads
 total 0
-···</p>
+</code></pre>
 
 <p>如上所述返回0个结果时，那么我们就可以继续了。否则，你必须检查在启动容器期间是否输入正确。</p>
 
@@ -585,11 +582,20 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
+            </a>
+          </li>
+        
       
         
           <li class="db b mt4 mb2 mr2">
             Related entries:
           </li>
+        
+        
+      
         
         
           <li class="db dib-l mb2 mr3">
@@ -829,6 +835,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link">
               在安全防火墙内通过 WebHook 触发构建
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link">
+              成为一名 Jenkins 贡献者：对新手友好的工单
             </a>
           </li>
         

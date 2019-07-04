@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Benchmark</title>
+      <link>https://jenkins-zh.cn/tags/benchmark/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cd</title>
       <link>https://jenkins-zh.cn/tags/cd/</link>
       <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
@@ -158,7 +167,7 @@
     <item>
       <title>Developer</title>
       <link>https://jenkins-zh.cn/tags/developer/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/developer/</guid>
       <description></description>
@@ -257,7 +266,7 @@
     <item>
       <title>Gsoc</title>
       <link>https://jenkins-zh.cn/tags/gsoc/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/gsoc/</guid>
       <description></description>
@@ -266,7 +275,7 @@
     <item>
       <title>Gsoc2019</title>
       <link>https://jenkins-zh.cn/tags/gsoc2019/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/gsoc2019/</guid>
       <description></description>
@@ -311,7 +320,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -350,6 +359,24 @@
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jmh</title>
+      <link>https://jenkins-zh.cn/tags/jmh/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jmh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jte</title>
+      <link>https://jenkins-zh.cn/tags/jte/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jte/</guid>
       <description></description>
     </item>
     
@@ -437,7 +464,7 @@
     <item>
       <title>Performance</title>
       <link>https://jenkins-zh.cn/tags/performance/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/performance/</guid>
       <description></description>
@@ -446,9 +473,18 @@
     <item>
       <title>Pipeline</title>
       <link>https://jenkins-zh.cn/tags/pipeline/</link>
-      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pipeline Authoring</title>
+      <link>https://jenkins-zh.cn/tags/pipeline-authoring/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/pipeline-authoring/</guid>
       <description></description>
     </item>
     
@@ -462,9 +498,18 @@
     </item>
     
     <item>
+      <title>Plugin</title>
+      <link>https://jenkins-zh.cn/tags/plugin/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Plugins</title>
       <link>https://jenkins-zh.cn/tags/plugins/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/plugins/</guid>
       <description></description>

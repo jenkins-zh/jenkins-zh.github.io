@@ -6,10 +6,69 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 17 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 插件的微基准测试框架</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
+      <description>Jenkins 插件的微基准测试框架 作为我 Google 编程夏令营的一部分，我一直致力于改进角色策略插件（Role Strategy Plugin）的性能。 由于没有现有的方法来度量性能以及在 Jenkins 插件上做基准测试， 我在项目第一阶段的工作是创建一个框架在一个 Jenkins 实例中运行 Jenkins 插件中的基准测试。 为了让我们的工作更容易些，我们选择了 Java微基准测试工具来运行这些基准。 这使我们能够可靠地度量对时间要求严格的功能的性能，将有助于让 Jenkins 为每个人更快的运转。
+最近在 Jenkins 单元测试工具2.50中发布了微基准测试框架。 下面的博客文章展示了如何在插件中运行基准测试。
+介绍 该框架通过为 JMH 基准的每个 fork 启动一个临时的 Jenkins 实例来运行， 就像 Jenkins 测试工具中的 JenkinsRule。 基准测试是直接从 JUnit 测试运行的，它允许在运行过程中失败构建，并且很容易从 IDE 中运行基准测试，就像单元测试一样。 你可以很容易地通过使用 Java 方法或使用 Jenkins plugin:configuration-as-code:[配置即代码插件]来配置基准并将路径传递到 YAML 文件。
+要从您的插件运行基准测试，您需要做以下工作：
+ 将所需的最低 Jenkins 版本升级到2.60.3或更高版本 将 Plugin-POM 升级到 ≥ 3.46 的版本或手动更新 Jenkins 测试工具到 ≥ 2.51 的版本  现在，要运行基准测试，您需要有一个包含 @Test 的基准测试运行程序，以便它可以像 JUnit 测试一样运行。 从测试方法内部，可以使用 JMH 提供的 OptionsBuilder 来配置基准。 例如：</description>
+    </item>
+    
+    <item>
+      <title>介绍 Jenkins 模板引擎</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</guid>
+      <description>在企业范围内实施 DevSecOps 实践具有挑战性。由于组织内的不同应用程序正在使用多种编程语言、自动化测试框架和安全遵从性安全合规工具，因此每个团队构建和维护流水线变得很难。
+无论应用程序使用哪个特定的技术栈，大多数流水线都将遵循相同的通用工作流。模板引擎插件（简写为 JTE ，用于 Jenkins 模板引擎）允许您通过创建不依赖于工具的模板化工作流来获取效率，每个团队都可以重用这些工作流。
+作为公共部门和私营部门客户的技术顾问，我们在 Booz Allen 发现，每个新项目都要从头开始建造 DevSecOps 流水线。通过开发 Jenkins 模板引擎，我们已经看到流水线开发从几个月减少到几天，现在我们可以重用工具集成，同时为 Jenkins 流水线带来新的治理级别。
+流水线模板 组织受益于让应用程序开发人员专注于他们最擅长的工作：构建应用程序。支持这个，意味着建立一个集中式的 DevOps 团队，负责维护平台基础设施，并创建开发团队使用的 CI/CD 流水线。
+随着基于微服务的体系结构的兴起，一个集中的 DevOps 团队可以同时支持许多不同的开发团队；所有这些团队都可能利用不同的编程语言和自动化测试工具。
+虽然开发团队之间的工具可能不同，但工作流通常是相同的：单元测试、静态代码分析、构建和发布制品、部署它，然后针对部署的应用程序执行不同类型的测试。
+ 模板引擎插件允许您从每个被团队定义可继承通用工作流的存储库中删除 Jenkinsfile 。作为替代每个存储库需定义整个流水线，团队提供一个使用工作流的工具配置文件。
+ JTE 实战 让我们通过一个简单的示例来演示模板的可重用性： 流水线模板例子：  unit_test() build() static_code_analysis()  模板利用库提供的步骤概述工作流团队必须实现的步骤。虽然模板的执行方式与任何其他 Jenkinsfile 都一样（这意味着支持标准的脚本化和声明性语法），但模板的目标应该是以纯英语的方式阅读，并避免任何技术实现。
+ 通过这种方式利用模板，您可以将流水线的业务逻辑（应该在什么时候发生）与技术实现（实际将要发生什么）分开。其结果是一个 CI/CD 管道，当同时支持多个团队时，该流水线被证明非常容易管理。
+ 此模板（ unit_test 、 build 和 static_code_analysis ）概述的步骤是专门命名的。通过这种方式，团队可以使用的不同库共享同一流水线。
+实现模板 使用模板引擎实现可共享流水线需要几个关键组件： 1. 流水线模板：概述要执行的工作流 2. 库：提供工作流步骤的技术实现 3. 配置文件：指定要使用的库及其配置
+步骤1、创建流水线配置存储库 流水线配置存储库用于存储团队继承的常见配置和流水线模板。
+这个示例流水线配置存储库稍后将被配置为治理层的一部分：JTE 的机制中允许您构建表示组织的层次结构配置。</description>
+    </item>
+    
+    <item>
+      <title>使用Active-Choices-Plugin插件将十个Job合成一个</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/</guid>
+      <description>现在Spring Cloud越来越火爆，许多公司也都在如火如荼投入使用中，而微服务最大的一个特点，就是多，同一大项目之下，可能会被拆分成十几二十几个子服务，对于运维而言，可能也需要一个对应一个地在Jenkins中创建十几二十几个Job。
+刚刚还在一个博主的自我介绍里看到这样一句话：喜欢一切优雅的运维方式···
+于是，我一直在想着，通过一些合理的参数变幻，从而将刚刚提到的十几二十几个服务，汇集到一个Job当中就能完成。
+1，环境说明  主机：CentOS-7.5 Jdk：jdk1.8.0_192 Tomcat：8 Jenkins：2.177  如上环境的准备工作本文就不赘述了。
+2，安装插件。  官方地址：https://wiki.jenkins.io/display/JENKINS/Active+Choices+Plugin 安装方式：在Jenkins插件当中直接搜索即可安装。 功能说明：根据所选参数，自动调出对应参数所依赖的后续参数。  3，使用前介绍。 插件安装之后，可以在项目配置中的参数化配置中看到一些新增了的选项。
+ 1，Active Choices Parameter（主动选择参数） Active Choices参数使用Groovy脚本或Scriptler目录中的脚本动态生成构建参数的值选项列表。 2，Active Choices Reactive Parameter（主动选择反应参数） 根据主动选择参数的选项而提供不同的对应值或者列表选项。 3，Active Choices Reactive Reference Parameter（主动选择反应参考参数） 根据主动选择参数的选项而展示对应参数的一些说明，与第二项的区别在于本参数只作为说明信息，而不能够作为变量往下传递。  可能刚刚这些说明都比较抽象，接下来容我通过项目实战，来对其进行一一解析。
+4，配置前分析。 优秀的插件，它的优秀之处，往往是需要我们结合生产实际，开动聪明的大脑，打破常规使用套路来成就的。
+因此，如何才能更好地应用插件的优秀功能，需要我们先对项目进行分析，从全局的眼光，判断项目前后该配置什么样的参数来进行联动。
+这里我说明一下我准备的实验项目情况，为了简便测试，我这里仅使用两个项目来进行举例，聪明的你也一定能够通过案例进行举一反三，将二合一推广为十合一的。
+两个项目的情况如下：
+1，eureka  Gitlab地址：git@192.168.10.0:ishangjie/ishangjie-eureka-server.git port：8761 包名：ishangjie-eureka-server-1.0.0.jar  2，user  Gitlab地址：git@192.168.10.0:ishangjie/ishangjie-user-service.git port：6666 包名：ishangjie-user-service-1.0.0.jar  从刚刚这些配置里边可以看出，有不少共同点，也有不少不同点，我们只需把眼光放在不同点上，通过一些统一的变量控制，就能达到二合一的目的。
+另外说明一点，这个项目已经部署在k8s环境当中，因此我的脚本内容也就展示成了k8s项目部署的流程了。
+5，创建项目。 首先创建一个自由风格的Jenkins项目，然后配置一下项目构建保存历史。
+6，字符参数。 添加一个名为branch的字符参数以用于控制代码分支的变量。
+7，选项参数。 添加一个名为mode的选项参数以用于控制部署或者回滚的变量。
+8，选择参数。 1，主动选择参数 首先添加一个主动选择参数，用于控制项目名称这个变量。
+ Name：project Groovy Script:  return[ &amp;quot;eureka&amp;quot;, &amp;quot;user&amp;quot; ]  Description：选择对应的应用名称部署对应的应用。 Choice Type：Radio Buttons  2，主动选择反应参数 接着添加一个主动选择反应参数，用于控制项目类型这个变量。</description>
+    </item>
     
     <item>
       <title>10节课带你深入学习 DevOps 工程</title>
@@ -34,9 +93,8 @@ Devops 最重要的优势，它可以帮助你更好地发布软件并且利用�
       <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/</guid>
       <description>你想在本地设置中使用 Jenkins CI 进行实验吗？在本文中，我们将设置一个本地 Jenkins CI 服务，为一个简单的 Spring Boot Maven 项目创建一个构建工作，并将创建的 Docker 镜像推送到 DockerHub。这将是一个本地实验的设置，但如果你想尝试一个 Jenkins 插件，它会非常方便。
 1.先决条件 开始之前，我们需要以下先决条件：
- 我们使用了 Ubuntu 18.04； 必须安装 Docker，有关安装说明，请参见此处； 我们需要在 Docker registry 来推送我们的 Docker 镜像。最简单的方法是在DockerHub上创建一个帐户。你可以免费创建帐户。也不会收到垃圾广告邮件； 构建工作的 Spring Boot 应用程序。我们将使用前一篇文章中的 Spring Boot MVC 应用程序。源代码可以在GitHub上找到，相应的Docker图像可以在DockerHub上找到。该应用程序包含 http://localhost:8080/hello 上的一个 HTTP 端点，并只返回一条 Hello Kubernetes 欢迎消息。
-2.运行 Jenkins CI 我们将使用 Jenkins CI Docker 官方镜像运行 Jenkins 服务。完整的文档可以在这里找到。用以下命令启动容器:
-  $ docker run -p 8080:8080 --name myjenkins -v jenkins_home:/var/jenkins_home -v jenkins_downloads:/var/jenkins_home/downloads jenkins/jenkins:lts  让我们来仔细看看我们正在做什么:</description>
+ 我们使用了 Ubuntu 18.04； 必须安装 Docker，有关安装说明，请参见此处； 我们需要在 Docker registry 来推送我们的 Docker 镜像。最简单的方法是在DockerHub上创建一个帐户。你可以免费创建帐户。也不会收到垃圾广告邮件； 构建工作的 Spring Boot 应用程序。我们将使用前一篇文章中的 Spring Boot MVC 应用程序。源代码可以在GitHub上找到，相应的Docker图像可以在DockerHub上找到。该应用程序包含 http://localhost:8080/hello 上的一个 HTTP 端点，并只返回一条 Hello Kubernetes 欢迎消息。  2.运行 Jenkins CI 我们将使用 Jenkins CI Docker 官方镜像运行 Jenkins 服务。完整的文档可以在这里找到。用以下命令启动容器:
+$ docker run -p 8080:8080 --name myjenkins -v jenkins_home:/var/jenkins_home -v jenkins_downloads:/var/jenkins_home/downloads jenkins/jenkins:lts  让我们来仔细看看我们正在做什么:</description>
     </item>
     
     <item>
@@ -1042,6 +1100,26 @@ GitHub 或 BitBucket 可能会报告一个新的提交或 PR，DockerHub 报告�
 没关系，我们可以退而求其次，使用轮询变更的方式。只是这样很糟糕。你会用尽 API 配额，还无法实时地获取变更，这真的不是一个好方法。
 问题可能也是机会 我们可以解决这个问题，但也可以把这个视为一个机会。有的东西在互联网中不可访问，或者以某些默认的方法锁定是一个特色，不是一个 Bug。你可以很大程度上减少你的攻击面，同时可以进行深度防护：
 一个 WebHook 转发服务 输入 link:https://smee.io/[Smee] 这个很容易记住的名字。这是一个由 GitHub 提供的 link:https://github.</description>
+    </item>
+    
+    <item>
+      <title>成为一名 Jenkins 贡献者：对新手友好的工单</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</guid>
+      <description>两个月前，我发表了一篇介绍性文章， 成为一名 Jenkins 贡献者的旅程。在那篇第一次发表的文章 review 过后，学习到了我们可以参与和贡献的多种途径。 因此，在这个站点仓库中有对首次、基础的贡献的描述。
+现在，我们将会在这篇文章中探索更多高级的贡献，向 Jenkins 核心中提交代码。
+从工单和过程开始 新手贡献指导以及 Jenkins Jira 查看位于 jenins.io 上的开发者章节可能是最好的起点， 参考链接也很方便。同时，向 Jenkins 贡献的新手指导也很有用，因为它指出了不同的仓库、工具（例如问题跟踪系统）以及治理文档。 此外，它还描述了提交消息、代码风格约定、PR 指导等的最佳实践。
+一旦我们对之前描述的有了一般性的了解，并想要真正地开始编码，我们可能会对该做些什么感到困惑。
+似乎浏览Jenkins 问题跟踪系统是顺其自然 的下一步，因为那里充满了已经由社区报告了的潜在的缺陷和待改进的部分。然而，你很容易被无数的可能性列表所淹没。 请记住一点，对于一个像这样有十年历史之久的项目，很多是为新手准备的。因此，通过newbie-friendly tickets来过滤可能是最好的主意。
+选择一个工单 在我案例中，我花了一些时间来浏览带 newbie-friendly 标签的工单，直到发现了一个我似乎感兴趣并看起来有能力修复的：
+过程 在这个阶段，当我们准备接手这个工单时，最好让社区中的其他人知道我们正在开始解决它。我们可以很容易做到这一点， 只要把工单分配给我们自己即可（查看工单概览下的 “_Assign_” 按钮）。
+在 Jenkins 的 Jira 中把工单分配给我们自己的话，可以让其他的贡献者知道我们正在处理；另外，为了保证其他人有兴趣对此一起做贡献时，可以知道 该去联系谁或者如何询问状态。也就是说，把工单分配给你自己，并不意味着其他贡献者就无法继续推进。Jenkins 是一个开源项目，欢迎任何人创建他们自己 的 PR，因此，任何人都可以在工单中提出自己的方案。但是，你也能想到，如果工单分配给某个人的话，大多数人在开始工作前也可能会去联系承接人。
+与之相关的是，请牢记当我们把工单分配给自己时，不应该在这个工作上拖延太久。其他的贡献者，可能会由于工单已被分配而忽略。
+当我们马上就要开始工作时，推荐的做法是先点击&amp;rdquo;Start Progress&amp;ldquo;按钮。这个动作，会把状态修改为“_In progress_”，对社区而言， 意味着我们正在处理这个工单。
+在我们的电脑设置必要的工具 配置，安装和测试 正如在该旅程的第一篇文章中描述的，开始为某个仓库做贡献的第一步 是首先派生到我们自己的 GitHub 账号下，然后，克隆到你的电脑上。
+正如，在 Jenkins Core 仓库中的CONTRIBUTING 文件里 所描述的，让仓库在本地运行的必要步骤。它包括，安装必要的开发工具：Java Development Kit (https://adoptopenjdk.net/[OpenJDK] 为推荐的选择)，Maven 以及任意支持 Maven 项目的 IDE。注意，安装 JDK 和 Maven 的步骤在贡献指南中有链接。</description>
     </item>
     
     <item>

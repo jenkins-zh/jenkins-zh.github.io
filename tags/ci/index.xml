@@ -19,9 +19,8 @@
       <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/</guid>
       <description>你想在本地设置中使用 Jenkins CI 进行实验吗？在本文中，我们将设置一个本地 Jenkins CI 服务，为一个简单的 Spring Boot Maven 项目创建一个构建工作，并将创建的 Docker 镜像推送到 DockerHub。这将是一个本地实验的设置，但如果你想尝试一个 Jenkins 插件，它会非常方便。
 1.先决条件 开始之前，我们需要以下先决条件：
- 我们使用了 Ubuntu 18.04； 必须安装 Docker，有关安装说明，请参见此处； 我们需要在 Docker registry 来推送我们的 Docker 镜像。最简单的方法是在DockerHub上创建一个帐户。你可以免费创建帐户。也不会收到垃圾广告邮件； 构建工作的 Spring Boot 应用程序。我们将使用前一篇文章中的 Spring Boot MVC 应用程序。源代码可以在GitHub上找到，相应的Docker图像可以在DockerHub上找到。该应用程序包含 http://localhost:8080/hello 上的一个 HTTP 端点，并只返回一条 Hello Kubernetes 欢迎消息。
-2.运行 Jenkins CI 我们将使用 Jenkins CI Docker 官方镜像运行 Jenkins 服务。完整的文档可以在这里找到。用以下命令启动容器:
-  $ docker run -p 8080:8080 --name myjenkins -v jenkins_home:/var/jenkins_home -v jenkins_downloads:/var/jenkins_home/downloads jenkins/jenkins:lts  让我们来仔细看看我们正在做什么:</description>
+ 我们使用了 Ubuntu 18.04； 必须安装 Docker，有关安装说明，请参见此处； 我们需要在 Docker registry 来推送我们的 Docker 镜像。最简单的方法是在DockerHub上创建一个帐户。你可以免费创建帐户。也不会收到垃圾广告邮件； 构建工作的 Spring Boot 应用程序。我们将使用前一篇文章中的 Spring Boot MVC 应用程序。源代码可以在GitHub上找到，相应的Docker图像可以在DockerHub上找到。该应用程序包含 http://localhost:8080/hello 上的一个 HTTP 端点，并只返回一条 Hello Kubernetes 欢迎消息。  2.运行 Jenkins CI 我们将使用 Jenkins CI Docker 官方镜像运行 Jenkins 服务。完整的文档可以在这里找到。用以下命令启动容器:
+$ docker run -p 8080:8080 --name myjenkins -v jenkins_home:/var/jenkins_home -v jenkins_downloads:/var/jenkins_home/downloads jenkins/jenkins:lts  让我们来仔细看看我们正在做什么:</description>
     </item>
     
     <item>
