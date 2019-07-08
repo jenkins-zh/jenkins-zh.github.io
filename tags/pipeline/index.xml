@@ -6,10 +6,26 @@
     <description>Recent content in Pipeline on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/pipeline/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 中文社区技术交流微信群问题集之一</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-08-wechat-answer-1/</link>
+      <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-08-wechat-answer-1/</guid>
+      <description>申明：下文中的问题是群友发起的，回答则是由笔者收集整理的。
+1. 同一流水线，如何做某个阶段定时执行代码扫描 这个需求的意思是存在一条流水线，流水线中的阶段为：构建阶段 &amp;ndash;&amp;gt; 代码扫描阶段 &amp;ndash;&amp;gt; 发布测试环境阶段 &amp;ndash;&amp;gt; &amp;hellip; 而提问者希望当有代码提交时，就执行整条流水线。当到某个时间点时，就只执行扫描阶段。
+回答一 当代码没有变化，我们为什么要重复执行扫描呢？
+回答二 换成两个流水线，一个提交触发，一个定时触发
+回答三 一条流水线加个开关设置是否跳过扫描。
+2. 有人做过增量包构建么？  有人做过增量包构建么？问下要用哪些插件，怎么做？ 经确认，提问人的需求是有一个代码仓库 x，然后 x 里有 a,b,c 三个模块，开发提交了 a 模块的代码，这时，只打包 a 模块的制品。
+ 回答一 要做的是在流水线里判断提交代码中修改了哪个模块，然后执行你的 ant 命令指定构建某个模块就好了。代码 demo 如下：
+pipeline{ agent any stages{ stage(&#39;build a&#39;){ when{ changeset &amp;quot;a/**&amp;quot; } steps{ echo &amp;quot;build a&amp;quot; } } stage(&#39;build b&#39;){ when{ changeset &amp;quot;b/**&amp;quot; } steps{ echo &amp;quot;build b&amp;quot; } } } }  回答二 增量包，四五年前我有过相关实践，构建工具也是 ant。记得当初是根据修改的文件路径，解析出 ant target 列表，然后根据事先声明好的依赖关系对它排序，然后执行 ant 构建命令，最后将生成的二进制包挑出来生成增量包，大致这么个思路。</description>
+    </item>
     
     <item>
       <title>介绍 Jenkins 模板引擎</title>
