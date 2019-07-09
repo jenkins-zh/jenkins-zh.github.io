@@ -6,10 +6,27 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 长期支持版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/</link>
+      <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/</guid>
+      <description>2.176.1 (2019-06-10)  自 2.176 以来的变更：
+ 恢复安装向导中用到的中文本地化资源。 (issue 57412) Robustness: 当 ComputerListener#onOnline() 发生运行时异常后不把节点设置为离线状态。 (issue 57111)  CLI 中通过参数 (-remoting option) 对远程模式的支持已经被移除。 (pull 3838, 博客发布)
+ 移除符号 nonStoredPasswordParam 对密码参数定义的误导，因为，它会存储加密后的数据。 (issue 56776)
+ 移除对 CCtray (cc.xml) 文件的默认支持。 要使用该功能，需要按照插件 CCtray XML Plugin。 (issue 40750)
+ 增加 CLI 命令 stop-job 终止构建。 (issue 11888)
+ 在日志配置中支持关闭一项日志记录器。 (issue 56200)
+ 为 REST API 的响应增加运行参数过滤器。 (issue 56554)
+ 构建结束后更新状态图标。 (issue 16750)
+ 在 Jenkins 节点的界面上移除对 Java Web Start and JNLP 的误导性引用。 (pull 3998)</description>
+    </item>
     
     <item>
       <title>Jenkins 中文社区技术交流微信群问题集之一</title>

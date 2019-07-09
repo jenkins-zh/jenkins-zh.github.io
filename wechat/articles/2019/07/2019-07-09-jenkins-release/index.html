@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 插件的微基准测试框架 - Jenkins 中文社区</title>
+     <title>Jenkins 长期支持版更新 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试">
+    <meta name="description" content="本次更新的版本包括：2.164.2、2.164.3、2.176.1">
     
     
-    <meta name="keywords" content="Jenkins 微基准测试框架,Jenkins">
+    <meta name="keywords" content="Jenkins 版本发布,Jenkins 2.164.2发布,Jenkins 2.164.3发布,Jenkins 2.176.1发布">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,27 +32,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 插件的微基准测试框架" />
-<meta property="og:description" content="本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试" />
+<meta property="og:title" content="Jenkins 长期支持版更新" />
+<meta property="og:description" content="本次更新的版本包括：2.164.2、2.164.3、2.176.1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" />
-<meta property="article:published_time" content="2019-07-04T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-07-04T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/" />
+<meta property="article:published_time" content="2019-07-09T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-09T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 插件的微基准测试框架">
-<meta itemprop="description" content="本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试">
-
-
-<meta itemprop="datePublished" content="2019-07-04T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="356">
+<meta itemprop="name" content="Jenkins 长期支持版更新">
+<meta itemprop="description" content="本次更新的版本包括：2.164.2、2.164.3、2.176.1">
 
 
+<meta itemprop="datePublished" content="2019-07-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="212">
 
-<meta itemprop="keywords" content="jmh,plugins,benchmark,performance,developer,gsoc,gsoc2019," />
+
+
+<meta itemprop="keywords" content="jenkins,release," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 插件的微基准测试框架"/>
-<meta name="twitter:description" content="本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试"/>
+<meta name="twitter:title" content="Jenkins 长期支持版更新"/>
+<meta name="twitter:description" content="本次更新的版本包括：2.164.2、2.164.3、2.176.1"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -186,8 +186,6 @@ var trackOutboundLink = function(id, url) {
 
 
 
-
-
   <aside class="mw5 br3 mv3 nested-links">
     
     
@@ -201,44 +199,10 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
-  <div>
-    作者：<span class="originalAuthor">abhyudayasharma</span>
-    <div>
-      <a class="originalLink" href="https://jenkins.io/blog/2019/06/21/performance-testing-jenkins/" target="_blank">原文链接</a>
-    </div>
-  </div>
-  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#jenkins-插件的微基准测试框架">Jenkins 插件的微基准测试框架</a>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#示例基准">示例基准</a>
-<ul>
-<li><a href="#无需任何特别的设置">无需任何特别的设置</a></li>
-<li><a href="#使用配置即代码">使用配置即代码</a></li>
-<li><a href="#更多示例">更多示例</a></li>
-</ul></li>
-<li><a href="#运行基准测试">运行基准测试</a>
-<ul>
-<li><a href="#从-maven-运行基准测试">从 Maven 运行基准测试</a></li>
-<li><a href="#在-ci-jenkins-io-运行基准测试">在 ci.jenkins.io 运行基准测试</a></li>
-</ul></li>
-<li><a href="#可视化基准测试结果">可视化基准测试结果</a></li>
-<li><a href="#一些提示与技巧">一些提示与技巧</a></li>
-<li><a href="#链接及反馈">链接及反馈</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -251,17 +215,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-08-wechat-answer-1/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 中文社区技术交流微信群问题集之一 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" class="dib f6 pr1 hover-bg-light-gray br-100" title="介绍 Jenkins 模板引擎">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-08-wechat-answer-1/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 中文社区技术交流微信群问题集之一">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -281,13 +237,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 插件的微基准测试框架</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 长期支持版更新</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      本文介绍了 Jenkins 插件的微基准测试框架以及如何在插件中运行基准测试
+      本次更新的版本包括：2.164.2、2.164.3、2.176.1
     </div>
   
 
@@ -300,180 +256,74 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="reflection.jpg" alt="reflection" /></p>
+<p><img src="great-wall.jpeg" alt="great-wall" /></p>
 
-<h2 id="jenkins-插件的微基准测试框架">Jenkins 插件的微基准测试框架</h2>
-
-<p>作为我 <a href="https://jenkins.io/projects/gsoc/2019/role-strategy-performance/">Google 编程夏令营</a>的一部分，我一直致力于改进角色策略插件（Role Strategy Plugin）的性能。
-由于没有现有的方法来度量性能以及在 Jenkins 插件上做基准测试，
-我在项目第一阶段的工作是创建一个框架在一个 Jenkins 实例中运行 Jenkins 插件中的基准测试。
-为了让我们的工作更容易些，我们选择了 <a href="http://openjdk.java.net/jeps/230">Java微基准测试工具</a>来运行这些基准。
-这使我们能够可靠地度量对时间要求严格的功能的性能，将有助于让 Jenkins 为每个人更快的运转。</p>
-
-<p>最近在 Jenkins 单元测试工具<a href="https://github.com/jenkinsci/jenkins-test-harness/releases/tag/jenkins-test-harness-2.50">2.50</a>中发布了微基准测试框架。
-下面的博客文章展示了如何在插件中运行基准测试。</p>
-
-<h3 id="介绍">介绍</h3>
-
-<p>该框架通过为 JMH 基准的每个 fork 启动一个临时的 Jenkins 实例来运行，
-就像 Jenkins 测试工具中的 <code>JenkinsRule</code>。
-基准测试是直接从 JUnit 测试运行的，它允许在运行过程中失败构建，并且很容易从 IDE 中运行基准测试，就像单元测试一样。
-你可以很容易地通过使用 Java 方法或使用 Jenkins plugin:configuration-as-code:[配置即代码插件]来配置基准并将路径传递到 YAML 文件。</p>
-
-<p>要从您的插件运行基准测试，您需要做以下工作：</p>
+<h2 id="2-176-1-2019-06-10">2.176.1 (2019-06-10)</h2>
 
 <ul>
-<li>将所需的最低 Jenkins 版本升级到2.60.3或更高版本</li>
-<li>将 Plugin-POM 升级到 ≥ 3.46 的版本或手动更新 Jenkins 测试工具到 ≥ 2.51 的版本</li>
-</ul>
-
-<p>现在，要运行基准测试，您需要有一个包含 <code>@Test</code> 的基准测试运行程序，以便它可以像 JUnit 测试一样运行。
-从测试方法内部，可以使用 JMH 提供的 <code>OptionsBuilder</code> 来配置基准。
-例如：</p>
-
-<pre><code class="language-java">public class BenchmarkRunner {
-    @Test
-    public void runJmhBenchmarks() throws Exception {
-        ChainedOptionsBuilder options = new OptionsBuilder()
-                .mode(Mode.AverageTime)
-                .forks(2)
-                .result(&quot;jmh-report.json&quot;);
-
-        // Automatically detect benchmark classes annotated with @JmhBenchmark
-        new BenchmarkFinder(getClass()).findBenchmarks(options);
-        new Runner(options.build()).run();
-    }
-}
-</code></pre>
-
-<h3 id="示例基准">示例基准</h3>
-
-<p>现在，你可以编写第一个基准：</p>
-
-<h4 id="无需任何特别的设置">无需任何特别的设置</h4>
-
-<pre><code class="language-java">@JmhBenchmark
-public class JmhStateBenchmark {
-    public static class MyState extends JmhBenchmarkState {
-    }
-
-    @Benchmark
-    public void benchmark(MyState state) {
-        // benchmark code goes here
-        state.getJenkins().setSystemMessage(&quot;Hello world&quot;);
-    }
-}
-</code></pre>
-
-<h4 id="使用配置即代码">使用配置即代码</h4>
-
-<p>要使用配置即代码，除了上面的依赖外，还需要在你的 <code>pom.xml</code> 添加如下内容：</p>
-
-<pre><code class="language-xml">&lt;dependency&gt;
-    &lt;groupId&gt;io.jenkins&lt;/groupId&gt;
-    &lt;artifactId&gt;configuration-as-code&lt;/artifactId&gt;
-    &lt;version&gt;1.21&lt;/version&gt;
-    &lt;optional&gt;true&lt;/optional&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;io.jenkins&lt;/groupId&gt;
-    &lt;artifactId&gt;configuration-as-code&lt;/artifactId&gt;
-    &lt;version&gt;1.21&lt;/version&gt;
-    &lt;classifier&gt;tests&lt;/classifier&gt;
-    &lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;
-</code></pre>
-
-<p>现在配置一个基准很简单，只需提供 YAML 文件的路径并指定包含基准状态的类。</p>
-
-<pre><code class="language-java">@JmhBenchmark
-public class SampleBenchmark {
-    public static class MyState extends CascJmhBenchmarkState {
-        @Nonnull
-        @Override
-        protected String getResourcePath() {
-            return &quot;config.yml&quot;;
-        }
-
-        @Nonnull
-        @Override
-        protected Class&lt;?&gt; getEnclosingClass() {
-            return SampleBenchmark.class;
-        }
-    }
-
-    @Benchmark
-    public void benchmark(MyState state) {
-        Jenkins jenkins = state.getJenkins(); // jenkins is configured and ready to be benchmarked.
-        // your benchmark code goes here...
-    }
-}
-</code></pre>
-
-<h4 id="更多示例">更多示例</h4>
-
-<p>作为这个项目的一部分，在角色策略插件（Role Strategy Plugin）中创建了一些基准测试，它们展示了为各种情况配置实例。
-你可以在<a href="https://github.com/jenkinsci/role-strategy-plugin/tree/master/src/test/java/jmh/benchmarks">这里</a>找到它们。</p>
-
-<h3 id="运行基准测试">运行基准测试</h3>
-
-<h4 id="从-maven-运行基准测试">从 Maven 运行基准测试</h4>
-
-<p>为了方便从 Maven 运行基准测试，创建了一个 Maven 配置文件来运行基准测试，并且可以从 Plugin-POM 3.45 版本开始使用。
-然后你可以使用 <code>mvn test -Dbenchmark</code> 从命令行运行基准测试。</p>
-
-<h4 id="在-ci-jenkins-io-运行基准测试">在 ci.jenkins.io 运行基准测试</h4>
-
-<p>如果您的插件托管在 ci.jenkins.io 上，那么可以直接从 Jenkinsfile 轻松地运行基准测试。
-通过在 Jenkinsfile 中的 <code>buildPlugin()</code> 步骤后使用 <code>runBenchmarks()</code> 方法，该步骤现在在
-<a href="https://github.com/jenkins-infra/pipeline-library">Jenkins 流水线库</a>。
-此函数还接受生成的 JMH 基准报告的路径作为可选的参数并存档基准结果。
-在 pull request 构建中运行基准测试允许您不断地进行测试监视给定更改的性能影响。
-例如，来自角色策略插件（Role Strategy Plugin）的 Jenkinsfile ：</p>
-
-<pre><code class="language-grovvy">buildPlugin()
-runBenchmarks('jmh-report.json')
-</code></pre>
-
-<h3 id="可视化基准测试结果">可视化基准测试结果</h3>
-
-<p>可以使用 plugin:jmh-report[JMH 报告插件]或将基准测试报告传递给 <a href="https://jmh.morethan.io">JMH 可视化工具</a> web 服务来可视化生成的基准报告（JSON格式）。
-举个例子，这里有一些来自角色策略插件（Role Strategy Plugin）中基准测试的可视化报告:</p>
-
-<p><img src="jmh-visualizer.png" alt="由 JMH 可视化工具可视化的角色策略插件基准测试" /></p>
-
-<p>上面所看到的这些改进是通过对插件的一个小的 <a href="https://github.com/jenkinsci/role-strategy-plugin/pull/81">pull request</a> 获得的，并展示了即使是看起来很小的更改也可以带来很大的性能改进。
-微基准测试有助于找到这些热点，并估计更改的影响。</p>
-
-<h3 id="一些提示与技巧">一些提示与技巧</h3>
+<li><p>自 2.176 以来的变更：</p>
 
 <ul>
-<li>由于上面示例中的 <code>BenchmarkRunner</code> 类名不符合 Maven Surefire 插件的测试条件命名约定，基准测试不会干扰 JUnit 测试。</li>
-<li>基准测试方法需要用 <code>@Benchmark</code> 进行注解，以便 JMH 检测它们。</li>
-<li>当注解为 <code>@JmhBenchmark</code> 时，包含基准的类由 <code>BenchmarkFinder</code> 自动找到。</li>
-<li>对 Jenkins 实例的引用可以通过 <code>JmhBenchmarkState#getJenkins()</code> 或通过 <code>Jenkins.getInstance()</code>  获得，就像您在其他情况下会做的那样。</li>
-<li><code>JmhBenchmarkState</code> 提供了 <code>setup()</code> 和 <code>tearDown()</code> 方法，根据您的基准测试的需求，可以重写这些方法来配置 Jenkins 实例。</li>
-<li>由于 <code>highmem</code> 节点的可用性有限，基于 ci.jenkins.io 的基准测试目前被限流。</li>
-<li>基准框架在 Jenkins 测试工具2.50中提供，建议使用<a href="https://github.com/jenkinsci/jenkins-test-harness/releases/tag/jenkins-test-harness-2.51">2.51</a>版本，因为它包含一些错误修复。</li>
-</ul>
-
-<h3 id="链接及反馈">链接及反馈</h3>
-
-<p>如果您有任何反馈、评论或问题，
-请通过<a href="https://gitter.im/jenkinsci/role-strategy-plugin">角色策略插件（Role Strategy Plugin） Gitter 聊天室</a>
-或通过 <a href="mailto:jenkinsci-dev@googlegroups.com">Jenkins 开发者邮件列表</a>随时与我联系。</p>
-
-<ul>
-<li><a href="https://drive.google.com/file/d/1gig6u64rzvSzGKjN_PTTXTkSXQ9Ah7E5/view?usp=sharing">演示幻灯片</a></li>
-<li><a href="https://youtu.be/lyfbmhQd0Ag?t=847">在平台 SIG 会议中的示例</a></li>
-<li>微基准测试框架的文档：
-
-<ul>
-<li><a href="https://github.com/jenkinsci/jenkins-test-harness/blob/master/docs/jmh-benchmarks.adoc">编写基准测试 (Jenkins 测试工具)</a></li>
-<li><a href="https://github.com/jenkinsci/configuration-as-code-plugin/blob/master/docs/benchmarks/jmh-benchmarks.md">使用 JCasC 预配置基准</a></li>
-<li><a href="https://github.com/jenkinsci/plugin-pom#running-benchmarks">使用 Plugin POM profile 运行基准测试</a></li>
-<li><a href="https://github.com/jenkins-infra/pipeline-library#runbenchmarks">在 ci.jenkins.io 上运行基准测试的构建步骤</a></li>
+<li>恢复安装向导中用到的中文本地化资源。 (issue 57412)</li>
+<li>Robustness: 当 ComputerListener#onOnline() 发生运行时异常后不把节点设置为离线状态。 (issue 57111)</li>
 </ul></li>
+
+<li><p>CLI 中通过参数 (-remoting option) 对远程模式的支持已经被移除。 (pull 3838, 博客发布)</p></li>
+
+<li><p>移除符号 nonStoredPasswordParam 对密码参数定义的误导，因为，它会存储加密后的数据。 (issue 56776)</p></li>
+
+<li><p>移除对 CCtray (cc.xml) 文件的默认支持。 要使用该功能，需要按照插件 CCtray XML Plugin。 (issue 40750)</p></li>
+
+<li><p>增加 CLI 命令 stop-job 终止构建。 (issue 11888)</p></li>
+
+<li><p>在日志配置中支持关闭一项日志记录器。 (issue 56200)</p></li>
+
+<li><p>为 REST API 的响应增加运行参数过滤器。 (issue 56554)</p></li>
+
+<li><p>构建结束后更新状态图标。 (issue 16750)</p></li>
+
+<li><p>在 Jenkins 节点的界面上移除对 Java Web Start and JNLP 的误导性引用。 (pull 3998)</p></li>
+
+<li><p>当涉及到以虚拟 SYSTEM 用户运行构建时，通知管理员潜在的不安全设置。 (issue 24513)</p></li>
+
+<li><p>当运行在虚拟的 SYSTEM 认证下时，在构建日志中增加一条日志消息。 (pull 3908)</p></li>
+
+<li><p>迁移所有中文本地化资源文件到 简体中文插件。 (pull 4008)</p></li>
+
+<li><p>调整流刷新行为，使得运行在远程的节点上时有更好的性能。这可能会导致部分插件在节点机器上打印构建日志却不刷新输出时丢失消息。 通过 -Dhudson.util.StreamTaskListener.AUTO_FLUSH=true 可以让自由风格的构建回到之前的行为。 注意，流水线的构建总是期待远程刷新。 (pull 3961)</p></li>
+
+<li><p>Winstone 的版本从 5.1 更新到 5.2，使得 HTTPS cipher 为可配置的。 (issue 56659, issue 56591, 完整变更日志)</p></li>
+
+<li><p>从核心中移除邮件相关的本地化字符串。确保你使用 Mailer Plugin 1.23。 (issue 55292)</p></li>
+
+<li><p>如果工作空间已经被一个跨节点运行的流水线重连时使用了，那么，它将不会再给新的构建分配租期。 (issue 50504)</p></li>
+
+<li><p>开发者：为了支持从任意插件中加载本地化资源，Stapler 的版本从 1.256 更新到 1.257。 增加接口 jenkins.PluginLocaleDrivenResourceProvider 用于让其他插件可以定制本地化资源的查找过程。 (JEP-216, 完整变更日志)</p></li>
+
+<li><p>开发者：本地化库的版本从 1.24 更新到 1.26，使用插件可以覆盖查找本地化资源文件的逻辑。 (pull 3896, JEP-216, 完整变更日志)</p></li>
+
+<li><p>开发者：为类似于单行 f:password 的多行文本凭据添加 Jelly UI 组件 f:secretTextarea。 (pull 3967, 在 Jenkins 中存储凭据)</p></li>
+
+<li><p>开发者：SystemProperties 现在可以用于节点端的代码。参考 SystemProperties#allowOnAgent。 (pull 3961)</p></li>
+</ul>
+
+<h2 id="2-164-3-2019-05-09">2.164.3 (2019-05-09)</h2>
+
+<ul>
+<li>有问题的 console notes 会使得 ConsoleNote#readFrom 抛出一个无意义的 NegativeArraySizeException 异常，并导致构建日志无法正常显示。 (issue 45661)</li>
+<li>安装向导没有正确地对密码进行转义，导致遇到特殊字符后会有错误。 (issue 56856)</li>
+<li>使得 Jenkins 经典界面中的表单提交按钮与 Firefox 即将发布的缺陷修复兼容。 (issue 53462, Firefox bug 1370630)</li>
+<li>正确地刷新 Maven console annotator 的输出。 (issue 56995)</li>
+<li>使得 Debian/Ubuntu 的启动脚本与 Java 11 兼容。 (issue 57096)</li>
+<li>复用 Stapler 请求分发 telemetry。 (issue 57167)</li>
+</ul>
+
+<h2 id="2-164-2-2019-04-10">2.164.2 (2019-04-10)</h2>
+
+<ul>
+<li>安全修复。 (安全公告)</li>
+<li>运行在 Microsoft Docker 下的 Windows Server 2016 时，工作空间以及归档文件无法工作。（由 2.150.2 引入的缺陷回归） (issue 56114)</li>
+<li>当丢弃不可读的指纹数据时避免 NullPointerException 。 (issue 43218)</li>
 </ul>
 
 </div>
@@ -500,7 +350,7 @@ runBenchmarks('jmh-report.json')
 <h2>参考</h2>
 <ul>
 	
-	<li><a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/">Jenkins 文档特别兴趣小组</a></li>
+	<li><a href="/wechat/articles/2019/05/2019-05-29-jenkins-release/">Jenkins 2.176~2.178版本更新</a></li>
 	
 </ul>
 
@@ -514,14 +364,14 @@ runBenchmarks('jmh-report.json')
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 插件的微基准测试框架”
-  </a> 更新于：July 4, 2019
+    “Jenkins 长期支持版更新”
+  </a> 更新于：July 9, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/07/2019-07-09-jenkins-release.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -539,50 +389,294 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jmh">
-              jmh
+            <a class="tag" href="/tags/jenkins">
+              jenkins
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/plugins">
-              plugins
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/benchmark">
-              benchmark
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/performance">
-              performance
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/developer">
-              developer
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/gsoc">
-              gsoc
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/gsoc2019">
-              gsoc2019
+            <a class="tag" href="/tags/release">
+              release
             </a>
           </li>
         
               
       
         
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/" class="link">
+              30分钟搞定 Jenkins CI
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/" class="link">
+              还在苦恼不会写 Jenkins 流水线？来场工作坊！
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-29-jenkins-release/" class="link">
+              Jenkins 2.176~2.178版本更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/" class="link">
+              如何对 Jenkins 共享库进行单元测试
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/" class="link">
+              基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="link">
+              使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link">
+              从 Jenkins 到 Jenkins X
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/" class="link">
+              19年 GSoC 中 Jenkins 的七个项目
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" class="link">
+              基于 Jenkins 的 DevOps 平台应该如何设计凭证管理
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/" class="link">
+              Jenkins 公众号送书福利
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-09-jenkins-release/" class="link">
+              Jenkins 版本发布
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="link">
+              Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="link">
+              Jenkins 自动化安装插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="link">
+              Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" class="link">
+              使用 Jenkins X 渐进式交付：自动化金丝雀部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/" class="link">
+              使用 Jenkins X 渐进式交付
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" class="link">
+              使用 Jenkins &#43; Ansible 实现自动化部署 Nginx
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" class="link">
+              关于 Jenkins master 共享 JENKINS_HOME 目录的实验
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="link">
+              持续交付的商业价值
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="link">
+              使用 Zabbix 监控 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="link">
+              简析 Jenkins 专有用户数据库加密算法
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="link">
+              Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
+              介绍：成为一名 Jenkins 贡献者的旅程
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-ready-for-cdf/" class="link">
+              为 Continuous Delivery Foundation 的成立感到兴奋
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
+              MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link">
+              在安全防火墙内通过 WebHook 触发构建
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link">
+              成为一名 Jenkins 贡献者：对新手友好的工单
+            </a>
+          </li>
         
       
     </ul>
@@ -609,7 +703,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/07\/2019-07-04-performance-testing-jenkins\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/07\/2019-07-09-jenkins-release\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
