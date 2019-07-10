@@ -58,6 +58,16 @@ pipeline{ agent any stages{ stage(&#39;build a&#39;){ when{ changeset &amp;quot;
     </item>
     
     <item>
+      <title>多分支流水线任务对 GitLab SCM 的支持</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
+      <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件： * GitLab API 插件 - 包装 GitLab Java APIs。 * GitLab 分支源插件 - 包括两个包： * io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 * io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。
+现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
+    </item>
+    
+    <item>
       <title>介绍 Jenkins 模板引擎</title>
       <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</link>
       <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
