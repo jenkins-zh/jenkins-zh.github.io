@@ -42,6 +42,15 @@
     
     <item>
       <title></title>
+      <link>https://jenkins-zh.cn/event/beijing-2019-08-24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/event/beijing-2019-08-24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://jenkins-zh.cn/event/beijing-2019-10-19/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -51,20 +60,11 @@
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.cn/event/beijing-2019-11/</link>
+      <link>https://jenkins-zh.cn/event/shanghai-2019-09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/event/beijing-2019-11/</guid>
+      <guid>https://jenkins-zh.cn/event/shanghai-2019-09/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://jenkins-zh.cn/event/shanghai-2019-06/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/event/shanghai-2019-06/</guid>
-      <description>sssdfssfasdfs</description>
     </item>
     
   </channel>

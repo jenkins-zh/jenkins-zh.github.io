@@ -832,6 +832,19 @@
         "poster": "/images/meetup/ci-cd.jpeg"
     },
     {
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-08-24/",
+        "title": "",
+        "type": "meetup",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": "/images/meetup/hacktberfest.jpg"
+    },
+    {
         "uri": "https://jenkins-zh.cn/event/beijing-2019-10-19/",
         "title": "",
         "type": "meetup",
@@ -845,26 +858,13 @@
         "poster": "/images/meetup/hacktberfest.jpg"
     },
     {
-        "uri": "https://jenkins-zh.cn/event/beijing-2019-11/",
+        "uri": "https://jenkins-zh.cn/event/shanghai-2019-09/",
         "title": "",
         "type": "meetup",
         "date": "0001-01-01 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
-        "auhtor": "",
-        "translator": "",
-        "original": "",
-        "poster": "/images/meetup/hacktberfest.jpg"
-    },
-    {
-        "uri": "https://jenkins-zh.cn/event/shanghai-2019-06/",
-        "title": "",
-        "type": "meetup",
-        "date": "0001-01-01 00:00:00 +0000 UTC",
-        "tags": [],
-        "description": "",
-        "content": "sssdfssfasdfs\n",
         "auhtor": "",
         "translator": "",
         "original": "",
