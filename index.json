@@ -832,6 +832,19 @@
         "poster": "/images/meetup/ci-cd.jpeg"
     },
     {
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-10-19/",
+        "title": "",
+        "type": "meetup",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": "/images/meetup/hacktberfest.jpg"
+    },
+    {
         "uri": "https://jenkins-zh.cn/event/beijing-2019-11/",
         "title": "",
         "type": "meetup",
@@ -845,19 +858,6 @@
         "poster": "/images/meetup/hacktberfest.jpg"
     },
     {
-        "uri": "https://jenkins-zh.cn/event/hangzhou-2019-05/",
-        "title": "",
-        "type": "meetup",
-        "date": "0001-01-01 00:00:00 +0000 UTC",
-        "tags": [],
-        "description": "",
-        "content": "",
-        "auhtor": "",
-        "translator": "",
-        "original": "",
-        "poster": "/images/meetup/hangzhou.jpeg"
-    },
-    {
         "uri": "https://jenkins-zh.cn/event/shanghai-2019-06/",
         "title": "",
         "type": "meetup",
@@ -869,32 +869,6 @@
         "translator": "",
         "original": "",
         "poster": "/images/meetup/shanghai.jpeg"
-    },
-    {
-        "uri": "https://jenkins-zh.cn/event/shenzhen/",
-        "title": "",
-        "type": "meetup",
-        "date": "0001-01-01 00:00:00 +0000 UTC",
-        "tags": [],
-        "description": "",
-        "content": "",
-        "auhtor": "",
-        "translator": "",
-        "original": "",
-        "poster": "/images/meetup/shenzhen.jpeg"
-    },
-    {
-        "uri": "https://jenkins-zh.cn/event/wuhang/",
-        "title": "",
-        "type": "meetup",
-        "date": "0001-01-01 00:00:00 +0000 UTC",
-        "tags": [],
-        "description": "",
-        "content": "",
-        "auhtor": "",
-        "translator": "",
-        "original": "",
-        "poster": "/images/meetup/hacktberfest.jpg"
     },
     {
         "uri": "https://jenkins-zh.cn/partner/",
