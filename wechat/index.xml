@@ -6,10 +6,26 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 14 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>让我们庆祝 Jenkins 对 Java 11的支持</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
+      <description>NOTE：这是由 Java 11支持团队准备的联合博客文章：Adrien Lecharpentier、Ashton Treadway、Baptiste Mathus、Jenn Briden、Kevin Earls、MaríaIsabelVilacides、Mark Waite、RamónLeón 和 Oleg Nenashev。
+  我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
+从2018年6月开始，组织了许多活动来改进 Jenkins 代码库并添加 Java 11支持。除了这些事件之外，Core/Plugins 维护者和许多其他贡献者都在努力工作，确保他们发现并解决与 Java 11支持相关的尽可能多的问题。
+支持 Java 11的努力导致在 Jenkins 中创建了 JEP-211: Java 10+ support in Jenkins。它还促使平台特别兴趣小组的成立，以协调 Java 11工作和其他平台支持工作。
+## 庆祝活动
+我们想花点时间感谢参与这些任务的每个人：代码贡献者、问题记者、测试人员、活动策划者和与会者以及社区中所有慷慨地为这项工作提供时间和支持的人。谢谢你们！
+以下是一些帮助完成此任务的贡献者（按字母顺序排列）：
+Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel Beck, David Aldrich, Denis Digtyar, Devin Nusbaum, Emeric Vernat, Evaristo Gutierrez, Gavin Mogan, Gianpaolo Macario, Isabel Vilacides, James Howe, Jeff Pearce, Jeff Thompson, Jenn Briden, Jesse Glick, Jonah Graham, Kevin Earls, Ksenia Nenasheva, Kohsuke Kawaguchi, Liam Newman, Mandy Chung, Mark Waite, Nicolas De Loof, Oleg Nenashev, Oliver Gondža, Olivier Lamy, Olivier Vernin, Parker Ennis, Paul Sandoz, Ramón León, Sam Van Oort, Tobias Getrost, Tracy Miranda, Ulli Hafner, Vincent Latombe, Wadeck Follonier</description>
+    </item>
     
     <item>
       <title>持续交付落地实践工作坊</title>
@@ -26,6 +42,15 @@ Kubernetes 已经成为容器技术中必不可少的平台，甚至会作为未
 而对于参加本次工作坊实践活动的同学，可以根据自身的情况选择练习上面的题目或者下面进阶的题目：
  构建 Maven 项目并发布到 Nexus 使用私有 Nexus 中的依赖进行构建 构建 Docker 镜像并推送到 Harbor 构建 Heml Charts 并推送到 Chartmuseum  我们期望每一位参加的同学都可以从中学习并掌握基于 Jenkins 的持续交付技术，助力你所在团队的 DevOps 实践。更多的实训项目请参考 https://jenkins-zh.cn/about/course/#17
 最后，让我们一起感谢京东云为我们本次活动提供的 Kubernetes 云计算资源。因此，每一位参加练习的同学，只需要带上自己的笔记本，以及 SSH 客户端即可。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 每周版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</link>
+      <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</guid>
+      <description>2.184 (2019-07-07)  注销时，移除过期的会话 cookies ，阻止头信息中的相关错误太大。 (issue 25046) 当运行在 Java 11 上时，增加缺失类相关的 telemetry 实验。 (issue 57223) 修复使用“记住我”时的性能问题（于 2.160 中退化） (issue 56243) 开发者：清理 AbstractCloudSlave 的构造器 (pull 4086)  2.183 (2019-06-30)  在 Jenkins 的 URL 配置增加对 IPv6 地址的支持。 (issue 58041) 更新 args4j 2.0.31 到 2.33。 (issue 57959) 开发者：允许插件为 CodeMirror 文本域控制提供 onBlur() 的支持。 (issue 58240) 开发者：使得 WindowsUtil 可以让插件使用。 (pull 4038) 内部：更新 maven-war-plugin 3.0.0 到 3.2.3 (issue 47127)  2.182 (2019-06-23)  当删除目录时，移除 Windows 下的只读标记。 (issue 57855) 更新 Remoting 3.</description>
     </item>
     
     <item>

@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Jenkins 每周版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</link>
+      <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</guid>
+      <description>2.184 (2019-07-07)  注销时，移除过期的会话 cookies ，阻止头信息中的相关错误太大。 (issue 25046) 当运行在 Java 11 上时，增加缺失类相关的 telemetry 实验。 (issue 57223) 修复使用“记住我”时的性能问题（于 2.160 中退化） (issue 56243) 开发者：清理 AbstractCloudSlave 的构造器 (pull 4086)  2.183 (2019-06-30)  在 Jenkins 的 URL 配置增加对 IPv6 地址的支持。 (issue 58041) 更新 args4j 2.0.31 到 2.33。 (issue 57959) 开发者：允许插件为 CodeMirror 文本域控制提供 onBlur() 的支持。 (issue 58240) 开发者：使得 WindowsUtil 可以让插件使用。 (pull 4038) 内部：更新 maven-war-plugin 3.0.0 到 3.2.3 (issue 47127)  2.182 (2019-06-23)  当删除目录时，移除 Windows 下的只读标记。 (issue 57855) 更新 Remoting 3.</description>
+    </item>
+    
+    <item>
       <title>Jenkins 长期支持版更新</title>
       <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/</link>
       <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>

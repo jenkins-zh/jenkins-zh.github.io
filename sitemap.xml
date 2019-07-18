@@ -7,8 +7,18 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</loc>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/</loc>
     <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</loc>
+    <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -344,6 +354,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/partner/harmony-cloud/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/partner/kaiyuanshe/</loc>
   </url>
   
@@ -474,7 +488,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/community/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -497,7 +511,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/core/</loc>
-    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -519,7 +533,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/developer/</loc>
-    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -623,7 +637,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/java11/</loc>
-    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -649,7 +663,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -774,7 +788,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/platform-sig/</loc>
-    <lastmod>2019-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -876,7 +890,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
