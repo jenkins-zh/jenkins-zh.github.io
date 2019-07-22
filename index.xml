@@ -34,8 +34,7 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
   我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
 从2018年6月开始，组织了许多活动来改进 Jenkins 代码库并添加 Java 11支持。除了这些事件之外，Core/Plugins 维护者和许多其他贡献者都在努力工作，确保他们发现并解决与 Java 11支持相关的尽可能多的问题。
 支持 Java 11的努力导致在 Jenkins 中创建了 JEP-211: Java 10+ support in Jenkins。它还促使平台特别兴趣小组的成立，以协调 Java 11工作和其他平台支持工作。
-## 庆祝活动
-我们想花点时间感谢参与这些任务的每个人：代码贡献者、问题记者、测试人员、活动策划者和与会者以及社区中所有慷慨地为这项工作提供时间和支持的人。谢谢你们！
+庆祝活动 我们想花点时间感谢参与这些任务的每个人：代码贡献者、问题记者、测试人员、活动策划者和与会者以及社区中所有慷慨地为这项工作提供时间和支持的人。谢谢你们！
 以下是一些帮助完成此任务的贡献者（按字母顺序排列）：
 Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel Beck, David Aldrich, Denis Digtyar, Devin Nusbaum, Emeric Vernat, Evaristo Gutierrez, Gavin Mogan, Gianpaolo Macario, Isabel Vilacides, James Howe, Jeff Pearce, Jeff Thompson, Jenn Briden, Jesse Glick, Jonah Graham, Kevin Earls, Ksenia Nenasheva, Kohsuke Kawaguchi, Liam Newman, Mandy Chung, Mark Waite, Nicolas De Loof, Oleg Nenashev, Oliver Gondža, Olivier Lamy, Olivier Vernin, Parker Ennis, Paul Sandoz, Ramón León, Sam Van Oort, Tobias Getrost, Tracy Miranda, Ulli Hafner, Vincent Latombe, Wadeck Follonier</description>
     </item>
