@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 文档特别兴趣小组 - Jenkins 中文社区</title>
+     <title>分支策略 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="Jenkins 宣布成立文档特别兴趣小组">
+    <meta name="description" content="推荐使用的分支策略">
     
     
-    <meta name="keywords" content="Jenkins,Jenkins 文档特别兴趣小组,Jenkins 文档,Jenkins X 文档">
+    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,27 +32,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 文档特别兴趣小组" />
-<meta property="og:description" content="Jenkins 宣布成立文档特别兴趣小组" />
+<meta property="og:title" content="分支策略" />
+<meta property="og:description" content="推荐使用的分支策略" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/" />
-<meta property="article:published_time" content="2019-05-27T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-27T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/about/branching-strategy/" />
+<meta property="article:published_time" content="2019-07-09T19:56:04&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-09T19:56:04&#43;08:00"/>
 
-<meta itemprop="name" content="Jenkins 文档特别兴趣小组">
-<meta itemprop="description" content="Jenkins 宣布成立文档特别兴趣小组">
-
-
-<meta itemprop="datePublished" content="2019-05-27T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-27T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="86">
+<meta itemprop="name" content="分支策略">
+<meta itemprop="description" content="推荐使用的分支策略">
 
 
+<meta itemprop="datePublished" content="2019-07-09T19:56:04&#43;08:00" />
+<meta itemprop="dateModified" content="2019-07-09T19:56:04&#43;08:00" />
+<meta itemprop="wordCount" content="148">
 
-<meta itemprop="keywords" content="documentation,docs,community," />
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 文档特别兴趣小组"/>
-<meta name="twitter:description" content="Jenkins 宣布成立文档特别兴趣小组"/>
+<meta name="twitter:title" content="分支策略"/>
+<meta name="twitter:description" content="推荐使用的分支策略"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -186,8 +186,6 @@ var trackOutboundLink = function(id, url) {
 
 
 
-
-
   <aside class="mw5 br3 mv3 nested-links">
     
     
@@ -210,13 +208,6 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
-  <div>
-    作者：<span class="originalAuthor">markewaite</span>
-    <div>
-      <a class="originalLink" href="https://jenkins.io/blog/2019/05/11/docs-sig-announcement/" target="_blank">原文链接</a>
-    </div>
-  </div>
-  
   </aside>
 
 
@@ -227,9 +218,9 @@ var trackOutboundLink = function(id, url) {
 <ul>
 <li>
 <ul>
-<li><a href="#我能帮什么忙呢">我能帮什么忙呢？</a></li>
-<li><a href="#我该如何修复文档-bug">我该如何修复文档 bug？</a></li>
-<li><a href="#我该如何评估-pull-request">我该如何评估 pull request？</a></li>
+<li><a href="#三个-repo">三个 repo</a></li>
+<li><a href="#每个任务一个分支">每个任务一个分支</a></li>
+<li><a href="#分支策略">分支策略</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -245,7 +236,7 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/" class="dib f6 pl1 hover-bg-light-gray br-100" title="如何对 Jenkins 共享库进行单元测试 ">
+			<a href="https://jenkins-zh.cn/about/code-of-conduct/" class="dib f6 pl1 hover-bg-light-gray br-100" title="行为规范 ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -255,7 +246,7 @@ var trackOutboundLink = function(id, url) {
 		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/" class="dib f6 pr1 hover-bg-light-gray br-100" title="使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD">
+			<a href="https://jenkins-zh.cn/about/plugins/" class="dib f6 pr1 hover-bg-light-gray br-100" title="插件列表">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -275,13 +266,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 文档特别兴趣小组</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">分支策略</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 宣布成立文档特别兴趣小组
+      推荐使用的分支策略
     </div>
   
 
@@ -294,38 +285,60 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="Jenkins_Needs_You-02.png" alt="Jenkins_Needs_You" /></p>
+<p>本文讨论分支策略主要是提供执行并行任务时的参考指引，方便社区贡献者借鉴使用。</p>
 
-<p>我们很高兴地宣布 Jenkins 文档特别兴趣小组的成立。
-文档特别兴趣小组鼓励贡献者和外部社区创建和 review Jenkins 文档。</p>
+<p>需要理解和注意以下几点：
+- 三个代码仓库
+- 每个任务一个分支
+- 分支策略</p>
 
-<p>更多详情和计划，请参见：<a href="https://jenkins.io/sigs/docs/">文档特别兴趣小组简介</a>。</p>
+<h2 id="三个-repo">三个 repo</h2>
 
-<h2 id="我能帮什么忙呢">我能帮什么忙呢？</h2>
+<p>git 是一个分布式版本管理系统。以提交文章到 <a href="https://github.com/jenkins-infra/wechat">jenkins-infra/wechat</a> 为例，在这个过程中，我们会涉及到三个代码仓库。
+1. jenkins-infra/wechat repo，也就是 upstream repo，你需要 <code>git remote add upstream</code> 将其配置为 upstream repo 。
+2. fork/wechat repo，如果你从这里 clone 的话，也就是对应的 origin repo 。
+3. local repo，所有的分支管理都是从这里发起的。</p>
 
-<p>Jenkins 文档特别兴趣小组希望从以下方面得到您的帮助：</p>
+<h2 id="每个任务一个分支">每个任务一个分支</h2>
 
-<ul>
-<li>review 及修复 <a href="https://issues.jenkins-ci.org/issues/?jql=project%20%3D%20%22Jenkins%20Website%22%20AND%20status%20!%3D%20Done">打开的 bug 报告</a></li>
-<li>review <a href="https://github.com/jenkins-infra/jenkins.io/pulls">Jenkins 文档 pull requests</a></li>
-<li>review <a href="https://github.com/jenkins-x/jx-docs/pulls">Jenkins X 文档 pull requests</a></li>
-</ul>
+<p>每个任务一个分支的目的是，保证在 PR review/merge 的时候不会发生冲突。
+换言之，PR review/merge 不存在先后关系，可以独立进行。
+对于原创文章或翻译文章，每篇文章（包括资源文件）是一个独立的任务，每个任务对应一个分支。</p>
 
-<h2 id="我该如何修复文档-bug">我该如何修复文档 bug？</h2>
+<h2 id="分支策略">分支策略</h2>
 
-<p>关于如何为 Jenkins 文档做贡献的说明，请参见站点仓库中的 <a href="https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc#getting-started">CONTRIBUTING 文件</a>。
-按照说明文件，提交 pull requests 以供 review 。</p>
+<p>假设已经完成 PR 提交操作（<code>jenkins-infra/wechat:master &lt;- fork/wechat:dev-01</code>），下面是可能存在的相关分支。</p>
 
-<p>关于如何为 Jenkins X 文档做贡献的说明，请参见站点仓库中的 <a href="https://jenkins-x.io/contribute/documentation/">Jenkins X 文档站点</a>。
-按照说明文件，提交 pull requests 以供 review 。</p>
+<pre><code>jenkins-infra/wechat:    master
+fork/wechat:             master    dev-01
+local:                   master    dev-01
+</code></pre>
 
-<h2 id="我该如何评估-pull-request">我该如何评估 pull request？</h2>
+<p>这里的故事可以分为以下几步：</p>
 
-<p>Jenkins 项目的 pull requests 会在 <a href="https://github.com/jenkins-infra/jenkins.io/pulls">Jenkins 文档仓库</a>进行 review 。
-使用您的凭据登录到 GitHub，向 pull requests 中添加评论。</p>
+<ol>
+<li>在 Github UI 上完成 fork 操作，所以，<code>jenkins-infra/wechat:master</code> 对应到 <code>fork/wechat:master</code></li>
+<li><code>git clone</code> 到本地，所以 <code>fork/wechat:master</code> 对应到 <code>local:master</code></li>
+<li>在本地创建 <code>dev-01</code> 分支</li>
+<li>提交 commit，并 push 到 <code>fork/wechat:dev-01</code></li>
+<li>GitHub UI 发起 PR （<code>jenkins-infra/wechat:master &lt;- fork/wechat:dev-01</code>）</li>
+</ol>
 
-<p>Jenkins X 项目的 pull requests 会在 <a href="https://github.com/jenkins-x/jx-docs/pulls">Jenkins X 档仓库</a>进行 review 。
-使用您的凭据登录到 GitHub，向 pull requests 中添加评论。</p>
+<p>这里需要注意的是，<code>jenkins-infra/wechat:master</code> 和 <code>fork/wechat:master</code> 经常会
+不一致（<code>jenkins-infra/wechat:master</code> 是 source of truth ，会有很多 merge 来的 commits），
+这并没有什么大的影响。</p>
+
+<p>有了上面的认识，下面就是一步一步的命令行，假设上面的 <code>dev-01</code> 已经被合并，需要新建 <code>dev-02</code> 分支执行新的任务：</p>
+
+<ol>
+<li><code>git checkout master</code></li>
+<li><code>git pull upstream master --rebase</code></li>
+<li><code>git checkout -b dev-02</code></li>
+<li>(do something)</li>
+<li><code>git add . &amp;&amp; git commit -m 'do something'</code></li>
+<li><code>git push origin dev-02</code> # origin is your fork</li>
+<li>via Github UI (<code>jenkins-infra/wechat:master &lt;- fork/wechat:dev-02</code>)</li>
+</ol>
 
 </div>
 
@@ -348,15 +361,6 @@ var trackOutboundLink = function(id, url) {
 
           
 
-<h2>参考</h2>
-<ul>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/">多分支流水线任务对 GitLab SCM 的支持</a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/">Jenkins 插件的微基准测试框架</a></li>
-	
-</ul>
-
         </div>
       </div>
       
@@ -367,55 +371,18 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/about/branching-strategy/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 文档特别兴趣小组”
-  </a> 更新于：May 27, 2019
+    “分支策略”
+  </a> 更新于：July 9, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-27-docs-sig-announcement.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/about/branching-strategy.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
       
-
-  
-  
-  
-
-  <div class="nested-lh-copy">
-    <ul class="list dib nested-links ml0 pl0">
-      
-        <li class="db mb2 b">
-          Tags:
-        </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/documentation">
-              documentation
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/docs">
-              docs
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/community">
-              community
-            </a>
-          </li>
-        
-              
-      
-        
-        
-      
-    </ul>
-  </div>
 
 
     </div>
@@ -438,7 +405,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/05\/2019-05-27-docs-sig-announcement\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/about\/branching-strategy\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

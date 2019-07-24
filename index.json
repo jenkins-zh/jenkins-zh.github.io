@@ -39,6 +39,19 @@
         "poster": "pipeline-example.png"
     },
     {
+        "uri": "https://jenkins-zh.cn/about/branching-strategy/",
+        "title": "分支策略",
+        "type": "about",
+        "date": "2019-07-09 19:56:04 +0800 +0800",
+        "tags": [],
+        "description": "推荐使用的分支策略",
+        "content": " 本文讨论分支策略主要是提供执行并行任务时的参考指引，方便社区贡献者借鉴使用。\n需要理解和注意以下几点： - 三个代码仓库 - 每个任务一个分支 - 分支策略\n三个 repo git 是一个分布式版本管理系统。以提交文章到 jenkins-infra/wechat 为例，在这个过程中，我们会涉及到三个代码仓库。 1. jenkins-infra/wechat repo，也就是 upstream repo，你需要 git remote add upstream 将其配置为 upstream repo 。 2. fork/wechat repo，如果你从这里 clone 的话，也就是对应的 origin repo 。 3. local repo，所有的分支管理都是从这里发起的。\n每个任务一个分支 每个任务一个分支的目的是，保证在 PR review/merge 的时候不会发生冲突。 换言之，PR review/merge 不存在先后关系，可以独立进行。 对于原创文章或翻译文章，每篇文章（包括资源文件）是一个独立的任务，每个任务对应一个分支。\n分支策略 假设已经完成 PR 提交操作（jenkins-infra/wechat:master \u0026lt;- fork/wechat:dev-01），下面是可能存在的相关分支。\njenkins-infra/wechat: master fork/wechat: master dev-01 local: master dev-01  这里的故事可以分为以下几步：\n 在 Github UI 上完成 fork 操作，所以，jenkins-infra/wechat:master 对应到 fork/wechat:master git clone 到本地，所以 fork/wechat:master 对应到 local:master 在本地创建 dev-01 分支 提交 commit，并 push 到 fork/wechat:dev-01 GitHub UI 发起 PR （jenkins-infra/wechat:master \u0026lt;- fork/wechat:dev-01）  这里需要注意的是，jenkins-infra/wechat:master 和 fork/wechat:master 经常会 不一致（jenkins-infra/wechat:master 是 source of truth ，会有很多 merge 来的 commits）， 这并没有什么大的影响。\n有了上面的认识，下面就是一步一步的命令行，假设上面的 dev-01 已经被合并，需要新建 dev-02 分支执行新的任务：\n git checkout master git pull upstream master --rebase git checkout -b dev-02 (do something) git add . \u0026amp;\u0026amp; git commit -m 'do something' git push origin dev-02 # origin is your fork via Github UI (jenkins-infra/wechat:master \u0026lt;- fork/wechat:dev-02)  ",
+        "auhtor": "donhui",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/",
         "title": "Jenkins 每周版更新",
         "type": "wechat",
@@ -799,7 +812,7 @@
         "date": "2019-01-05 22:56:04 +0800 +0800",
         "tags": [],
         "description": "参与 Jenkins 中文社区的具体步骤",
-        "content": " 为什么要参与开源社区  翟志军：想亲身参与一个开源社区，了解其运行机制。而为什么选择 Jenkins 中文社区？是想更多人了解持续交付。 zhangc819：日常工作里经常需要开源社区的力量来解决问题、学习经验，参与开源社区建设也是为了给社区提供更多的力量，相互左右才能壮大下去。  如何参与 Jenkins 中文社区 参与 Jenkins 中文社区的方式不只有 Coding 一条路可选，还有很多方式，比如：\n 发表或翻译 Jenkins 相关的文章，并发表到社区网站及微信公众号。 Jenkins 本地化。 成为 Jenkins 线下或线上活动的志愿者。 Review 别人提交到 Pull Request。 发现 Jenkins 社区哪里可以改善，然后提个 Issue 或 Pull Request。  等等。所有你能想到的，促进 Jenkins 中文社区发展的事情都算是参与 Jenkins 中文社区。\n但是，具体怎么做呢？\n首先，我们都是基于 Git 工具进行协作的，所以，你需要会一些 Git 及 GitHub 的基础操作。接下来，咱们分别介绍每一种参与方式。\nJenkins 中文社区代码仓库列表 那么，我们可以向哪些源代码仓库进行贡献呢？以下是各仓库的链接及简单介绍：\n wechat：存放 jenkins-zh.cn 网站的文章。也就是发文章可在此仓库提 PR。 jenkins-zh：Jenkins 中文社区网站源码，由 Hugo 实现。 wechat-backend：Jenkins 微信公众号机器人。 hugo-jenkins-theme：Jenkins 中文社区网站主题。 artwork：Jenkins 中文社区的艺术作品，比如 Jenkins 中文社区 Logo。  贡献 Jenkins 中文社区的具体工作 具体有哪些工作，可以让我们参与？\n翻译 Jenkins 相关文章 所有的翻译任务都会列在 GitHub的看板上。可以在看板上找到自己感兴趣的文章，然后将其拖到“In progress”列。这样可以避免重复的翻译。\n当然，为保证翻译质量，希望大家能做到：\n 认真、负责第一位。 翻译任务通常不建议超过两周。 遵守翻译规范。  Jenkins 中文本地化 本地化的工作包括：\n 对 Jenkins 官方网站及 博客 的翻译。Pull Request 提交到： cn.jenkins.io 代码仓库 。 维护 简体中文语言插件 Pull Request 提交到 localization-zh-cn-plugin 。  发表 Jenkins 原创文章 原创内容包括：Jenkins 相关、持续集成、持续交付、DevOps\n在 Jenkins 中文社区提交的 PR 通过后，会发布在多个不同的媒体平台上，目前包括：\n Jenkins 中文社区网站 Jenkins 微信公众号 开源中国博客 简书专栏 掘金  发表原创文章的步骤  Fork wechat 仓库，如果你还没有 fork。 在本地，参考 范文 写文章。动手前请仔细阅读请阅读规范。如果实在不明白的话，你也可以参考其它仓库中 articles 目录下的其它文章来写就好。 将本地的提交，推到自己的仓库。 在 GitHub 上提一个 PR。  关于排期 为了尽可能满足你期望的发布日期，可以自行选择，但同时需要满足如下的条件：\n 为保障大家有足够的时间进行 Review，建议排到一周以后 工作日 避免同一天有相同类型的文章  提 PR 时的要求  PR 的标题格式：[类型-文章排期] 标题 在 PR 类型列表前的 [] 中加入一个 x，例如：[x]  更多内容请参考 PULL_REQUEST_TEMPLATE.md\n分享 你可以在本站或者 Meetup 上分享你在使用 Jenkins 或者相关技术时总结的经验、教训、成果等。\n维护本站点 你可以从了解本站的架构开始。小到错别字修正，大到站点风格、架构完善都需要你的参与。\nReview 别人提交到 Pull Request Review 代码也算贡献社区的一种方式。\nLinus 说过：“Given enough eyeballs, all bugs are shallow（足够多的眼睛，就可让所有问题浮现）”。所以，当有贡献者提 Pull Request 到 Jenkins 中文社区的任何一个代码仓库，原则上，我们都需要两人及以上的人对该 Pull Request 进行 review。\n",
+        "content": " 为什么要参与开源社区  翟志军：想亲身参与一个开源社区，了解其运行机制。而为什么选择 Jenkins 中文社区？是想更多人了解持续交付。 zhangc819：日常工作里经常需要开源社区的力量来解决问题、学习经验，参与开源社区建设也是为了给社区提供更多的力量，相互左右才能壮大下去。  如何参与 Jenkins 中文社区 参与 Jenkins 中文社区的方式不只有 Coding 一条路可选，还有很多方式，比如：\n 发表或翻译 Jenkins 相关的文章，并发表到社区网站及微信公众号。 Jenkins 本地化。 成为 Jenkins 线下或线上活动的志愿者。 Review 别人提交到 Pull Request。 发现 Jenkins 社区哪里可以改善，然后提个 Issue 或 Pull Request。  等等。所有你能想到的，促进 Jenkins 中文社区发展的事情都算是参与 Jenkins 中文社区。\n但是，具体怎么做呢？\n首先，我们都是基于 Git 工具进行协作的，所以，你需要会一些 Git 及 GitHub 的基础操作。\n分支策略主要是提供执行并行任务时的参考指引，方便社区贡献者借鉴使用。\n接下来，咱们分别介绍每一种参与方式。\nJenkins 中文社区代码仓库列表 那么，我们可以向哪些源代码仓库进行贡献呢？以下是各仓库的链接及简单介绍：\n wechat：存放 jenkins-zh.cn 网站的文章。也就是发文章可在此仓库提 PR。 jenkins-zh：Jenkins 中文社区网站源码，由 Hugo 实现。 wechat-backend：Jenkins 微信公众号机器人。 hugo-jenkins-theme：Jenkins 中文社区网站主题。 artwork：Jenkins 中文社区的艺术作品，比如 Jenkins 中文社区 Logo。  贡献 Jenkins 中文社区的具体工作 具体有哪些工作，可以让我们参与？\n翻译 Jenkins 相关文章 所有的翻译任务都会列在 GitHub的看板上。可以在看板上找到自己感兴趣的文章，然后将其拖到“In progress”列。这样可以避免重复的翻译。\n当然，为保证翻译质量，希望大家能做到：\n 认真、负责第一位。 翻译任务通常不建议超过两周。 遵守翻译规范。  Jenkins 中文本地化 本地化的工作包括：\n 对 Jenkins 官方网站及 博客 的翻译。Pull Request 提交到： cn.jenkins.io 代码仓库 。 维护 简体中文语言插件 Pull Request 提交到 localization-zh-cn-plugin 。  发表 Jenkins 原创文章 原创内容包括：Jenkins 相关、持续集成、持续交付、DevOps\n在 Jenkins 中文社区提交的 PR 通过后，会发布在多个不同的媒体平台上，目前包括：\n Jenkins 中文社区网站 Jenkins 微信公众号 开源中国博客 简书专栏 掘金  发表原创文章的步骤  Fork wechat 仓库，如果你还没有 fork。 在本地，参考 范文 写文章。动手前请仔细阅读请阅读规范。如果实在不明白的话，你也可以参考其它仓库中 articles 目录下的其它文章来写就好。 将本地的提交，推到自己的仓库。 在 GitHub 上提一个 PR。  关于排期 为了尽可能满足你期望的发布日期，可以自行选择，但同时需要满足如下的条件：\n 为保障大家有足够的时间进行 Review，建议排到一周以后 工作日 避免同一天有相同类型的文章  提 PR 时的要求  PR 的标题格式：[类型-文章排期] 标题 在 PR 类型列表前的 [] 中加入一个 x，例如：[x]  更多内容请参考 PULL_REQUEST_TEMPLATE.md\n分享 你可以在本站或者 Meetup 上分享你在使用 Jenkins 或者相关技术时总结的经验、教训、成果等。\n维护本站点 你可以从了解本站的架构开始。小到错别字修正，大到站点风格、架构完善都需要你的参与。\nReview 别人提交到 Pull Request Review 代码也算贡献社区的一种方式。\nLinus 说过：“Given enough eyeballs, all bugs are shallow（足够多的眼睛，就可让所有问题浮现）”。所以，当有贡献者提 Pull Request 到 Jenkins 中文社区的任何一个代码仓库，原则上，我们都需要两人及以上的人对该 Pull Request 进行 review。\n",
         "auhtor": "linuxsuren",
         "translator": "",
         "original": "",
@@ -2369,7 +2382,7 @@
         "uri": "https://jenkins-zh.cn/about/",
         "title": "关于我们",
         "type": "about",
-        "date": "2019-05-15 20:30:05 +0800 +0800",
+        "date": "2019-07-09 19:56:04 +0800 +0800",
         "tags": [],
         "description": "有关于 Jenkins 中文社区相关介绍",
         "content": "我们是由 Jenkins 社区在国内的爱好者、贡献者组成。\n请准守我们的行为规范，文明留言。\n",

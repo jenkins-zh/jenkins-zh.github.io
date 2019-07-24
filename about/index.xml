@@ -6,7 +6,7 @@
     <description>Recent content in 关于我们 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 May 2019 20:30:05 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2019 19:56:04 +0800</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/about/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,21 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>分支策略</title>
+      <link>https://jenkins-zh.cn/about/branching-strategy/</link>
+      <pubDate>Tue, 09 Jul 2019 19:56:04 +0800</pubDate>
+      
+      <guid>https://jenkins-zh.cn/about/branching-strategy/</guid>
+      <description>本文讨论分支策略主要是提供执行并行任务时的参考指引，方便社区贡献者借鉴使用。
+需要理解和注意以下几点： - 三个代码仓库 - 每个任务一个分支 - 分支策略
+三个 repo git 是一个分布式版本管理系统。以提交文章到 jenkins-infra/wechat 为例，在这个过程中，我们会涉及到三个代码仓库。 1. jenkins-infra/wechat repo，也就是 upstream repo，你需要 git remote add upstream 将其配置为 upstream repo 。 2. fork/wechat repo，如果你从这里 clone 的话，也就是对应的 origin repo 。 3. local repo，所有的分支管理都是从这里发起的。
+每个任务一个分支 每个任务一个分支的目的是，保证在 PR review/merge 的时候不会发生冲突。 换言之，PR review/merge 不存在先后关系，可以独立进行。 对于原创文章或翻译文章，每篇文章（包括资源文件）是一个独立的任务，每个任务对应一个分支。
+分支策略 假设已经完成 PR 提交操作（jenkins-infra/wechat:master &amp;lt;- fork/wechat:dev-01），下面是可能存在的相关分支。
+jenkins-infra/wechat: master fork/wechat: master dev-01 local: master dev-01  这里的故事可以分为以下几步：
+ 在 Github UI 上完成 fork 操作，所以，jenkins-infra/wechat:master 对应到 fork/wechat:master git clone 到本地，所以 fork/wechat:master 对应到 local:master 在本地创建 dev-01 分支 提交 commit，并 push 到 fork/wechat:dev-01 GitHub UI 发起 PR （jenkins-infra/wechat:master &amp;lt;- fork/wechat:dev-01）  这里需要注意的是，jenkins-infra/wechat:master 和 fork/wechat:master 经常会 不一致（jenkins-infra/wechat:master 是 source of truth ，会有很多 merge 来的 commits）， 这并没有什么大的影响。</description>
     </item>
     
     <item>
@@ -64,7 +79,9 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
       <description>为什么要参与开源社区  翟志军：想亲身参与一个开源社区，了解其运行机制。而为什么选择 Jenkins 中文社区？是想更多人了解持续交付。 zhangc819：日常工作里经常需要开源社区的力量来解决问题、学习经验，参与开源社区建设也是为了给社区提供更多的力量，相互左右才能壮大下去。  如何参与 Jenkins 中文社区 参与 Jenkins 中文社区的方式不只有 Coding 一条路可选，还有很多方式，比如：
  发表或翻译 Jenkins 相关的文章，并发表到社区网站及微信公众号。 Jenkins 本地化。 成为 Jenkins 线下或线上活动的志愿者。 Review 别人提交到 Pull Request。 发现 Jenkins 社区哪里可以改善，然后提个 Issue 或 Pull Request。  等等。所有你能想到的，促进 Jenkins 中文社区发展的事情都算是参与 Jenkins 中文社区。
 但是，具体怎么做呢？
-首先，我们都是基于 Git 工具进行协作的，所以，你需要会一些 Git 及 GitHub 的基础操作。接下来，咱们分别介绍每一种参与方式。
+首先，我们都是基于 Git 工具进行协作的，所以，你需要会一些 Git 及 GitHub 的基础操作。
+分支策略主要是提供执行并行任务时的参考指引，方便社区贡献者借鉴使用。
+接下来，咱们分别介绍每一种参与方式。
 Jenkins 中文社区代码仓库列表 那么，我们可以向哪些源代码仓库进行贡献呢？以下是各仓库的链接及简单介绍：
  wechat：存放 jenkins-zh.cn 网站的文章。也就是发文章可在此仓库提 PR。 jenkins-zh：Jenkins 中文社区网站源码，由 Hugo 实现。 wechat-backend：Jenkins 微信公众号机器人。 hugo-jenkins-theme：Jenkins 中文社区网站主题。 artwork：Jenkins 中文社区的艺术作品，比如 Jenkins 中文社区 Logo。  贡献 Jenkins 中文社区的具体工作 具体有哪些工作，可以让我们参与？</description>
     </item>
