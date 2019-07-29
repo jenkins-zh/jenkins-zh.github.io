@@ -6,10 +6,24 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 Kubernetes 上使用 Jenkins </title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</link>
+      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</guid>
+      <description>​有几种方法可以在 DevOps 环境中管理您的云基础架构。 DevOps 是一种鼓励快速流动的应用程序开发以及促进 IT 团队开发、测试、发布过程无缝无缝衔接的方法。
+Jenkins 通过自动化将持续集成（CI）和持续交付（CD）无缝集成到开发流程中来优化工作流程。
+可以使用 Kubernetes 中的 Jenkins pod 部署这些技术， Jenkins pod 可以根据团队的具体需求进行扩展。
+CI/CD 流水线 Jenkins 是 CI/CD 的同义词，它是自动化开发、部署应用程序和微服务的完美工具，目前是市场上最流行的自动化工具。 Jenkins 拥有1000多个插件，可以轻松地与其他系统（包括 Kubernetes ）集成。插件不仅提供多系统集成，而且显著增强了 Jenkins 的能力，使 Jenkins 能够帮助您构建和部署几乎任何类型的项目。我们在另一篇文章中介绍了生活中最需要的20个 Jenkins 插件。
+​由于 Jenkins 和 Kubernetes 的原生兼容性，设置自己的 CI/CD 流水线非常容易。与基于 VM 的部署相比，在 Kubernetes 上部署 Jenkins 优势更明显。例如，获得按需拥有特定于 Jenkins slaves (代理)项目的能力，而不是让一个 vm 池空闲等待任务。它将使用 master-agent 体系结构来完全自动化微服务的创建和部署以及测试和部署所需的环境。
+​可以使用 Helm、kubectl 或 GUIs 部署 Jenkins ，以便将新的 pods 部署到集群中。安装后，下一步是为 K8s 配置 Jenkins 插件。我们需要配置系统设置，例如，代理在哪里找到 Jenkins master ，代理将使用的 Docker 镜像等。当然，将 Jenkins 配置为与 CI/CD 工作流一起工作也是至关重要的，包括设置测试和部署参数以及要如何设置 Jenkins 控制的集群。一旦 Jenkins 启动并运行，就可以实现一个完全自动化的连续交付环境。</description>
+    </item>
     
     <item>
       <title>让我们庆祝 Jenkins 对 Java 11的支持</title>
