@@ -6,10 +6,24 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 30 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 流水线配置历史插件介绍</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</guid>
+      <description>流水线是在 Jenkins 中创建任务的有效的和现代的方式。 为了快速、简单地识别流水线变更，我们开发了流水线配置历史插件。 这个插件检测流水线的变更，并为用户提供一个选项，以明显地、可追溯地查看流水线配置两次构建（差异）之间的变更。
+一切是如何开始的 这一切开始于十年之前 —— 经典的任务类型 (例如：自由风格、Maven 等等)。 每隔一段时间，用户就会联系我们，因为他们的任务无法在一夜之间完成。 为什么这个任务失败了呢？ 这次失败和任务配置变更有关系吗？ 用户典型的回答是：&amp;rdquo;我们没有改任何东西&amp;rdquo;，但这是真的吗？ 我们思考了这个问题，并决定开发一个插件来帮助我们解决这个问题。 这就是plugin:jobConfigHistory[任务配置历史]的想法和开始。
+现在可以查看任务配置的变更(例如其他分支、JDK版本等)，而且更常见的情况是，破坏构建的原因是任务配置的变更。
+多年来，该插件得到了开发，目前仍在开发中。 添加了新的功能，不仅可以查看任务配置，还可以查看全局和代理配置的变更。 还可以恢复旧的配置版本。 如今，这个插件已经有超过30,000次安装量。 多年来，JobConfigHistory 减轻了我们的日常工作 —— 我们有超过3000个 Jenkins 任务！ 然后出现了一种新的任务类型：流水线。
+流水线 —— 需要一些新的东西 流水线任务和经典的任务类型有根本地区别。 经典的任务类型是通过 Jenkins GUI 配置的，而流水线任务是配置即代码。 实际上，每个流水线任务都是通过 Jenkins GUI 创建的，然而这并不一定是流水线配置的位置。 流水线可以被配置：
+ 直接在 Jenkins 任务中作为脚本。 代码将直接插入任务配置页面。 作为源代码管理系统（SCM）中的 Jenkinsfile：流水线配置在 SCM 中的文本文件（Jenkinsfile）中定义。 在任务本身中，只配置了 Jenkinsfile 存储库的路径。 在构建过程中，Jenkinsfile 从 SCM 中被检出并被处理。 作为共享库：流水线配置的一部分被移动到单独文件中，它可以由多个任务使用。 这些文件也保存在 SCM 中。 即使这样仍然需要 Jenkinsfile（或者任务中的流水线脚本）。  对于任务配置的每次保存操作，如果发生了变更，JobConfigHistory 将创建实际任务配置的副本。 只有当流水线配置作为脚本插入到任务配置页面时，该方法才适用于流水线任务。 JobConfigHistory 未检测到 Jenkinsfile 或共享库中的变更。 您必须使用 SCM 系统查看 Jenkinsfile 或共享库的变更。 在构建时间和对 Jenkinsfile 或共享库的变更之间找到相关性是复杂且耗时的。</description>
+    </item>
     
     <item>
       <title>开源人线下见面会</title>
