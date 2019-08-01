@@ -1468,6 +1468,19 @@ sudo rpm — import https://pkg.jenkins.io/debian/jenkins.io.key sudo wget -O /e
     </item>
     
     <item>
+      <title>在 Jenkins 中配置邮件服务器</title>
+      <link>https://jenkins-zh.cn/tutorial/notify/email/email/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/notify/email/email/</guid>
+      <description>我们需要在系统管理》系统设置中配置邮件服务器的信息。
+在邮件通知区域，给出类似如下的配置：
+   配置项 样例值 说明     SMTP服务器 smtp.exmail.qq.com    用户默认邮件后缀 @jenkins-zh.cn    SMTP服务器 smtp.exmail.qq.com    用户名 demo@jenkins-zh.cn    密码 demo    使用SSL协议     SMTP端口 465    Reply-To Address demo@jenkins-zh.cn    字符集 UTF-8     腾讯企业邮箱 上面给出的例子就是腾讯企业邮箱的配置，对于密码部分，我们需要生成客户端密码。
+流水线 当我们通过上面的步骤，将邮件服务器配置成功后，就可以使用类似如下的流水线步骤来发送邮件了。
+mail bcc: &#39;&#39;, body: &#39;Here is the content.</description>
+    </item>
+    
+    <item>
       <title>在 VS Code 中校验 Jenkinsfile</title>
       <link>https://jenkins-zh.cn/wechat/articles/2018/11/2018-11-21-validate-jenkinsfile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1498,6 +1511,15 @@ GitHub 或 BitBucket 可能会报告一个新的提交或 PR，DockerHub 报告�
 没关系，我们可以退而求其次，使用轮询变更的方式。只是这样很糟糕。你会用尽 API 配额，还无法实时地获取变更，这真的不是一个好方法。
 问题可能也是机会 我们可以解决这个问题，但也可以把这个视为一个机会。有的东西在互联网中不可访问，或者以某些默认的方法锁定是一个特色，不是一个 Bug。你可以很大程度上减少你的攻击面，同时可以进行深度防护：
 一个 WebHook 转发服务 输入 link:https://smee.io/[Smee] 这个很容易记住的名字。这是一个由 GitHub 提供的 link:https://github.</description>
+    </item>
+    
+    <item>
+      <title>待完善</title>
+      <link>https://jenkins-zh.cn/tutorial/plugin-dev/pipeline/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/plugin-dev/pipeline/demo/</guid>
+      <description>待完善</description>
     </item>
     
     <item>
@@ -1533,6 +1555,24 @@ Jenkins 安全团队将 漏洞反馈分类发布在 Jira 和我们的非公开�
     </item>
     
     <item>
+      <title>有关 Git 的教程</title>
+      <link>https://jenkins-zh.cn/tutorial/scm/git/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/scm/git/git/</guid>
+      <description>待完善</description>
+    </item>
+    
+    <item>
+      <title>有关 svn 的教程</title>
+      <link>https://jenkins-zh.cn/tutorial/scm/svn/svn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/scm/svn/svn/</guid>
+      <description>待完善</description>
+    </item>
+    
+    <item>
       <title>自动更新、易于使用的 Jenkins</title>
       <link>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1544,6 +1584,15 @@ Jenkins 安全团队将 漏洞反馈分类发布在 Jira 和我们的非公开�
 持续集成和持续交付变得越来越普遍，并且是现代软件工程的基础 ，在不同的组织当中有两种不同的方式使用 Jenkins 。在一些组织当中，Jenkins 通过 Chef ，Puppet 等自动化工具有条不紊的被管理和部署着。然而在许多其他组织当中， Jenkins 更像是一个 设备 ，与办公室的无线路由器不同。当安装完毕，只要它能继续完成工作，人们就不会太多的关注这个设备。
 Jenkins Evergreen 发行版通过确保最新的功能更新，bug 修复以及安全性修复始终能安装到 Jenkins 当中,&amp;ldquo;让 Jenkins 更像是一个设备&amp;rdquo;。
 除此之外, 我相信 Evergreen 能够向一些我们现在没有完全服务的团队提供良好的服务:这些团体希望能够以 服务 的形式使用 Jenkins 。我们暂时没有考虑提供公有云版本的 Jenkins 。我们意识到了自动接收增量更新，使用户可以在无需考虑更新 Jenkins 的情况下进行持续开发的好处。</description>
+    </item>
+    
+    <item>
+      <title>认证和授权</title>
+      <link>https://jenkins-zh.cn/tutorial/management/auth/demo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/management/auth/demo/</guid>
+      <description>待完善</description>
     </item>
     
   </channel>
