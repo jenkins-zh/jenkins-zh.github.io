@@ -338,7 +338,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -435,6 +435,15 @@
     </item>
     
     <item>
+      <title>Multi Branch</title>
+      <link>https://jenkins-zh.cn/tags/multi-branch/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/multi-branch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Newcomer</title>
       <link>https://jenkins-zh.cn/tags/newcomer/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
@@ -491,7 +500,7 @@
     <item>
       <title>Pipeline</title>
       <link>https://jenkins-zh.cn/tags/pipeline/</link>
-      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/pipeline/</guid>
       <description></description>
@@ -548,6 +557,15 @@
       <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/release/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Remote File</title>
+      <link>https://jenkins-zh.cn/tags/remote-file/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/remote-file/</guid>
       <description></description>
     </item>
     
