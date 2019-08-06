@@ -1111,10 +1111,10 @@ Jenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.cn/event/beijing-2019-10-19/</link>
+      <link>https://jenkins-zh.cn/event/beijing-2019-10-25/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/event/beijing-2019-10-19/</guid>
+      <guid>https://jenkins-zh.cn/event/beijing-2019-10-25/</guid>
       <description>资源需求 志愿者 五名志愿者，负责场地秩序维护、活动事项问题解答等工作。具体包括如下： * 拍照/摄像 1～2名 * 签到、场地布置 1～2名 * 文案、宣传 1～2名
 志愿者福利： * 免费参加自本活动启动时一年内的所有活动 * 活动纪念品 * 赠送与本社区有合作关系的其他公司或者社区组织的活动门票
 技术教练 Kubernetes、Jenkins 领域的技术教练（导师）各两名，负责参赛选手过程中的问题解答，服务器资源 维护管理。
@@ -1150,6 +1150,15 @@ Jenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/partner/harmony-cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/partner/jingdongyun/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/partner/jingdongyun/</guid>
       <description></description>
     </item>
     

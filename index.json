@@ -1001,7 +1001,7 @@
         "poster": "/images/meetup/kaiyuan.jpg"
     },
     {
-        "uri": "https://jenkins-zh.cn/event/beijing-2019-10-19/",
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-10-25/",
         "title": "",
         "type": "hackthon",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1054,6 +1054,19 @@
     },
     {
         "uri": "https://jenkins-zh.cn/partner/harmony-cloud/",
+        "title": "",
+        "type": "partner",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/partner/jingdongyun/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
