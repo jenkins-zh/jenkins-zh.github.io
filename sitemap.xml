@@ -456,6 +456,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/api/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/ai/</loc>
     <lastmod>2019-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -991,6 +995,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/use-cases/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/</loc>
   </url>
   
@@ -1003,12 +1011,20 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/pipeline/shared-library/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/about/</loc>
     <lastmod>2019-07-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/about/about-site/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/use-cases/package/</loc>
   </url>
   
   <url>
@@ -1034,6 +1050,14 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/management/backup-restore/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/pipeline/multi-branch/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2019-07-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1044,7 +1068,15 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/management/backup-restore/demo/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/api/plugin/</loc>
   </url>
   
   <url>
@@ -1068,6 +1100,14 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/use-cases/build/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/api/core/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/event/</loc>
   </url>
   
@@ -1088,11 +1128,19 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/management/agent/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tutorial/management/auth/</loc>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/management/auth/demo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/use-cases/deploy/</loc>
   </url>
   
 </urlset>
