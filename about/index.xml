@@ -6,7 +6,7 @@
     <description>Recent content in 关于我们 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 31 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/about/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,17 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>活动志愿者报名</title>
+      <link>https://jenkins-zh.cn/about/volunteer-part-in/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/about/volunteer-part-in/</guid>
+      <description>  Jenkins 中文社区将不定期举行一些活动，志愿者的参与是不可或缺的。希望有更多的小伙伴可以通过志愿者的身份参与进来
+ 如何报名 以邮件的形式发送到志愿者申请 內容如下（注： Github ID 示例：https://github.com/githubId）：
+活动名称： 姓名： 公司名称（选填）： 所在地： 职业： 联系电话： 微信号： Github ID: 个人擅长： 参加志愿者的初衷：  志愿者福利：  免费参加自本活动启动时一年内的所有活动 活动纪念品(小型活动没有纪念品) 赠送与本社区有合作关系的其他公司或者社区组织的活动门票  申明  欢迎小伙伴们报名志愿者，并且为志愿者准备了一些社区福利。但为了避免有人浑水摸鱼的事情发生，我们会根据实际参与情况以及参与活动的态度积极性来评判是否拥有志愿者福利的待遇。  </description>
     </item>
     
     <item>

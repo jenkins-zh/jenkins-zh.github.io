@@ -13,6 +13,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-09-volunteer-recruitment/",
+        "title": "持续交付黑客松--志愿者招募",
+        "type": "wechat",
+        "date": "2019-08-09 00:00:00 +0000 UTC",
+        "tags": ["黑客松", "志愿者", "招募"],
+        "description": "持续交付黑客松志愿者招募",
+        "content": "  Jenkins 中文社区计划于2019年10月25日发起一场以 DevOps 为主题的黑客松编程比赛，该活动旨在为当下金融、能源、政务、交通等场景面临的 IT 挑战提出解决方案。\n 主办方  Jenkins 中文社区  合作方  CloudBees 码云 开源社  志愿者招募 如有意愿参与黑客松活动，欢迎踊跃报名。我们会认真、仔细地筛选符合条件的报名者。\n报名方式 发送邮件到event@jenkins-zh.cn，内容如下，请如实填写（注： GitHub ID 示例：https://github.com/githubId）：\n活动名称： 姓名： 公司名称（选填）： 所在地： 职业： 联系电话： 微信号： GitHub ID: T 恤尺码: 个人擅长： 参加志愿者的初衷：  志愿者职责划分  文案、宣传 拍照/摄像 签到、场地布置 场地秩序维护、活动事项解答、物品库存管理等  志愿者职责说明 依据不同志愿者的职责分工，志愿者需提前对自己对职责做一个大概对计划表，提前与社区活动相关负责人员相互沟通，尽量减少在活动中遇到突发事件对情况以及对可能遇到突发事件的情况做好应对方案。\n志愿者福利 我们会根据志愿者的实际参与情况，给予志愿者相应福利： * 免费参加自本活动启动时一年内的所有活动 * 活动纪念品 * 赠送与本社区有合作关系的其他公司或者社区组织的活动门票\n",
+        "auhtor": "yJunS",
+        "translator": "",
+        "original": "",
+        "poster": "./2019-08-09-volunteer-recruitment/needyou.jpeg"
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/",
         "title": "在大型企业里维护多分支流水线",
         "type": "wechat",
@@ -24,6 +37,19 @@
         "translator": "shenxianpeng",
         "original": "https://dzone.com/articles/maintaining-multi-branch-pipelines-in-large-scale",
         "poster": "./2019-08-05-jenkins-multi-branch-pipeline/cover.jpeg"
+    },
+    {
+        "uri": "https://jenkins-zh.cn/about/volunteer-part-in/",
+        "title": "活动志愿者报名",
+        "type": "about",
+        "date": "2019-08-05 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "社区活动志愿者报名",
+        "content": "  Jenkins 中文社区将不定期举行一些活动，志愿者的参与是不可或缺的。希望有更多的小伙伴可以通过志愿者的身份参与进来\n 如何报名 以邮件的形式发送到志愿者申请 內容如下（注： Github ID 示例：https://github.com/githubId）：\n活动名称： 姓名： 公司名称（选填）： 所在地： 职业： 联系电话： 微信号： Github ID: 个人擅长： 参加志愿者的初衷：  志愿者福利：  免费参加自本活动启动时一年内的所有活动 活动纪念品(小型活动没有纪念品) 赠送与本社区有合作关系的其他公司或者社区组织的活动门票  申明  欢迎小伙伴们报名志愿者，并且为志愿者准备了一些社区福利。但为了避免有人浑水摸鱼的事情发生，我们会根据实际参与情况以及参与活动的态度积极性来评判是否拥有志愿者福利的待遇。  ",
+        "auhtor": "yJunS",
+        "translator": "",
+        "original": "",
+        "poster": ""
     },
     {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/",
@@ -1823,7 +1849,7 @@
         "uri": "https://jenkins-zh.cn/",
         "title": "Jenkins 中文社区",
         "type": "page",
-        "date": "2019-08-05 00:00:00 +0000 UTC",
+        "date": "2019-08-09 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -2382,7 +2408,7 @@
         "uri": "https://jenkins-zh.cn/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2019-08-05 00:00:00 +0000 UTC",
+        "date": "2019-08-09 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -2590,7 +2616,7 @@
         "uri": "https://jenkins-zh.cn/about/",
         "title": "关于我们",
         "type": "about",
-        "date": "2019-07-31 00:00:00 +0000 UTC",
+        "date": "2019-08-05 00:00:00 +0000 UTC",
         "tags": [],
         "description": "有关于 Jenkins 中文社区相关介绍",
         "content": "Jenkins 中文社区是由 Jenkins 国内的爱好者、贡献者组成，共同推广以及完善 CI/CD 技术的学习试用和落地。我们秉承开源的精神，在社区治理上高度开放，代码、文档以及设计等开源免费，致力于为我们的用户带来更好的体验。\n请准守我们的行为规范，文明留言。\n",
@@ -2756,6 +2782,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tags/%E5%BF%97%E6%84%BF%E8%80%85/",
+        "title": "志愿者",
+        "type": "tags",
+        "date": "2019-08-09 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/",
         "title": "成为一名 Jenkins 贡献者：对新手友好的工单",
         "type": "wechat",
@@ -2766,6 +2805,19 @@
         "auhtor": "romenrg",
         "translator": "linuxsuren",
         "original": "https://jenkins.io/blog/2019/05/30/becoming-contributor-newbie-tickets/",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tags/%E6%8B%9B%E5%8B%9F/",
+        "title": "招募",
+        "type": "tags",
+        "date": "2019-08-09 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
         "poster": ""
     },
     {
@@ -2981,6 +3033,19 @@
         "title": "部署",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/",
+        "title": "黑客松",
+        "type": "tags",
+        "date": "2019-08-09 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
