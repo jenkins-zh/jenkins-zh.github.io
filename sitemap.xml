@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/meeting/2019-08-08/</loc>
+    <lastmod>2019-08-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-08-jenkins-x-new-logo/</loc>
     <lastmod>2019-08-08T00:00:00+00:00</lastmod>
   </url>
@@ -805,6 +810,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/meeting/</loc>
+    <lastmod>2019-08-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/multi-branch/</loc>
     <lastmod>2019-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1112,7 +1123,15 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/management/plugin/update-center/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tutorial/api/plugin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/management/plugin/</loc>
   </url>
   
   <url>

@@ -30,11 +30,22 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-09-volunteer-recruitment/</guid>
-      <description>Jenkins 中文社区计划于2019年10月25日发起一场以 DevOps 为主题的黑客松编程比赛，该活动旨在为当下金融、能源、政务、交通等场景面临的 IT 挑战提出解决方案。
- 主办方  Jenkins 中文社区  合作方  CloudBees 码云 开源社  志愿者招募 如有意愿参与黑客松活动，欢迎踊跃报名。我们会认真、仔细地筛选符合条件的报名者。
+      <description>Jenkins 中文社区计划于2019年10月25日发起一场以 DevOps 为主题的黑客松编程比赛，我们将会以开源、开放的方式策划、组织本次活动。开源——黑客松上产生的所有代码、文档甚至想法都会是开源的，都会托管在国内最大的代码托管网站——码云上。开放——任何岗位、背景的人都可以参与我们的活动，不仅仅只有研发、测试、运维等岗位的同学，我们非常欢迎文档工程师、产品经理、敏捷教练的加入，甚至 HR、PR 的同学也可以来参与。
+ 集结这么多具有不同技能的同学后，我们希望能解决什么问题呢？我们希望让大家切实地体会到，参与开源并没有你想的那么困难、无趣，也绝不仅仅是只有键盘侠的 Coding 独秀，人人都可以参与开源社区。并且，通过开源社区可以集中地解决很多通用性的问题，通过开源的黑客松活动，更是可以集中地解决我们在使用开源的持续交付方案时遇到的诸多痛点。
+主办方  Jenkins 中文社区  合作方  CloudBees 码云 开源社 微软  志愿者招募 如有意愿参与黑客松活动，欢迎踊跃报名。我们会认真、仔细地筛选符合条件的报名者。
 报名方式 发送邮件到event@jenkins-zh.cn，内容如下，请如实填写（注： GitHub ID 示例：https://github.com/githubId）：
 活动名称： 姓名： 公司名称（选填）： 所在地： 职业： 联系电话： 微信号： GitHub ID: T 恤尺码: 个人擅长： 参加志愿者的初衷：  志愿者职责划分  文案、宣传 拍照/摄像 签到、场地布置 场地秩序维护、活动事项解答、物品库存管理等  志愿者职责说明 依据不同志愿者的职责分工，志愿者需提前对自己对职责做一个大概对计划表，提前与社区活动相关负责人员相互沟通，尽量减少在活动中遇到突发事件对情况以及对可能遇到突发事件的情况做好应对方案。
 志愿者福利 我们会根据志愿者的实际参与情况，给予志愿者相应福利： * 免费参加自本活动启动时一年内的所有活动 * 活动纪念品 * 赠送与本社区有合作关系的其他公司或者社区组织的活动门票</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2019-08-08/</link>
+      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2019-08-08/</guid>
+      <description>线下活动 上海  开源基础设施峰会2019 11月4-6日  https://www.openstack.cn/  开源年会 11月2-3日  https://www.bagevent.com/event/5518928?bag_track=bagevent  meetup 9月21/22日  场地（赵晓杰） 讲师，三名（需要征集一名） 活动宣传稿（高嵘） 礼品（空缺）   北京  黑客松  门票价格，早鸟票，标准票，晚鸟票  100，120，150  志愿者（彦军） 设备，摄像等 视频剪辑（王顺） vs-code  服务器的配置要求？   开源人线下见面会 8月24日  成员招募 明天拉个群
+教程 https://jenkins-zh.cn/tutorial/</description>
     </item>
     
     <item>
@@ -1649,6 +1660,18 @@ GitHub 或 BitBucket 可能会报告一个新的提交或 PR，DockerHub 报告�
 当我们马上就要开始工作时，推荐的做法是先点击&amp;rdquo;Start Progress&amp;ldquo;按钮。这个动作，会把状态修改为“_In progress_”，对社区而言， 意味着我们正在处理这个工单。
 在我们的电脑设置必要的工具 配置，安装和测试 正如在该旅程的第一篇文章中描述的，开始为某个仓库做贡献的第一步 是首先派生到我们自己的 GitHub 账号下，然后，克隆到你的电脑上。
 正如，在 Jenkins Core 仓库中的CONTRIBUTING 文件里 所描述的，让仓库在本地运行的必要步骤。它包括，安装必要的开发工具：Java Development Kit (https://adoptopenjdk.net/[OpenJDK] 为推荐的选择)，Maven 以及任意支持 Maven 项目的 IDE。注意，安装 JDK 和 Maven 的步骤在贡献指南中有链接。</description>
+    </item>
+    
+    <item>
+      <title>插件更新中心</title>
+      <link>https://jenkins-zh.cn/tutorial/management/plugin/update-center/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/management/plugin/update-center/</guid>
+      <description>Jenkins 安装完成后，默认的插件更新中心地址为 https://updates.jenkins.io/update-center.json
+除了正式版本以外，部分插件也会发布一些 alpha 或者 beta 版本，以便让部分用户体验实验性功能。我们可以在插件管理-》高级部分，修改为如下地址：
+https://updates.jenkins.io/experimental/update-center.json
+镜像地址 https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json</description>
     </item>
     
     <item>
