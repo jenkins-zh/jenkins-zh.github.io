@@ -185,7 +185,7 @@
     <item>
       <title>Devops</title>
       <link>https://jenkins-zh.cn/tags/devops/</link>
-      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/devops/</guid>
       <description></description>
@@ -728,6 +728,42 @@
       <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/%E6%8B%9B%E5%8B%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>持续交付</title>
+      <link>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>持续测试</title>
+      <link>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>测试</title>
+      <link>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>软件生命周期</title>
+      <link>https://jenkins-zh.cn/tags/%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
       <description></description>
     </item>
     

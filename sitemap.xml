@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-09-volunteer-recruitment/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url>
@@ -610,7 +615,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -734,7 +739,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -979,7 +984,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1123,6 +1128,18 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tutorial/management/plugin/update-center/</loc>
   </url>
   
@@ -1175,6 +1192,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tutorial/management/</loc>
   </url>
   
@@ -1192,6 +1215,12 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/management/auth/demo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

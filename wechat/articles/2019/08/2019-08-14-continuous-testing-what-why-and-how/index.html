@@ -9,11 +9,11 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Windows 安装程序更新 - Jenkins 中文社区</title>
+     <title>持续测试的那些事 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="平台特别兴趣小组提供了 Windows 安装程序的更新">
+    <meta name="description" content="持续测试究竟是什么？你又如何实现它呢？">
     
     
     <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -32,25 +32,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Windows 安装程序更新" />
-<meta property="og:description" content="平台特别兴趣小组提供了 Windows 安装程序的更新" />
+<meta property="og:title" content="持续测试的那些事" />
+<meta property="og:description" content="持续测试究竟是什么？你又如何实现它呢？" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/" />
+<meta property="article:published_time" content="2019-08-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-08-14T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="持续测试的那些事">
+<meta itemprop="description" content="持续测试究竟是什么？你又如何实现它呢？">
 
 
-<meta itemprop="name" content="Windows 安装程序更新">
-<meta itemprop="description" content="平台特别兴趣小组提供了 Windows 安装程序的更新">
+<meta itemprop="datePublished" content="2019-08-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-08-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="100">
 
 
 
-<meta itemprop="wordCount" content="143">
-
-
-
-<meta itemprop="keywords" content="windows,platform-sig,installers," />
+<meta itemprop="keywords" content="测试,持续测试,持续交付,软件生命周期,DevOps," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Windows 安装程序更新"/>
-<meta name="twitter:description" content="平台特别兴趣小组提供了 Windows 安装程序的更新"/>
+<meta name="twitter:title" content="持续测试的那些事"/>
+<meta name="twitter:description" content="持续测试究竟是什么？你又如何实现它呢？"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -201,18 +203,8 @@ var trackOutboundLink = function(id, url) {
     
     
       
-        <h3 class="f4 dib author">
-            Yang Zhou
-        </h3>
-
       
-      
-        <p class="lh-copy measure center mt0 f6 black-60 bio">
-          Pre-Senior year student, Software Engineering at @Dalian-Maritime-University. 
-Research &amp;amp; Development intern at @baidu Engineering Effectiveness.
-        </p>
-      
-      <a href="https://github.com/arjenzhou" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/tomatofrommars" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -221,9 +213,9 @@ Research &amp;amp; Development intern at @baidu Engineering Effectiveness.
 
   
   <div>
-    作者：<span class="originalAuthor">slide_o_mix</span>
+    作者：<span class="originalAuthor">Sushil Kumar</span>
     <div>
-      <a class="originalLink" href="https://jenkins.io/blog/2019/02/01/windows-installers/" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://dzone.com/articles/continuous-testing-what-why-and-how" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -231,6 +223,25 @@ Research &amp;amp; Development intern at @baidu Engineering Effectiveness.
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">此页面上的内容</p>
+  	<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#七个步骤实现持续测试">七个步骤实现持续测试</a>
+<ul>
+<li><a href="#1-尽早规划测试-甚至早于写代码">1. 尽早规划测试，甚至早于写代码</a></li>
+<li><a href="#2-优化测试覆盖率">2. 优化测试覆盖率</a></li>
+<li><a href="#3-测试左移">3. 测试左移</a></li>
+<li><a href="#4-提供完整的测试环境">4. 提供完整的测试环境</a></li>
+<li><a href="#5-获取正确的测试数据">5. 获取正确的测试数据</a></li>
+<li><a href="#6-别忘了测试右移">6. 别忘了测试右移</a></li>
+<li><a href="#7-使用数据矩阵持续优化">7. 使用数据矩阵持续优化</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 	
 
 	<div date-pref>
@@ -243,17 +254,9 @@ Research &amp;amp; Development intern at @baidu Engineering Effectiveness.
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-26-security-updates/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 的重要安全更新 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/" class="dib f6 pr1 hover-bg-light-gray br-100" title="什么是 CI/CD?">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-09-volunteer-recruitment/" class="dib f6 pr1 hover-bg-light-gray br-100" title="持续交付黑客松--志愿者招募">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -273,13 +276,13 @@ Research &amp;amp; Development intern at @baidu Engineering Effectiveness.
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Windows 安装程序更新</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">持续测试的那些事</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      平台特别兴趣小组提供了 Windows 安装程序的更新
+      持续测试究竟是什么？你又如何实现它呢？
     </div>
   
 
@@ -292,102 +295,86 @@ Research &amp;amp; Development intern at @baidu Engineering Effectiveness.
 
 
 
-<p>Jenkins 的 Windows 安装程序已经存在很多年了，它是用户在 Windows 上安装 Jenkins Master 作为服务的一种方式。
-从被开发出来至今，它还没有什么新特性，但现在是时候做出改变了。</p>
+<p><img src="test_automation.jpg" alt="测试自动化" /></p>
 
-<p>首先，让我们瞧瞧现版本安装程序的使用经验。</p>
+<p>敏捷，DevOps 和持续交付已然存在于现今每个技术人员的词汇当中。我们都想要像硅谷里的巨头和初创公司一样，敏捷开发，快速发布软件，做出创新的产品。
+向敏捷转型在多方面都已有总结，并且到了能被顺利实践的程度。然而，测试仍然是一个有思想困惑和实践挑战的领域。 当软件发布周期从以年、月缩短到以周、天为单位，或者更短时；
+我们该如何重塑测试实践，以保证当软件发布到生产环境时能令用户满意， 而不是掉链子？</p>
 
-<h3 id="第1步-启动安装程序">第1步 启动安装程序</h3>
+<p>鉴于大多数 DevOps 实践仍然把测试视为软件生产中最令人头疼的瓶颈，显然，这是一个常见的挑战。</p>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/old_installer_1.png" alt="启动安装程序" /></p>
+<p><img src="main-hold-ups.png" alt="开发消耗占比" /></p>
 
-<p>这是使用 <a href="https://wixtoolset.org">WiX Toolset</a> Windows 安装程序的默认界面外观，算不上太好看，而且没有太多对安装程序进行说明的品牌信息。</p>
+<p>持续测试就是答案，但持续测试究竟是什么？你又如何实现它呢？
+维基百科定义<a href="https://en.wikipedia.org/wiki/Continuous_testing">持续测试</a>为「在软件交付流水线中执行自动化测试的过程，目的是为了获得关于预发布软件业务风险的即时反馈」。
+但是这个定义缺少了本质，缺少了持续测试所示意的转变的量纲。
+除了自动化是一个重要的部分以外，<a href="https://www.blazemeter.com/blog/what-%E2%80%9Ccontinuous-testing%E2%80%9D-and-how-it-even-possible">持续测试</a>从根本上转变了测试，
+它把线性过程中的时间点事件嵌入到整个过程当中去，作为基础贯穿于整个软件交付周期的所有活动中。</p>
 
-<h3 id="第2步-安装目录">第2步 安装目录</h3>
+<p>敏捷环境里持续测试的目标应该是「迭代内测试（in-sprint testing）」。
+不管你的迭代是两周还是四周，目标都应该是完成迭代内所有类型的测试，这样每个迭代都可以得到一个测试完备的，准备交付的软件。
+事实上很多<a href="https://www.blazemeter.com/blog/5-ci-cd-best-practices-for-better-code-quality">持续交付的最佳实践</a>都会告诉你，你不能简单的在没有持续测试的情况下去做持续交付。
+如果你认为你的迭代时间不允许你去做一个综合的测试，很有可能是你对它的理解<a href="https://www.testingexcellence.com/testing-agile-sprint-short/">有误</a>。</p>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/old_installer_2.png" alt="安装目录" /></p>
+<p><img src="testing-embedded-throughout-sdlc.png" alt="测试嵌入到软件开发周期" /></p>
 
-<p>同样，没有太多的品牌信息。</p>
+<h2 id="七个步骤实现持续测试">七个步骤实现持续测试</h2>
 
-<h3 id="第3步-安装">第3步 安装</h3>
+<h3 id="1-尽早规划测试-甚至早于写代码">1. 尽早规划测试，甚至早于写代码</h3>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/old_installer_3.png" alt="安装" /></p>
+<p>描述不清的要求或者有不正确的理解，都可能导致返工甚至延期。
+使用像<a href="https://en.wikipedia.org/wiki/Behavior-driven_development">行为驱动开发(BDD)</a>，
+<a href="https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development">验收测试驱动开发(ATDD)</a>和
+<a href="https://en.wikipedia.org/wiki/Model-based_testing">基于模型的测试</a>这类技术所使用的工具，如 <a href="https://docs.cucumber.io/">cucumber/gherkin</a> 和
+<a href="https://www.ca.com/us/products/ca-agile-requirements-designer.html">CA Agile Requirements Designer (ARD)</a>，
+可以确保业务主管，产品经理，开发人员和测试人员充分沟通并记录需求，定义清晰的测试用例，提早编写测试脚本，以达到一个流畅的测试过程。</p>
 
-<p>除了选择安装位置外，安装程序大体上没有提供一些安装 Jenkins 的选项。</p>
+<h3 id="2-优化测试覆盖率">2. 优化测试覆盖率</h3>
 
-<h2 id="问题">问题</h2>
+<p>一些组织默认「每次运行所有的测试」来保证代码覆盖率。这不但浪费资源还延长了测试周期，而且没有真正的保证代码覆盖率。
+测试那些需要测试的部分，以节省时间、金钱和资源。可视化模型可以让各种路径被探索优化，以便只用少量的测试用例就能提供最大化的覆盖率。
+可以借助 Rally, Jira, HP ALM, JIRA 等此类工具导入测试用例、移除重复用例、分发优化过的用例。</p>
 
-<p>现在的安装程序存在一些问题，平台特别兴趣小组会修复这些问题，并为用户提供新的安装体验。</p>
+<h3 id="3-测试左移">3. 测试左移</h3>
 
-<ol>
-<li>安装程序只支持32位安装。</li>
-<li>用户不能选择 Jenkins 作为 Windows 服务启动时的端口以及账户。</li>
-<li>安装程序捆绑了32位的 Java Runtime，而没有使用已存在的 JRE。</li>
-<li>安装程序不支持 Jenkins for Java 11中的实验性支持。</li>
-<li>JENKINS_HOME 目录并不适合现代 Windows。</li>
-<li>安装程序中没有品牌。</li>
-</ol>
+<p>为了实现「迭代内(in-sprint)」测试，将测试前置——这样测试可以在开发周期的早期运行。开发人员自己测自己的；卓越中心提供专家，定制系统和服务。
+自动化测试覆盖 UI, 功能，性能和安全。各个团队一起工作，一起以要交付给客户的业务价值为专注点。这需要对开发者友好的工具以及文化转变。</p>
 
-<h2 id="前进">前进</h2>
+<h3 id="4-提供完整的测试环境">4. 提供完整的测试环境</h3>
 
-<p>使用实验性的 Jenkins Windows 安装程序，大部分问题都已解决！</p>
+<p>提供测试环境的能力对实现持续测试是至关重要的。
+通过友好型（例如编码、CI/CD 集成、被开源支持的软件）开发工具按照需求提供的完整的测试环境来消除障碍和减少等待时间。
+这些环境应该包括：</p>
 
-<ol>
-<li>安装程序将只支持64位系统，这也是如今大多数 Windows 系统的现状，所以能让更多的用户能够使用安装包来安装 Jenkins。</li>
-<li>用户能够为服务输入用户信息，同时选择端口以便于 Jenkins 验证端口是否可用。</li>
-<li>安装程序不再捆绑 JRE 而是在操作系统中寻找合适的 JRE。如果用户想要使用一个不同的 JRE，可以在安装时指定。</li>
-<li>安装程序已经支持 Java 11，包括在 <a href="https://jenkins.io/zh/blog/2018/12/14/java11-preview-availability/">Java 11 预览</a>上面列出的组件。</li>
-<li>JENKINS_HOME 目录被放置在启动服务用户的 LocalAppData 目录下，这与现代 Windows 文件系统布局一致。</li>
-<li>安装程序已经升级带有品牌了，这让它看起来更酷并能提供一个更好的用户体验。</li>
-</ol>
+<ul>
+<li>虚拟服务——给那些不可达，不可访问的，还在开发中的服务提供鲁棒的模拟。开发和测试可以根据虚拟服务模拟实际服务返回的结果持续并行工作。</li>
+<li>按照需求测试数据——帮助并保证各个团队可以使用与生产环境类似的数据来运行综合的测试。</li>
+<li>预发环境——准备上线的需求，使用后退役。</li>
+</ul>
 
-<h2 id="截图">截图</h2>
+<h3 id="5-获取正确的测试数据">5. 获取正确的测试数据</h3>
 
-<p>以下是新安装程序的系列屏幕截图：</p>
+<p>在很多应用发布周期，获取鲁棒性测试数据能力的缺乏会造成严重延期。为了准确的测试新功能，测试数据应该尽可能的跟生产环境时所应用遇到的数据相近。
+如果测试数据缺乏特定真实世界的特征（例如具体字段、数据定义、负面场景等），测试就很难找到许多潜在问题和应用的弱点。
+理解数据模型并提取出正确的数据是一种特殊的技巧。尽管使用生产环境数据测试是最接近真实的，但数据隐私条例通常都会限制使用生产数据。
+下面，我们来看看 <a href="https://www.ca.com/us/trials/ca-test-data-manager.html">CA Test Data Manager</a> 是如何复制生产数据，抹掉敏感信息的同时保持了测试所希望的生产数据特征（接近现实，并且多行指征完整）的。
+生产数据不可用时，测试数据也可以使用 TDM 工具根据模版生成。</p>
 
-<h3 id="第1步-启动安装程序-1">第1步 启动安装程序</h3>
+<h3 id="6-别忘了测试右移">6. 别忘了测试右移</h3>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_1.png" alt="启动安装程序" /></p>
+<p>测试向右移动，使用开发周期和生产中的数据来优化测试周期、调整测试用例，以建立最佳回归套装。右移技术包括真实用户监控、金丝雀部署、A/B 测试、混沌工程等。
+例如，通过测试右移，你可以确定哪些功能被用于生产，保证回归测试覆盖能够这些功能。
+同样的方法，你可以开放新功能给一小部分人（内部或外部），了解新功能可能给生产造成的影响，按需调整。
+许多敏捷公司例如 <a href="https://code.fb.com/web/rapid-release-at-massive-scale/">Facebook</a> 和 Netflix 都严重依赖测试右移。
+Gartner（美国一家从事信息技术研究和顾问的公司）最近发布了一份<a href="https://www.gartner.com/doc/3898164/devops-success-requires-shiftright-testing">测试右移的报告</a>，
+声称测试右移对 DevOps 实践来说是「必需」的。</p>
 
-<p>Jenkins logo 现在是安装程序 UI 的重要组成部分。</p>
+<h3 id="7-使用数据矩阵持续优化">7. 使用数据矩阵持续优化</h3>
 
-<h3 id="第2步-安装目录-1">第2步 安装目录</h3>
+<p>建立跨团队协作，根据可行性分析和反馈机制不断优化。持续交付和持续测试就像旅行。确保你的所有团队都有 KPI, 查阅那些能够提供附加优化的数据。
+不要只是收集数据，那很容易办到，收集并且总结数据能够帮助你提出持续优化的确切建议。探索应用发布流程以实施建议，并作为所有团队应用交付周期的「单一事实来源」。</p>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_2.png" alt="安装目录" /></p>
-
-<p>在安装程序的所有阶段，Jenkins logo 和名称都出现在标题中。</p>
-
-<h3 id="第3步-选择账户">第3步 选择账户</h3>
-
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_3.png" alt="选择账户" /></p>
-
-<p>安装程序现在允许您指定要运行的帐户的用户名/密码，并检查该帐户是否具有 LogonAsService 权限。</p>
-
-<h3 id="第4步-端口选择">第4步 端口选择</h3>
-
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_4.png" alt="端口选择" /></p>
-
-<p>安装程序还允许您指定 Jenkins 运行的端口，并且在输入和测试有效端口之前不会继续。</p>
-
-<h3 id="第5步-jre-选择">第5步 JRE 选择</h3>
-
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_5.png" alt="JRE 选择" /></p>
-
-<p>安装程序现在不再捆绑 JRE，而是在系统上搜索兼容的 JRE （现在是 JRE 8）。 如果你想使用与安装程序搜索到不同的 JRE，你可以浏览目录并指定它。只支持 JRE 8 和 JRE 11 Runtime。如果发现选定的 JRE 是版本11，安装程序将自动添加必要的参数和其他 jar 文件，以便在 Java 11下运行。</p>
-
-<h3 id="第6步-安装">第6步 安装</h3>
-
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_6.png" alt="安装" /></p>
-
-<p>用户能在安装程序中输入的所有选项也可以在命令行上覆盖以进行自动部署。可以覆盖的完整属性列表即将推出。</p>
-
-<h2 id="接下来的步骤">接下来的步骤</h2>
-
-<p>新版本安装程序正在被平台特别兴趣小组的成员 Review 中，但我们需要人测试安装程序并给予反馈。你过你对测试新安装程序感兴趣的话，请加入<a href="https://gitter.im/jenkinsci/platform-sig">平台特别兴趣小组 gitter room</a> 获取更多信息。</p>
-
-<p>在新安装程序中还使用了许多一些正在研发的东西（例如，在进行升级时保留端口和其他选择）,但它已接近发布。</p>
-
-<p>除了基于 MSI 的 Windows 安装程序的更新之外，平台特别兴趣小组还在努力接管 Chocolatey Jenkins 软件包并为每次更新发布一个版本。</p>
+<p>要了解更多关于持续测试的挑战和实践，点击这里 <a href="https://www.continuoustesting.com/what-is-continuous-testing/">CT Academy Video Series</a>.</p>
 
 </div>
 
@@ -420,14 +407,14 @@ Research &amp;amp; Development intern at @baidu Engineering Effectiveness.
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Windows 安装程序更新”
-  </a> 更新于：January 1, 0001
+    “持续测试的那些事”
+  </a> 更新于：August 14, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/02/2019-02-27-windows-installers.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -445,27 +432,36 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/windows">
-              windows
+            <a class="tag" href="/tags/%E6%B5%8B%E8%AF%95">
+              测试
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/platform-sig">
-              platform-sig
+            <a class="tag" href="/tags/%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95">
+              持续测试
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/installers">
-              installers
+            <a class="tag" href="/tags/%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98">
+              持续交付
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">
+              软件生命周期
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/devops">
+              DevOps
             </a>
           </li>
         
               
-      
-        
-        
       
     </ul>
   </div>
@@ -491,7 +487,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/02\/2019-02-27-windows-installers\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/08\/2019-08-14-continuous-testing-what-why-and-how\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
