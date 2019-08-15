@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Blueocean</title>
+      <link>https://jenkins-zh.cn/tags/blueocean/</link>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/blueocean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cd</title>
       <link>https://jenkins-zh.cn/tags/cd/</link>
       <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
@@ -500,7 +509,7 @@
     <item>
       <title>Pipeline</title>
       <link>https://jenkins-zh.cn/tags/pipeline/</link>
-      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/pipeline/</guid>
       <description></description>

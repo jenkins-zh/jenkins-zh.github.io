@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Windows 安装程序更新 - Jenkins 中文社区</title>
+     <title>Jenkins 可视化阶段视图的改进 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="平台特别兴趣小组提供了 Windows 安装程序的更新">
+    <meta name="description" content="流水线除了成功或失败以外，还有一种介于两者之间的状态">
     
     
-    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+    <meta name="keywords" content="pipeline,blueocean,jenkins">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,25 +32,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Windows 安装程序更新" />
-<meta property="og:description" content="平台特别兴趣小组提供了 Windows 安装程序的更新" />
+<meta property="og:title" content="Jenkins 可视化阶段视图的改进" />
+<meta property="og:description" content="流水线除了成功或失败以外，还有一种介于两者之间的状态" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/" />
+<meta property="article:published_time" content="2019-08-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-08-15T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Jenkins 可视化阶段视图的改进">
+<meta itemprop="description" content="流水线除了成功或失败以外，还有一种介于两者之间的状态">
 
 
-<meta itemprop="name" content="Windows 安装程序更新">
-<meta itemprop="description" content="平台特别兴趣小组提供了 Windows 安装程序的更新">
+<meta itemprop="datePublished" content="2019-08-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-08-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="164">
 
 
 
-<meta itemprop="wordCount" content="143">
-
-
-
-<meta itemprop="keywords" content="windows,platform-sig,installers," />
+<meta itemprop="keywords" content="pipeline,blueocean," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Windows 安装程序更新"/>
-<meta name="twitter:description" content="平台特别兴趣小组提供了 Windows 安装程序的更新"/>
+<meta name="twitter:title" content="Jenkins 可视化阶段视图的改进"/>
+<meta name="twitter:description" content="流水线除了成功或失败以外，还有一种介于两者之间的状态"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -202,17 +204,16 @@ var trackOutboundLink = function(id, url) {
     
       
         <h3 class="f4 dib author">
-            Yang Zhou
+            Zhao Xiaojie
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          Quasi-Senior year student, Software Engineering at @Dalian-Maritime-University. 
-Research&amp;amp;Development intern at @baidu Engineering Effectiveness department.
+          Contributor of @jenkinsci . Jenkins press contact in China.
         </p>
       
-      <a href="https://github.com/arjenzhou" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -221,9 +222,9 @@ Research&amp;amp;Development intern at @baidu Engineering Effectiveness departme
 
   
   <div>
-    作者：<span class="originalAuthor">slide_o_mix</span>
+    作者：<span class="originalAuthor">dwnusbaum</span>
     <div>
-      <a class="originalLink" href="https://jenkins.io/blog/2019/02/01/windows-installers/" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://jenkins.io/blog/2019/07/05/jenkins-pipeline-stage-result-visualization-improvements/" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -231,6 +232,19 @@ Research&amp;amp;Development intern at @baidu Engineering Effectiveness departme
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">此页面上的内容</p>
+  	<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#例子">例子</a></li>
+<li><a href="#局限">局限</a></li>
+<li><a href="#历史">历史</a></li>
+<li><a href="#开发者">开发者</a></li>
+</ul></li>
+</ul>
+</nav>
 	
 
 	<div date-pref>
@@ -243,17 +257,9 @@ Research&amp;amp;Development intern at @baidu Engineering Effectiveness departme
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-26-security-updates/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 的重要安全更新 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/" class="dib f6 pr1 hover-bg-light-gray br-100" title="什么是 CI/CD?">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/" class="dib f6 pr1 hover-bg-light-gray br-100" title="持续测试的那些事">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -273,13 +279,13 @@ Research&amp;amp;Development intern at @baidu Engineering Effectiveness departme
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Windows 安装程序更新</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 可视化阶段视图的改进</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      平台特别兴趣小组提供了 Windows 安装程序的更新
+      流水线除了成功或失败以外，还有一种介于两者之间的状态
     </div>
   
 
@@ -292,102 +298,79 @@ Research&amp;amp;Development intern at @baidu Engineering Effectiveness departme
 
 
 
-<p>Jenkins 的 Windows 安装程序已经存在很多年了，它是用户在 Windows 上安装 Jenkins Master 作为服务的一种方式。
-从被开发出来至今，它还没有什么新特性，但现在是时候做出改变了。</p>
+<p><img src="superhero.png" alt="superhero" /></p>
 
-<p>首先，让我们瞧瞧现版本安装程序的使用经验。</p>
+<p>最近发布了的一些变更给了流水线编辑者新的工具以改善在 Blue Ocean 中的流水线可视化，有一个备受瞩目关注的工单<a href="https://issues.jenkins-ci.org/browse/JENKINS-39203">JENKINS-39203</a>，这会导致当流水线的构建结果为不稳定时所有的阶段都被设置为不稳定的。这个缺陷导致无法快速地识别为什么构建是不稳定的，使得用户必须查看完整的日志和 Jenkinsfile 才能弄明白究竟发生了什么。</p>
 
-<h3 id="第1步-启动安装程序">第1步 启动安装程序</h3>
+<p>为了修复这个问题，我们引入了一个新的流水线 API 用于为单个流水线步骤添加额外的结果信息。像 Blue Ocean 这样的可视化工具在决定阶段如何显示时会使用到这新的 API。像 <code>junit</code> 这样的步骤只能设置整个构建结果，现在可以通过新的 API 设置步骤级别的结果信息。我们创建了新的步骤 <code>unstable</code> 和 <code>warnError</code>，这样流水线编辑者在更复杂的场景下仍然可以利用这个新的 API。</p>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/old_installer_1.png" alt="启动安装程序" /></p>
+<p>该问题涉及到的重要的修复包含在如下的插件中，它们都需要 Jenkins 2.138.4 以及更新的版本：</p>
 
-<p>这是使用 <a href="https://wixtoolset.org">WiX Toolset</a> Windows 安装程序的默认界面外观，算不上太好看，而且没有太多对安装程序进行说明的品牌信息。</p>
+<ul>
+<li>Pipeline: API 2.34</li>
+<li>Pipeline: Basic Steps 2.18 (需要同步更新到 Pipeline: Groovy 2.70)</li>
+<li>Pipeline: Graph Analysis 1.10</li>
+<li>Pipeline: Declarative 1.3.9</li>
+<li>Blue Ocean 1.17.0</li>
+</ul>
 
-<h3 id="第2步-安装目录">第2步 安装目录</h3>
+<p>这里是一条使用了 <code>unstable</code> 步骤的流水线在 Blue Ocean 中的截图，只会把失败的阶段标识为不稳定的：</p>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/old_installer_2.png" alt="安装目录" /></p>
+<p><img src="unstable-stage-example.png" alt="只有一个阶段为不稳定的状态的流水线在 Blue Ocean 中的展示" /></p>
 
-<p>同样，没有太多的品牌信息。</p>
+<h2 id="例子">例子</h2>
 
-<h3 id="第3步-安装">第3步 安装</h3>
+<p>这里给出一些如何在你的流水线中使用该特性的示例：</p>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/old_installer_3.png" alt="安装" /></p>
+<ul>
+<li><strong>使用新的步骤 <a href="https://jenkins.io/doc/pipeline/steps/workflow-basic-steps/#warnerror-catch-error-and-set-build-and-stage-result-to-unstable"><code>warnError</code></a> 用于捕获错误，并把构建和阶段标记为不稳定的。</strong> <code>warnError</code> 只需要一个 <code>字符串</code> 的参数，用于当捕获到错误时以日志的形式输出。当 <code>warnError</code> 捕获到一个错误时，它会记录该消息以及错误，并设置构建和阶段的结果为不稳定的。效果如下：</li>
+</ul>
 
-<p>除了选择安装位置外，安装程序大体上没有提供一些安装 Jenkins 的选项。</p>
+<pre><code>warnError('Script failed!') {
+  sh('false')
+}
+</code></pre>
 
-<h2 id="问题">问题</h2>
+<ul>
+<li><strong>使用新的步骤 <a href="https://jenkins.io/doc/pipeline/steps/workflow-basic-steps/#unstable-set-stage-result-to-unstable"><code>unstable</code></a> 设置构建和阶段结果为不稳定的</strong>。可以使用该步骤直接替换 <code>currentBuild.result = 'UNSTABLE'</code>，在 <code>warnError</code> 不够灵活时这会比较有用。步骤 <code>unstable</code> 只需要一个 <code>字符串</code> 参数，当该步骤运行时会作为消息。使用的方法如下：</li>
+</ul>
 
-<p>现在的安装程序存在一些问题，平台特别兴趣小组会修复这些问题，并为用户提供新的安装体验。</p>
+<pre><code>try {
+  sh('false')
+} catch (ex) {
+  unstable('Script failed!')
+}
+</code></pre>
 
-<ol>
-<li>安装程序只支持32位安装。</li>
-<li>用户不能选择 Jenkins 作为 Windows 服务启动时的端口以及账户。</li>
-<li>安装程序捆绑了32位的 Java Runtime，而没有使用已存在的 JRE。</li>
-<li>安装程序不支持 Jenkins for Java 11中的实验性支持。</li>
-<li>JENKINS_HOME 目录并不适合现代 Windows。</li>
-<li>安装程序中没有品牌。</li>
-</ol>
+<ul>
+<li><strong><a href="https://plugins.jenkins.io/junit">JUnit Plugin</a></strong>: 更新到 1.28 或者更高的版本，使得步骤 <code>junit</code> 可以直接把该阶段设置为不稳定的。</li>
+<li><strong><a href="https://plugins.jenkins.io/warnings-ng">Warnings Next Generation Plugin</a></strong>: 更新到 5.2.0 或者更高的版本，使得步骤 <code>publishIssues</code> 和 <code>recordIssues</code> 可以直接把该阶段设置为不稳定的。</li>
+<li><strong>其他插件</strong>: 如果你的流水线被其他插件中的步骤标记为不稳定的，请（在检查没有重复项后）给该组件<a href="https://issues.jenkins-ci.org">提交一个新的 issue</a>，清晰地描述哪个步骤是有问题的，以及发生问题的环境，并添加链接到该文章的开发者区域，以便维护者了解如何才能解决该问题。</li>
+</ul>
 
-<h2 id="前进">前进</h2>
+<h2 id="局限">局限</h2>
 
-<p>使用实验性的 Jenkins Windows 安装程序，大部分问题都已解决！</p>
+<ul>
+<li>如果你不迁移到 <code>unstable</code> 或 <code>warnError</code> 步骤，或不升级插件到集成来新 API 的情况下设置构建状态，那么即使构建是不稳定的，Blue Ocean 也不会把任何阶段显示为不稳定的。</li>
+<li>即使在这些变化后，<code>currentBuild.result</code> 继续只会覆盖构建状态。不幸的是，由于 <code>currentBuild</code> 是作为全局变量而实现的，因此，无法让它设置步骤或者阶段级别的结果，这意味这它没有任何步骤级别的上下文可以使用到新的 API。</li>
+<li><a href="https://plugins.jenkins.io/pipeline-stage-view">Pipeline Stage View Plugin</a> 尚未升级到使用这个新的 API，因此，这些变更不会在它提供的可视化中得到体现。</li>
+</ul>
 
-<ol>
-<li>安装程序将只支持64位系统，这也是如今大多数 Windows 系统的现状，所以能让更多的用户能够使用安装包来安装 Jenkins。</li>
-<li>用户能够为服务输入用户信息，同时选择端口以便于 Jenkins 验证端口是否可用。</li>
-<li>安装程序不再捆绑 JRE 而是在操作系统中寻找合适的 JRE。如果用户想要使用一个不同的 JRE，可以在安装时指定。</li>
-<li>安装程序已经支持 Java 11，包括在 <a href="https://jenkins.io/zh/blog/2018/12/14/java11-preview-availability/">Java 11 预览</a>上面列出的组件。</li>
-<li>JENKINS_HOME 目录被放置在启动服务用户的 LocalAppData 目录下，这与现代 Windows 文件系统布局一致。</li>
-<li>安装程序已经升级带有品牌了，这让它看起来更酷并能提供一个更好的用户体验。</li>
-</ol>
+<h2 id="历史">历史</h2>
 
-<h2 id="截图">截图</h2>
+<p>Jenkins 流水线步骤可以以两种方式完成：成功并返回一个结果（可能为 null），或者是失败的，并抛出一个异常。当步骤失败并抛出异常时，该异常会贯穿整个流水线，直到有其他的步骤或者 Groovy 代码捕获，或者它到达流水线的顶层并导致流水线失败。基于抛出的异常的不同类型，流水线最终的结果可能不是失败（例如：某些情况下是被终止的）。基于异常传播的方式，像 Blue Ocean 这样的工具可以轻松地识别哪些步骤（以及阶段）是失败的。</p>
 
-<p>以下是新安装程序的系列屏幕截图：</p>
+<p>为了能够让流水线能够与相应的 Jenkins API 交互，对于流水线构建来说，可以在构建期间修改构建结果也是有必要的。对于其他的，这使得流水线可以使用构建步骤以及原先出自于自由风格的任务中的项目。</p>
 
-<h3 id="第1步-启动安装程序-1">第1步 启动安装程序</h3>
+<p>在一些情况下，一个流水线步骤需要能够成功地完成，以便流水线可以继续正常执行，但对此而言能够标记有某种错误发生，因此，在可视化时能够识别到发生错误的步骤，即使没有彻底失败。比较好的一个例子就是 <code>junit</code> 步骤。该步骤关注特定的测试结果，如果有任何错误，会把整个构建结果标记为不稳定的。这种行为对类似 BlueOcean 的可视化工具而言是有问题的，因为该步骤是成功的，而且无法通过编程的方式覆盖于该步骤相关的最终结果。</p>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_1.png" alt="启动安装程序" /></p>
+<p>再次查看下 <a href="https://issues.jenkins-ci.org/browse/JENKINS-39203">JENKINS-39203</a>，我们看到关于可视化有两项基本的选项。因为有的步骤导致构建变成不稳定的，设置总体的构建结果是不稳定的，或者所有的步骤都成功完成来也展示为不稳定的；或者由于我们没有办法把特定步骤相关的构建结果作设置，它们可能显示为成功的。最后，选择了第一个选项。</p>
 
-<p>Jenkins logo 现在是安装程序 UI 的重要组成部分。</p>
+<p>为了解决该问题，部分用户尝试通过抛出异常并在阶段中增加 <code>try/catch</code> 这样的代码块用于处理异常，这样 Blue Ocean 能够借助这些异常来标记步骤和阶段的结果为期望的状态，而且，捕获异常后，流水线可以继续正常执行。这种方式不容易理解，脆弱，而且无法在申明式的流水线中使用。</p>
 
-<h3 id="第2步-安装目录-1">第2步 安装目录</h3>
+<h2 id="开发者">开发者</h2>
 
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_2.png" alt="安装目录" /></p>
-
-<p>在安装程序的所有阶段，Jenkins logo 和名称都出现在标题中。</p>
-
-<h3 id="第3步-选择账户">第3步 选择账户</h3>
-
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_3.png" alt="选择账户" /></p>
-
-<p>安装程序现在允许您指定要运行的帐户的用户名/密码，并检查该帐户是否具有 LogonAsService 权限。</p>
-
-<h3 id="第4步-端口选择">第4步 端口选择</h3>
-
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_4.png" alt="端口选择" /></p>
-
-<p>安装程序还允许您指定 Jenkins 运行的端口，并且在输入和测试有效端口之前不会继续。</p>
-
-<h3 id="第5步-jre-选择">第5步 JRE 选择</h3>
-
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_5.png" alt="JRE 选择" /></p>
-
-<p>安装程序现在不再捆绑 JRE，而是在系统上搜索兼容的 JRE （现在是 JRE 8）。 如果你想使用与安装程序搜索到不同的 JRE，你可以浏览目录并指定它。只支持 JRE 8 和 JRE 11 Runtime。如果发现选定的 JRE 是版本11，安装程序将自动添加必要的参数和其他 jar 文件，以便在 Java 11下运行。</p>
-
-<h3 id="第6步-安装">第6步 安装</h3>
-
-<p><img src="../../../images/articles/2019/02/2019-02-01-windows-installer/new_installer_6.png" alt="安装" /></p>
-
-<p>用户能在安装程序中输入的所有选项也可以在命令行上覆盖以进行自动部署。可以覆盖的完整属性列表即将推出。</p>
-
-<h2 id="接下来的步骤">接下来的步骤</h2>
-
-<p>新版本安装程序正在被平台特别兴趣小组的成员 Review 中，但我们需要人测试安装程序并给予反馈。你过你对测试新安装程序感兴趣的话，请加入<a href="https://gitter.im/jenkinsci/platform-sig">平台特别兴趣小组 gitter room</a> 获取更多信息。</p>
-
-<p>在新安装程序中还使用了许多一些正在研发的东西（例如，在进行升级时保留端口和其他选择）,但它已接近发布。</p>
-
-<p>除了基于 MSI 的 Windows 安装程序的更新之外，平台特别兴趣小组还在努力接管 Chocolatey Jenkins 软件包并为每次更新发布一个版本。</p>
+<p>如果你是一个插件的开发者，并在集成流水线时使用了步骤，想要利用这个新的 API 的话，你的步骤就可以给出一个非成功的结果，而不是抛出异常。请查看 Jenkins 开发者邮件列表中的这个<a href="https://groups.google.com/d/msg/jenkinsci-dev/5A7U1KmfX08/IP5Bg_OaAgAJ">帖子</a>，如果你遇到任何问题了，可以在那里提问。</p>
 
 </div>
 
@@ -410,6 +393,19 @@ Research&amp;amp;Development intern at @baidu Engineering Effectiveness departme
 
           
 
+<h2>参考</h2>
+<ul>
+	
+	<li><a href="/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/">持续交付落地实践工作坊</a></li>
+	
+	<li><a href="/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/">还在苦恼不会写 Jenkins 流水线？来场工作坊！</a></li>
+	
+	<li><a href="/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/">让我们庆祝 Jenkins 对 Java 11的支持</a></li>
+	
+	<li><a href="/wechat/articles/2019/07/2019-07-08-wechat-answer-1/">Jenkins 中文社区技术交流微信群问题集之一</a></li>
+	
+</ul>
+
         </div>
       </div>
       
@@ -420,14 +416,14 @@ Research&amp;amp;Development intern at @baidu Engineering Effectiveness departme
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Windows 安装程序更新”
-  </a> 更新于：January 1, 0001
+    “Jenkins 可视化阶段视图的改进”
+  </a> 更新于：August 15, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/02/2019-02-27-windows-installers.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -445,26 +441,141 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/windows">
-              windows
+            <a class="tag" href="/tags/pipeline">
+              pipeline
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/platform-sig">
-              platform-sig
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/installers">
-              installers
+            <a class="tag" href="/tags/blueocean">
+              blueocean
             </a>
           </li>
         
               
       
         
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/" class="link">
+              Jenkins 流水线配置历史插件介绍
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/" class="link">
+              在 Kubernetes 上使用 Jenkins 
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/" class="link">
+              持续交付落地实践工作坊
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-08-wechat-answer-1/" class="link">
+              Jenkins 中文社区技术交流微信群问题集之一
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/" class="link">
+              多分支流水线任务对 GitLab SCM 的支持
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" class="link">
+              介绍 Jenkins 模板引擎
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/" class="link">
+              还在苦恼不会写 Jenkins 流水线？来场工作坊！
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/" class="link">
+              应该使用什么 CI/CD 工具？
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="link">
+              Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
+              MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/" class="link">
+              使用 YAML 文件配置 Jenkins 流水线
+            </a>
+          </li>
         
       
     </ul>
@@ -491,7 +602,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/02\/2019-02-27-windows-installers\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/08\/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
