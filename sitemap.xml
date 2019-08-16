@@ -1140,6 +1140,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/management/auth/lost-password/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</loc>
   </url>
   
@@ -1233,10 +1237,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/management/auth/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tutorial/management/auth/demo/</loc>
   </url>
   
   <url>

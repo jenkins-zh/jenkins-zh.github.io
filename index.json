@@ -2925,6 +2925,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tutorial/management/auth/lost-password/",
+        "title": "忘记密码",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": " 如果忘记了 Jenkins 的管理员密码的话，也不用担心，只要你有权限访问 Jenkins 的根目录，就可以轻松地重置密码。\n通常情况 Jenkins 的根目录，默认是在当前用户（启动 Jenkins 的操作系统用户）目录的 .jenkins 中。对于 unix 系统而言，也就是 ~/.jenkins。\n我们打开配置文件 vim ~/.jenkins/config.xml 后，把字段 useSecurity 的值设置为 false，然后重新启动 Jenkins。你就会发现不需要登陆也能进入管理页面。\n进入页面系统管理-\u0026gt;全局安全配置中，选择启用安全，然后在授权策略中勾选任何用户可以做任何事(没有任何限制)。保存后，找到你希望重置密码的用户，输入新的密码即可。\n其他情况 如果 Jenkins 的根目录在当前用户目录下话，可以通过查找对应进程的方式来确认，下面以 Linux 系统为例说明：\n~# ps -ef | grep jenkins root 26386 26359 0 Jul23 pts/0 00:24:04 java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -jar /usr/share/jenkins/jenkins.war  分析上面的输出，可以得出，该 Jenkins 的根目录为：/var/jenkins_home。\nJENKINS_HOME 如果你的环境变量里设置了 JENKINS_HOME 的话，那么， Jenkins 的根目录就可能是 JENKINS_HOME 指向的目录。\n",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/",
         "title": "成为一名 Jenkins 贡献者：对新手友好的工单",
         "type": "wechat",
@@ -3205,19 +3218,6 @@
         "tags": [],
         "description": "",
         "content": "认证\n",
-        "auhtor": "",
-        "translator": "",
-        "original": "",
-        "poster": ""
-    },
-    {
-        "uri": "https://jenkins-zh.cn/tutorial/management/auth/demo/",
-        "title": "认证和授权",
-        "type": "tutorial",
-        "date": "0001-01-01 00:00:00 +0000 UTC",
-        "tags": [],
-        "description": "",
-        "content": "待补充\n",
         "auhtor": "",
         "translator": "",
         "original": "",
