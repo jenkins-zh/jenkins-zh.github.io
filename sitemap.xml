@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-16-tutor-recruitment/</loc>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/</loc>
     <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
@@ -750,7 +755,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -995,7 +1000,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1109,6 +1114,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%AF%BC%E5%B8%88/</loc>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2019-07-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1134,7 +1145,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/%E6%8B%9B%E5%8B%9F/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1240,7 +1251,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
