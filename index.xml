@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 19 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,17 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2019-08-21/</link>
+      <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2019-08-21/</guid>
+      <description>社区治理  对于微信群里设置一个投诉机制，对于符合一定条件的，把被投诉的人移出 @linuxsuren  在公众号后台或者邮件（admin at jenkins-zh.cn）发送投诉，写明被投诉人和理由 @linuxsuren 可以先和被投诉人进行私下沟通，如果不改正的话，就执行移除 @Shunw19  在公众号里发起一个投票，调研大家对公众号文章类型，质量的看法以及建议 @linuxsuren  文章类型：技术类、志愿者等活动类  考虑定期发起志愿者招募，例如在寒暑假之前 @linuxsuren  需要的人数 @Shunw19  分布在多个城市  如何组织 @linuxsuren  尽量明确任务 区分社区志愿、活动志愿者 @baobeizuoshoubuli  把完成志愿任务的人，在官网展示出来 @linuxsuren  给公众号加个目录分类，检索 @Shunw19  可以通过关键字检索  贡献者采访 @linuxsuren  口语比较好的来协作采访国外的贡献者 需要出一些稿子（中文、英文）   线下活动 北京  黑客松
+ 活动报名已经启动 需要把活动宣传工作做好  开源人线下见面会 8月24日
+  教程 https://jenkins-zh.cn/tutorial/</description>
     </item>
     
     <item>
