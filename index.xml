@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 21 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,23 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>AWS 上的云原生 Jenkins</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-23-cloud-native-jenkins-on-aws/</link>
+      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-23-cloud-native-jenkins-on-aws/</guid>
+      <description>我们使用 Jenkins 搭建持续交付流水线，和其他很多团队一样，这些年我们围绕 Jenkins 创建了很多工作流程和自动化。Jenkins 是我们团队取得成功的关键，让我们能够在上一季度顺利进入生产677次，搭建及部署时长平均为12分钟。
+我们的大部分应用和基础设施可以看作云原生，但当时 Jenkins 服务并不完全适合这个分类：服务在单个服务器上运行，同时很多任务直接在 master 上运行，其部分手动配置包括 secret、插件、定时任务和 startup hacking 的普通膨胀，该膨胀是自2014年首次搭建起不断累积而成。
+Jenkins 不仅变成了单体服务和单点故障，而且拆除及重建 Jenkins 对企业也是很大的风险。
+我们决定必须做出改变。这篇博客说明了我们如何运用 Terraform、Packer、Docker、Vault、和 ELB、ASG、ALB 或 EFS 等 AWS 服务实现 Jenkins Cloud-native，以及我们一路走来的收获。
+Jenkins 状态 当时不得不面对的关键问题是：如果我们将 Jenkins 服务置于一个容器/自动缩放实例中，我们需要恢复何种状态？
+问题的答案并不简单，值得一提的是，有个 Jenkins 特别兴趣小组（SIG）已经识别出所有导致这一 Jenkins 状态的存储组件。这是一个很棒的起点，因为我们至少得确保那篇文章列出的所有存储类型都考虑在内。
+捷径 这不是新问题。很多团队使用 Docker 容器运行 Jenkins，官方 Jenkins Docker 镜像也得到良好维护。如《Jenkins Dokcer 镜像》文档中解释的：
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts  这会把 workspace 存在 /var/jenkins_home。所有的 Jenkins 数据（包括插件和配置）都存在上述目录里。创建一个明确的 volume 可以方便管理和附加到另一个容器进行升级。
+上述示例装载主机上的 jenkins_home，其中包括所有 Jenkins 状态。然后该目录可以存在一个外部磁盘上，比如 Kubernetes 持久化存储卷。或者，如果 Jenkins 在 EC2 上运行，该目录可存在一个外部 EBS 或 EFS 卷上。</description>
     </item>
     
     <item>
