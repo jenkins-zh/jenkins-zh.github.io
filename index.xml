@@ -1838,5 +1838,14 @@ Jenkins Evergreen 发行版通过确保最新的功能更新，bug 修复以及�
 除此之外, 我相信 Evergreen 能够向一些我们现在没有完全服务的团队提供良好的服务:这些团体希望能够以 服务 的形式使用 Jenkins 。我们暂时没有考虑提供公有云版本的 Jenkins 。我们意识到了自动接收增量更新，使用户可以在无需考虑更新 Jenkins 的情况下进行持续开发的好处。</description>
     </item>
     
+    <item>
+      <title>通过 KeyCloak 认证</title>
+      <link>https://jenkins-zh.cn/tutorial/management/auth/keyclock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/management/auth/keyclock/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -25,5 +25,14 @@
 JENKINS_HOME 如果你的环境变量里设置了 JENKINS_HOME 的话，那么， Jenkins 的根目录就可能是 JENKINS_HOME 指向的目录。</description>
     </item>
     
+    <item>
+      <title>通过 KeyCloak 认证</title>
+      <link>https://jenkins-zh.cn/tutorial/management/auth/keyclock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/management/auth/keyclock/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -3289,6 +3289,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tutorial/management/auth/keyclock/",
+        "title": "通过 KeyCloak 认证",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tutorial/use-cases/deploy/",
         "title": "部署",
         "type": "tutorial",
