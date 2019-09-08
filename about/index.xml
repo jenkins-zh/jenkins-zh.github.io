@@ -6,10 +6,22 @@
     <description>Recent content in 关于我们 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/about/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>社区捐助</title>
+      <link>https://jenkins-zh.cn/about/sponsors-list/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/about/sponsors-list/</guid>
+      <description> 社区得以持续、健康地发展，需要很多方面的支持，尤其对于社区的基础运营、活动组织上，资金和物资的捐助是非常重要的。
+用途 对于所收到的资金、物资捐助，我们都会用于社区基础设施（域名、服务器等）、线下活动、社区成员奖励。
+列表 为了对给予社区捐助的朋友们表示感谢，我们在此列出来：
+   捐助者 金额（单位：元） 日期 备注      geshujiang  100 2019-05-11 活动链接    </description>
+    </item>
     
     <item>
       <title>行为规范</title>
