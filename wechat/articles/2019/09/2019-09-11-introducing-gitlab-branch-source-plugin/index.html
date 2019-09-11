@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>多分支流水线任务对 GitLab SCM 的支持 - Jenkins 中文社区</title>
+     <title>介绍新的 GitLab 分支源插件 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="本文介绍了多分支流水线任务对 GitLab SCM 的支持">
+    <meta name="description" content="新的 GitLab 分支源插件，允许您基于 GitLab `用户` 或 `组` 或 `子组` 项目创建任务">
     
     
-    <meta name="keywords" content="Jenkins 多分支流水线,Jenkins">
+    <meta name="keywords" content="GitLab 分支源插件">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,27 +32,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="多分支流水线任务对 GitLab SCM 的支持" />
-<meta property="og:description" content="本文介绍了多分支流水线任务对 GitLab SCM 的支持" />
+<meta property="og:title" content="介绍新的 GitLab 分支源插件" />
+<meta property="og:description" content="新的 GitLab 分支源插件，允许您基于 GitLab `用户` 或 `组` 或 `子组` 项目创建任务" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/" />
-<meta property="article:published_time" content="2019-07-04T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-07-04T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/" />
+<meta property="article:published_time" content="2019-09-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-09-11T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="多分支流水线任务对 GitLab SCM 的支持">
-<meta itemprop="description" content="本文介绍了多分支流水线任务对 GitLab SCM 的支持">
-
-
-<meta itemprop="datePublished" content="2019-07-04T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="555">
+<meta itemprop="name" content="介绍新的 GitLab 分支源插件">
+<meta itemprop="description" content="新的 GitLab 分支源插件，允许您基于 GitLab `用户` 或 `组` 或 `子组` 项目创建任务">
 
 
+<meta itemprop="datePublished" content="2019-09-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="561">
 
-<meta itemprop="keywords" content="gitlab,plugins,pipeline,credentials,developer,gsoc,gsoc2019," />
+
+
+<meta itemprop="keywords" content="gitlab,plugins,pipeline,multibranch,gsoc,gsoc2019," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="多分支流水线任务对 GitLab SCM 的支持"/>
-<meta name="twitter:description" content="本文介绍了多分支流水线任务对 GitLab SCM 的支持"/>
+<meta name="twitter:title" content="介绍新的 GitLab 分支源插件"/>
+<meta name="twitter:description" content="新的 GitLab 分支源插件，允许您基于 GitLab `用户` 或 `组` 或 `子组` 项目创建任务"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -224,7 +224,7 @@ var trackOutboundLink = function(id, url) {
   <div>
     作者：<span class="originalAuthor">baymac</span>
     <div>
-      <a class="originalLink" href="https://jenkins.io/blog/2019/06/29/phase-1-multibranch-pipeline-support-for-gitlab/" target="_blank">原文链接</a>
+      <a class="originalLink" href="" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -238,25 +238,19 @@ var trackOutboundLink = function(id, url) {
 <ul>
 <li>
 <ul>
-<li><a href="#现状">现状</a></li>
-<li><a href="#这个项目的目标">这个项目的目标</a></li>
-<li><a href="#构建插件">构建插件</a>
+<li><a href="#要求">要求</a></li>
+<li><a href="#创建任务">创建任务</a></li>
+<li><a href="#创建多分支流水线任务">创建多分支流水线任务</a>
 <ul>
-<li><a href="#安装">安装：</a></li>
+<li><a href="#创建-gitlab-组类型任务">创建 GitLab 组类型任务</a></li>
+<li><a href="#gitlab-流水线状态通知">GitLab 流水线状态通知</a></li>
+<li><a href="#合并请求">合并请求</a></li>
 </ul></li>
-<li><a href="#使用">使用</a>
-<ul>
-<li><a href="#在-jenkins-上设置-gitlab-服务器配置">在 Jenkins 上设置 Gitlab 服务器配置</a></li>
-<li><a href="#在-jenkins-内创建个人访问令牌">在 Jenkins 内创建个人访问令牌</a></li>
-<li><a href="#配置即代码">配置即代码</a>
-<ul>
-<li><a href="#添加配置-yaml">添加配置 YAML：</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#未来工作范围">未来工作范围</a></li>
-<li><a href="#问题跟踪">问题跟踪</a></li>
-<li><a href="#致谢">致谢</a></li>
-<li><a href="#链接">链接</a></li>
+<li><a href="#hook">Hook</a></li>
+<li><a href="#job-dsl-以及-jcasc">Job DSL 以及 JCasC</a></li>
+<li><a href="#如何与我们讨论-bug-或新特性">如何与我们讨论 bug 或新特性?</a></li>
+<li><a href="#未来的工作">未来的工作</a></li>
+<li><a href="#资源">资源</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -272,17 +266,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 插件的微基准测试框架 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" class="dib f6 pr1 hover-bg-light-gray br-100" title="介绍 Jenkins 模板引擎">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-05-award/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 中文社区第二届明星贡献者名单">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -302,13 +288,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">多分支流水线任务对 GitLab SCM 的支持</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">介绍新的 GitLab 分支源插件</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      本文介绍了多分支流水线任务对 GitLab SCM 的支持
+      新的 GitLab 分支源插件，允许您基于 GitLab <code>用户</code> 或 <code>组</code> 或 <code>子组</code> 项目创建任务
     </div>
   
 
@@ -321,234 +307,246 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="tea.jpg" alt="tea" /></p>
+<p><img src="gitlab_and_jenkins.png" alt="gitlab_and_jenkins" /></p>
 
-<p>这是在 GSoC 2019中的一个 Jenkins 项目。
-我们正致力于增加<a href="https://jenkins.io/projects/gsoc/2019/gitlab-support-for-multibranch-pipeline/">多分支流水线任务和文件夹组织对 GitLab </a>的支持。
-这个计划是创建以下插件：
-* <a href="https://github.com/jenkinsci/gitlab-api-plugin">GitLab API 插件</a> - 包装 GitLab Java APIs。
-* <a href="https://github.com/baymac/gitlab-branch-source-plugin">GitLab 分支源插件</a> - 包括两个包：
-    * <code>io.jenkins.plugins.gitlabserverconfig</code> - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 <code>GitLab Plugin</code> 的插件中。
-未来，这个包应该移动到新的插件中。
-    * <code>io.jenkins.plugins.gitlabbranchsource</code> - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。</p>
-
-<h2 id="现状">现状</h2>
+<p>GitLab 分支源插件已经走出 beta 阶段，并已发布到 Jenkins 更新中心。
+它允许您基于 GitLab <code>用户</code> 或 <code>组</code> 或 <code>子组</code> 项目创建任务。
+您可以:</p>
 
 <ul>
-<li>完全支持自由风格的任务和流水线（单分支）任务。</li>
-<li>部分支持多分支流水线任务（没有 MRS 检测）。</li>
-<li>不支持 Gitlab 文件夹组织。</li>
+<li>从 GitLab 用户/组/子组导入单个项目的分支作为任务（多分支流水线任务）</li>
+<li>从 GitLab 用户/组/子组导入所有或部分项目的分支作为任务（GitLab 组任务或 GitLab 文件夹组织）</li>
 </ul>
 
-<h2 id="这个项目的目标">这个项目的目标</h2>
+<p>GitLab 组项目对项目进行扫描， 根据设置的规则导入流水线任务。
+导入项目之后， Jenkins 立即基于 <code>Jenkinsfile</code> 流水线脚本运行任务并且将状态通知到 GitLab 流水线状态。
+这个插件与其他分支源插件不同，它提供了 GitLab 服务器配置，可以在系统配置中配置。
+Jenkins 配置即代码 (JCasC) 也可以用于配置服务器。
+要想了解更多关于服务器配置的信息，请参考我<a href="https://jenkins.io/zh/blog/2019/08/23/introducing-gitlab-branch-source-plugin/">之前的博客</a>。</p>
+
+<h2 id="要求">要求</h2>
 
 <ul>
-<li>实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。</li>
-<li>遵循3个独立插件的约定，即 <code>GitLab 插件</code>，<code>GitLab API 插件</code>，<code>GitLab 分支源插件</code>。</li>
-<li>实现 Gitlab 分支源插件，支持多分支管道作业。</li>
-<li>支持新的 Jenkins 特性，例如
-<a href="https://github.com/jenkinsci/configuration-as-code-plugin">Jenkins 代码即配置</a> (JCasC)，
-<a href="https://github.com/jenkinsci/incrementals-tools/">增量式工具</a>。</li>
-<li>清晰高效的设计。</li>
-<li>支持新的 SCM 特性 APIs。</li>
-<li>支持 Java 8 及更高版本。</li>
+<li><p>Jenkins - 2.176.2 (LTS)</p></li>
+
+<li><p>GitLab - v11.0+</p></li>
 </ul>
 
-<h2 id="构建插件">构建插件</h2>
+<h2 id="创建任务">创建任务</h2>
 
-<p>这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。
-如果您想尽早介入，可以尝试自己从源代码构建它。</p>
+<p>要创建多分支流水线任务（使用 GitLab 分支源）或 GitLab 组任务，您必须将 GitLab 个人访问令牌添加到服务端配置。
+凭据用于获取项目的元数据，并在 GitLab 服务器上设置 hook。
+如果令牌具有管理访问权限，您还可以设置 <code>系统 Hook</code>，而 <code>Web Hook</code> 可以从任何用户令牌设置。</p>
 
-<h3 id="安装">安装：</h3>
+<h2 id="创建多分支流水线任务">创建多分支流水线任务</h2>
+
+<p>转到 Jenkins &gt; 新建任务 &gt; 多分支流水线 &gt; 添加源 &gt; GitLab 项目</p>
+
+<p><img src="branch-source.png" alt="GitLab Project Branch Source" /></p>
 
 <ul>
-<li><p>将源代码签出到您的本地机器上：</p>
+<li><p><code>Server</code> - 从下拉菜单中选择所需的 GitLab 服务器，需要在创建此任务之前进行配置。</p></li>
 
-<pre><code class="language-bash">git clone https://github.com/baymac/gitlab-branch-source-plugin.git
-cd gitlab-branch-source-plugin
-</code></pre></li>
+<li><p><code>Checkout Credentials</code> - 如果插件要构建任何私有项目，添加 <code>SSHPrivateKey</code> 或 <code>用户名/密码</code> 类型的凭据。如果所有的项目都是公开的则不需要检出凭据。检出凭据与 GitLab 服务器配置中的凭据(<code>GitLab 个人访问令牌</code> 类型)不同。</p></li>
 
-<li><p>安装插件：</p>
+<li><p><code>Owner</code> - 可以是 <code>用户</code>、<code>组</code> 或 <code>子组</code>。 根据这一点填充 <code>Projects</code> 字段。</p></li>
 
-<pre><code class="language-bash">mvn clean install 
-mvn clean install -DskipTests # to skip tests
-</code></pre></li>
+<li><p><code>Projects</code> - 从下拉菜单中选择要构建的项目。</p></li>
 
-<li><p>运行插件：</p>
-
-<pre><code class="language-bash">mvn hpi:run # runs a Jenkins instance at localhost:8080
-mvn hpi:run -Djetty.port=&lt;port&gt; # to run on your desired port number 
-</code></pre></li>
+<li><p><code>Behaviours</code> - 这些特性是非常强大的工具，用于配置构建逻辑和构建后逻辑。我们定义了新的特性。您可以在仓库文档中看到所有信息。</p></li>
 </ul>
 
-<p>如果您想用 Jenkins 服务器测试它，<code>mvn clean install</code> 之后在你的 Jenkins 实例中遵循以下步骤：
-1. 选择 <code>系统管理</code>
-2. 选择 <code>插件管理</code>
-3. 选择 <code>高级</code> 选项卡
-4. 在 <code>上传插件</code> 部分，选择 <code>选择文件</code>
-5. 选择 <code>$&lt;root_dir&gt;/target/gitlab-branch-source.hpi</code>
-6. 选择 <code>上传</code>
-7. 选择 <code>安装（无需重启）</code></p>
+<p>保存并等待分支索引。您可以从这里自由导航，任务进度显示在左侧。</p>
 
-<h2 id="使用">使用</h2>
+<p><img src="multibranch-indexing.png" alt="Multibranch Pipeline Job Indexing" /></p>
 
-<p>假设插件安装已经完成。</p>
+<p>索引完成后，导入的项目将所有分支、合并请求和标签列示为任务。</p>
 
-<h3 id="在-jenkins-上设置-gitlab-服务器配置">在 Jenkins 上设置 Gitlab 服务器配置</h3>
+<p><img src="multibranch-folder.png" alt="Multibranch Pipeline Job Folder" /></p>
 
-<ol>
-<li>在 jenkins 上，选择 <code>系统管理</code></li>
-<li>选择 <code>系统设置</code></li>
-<li>向下滚动找到 <code>GitLab</code> 部分
-<br /></li>
-</ol>
+<p>查看每个任务，您会发现左侧有一些操作项:</p>
 
-<p><img src="gitlab-section.png" alt="gitlab-section" />
-4. 选择 <code>Add GitLab Server</code> | 选择 <code>GitLab Server</code>
-5. 现在您将看到 GitLab 服务器配置选项。</p>
+<ul>
+<li>您可以通过选择 <code>立即构建</code> 手动触发任务。</li>
+<li>您可以通过选择相应的按钮访问 GitLab 服务器上的特定分支/合并请求/标签。</li>
+</ul>
 
-<pre><code>![gitlab-server](gitlab-server.png)
+<p><img src="icon-tag.png" alt="Build Actions" /></p>
 
-需要配置的字段有4个：  
-* `Name` - 插件自动为您生成唯一的服务器名称。用户可能希望配置此字段以满足其需要，但应确保它足够唯一。我们建议保持原样。
-* `Server URL` - 包含指向 Gitlab 服务器的 URL 。默认设置为 &quot;https://gitlab.com&quot; 。用户可以修改它以输入其 Gitlab 服务器 URL ，例如 https://gitlab.gnome.org/、http://gitlab.example.com:7990 等等。
-* `Credentials` - 包含类型为 GitLab Personal Access Token 的凭据条目列表。当没有添加凭证时，它显示 &quot;-none-&quot; 。用户可以通过单击 &quot;Add&quot; 按钮添加凭证。
-* `Web Hook` - 此字段是一个复选框。如果希望插件在与 Gitlab 项目相关的任务上设置 Webhook ，请选中此框。该插件监听相关 Gitlab 项目的 URL ，当 Gitlab 服务器中发生事件时，服务器将向设置 Web Hook 的 URL 发送事件触发器。如果您希望在 Gitlab 项目上持续集成（或持续交付），那么您可能希望自动设置它。  
+<h3 id="创建-gitlab-组类型任务">创建 GitLab 组类型任务</h3>
+
+<p>转到 Jenkins &gt; 新建任务 &gt; GitLab Group</p>
+
+<p><img src="gitlab-group.png" alt="GitLab Folder Organization" /></p>
+
+<p>您可以注意到，配置非常类似于多分支流水线任务，只是缺少 <code>Projects</code> 字段。
+您可以添加在您的 Owner（用户/组/子组）中所有项目。
+表单验证将与 GitLab 服务器检查 owner 是否有效。
+您可以添加 <code>Discover subgroup project</code> 的特性，该特性允许您发现组或子组中所有子组的子项目，但此特性不适用于用户。
+在索引时，web hook 在每个项目中创建。
+GitLab Api 不支持创建组 web hook，所以这个插件不支持只有 GitLab EE 才支持的特性。</p>
+
+<p>现在可以查看导入的项目，如果需要，可以在每个文件夹上配置不同的设置。</p>
+
+<p><img src="gitlab-group-folder.png" alt="GitLab Group Folder" /></p>
+
+<h3 id="gitlab-流水线状态通知">GitLab 流水线状态通知</h3>
+
+<p>GitLab 从任务排队的角度得到关于构建状态的通知。</p>
+
+<ul>
+<li>成功 - 任务成功了</li>
+<li>失败 - 任务失败了并且合并请求还没准备好合并</li>
+<li>出错 - 发生了意外；例如：Jenkins 任务被终止了</li>
+<li>等待 - 任务正在构建队列中等待</li>
+</ul>
+
+<p><img src="pipeline-status.png" alt="GitLab Pipeline Status" /></p>
+
+<p>关于 GitLab 流水线状态，有指向相应 Jenkins 任务构建的超链接。
+要查看流水线阶段和控制台输出，需要访问 Jenkins 服务器。
+我们也计划通知管道阶段到 GitLab，但它有一些缺点，目前这已得到解决，有未来的计划添加它作为特性。</p>
+
+<p>您还可以通过从特性列表中选择 <code>Skip pipeline status notifications</code> 来跳过关于流水线状态的 GitLab 通知。</p>
+
+<h3 id="合并请求">合并请求</h3>
+
+<p>实现对项目合并请求的支持具有挑战性。
+第一，MR 有两种类型，即原始分支和 Fork 的项目分支，因此每个 head 必须有不同的实现。
+第二，来自 fork 的 MR 可能来自不可信的源，所以实现了一种新的策略 <code>Trust Members</code>，它允许 CI 仅从具有 <code>Developer</code>/<code>Maintainer</code>/<code>Owner</code> 访问级别的可信用户构建 MR。</p>
+
+<p><img src="trusted-members.png" alt="Trusted Member Strategy" /></p>
+
+<p>第三，来自 fork 的 MR 由于 GitLab 的问题不支持流水线状态通知，请参考<a href="https://docs.gitlab.com/ee/ci/merge_request_pipelines/#important-notes-about-merge-requests-from-forked-projects">这里</a>。
+您可以添加一个特性 <code>Log Build Status as Comment on GitLab</code> ，它允许那您添加一个 sudo 用户（如果你希望 owner 用户为空）以在 commit/tag/mr 上对构建结果进行评论。
+要添加 sudo 用户，令牌必须具有管理访问权限。
+默认情况下，只有失败/出错以评论的形式被记录，但是您也可以通过勾选复选框来启用成功构建的日志记录。</p>
+
+<p><img src="log-comment-trait.png" alt="Build Status Comment Trait" /></p>
+
+<p>有时候，合并请求因为外部错误而失败，因此因此您希望通过评论 <code>jenkins rebuild</code> 来触发 mr 的重新构建。
+要启用该触发器，添加特性 <code>Trigger build on merge request comment</code>。
+评论内容可以在特性中修改。
+出于安全原因，评论者需要有该项目的 <code>Developer</code>/<code>Maintainer</code>/<code>Owner</code> 访问权限。</p>
+
+<p><img src="build-trigger-trait.png" alt="Merge request build trigger" /></p>
+
+<h2 id="hook">Hook</h2>
+
+<p>如果在服务器配置中配置了 web hook，则在项目上自动创建 web hook。
+请确保 web hook 通过 CSRF 过滤器。
+Jenkins 监听 <code>/gitlab-webhook/post</code> 路径上的 web hook 。
+GitLab 上 web hook 在以下事件上被触发：</p>
+
+<ul>
+<li><p><code>Push Event</code> - 当提交或分支被推送时</p></li>
+
+<li><p><code>Tag Event</code> - 当新标签被创建时</p></li>
+
+<li><p><code>Merge Request Event</code> - 当合并请求被创建/更新</p></li>
+
+<li><p><code>Note Event</code> - 当对合并请求进行评论时</p></li>
+</ul>
+
+<p>如果令牌具有管理访问权限，还可以在 GitLab 服务器上设置系统 Hook。
+在创建新项目时触发系统 hook，Jenkins 根据配置触发新项目的重新扫描，并在其上设置 web hook。
+Jenkins 监听 <code>/gitlab-systemhook/post</code> 路径上你的系统 hook。
+GitLab 上系统 hook 在 <code>Repository Update Events</code> 上被触发：</p>
+
+<p>你也可以使用 <code>Override Hook Management mode</code> 特性来覆盖默认你的 hook 管理以及选择是否要使用不同的上下文（比如 Item）或完全禁用它。</p>
+
+<p><img src="override-hook.png" alt="Override Hook Management" /></p>
+
+<h2 id="job-dsl-以及-jcasc">Job DSL 以及 JCasC</h2>
+
+<p>你可以使用 <code>Job DSL</code> 来创建任务。
+下面有一个 Job DSL 脚本的示例：</p>
+
+<pre><code>organizationFolder('GitLab Organization Folder') {
+    description(&quot;GitLab org folder created with Job DSL&quot;)
+    displayName('My Project')
+    // &quot;Projects&quot;
+    organizations {
+        gitLabSCMNavigator {
+            projectOwner(&quot;baymac&quot;)
+            credentialsId(&quot;i&lt;3GitLab&quot;)
+            serverName(&quot;gitlab-3214&quot;)
+            // &quot;Traits&quot; (&quot;Behaviours&quot; in the GUI) that are &quot;declarative-compatible&quot;
+            traits {
+                subGroupProjectDiscoveryTrait() // discover projects inside subgroups
+                gitLabBranchDiscovery {
+                    strategyId(3) // discover all branches
+                }
+                originMergeRequestDiscoveryTrait {
+                    strategyId(1) // discover MRs and merge them with target branch
+                }
+                gitLabTagDiscovery() // discover tags
+            }
+        }
+    }
+    // &quot;Traits&quot; (&quot;Behaviours&quot; in the GUI) that are NOT &quot;declarative-compatible&quot;
+    // For some 'traits, we need to configure this stuff by hand until JobDSL handles it
+    // https://issues.jenkins.io/browse/JENKINS-45504
+    configure { 
+        def traits = it / navigators / 'io.jenkins.plugins.gitlabbranchsource.GitLabSCMNavigator' / traits
+        traits &lt;&lt; 'io.jenkins.plugins.gitlabbranchsource.ForkMergeRequestDiscoveryTrait' {
+            strategyId(2)
+            trust(class: 'io.jenkins.plugins.gitlabbranchsource.ForkMergeRequestDiscoveryTrait$TrustPermission')
+        }
+    }
+    // &quot;Project Recognizers&quot;
+    projectFactories {
+        workflowMultiBranchProjectFactory {
+            scriptPath 'Jenkinsfile'
+        }
+    }
+    // &quot;Orphaned Item Strategy&quot;
+    orphanedItemStrategy {
+        discardOldItems {
+            daysToKeep(10)
+            numToKeep(5)
+        }
+    }
+    // &quot;Scan Organization Folder Triggers&quot; : 1 day
+    // We need to configure this stuff by hand because JobDSL only allow 'periodic(int min)' for now
+    triggers {
+        periodicFolderTrigger {
+            interval('1d')
+        }
+    }
+}
 </code></pre>
 
-<ol>
-<li><p>添加一个 Personal Access Token 凭据(自动生成 Personal Access Token 请参考<a href="#在-jenkins-内创建个人访问令牌">下一个部分</a>):</p>
+<p>你也可以使用 <code>JCasC</code> 从 Job DSL 脚本直接创建任务。示例请查看该插件<a href="https://github.com/jenkinsci/gitlab-branch-source-plugin/blob/develop/README.md">仓库</a>。</p>
+
+<h2 id="如何与我们讨论-bug-或新特性">如何与我们讨论 bug 或新特性?</h2>
 
 <ul>
-<li><p>用户需要添加一个 <code>GitLab Personal Access Token</code> 类型凭证条目用来安全地将 token 保存在 Jenkins 内部。</p>
+<li><p>这个项目使用 <a href="https://issues.jenkins-ci.org/">Jenkins JIRA</a> 来跟踪问题。 你可以查看 <a href="https://issues.jenkins-ci.org/issues/?jql=project+%3D+JENKINS+AND+component+%3D+gitlab-branch-source-plugin"><code>gitlab-branch-source-plugin</code></a> 组件下面的问题。</p></li>
+
+<li><p>在<a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">开发者邮件列表</a>中发送你的邮件。</p></li>
+
+<li><p>加入我们的 <a href="https://gitter.im/jenkinsci/gitlab-branch-source-plugin">Gitter channel</a>。</p></li>
+</ul>
+
+<h2 id="未来的工作">未来的工作</h2>
 
 <ul>
-<li>在你的 GitLab 服务器生成一个 <code>Personal Access Token</code>
+<li>积极维护 <code>GitLab 分支源插件</code> 并从用户那里获取反馈以改进插件的用户体验。</li>
+<li>扩展在 BlueOcean 中对 GitLab 流水线的支持。</li>
+</ul>
+
+<h2 id="资源">资源</h2>
 
 <ul>
-<li>从右上角选择配置文件下拉菜单</li>
-<li>选择 <code>Settings</code></li>
-<li>从左侧菜单选择 <code>Access Token</code></li>
-<li>输入一个名称 | 将 Scope 设置为 <code>api</code>，<code>read_user</code>，<code>read_repository</code></li>
-<li>选择 <code>Create Personal Access Token</code></li>
-<li>复制生成的 token</li>
-</ul></li>
-<li>返回 Jenkins | 在凭据字段中选择 <code>Add</code> | 选择 <code>Jenkins</code></li>
-<li>设置 <code>Kind</code> 为 GitLab Personal Access Token</li>
-<li>输入 <code>Token</code></li>
-<li>在 <code>ID</code> 处输入唯一的 id</li>
-<li>输入人类可读的描述</li>
-
-<li><p>选择 <code>Add</code></p>
-
-<p><img src="gitlab-credentials.png" alt="gitlab-credentials" /></p></li>
-</ul></li>
-</ul></li>
-
-<li><p>测试连接：</p>
-
-<ul>
-<li>在 <code>Credentials</code> 下拉列表选择你需要的 token</li>
-<li>选择 <code>Test Connection</code></li>
-<li>它应该会返回 <code>Credentials verified for user &lt;username&gt;</code></li>
-</ul></li>
-
-<li><p>选择 <code>Apply</code>（在底部）</p></li>
-
-<li><p>GitLab 服务器现在在 Jenkins 设置好了</p></li>
-</ol>
-
-<h3 id="在-jenkins-内创建个人访问令牌">在 Jenkins 内创建个人访问令牌</h3>
-
-<p>或者，用户可以在 Jenkins 内部生成 Gitlab 个人访问令牌，并自动添加 Gitlab 个人访问令牌凭据到 Jenkins 服务器凭据。
-1. 在 <code>GitLab</code> 部分的底部选择 <code>Advanced</code>
-2. 选择 <code>Manage Additional GitLab Actions</code>
-3. 选择 <code>Convert login and password to token</code>
-4. 设置 <code>GitLab Server URL</code>
-5. 有两个选项来生成令牌：
-   * <code>From credentials</code> - 要选择已在的持久存储的用户名密码凭据，或添加用户名密码凭据来持久存储它。
-   * <code>From login and password</code> - 如果这是一次性的，那么您可以直接在文本框中输入凭据，并且用户名/密码凭据不会持久化。</p>
-
-<ol>
-<li>设置完你的用户名密码凭据后，选择 <code>Create token credentials</code>.</li>
-
-<li><p>token 创建器将在 GitLab 服务器中为具有所需范围的给定用户创建个人访问令牌，并为 Jenkins 服务器中的相同用户创建凭据。
-您可以返回 GitLab 服务器配置来选择生成的新凭证(首先选择 &ldquo;-none-&rdquo; ，然后将出现新的凭证)。出于安全原因，此令牌不显示为纯文本，而是返回一个 <code>id</code> 。
-它是一个128位长的 UUID-4字符串(36个字符)。</p>
-
-<p><img src="gitlab-token-creator.png" alt="gitlab-token-creator" /></p></li>
-</ol>
-
-<h3 id="配置即代码">配置即代码</h3>
-
-<p>没有必要在UI中浪费时间。 <code>Jenkins 配置即代码 (JCasC)</code> 或者简单地 <code>配置即代码</code> 插件允许你通过一个 <code>yaml</code> 文件配置 Jenkins。
-如果你是新用户，你可以在<a href="https://github.com/jenkinsci/configuration-as-code-plugin">这里</a>了解更多关于 JCasC 的信息.</p>
-
-<h4 id="添加配置-yaml">添加配置 YAML：</h4>
-
-<p>这里有多种方式配置 JCasC yaml 文件来配置 Jenkins：
-* JCasC 默认情况下在 <code>$JENKINS_ROOT</code> 搜索一个名为 <code>jenkins.yaml</code> 的文件。
-* JCasC 寻找一个环境变量 <code>CASC_JENKINS_CONFIG</code> ，其中包含配置 <code>yaml</code> 文件的路径。
-    * 一个包含一组配置文件的文件夹的路径，例如： <code>/var/jenkins_home/casc_configs</code>。
-    * 单个文件的完整路径，例如： <code>/var/jenkins_home/casc_configs/jenkins.yaml</code>。
-    * 一个指向 web 上提供的文件的 URL ，例如： <code>https://&lt;your-domain&gt;/jenkins.yaml</code>。
-* 您还可以在 UI 中设置配置的 yaml 路径。转到 <code>&lt;your-jenkins-domain&gt;/configuration-as-code</code>。
-输入 <code>jenkins.yaml</code> 的路径或 URL 并选择 <code>Apply New Configuration</code>。</p>
-
-<p>一个通过 <code>jenkins.yaml</code> 配置 GitLab 服务器的例子:</p>
-
-<pre><code class="language-yaml">credentials:
-  system:
-    domainCredentials:
-      - credentials:
-          - gitlabPersonalAccessToken:
-              scope: SYSTEM
-              id: &quot;i&lt;3GitLab&quot;
-              token: &quot;XfsqZvVtAx5YCph5bq3r&quot; # gitlab personal access token
-unclassified:
-  gitLabServers:
-    servers:
-      - credentialsId: &quot;i&lt;3GitLab&quot;
-        manageHooks: true
-        name: &quot;gitlab.com&quot;
-        serverUrl: &quot;https://gitlab.com&quot;
-</code></pre>
-
-<p>要获得更好的安全性，请参阅 JCasC 文档中的处理 secrets <a href="https://github.com/jenkinsci/configuration-as-code-plugin#handling-secrets">部分</a>。</p>
-
-<h2 id="未来工作范围">未来工作范围</h2>
-
-<p>GSoC 的第二阶段将用于开发 Gitlab 分支源插件。新功能正在开发中，但代码库不稳定，需要大量的错误修复。
-一些功能（如多分支流水线任务）工作正常。在第二阶段结束时会有更多关于它的信息。</p>
-
-<h2 id="问题跟踪">问题跟踪</h2>
-
-<p>这个项目使用 Jenkins <a href="https://issues.jenkins-ci.org/">JIRA</a> 来跟踪问题。你可以在 <code>gitlab-branch-source-plugin</code> 模块提交问题。</p>
-
-<h2 id="致谢">致谢</h2>
-
-<p>这个插件是由 Google 编程夏令营 (GSoC)团队为 <a href="https://jenkins.io/projects/gsoc/2019/gitlab-support-for-multibranch-pipeline/">GitLab 支持多分支流水线</a>而构建和维护的。
-很多灵感来自于 <code>GitLab 插件</code>，<code>Gitea 插件</code> 及 <code>GitHub 插件</code>。</p>
-
-<p>我们的团队成员：<a href="https://www.github.com/baymac">baymac</a>，<a href="https://github.com/LinuxSuRen">LinuxSuRen</a>，
-<a href="https://github.com/markyjackson-taulia">Marky</a>，<a href="https://github.com/casz">Joseph</a>，
-<a href="https://github.com/justinharringa">Justin</a>，<a href="https://github.com/jeffpearce">Jeff</a>。</p>
-
-<p>来自其他人的支持：<a href="https://github.com/oleg-nenashev">Oleg</a>，<a href="https://github.com/gmessner">Greg</a>，<a href="https://github.com/omehegan">Owen</a>。</p>
-
-<p>也感谢整个 Jenkins 社区提供的专业技术和灵感。</p>
-
-<h2 id="链接">链接</h2>
-
-<ul>
-<li><a href="https://www.youtube.com/watch?v=ij6ByZqI67o">第一阶段示例</a></li>
-<li><a href="https://drive.google.com/open?id=1c3UWwEb5rDmO6YEn5fU3qVbVW-opuUXb">演示幻灯片</a></li>
 <li><a href="https://github.com/jenkinsci/gitlab-api-plugin">GitLab API 插件</a></li>
-<li><a href="https://github.com/baymac/gitlab-branch-source-plugin">GitLab 分支源插件</a></li>
 <li><a href="https://wiki.jenkins.io/display/JENKINS/GitLab+API+Plugin">GitLab API 插件 Wiki</a></li>
-<li><a href="https://issues.jenkins-ci.org/browse/JENKINS-57445">第一阶段的问题跟踪</a></li>
-<li><a href="https://baymac.github.io">博客</a></li>
+<li><a href="https://github.com/jenkinsci/gitlab-branch-source-plugin">GitLab 分支源插件</a></li>
+<li><a href="https://jenkins.io/projects/gsoc/2019/gitlab-support-for-multibranch-pipeline/">项目概要</a></li>
+<li><a href="https://go.cloudbees.com/docs/plugins/github-branch-source/">GitHub 分支源插件发布</a></li>
 </ul>
+
+<p>感谢 Jenkins 以及 Google 编程夏令营 :)</p>
 
 </div>
 
@@ -571,19 +569,6 @@ unclassified:
 
           
 
-<h2>参考</h2>
-<ul>
-	
-	<li><a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/">在大型企业里维护多分支流水线</a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/">在 Kubernetes 上使用 Jenkins </a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/">Jenkins 插件的微基准测试框架</a></li>
-	
-	<li><a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/">Jenkins 文档特别兴趣小组</a></li>
-	
-</ul>
-
         </div>
       </div>
       
@@ -594,14 +579,14 @@ unclassified:
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “多分支流水线任务对 GitLab SCM 的支持”
-  </a> 更新于：July 4, 2019
+    “介绍新的 GitLab 分支源插件”
+  </a> 更新于：September 11, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -637,14 +622,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/credentials">
-              credentials
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/developer">
-              developer
+            <a class="tag" href="/tags/multibranch">
+              multibranch
             </a>
           </li>
         
@@ -664,18 +643,18 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/" class="link">
-              介绍新的 GitLab 分支源插件
-            </a>
-          </li>
-        
       
         
           <li class="db b mt4 mb2 mr2">
             Related entries:
           </li>
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/" class="link">
+              多分支流水线任务对 GitLab SCM 的支持
+            </a>
+          </li>
         
       
     </ul>
@@ -702,7 +681,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/07\/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/09\/2019-09-11-introducing-gitlab-branch-source-plugin\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

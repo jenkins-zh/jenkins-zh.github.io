@@ -13,8 +13,61 @@
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-09-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gitlab/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gsoc/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/multibranch/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/pipeline/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/plugins/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -35,18 +88,6 @@
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-05-award/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -122,12 +163,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/blueocean/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/pipeline/</loc>
     <lastmod>2019-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -230,12 +265,6 @@
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</loc>
     <lastmod>2019-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/plugins/</loc>
-    <lastmod>2019-07-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -356,24 +385,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/credentials/</loc>
-    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gitlab/</loc>
-    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gsoc/</loc>
-    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
