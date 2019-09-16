@@ -12,20 +12,73 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/asktheexperts/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/community/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/contributorsummit/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/devopsworld2019/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/events/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/jenkinsworld/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/opensource/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -37,12 +90,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/gsoc/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -304,12 +351,6 @@
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</loc>
     <lastmod>2019-07-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/community/</loc>
-    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -841,18 +882,6 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/events/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/opensource/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-cdf/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
   </url>
@@ -1124,11 +1153,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/installers/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jenkinsworld/</loc>
     <priority>0</priority>
   </url>
   

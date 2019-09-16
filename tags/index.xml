@@ -6,10 +6,82 @@
     <description>Recent content in Tags on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 11 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>asktheexperts</title>
+      <link>https://jenkins-zh.cn/tags/asktheexperts/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/asktheexperts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>community</title>
+      <link>https://jenkins-zh.cn/tags/community/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>contributorsummit</title>
+      <link>https://jenkins-zh.cn/tags/contributorsummit/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/contributorsummit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devopsworld2019</title>
+      <link>https://jenkins-zh.cn/tags/devopsworld2019/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/devopsworld2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>events</title>
+      <link>https://jenkins-zh.cn/tags/events/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/events/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gsoc2019</title>
+      <link>https://jenkins-zh.cn/tags/gsoc2019/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/gsoc2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkinsworld</title>
+      <link>https://jenkins-zh.cn/tags/jenkinsworld/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jenkinsworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource</title>
+      <link>https://jenkins-zh.cn/tags/opensource/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/opensource/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>gitlab</title>
@@ -26,15 +98,6 @@
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/gsoc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gsoc2019</title>
-      <link>https://jenkins-zh.cn/tags/gsoc2019/</link>
-      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/gsoc2019/</guid>
       <description></description>
     </item>
     
@@ -251,15 +314,6 @@
       <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>community</title>
-      <link>https://jenkins-zh.cn/tags/community/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/community/</guid>
       <description></description>
     </item>
     
@@ -651,24 +705,6 @@
     </item>
     
     <item>
-      <title>events</title>
-      <link>https://jenkins-zh.cn/tags/events/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/events/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>opensource</title>
-      <link>https://jenkins-zh.cn/tags/opensource/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/opensource/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>shared-library</title>
       <link>https://jenkins-zh.cn/tags/shared-library/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
@@ -737,15 +773,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/installers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jenkinsworld</title>
-      <link>https://jenkins-zh.cn/tags/jenkinsworld/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/jenkinsworld/</guid>
       <description></description>
     </item>
     

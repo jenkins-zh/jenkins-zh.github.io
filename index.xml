@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 11 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/index.xml" rel="self" type="application/rss+xml" />
     
@@ -34,6 +34,22 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins World 贡献者峰会及专家答疑展位</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</guid>
+      <description>Jenkins 15周岁啦！Jenkins World 将 DevOps 思想领袖、IT 主管、持续交付实践者以及 Jenkins 社区和生态系统齐聚这场全球活动，让与会者有机会学习、探索以及面对面交流，帮助塑造 Jenkins 的下一次发展以及针对 DevOps 的解决方案。
+此外，Jenkins 贡献者峰会也于旧金山举行。Jenkins 贡献者峰会是现有贡献者以及未来贡献者围绕 Jenkins 项目，以最新思考和最大努力来共同探讨、学习和协作的地方。上午峰会安排是由核心贡献者进行一系列展示介绍。这些介绍突出了每项工作的内容，以及社区成员可以提供哪些帮助。下午分组讨论会上，与同好小组进行了深入讨论，并同子项目贡献者进行合作。
+我非常荣幸能成为其中一员。 第一天 第一天以贡献者峰会开场。这让大家有机会聚在一起讨论对社区的贡献，把脑海中熟悉的名字和本人对上号。大多数人我只通过视频聊天和在 gitter 上见过，所以当时我特别激动。我们聚在一起了解 Jenkins 开源画卷的起点。
+接下来是同好讨论/非正式会议。我主导这些讨论会，个人认为进展十分顺利。成员组织管理员 Martin d’Anjou 和 Jeff Pearce 为我们带来一场有关 Google 编程夏令营（Google Summer of Code，以下简称 GSoC）项目的演讲。
+GSoC 学生 Natasha Stopa 介绍了她的项目——Plugin Installation Manager Library/CLI Tool。这是一个超酷的项目，在社区受到广泛欢迎。
+讨论会结尾是博思艾伦咨询公司（Booz Allen Hamilton）的 Steven Terrana 的展示和精彩的 Jenkins 模板引擎。如果你还没有试过这个，请一定不要错过https://github.com/boozallen/jenkins-templating-engine。
+主展厅 从第二天起，我和其他几位 Jenkins 组织管理者将在 Jenkins 社区的专家答疑（Ask the Expert）展位。
+这真的是一场非常有意思的体验，让我有机会了解社区正在做什么，帮助他们解决面对的问题。问题涉及的范围很广，从 Jenkins X 到我负责维护的种种插件，如 Jenkins Prometheus 和 Sysdig Secure Scanning 插件。也有很多关于 Kubernetes 的问题。有很多关于 Kubernetes 使用情况提高的市场营销方面的数据，但对 Kubernetes 上 Jenkins 的超高兴趣度真的让我大吃一惊。当然，也有机会拍点儿自拍。</description>
     </item>
     
     <item>
