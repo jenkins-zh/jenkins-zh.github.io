@@ -12,6 +12,35 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-23-devops-world-jenkins-world/</loc>
+    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/devops-jenkins/</loc>
+    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/</loc>
+    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/</loc>
+    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/</loc>
+    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/meeting/2019-09-22/</loc>
     <lastmod>2019-09-22T00:00:00+00:00</lastmod>
   </url>
@@ -22,26 +51,8 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-09-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</loc>
     <lastmod>2019-09-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/</loc>
-    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
