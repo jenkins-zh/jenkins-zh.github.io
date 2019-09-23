@@ -9,11 +9,11 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 已经被 Google Summer Of Code 2019 接受！ - Jenkins 中文社区</title>
+     <title>React Plugin Template，让你可以使用 React 来编写 Jenkins 插件 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="19年的 Google Summer Of Code 正式起航">
+    <meta name="description" content="React Plugin Template，让你可以使用 React 来编写 Jenkins 插件">
     
     
     <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -32,27 +32,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 已经被 Google Summer Of Code 2019 接受！" />
-<meta property="og:description" content="19年的 Google Summer Of Code 正式起航" />
+<meta property="og:title" content="React Plugin Template，让你可以使用 React 来编写 Jenkins 插件" />
+<meta property="og:description" content="React Plugin Template，让你可以使用 React 来编写 Jenkins 插件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" />
-<meta property="article:published_time" content="2019-03-13T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-03-13T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/" />
+<meta property="article:published_time" content="2019-09-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-09-19T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 已经被 Google Summer Of Code 2019 接受！">
-<meta itemprop="description" content="19年的 Google Summer Of Code 正式起航">
-
-
-<meta itemprop="datePublished" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="103">
+<meta itemprop="name" content="React Plugin Template，让你可以使用 React 来编写 Jenkins 插件">
+<meta itemprop="description" content="React Plugin Template，让你可以使用 React 来编写 Jenkins 插件">
 
 
+<meta itemprop="datePublished" content="2019-09-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="425">
 
-<meta itemprop="keywords" content="gsoc,gsoc2019,events,community," />
+
+
+<meta itemprop="keywords" content="react,plugin,template,gsoc,gsoc2019," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 已经被 Google Summer Of Code 2019 接受！"/>
-<meta name="twitter:description" content="19年的 Google Summer Of Code 正式起航"/>
+<meta name="twitter:title" content="React Plugin Template，让你可以使用 React 来编写 Jenkins 插件"/>
+<meta name="twitter:description" content="React Plugin Template，让你可以使用 React 来编写 Jenkins 插件"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -197,23 +197,12 @@ var trackOutboundLink = function(id, url) {
 
 
 
-
-
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
-        <h3 class="f4 dib author">
-            Zhao Xiaojie
-        </h3>
-
       
-      
-        <p class="lh-copy measure center mt0 f6 black-60 bio">
-          Contributor of @jenkinsci . Jenkins press contact in China. Jenkins Chinese community leader.
-        </p>
-      
-      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/jackshen" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -221,27 +210,10 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
-  <div>
-    作者：<span class="originalAuthor">oleg_nenashev</span>
-    <div>
-      <a class="originalLink" href="" target="_blank">原文链接</a>
-    </div>
-  </div>
-  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li><a href="#下一步">下一步？</a></li>
-<li><a href="#我是一个学生-如何申请">我是一个学生。如何申请？</a></li>
-<li><a href="#我想要成为一名导师-会不会太晚了">我想要成为一名导师。会不会太晚了？</a></li>
-<li><a href="#重要的日期">重要的日期</a></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -254,17 +226,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Electron 应用的流水线设计 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-cdf/" class="dib f6 pr1 hover-bg-light-gray br-100" title="为 Continuous Delivery Foundation 的成立感到兴奋">
+			<a href="https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins World 贡献者峰会及专家答疑展位">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -284,13 +248,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 已经被 Google Summer Of Code 2019 接受！</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">React Plugin Template，让你可以使用 React 来编写 Jenkins 插件</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      19年的 Google Summer Of Code 正式起航
+      React Plugin Template，让你可以使用 React 来编写 Jenkins 插件
     </div>
   
 
@@ -303,62 +267,190 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="../../../images/gsoc/jenkins-gsoc-logo_small.png" alt="Jenkins GSoC" /></p>
+<p>模板地址</p>
 
-<p>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在<a href="https://summerofcode.withgoogle.com/">2019年的 Google Summer of Code</a>上 <strong>已经被接受</strong>。
-今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。</p>
+<p><a href="https://github.com/jenkinsci/react-plugin-template">React Plugin Template</a>
+<a href="https://github.com/jenkinsci/react-plugin-template">https://github.com/jenkinsci/react-plugin-template</a></p>
 
-<p>这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。
-我们有25个<a href="https://jenkins.io/projects/gsoc/2019/project-ideas/">项目想法</a>，而且有超过30个准导师（不断增多！）。
-这已经超过了2016年以及2018年的总和。
-有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！</p>
+<h2 id="起因">起因</h2>
 
-<h1 id="下一步">下一步？</h1>
+<p>这个模板是笔者在今年的 Google Summer of Code 中的项目 Working Hours - UI Improvement 中产出的。由于我们想使用 React 的一些组件来优化用户体验，例如在 Working Hours 里面我们想用 ReactDatepicker 来帮助用户选择日期，于是整个 Working Hours 插件的前端部分都试图用 React 来编写，而由于 Jenkins 的传统插件编写主要还是用的 Jelly ，一套类似 JSP 的后端渲染引擎，因此笔者在一开始也踩了不少坑。以至于想到，可以抽象出一套插件的脚手架来帮助有相似需求的同学。</p>
 
-<p>GSoC 已经正式启动，请期待更多的学生在我们的<a href="https://jenkins.io/zh/projects/gsoc/#contacts">Gitter 频道和邮件列表</a>中联系项目。
-在特别兴趣小组和子项目频道中已经有了很多沟通。
-我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。
-然后，我们将会继续这个申请，选择项目并分配导师团队。</p>
+<p>链接：</p>
 
-<p>所有关于 Jenkins GSoC 的信息都可以在<a href="https://jenkins.io/zh/projects/gsoc/">子项目页面</a>上找到。</p>
+<p><a href="https://summerofcode.withgoogle.com/projects/#6112735123734528">GSoC：Working Hours UI Improvement</a> <a href="https://summerofcode.withgoogle.com/projects/#6112735123734528">https://summerofcode.withgoogle.com/projects/#6112735123734528</a></p>
 
-<h1 id="我是一个学生-如何申请">我是一个学生。如何申请？</h1>
+<p><a href="https://github.com/jenkinsci/working-hours-plugin">Github：Working Hours 插件</a> <a href="https://github.com/jenkinsci/working-hours-plugin">https://github.com/jenkinsci/working-hours-plugin</a></p>
 
-<p>在/projects/gsoc/students[学生的信息]页面中有完整的申请指导。</p>
+<h2 id="概述">概述</h2>
 
-<p>我们鼓励感兴趣的学生尽早联系 Jenkins 社区并开始探索项目。所有的项目在对应的页面上都有聊天室与邮件列表。
-我们也会为学生组织工作日的会议，在这些会议上你可以见到管理员和导师，并向他们提问。
-另外，加入我们的<a href="https://gitter.im/jenkinsci/gsoc-sig">Gitter 频道</a>和<a href="https://groups.google.com/forum/#!forum/jenkinsci-gsoc-all-public">邮件列表</a>，以便收到项目中即将到来的事情。</p>
+<p>在以往，我们可以使用 Jelly 来开发 Jenkins 插件的前端部分，同时一些请求可以绑定到对应的类，但是当我们想要更高程度地去自定义插件界面的时候，Jelly 就显得捉襟见肘了。这就是这个模板的目的，帮助开发者使用 React 来开发一个插件。</p>
 
-<p>3月25日开放申请，但你现在就可以准备了！利用这段申请前的时间来讨论并改进你的项目提议。
-我们也建议你着手熟悉 Jenkins 并开始探索你的提议的领域。项目的想法包括快速开始的指导，以及有助于初期研究时对新手友好的问题。
-如果没有看到任何感兴趣的，你可以<a href="https://jenkins.io/zh/projects/gsoc/proposing-project-ideas/">提出你自己的项目想法</a>或者
-查看由其他参与 GSoC 的<a href="https://summerofcode.withgoogle.com/organizations/">组织</a>提出的想法。</p>
+<p>同时，有了 React ，我们就可以使用很多基于 React 的库，webpack 也可以帮助我们更安全更高效地使用 js 库。</p>
 
-<h1 id="我想要成为一名导师-会不会太晚了">我想要成为一名导师。会不会太晚了？</h1>
+<h2 id="特点">特点</h2>
 
-<p>不晚！我们正在寻找更多的项目想法，以及 Jenkins 的贡献者或用户中对 Jenkins 富有热情并想要指导学生的人。
-无须底层经验，导师可以和学生一起研究项目并给出技术指导。
-我们尤其对 Java 技术栈方向感兴趣，以及一些新的技术和领域（例如：Kubernetes, IoT, Python, Go 或者其他的）。</p>
+<p>| 集成 React      | 开发者可以使用 React 充分控制 UI
+| 使用了 Iframe          | Iframe 隔离了之前 Jenkins 添加的一些 js 库会造成的影响，例如 Prototype.js。
+| 使用 maven 的生命周期       | 使用了 Frontend Maven Plugin <a href="https://github.com/eirslett/frontend-maven-plugin">https://github.com/eirslett/frontend-maven-plugin</a>, npm 脚本可以在 maven 的生命周期中被同步执行。
+| 使用 Webpack               | Webpack 可以减少最终包的体积，同时避免 js 库对全部命名空间的影响
+| 为每个请求附加 Jenkins Crumb| Jenkins Crumb 是 Jenkins 的一套 token 系统，在本模板中已经自动附加到 axios 实例上
+| 使用了 Express 的 devserver  | 可以单独打开一个支持热更新的 devserver 来编写前端界面</p>
 
-<p>你可以提议一个新项目或者加入已有的。查看博客<a href="https://jenkins.io/blog/2018/12/26/gsoc-2019-call-for-mentors/">寻找导师</a>以及<a href="https://jenkins.io/projects/gsoc/mentors">导师的信息</a>中的细节。
-如果你想要提议一个新项目，那么请在3月11日之前完成，以便学生有时间探索并准备他们的提议。</p>
+<h2 id="截图">截图</h2>
 
-<p>今年，导师<strong>并不</strong>必须要有 Jenkins 开发上的很强的专业知识。目标是指导学生参与到 Jenkins 社区。
-如果需要特殊的专业知识，GSoC 组织管理员会帮助寻找顾问。</p>
+<p>插件 UI</p>
 
-<h1 id="重要的日期">重要的日期</h1>
+<p><img src="plugin-ui.jpg" alt="plugin-ui" /></p>
+
+<p>示例入口</p>
+
+<p><img src="management-link.jpg" alt="management-link.jpg" /></p>
+
+<h2 id="入门">入门</h2>
+
+<p>克隆仓库:</p>
+
+<pre><code>git clone https://github.com/jenkinsci/react-plugin-template.git
+cd react-plugin-template
+</code></pre>
+
+<p>安装 maven 依赖和 npm 包</p>
+
+<pre><code>mvn install -DskipTests
+</code></pre>
+
+<p>运行支持热更新的网页</p>
+
+<pre><code>npm run start
+</code></pre>
+
+<p>运行插件</p>
+
+<pre><code class="language-bash">mvn hpi:run -Dskip.npm -f pom.xml
+</code></pre>
+
+<h2 id="发送http请求">发送HTTP请求</h2>
+
+<p>由于 Jenkins Crumb 策略默认是开启的，每个请求都被要求包含一个 Jenkins Crumb, 所以请使用已经设置好了 Jenkins Crumb 的 <code>axiosInstance</code>，可以在 <code>src/main/react/app/api.js</code> 中找到。</p>
+
+<pre><code class="language-java">export const apiGetData = () =&gt; {
+  return axiosInstance.post(&quot;/data&quot;);
+};
+</code></pre>
+
+<p>或者你想使用你自己的 http client，你只需将 Jenkins Crumb 添加到你每个请求的 header中，这个 header 的 key 和 content 都可以使用 <code>src/main/react/app/utils/urlConfig.js</code>，具体操作如下</p>
+
+<pre><code class="language-java">const headers = {};
+const crumbHeaderName = UrlConfig.getCrumbHeaderName();
+
+if (crumbHeaderName) {
+  headers[crumbHeaderName] = UrlConfig.getCrumbToken();
+}
+</code></pre>
+
+<h3 id="编写后端的请求处理器">编写后端的请求处理器</h3>
+
+<p>当你可以自定义你的请求后，你同时也需要一个在后端的 Handler。</p>
+
+<p>Jenkins 使用了一个叫做 Stapler的框架来处理请求。你可以使用一个继承了 Action 的类来创建一个子 url ，同时可以使用一个 StaplerProxy 来转发或者直接处理请求。</p>
+
+<p>链接</p>
+
+<p><a href="http://stapler.kohsuke.org/reference.html">Stapler Reference</a> <a href="http://stapler.kohsuke.org/reference.html">http://stapler.kohsuke.org/reference.html</a>.</p>
+
+<h3 id="示例-handler">示例 handler</h3>
+
+<p>如下，ManagementLink（已经继承 Action ）会首先拿到这个请求然后转交个 <code>PluginUI</code> 来处理。</p>
+
+<pre><code class="language-java">@Extension
+public class PluginManagementLink extends ManagementLink implements StaplerProxy {
+
+    PluginUI webapp;
+
+    public Object getTarget() {
+        return webapp;
+    }
+
+    public String getUrlName() {
+        return &quot;react-plugin-template&quot;;
+    }
+}
+</code></pre>
+
+<p>随后， stapler 会在 <code>PluginUI</code> 中寻找适合的处理函数，如下, <code>doDynamic</code> 便是一个处理函数, 然后便是我摸自定义的，根据 url 来判断需要调用的函数, <code>getTodos</code> 或者 <code>setTodos</code>, 在这里 <code>PluginUI</code> 可能更像一个 url router。</p>
+
+<pre><code class="language-java">public class PluginUI{
+    public HttpResponse doDynamic(StaplerRequest request) {
+        ...
+
+        List&lt;String&gt; params = getRequestParams(request);
+
+        switch (params.get(0)) {
+        case &quot;get-todos&quot;:
+            return getTodos();
+        case &quot;set-todos&quot;:
+            return setTodos(request);
+        }
+        ...
+    }
+}
+</code></pre>
+
+<h2 id="保存数据">保存数据</h2>
+
+<p>你可以使用一个 Descriptor 来保存你的数据</p>
+
+<pre><code class="language-java">@Extension
+public class PluginConfig extends Descriptor&lt;PluginConfig&gt; implements Describable&lt;PluginConfig&gt;
+</code></pre>
+
+<p>当你每次修改数据, 调用 <code>save()</code> 来保存他们。Jenkins 是使用基于 xml 的序列化方法来保持数据的。</p>
+
+<pre><code class="language-java">public void setTodos(
+        @CheckForNull List&lt;Todo&gt; value) {
+    this.todos = value;
+    save();
+}
+</code></pre>
+
+<p>而在你的 handler 中，你可以调用如下代码来找到你的这个存储数据的对象。</p>
+
+<pre><code class="language-java">config = ExtensionList.lookup(PluginConfig.class).get(0);
+</code></pre>
+
+<h2 id="自定义你的插件">自定义你的插件</h2>
+
+<h3 id="把所有-react-template-修改为你的插件名">把所有 <code>react-template</code> 修改为你的插件名</h3>
 
 <ul>
-<li>3月11日 - 停止新的 GSoC 项目提议</li>
-<li>4月9日 - 停止接受学生的申请</li>
-<li>5月6日 - 宣布接受了的项目，团队开始社区合作以及编码</li>
-<li>8月26日 - 结束编码</li>
-<li>9月3日 - 宣布结果</li>
+<li>在 <code>org/jenkinsci/plugins/reactplugintemplate/PluginUI/index.jelly</code> , 修改 iframe 的 id 和 source url.</li>
+<li>在 <code>src/main/react/server/config.js</code> , 修改 devserver 的代理路径</li>
+<li>在 <code>src/main/react/package.json</code> , 修修 start 命令中的 BASE_URL</li>
+<li>在 <code>pom.xml</code> , 修改 artifactId</li>
+<li>在 <code>org/jenkinsci/plugins/reactplugintemplate/PluginManagementLink.java</code> , 修改 names。</li>
 </ul>
 
-<p>查看 <a href="https://summerofcode.withgoogle.com/how-it-works/#timeline">GSoC 时间线</a>了解更多信息。
-在 GSoC 期间和之后，我们也会组织 Jenkins 相关的特别活动（例如：在 Jenkins World 上）。</p>
+<h3 id="为你的插件自定义一个页面">为你的插件自定义一个页面</h3>
+
+<p>比较推荐使用 Management Link, 这会让你的插件有一个独立的页面, 并且可以在系统管理界面 <code>/manage</code> 放置一个入口。</p>
+
+<p><img src="management-link.jpg" alt="management-link.jpg" /></p>
+
+<h2 id="原理">原理</h2>
+
+<p>本模板仅仅是将一个 webpack 的 project 放到了 Maven project 中，同时将 webpack 的 build 结果复制到插件的 webapp 目录，随后便可以在 iframe 中通过 url 访问到，最后被 Jelly 渲染到网页。</p>
+
+<h2 id="为什么使用iframe">为什么使用Iframe?</h2>
+
+<p>因为到现在，Jenkins 的网页已经添加了很多的 js 库了（似乎是添加到全局的），因此可能会和较新的库产生一些冲突。因此也行一个 Iframe 可以使我们的插件运行在一个相对“干净”的环境里面。</p>
+
+<h2 id="链接">链接</h2>
+
+<p><a href="https://github.com/jenkinsci/react-plugin-template">Github: React Plugin Template</a>  <a href="https://github.com/jenkinsci/react-plugin-template">https://github.com/jenkinsci/react-plugin-template</a></p>
+
+<p><a href="https://github.com/jenkinsci/working-hours-plugin">Github: Working Hours Plugin</a>
+<a href="https://github.com/jenkinsci/working-hours-plugin">https://github.com/jenkinsci/working-hours-plugin</a></p>
 
 </div>
 
@@ -391,14 +483,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 已经被 Google Summer Of Code 2019 接受！”
-  </a> 更新于：March 13, 2019
+    “React Plugin Template，让你可以使用 React 来编写 Jenkins 插件”
+  </a> 更新于：September 19, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -416,6 +508,24 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
+            <a class="tag" href="/tags/react">
+              react
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/plugin">
+              plugin
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/template">
+              template
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
             <a class="tag" href="/tags/gsoc">
               gsoc
             </a>
@@ -427,59 +537,7 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
             </a>
           </li>
         
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/events">
-              events
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/community">
-              community
-            </a>
-          </li>
-        
               
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/" class="link">
-              React Plugin Template，让你可以使用 React 来编写 Jenkins 插件
-            </a>
-          </li>
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/" class="link">
-              介绍新的 GitLab 分支源插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" class="link">
-              Jenkins 插件的微基准测试框架
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/" class="link">
-              多分支流水线任务对 GitLab SCM 的支持
-            </a>
-          </li>
-        
       
         
         
@@ -508,7 +566,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/03\/2019-03-13-gsoc2019-announcement\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/09\/2019-09-19-introduce-react-plugin-template\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

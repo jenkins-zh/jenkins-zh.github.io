@@ -6,7 +6,7 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/index.xml" rel="self" type="application/rss+xml" />
     
@@ -34,6 +34,49 @@
 问题至少要包含如下部分：
  场景以及问题是如何发生的，方便阅读的人复现 软件、环境相关版本信息 日志、截图等（建议使用附件的方式）  出于对回答问题者的尊重，请得到解决方案后及时表示感谢，或者从其他地方得到答案后添加相关链接以及说明。
 GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用所谓的“小号”。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2019-09-22/</link>
+      <pubDate>Sun, 22 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2019-09-22/</guid>
+      <description>今天主要讨论社区对于接收外部资金捐助的事情
+ 有捐助意向的企业是：测吧（北京）科技有限公司 金额  我的理解是至少能给到2500（是基于在阿里云上购买一年的服务器的费用） 本次希望能得到2500～10000元的捐助  捐助方的权益  在官网首页以及合作伙伴中加logo以及链接  是否专款专用？
+ 公开社区基金的用途
+ 基础设施（域名、服务器） 技术类活动组织（茶歇、礼品、场地） 成员激励：季度、年度  社区基金问题
+ 没有对公账户 缺少了解财务的人才  考虑从在校学生里的相关专业来招募  需要在一个地方明确地列出来资金的使用情况（进账、出账） 对资金的（进账、出账）做分类  需要确定一个流程
+ 确定意向 确定捐助细节  捐助类型（资金、实物、虚拟物品等） 接收款项的账户 资金用途 时间 双方的联系人  公开捐助记录（历次）  https://jenkins-zh.cn/about/sponsors-list/（增加类型以及明细）  撰写并发布感谢捐助方的文章  论坛
+ 选型（开源）  https://github.com/discourse/discourse https://github.com/satellity/satellity https://github.com/search?q=forum https://github.com/b3log/symphony  管理员（征集？严格的挑选）  考虑分短期和长期的管理员  调试完成后再使用基金   </description>
+    </item>
+    
+    <item>
+      <title>React Plugin Template，让你可以使用 React 来编写 Jenkins 插件</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</link>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</guid>
+      <description>模板地址
+React Plugin Template https://github.com/jenkinsci/react-plugin-template
+起因 这个模板是笔者在今年的 Google Summer of Code 中的项目 Working Hours - UI Improvement 中产出的。由于我们想使用 React 的一些组件来优化用户体验，例如在 Working Hours 里面我们想用 ReactDatepicker 来帮助用户选择日期，于是整个 Working Hours 插件的前端部分都试图用 React 来编写，而由于 Jenkins 的传统插件编写主要还是用的 Jelly ，一套类似 JSP 的后端渲染引擎，因此笔者在一开始也踩了不少坑。以至于想到，可以抽象出一套插件的脚手架来帮助有相似需求的同学。
+链接：
+GSoC：Working Hours UI Improvement https://summerofcode.withgoogle.com/projects/#6112735123734528
+Github：Working Hours 插件 https://github.com/jenkinsci/working-hours-plugin
+概述 在以往，我们可以使用 Jelly 来开发 Jenkins 插件的前端部分，同时一些请求可以绑定到对应的类，但是当我们想要更高程度地去自定义插件界面的时候，Jelly 就显得捉襟见肘了。这就是这个模板的目的，帮助开发者使用 React 来开发一个插件。
+同时，有了 React ，我们就可以使用很多基于 React 的库，webpack 也可以帮助我们更安全更高效地使用 js 库。
+特点 | 集成 React | 开发者可以使用 React 充分控制 UI | 使用了 Iframe | Iframe 隔离了之前 Jenkins 添加的一些 js 库会造成的影响，例如 Prototype.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2019-09-18/</link>
+      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2019-09-18/</guid>
+      <description> 线上活动  hacktoberfest 定期的线上活动，由于 zoom 出了问题，暂时没有推进  线下活动  上海  10月20日，人民广场 https://github.com/jenkins-zh/jenkins-zh/pull/95 人数（120），门票50 议题  Testerhome 接口测试（与 Jenkins 无关） UWA 自动化测试（与 Jenkins 无关） daocloud（待定）    社区合作  开源年会
+ 给社区贡献的同学一张免费的门票（早鸟票99），以及其他的权益 没有在当地活跃的成员，无法开展我们社区的展台 工作坊（暂时无人组织）  开源基础设施
+ 工作坊（暂时无人组织）   社区管理  是否容易获取到社区的动态 微信群  难以做到用户增长 其他问题   </description>
     </item>
     
     <item>

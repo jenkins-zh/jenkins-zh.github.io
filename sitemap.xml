@@ -12,26 +12,76 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <loc>https://jenkins-zh.cn/meeting/2019-09-22/</loc>
+    <lastmod>2019-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/meeting/</loc>
+    <lastmod>2019-09-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</loc>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gsoc/</loc>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/plugin/</loc>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/react/</loc>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/template/</loc>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/meeting/2019-09-18/</loc>
+    <lastmod>2019-09-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -65,12 +115,6 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tags/jenkinsworld/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -84,12 +128,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/gitlab/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gsoc/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -124,11 +162,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/meeting/2019-09-05/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/meeting/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -455,12 +488,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/pipeline-authoring/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/plugin/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

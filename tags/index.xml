@@ -6,10 +6,55 @@
     <description>Recent content in Tags on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gsoc</title>
+      <link>https://jenkins-zh.cn/tags/gsoc/</link>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/gsoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gsoc2019</title>
+      <link>https://jenkins-zh.cn/tags/gsoc2019/</link>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/gsoc2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plugin</title>
+      <link>https://jenkins-zh.cn/tags/plugin/</link>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://jenkins-zh.cn/tags/react/</link>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>template</title>
+      <link>https://jenkins-zh.cn/tags/template/</link>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/template/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>asktheexperts</title>
@@ -57,15 +102,6 @@
     </item>
     
     <item>
-      <title>gsoc2019</title>
-      <link>https://jenkins-zh.cn/tags/gsoc2019/</link>
-      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/gsoc2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>jenkinsworld</title>
       <link>https://jenkins-zh.cn/tags/jenkinsworld/</link>
       <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
@@ -89,15 +125,6 @@
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/gitlab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gsoc</title>
-      <link>https://jenkins-zh.cn/tags/gsoc/</link>
-      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/gsoc/</guid>
       <description></description>
     </item>
     
@@ -413,15 +440,6 @@
       <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/pipeline-authoring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>plugin</title>
-      <link>https://jenkins-zh.cn/tags/plugin/</link>
-      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/plugin/</guid>
       <description></description>
     </item>
     
