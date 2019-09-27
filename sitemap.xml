@@ -12,6 +12,23 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-27-jenkins-in-hacktoberfest/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/</loc>
+    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-23-devops-world-jenkins-world/</loc>
     <lastmod>2019-09-23T00:00:00+00:00</lastmod>
   </url>
@@ -23,19 +40,7 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tags/</loc>
-    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/wechat/</loc>
     <lastmod>2019-09-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
