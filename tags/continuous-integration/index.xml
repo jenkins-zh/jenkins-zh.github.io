@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>continuous integration on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/continuous-integration/</link>
-    <description>Recent content in continuous integration on Jenkins 中文社区</description>
+    <title>Continuous Integration on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/continuous-integration/</link>
+    <description>Recent content in Continuous Integration on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 03 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>持续集成的收益与挑战</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/</guid>
       <description>毫无疑问，持续集成（ CI ）已成为一个软件开发的主流原则。CI 的收益在业界众所周知的，并且很难找到反对实施它的人。
 在这里，我想把那些收益收集起来放到一个中心化的地方。但是我认为扮演反面角色并试图找出持续集成的弊端或挑战也是很有趣的。
 什么是持续集成？ 从根本上说， 持续集成（ CI ）是一种开发实践，开发人员每天都要将代码集成到共享的仓库中。在该仓库中，代码被自动构建进行验证用来在这个流程中检验尽早的发现任何问题。这允许团队花更少的时间回溯，而花更多的时间构建新特性。

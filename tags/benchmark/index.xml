@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>benchmark on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/benchmark/</link>
-    <description>Recent content in benchmark on Jenkins 中文社区</description>
+    <title>Benchmark on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/benchmark/</link>
+    <description>Recent content in Benchmark on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 04 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/benchmark/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/benchmark/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 插件的微基准测试框架</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
       <description>Jenkins 插件的微基准测试框架 作为我 Google 编程夏令营的一部分，我一直致力于改进角色策略插件（Role Strategy Plugin）的性能。 由于没有现有的方法来度量性能以及在 Jenkins 插件上做基准测试， 我在项目第一阶段的工作是创建一个框架在一个 Jenkins 实例中运行 Jenkins 插件中的基准测试。 为了让我们的工作更容易些，我们选择了 Java微基准测试工具来运行这些基准。 这使我们能够可靠地度量对时间要求严格的功能的性能，将有助于让 Jenkins 为每个人更快的运转。
 最近在 Jenkins 单元测试工具2.50中发布了微基准测试框架。 下面的博客文章展示了如何在插件中运行基准测试。
 介绍 该框架通过为 JMH 基准的每个 fork 启动一个临时的 Jenkins 实例来运行， 就像 Jenkins 测试工具中的 JenkinsRule。 基准测试是直接从 JUnit 测试运行的，它允许在运行过程中失败构建，并且很容易从 IDE 中运行基准测试，就像单元测试一样。 你可以很容易地通过使用 Java 方法或使用 Jenkins plugin:configuration-as-code:[配置即代码插件]来配置基准并将路径传递到 YAML 文件。

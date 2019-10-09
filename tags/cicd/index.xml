@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cicd on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/cicd/</link>
-    <description>Recent content in cicd on Jenkins 中文社区</description>
+    <title>Cicd on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/cicd/</link>
+    <description>Recent content in Cicd on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>为 Continuous Delivery Foundation 的成立感到兴奋</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-cdf/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-ready-for-cdf/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-cdf/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-ready-for-cdf/</guid>
       <description>大概十一年前，我就开始为现在被称为 Jenkins 的项目做贡献，自己当时其实也并不知道在做什么。但是接下来发生的事情令人感觉难以置信，数以百计的贡献者加入，成千上万的新用户开始使用 Jenkins，每天都会运行数以百万条的流水线。这样的增长是充满挑战性的，用户的增长意味着问题的增长，问题的增长就意味着需要新的解决方式。 在大约两年半之前，我在2017年的 Jenkins World Contributor Summit 大会上面对一大群 Jenkins 的贡献者们，为我的所谓的 &amp;lsquo;Jenkins软件基金会&amp;rsquo; 做了宣传，那就是，不要羞于从 Python 社区汲取思想，在我的朋友 Chris Aniszczyk 和 Linux 基金会的帮助下，这个基金会变成了一个更加全面的 *持续交付基金会*（CDF），我的同事 Tracy Miranda 一直在领导这项工作，帮助推动 CDF 的成立。
 Kohsuke 为 jenkinsci-dev@ mailing list 撰写了一篇很好的概述文章，其中列举了如果 Jenkins 项目一旦建立后就应该加入 Continuous Delivery Foundation 的原因。如果你对 Jenkins 项目感兴趣，但是还没有阅读过这边文章的话，那我认为你应该花些时间来阅读 Kohsuke 的这份邮件。但是在 这篇文章 中，我 想分享我愿意帮助建立持续交付基金会（CDF）的原因。
 持续交付（CD）已经成为我职业生涯中不可或缺的一部分，甚至在 Jez Humble 将此概念清晰地表述之前，我就开始学习 CD 并且对它一直充满热情。我认为它对软件的开发实践至关重要，当有人说他们没有练习使用 CI 或 CD 时，我感觉这就像回到了原始社会。想象一下，如果有人说 &amp;ldquo;呃，我们在这里有一个采用 Source Control 的项目，但领导们觉得这个东西不太靠谱&amp;rdquo;，我想你肯定会惊掉下巴。&amp;rdquo;在这个时代竟然还有开发团队都不使用源代码管理？&amp;rdquo;。总体来说，我认为CD已经是现代软件开发的基础了。

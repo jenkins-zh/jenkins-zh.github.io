@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pipeline-authoring on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/pipeline-authoring/</link>
-    <description>Recent content in pipeline-authoring on Jenkins 中文社区</description>
+    <title>Pipeline Authoring on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/pipeline-authoring/</link>
+    <description>Recent content in Pipeline Authoring on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 01 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/pipeline-authoring/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/pipeline-authoring/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>介绍 Jenkins 模板引擎</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</link>
       <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</guid>
       <description>在企业范围内实施 DevSecOps 实践具有挑战性。由于组织内的不同应用程序正在使用多种编程语言、自动化测试框架和安全遵从性安全合规工具，因此每个团队构建和维护流水线变得很难。
 无论应用程序使用哪个特定的技术栈，大多数流水线都将遵循相同的通用工作流。模板引擎插件（简写为 JTE ，用于 Jenkins 模板引擎）允许您通过创建不依赖于工具的模板化工作流来获取效率，每个团队都可以重用这些工作流。
 作为公共部门和私营部门客户的技术顾问，我们在 Booz Allen 发现，每个新项目都要从头开始建造 DevSecOps 流水线。通过开发 Jenkins 模板引擎，我们已经看到流水线开发从几个月减少到几天，现在我们可以重用工具集成，同时为 Jenkins 流水线带来新的治理级别。

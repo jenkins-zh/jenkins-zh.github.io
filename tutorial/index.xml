@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tutorial/</link>
+    <link>https://jenkins-zh.github.io/tutorial/</link>
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.cn/tutorial/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

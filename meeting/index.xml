@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/meeting/</link>
+    <link>https://jenkins-zh.github.io/meeting/</link>
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 22 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/meeting/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/meeting/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.cn/meeting/2019-09-22/</link>
+      <link>https://jenkins-zh.github.io/meeting/2019-09-22/</link>
       <pubDate>Sun, 22 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/meeting/2019-09-22/</guid>
+      <guid>https://jenkins-zh.github.io/meeting/2019-09-22/</guid>
       <description>今天主要讨论社区对于接收外部资金捐助的事情
  有捐助意向的企业是：测吧（北京）科技有限公司 金额  我的理解是至少能给到2500（是基于在阿里云上购买一年的服务器的费用） 本次希望能得到2500～10000元的捐助  捐助方的权益  在官网首页以及合作伙伴中加logo以及链接  是否专款专用？
  公开社区基金的用途
@@ -28,10 +28,10 @@
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.cn/meeting/2019-09-18/</link>
+      <link>https://jenkins-zh.github.io/meeting/2019-09-18/</link>
       <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/meeting/2019-09-18/</guid>
+      <guid>https://jenkins-zh.github.io/meeting/2019-09-18/</guid>
       <description> 线上活动  hacktoberfest 定期的线上活动，由于 zoom 出了问题，暂时没有推进  线下活动  上海  10月20日，人民广场 https://github.com/jenkins-zh/jenkins-zh/pull/95 人数（120），门票50 议题  Testerhome 接口测试（与 Jenkins 无关） UWA 自动化测试（与 Jenkins 无关） daocloud（待定）    社区合作  开源年会
  给社区贡献的同学一张免费的门票（早鸟票99），以及其他的权益 没有在当地活跃的成员，无法开展我们社区的展台 工作坊（暂时无人组织）  开源基础设施
  工作坊（暂时无人组织）   社区管理  是否容易获取到社区的动态 微信群  难以做到用户增长 其他问题   </description>
@@ -39,19 +39,19 @@
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.cn/meeting/2019-09-05/</link>
+      <link>https://jenkins-zh.github.io/meeting/2019-09-05/</link>
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/meeting/2019-09-05/</guid>
+      <guid>https://jenkins-zh.github.io/meeting/2019-09-05/</guid>
       <description> 社区治理  公众号数据分享  线下活动 上海  地点：人民广场 费用：35 时间：需要进一步确定 日程：十月底  线上活动  形式：定期 时长：一小时 时间：周日晚上七点：grhahaha、yJunS 工作日（八点、九点）：donhui、linan607、linuxsuren 费用：1～2 回顾：不作为标配，但有人愿意做的话，可以有  </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.cn/meeting/2019-08-21/</link>
+      <link>https://jenkins-zh.github.io/meeting/2019-08-21/</link>
       <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/meeting/2019-08-21/</guid>
+      <guid>https://jenkins-zh.github.io/meeting/2019-08-21/</guid>
       <description>社区治理  对于微信群里设置一个投诉机制，对于符合一定条件的，把被投诉的人移出 @linuxsuren  在公众号后台或者邮件（admin at jenkins-zh.cn）发送投诉，写明被投诉人和理由 @linuxsuren 可以先和被投诉人进行私下沟通，如果不改正的话，就执行移除 @Shunw19  在公众号里发起一个投票，调研大家对公众号文章类型，质量的看法以及建议 @linuxsuren  文章类型：技术类、志愿者等活动类  考虑定期发起志愿者招募，例如在寒暑假之前 @linuxsuren  需要的人数 @Shunw19  分布在多个城市  如何组织 @linuxsuren  尽量明确任务 区分社区志愿、活动志愿者 @baobeizuoshoubuli  把完成志愿任务的人，在官网展示出来 @linuxsuren  给公众号加个目录分类，检索 @Shunw19  可以通过关键字检索  贡献者采访 @linuxsuren  口语比较好的来协作采访国外的贡献者 需要出一些稿子（中文、英文）   线下活动 北京  黑客松
  活动报名已经启动 需要把活动宣传工作做好  开源人线下见面会 8月24日
   教程 https://jenkins-zh.cn/tutorial/</description>
@@ -59,10 +59,10 @@
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.cn/meeting/2019-08-08/</link>
+      <link>https://jenkins-zh.github.io/meeting/2019-08-08/</link>
       <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/meeting/2019-08-08/</guid>
+      <guid>https://jenkins-zh.github.io/meeting/2019-08-08/</guid>
       <description>线下活动 上海  开源基础设施峰会2019 11月4-6日  https://www.openstack.cn/  开源年会 11月2-3日  https://www.bagevent.com/event/5518928?bag_track=bagevent  meetup 9月21/22日  场地（赵晓杰） 讲师，三名（需要征集一名） 活动宣传稿（高嵘） 礼品（空缺）   北京  黑客松  门票价格，早鸟票，标准票，晚鸟票  100，120，150  志愿者（彦军） 设备，摄像等 视频剪辑（王顺） vs-code  服务器的配置要求？   开源人线下见面会 8月24日  成员招募 明天拉个群
 教程 https://jenkins-zh.cn/tutorial/</description>
     </item>

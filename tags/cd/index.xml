@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cd on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/cd/</link>
-    <description>Recent content in cd on Jenkins 中文社区</description>
+    <title>Cd on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/cd/</link>
+    <description>Recent content in Cd on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 29 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/cd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/cd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>在 Kubernetes 上使用 Jenkins </title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</link>
       <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</guid>
       <description>​有几种方法可以在 DevOps 环境中管理您的云基础架构。 DevOps 是一种鼓励快速流动的应用程序开发以及促进 IT 团队开发、测试、发布过程无缝无缝衔接的方法。
 Jenkins 通过自动化将持续集成（CI）和持续交付（CD）无缝集成到开发流程中来优化工作流程。
 可以使用 Kubernetes 中的 Jenkins pod 部署这些技术， Jenkins pod 可以根据团队的具体需求进行扩展。
@@ -27,10 +27,10 @@ CI/CD 流水线 Jenkins 是 CI/CD 的同义词，它是自动化开发、部署�
     
     <item>
       <title>使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</link>
       <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</guid>
       <description>过去五年中的变化，如迁移到公有云以及从虚拟机向容器的转变，已经彻底改变了构建和部署软件的意义。
 以 Kubernetes 为例。Google 于2014年开源，现在所有主流的公有云供应商都支持它&amp;mdash;它为开发人员提供了一种很好的方式，可以将应用程序打包到 Docker 容器中，并部署到任意 Kubernetes 集群中。
 使用 CI/CD、Kubernetes 和 Jenkins X 进行高性能开发 在技术上，高性能团队几乎总是成功的必要条件，而持续集成、持续部署(CI/CD)、小迭代以及快速反馈是构建模块。为你的云原生应用程序设置 CI/CD 可能比较困难。通过自动化所有内容，开发人员可以花费宝贵的时间来交付实际的业务。
@@ -43,10 +43,10 @@ Jenkins X 入门 要安装 Jenkins X，首先需要在你的机器或云供应�
     
     <item>
       <title>从 Jenkins 到 Jenkins X</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</link>
       <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</guid>
       <description>这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事。
 我们的上下文 在 dailymotion ，我们坚信 devops 最佳实践，并且在 Kubernetes 投入了大量投资。 我们的部分产品已经部署在 Kubernetes 上，但并不是全部。 因此，当迁移我们的广告技术平台的时候，我们想要完全采用“ Kubernetes 式”——或者云原生，以追随技术趋势！ 这意味着要重新定义整个 CI/CD 流水线，从静态/永久环境迁移，转向动态按需分配环境。 我们的目标是授权给我们的开发人员，缩短我们的上线时间以及降低我们的运营成本。
 对于新的 CI/CD 平台我们的初始需求是: - 尽可能避免从零开始：我们的开发人员已经习惯使用 Jenkins 和声明式流水线，并且它们可以很好地满足我们当前的需求。 - 以公有云基础设施为目标——Google 云平台和 Kubernetes 集群 - 与 gitops 方法论兼容——因为我们喜欢版本控制、同行评审和自动化
@@ -56,10 +56,10 @@ Kubernetes 之上的 Jenkins Jenkins X 的设置相当简单，并且在他们�
     
     <item>
       <title>与云无关的用于 Kubernetes 的自动化 CI/CD </title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</link>
       <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/</guid>
       <description>在本文中，我想讨论一种在云环境中为 Kubernetes 工作负载实现自动化端到端 CI/CD 的方法。 这里可能有其它解决方案，而像 AWS、Microsoft Azure 和 GCP 这样的云提供商也提供了自己的一套框架，以实现与 Kubernetes 相同的目标。
 它的部署模型的核心是 Rancher，Rancher 负责为托管在不同云环境和裸机环境中的多个 Kubernetes 集群提供集中管理与运营的能力。 根据应用程序和业务需要，这里提到的工具可以替换为自己选择的工具。
 在详细介绍之前，这里有张部署模型的快照：
@@ -71,10 +71,10 @@ Nexus 作为 Docker 镜像和 Helm chart（使用的是 Helm Nexus 插件）的�
     
     <item>
       <title>应该使用什么 CI/CD 工具？</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</guid>
       <description>在我们正在进行的 Kubernetes FAQ 系列中，我们回答了社区中一些常见的问题，本周我们将讨论在选择 CI/CD 工具时需要考虑什么。
 目前已经有大量的 CI/CD 工具可供选择-开源解决方案和商业解决方案。在这里，我们重点介绍在设置持续交付流水线时要考虑的一些最重要的注意事项。
 在这篇文章中你将学到： - 为什么需要自动化流水线 - 部署典型流水线的组件 - CD 流水线功能需要考虑 - 如何合并 GitOps
@@ -85,10 +85,10 @@ Nexus 作为 Docker 镜像和 Helm chart（使用的是 Helm Nexus 插件）的�
     
     <item>
       <title>持续交付的商业价值</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</guid>
       <description>持续交付使你能够以更低地风险、更快低交付新软件或是更新已有软件。
 降低风险很重要，但是，支持持续交付的流程将转化为对业务更重要的价值： - 加速价值时间。 一个小企业不需要一个 MBA 就可以认识到持续交付可以帮助他们完成工作。 一家大型企业已经规划了其价值流， 并且在整个大型组织中拥有复杂的投资和合约， 将发现持续交付有助于加速实现价值的时间。 - 数据驱动决策。 部署、度量和调整。 你仍然可以推动更大规模的发布，但你的流程将更适合于持续的数据收集。 这将缩短与客户的反馈循环。 它提高了你的反应能力，计划你的下一步行动，并保持领先的竞争力。 - 质量。 你持续发布的行为使你必须提高你的质量标准以及完全的自动化测试实践。 更好的质量意味着更快乐的客户、更低的成本、更少的消防演习和更少的计划外工作。 - 试验 = 创新。 开发人员和业务线可以自由地以较低的成本尝试新的想法， 从而释放出长期高投资发布周期背后的创新想法。 - 降低成本。 大的发布会有巨大的成本，如果出现错误会有严重的后果。 保持可交付成果处于可发布状态会降低交付成本。
 对企业来说，这些价值一起使持续交付成为真正的游戏变革者。 尽管可以在团队或项目级别开始采用和验证，但持续交付的本质是它以需要真正投资和自上而下承诺的方式跨越了组织边界。 选择与现有投资互补并共存的持续交付工具链是走向成功的关键一步， 特别是因为 CD 可以引导你的组织采用 DevOps 文化。
@@ -98,10 +98,10 @@ Nexus 作为 Docker 镜像和 Helm chart（使用的是 Helm Nexus 插件）的�
     
     <item>
       <title>Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
       <description>Docker 已经非常出名并且更多的组织正在转向基于 Docker 的应用开发和部署。这里有一个关于如何容器化现有 Java Web 应用以及使用 Jenkins 为它建立一个端到端部署流水线的快速指南。
 为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。
 步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。
@@ -111,10 +111,10 @@ node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-
     
     <item>
       <title>Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</guid>
       <description>KubeCon + CloudNativeCon | Open Source Summit | 持续交付峰会 中国2019 2019年4月10日，旧金山 - Linux基金会是一家以开源促进大众创新的非营利组织，今天公布将于2019年6月24至26日在中国上海举行的 KubeCon + CloudNativeCon + Open Source Summit 中国2019日程。
 Open Source Summit 中国2019前身为 LinuxCon + ContainerCon + CloudOpen 中国（LC3），是开源社区寻求合作、共享信息、了解当今最有影响力的开源技术和议题的重要平台，包括：云原生、无服务器、微服务、物联网、人工智能、网络、Linux 等。
 2019年，首次将Open Source Summit中国和KubeCon + CloudNativeCon中国整合成一项活动，只需购票一次即可参加KubeCon + CloudNativeCon + Open Source Summit中国。
@@ -125,10 +125,10 @@ Jenkins 中文社区邀您参与社区共同成长 在开源盛会开展的同�
     
     <item>
       <title>什么是 CI/CD?</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/</guid>
       <description>CI/CD 的出现改变了开发人员和测试人员发布软件的方式。本文是描述这一变化的系列文章第一篇， 这些文章将提供各种工具和流程的讲解，以帮助开发人员更好的使用 CI/CD。
 从最初的 瀑布模型， 到后来的 敏捷开发， 再到今天的 DevOps， 这是现代开发人员构建出色产品的技术路线。 随着 DevOps 的兴起，出现了持续集成，持续交付（CI/CD）和持续部署的新方法， 而传统的软件开发和交付方式在迅速变得过时。过去的敏捷时代里， 大多数公司的软件发布周期是每月、每季度甚至每年（还记得那些日子吗？）， 而在现在 DevOps 时代，每周、每天甚至每天多次都是常态。 当 SaaS 成为业界主流后尤其如此，您可以轻松地动态更新应用程序， 而无需强迫用户下载更新组件。很多时候，用户甚至都不会注意到正在发生变化。
 开发团队通过软件交付流水线（Pipeline）实现自动化，以缩短交付周期， 大多数团队都有自动化流程来检查代码并部署到新环境。 我们一直在关注自动化测试流程，但这将在之后的文章中介绍。 今天，我们将介绍什么是 CI/CD/CD ，以及现代软件公司如何使用工具将部署代码的流程自动化。

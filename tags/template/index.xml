@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>template on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/template/</link>
-    <description>Recent content in template on Jenkins 中文社区</description>
+    <title>Template on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/template/</link>
+    <description>Recent content in Template on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/template/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/template/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>React Plugin Template，让你可以使用 React 来编写 Jenkins 插件</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</guid>
       <description>模板地址
 React Plugin Template https://github.com/jenkinsci/react-plugin-template
 起因 这个模板是笔者在今年的 Google Summer of Code 中的项目 Working Hours - UI Improvement 中产出的。由于我们想使用 React 的一些组件来优化用户体验，例如在 Working Hours 里面我们想用 ReactDatepicker 来帮助用户选择日期，于是整个 Working Hours 插件的前端部分都试图用 React 来编写，而由于 Jenkins 的传统插件编写主要还是用的 Jelly ，一套类似 JSP 的后端渲染引擎，因此笔者在一开始也踩了不少坑。以至于想到，可以抽象出一套插件的脚手架来帮助有相似需求的同学。

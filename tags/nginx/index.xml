@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nginx on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/nginx/</link>
-    <description>Recent content in nginx on Jenkins 中文社区</description>
+    <title>Nginx on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/nginx/</link>
+    <description>Recent content in Nginx on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 25 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Jenkins &#43; Ansible 实现自动化部署 Nginx</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/</link>
       <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/</guid>
       <description>本文介绍如何使用 Jenkins + Ansible 实现对 Nginx 的自动化部署。最终达到的效果有如下几点： 1. 只要你将 Nginx 的配置推送到 GitHub 中，Jenkins 就会自动执行部署，然后目标服务器的 Nginx 配置自动生效。这个过程是幂等（idempotent）的，只要代码不变，执行多少遍，最终效果不变。 2. 如果目标机器没有安装 Nginx，则会自动安装 Nginx。 3. 自动设置服务器防火墙规则。
 1. 实验环境介绍 本次实验使用 Docker Compose 搭建 Jenkins 及 Jenkins agent。使用 Vagrant 启动一台虚拟机，用于部署 Nginx。使用 Vagrant 是可选的，读者可以使用 VirtualBox 启动一个虚拟机。使用 Vagrant 完全是为了自动化搭建实验环境。
 以下是整个实验环境的架构图： 注意，图中的 5123 &amp;lt;-&amp;gt; 80 代表将宿主机的 5123 端口请求转发到虚拟机中的 80 端口。

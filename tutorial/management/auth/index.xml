@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>认证 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tutorial/management/auth/</link>
+    <link>https://jenkins-zh.github.io/tutorial/management/auth/</link>
     <description>Recent content in 认证 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.cn/tutorial/management/auth/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tutorial/management/auth/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>忘记密码</title>
-      <link>https://jenkins-zh.cn/tutorial/management/auth/lost-password/</link>
+      <link>https://jenkins-zh.github.io/tutorial/management/auth/lost-password/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tutorial/management/auth/lost-password/</guid>
+      <guid>https://jenkins-zh.github.io/tutorial/management/auth/lost-password/</guid>
       <description>如果忘记了 Jenkins 的管理员密码的话，也不用担心，只要你有权限访问 Jenkins 的根目录，就可以轻松地重置密码。
 通常情况 Jenkins 的根目录，默认是在当前用户（启动 Jenkins 的操作系统用户）目录的 .jenkins 中。对于 unix 系统而言，也就是 ~/.jenkins。
 我们打开配置文件 vim ~/.jenkins/config.xml 后，把字段 useSecurity 的值设置为 false，然后重新启动 Jenkins。你就会发现不需要登陆也能进入管理页面。
@@ -27,10 +27,10 @@ JENKINS_HOME 如果你的环境变量里设置了 JENKINS_HOME 的话，那么�
     
     <item>
       <title>通过 KeyCloak 认证</title>
-      <link>https://jenkins-zh.cn/tutorial/management/auth/keyclock/</link>
+      <link>https://jenkins-zh.github.io/tutorial/management/auth/keyclock/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tutorial/management/auth/keyclock/</guid>
+      <guid>https://jenkins-zh.github.io/tutorial/management/auth/keyclock/</guid>
       <description></description>
     </item>
     

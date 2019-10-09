@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>release on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/release/</link>
-    <description>Recent content in release on Jenkins 中文社区</description>
+    <title>Release on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/release/</link>
+    <description>Recent content in Release on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/release/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/release/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 每周版更新</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</link>
       <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</guid>
       <description>2.184 (2019-07-07)  注销时，移除过期的会话 cookies ，阻止头信息中的相关错误太大。 (issue 25046) 当运行在 Java 11 上时，增加缺失类相关的 telemetry 实验。 (issue 57223) 修复使用“记住我”时的性能问题（于 2.160 中退化） (issue 56243) 开发者：清理 AbstractCloudSlave 的构造器 (pull 4086)  2.183 (2019-06-30)  在 Jenkins 的 URL 配置增加对 IPv6 地址的支持。 (issue 58041) 更新 args4j 2.0.31 到 2.33。 (issue 57959) 开发者：允许插件为 CodeMirror 文本域控制提供 onBlur() 的支持。 (issue 58240) 开发者：使得 WindowsUtil 可以让插件使用。 (pull 4038) 内部：更新 maven-war-plugin 3.0.0 到 3.2.3 (issue 47127)  2.182 (2019-06-23)  当删除目录时，移除 Windows 下的只读标记。 (issue 57855) 更新 Remoting 3.</description>
     </item>
     
     <item>
       <title>Jenkins 长期支持版更新</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-09-jenkins-release/</link>
       <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-09-jenkins-release/</guid>
       <description>2.176.1 (2019-06-10)  自 2.176 以来的变更：
  恢复安装向导中用到的中文本地化资源。 (issue 57412) Robustness: 当 ComputerListener#onOnline() 发生运行时异常后不把节点设置为离线状态。 (issue 57111)  CLI 中通过参数 (-remoting option) 对远程模式的支持已经被移除。 (pull 3838, 博客发布)
  移除符号 nonStoredPasswordParam 对密码参数定义的误导，因为，它会存储加密后的数据。 (issue 56776)
@@ -39,19 +39,19 @@
     
     <item>
       <title>Jenkins 2.176~2.178版本更新</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-29-jenkins-release/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-29-jenkins-release/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-29-jenkins-release/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-29-jenkins-release/</guid>
       <description>2.178 (2019-05-20)  将 jmDNS 从3.4.0-jenkins-3更新到3.5.5，以防止不必要的 DNS 组播错误消息。 (issue 25369) 将 WinP 从1.27更新到1.28，以修复 Windows 优雅进程关闭逻辑中缺少 DLL 和控制台窗口闪烁的问题。 (issue 57477, 完整的变更日志) 确保独立的插件(插件曾经是 Jenkins 本身的一部分功能)在 Jenkins 启动时(需要时)作为已经存在的其他插件的隐含依赖项安装。 这简化了不使用更新中心的特殊安装场景的兼容性，例如当 Jenkins 从预先打包了一些插件的 Docker 镜像运行时。 (issue 57528) 将脚本安全插件的捆绑版本与最新的安全警告一起更新，在不太可能的情况下，它确实是从 WAR 而不是更新中心安装的。 (pull 4000)  2.177 (2019-05-12)  支持在流水线或其它任务类型的 fingerprint() 构建步骤中设置排除和区分大小写。 (文档, pull 3915) 允许通过不同的阴影构建球区分新任务、禁用的任务和中止构建的任务。 (pull 3997) 将 Windows 代理安装程序从1.10.0更新到1.11，当在 .NET 4.6 或更新版本运行时，在代理下载时启用 TLS 1.2。 (issue 51577, 完整的变更日志) 将 Winstone-Jetty 从5.2更新到5.3以更新 Jetty 到 9.4.18。 (pull 4016, 完整的变更日志, Jetty 9.</description>
     </item>
     
     <item>
       <title>19年 GSoC 中 Jenkins 的七个项目</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/</link>
       <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/</guid>
       <description>Google Summer of Code (GSoC) 项目是一个年度性的全球化活动，该项目旨在鼓励高校学生在暑假期间参与到开源项目中来。
 通过审核的学生会收到由 Google 提供的带薪工作，参与到设计好的项目中以改进或提升 Jenkins 项目。作为回报，数名 Jenkins 社区成员会志愿作为学生“导师”来帮助他们融入开源社区并成功完成他们的夏令营项目。
 Jenkins 社区从2009年开始以开源社区的身份参与到 GSoC 中，并分别在16年有5个项目、18年有3个项目被选中。 而今年的项目、导师的数量是最多的一年，相信在这个夏天里，Jenkins 社区可以给我们的用户带来很多不错的 成果，其中也许正有你或者你们团队所希望有的功能或者改进。
@@ -63,10 +63,10 @@ Jenkins 社区从2009年开始以开源社区的身份参与到 GSoC 中，并�
     
     <item>
       <title>Jenkins 版本发布</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-09-jenkins-release/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-09-jenkins-release/</link>
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-09-jenkins-release/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-09-jenkins-release/</guid>
       <description> 2.175 (2019-04-28)  当构建完成后，更新状态图标 (issue 16750) 插件管理页面提供了更方便的插件更新选项，包括：“全选”、“兼容的“或”全不选“。 “兼容”的选择（之前为“全选”）已经不再包括含有任何兼容性警告的插件。 (issue 56477) 从连接 Jenkins 节点的界面上移除会误导到 Java Web Start 和 JNLP 的链接等引用。 (pull 3998) 再次启用 Stapler 请求分发 telemetry。 (pull 3999) 确保远程对象仅通过远程通道被序列化。 确定永远不会设计以 XML 形式持久化到磁盘中的类包括： FilePath, [Stream]TaskListener, and ProcessTree. (issue 47896) 修复在 Linux 代理安装器中看到的一些错误。 (issue 57071) 使得 Debian/Ubuntu 启动器脚本对 Java 11 兼容。 (issue 57096) 开发者：使得 mvn -f war hudson-dev:run支持${port}。 (pull 3984)  2.174 (2019-04-21)  重命名一个代理节点，保持旧的配置，导致重启后旧的代理节点再次出现。 (issue 56403) 嵌套的视图现在也可以根据名称搜索了。 (issue 43322)  </description>
     </item>
     

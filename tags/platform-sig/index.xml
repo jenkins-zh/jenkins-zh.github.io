@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>platform-sig on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/platform-sig/</link>
-    <description>Recent content in platform-sig on Jenkins 中文社区</description>
+    <title>Platform Sig on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/platform-sig/</link>
+    <description>Recent content in Platform Sig on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/platform-sig/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/platform-sig/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>让我们庆祝 Jenkins 对 Java 11的支持</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
       <description>NOTE：这是由 Java 11支持团队准备的联合博客文章：Adrien Lecharpentier、Ashton Treadway、Baptiste Mathus、Jenn Briden、Kevin Earls、MaríaIsabelVilacides、Mark Waite、RamónLeón 和 Oleg Nenashev。
   我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
 从2018年6月开始，组织了许多活动来改进 Jenkins 代码库并添加 Java 11支持。除了这些事件之外，Core/Plugins 维护者和许多其他贡献者都在努力工作，确保他们发现并解决与 Java 11支持相关的尽可能多的问题。
@@ -28,10 +28,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>Java 11 预览支持已在 Jenkins 2.155&#43; 中可用</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</guid>
       <description>NOTE: 这是由 Java 11 支持团队 联合撰写的博客。 在 12 月 18 号（UTC时间下午4点）我们也会在 Jenkins 在线 Meetup 展示对 Java 11 的预览支持。（链接）
  Jenkins 作为领先的开源自动化服务器之一，目前仍然只支持到 Java 8。在 9 月 25 日 OpenJDK 11 发布了。这是一个长期支持版本，并将持续多年，我们想要在 Jenkins 项目中对这个版本进行全面的支持。在过去的一年中，许多贡献者一直致力于在项目中支持 Java 11（Jenkins JEP-211）。这是一条艰辛的道路，但是现在，代表 Jenkins Platform SIG，我们很高兴的宣布在 Jenkins 每周发布提供 Java 11 预览！
 为什么我们需要 Java 11 的预览？
@@ -42,10 +42,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>Windows 安装程序更新</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-windows-installers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-windows-installers/</guid>
       <description>Jenkins 的 Windows 安装程序已经存在很多年了，它是用户在 Windows 上安装 Jenkins Master 作为服务的一种方式。 从被开发出来至今，它还没有什么新特性，但现在是时候做出改变了。
 首先，让我们瞧瞧现版本安装程序的使用经验。
 第1步 启动安装程序 这是使用 WiX Toolset Windows 安装程序的默认界面外观，算不上太好看，而且没有太多对安装程序进行说明的品牌信息。

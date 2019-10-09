@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>zabbix on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/zabbix/</link>
-    <description>Recent content in zabbix on Jenkins 中文社区</description>
+    <title>Zabbix on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/zabbix/</link>
+    <description>Recent content in Zabbix on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Zabbix 监控 Jenkins</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/</guid>
       <description>本文假设读者已经了解 Jenkins 基本概念及插件安装，Zabbix 基础概念。基于 Zabbix 3.4，Jenkins 2.8 做实验
  笔者最近的工作涉及到使用 Zabbix 监控 Jenkins。在谷歌上搜索到的文章非常少，能操作的就更少了。所以决定写一篇文章介绍如何使用 Zabbix 监控 Jenkins。
 下图为整体架构图：

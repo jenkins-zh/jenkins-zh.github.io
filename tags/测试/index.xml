@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>测试 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</link>
+    <link>https://jenkins-zh.github.io/tags/%E6%B5%8B%E8%AF%95/</link>
     <description>Recent content in 测试 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>持续测试的那些事</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</link>
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</guid>
       <description>敏捷，DevOps 和持续交付已然存在于现今每个技术人员的词汇当中。我们都想要像硅谷里的巨头和初创公司一样，敏捷开发，快速发布软件，做出创新的产品。 向敏捷转型在多方面都已有总结，并且到了能被顺利实践的程度。然而，测试仍然是一个有思想困惑和实践挑战的领域。 当软件发布周期从以年、月缩短到以周、天为单位，或者更短时； 我们该如何重塑测试实践，以保证当软件发布到生产环境时能令用户满意， 而不是掉链子？
 鉴于大多数 DevOps 实践仍然把测试视为软件生产中最令人头疼的瓶颈，显然，这是一个常见的挑战。
 持续测试就是答案，但持续测试究竟是什么？你又如何实现它呢？ 维基百科定义持续测试为「在软件交付流水线中执行自动化测试的过程，目的是为了获得关于预发布软件业务风险的即时反馈」。 但是这个定义缺少了本质，缺少了持续测试所示意的转变的量纲。 除了自动化是一个重要的部分以外，持续测试从根本上转变了测试， 它把线性过程中的时间点事件嵌入到整个过程当中去，作为基础贯穿于整个软件交付周期的所有活动中。

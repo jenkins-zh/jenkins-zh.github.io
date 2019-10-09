@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>community on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/community/</link>
-    <description>Recent content in community on Jenkins 中文社区</description>
+    <title>Community on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/community/</link>
+    <description>Recent content in Community on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.cn/tags/community/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/community/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins World 贡献者峰会及专家答疑展位</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</link>
       <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</guid>
       <description>Jenkins 15周岁啦！Jenkins World 将 DevOps 思想领袖、IT 主管、持续交付实践者以及 Jenkins 社区和生态系统齐聚这场全球活动，让与会者有机会学习、探索以及面对面交流，帮助塑造 Jenkins 的下一次发展以及针对 DevOps 的解决方案。
 此外，Jenkins 贡献者峰会也于旧金山举行。Jenkins 贡献者峰会是现有贡献者以及未来贡献者围绕 Jenkins 项目，以最新思考和最大努力来共同探讨、学习和协作的地方。上午峰会安排是由核心贡献者进行一系列展示介绍。这些介绍突出了每项工作的内容，以及社区成员可以提供哪些帮助。下午分组讨论会上，与同好小组进行了深入讨论，并同子项目贡献者进行合作。
 我非常荣幸能成为其中一员。 第一天 第一天以贡献者峰会开场。这让大家有机会聚在一起讨论对社区的贡献，把脑海中熟悉的名字和本人对上号。大多数人我只通过视频聊天和在 gitter 上见过，所以当时我特别激动。我们聚在一起了解 Jenkins 开源画卷的起点。
@@ -29,10 +29,10 @@ GSoC 学生 Natasha Stopa 介绍了她的项目——Plugin Installation Manager
     
     <item>
       <title>让我们庆祝 Jenkins 对 Java 11的支持</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
       <description>NOTE：这是由 Java 11支持团队准备的联合博客文章：Adrien Lecharpentier、Ashton Treadway、Baptiste Mathus、Jenn Briden、Kevin Earls、MaríaIsabelVilacides、Mark Waite、RamónLeón 和 Oleg Nenashev。
   我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
 从2018年6月开始，组织了许多活动来改进 Jenkins 代码库并添加 Java 11支持。除了这些事件之外，Core/Plugins 维护者和许多其他贡献者都在努力工作，确保他们发现并解决与 Java 11支持相关的尽可能多的问题。
@@ -44,10 +44,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>Jenkins 文档特别兴趣小组</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/</guid>
       <description>我们很高兴地宣布 Jenkins 文档特别兴趣小组的成立。 文档特别兴趣小组鼓励贡献者和外部社区创建和 review Jenkins 文档。
 更多详情和计划，请参见：文档特别兴趣小组简介。
 我能帮什么忙呢？ Jenkins 文档特别兴趣小组希望从以下方面得到您的帮助：
@@ -58,10 +58,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>介绍：成为一名 Jenkins 贡献者的旅程</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</guid>
       <description>作为一名软件工程师，这些年来在我工作过的不同公司里用到过许多开源软件（包括框架、库、工具等）。 然而，在此之前我从没有以一名贡献者的身份参与过开源项目。
 自从我向 Jenkins 提交第一个简单又滑稽的 commit 已经过去六个月（2018 年 9 月）了， 我也尝试过作出更多贡献。然而总的来说，向开源项目贡献代码是具有挑战的， 特别是像 Jenkins 这样有着很长生命周期的项目，项目中不乏遗留代码和系统知识。 它通常难以入手，也很难想到一个计划来持续贡献使你的付出从长远看来是有意义的。
 对于 Jenkins 社区来说，我在尝试加入社区时所遇到的困难是其它人也有可能会面临的， 因此我决定分享我成为 Jenkins 活跃贡献者的心路历程。
@@ -81,10 +81,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>Jenkins 正在加入持续交付基金会</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-20-cdf-launch/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-20-cdf-launch/</link>
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-20-cdf-launch/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-20-cdf-launch/</guid>
       <description>今天Linux 基金会与 CloudBees、Google 和一些其他公司启动了一个新的开源软件基金会，也就是持续交付基金会(CDF). CDF 相信持续交付的力量，它旨在培养与支持开源生态，以及厂商中立的项目。
 Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基金会。 实际上，这样的讨论持续了多年，大致的动机简洁摘要在这里。
 此时，作为一名用户，又意味着什么呢？
@@ -100,10 +100,10 @@ Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基
     
     <item>
       <title>Jenkins 已经被 Google Summer Of Code 2019 接受！</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</guid>
       <description>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在2019年的 Google Summer of Code上 已经被接受。 今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。
 这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。 我们有25个项目想法，而且有超过30个准导师（不断增多！）。 这已经超过了2016年以及2018年的总和。 有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！
 下一步？ GSoC 已经正式启动，请期待更多的学生在我们的Gitter 频道和邮件列表中联系项目。 在特别兴趣小组和子项目频道中已经有了很多沟通。 我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。 然后，我们将会继续这个申请，选择项目并分配导师团队。
@@ -118,10 +118,10 @@ Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基
     
     <item>
       <title>Java 11 预览支持已在 Jenkins 2.155&#43; 中可用</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</guid>
       <description>NOTE: 这是由 Java 11 支持团队 联合撰写的博客。 在 12 月 18 号（UTC时间下午4点）我们也会在 Jenkins 在线 Meetup 展示对 Java 11 的预览支持。（链接）
  Jenkins 作为领先的开源自动化服务器之一，目前仍然只支持到 Java 8。在 9 月 25 日 OpenJDK 11 发布了。这是一个长期支持版本，并将持续多年，我们想要在 Jenkins 项目中对这个版本进行全面的支持。在过去的一年中，许多贡献者一直致力于在项目中支持 Java 11（Jenkins JEP-211）。这是一条艰辛的道路，但是现在，代表 Jenkins Platform SIG，我们很高兴的宣布在 Jenkins 每周发布提供 Java 11 预览！
 为什么我们需要 Java 11 的预览？
@@ -132,10 +132,10 @@ Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基
     
     <item>
       <title>Jenkins 对审计日志的支持</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/</link>
       <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/</guid>
       <description>今年是 Jenkins 项目首次参与 Outreachy. Outreachy 是一个类似于 Google Summer of Code (GSoC) 的项目， 实习生有偿地为开源项目工作。 关键的不同之处在于，Outreachy 面向那些在他们国家的技术行业中受到歧视或偏见的小众群体。 当我了解到这个项目后，由于它的包容性与社区建设与我的理念相符就立即自愿作为导师来参与。 我很高兴地说，Jenkins 项目和我的雇主 CloudBees 对此非常支持。
 基于我们之前在 GSoC 上指导学生的付出，今年我们已经加入 Outreachy 并指导了两个实习生。 在 Outreachy 的这次活动中，我们的实习生 David Olorundare 和 LathaGunasekar 将与我一起研发 Jenkins 对审计日志的支持。 我很高兴欢迎 David 和 Latha, 并期待他们能在软件工程专业和对开源社区的贡献上都有所收获。 请继续关注后续博客对他们的介绍。
 该审计日志支持项目在 Jenkins 和 Apache Log4j 之间形成了一个新的链接，这给予我们的实习生学习 更多有关开源治理和认识新朋友的机会。 作为奖金，该项目旨在为支持高级的业务检测提供便利，例如：在认证事件中检测潜在的入侵尝试。 我们也会编写一个 JEP 来描述由插件提供的审计日志 API,以及其他插件如何定义并记录除 Jenkins 核心以外插件的审计事件。
@@ -143,25 +143,11 @@ Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基
     </item>
     
     <item>
-      <title>回顾 2018: 革新的一年</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-25-year-in-review/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-25-year-in-review/</guid>
-      <description>临近年终，是一个思考总结、展望全局的好时机。那就让我们暂时从日常繁复的工作中停下脚步，一起来盘点 Jenkins 在 2018 这一年的得失与喜乐。
-在整个行业中，对进一步自动化的不懈追求仍在继续。我们正以前所未有的速度编写软件，与此同时，对于软件的需求似乎越来越高，我觉得越来越多的企业和高管都敏锐地意识到软件和开发者已登基为王。在底层的角度，我遇到的每个团队都认为软件交付自动化是他们的“软件工厂”的关键部分，对这些团队而言，创建、管理具有不可思议的灵活性和可视性的自动化十分重要。
-自诞生14年以来，Jenkins 将继续在实现这一目标上发挥重要作用，总之，增长的步伐似乎正在加速。在这个发展飞快的行业里，成为这一成就的一份子着实让我感到自豪。
-把 Jenkins 打造为每个人都会使用的工具，这具有很大的责任感。所以在 Jenkins 社区，我们一直都十分努力。事实上，在各个领域和层面上来说，*2018年是整个项目历史上最具有创新性的一年*。
- 随着不断发展壮大，我们亟需探索出能使更多人更好地参与其中的方法。JEPs 和 SIGs 便应运而生。2018年，我们看到了这些形式得到了巨大的吸引力。经过一年的运营，我认为我们已经学到了很多东西，希望我们会在此基础上继续改进。 这些新的形式带来了新的协作方式。例如：中文本地化 SIG运营的 微信公众号和本地化网站。平台 SIG 在 Java 11 support 中也给予了不少帮助。 我也很高兴看到新一批领导者。由于害怕遗漏一些人，所以我不打算在此一一列出，我们在今年秋天祝贺他们中的许多人作为 Jenkins 大使（请在明年提名更多人!）。那些领导关键工作的人往往是那些不熟悉这些角色的人。 一些领导者也努力发掘新的贡献者。我们正在有意识地思考，我们哪一部分的潜在贡献者没有被发掘出来，为什么没有被发掘出来。这也是任一个企业都在做的事情。同时我们也是 Google Summer of Code 和 Outreachy 参与者。 今年我们的安全流程和修复速度再次大幅提升，反映出用户对我们的信任也随之增强。例如，我们今年推出了遥测系统，通知我们更快地开发出更好的修复方案。  现在，社区改进的最重要的地方是我们为您使用的软件带来的影响。在这一方面，我认为我们在2018年做得不错，产生了我所谓的“五个超级武器”
- Jenkins X 可能是今年最明显的创新，使得在 Kubernetes 上创建现代云应用程序变得更加容易。这也标志着 Jenkins 社区及其使命的重大扩展。 Jenkins Configuration as Code 在今年达到了一重要的里程碑 &amp;ldquo;1.0&amp;rdquo; ，并且他继续获得更大的动力。 &amp;ldquo;Cloud Native Jenkins&amp;rdquo; 是我为新努力作的术语，把 Jenkins 转换为 Kubernetes 上大规模运行的通用 CI/CD 引擎。这里还有许多东西需要定义，但你已经可以看到如 Serverless Jenkins 这样的好东西了。 Evergreen 是另一个需要推出的新项目，它有着雄心勃勃的主题——大量地简化了 Jenkins 的使用和操作。 流水线方面的努力形成了一个新的 SIG，我期待它在2019年带来的新影响。  Jenkins 社区能够将用户可见的改变与社区的改进结合在一起，这不仅是不算秘密的秘密，也是社区不断发展的能力。 展望2019年，毫无疑问，随着我们不断地学习和实践，上述提到的事情将不断地发展、变化、融合和分裂。</description>
-    </item>
-    
-    <item>
       <title>成为一名 Jenkins 贡献者：对新手友好的工单</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</guid>
       <description>两个月前，我发表了一篇介绍性文章， 成为一名 Jenkins 贡献者的旅程。在那篇第一次发表的文章 review 过后，学习到了我们可以参与和贡献的多种途径。 因此，在这个站点仓库中有对首次、基础的贡献的描述。
 现在，我们将会在这篇文章中探索更多高级的贡献，向 Jenkins 核心中提交代码。
 从工单和过程开始 新手贡献指导以及 Jenkins Jira 查看位于 jenins.io 上的开发者章节可能是最好的起点， 参考链接也很方便。同时，向 Jenkins 贡献的新手指导也很有用，因为它指出了不同的仓库、工具（例如问题跟踪系统）以及治理文档。 此外，它还描述了提交消息、代码风格约定、PR 指导等的最佳实践。
