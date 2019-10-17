@@ -6,10 +6,19 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 22 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/meeting/2019-10-16/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/meeting/2019-10-16/</guid>
+      <description> 例会时间  双周，指的是以年为单位的，第一周为单周，第二周为双周，以此类推  论坛  http://discourse.surenpi.com/ 邮箱服务器，不支持腾讯企业邮箱（可以自己搭建一个） 管理员  捐助  充值到阿里云账号   </description>
+    </item>
     
     <item>
       <title></title>

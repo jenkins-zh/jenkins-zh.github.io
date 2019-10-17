@@ -12,6 +12,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-17-jcli-v0.0.21/</loc>
+    <lastmod>2019-10-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/meeting/2019-10-16/</loc>
+    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-27-jenkins-in-hacktoberfest/</loc>
     <lastmod>2019-09-27T00:00:00+00:00</lastmod>
   </url>
@@ -496,7 +506,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/meeting/</loc>
-    <lastmod>2019-09-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1042,7 +1052,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
