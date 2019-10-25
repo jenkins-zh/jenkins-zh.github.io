@@ -120,6 +120,15 @@
     </item>
     
     <item>
+      <title>Cli</title>
+      <link>https://jenkins-zh.github.io/tags/cli/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cloud Native</title>
       <link>https://jenkins-zh.github.io/tags/cloud-native/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -320,7 +329,7 @@
     <item>
       <title>Gsoc</title>
       <link>https://jenkins-zh.github.io/tags/gsoc/</link>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/gsoc/</guid>
       <description></description>
@@ -329,7 +338,7 @@
     <item>
       <title>Gsoc2019</title>
       <link>https://jenkins-zh.github.io/tags/gsoc2019/</link>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/gsoc2019/</guid>
       <description></description>
@@ -572,7 +581,7 @@
     <item>
       <title>Platform Sig</title>
       <link>https://jenkins-zh.github.io/tags/platform-sig/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/platform-sig/</guid>
       <description></description>
@@ -588,9 +597,18 @@
     </item>
     
     <item>
+      <title>Pluginmanagement</title>
+      <link>https://jenkins-zh.github.io/tags/pluginmanagement/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/pluginmanagement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Plugins</title>
       <link>https://jenkins-zh.github.io/tags/plugins/</link>
-      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/plugins/</guid>
       <description></description>

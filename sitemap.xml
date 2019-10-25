@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</loc>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-20-online-activity/</loc>
     <lastmod>2019-10-20T00:00:00+00:00</lastmod>
   </url>
@@ -639,6 +644,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/cli/</loc>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/cloud-native/</loc>
     <priority>0</priority>
   </url>
@@ -770,13 +781,13 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/gsoc/</loc>
-    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/gsoc2019/</loc>
-    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -957,7 +968,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/platform-sig/</loc>
-    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -968,8 +979,14 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/pluginmanagement/</loc>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/plugins/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1057,7 +1074,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

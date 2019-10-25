@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 已经被 Google Summer Of Code 2019 接受！ - Jenkins 中文社区</title>
+     <title>Alpha 版本的插件管理库和 CLI 工具 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="19年的 Google Summer Of Code 正式起航">
+    <meta name="description" content="Alpha 版本的插件管理库和 CLI 工具">
     
     
-    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+    <meta name="keywords" content="plugins,pluginmanagement,platform-sig,cli,gsoc,gsoc2019">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 已经被 Google Summer Of Code 2019 接受！" />
-<meta property="og:description" content="19年的 Google Summer Of Code 正式起航" />
+<meta property="og:title" content="Alpha 版本的插件管理库和 CLI 工具" />
+<meta property="og:description" content="Alpha 版本的插件管理库和 CLI 工具" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" /><meta property="article:published_time" content="2019-03-13T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-03-13T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/" /><meta property="article:published_time" content="2019-10-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-10-25T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 已经被 Google Summer Of Code 2019 接受！">
-<meta itemprop="description" content="19年的 Google Summer Of Code 正式起航">
-
-
-<meta itemprop="datePublished" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="103">
+<meta itemprop="name" content="Alpha 版本的插件管理库和 CLI 工具">
+<meta itemprop="description" content="Alpha 版本的插件管理库和 CLI 工具">
 
 
+<meta itemprop="datePublished" content="2019-10-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-10-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="94">
 
-<meta itemprop="keywords" content="gsoc,gsoc2019,events,community," />
+
+
+<meta itemprop="keywords" content="plugins,pluginmanagement,platform-sig,cli,gsoc,gsoc2019," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 已经被 Google Summer Of Code 2019 接受！"/>
-<meta name="twitter:description" content="19年的 Google Summer Of Code 正式起航"/>
+<meta name="twitter:title" content="Alpha 版本的插件管理库和 CLI 工具"/>
+<meta name="twitter:description" content="Alpha 版本的插件管理库和 CLI 工具"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -203,16 +203,16 @@ var trackOutboundLink = function(id, url) {
     
       
         <h3 class="f4 dib author">
-            Zhao Xiaojie
+            zhaoying
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          Contributor of @jenkinsci . Jenkins press contact in China. Jenkins Chinese community leader.
+          devops jenkins
         </p>
       
-      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/zhaoying818" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -221,9 +221,9 @@ var trackOutboundLink = function(id, url) {
 
   
   <div>
-    作者：<span class="originalAuthor">oleg_nenashev</span>
+    作者：<span class="originalAuthor">stopalopa</span>
     <div>
-      <a class="originalLink" href="" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://jenkins.io/blog/2019/07/02/plugin-management-tool-alpha-release/" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -231,16 +231,6 @@ var trackOutboundLink = function(id, url) {
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li><a href="#下一步">下一步？</a></li>
-<li><a href="#我是一个学生-如何申请">我是一个学生。如何申请？</a></li>
-<li><a href="#我想要成为一名导师-会不会太晚了">我想要成为一名导师。会不会太晚了？</a></li>
-<li><a href="#重要的日期">重要的日期</a></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -253,17 +243,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Electron 应用的流水线设计 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-ready-for-cdf/" class="dib f6 pr1 hover-bg-light-gray br-100" title="为 Continuous Delivery Foundation 的成立感到兴奋">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-20-online-activity/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 线上技术交流">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -283,13 +265,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 已经被 Google Summer Of Code 2019 接受！</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Alpha 版本的插件管理库和 CLI 工具</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      19年的 Google Summer Of Code 正式起航
+      Alpha 版本的插件管理库和 CLI 工具
     </div>
   
 
@@ -302,62 +284,42 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="../../../images/gsoc/jenkins-gsoc-logo_small.png" alt="Jenkins GSoC" /></p>
+<p><img src="devopsworld.jpg" alt="devopsworld File" /></p>
 
-<p>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在<a href="https://summerofcode.withgoogle.com/">2019年的 Google Summer of Code</a>上 <strong>已经被接受</strong>。
-今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。</p>
+<p><em>&ldquo;人人都在重复造轮子，部分像实现插件管理的&rdquo;细节&rdquo;（签名元数据，制品校验和，从核心独立出来的插件&hellip;）。
+很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&rdquo;</em> <a href="https://issues.jenkins-ci.org/browse/JENKINS-53767">JENKINS-53767</a></p>
 
-<p>这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。
-我们有25个<a href="https://jenkins.io/projects/gsoc/2019/project-ideas/">项目想法</a>，而且有超过30个准导师（不断增多！）。
-这已经超过了2016年以及2018年的总和。
-有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！</p>
+<p>我的 <a href="https://jenkins.io/projects/gsoc/2019/plugin-installation-manager-tool-cli/">Google Summer of Code project</a> 项目试图解决这个问题，方法是创建一个库，该库将在 Jenkins 的不同实现中统一插件管理逻辑，并提供一个可以使用户轻松下载插件并在 Jenkins 启动之前查看插件信息的 CLI 工具。
+我很高兴分享我们刚刚发布的 Alpha 版本，您可以在<a href="https://github.com/jenkinsci/plugin-installation-manager-tool/releases">此处</a>查看！</p>
 
-<h1 id="下一步">下一步？</h1>
+<h2 id="gsoc-阶段-1-更新">GSoC 阶段 1 更新</h2>
 
-<p>GSoC 已经正式启动，请期待更多的学生在我们的<a href="https://jenkins.io/zh/projects/gsoc/#contacts">Gitter 频道和邮件列表</a>中联系项目。
-在特别兴趣小组和子项目频道中已经有了很多沟通。
-我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。
-然后，我们将会继续这个申请，选择项目并分配导师团队。</p>
+<p>当我考虑将<a href="https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/PluginManager.java">插件管理器</a>从 Jenkins 核心中移出时，由于依赖项的复杂性和数量，这最终成为了最具挑战性的第一步。相反，我们决定首先将 Jenkins Docker 中的 <a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">install-plugins.sh bash 脚本</a>转换为 Java。 install-plugins.sh 脚本存在多个问题，即它是 bash 脚本并且扩展性有限，此外，它不会检索所有最新的更新中心的元数据。</p>
 
-<p>所有关于 Jenkins GSoC 的信息都可以在<a href="https://jenkins.io/zh/projects/gsoc/">子项目页面</a>上找到。</p>
+<h2 id="alpha-版本详情">Alpha 版本详情</h2>
 
-<h1 id="我是一个学生-如何申请">我是一个学生。如何申请？</h1>
+<p>模仿官方 Jenkins Docker 镜像中 <a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">install-plugins.sh</a> 脚本中的操作，新的插件管理库接收插件列表、它们的版本和（或） URL，从中可以下载插件，并下载所需的插件及其依赖。插件从更新中心下载到指定目录，然后可以加载到 Jenkins 中。当前，可以通过 plugins.txt 文件和（或） -plugins 的 cli 选项指定要下载的插件，我们计划进一步扩展可以接收的输入格式。 还支持用于不同更新中心的<a href="https://github.com/jenkinsci/docker#plugin-version-format">自定义版本说明符</a>。</p>
 
-<p>在/projects/gsoc/students[学生的信息]页面中有完整的申请指导。</p>
+<p><img src="pluginstxt.png" alt="Example plugins.txt File" /></p>
 
-<p>我们鼓励感兴趣的学生尽早联系 Jenkins 社区并开始探索项目。所有的项目在对应的页面上都有聊天室与邮件列表。
-我们也会为学生组织工作日的会议，在这些会议上你可以见到管理员和导师，并向他们提问。
-另外，加入我们的<a href="https://gitter.im/jenkinsci/gsoc-sig">Gitter 频道</a>和<a href="https://groups.google.com/forum/#!forum/jenkinsci-gsoc-all-public">邮件列表</a>，以便收到项目中即将到来的事情。</p>
+<p>该库将首先检查当前是否在用户指定的下载位置或用户指定的 Jenkins war 文件中安装了任何请求的插件。如果要求更高版本或更高版本作为依赖项，则将忽略或升级已安装的插件。确定插件下载 URL 后，库将下载插件并解析和下载其依赖。</p>
 
-<p>3月25日开放申请，但你现在就可以准备了！利用这段申请前的时间来讨论并改进你的项目提议。
-我们也建议你着手熟悉 Jenkins 并开始探索你的提议的领域。项目的想法包括快速开始的指导，以及有助于初期研究时对新手友好的问题。
-如果没有看到任何感兴趣的，你可以<a href="https://jenkins.io/zh/projects/gsoc/proposing-project-ideas/">提出你自己的项目想法</a>或者
-查看由其他参与 GSoC 的<a href="https://summerofcode.withgoogle.com/organizations/">组织</a>提出的想法。</p>
+<p><img src="downloadexample.png" alt="Example of Downloading Plugins" /></p>
 
-<h1 id="我想要成为一名导师-会不会太晚了">我想要成为一名导师。会不会太晚了？</h1>
+<p><img src="downloadedplugins.png" alt="Plugin Download Directory" /></p>
 
-<p>不晚！我们正在寻找更多的项目想法，以及 Jenkins 的贡献者或用户中对 Jenkins 富有热情并想要指导学生的人。
-无须底层经验，导师可以和学生一起研究项目并给出技术指导。
-我们尤其对 Java 技术栈方向感兴趣，以及一些新的技术和领域（例如：Kubernetes, IoT, Python, Go 或者其他的）。</p>
+<p>这仅仅是个开始：插件管理器库和 cli 工具仍在开发中。 有关 CLI 选项以及如何运行该工具的最新信息，请参见<a href="https://github.com/jenkinsci/plugin-installation-manager-tool/blob/master/README.md">存储库 README.md </a>。 即将提供更强大的输入解析，对安全警告和可用更新的支持，Docker集成以及其他功能！</p>
 
-<p>你可以提议一个新项目或者加入已有的。查看博客<a href="https://jenkins.io/blog/2018/12/26/gsoc-2019-call-for-mentors/">寻找导师</a>以及<a href="https://jenkins.io/projects/gsoc/mentors">导师的信息</a>中的细节。
-如果你想要提议一个新项目，那么请在3月11日之前完成，以便学生有时间探索并准备他们的提议。</p>
+<h2 id="链接和反馈">链接和反馈</h2>
 
-<p>今年，导师<strong>并不</strong>必须要有 Jenkins 开发上的很强的专业知识。目标是指导学生参与到 Jenkins 社区。
-如果需要特殊的专业知识，GSoC 组织管理员会帮助寻找顾问。</p>
-
-<h1 id="重要的日期">重要的日期</h1>
+<p>欢迎通过<a href="https://gitter.im/jenkinsci/plugin-installation-manager-cli-tool">插件安装管理器 CLI 工具 Gitter 聊天室</a>或 <a href="mailto:jenkinsci-dev@googlegroups.com">Jenkins 开发者邮件列表</a>与我们联系。我希望收到您的问题，评论和反馈！我们在世界标准时间下午6点（星期二和星期四）开会。</p>
 
 <ul>
-<li>3月11日 - 停止新的 GSoC 项目提议</li>
-<li>4月9日 - 停止接受学生的申请</li>
-<li>5月6日 - 宣布接受了的项目，团队开始社区合作以及编码</li>
-<li>8月26日 - 结束编码</li>
-<li>9月3日 - 宣布结果</li>
+<li><a href="https://docs.google.com/presentation/d/12Bo8w9SinrG5n82w-Unjx4MNq0mjkHFEOMc3Jf6rTQQ/edit#slide=id.p1">Phase 1 Presentation Slides</a></li>
+<li><a href="https://youtu.be/MDs0Vr7gnnA?t=196">Phase 1 Recorded Demo</a></li>
+<li><a href="https://issues.jenkins-ci.org/browse/JENKINS-58199?jql=project%20%3D%20JENKINS%20AND%20component%20%3D%20plugin-installation-manager-tool">Jira Issue Search</a></li>
+<li><a href="https://github.com/jenkinsci/plugin-installation-manager-tool">Repository</a></li>
 </ul>
-
-<p>查看 <a href="https://summerofcode.withgoogle.com/how-it-works/#timeline">GSoC 时间线</a>了解更多信息。
-在 GSoC 期间和之后，我们也会组织 Jenkins 相关的特别活动（例如：在 Jenkins World 上）。</p>
 
 </div>
 
@@ -390,14 +352,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 已经被 Google Summer Of Code 2019 接受！”
-  </a> 更新于：March 13, 2019
+    “Alpha 版本的插件管理库和 CLI 工具”
+  </a> 更新于：October 25, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -415,6 +377,30 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
+            <a class="tag" href="/tags/plugins">
+              plugins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/pluginmanagement">
+              pluginmanagement
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/platform-sig">
+              platform-sig
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/cli">
+              cli
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
             <a class="tag" href="/tags/gsoc">
               gsoc
             </a>
@@ -426,27 +412,9 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
             </a>
           </li>
         
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/events">
-              events
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/community">
-              community
-            </a>
-          </li>
-        
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/" class="link">
-              Alpha 版本的插件管理库和 CLI 工具
-            </a>
-          </li>
         
       
         
@@ -456,8 +424,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/" class="link">
-              React Plugin Template，让你可以使用 React 来编写 Jenkins 插件
+            <a href="/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/" class="link">
+              介绍新的 GitLab 分支源插件
             </a>
           </li>
         
@@ -465,8 +433,17 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/" class="link">
-              介绍新的 GitLab 分支源插件
+            <a href="/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/" class="link">
+              Jenkins 流水线配置历史插件介绍
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/" class="link">
+              在 Kubernetes 上使用 Jenkins 
             </a>
           </li>
         
@@ -490,6 +467,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
       
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/" class="link">
+              春季安全清查
+            </a>
+          </li>
         
       
     </ul>
@@ -516,7 +499,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/03\/2019-03-13-gsoc2019-announcement\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/10\/2019-10-25-plugin-management-tool-alpha-release\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
