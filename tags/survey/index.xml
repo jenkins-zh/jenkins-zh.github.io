@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>survey on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.cn/tags/survey/</link>
+    <link>https://jenkins-zh.github.io/tags/survey/</link>
     <description>Recent content in survey on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.cn/tags/survey/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.github.io/tags/survey/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2018年 Jenkins 国内使用情况调查问卷</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-jenkins-survey/</link>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-19-jenkins-survey/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-jenkins-survey/</guid>
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-19-jenkins-survey/</guid>
       <description>近年来，在数字化转型的压力之下，以 DevOps 和微服务为代表的云原生技术，作为企业数字化转型的重要支撑，活跃于开源技术的舞台。 而 DevOps 作为一种理念，落地交付必然离不开 CI/CD 等工具的支持。 Jenkins 在此方面的重要作用，相信大家也是有目共睹。Jenkins 之所以深受国内用户的喜爱，不仅因为它开源免费、功能强大、插件众多，其背后社区的开放、包容和活跃，更是其生命力之所在！
 在新的一年里， Jenkins 社区希望能够更好地推广和传播这项技术，使越来越多的 Jenkins 中文用户能在实际工作中体会它的魅力。正因如此，我们发起了 “2018年 Jenkins 国内使用情况调查问卷”，希望通过这份问卷的互动，我们能够更加清晰 Jenkins 社区2019年的发展方向。
 请扫一扫下面的二维码，或者在微信中长按识别，完成下面的问卷。只需要占用您大概1～2分钟的时间。
