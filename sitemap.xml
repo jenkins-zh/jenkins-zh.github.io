@@ -1333,6 +1333,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tutorial/management/mirror/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/</loc>
     <lastmod>2019-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
