@@ -20,7 +20,7 @@
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.58.3" />
+     <meta name="generator" content="Hugo 0.53" />
 
       
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -35,16 +35,16 @@
 <meta property="og:title" content="使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101" />
 <meta property="og:description" content="实现 Spring Boot 最基本的流水线" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" />
-<meta property="article:published_time" content="2019-05-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-05-20T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" /><meta property="article:published_time" content="2019-05-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-20T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101">
 <meta itemprop="description" content="实现 Spring Boot 最基本的流水线">
 
 
 <meta itemprop="datePublished" content="2019-05-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="429">
+<meta itemprop="wordCount" content="430">
 
 
 
@@ -448,9 +448,9 @@ defaultValue: '', description: '') }
 </code></pre>
 
 <ol>
-<li><p>如果指定了版本，则跳过构建阶段，直接执行部署阶段</p>
-
-<pre><code class="language-groovy">stage(&quot;build and upload&quot;){
+<li>如果指定了版本，则跳过构建阶段，直接执行部署阶段
+<code>groovy
+stage(&quot;build and upload&quot;){
   // 如果不指定部署版本，则执行构建
   when {
     expression{ return params.SPECIFIC_APP_VERSION == &quot;&quot; }
@@ -458,9 +458,8 @@ defaultValue: '', description: '') }
   // 构建并上传制品的逻辑
   steps{...}
 }
-</code></pre>
-
-<p>之所以说是“简易”，是因为部署时只指定了制品的版本，并没有指定的部署逻辑和配置的版本。这三者的版本要同步，部署才真正做到准确。</p></li>
+</code>
+之所以说是“简易”，是因为部署时只指定了制品的版本，并没有指定的部署逻辑和配置的版本。这三者的版本要同步，部署才真正做到准确。</li>
 </ol>
 
 <h2 id="4-配置管理">4. 配置管理</h2>

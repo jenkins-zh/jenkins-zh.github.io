@@ -20,7 +20,7 @@
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.58.3" />
+     <meta name="generator" content="Hugo 0.53" />
 
       
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -35,16 +35,16 @@
 <meta property="og:title" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx" />
 <meta property="og:description" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" />
-<meta property="article:published_time" content="2019-04-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-04-25T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" /><meta property="article:published_time" content="2019-04-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-25T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx">
 <meta itemprop="description" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx">
 
 
 <meta itemprop="datePublished" content="2019-04-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="448">
+<meta itemprop="wordCount" content="451">
 
 
 
@@ -328,34 +328,29 @@ var trackOutboundLink = function(id, url) {
 <h2 id="2-启动实验环境">2. 启动实验环境</h2>
 
 <ol>
-<li><p>克隆代码并进入文件夹</p>
-
-<pre><code class="language-bash">git clone https://github.com/zacker330/jenkins-ansible-nginx.git
+<li>克隆代码并进入文件夹
+<code>bash
+git clone https://github.com/zacker330/jenkins-ansible-nginx.git
 cd jenkins-ansible-nginx
-</code></pre></li>
-
-<li><p>构建 Jenkins agent 的镜像
- 需要自定义 Jenkins agent 镜像有两个原因：</p>
+</code></li>
+<li>构建 Jenkins agent 的镜像
+ 需要自定义 Jenkins agent 镜像有两个原因：
 
 <ol>
 <li>本次实验，使用 Swarm 插件实现 Jenkins master  与 agent 之间的通信，所以 Jenkins agent 需要启动 swarm 客户端。</li>
-
-<li><p>Jenkins agent 必须支持 Ansible。</p>
-
-<pre><code class="language-bash">docker build -f JenkinsSlaveAnsibleDockerfile -t jenkins-swarm-ansible .
-</code></pre></li>
+<li>Jenkins agent 必须支持 Ansible。
+<code>bash
+docker build -f JenkinsSlaveAnsibleDockerfile -t jenkins-swarm-ansible .
+</code></li>
 </ol></li>
-
-<li><p>启动 Jenkins master 及 Jenkins agent</p>
-
-<pre><code class="language-bash">docker-compose up -d
-</code></pre>
-
-<p>通过 <code>http://localhost:8080</code> 访问 Jenkins master，如果出现“解锁密码”页面，如下图，则执行命令 <code>docker-compose logs jenkins</code> 查看 Jenkins master 启动日志。将日志中的解锁密码输入到表单中。然后就一步步按提示安装即可。
-<img src="pc2.png" alt="解锁Jenkins" /></p></li>
-
-<li><p>安装 Jenkins 插件
-本次实验需要安装以下插件：</p>
+<li>启动 Jenkins master 及 Jenkins agent
+<code>bash
+docker-compose up -d
+</code>
+通过 <code>http://localhost:8080</code> 访问 Jenkins master，如果出现“解锁密码”页面，如下图，则执行命令 <code>docker-compose logs jenkins</code> 查看 Jenkins master 启动日志。将日志中的解锁密码输入到表单中。然后就一步步按提示安装即可。
+<img src="pc2.png" alt="解锁Jenkins" /></li>
+<li>安装 Jenkins 插件
+本次实验需要安装以下插件：
 
 <ul>
 <li>Pipeline 2.6：<a href="https://plugins.jenkins.io/workflow-aggregator">https://plugins.jenkins.io/workflow-aggregator</a></li>
@@ -501,15 +496,13 @@ cd jenkins-ansible-nginx
 </code></pre>
 
 <ul>
-<li><p>hosts文件：Ansible 中通过“分组”来实现对主机的管理。hosts 文件内容如下：</p>
-
-<pre><code>[nginx]
+<li>hosts文件：Ansible 中通过“分组”来实现对主机的管理。hosts 文件内容如下：
+<code>
+[nginx]
 192.168.52.10
-</code></pre></li>
-
-<li><p>host_vars 目录：用于存放主机级别的配置变量，本例中 <code>192.168.52.10</code> 是一个 YAML 格式文件。注意文件名是该主机的 IP。我们在文件中放主机相关的配置，比如 Ansible 连接主机时使用到的用户名和密码。</p></li>
-
-<li><p>group_vars 目录：用于存放组级别的配置变量。比如 nginx.yaml 对应的就是 <code>nginx</code> 这个组的的配置变量。文件名与 <code>hosts</code> 中的组名对应。</p></li>
+</code></li>
+<li>host_vars 目录：用于存放主机级别的配置变量，本例中 <code>192.168.52.10</code> 是一个 YAML 格式文件。注意文件名是该主机的 IP。我们在文件中放主机相关的配置，比如 Ansible 连接主机时使用到的用户名和密码。</li>
+<li>group_vars 目录：用于存放组级别的配置变量。比如 nginx.yaml 对应的就是 <code>nginx</code> 这个组的的配置变量。文件名与 <code>hosts</code> 中的组名对应。</li>
 </ul>
 
 <h3 id="总结">总结</h3>
