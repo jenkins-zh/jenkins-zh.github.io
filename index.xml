@@ -1335,13 +1335,18 @@ MPL 致力于创建跨团队协作 DevOps 流程 通过 MPL，我们现在能够
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/about/star-plan/</guid>
-      <description> 为了激励社区成员积极地为社区作出贡献，我们会不定期给予积极活跃、付出重大贡献的小伙伴一定形式的奖励。下面是历次的奖励记录：
-被选中的贡献者，可以在人民邮电出版社微店中自行挑选图书一本。
+      <description>为了激励社区成员积极地为社区作出贡献，我们会不定期给予积极活跃、付出重大贡献的小伙伴一定形式的奖励。
+定期激励：每个季度被选中的贡献者，可以在人民邮电出版社微店中自行挑选图书一本。
+大会门票赠送：不定期会有合作社区的大会门票赠送给有需要的贡献者。
+其他激励： 此外，还会有其他形式的激励。
+下面是历次的奖励记录：
+大会门票赠送 不定期会有合作社区的大会门票赠送给有需要的贡献者。
+需要大会门票的成员需要在 GitHub 的 jenkins-zh/jenkins-zh 仓库提交一个 issue 用来申请门票，在该 issue 中需要提供最近贡献的 PR（Pull Request）链接。
+下面的表格中包括所有大会的历次赠票记录：
+   大会 举办时间 成员 奖励 申请链接     Jenkins User Conference China 2019年11月2日  donhui  门票一张 #138   Jenkins User Conference China 2019年11月2日  tomatofrommars  门票一张 #139    定期激励 每个季度被选中的贡献者，可以在人民邮电出版社微店中自行挑选图书一本。
 NO.2 时间范围：2019年6月～8月
 赞助方：人民邮电出版社
-   成员 奖励      donhui  《人生护城河 如何建立自己真正的优势》    yJunS  《精通 jQuery(第二版)》    linan607  《持续交付 2.0 业务引领的 DevOps 精要》    P01son6415  《算法 第四版》    hummerstudio  《极简主义——风靡欧美的工作与生活理念》    NO.1 时间范围：2019年3月～5月
-赞助方：人民邮电出版社
-   成员 奖励      donhui  《黑客与画家》    zacker330  《基础设施即服务》    yJunS  《黑客与画家》    </description>
+   成员 奖励      donhui  《人生护城河 如何建立自己真正的优势》    yJunS  《精通 jQuery(第二版)》    linan607  《持续交付 2.</description>
     </item>
     
     <item>
