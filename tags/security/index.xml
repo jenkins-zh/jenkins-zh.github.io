@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security on Jenkins 中文社区</title>
+    <title>security on Jenkins 中文社区</title>
     <link>https://jenkins-zh.github.io/tags/security/</link>
-    <description>Recent content in Security on Jenkins 中文社区</description>
+    <description>Recent content in security on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
@@ -25,6 +25,17 @@
  让人们意识到，失败是一个学习机会 确保团队之间有共同的责任和目标 不要吝啬花时间做实验 使用可协作的平台来分享学习经验和最佳实践 对实验的过程进行回顾，并确保有后续  她提到了几个真实的例子，例如 Esty，LEGO 还有 P&amp;amp;G 的「失败奖励」以及 Spotify 用来展示和追踪失败的「失败墙」。
 系统安全能够保障你的基础设施安全，她关于培养系统安全的建议包括：
  用持续集成进行构建 使用部署自动化来驱动一致性和可审计性，并允许即时重新部署上一个已知的可用版本 用 ChatOps 来归类问题和事件 使用应用程序性能管理以提早发现问题并警告 降低出现问题波及范围，例如使用功能开关，金丝雀测试，蓝／绿环境和微服务 将产品需求与服务台相结合 养成使用混沌工程来找到失败原因的习惯  在讲述 DevSecOps 案例并说明如何灌输安全文化后，她将话题转向如何使用制品仓库。 毕竟，这是一个 Nexus 会议，制品仓库是 Nexus 的特色。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 的重要安全更新</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-26-security-updates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-26-security-updates/</guid>
+      <description>我们刚刚发布了版本 2.154 和 LTS 2.150.1 的 Jenkins 安全更新，修复了多个安全漏洞。 由于 2.150.1 是新的 LTS 中的第一个版本，而且，我们还发布了上一个 LTS 2.138.4 版本的安全更新。 这使得管理员们可以安装今天的安全修复，而不必立即升级到新的 LTS 版本。
+查看 link:/security/advisory/2018-12-05[安全报告]，了解有哪些被修复。 查看我们的 link:/doc/upgrade-guide/2.138/#upgrading-to-jenkins-lts-2-138-4[LTS 2.138.4 升级指导]，了解影响范围。
+当前修复中有关之前发布变更的部分 在八月和十月份的 Jenkins 核心安全更新中，包括一项改进，可以通过设置多个系统属性来禁用。 那些变更是 SECURITY-595 修复的重要部分，因此，我们强烈建议禁用。而且，之前发布的文档已更新。</description>
     </item>
     
     <item>
