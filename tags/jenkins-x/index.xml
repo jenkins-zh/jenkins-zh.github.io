@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jenkins-x on Jenkins 中文社区</title>
+    <title>Jenkins X on Jenkins 中文社区</title>
     <link>https://jenkins-zh.github.io/tags/jenkins-x/</link>
-    <description>Recent content in jenkins-x on Jenkins 中文社区</description>
+    <description>Recent content in Jenkins X on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 08 Aug 2019 00:00:00 +0000</lastBuildDate>
@@ -63,18 +63,6 @@ Kubernetes 之上的 Jenkins Jenkins X 的设置相当简单，并且在他们�
 这里可以查看 Shipper、Isito 和 Flager 的示例代码。
 Shipper 由于 Shipper 对创建的 Helm 图表有多个限制，因此我必须对应用做一些更改。 而且 Jenkins X 只从 master 分支构建 Helm 包，所以我们不能做 PRs 的滚动部署，只能对 master 分支做滚动部署。
 应用标签不能包含发布名称，例如： app: {{ template “fullname” . }} 不起作用， 需要一些类似这样的标签： app: {{ .</description>
-    </item>
-    
-    <item>
-      <title>Custom WAR Packager</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-5-custom-war-packager/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-5-custom-war-packager/</guid>
-      <description>我打算给 Jenkins 管理员和开发者介绍一个新的工具 Custom WAR Packager。该工具可以打包 Jenkins 的自定义 WAR 发行版、 Docker 镜像和 Jenkinsfile Runner 包。 它可以打包 Jenkins、插件以及配置为开箱即用的发行版。 Custom WAR Packager 是我们在博客 A Cloud Native Jenkins(/blog/2018/09/12/speaker-blog-a-cloud-native-jenkins/) 中介绍过的无状态 Jenkins master 工具链的一部分。这个工具链已经在 Jenkins X 中被使用，用于构建 serverless 镜像(https://github.com/jenkins-x/jenkins-x-serverless)。
-在这篇文章中，我将会介绍几种 Custom WAR Packager 常见的使用场景。
-== 历史
-正如 Jenkins 本身一样，Custom WAR Packager 开始于一个小的开发工具。在 Jenkins 内运行集成测试很长时间以来都是一个难题。 对此，我们有三个主要的框架： Jenkins Test Harness, Acceptance Test Harness, 和 Plugin Compatibility Tester. 这些框架都需要一个 Jenkins WAR 文件来运行测试。但是假如你想在类似 AWS 一样的自定义环境中进行 Jenkins 测试呢？ 或者，你希望基于 Pluggable Storage 的环境也可以复用 Jenkins 流水线测试，来确保没有回归缺陷？</description>
     </item>
     
   </channel>
