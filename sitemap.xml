@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-11-update-center-mirror-announcement/</loc>
+    <lastmod>2019-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/</loc>
     <lastmod>2019-11-08T00:00:00+00:00</lastmod>
   </url>
@@ -1109,7 +1114,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-11-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
