@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/</loc>
+    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-11-update-center-mirror-announcement/</loc>
     <lastmod>2019-11-11T00:00:00+00:00</lastmod>
   </url>
@@ -690,7 +695,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/community/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -773,6 +778,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/elections/</loc>
+    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/electron/</loc>
     <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -810,6 +821,12 @@
   <url>
     <loc>https://jenkins-zh.github.io/tags/gitlab/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/governance/</loc>
+    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1114,7 +1131,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

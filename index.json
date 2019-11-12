@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/",
+        "title": "Jenkins 2019 年 Board 和 Officer positions 选举更新",
+        "type": "wechat",
+        "date": "2019-11-12 00:00:00 +0000 UTC",
+        "tags": ["community", "governance", "elections"],
+        "description": "Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。",
+        "content": " Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举。提名征集已经结束。我们征集到了很多提名。根据愿意接受提名的人和无可争议的 Officer Positions，我们将有 3 票：\n 投票选举 3 名board members 投票选举 Jenkins security officer 投票选举 Jenkins events officer  候选人 每位候选人都提供了一份声明，以帮助指导选民为什么要为候选人投票。有关更多详细信息，请参阅候选人宣言。竞选 board members 的候选人为：\n Alex Earl Oliver Gondza Ullrich Hafner Oleg Nenashev Mark Waite 赵晓杰（Rick）  竞选 security officer 的候选人是：\n Daniel Beck Wadeck Follonier  竞选 events officer 的候选人是：\n Alyssa Tong 赵晓杰（Rick）  选民登记 这是近一段时间以来我们第一次进行 Jenkins 选举。我们正在学习。Jenkins 选举旨在实现包容性。我们不仅将选举限于代码提交者。在 2019 年 9 月 1 日之前注册了 Jenkins 帐户的任何人都有资格投票。Jenkins 是一个成功的项目，大约有 10 万个符合该标准的帐户。我们正在与符合条件的选民联系，并要求他们明确 选择性加入 以参加投票。\n如果符合条件，您将在注册的 jenkins.io 电子邮件地址中收到一封电子邮件。该邮件来自 elections@jenkins.io，标题为 2019 Jenkins Election - Invitation to Participate。该电子邮件将提供选举详细信息，并包含一个 I want to participate 按钮。\n投票确认 点击链接后，您将看到一个确认屏幕，如下所示：\n如果您在 2019 年 11 月 14 日之前仍未收到电子邮件，或者在投票时遇到任何问题，请对 Jenkins Election 2019 Jira issue 问题发表评论。\n表决 投票将于 2019 年 11 月 11 日正式开始。候选人将收到 Kohsuke Kawaguchi 发送的 Condorcet 互联网投票电子邮件。每次投票将发送一封电子邮件（因此，总共 3 票：board 1 票，events officer 1 票，security officer 1 票）。投票将要求使用以下截图对候选人进行排名：\n选举日期 以下是关键选举日期的摘要：\n   Date Event     Now Voter registration ongoing   Nov 11, 2019 Voting begins   Nov 17, 2019 Voter registration closes   Nov 24, 2019 Voting closes a 5:00 PM Pacific Time   Dec 3, 2019 New representatives announced    选举结果将发布到 Jenkins 开发人员的邮件列表中，然后在 jenkins.io 上发布公告博客。\n如果对建议的日期有任何延迟，我们将尽快通知您。非常感谢所有向我们的社区展示 Jenkins 服务精神的候选人。我们鼓励所有人注册投票并参与 Jenkins 社区。\n无可争议的职位 当一个 officer position 只有一个愿意接受提名的候选人时，没有理由对该职位进行投票。该人将成为该职位的唯一候选人。\n毫无争议的 Officer Positions 包括：\n   Name Role     Olivier Vernin Infrastructure Officer   Oliver Gondza Release Officer   Mark Waite Documentation Officer    参考文献  Jenkins Governance Board Jenkins Board Election Process Jenkins Officers Announcement in the developer mailing list 2019 elections proposal in the developer mailing list  ",
+        "auhtor": "Tracy Miranda",
+        "translator": "wenjunzhangp",
+        "original": "https://jenkins.io/blog/2019/11/08/board-elections/",
+        "poster": "cover.png"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-11-update-center-mirror-announcement/",
         "title": "Jenkins 插件中心国内镜像源发布",
         "type": "wechat",
@@ -1810,7 +1823,7 @@
         "uri": "https://jenkins-zh.github.io/tags/community/",
         "title": "Community",
         "type": "tags",
-        "date": "2019-09-15 00:00:00 +0000 UTC",
+        "date": "2019-11-12 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -1989,6 +2002,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/elections/",
+        "title": "Elections",
+        "type": "tags",
+        "date": "2019-11-12 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/electron/",
         "title": "Electron",
         "type": "tags",
@@ -2071,6 +2097,19 @@
         "title": "Gitlab",
         "type": "tags",
         "date": "2019-09-11 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.github.io/tags/governance/",
+        "title": "Governance",
+        "type": "tags",
+        "date": "2019-11-12 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -2759,7 +2798,7 @@
         "uri": "https://jenkins-zh.github.io/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2019-11-11 00:00:00 +0000 UTC",
+        "date": "2019-11-12 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",

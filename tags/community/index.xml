@@ -6,10 +6,23 @@
     <description>Recent content in Community on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/community/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 2019 年 Board 和 Officer positions 选举更新</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/</link>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/</guid>
+      <description>Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举。提名征集已经结束。我们征集到了很多提名。根据愿意接受提名的人和无可争议的 Officer Positions，我们将有 3 票：
+ 投票选举 3 名board members 投票选举 Jenkins security officer 投票选举 Jenkins events officer  候选人 每位候选人都提供了一份声明，以帮助指导选民为什么要为候选人投票。有关更多详细信息，请参阅候选人宣言。竞选 board members 的候选人为：
+ Alex Earl Oliver Gondza Ullrich Hafner Oleg Nenashev Mark Waite 赵晓杰（Rick）  竞选 security officer 的候选人是：
+ Daniel Beck Wadeck Follonier  竞选 events officer 的候选人是：
+ Alyssa Tong 赵晓杰（Rick）  选民登记 这是近一段时间以来我们第一次进行 Jenkins 选举。我们正在学习。Jenkins 选举旨在实现包容性。我们不仅将选举限于代码提交者。在 2019 年 9 月 1 日之前注册了 Jenkins 帐户的任何人都有资格投票。Jenkins 是一个成功的项目，大约有 10 万个符合该标准的帐户。我们正在与符合条件的选民联系，并要求他们明确 选择性加入 以参加投票。</description>
+    </item>
     
     <item>
       <title>Jenkins World 贡献者峰会及专家答疑展位</title>
