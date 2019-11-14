@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/",
+        "title": "Working Hours 插件的第一阶段更新",
+        "type": "wechat",
+        "date": "2019-11-14 00:00:00 +0000 UTC",
+        "tags": ["react plugins gsoc gsoc2019"],
+        "description": "实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器",
+        "content": " Working Hour Plugin 提供了一个界面，用于设置允许的构建日期和时间。在配置 Working Hour 之外运行的作业将保留到下一个允许的构建时间为止。\n在 Google Summer of Code 的第一个代码阶段，我一直在从事 Working Hours Project 项目，该项目还有待于改善可用性。\n当我们想设计一个具有大量可以使用自定义库的 UI 时，React 似乎比经典的 Jelly 页面更受青睐，尤其是日期选择器之类的开源组件。\n但是，我们目前正致力于将 React 和 Jenkins 集成在一起，这是一个挑战。\n第一阶段的成就 在第一个代码阶段，我们专注于 UI 改进，我们取得了以下主要改进： * 一个独立的 Web 应用程序，可以将其集成。 * 滑块，用于选择时间范围。 * 设置排除日期时间的更多字段。 * 用于选择排除日期的预设。 * Jenkins 样式界面\n我们如何将 React 集成到 Jenkins 中 可以在这里找到集成的解决方案文档\n最初，我们发现 BlueOcean 是在 Jenkins 中使用 React 的一个很好的例子，但是对于使用插件进行通用开发来说，它并不是一个好的选择。因此，我们需要找到另一种集成方式。\n这是进行集成的步骤： * 在你 jelly 文件中的挂载点，通常是具有唯一 ID 的元素。 * 编写您的 React Application，但需要将安装点设置为您在上面设置的 ID。 * 将构建后的插件复制到 webapp 目录。 * 在你的 jelly 文件中，使用 script 标签引入\n\u0026lt;script type=\u0026quot;text/javascript\u0026quot; src=\u0026quot;${resURL}/plugin/working-hours/js/main.js\u0026quot;\u0026gt;\u0026lt;/script\u0026gt;   使用 React 之后，传统的请求将不再可用，处理请求的另一种方法是使用 stapler。您可以定义如下的过程函数[source, java]  public HttpResponse doDynamic(StaplerRequest request) { if (config == null) { config = ExtensionList.lookup(WorkingHoursPlugin.class).get(0); } String restOfPath = request.getRestOfPath(); String[] pathTokens = restOfPath.split(\u0026quot;/\u0026quot;); List\u0026lt;String\u0026gt; params = new ArrayList\u0026lt;\u0026gt;(); switch (params.get(0)) { case \u0026quot;list-excluded-dates\u0026quot;: return listExcludedDate(request); case \u0026quot;set-excluded-dates\u0026quot;: return setExcludedDates(request); case \u0026quot;list-time-ranges\u0026quot;: return listTimeRanges(request); case \u0026quot;set-time-ranges\u0026quot;: return setTimeRanges(request); } }   运行我们的应用程序 如果您想看一下我们的插件，可以查看 working-hours-plugin 的仓库。 只需阅读 README 文件，即可运行 working-hours-plugin 的副本。\n截图 当前的插件外观有点简单，插件使用起来有些不便。 比如说如果我们要输入排除的日期，它将是一个恒定格式的字符串，例如 15/9/2019，但是新的用户界面选择了 React，因此我们可以使用日期选择器进行改进。\n当前插件 新版时间范围选择器 新版排除日期 帮助链接 如果您有任何疑问或建议，我们很高兴收到您的来信。 下面列出了几个有用的链接： * Develop Repo * Main Repo * Design Doc * Doc for React Integration Solution * Gitter Chat * Slides for Phase 1 Demo * Video Recording for Phase 1\n",
+        "auhtor": "Jack Shen",
+        "translator": "wenjunzhangp",
+        "original": "https://jenkins.io/blog/2019/07/09/Phase1-Updates-On-Working-Hours-Plugin/",
+        "poster": "cover.jpg"
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-13-a-thanks-letter/",
         "title": "致霍格沃兹测试学院的一封感谢信",
         "type": "wechat",
@@ -2665,6 +2678,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tags/react-plugins-gsoc-gsoc2019/",
+        "title": "React Plugins Gsoc Gsoc2019",
+        "type": "tags",
+        "date": "2019-11-14 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/release/",
         "title": "Release",
         "type": "tags",
@@ -2824,7 +2850,7 @@
         "uri": "https://jenkins-zh.github.io/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2019-11-13 00:00:00 +0000 UTC",
+        "date": "2019-11-14 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",

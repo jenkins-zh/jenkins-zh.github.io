@@ -6,10 +6,26 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Working Hours 插件的第一阶段更新</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/</guid>
+      <description>Working Hour Plugin 提供了一个界面，用于设置允许的构建日期和时间。在配置 Working Hour 之外运行的作业将保留到下一个允许的构建时间为止。
+在 Google Summer of Code 的第一个代码阶段，我一直在从事 Working Hours Project 项目，该项目还有待于改善可用性。
+当我们想设计一个具有大量可以使用自定义库的 UI 时，React 似乎比经典的 Jelly 页面更受青睐，尤其是日期选择器之类的开源组件。
+但是，我们目前正致力于将 React 和 Jenkins 集成在一起，这是一个挑战。
+第一阶段的成就 在第一个代码阶段，我们专注于 UI 改进，我们取得了以下主要改进： * 一个独立的 Web 应用程序，可以将其集成。 * 滑块，用于选择时间范围。 * 设置排除日期时间的更多字段。 * 用于选择排除日期的预设。 * Jenkins 样式界面
+我们如何将 React 集成到 Jenkins 中 可以在这里找到集成的解决方案文档
+最初，我们发现 BlueOcean 是在 Jenkins 中使用 React 的一个很好的例子，但是对于使用插件进行通用开发来说，它并不是一个好的选择。因此，我们需要找到另一种集成方式。
+这是进行集成的步骤： * 在你 jelly 文件中的挂载点，通常是具有唯一 ID 的元素。 * 编写您的 React Application，但需要将安装点设置为您在上面设置的 ID。 * 将构建后的插件复制到 webapp 目录。 * 在你的 jelly 文件中，使用 script 标签引入</description>
+    </item>
     
     <item>
       <title>致霍格沃兹测试学院的一封感谢信</title>

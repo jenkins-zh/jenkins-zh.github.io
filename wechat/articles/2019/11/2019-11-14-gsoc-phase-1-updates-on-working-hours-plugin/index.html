@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 2019 年 Board 和 Officer positions 选举更新 - Jenkins 中文社区</title>
+     <title>Working Hours 插件的第一阶段更新 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。">
+    <meta name="description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器">
     
     
-    <meta name="keywords" content="2019,Jenkins,Board,Officer Elections">
+    <meta name="keywords" content="react gsoc">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 2019 年 Board 和 Officer positions 选举更新" />
-<meta property="og:description" content="Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。" />
+<meta property="og:title" content="Working Hours 插件的第一阶段更新" />
+<meta property="og:description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/" /><meta property="article:published_time" content="2019-11-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-11-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/" /><meta property="article:published_time" content="2019-11-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-11-14T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 2019 年 Board 和 Officer positions 选举更新">
-<meta itemprop="description" content="Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。">
-
-
-<meta itemprop="datePublished" content="2019-11-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-11-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="220">
+<meta itemprop="name" content="Working Hours 插件的第一阶段更新">
+<meta itemprop="description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器">
 
 
+<meta itemprop="datePublished" content="2019-11-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-11-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="186">
 
-<meta itemprop="keywords" content="community,governance,elections," />
+
+
+<meta itemprop="keywords" content="react plugins gsoc gsoc2019," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 2019 年 Board 和 Officer positions 选举更新"/>
-<meta name="twitter:description" content="Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。"/>
+<meta name="twitter:title" content="Working Hours 插件的第一阶段更新"/>
+<meta name="twitter:description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -221,9 +221,9 @@ var trackOutboundLink = function(id, url) {
 
   
   <div>
-    作者：<span class="originalAuthor">Tracy Miranda</span>
+    作者：<span class="originalAuthor">Jack Shen</span>
     <div>
-      <a class="originalLink" href="https://jenkins.io/blog/2019/11/08/board-elections/" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://jenkins.io/blog/2019/07/09/Phase1-Updates-On-Working-Hours-Plugin/" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -243,17 +243,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-13-a-thanks-letter/" class="dib f6 pl1 hover-bg-light-gray br-100" title="致霍格沃兹测试学院的一封感谢信 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-11-update-center-mirror-announcement/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 插件中心国内镜像源发布">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-13-a-thanks-letter/" class="dib f6 pr1 hover-bg-light-gray br-100" title="致霍格沃兹测试学院的一封感谢信">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -273,13 +265,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 2019 年 Board 和 Officer positions 选举更新</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Working Hours 插件的第一阶段更新</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。
+      实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器
     </div>
   
 
@@ -292,150 +284,98 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="cover.png" alt="cover" /></p>
+<p><img src="cover.jpg" alt="cover" /></p>
 
-<p>Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举。提名征集已经结束。我们征集到了很多提名。根据愿意接受提名的人和无可争议的 Officer Positions，我们将有 3 票：</p>
+<p>Working Hour Plugin 提供了一个界面，用于设置允许的构建日期和时间。在配置 Working Hour 之外运行的作业将保留到下一个允许的构建时间为止。</p>
 
-<ol>
-<li>投票选举 3 名<a href="https://jenkins.io/project/governance/#governance-board">board members</a></li>
-<li>投票选举 Jenkins <a href="https://jenkins.io/project/board/#security">security officer</a></li>
-<li>投票选举 Jenkins <a href="https://jenkins.io/project/board/#events">events officer</a></li>
-</ol>
+<p>在 Google Summer of Code 的第一个代码阶段，我一直在从事 <a href="https://jenkins.io/projects/gsoc/2019/working-hours-improvements/">Working Hours Project</a> 项目，该项目还有待于改善可用性。</p>
 
-<h2 id="候选人">候选人</h2>
+<p>当我们想设计一个具有大量可以使用自定义库的 UI 时，React 似乎比经典的 Jelly 页面更受青睐，尤其是日期选择器之类的开源组件。</p>
 
-<p>每位候选人都提供了一份声明，以帮助指导选民为什么要为候选人投票。有关更多详细信息，请参阅<a href="https://docs.google.com/document/d/15rJYkBjWLGZTL87xeJ4P2Y1LNn7C0EBb0wkDVUSfLmQ/edit#">候选人宣言</a>。竞选 board members 的候选人为：</p>
+<p>但是，我们目前正致力于将 React 和 Jenkins 集成在一起，这是一个挑战。</p>
 
-<ul>
-<li>Alex Earl</li>
-<li>Oliver Gondza</li>
-<li>Ullrich Hafner</li>
-<li>Oleg Nenashev</li>
-<li>Mark Waite</li>
-<li>赵晓杰（Rick）</li>
-</ul>
+<h2 id="第一阶段的成就">第一阶段的成就</h2>
 
-<p>竞选 security officer 的候选人是：</p>
+<p>在第一个代码阶段，我们专注于 UI 改进，我们取得了以下主要改进：
+* 一个独立的 Web 应用程序，可以将其集成。
+* 滑块，用于选择时间范围。
+* 设置排除日期时间的更多字段。
+* 用于选择排除日期的预设。
+* Jenkins 样式界面</p>
 
-<ul>
-<li>Daniel Beck</li>
-<li>Wadeck Follonier</li>
-</ul>
+<h2 id="我们如何将-react-集成到-jenkins-中">我们如何将 React 集成到 Jenkins 中</h2>
 
-<p>竞选 events officer 的候选人是：</p>
+<p>可以在<a href="https://drive.google.com/open?id=1JLRCDg9JNBWR0Dfq8w3pTI9mrl6i9JU29pBoH6bO0J8">这里</a>找到集成的解决方案文档</p>
 
-<ul>
-<li>Alyssa Tong</li>
-<li>赵晓杰（Rick）</li>
-</ul>
+<p>最初，我们发现 BlueOcean 是在 Jenkins 中使用 React 的一个很好的例子，但是对于使用插件进行通用开发来说，它并不是一个好的选择。因此，我们需要找到另一种集成方式。</p>
 
-<h2 id="选民登记">选民登记</h2>
+<p>这是进行集成的步骤：
+* 在你 jelly 文件中的挂载点，通常是具有唯一 <code>ID</code> 的元素。
+* 编写您的 React Application，但需要将安装点设置为您在上面设置的 ID。
+* 将构建后的插件复制到 webapp 目录。
+* 在你的 jelly 文件中，使用 script 标签引入</p>
 
-<p>这是近一段时间以来我们第一次进行 Jenkins 选举。我们正在学习。Jenkins 选举旨在实现包容性。我们不仅将选举限于代码提交者。在 2019 年 9 月 1 日之前注册了 Jenkins 帐户的任何人都有资格投票。Jenkins 是一个成功的项目，大约有 10 万个符合该标准的帐户。我们正在与符合条件的选民联系，并要求他们明确 <code>选择性加入</code> 以参加投票。</p>
-
-<p>如果符合条件，您将在注册的 jenkins.io 电子邮件地址中收到一封电子邮件。该邮件来自 elections@jenkins.io，标题为 <code>2019 Jenkins Election - Invitation to Participate</code>。该电子邮件将提供选举详细信息，并包含一个 <code>I want to participate</code> 按钮。</p>
-
-<p><img src="election-invitation.png" alt="election-invitation" /></p>
-
-<h2 id="投票确认">投票确认</h2>
-
-<p>点击链接后，您将看到一个确认屏幕，如下所示：</p>
-
-<p><img src="election-acknowledged.png" alt="election-acknowledged" /></p>
-
-<p>如果您在 2019 年 11 月 14 日之前仍未收到电子邮件，或者在投票时遇到任何问题，请对 <a href="https://issues.jenkins-ci.org/browse/INFRA-2319">Jenkins Election 2019 Jira issue</a> 问题发表评论。</p>
-
-<h2 id="表决">表决</h2>
-
-<p>投票将于 2019 年 11 月 11 日正式开始。候选人将收到 Kohsuke Kawaguchi 发送的 Condorcet 互联网投票电子邮件。每次投票将发送一封电子邮件（因此，总共 3 票：board 1 票，events officer 1 票，security officer 1 票）。投票将要求使用以下截图对候选人进行排名：</p>
-
-<p><img src="election-ballot.png" alt="election-ballot" /></p>
-
-<h2 id="选举日期">选举日期</h2>
-
-<p>以下是关键选举日期的摘要：</p>
-
-<table>
-<thead>
-<tr>
-<th>Date</th>
-<th>Event</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Now</td>
-<td>Voter registration ongoing</td>
-</tr>
-
-<tr>
-<td>Nov 11, 2019</td>
-<td>Voting begins</td>
-</tr>
-
-<tr>
-<td>Nov 17, 2019</td>
-<td>Voter registration closes</td>
-</tr>
-
-<tr>
-<td>Nov 24, 2019</td>
-<td>Voting closes a 5:00 PM Pacific Time</td>
-</tr>
-
-<tr>
-<td>Dec 3, 2019</td>
-<td>New representatives announced</td>
-</tr>
-</tbody>
-</table>
-
-<p>选举结果将发布到 <a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">Jenkins 开发人员的邮件列表中</a>，然后在 <a href="https://jenkins.io/node/">jenkins.io</a> 上发布公告博客。</p>
-
-<p>如果对建议的日期有任何延迟，我们将尽快通知您。非常感谢所有向我们的社区展示 Jenkins 服务精神的候选人。我们鼓励所有人注册投票并参与 Jenkins 社区。</p>
-
-<h2 id="无可争议的职位">无可争议的职位</h2>
-
-<p>当一个 officer position 只有一个愿意接受提名的候选人时，没有理由对该职位进行投票。该人将成为该职位的唯一候选人。</p>
-
-<p>毫无争议的 Officer Positions 包括：</p>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Role</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Olivier Vernin</td>
-<td>Infrastructure Officer</td>
-</tr>
-
-<tr>
-<td>Oliver Gondza</td>
-<td>Release Officer</td>
-</tr>
-
-<tr>
-<td>Mark Waite</td>
-<td>Documentation Officer</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="参考文献">参考文献</h2>
+<pre><code>&lt;script type=&quot;text/javascript&quot;
+        src=&quot;${resURL}/plugin/working-hours/js/main.js&quot;&gt;&lt;/script&gt;
+</code></pre>
 
 <ul>
-<li><a href="https://jenkins.io/project/board">Jenkins Governance Board</a></li>
-<li><a href="https://jenkins.io/project/board-election-process/">Jenkins Board Election Process</a></li>
-<li><a href="https://jenkins.io/project/team-leads/">Jenkins Officers</a></li>
-<li><a href="https://groups.google.com/forum/#!msg/jenkinsci-dev/v8kmEQMT0ts/l8yQ43WNAwAJ">Announcement in the developer mailing list</a></li>
-<li><a href="https://groups.google.com/forum/#!msg/jenkinsci-dev/vKi9JpxTQxY/4O4lmqfdAgAJ">2019 elections proposal in the developer mailing list</a></li>
+<li>使用 React 之后，传统的请求将不再可用，处理请求的另一种方法是使用 stapler。您可以定义如下的过程函数[source, java]
+<code>
+public HttpResponse doDynamic(StaplerRequest request) {
+    if (config == null) {
+        config = ExtensionList.lookup(WorkingHoursPlugin.class).get(0);
+    }
+    String restOfPath = request.getRestOfPath();
+    String[] pathTokens = restOfPath.split(&quot;/&quot;);
+    List&lt;String&gt; params = new ArrayList&lt;&gt;();
+    switch (params.get(0)) {
+        case &quot;list-excluded-dates&quot;:
+            return listExcludedDate(request);
+        case &quot;set-excluded-dates&quot;:
+            return setExcludedDates(request);
+        case &quot;list-time-ranges&quot;:
+            return listTimeRanges(request);
+        case &quot;set-time-ranges&quot;:
+            return setTimeRanges(request);
+    }
+}
+</code></li>
 </ul>
+
+<h2 id="运行我们的应用程序">运行我们的应用程序</h2>
+
+<p>如果您想看一下我们的插件，可以查看 <a href="https://github.com/jenkinsci/working-hours-plugin/tree/dev">working-hours-plugin</a> 的仓库。
+只需阅读 README 文件，即可运行 working-hours-plugin 的副本。</p>
+
+<h2 id="截图">截图</h2>
+
+<p>当前的插件外观有点简单，插件使用起来有些不便。
+比如说如果我们要输入排除的日期，它将是一个恒定格式的字符串，例如 15/9/2019，但是新的用户界面选择了 React，因此我们可以使用日期选择器进行改进。</p>
+
+<h2 id="当前插件">当前插件</h2>
+
+<p><img src="working-hours-config.png" alt="working-hours-config" /></p>
+
+<h2 id="新版时间范围选择器">新版时间范围选择器</h2>
+
+<p><img src="working-hours-example-time-range.png" alt="working-hours-example-time-range" /></p>
+
+<h2 id="新版排除日期">新版排除日期</h2>
+
+<p><img src="working-hours-exmaple-excluded-date.png" alt="working-hours-exmaple-excluded-date" /></p>
+
+<h2 id="帮助链接">帮助链接</h2>
+
+<p>如果您有任何疑问或建议，我们很高兴收到您的来信。
+下面列出了几个有用的链接：
+* <a href="https://github.com/jenkinsci/working-hours-plugin/tree/dev">Develop Repo</a>
+* <a href="https://github.com/jenkinsci/working-hours-plugin">Main Repo</a>
+* <a href="https://docs.google.com/document/d/1SezLtQejur2ji-KUur3dC3TXK8ivxrttiwHYbTkA8Yk/edit#">Design Doc</a>
+* <a href="https://drive.google.com/open?id=1JLRCDg9JNBWR0Dfq8w3pTI9mrl6i9JU29pBoH6bO0J8">Doc for React Integration Solution</a>
+* <a href="https://gitter.im/jenkinsci/working-hours-plugin">Gitter Chat</a>
+* <a href="https://docs.google.com/presentation/d/1Psz6MrYvw81D_7d8pfW04FDoBtexlSVdgrbqp99Wjm0/edit?usp=sharing">Slides for Phase 1 Demo</a>
+* <a href="https://www.youtube.com/watch?v=MDs0Vr7gnnA">Video Recording for Phase 1</a></p>
 
 </div>
 
@@ -458,21 +398,6 @@ var trackOutboundLink = function(id, url) {
 
           
 
-<h2>参考</h2>
-<ul>
-	
-	<li><a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/">在大型企业里维护多分支流水线</a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/">在 Kubernetes 上使用 Jenkins </a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/">Jenkins 插件的微基准测试框架</a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/">多分支流水线任务对 GitLab SCM 的支持</a></li>
-	
-	<li><a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/">Jenkins 文档特别兴趣小组</a></li>
-	
-</ul>
-
         </div>
       </div>
       
@@ -483,14 +408,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 2019 年 Board 和 Officer positions 选举更新”
-  </a> 更新于：November 12, 2019
+    “Working Hours 插件的第一阶段更新”
+  </a> 更新于：November 14, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -508,111 +433,14 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/community">
-              community
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/governance">
-              governance
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/elections">
-              elections
+            <a class="tag" href="/tags/react-plugins-gsoc-gsoc2019">
+              react plugins gsoc gsoc2019
             </a>
           </li>
         
               
       
         
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/" class="link">
-              Jenkins World 贡献者峰会及专家答疑展位
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/" class="link">
-              让我们庆祝 Jenkins 对 Java 11的支持
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/" class="link">
-              Jenkins 文档特别兴趣小组
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
-              介绍：成为一名 Jenkins 贡献者的旅程
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-20-cdf-launch/" class="link">
-              Jenkins 正在加入持续交付基金会
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" class="link">
-              Jenkins 已经被 Google Summer Of Code 2019 接受！
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-20-java11-preview-availability/" class="link">
-              Java 11 预览支持已在 Jenkins 2.155&#43; 中可用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/" class="link">
-              Jenkins 对审计日志的支持
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link">
-              成为一名 Jenkins 贡献者：对新手友好的工单
-            </a>
-          </li>
         
       
     </ul>
@@ -639,7 +467,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/11\/2019-11-12-2019-jenkins-board-and-officer-elections-update\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/11\/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

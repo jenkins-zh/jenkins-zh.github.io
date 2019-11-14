@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/</loc>
+    <lastmod>2019-11-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-13-a-thanks-letter/</loc>
     <lastmod>2019-11-13T00:00:00+00:00</lastmod>
   </url>
@@ -1069,6 +1074,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/react-plugins-gsoc-gsoc2019/</loc>
+    <lastmod>2019-11-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/release/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1140,7 +1151,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
