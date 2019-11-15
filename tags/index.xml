@@ -410,7 +410,7 @@
     <item>
       <title>Jenkins X</title>
       <link>https://jenkins-zh.github.io/tags/jenkins-x/</link>
-      <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkins-x/</guid>
       <description></description>
@@ -746,6 +746,15 @@
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Updatebot</title>
+      <link>https://jenkins-zh.github.io/tags/updatebot/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/updatebot/</guid>
       <description></description>
     </item>
     

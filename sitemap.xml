@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/</loc>
+    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/</loc>
     <lastmod>2019-11-14T00:00:00+00:00</lastmod>
   </url>
@@ -891,7 +896,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins-x/</loc>
-    <lastmod>2019-08-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1145,13 +1150,19 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/updatebot/</loc>
+    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/webhooks/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-11-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

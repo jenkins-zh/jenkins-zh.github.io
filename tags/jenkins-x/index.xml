@@ -6,10 +6,23 @@
     <description>Recent content in Jenkins X on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 08 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/jenkins-x/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>了解如何使用 Jenkins-X UpdateBot</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/</guid>
+      <description>Jenkins-X UpdateBot 是用于在项目源代码中自动更新依赖项版本的工具。假设您正在构建两个项目 A 和 B，B 使用 A 作为依赖项。A 的发布过程可以使用 UpdateBot 更新项目 B 的源，以使用 A 的新版本。在 pull request 中使用 UpdateBot，可以测试和检查更改或自动合并更改。
+在 Jenkins-X platform 中，UpdateBot 由 Jenkinsfile 中的 UpdateBot 命令自动显示和调用。但是 UpdateBot 也可以在 Jenkins-X 之外使用，并且单独运行它可以帮助了解它可以做什么并测试版本替换。因此，让我们用一个简单的测试项目来尝试一下。
+配置演示 UpdateBot 可以为各种不同的文件类型设置版本-我们不会在这里对它们进行全部测试，但是我们希望一个项目具有多个功能。因此，我们可以使用 JHipster sample app 示例应用程序，因为它具有 Maven pom.xml，npm package.json 和 Dockerfile。我们将对其运行 UpdateBot，以查看 UpdateBot 可以替换这些资源文件中哪些内容。
+我们可以下载 UpdateBot jar file（v1.1.31），并为要更新的项目设置指向 GitHub 存储库的简单 UpdateBot 配置文件：
+github: organisations: - name: ryandawsonuk repositories: - name: jhipster-sample-app useSinglePullRequest: true  useSinglePullRequest 标记意味着将创建一个包含我们所做的所有更改的 PR。但是我们实际上并不会进行任何更改-我们将在本地运行它，这样我们就不需要 GitHub 对存储库的写权限。通过设置环境变量，我们可以在不推送到 GitHub 的情况下运行：</description>
+    </item>
     
     <item>
       <title>Jenkins X 新 logo</title>
