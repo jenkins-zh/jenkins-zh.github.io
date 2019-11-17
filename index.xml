@@ -66,6 +66,17 @@ github: organisations: - name: ryandawsonuk repositories: - name: jhipster-sampl
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/meeting/2019-11-13/</link>
+      <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/meeting/2019-11-13/</guid>
+      <description> 论坛
+ 管理员招募？ 如何管理 国内实名验证的问题（如何保证每个人都有手机号信息）  Jenkins 相关资源下载很慢，包括：容器镜像、deb 镜像源、插件等
+ https://github.com/jenkins-zh/mirror-adapter   </description>
+    </item>
+    
+    <item>
       <title>致霍格沃兹测试学院的一封感谢信</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-13-a-thanks-letter/</link>
       <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>

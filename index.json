@@ -52,6 +52,19 @@
         "poster": "cover.jpg"
     },
     {
+        "uri": "https://jenkins-zh.github.io/meeting/2019-11-13/",
+        "title": "",
+        "type": "meeting",
+        "date": "2019-11-13 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": " 论坛\n 管理员招募？ 如何管理 国内实名验证的问题（如何保证每个人都有手机号信息）  Jenkins 相关资源下载很慢，包括：容器镜像、deb 镜像源、插件等\n https://github.com/jenkins-zh/mirror-adapter   ",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-13-a-thanks-letter/",
         "title": "致霍格沃兹测试学院的一封感谢信",
         "type": "wechat",
@@ -1485,7 +1498,7 @@
         "uri": "https://jenkins-zh.github.io/meeting/",
         "title": "",
         "type": "meeting",
-        "date": "2019-10-30 00:00:00 +0000 UTC",
+        "date": "2019-11-13 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": " Jenkins 中文社区例会，每个双周周三（遇到法定节假日时延后）的 21:00 进行。准备参加的小伙伴，需要提前安装好 zoom 软件， 然后点击 https://zoom.us/j/691718976 即可进入会议。\n注意事项⚠️  要发言的小伙伴要提前找好一个相对比较安静的环境 不发言的时候，及时关闭麦克风🎤 例会是讨论社区的事情，而不是技术分享  如何接入？ 可以下载桌面客户端，或者移动客户端来接入会议。\n如果不想下载软件，或者由于某种原因无法访问国外网站的，可以点击此处打开国内的 Web 客户端， 直接在浏览器中参加会议。\n会议 ID 为：691718976\n",

@@ -6,10 +6,21 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 30 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/meeting/2019-11-13/</link>
+      <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/meeting/2019-11-13/</guid>
+      <description> 论坛
+ 管理员招募？ 如何管理 国内实名验证的问题（如何保证每个人都有手机号信息）  Jenkins 相关资源下载很慢，包括：容器镜像、deb 镜像源、插件等
+ https://github.com/jenkins-zh/mirror-adapter   </description>
+    </item>
     
     <item>
       <title></title>
