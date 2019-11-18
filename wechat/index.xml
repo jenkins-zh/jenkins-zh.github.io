@@ -6,10 +6,28 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 15 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins CI 自动构建与 C-STAT 代码分析的集成</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</link>
+      <pubDate>Mon, 18 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</guid>
+      <description>介绍 我们大多数人都知道，为嵌入式软件设置 CI/CD 总是有局限性或挑战性的，并且我们还看到在某些情况下仍然没有其他可用的选择，这会导致工作量加大和代码质量缺失。
+在本文中，我们将看到一个这样的嵌入式开发工具（IAR 嵌入式工作台），以及如何将 C-STAT 静态代码分析与持续集成版本 Jenkins 集成在一起，以及如何通过自动构建。
+先决条件： a. IAR 嵌入式工作台 IDE b. C-STAT 许可证 c. Jenkins 安装
+IAR 嵌入式工作台工具为我们提供了命令行执行选项，以实现 IAR 项目的静态代码分析。现在，我们将了解其工作原理。
+IAR 命令行应用程序 IAR 系统为我们提供了一个名为 IarBuild.exe 的应用程序，该应用程序用于在命令行中执行分析。您可以在安装路径中找到 IarBuild.exe 应用程序，如下所示。
+C:\Program Files (x86) \IAR Systems\Embedded Workbench 8.1\common\bin\  运行代码分析： 首先切换到命令路径中的上述路径，然后执行以下命令来分析整个项目。
+IarBuild.exe D:\sample\project\setup\sample.ewp -cstat_analyze Debug   D:\sample\project\setup\sample.ewp 是您的 IAR 项目文件路径 -cstat_analyze 是要执行分析的命令 设置项目模式为 Debug  通过执行上述命令，它将对整个项目执行静态代码分析，并且结果将存储在 cproject.db 文件中，位于路径 ...project\setup\Debug\Obj\ 下。
+注意下次运行代码分析时，如果自上次分析以来对源代码文件进行了任何更改，则必须首先清除数据库，以避免由于数据库文件中的新旧数据混合而引起的问题。
+清晰的分析结果 要使用命令行清除数据库文件，请执行以下命令，
+IarBuild.exe D:\sample\project\setup\sample.ewp -cstat_clean Debug  生成报告 要生成报告，我们可以使用 IAR 提供的 IREPORT 工具，您可以在同一安装目录中找到该工具。IREPORT 工具用于生成 C-STAT 执行的先前代码分析的 HTML 报告。</description>
+    </item>
     
     <item>
       <title>了解如何使用 Jenkins-X UpdateBot</title>

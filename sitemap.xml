@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</loc>
+    <lastmod>2019-11-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/</loc>
     <lastmod>2019-11-15T00:00:00+00:00</lastmod>
   </url>
@@ -667,6 +672,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/c-stat/</loc>
+    <lastmod>2019-11-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/categories/</loc>
     <priority>0</priority>
   </url>
@@ -897,6 +908,12 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/about/meetups/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/jenkins-ci/</loc>
+    <lastmod>2019-11-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1167,7 +1184,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
