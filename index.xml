@@ -37,6 +37,19 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins CLI，助你轻松管理 Jenkins</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-20-jenkins-cli-help-you-manage-jenkins/</link>
+      <pubDate>Wed, 20 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-20-jenkins-cli-help-you-manage-jenkins/</guid>
+      <description>Jenkins CLI，简称 jcli，一个使用 Golang 开发的开源的 Jenkins 命令行工具。 它可以帮忙你轻松地管理 Jenkins。 无论你是 Jenkins 插件开发者，还是 Jenkins 管理员或者只是一个普通的 Jenkins 用户，它都是为你而生！
+Jenkins CLI 功能简介 从2019年6月份第一个 git commit 算起，经过不断迭代，截止目前 Jenkins CLI 已经对外发布了18个版本，下载量超过2000，功能也日益增多。 目前主要功能列表如下所示： * 支持多 Jenkins 实例管理 * 插件管理（查看列表、搜索、安装、上传） * 任务管理（搜索、构建触发、日志查看） * 在浏览器中打开你的 Jenkins * 重启你的 Jenkins * 支持通过代理连接
+此外，优秀的开源项目应该有着高代码质量。Jenkins CLI 始终坚持内建质量的原则，在开发过程中持续编写单元测试代码，并使用 TravisCI + SonarCloud 对代码质量持续分析，从而保证代码质量。 目前测试覆盖率为81.8%，下一个目标是将测试覆盖率提升到90%。 Go Report Card 给 Jenkins CLI 的代码质量评分为 A+。
+如何安装 Jenkins CLI？ Jenkins CLI 目前支持的操作系统有：MacOS、Linux 以及 Windows。
+在 Mac 上安装 在 Mac 上可以通过 brew 来安装 jcli：</description>
+    </item>
+    
+    <item>
       <title>Jenkins CI 自动构建与 C-STAT 代码分析的集成</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</link>
       <pubDate>Mon, 18 Nov 2019 00:00:00 +0000</pubDate>
