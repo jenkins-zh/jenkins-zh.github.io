@@ -1855,6 +1855,20 @@ Jenkins 中文社区邀您参与社区共同成长 在开源盛会开展的同�
     </item>
     
     <item>
+      <title>Jenkins 插件文档即代码：将文档迁移到 GitHub</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</guid>
+      <description>在2019年9月，我们宣布了对 GitHub 作为 Jenkins 插件站点文档来源的支持。 感谢 Zbynek Konecny 和 Olivier Vernin 以及其他贡献者， 现在可以将插件文档直接存储在插件储存库中，而不是 Jenkins Wiki 中，对于插件维护者和 Jenkins 基础设施团队来说，这在过去是很难维护的。
+这篇博文可能对插件维护者和那些想为 Jenkins 文档做贡献的人来说很有趣。 我将描述如何将插件文档迁移到 GitHub 并获得如下页面:
+为什么？ 通过使用插件的 GitHub 仓库存储文档， 插件维护者可以遵循 文档即代码 的方法，将文档更改作为 pull request 的一部分，这样就不会忘记文档的后续工作。 它还提供了一个 review 文档更改以及增加文档贡献者的认可度的机会，尤其是如果 story 与 Release Drafter 结合。
+不幸的是，在2019年9月之前，GitHub 文档的使用引起了一些问题。 首先，许多插件维护者已经将他们的文档迁移到 GitHub，这导致了文档的碎片化（Wiki、GitHub、jenkins.io）。 为了解决这个问题，插件维护者仍然需要使用重定向来维护存根 Wiki 页面， 用户不得不花一些时间来找出真正的文档在哪里。 通过支持 GitHub 作为文档来源，我们允许维护者逐步淘汰插件 Wiki 页面，同时改善用户体验。
+现在进行迁移还有更紧迫的原因…… 如果你订阅了开发者邮件列表， 你可能还看到了 R. Tyler Croy 关于 Jenkins Wiki 稳定性问题的声明， 并将其设置为只读，作为稳定实例的临时措施邮件列表主题。 虽然功能后来部分恢复了， 基础架构团队一致认为，我们应该逐渐转向替代解决方案。
+例子 自从9月份宣布以来，超过50个插件已经从 Wiki 迁移到 GitHub。 几个例子：</description>
+    </item>
+    
+    <item>
       <title>Windows 安装程序更新</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-windows-installers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

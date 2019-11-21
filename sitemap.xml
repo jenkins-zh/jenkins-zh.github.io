@@ -752,6 +752,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/contributors/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/contributorsummit/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -883,6 +888,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/hacktoberfest/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/installers/</loc>
     <priority>0</priority>
   </url>
@@ -943,6 +953,10 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</loc>
   </url>
   
   <url>
@@ -1201,6 +1215,11 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/weibo/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/wiki/</loc>
     <priority>0</priority>
   </url>
   
