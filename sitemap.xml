@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-20-jenkins-cli-help-you-manage-jenkins/</loc>
     <lastmod>2019-11-20T00:00:00+00:00</lastmod>
   </url>
@@ -753,6 +758,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/contributors/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -782,7 +788,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/developer/</loc>
-    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -818,7 +824,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/documentation/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -889,6 +895,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/hacktoberfest/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -953,10 +960,6 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</loc>
   </url>
   
   <url>
@@ -1203,7 +1206,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-11-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1220,6 +1223,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/wiki/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,6 +6,7 @@
     <description>Recent content in Wiki on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/wiki/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +14,7 @@
     <item>
       <title>Jenkins 插件文档即代码：将文档迁移到 GitHub</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</guid>
       <description>在2019年9月，我们宣布了对 GitHub 作为 Jenkins 插件站点文档来源的支持。 感谢 Zbynek Konecny 和 Olivier Vernin 以及其他贡献者， 现在可以将插件文档直接存储在插件储存库中，而不是 Jenkins Wiki 中，对于插件维护者和 Jenkins 基础设施团队来说，这在过去是很难维护的。
