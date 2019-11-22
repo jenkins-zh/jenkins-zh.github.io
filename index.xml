@@ -1903,6 +1903,26 @@ CI 的目标是将集成简化成一个简单、易于重复的日常开发任�
     </item>
     
     <item>
+      <title>使用 Jenkins 构建 Android 应用</title>
+      <link>https://jenkins-zh.github.io/tutorial/best-practice/android/android-best-practice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tutorial/best-practice/android/android-best-practice/</guid>
+      <description>本教程将展示 Jenkins 如何使用 Jenkins 和 Gradle 构建一个简单的 Android 应用程序。
+如果你是一个对 CI/CD 概念不了解的 Android 开发者，或者你熟悉这些概念却不知道如何使用 Jenkins 完成构建，那么本教程很适合你。你将在 GitHub 上获取一个简单的 Android 应用项目，并包含单元测试。
+耗时：本教程需要 20-40 分钟来完成（假设你的机器已经满足配置要求）。
+配置要求 对于本教程，您将需要：
+ 安装有 macOS、Linux 或 Windows 操作系统的机器，并拥有以下配置：
+ 最小 256 MB 内存，推荐 512MB 以上。
+ 10 GB 硬盘空间，用于安装 Jenkins，您的 Docker 镜像和容器。
+  安装有以下软件：
+ Docker - 在安装 Jenkins 页面的安装 Docker 章节阅读更多信息。
+注意：如果您使用 Linux，本教程假定您没有以 root 用户的身份运行 Docker 命令，而是使用单个用户帐户访问本教程中使用的其他工具。
+ Git 和 GitHub Desktop。
+   在 Docker 中运行 Jenkins 在本教程中，将 Jenkins 作为 Docker 容器并从 jenkinsci/blueocean Docker 镜像中运行。</description>
+    </item>
+    
+    <item>
       <title>使用 YAML 文件配置 Jenkins 流水线</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

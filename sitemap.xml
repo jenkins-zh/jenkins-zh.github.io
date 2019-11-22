@@ -1263,11 +1263,11 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.github.io/tutorial/use-cases/</loc>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/</loc>
   </url>
   
   <url>
-    <loc>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/</loc>
+    <loc>https://jenkins-zh.github.io/tutorial/best-practice/android/android-best-practice/</loc>
   </url>
   
   <url>
@@ -1285,10 +1285,6 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/about/about-site/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/tutorial/use-cases/package/</loc>
   </url>
   
   <url>
@@ -1388,6 +1384,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tutorial/best-practice/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tutorial/scm/git/</loc>
   </url>
   
@@ -1404,7 +1404,7 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.github.io/tutorial/use-cases/build/</loc>
+    <loc>https://jenkins-zh.github.io/tutorial/best-practice/android/</loc>
   </url>
   
   <url>
@@ -1465,10 +1465,6 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tutorial/management/auth/keyclock/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/tutorial/use-cases/deploy/</loc>
   </url>
   
   <url>

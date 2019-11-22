@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最佳实践 on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tutorial/best-practice/</link>
+    <description>Recent content in 最佳实践 on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://jenkins-zh.github.io/tutorial/best-practice/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
