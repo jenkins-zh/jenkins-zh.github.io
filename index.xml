@@ -37,6 +37,20 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins CLI 命令行 v0.0.23</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/</link>
+      <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/</guid>
+      <description>Jenkins CLI 在参加 2019 年谁是最受欢迎的中国开源软件投票，如果您已经是 Jenkins CLI 的用户，请点击下面的链接帮忙投上一票。
+https://www.oschina.net/project/top_cn_2019#jenkins-cli
+如果，您还没有听说或者使用过 Jenkins CLI，欢迎阅读我们的官方文档，以及下面的 v0.0.23 版本更新内容。
+Jenkins 国内镜像中心发布后，收到了很多的反馈。鉴于之前的操作步骤相对较多，本次 Jenkins CLI 给出了一键启动国内镜像源的方案： 只要执行命令：jcli center mirror 即可启动镜像源。如果希望使用原有的地址，也非常简单：jcli center mirror --enable=false
+更多有意思的玩法，请参考 Jenkins 中文社区论坛。
+🚀 功能  支持创建插件 (#255) @LinuxSuRen 支持子 shell 命令 (#253) @LinuxSuRen 支持启用（或禁用）更新中心镜像源 (#251) @LinuxSuRen 增加以键值对的形式触发参数化流水线 (#249) @LinuxSuRen 支持停止最近一次的构建任务 (#248) @LinuxSuRen 支持命令多语言的描述 (#245) @LinuxSuRen 支持选择以及移除 Jenkins 连接配置项 (#246) @LinuxSuRen 支持命令行自动补全 (#242) @LinuxSuRen 支持下载特定版本的 Jenkins war (#240) @LinuxSuRen 支持配置诊断 (#169) @yJunS 支持从镜像中心下载插件 (#222) @LinuxSuRen 支持从镜像中心下载 Jenkins war (#221) @LinuxSuRen 支持从本地或者 URL 中加载 Jenkinsfile (#220) @LinuxSuRen 支持多种方式编辑流水线 (#206) @LinuxSuRen 支持安装指定版本的插件 (#211) @sbcd90  📝 文档完善  完善 README-zh.</description>
+    </item>
+    
+    <item>
       <title>Jenkins 插件文档即代码：将文档迁移到 GitHub</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</link>
       <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>

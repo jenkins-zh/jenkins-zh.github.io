@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 插件文档即代码：将文档迁移到 GitHub - Jenkins 中文社区</title>
+     <title>Jenkins CLI 命令行 v0.0.23 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="Jenkins 插件开发者，将你的插件文档迁移到 GitHub 吧！">
+    <meta name="description" content="jcli-v0.0.23 发布">
     
     
-    <meta name="keywords" content="Jenkins 插件文档,Jenkins 插件">
+    <meta name="keywords" content="jcli 版本发布">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 插件文档即代码：将文档迁移到 GitHub" />
-<meta property="og:description" content="Jenkins 插件开发者，将你的插件文档迁移到 GitHub 吧！" />
+<meta property="og:title" content="Jenkins CLI 命令行 v0.0.23" />
+<meta property="og:description" content="jcli-v0.0.23 发布" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/" /><meta property="article:published_time" content="2019-11-22T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-11-22T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/" /><meta property="article:published_time" content="2019-11-28T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-11-28T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 插件文档即代码：将文档迁移到 GitHub">
-<meta itemprop="description" content="Jenkins 插件开发者，将你的插件文档迁移到 GitHub 吧！">
-
-
-<meta itemprop="datePublished" content="2019-11-22T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-11-22T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="217">
+<meta itemprop="name" content="Jenkins CLI 命令行 v0.0.23">
+<meta itemprop="description" content="jcli-v0.0.23 发布">
 
 
+<meta itemprop="datePublished" content="2019-11-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-11-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="141">
 
-<meta itemprop="keywords" content="hacktoberfest,developer,documentation,wiki,contributors," />
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 插件文档即代码：将文档迁移到 GitHub"/>
-<meta name="twitter:description" content="Jenkins 插件开发者，将你的插件文档迁移到 GitHub 吧！"/>
+<meta name="twitter:title" content="Jenkins CLI 命令行 v0.0.23"/>
+<meta name="twitter:description" content="jcli-v0.0.23 发布"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -196,36 +196,27 @@ var trackOutboundLink = function(id, url) {
 
 
 
-
-
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            Donghui Wang
+            Zhao Xiaojie
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          a long-time Jenkins user and contributor
+          Contributor of @jenkinsci . Jenkins press contact in China. Jenkins Chinese community leader.
         </p>
       
-      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
 
       </a>
 
-  
-  <div>
-    作者：<span class="originalAuthor">oleg_nenashev</span>
-    <div>
-      <a class="originalLink" href="" target="_blank">原文链接</a>
-    </div>
-  </div>
   
   </aside>
 
@@ -243,17 +234,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins CLI 命令行 v0.0.23 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-20-jenkins-cli-help-you-manage-jenkins/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins CLI，助你轻松管理 Jenkins">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 插件文档即代码：将文档迁移到 GitHub">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -273,13 +256,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 插件文档即代码：将文档迁移到 GitHub</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins CLI 命令行 v0.0.23</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 插件开发者，将你的插件文档迁移到 GitHub 吧！
+      jcli-v0.0.23 发布
     </div>
   
 
@@ -292,126 +275,62 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="jenkins-plugin-docs-to-github.png" alt="jenkins-plugin-docs-to-github" /></p>
+<p><img src="jenkins-cli.png" alt="jenkins-cli" /></p>
 
-<p>在2019年9月，我们<a href="https://groups.google.com/forum/#!msg/jenkinsci-dev/VSdfVMDIW-A/vqXxJiI7AQAJ">宣布了</a>对
-GitHub 作为 <a href="https://plugins.jenkins.io">Jenkins 插件站点</a>文档来源的支持。
-感谢 <a href="https://github.com/zbynek">Zbynek Konecny</a> 和 <a href="https://github.com/olblak">Olivier Vernin</a> 以及其他贡献者，
-现在可以将插件文档直接存储在插件储存库中，而不是 <a href="https://wiki.jenkins.io">Jenkins Wiki</a> 中，对于插件维护者和 Jenkins 基础设施团队来说，这在过去是很难维护的。</p>
+<p>Jenkins CLI 在参加 2019 年谁是最受欢迎的中国开源软件投票，如果您已经是 Jenkins CLI 的用户，请点击下面的链接帮忙投上一票。</p>
 
-<p>这篇博文可能对插件维护者和那些想为 Jenkins 文档做贡献的人来说很有趣。
-我将描述如何将插件文档迁移到 GitHub 并获得如下页面:</p>
+<p><img src="vote-invitation.jpg" alt="vote-invitation" />
+<a href="https://www.oschina.net/project/top_cn_2019#jenkins-cli">https://www.oschina.net/project/top_cn_2019#jenkins-cli</a></p>
 
-<p><img src="thumbnail.png" alt="GitHub Documentation example: thumbnail" /></p>
+<p>如果，您还没有听说或者使用过 Jenkins CLI，欢迎阅读我们的官方文档，以及下面的 v0.0.23 版本更新内容。</p>
 
-<h2 id="为什么">为什么？</h2>
+<p>Jenkins 国内镜像中心发布后，收到了很多的反馈。鉴于之前的操作步骤相对较多，本次 Jenkins CLI 给出了一键启动国内镜像源的方案：
+只要执行命令：<code>jcli center mirror</code> 即可启动镜像源。如果希望使用原有的地址，也非常简单：<code>jcli center mirror --enable=false</code></p>
 
-<p>通过使用插件的 GitHub 仓库存储文档，
-插件维护者可以遵循 <em>文档即代码</em> 的方法，将文档更改作为 pull request 的一部分，这样就不会忘记文档的后续工作。
-它还提供了一个 review 文档更改以及增加文档贡献者的认可度的机会，尤其是如果 story 与 <a href="https://github.com/jenkinsci/.github/blob/master/.github/release-drafter.adoc">Release Drafter</a> 结合。</p>
+<p>更多有意思的玩法，请参考 <a href="https://discourse.jenkins-zh.cn/c/7-category/25-category">Jenkins 中文社区论坛</a>。</p>
 
-<p>不幸的是，在2019年9月之前，GitHub 文档的使用引起了一些问题。
-首先，许多插件维护者已经将他们的文档迁移到 GitHub，这导致了文档的碎片化（Wiki、GitHub、jenkins.io）。
-为了解决这个问题，插件维护者仍然需要使用重定向来维护存根 Wiki 页面，
-用户不得不花一些时间来找出真正的文档在哪里。
-通过支持 GitHub 作为文档来源，我们允许维护者逐步淘汰插件 Wiki 页面，同时改善用户体验。</p>
-
-<p>现在进行迁移还有更紧迫的原因……
-如果你订阅了<a href="https://groups.google.com/d/forum/jenkinsci-dev">开发者邮件列表</a>，
-你可能还看到了 <a href="https://github.com/rtyler">R. Tyler Croy</a> 关于 Jenkins Wiki 稳定性问题的声明，
-并将其设置为只读，作为稳定实例的临时措施<a href="https://groups.google.com/forum/#!topic/jenkinsci-dev/lNmas8aBRrI">邮件列表主题</a>。
-虽然功能后来部分恢复了，
-基础架构团队一致认为，我们应该逐渐转向替代解决方案。</p>
-
-<h2 id="例子">例子</h2>
-
-<p>自从9月份宣布以来，超过50个插件已经从 Wiki 迁移到 GitHub。
-几个例子：</p>
+<h2 id="功能">🚀 功能</h2>
 
 <ul>
-<li><a href="https://plugins.jenkins.io/configuration-as-code">配置即代码插件</a></li>
-<li><a href="https://plugins.jenkins.io/mailer">Mailer 插件</a></li>
-<li><a href="https://plugins.jenkins.io/gradle">Gradle 插件</a></li>
-<li><a href="https://plugins.jenkins.io/role-strategy">角色策略插件</a></li>
+<li>支持创建插件 (#255) @LinuxSuRen</li>
+<li>支持子 shell 命令 (#253) @LinuxSuRen</li>
+<li>支持启用（或禁用）更新中心镜像源 (#251) @LinuxSuRen</li>
+<li>增加以键值对的形式触发参数化流水线 (#249) @LinuxSuRen</li>
+<li>支持停止最近一次的构建任务 (#248) @LinuxSuRen</li>
+<li>支持命令多语言的描述 (#245) @LinuxSuRen</li>
+<li>支持选择以及移除 Jenkins 连接配置项 (#246) @LinuxSuRen</li>
+<li>支持命令行自动补全 (#242) @LinuxSuRen</li>
+<li>支持下载特定版本的 Jenkins war (#240) @LinuxSuRen</li>
+<li>支持配置诊断 (#169) @yJunS</li>
+<li>支持从镜像中心下载插件 (#222) @LinuxSuRen</li>
+<li>支持从镜像中心下载 Jenkins war (#221) @LinuxSuRen</li>
+<li>支持从本地或者 URL 中加载 Jenkinsfile (#220) @LinuxSuRen</li>
+<li>支持多种方式编辑流水线 (#206) @LinuxSuRen</li>
+<li>支持安装指定版本的插件 (#211) @sbcd90</li>
 </ul>
 
-<p><img src="role-strategy-screenshot.png" alt="Role Strategy example, role=center" /></p>
-
-<h2 id="如何为你的插件启用-github-文档">如何为你的插件启用 GitHub 文档？</h2>
+<h2 id="文档完善">📝 文档完善</h2>
 
 <ul>
-<li>将文档从 Wiki 转换到 GitHub Asciidoc 或 Markdown 格式，如果你还没有做。
-
-<ul>
-<li>它可以用半自动的方式完成，请看<a href="https://jenkins.io/doc/developer/publishing/wiki-page/#migrating-from-wiki-to-github">这里</a>的指南。</li>
-</ul></li>
-<li>更改 pom.xml 中的 <code>&lt;url&gt;</code> 字段，使其指向 GitHub(<a href="https://jenkins.io/doc/developer/publishing/documentation/#referencing-the-documentation-page-from-the-project-file">指南</a>)。
-有效链接的例子：
-
-<ul>
-<li><code>https://github.com/jenkinsci/mailer-plugin</code> - 插件站点将使用 GitHub REST API 来提取 README</li>
-<li><code>https://github.com/jenkinsci/ssh-credentials-plugin/blob/master/doc/README.md</code> - 从自定义位置提取插件页面</li>
-</ul></li>
-<li>可选：添加徽章到页面，以改善外观和感觉，并为用户提供快速链接。
-变更日志、聊天室、插件站点和安装量都有标准的徽章。
-
-<ul>
-<li><a href="https://raw.githubusercontent.com/jenkinsci/role-strategy-plugin/master/README.md">Markdown 例子</a></li>
-<li><a href="https://raw.githubusercontent.com/jenkinsci/mailer-plugin/master/README.adoc">Asciidoc 例子</a></li>
-</ul></li>
-<li>发布新的插件版本</li>
-<li>等待几个小时，直到更改传播。
-之后，<a href="https://plugins.jenkins.io">Jenkins 插件站点</a>将会展示来自 GitHub 的新文档。</li>
+<li>完善 README-zh.md (#241) @donhui</li>
 </ul>
 
-<h2 id="下一步">下一步？</h2>
-
-<p>这个 story 被跟踪为 <a href="https://issues.jenkins-ci.org/browse/WEBSITE-406">WEBSITE-406</a>，它是使用 GitHub 作为 Jenkins 插件站点和更新管理器（<a href="https://issues.jenkins-ci.org/browse/WEBSITE-637">WEBSITE-637</a>）数据源的更广泛子项目的一部分。
-后面的步骤包括支持显示来自 GitHub release 的变更日志，从 GitHub 中提取插件标签，显示插件 logo，
-以及使用 <a href="https://github.com/jenkins-infra/repository-permissions-updater">Repository Permission Updater</a> 作为维护者信息的来源。</p>
-
-<h2 id="如何贡献">如何贡献？</h2>
-
-<p>10月是一个贡献的好机会！
-插件文档是 <a href="https://jenkins.io/events/hacktoberfest">Hacktoberfest</a> 活动中的一个特色项目，
-我们欢迎所有对文档和代码库的贡献。</p>
-
-<h3 id="为文档做贡献">为文档做贡献</h3>
-
-<p>我们正在寻找有兴趣改进插件文档并帮助我们从 Wiki 迁移到 GitHub 的贡献者。
-对于几十个插件来说，文档已经在 GitHub 中，欢迎你针对任何仓库提交 pull request。</p>
-
-<p>迁移文档：</p>
+<h2 id="维护">👻 维护</h2>
 
 <ul>
-<li><a href="https://jenkins.io/doc/developer/publishing/wiki-page/#migrating-from-wiki-to-github">迁移插件文档从 Wiki 到 GitHub</a></li>
-<li><a href="https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc#moving-documentation-from-jenkins-wiki">迁移文档从 Jenkins Wiki 到 jenkins.io</a></li>
-<li><a href="https://issues.jenkins-ci.org/browse/JENKINS-59467">用于插件文档迁移的 issue 模板</a></li>
-<li>[新手友好的文档任务]()</li>
+<li>增加关于分支策略的检查清单 (#227) @LinuxSuRen</li>
+<li>升级 go.uber.org/zap 从 1.12.0 到 1.13.0 (#237) @dependabot-preview</li>
+<li>升级 gopkg.in/yaml.v2 从 2.2.4 到 2.2.5 (#225) @dependabot-preview</li>
+<li>升级 github.com/onsi/ginkgo 从 1.10.2 到 1.10.3 (#218) @dependabot-preview</li>
+<li>升级 github.com/onsi/gomega 从 1.7.0 到 1.7.1 (#217) @dependabot-preview</li>
 </ul>
 
-<p>如果你有任何关于贡献文档的问题，
-请查看<a href="https://jenkins.io/participate/#document">这个页面</a>或者在 <a href="https://gitter.im/jenkinsci/docs">Docs SIG Gitter 聊天室</a>联系我们。</p>
-
-<h3 id="贡献代码">贡献代码</h3>
-
-<p>您想用 Java 或 JavaScript 编写一些代码吗？
-或者你愿意致力于 CSS 样式并改进 Jenkins 的设计吗?
-在这种情况下，欢迎向 <a href="https://plugins.jenkins.io">Jenkins 插件站点</a>做贡献。
-这是我们自己的插件市场实现，我们邀请对这个领域的贡献。
-这个插件站点很容易开发。</p>
+<h2 id="测试">🚦 测试</h2>
 
 <ul>
-<li><a href="https://issues.jenkins-ci.org/browse/WEBSITE-637">WEBSITE-637</a> - 用于插件站点以及 GitHub 集成的 Epic</li>
-<li><a href="https://github.com/jenkins-infra/plugin-site">jenkins-infra/plugin-site</a> - 前端 （JavaScript、React、XSS、YARN）</li>
-<li><a href="https://github.com/jenkins-infra/plugin-site-api">jenkins-infra/plugin-site-api</a> - 插件站点 API 和 Docker 包（Java、Maven、Docker）</li>
-</ul>
-
-<h3 id="有用的链接">有用的链接</h3>
-
-<ul>
-<li><a href="https://jenkins.io/doc/developer/publishing/documentation/">插件文档</a></li>
-<li><a href="https://plugins.jenkins.io">Jenkins 插件站点</a></li>
+<li>增加流水线参数命令的单元测试 (#232) @LinuxSuRen</li>
+<li>增加插件检查的单元测试 (#224) @LinuxSuRen</li>
+<li>增加任务历史命令的单元测试 (#228) @LinuxSuRen</li>
 </ul>
 
 </div>
@@ -435,6 +354,15 @@ GitHub 作为 <a href="https://plugins.jenkins.io">Jenkins 插件站点</a>文�
 
           
 
+<h2>参考</h2>
+<ul>
+	
+	<li><a href="/wechat/articles/2019/11/2019-11-04-jcli-v0.0.22/">Jenkins CLI 命令行 v0.0.22</a></li>
+	
+	<li><a href="/wechat/articles/2019/10/2019-10-17-jcli-v0.0.21/">Jenkins CLI 命令行</a></li>
+	
+</ul>
+
         </div>
       </div>
       
@@ -445,67 +373,18 @@ GitHub 作为 <a href="https://plugins.jenkins.io">Jenkins 插件站点</a>文�
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 插件文档即代码：将文档迁移到 GitHub”
-  </a> 更新于：November 22, 2019
+    “Jenkins CLI 命令行 v0.0.23”
+  </a> 更新于：November 28, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
       
-
-  
-  
-  
-
-  <div class="nested-lh-copy">
-    <ul class="list dib nested-links ml0 pl0">
-      
-        <li class="db mb2 b">
-          Tags:
-        </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/hacktoberfest">
-              hacktoberfest
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/developer">
-              developer
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/documentation">
-              documentation
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/wiki">
-              wiki
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/contributors">
-              contributors
-            </a>
-          </li>
-        
-              
-      
-        
-        
-      
-    </ul>
-  </div>
 
 
     </div>
@@ -528,7 +407,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/11\/2019-11-22-plugin-docs-on-github\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/11\/2019-11-28-jcli-v0.0.23\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
