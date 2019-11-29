@@ -345,6 +345,15 @@
     </item>
     
     <item>
+      <title>Git Secrets</title>
+      <link>https://jenkins-zh.github.io/tags/git-secrets/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/git-secrets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gitlab</title>
       <link>https://jenkins-zh.github.io/tags/gitlab/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
@@ -449,6 +458,15 @@
       <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkins-x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins 流水线</title>
+      <link>https://jenkins-zh.github.io/tags/jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</guid>
       <description></description>
     </item>
     

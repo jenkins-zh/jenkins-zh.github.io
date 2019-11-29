@@ -37,6 +37,19 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins CI/CD 集成 Git Secrets</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-29-jenkins-cicd-with-git-secrets/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-29-jenkins-cicd-with-git-secrets/</guid>
+      <description>通常，对我们在代码中使用的机密或凭据进行加密，然后将其保存在安全的地方。我们可以有很多选择来实现这一目标，例如使用 Vault 和 Git-crypt 等工具来。git-secret 是一个简单的工具，我们可以使用它在 Git 仓库中存储密钥。Git-secret 使用 gpg 加密和解密密钥。
+git-secret 的工作方式如下。进入仓库中要加密文件的文件夹，然后，运行 git init &amp;amp;&amp;amp; git secret init。这将初始化 .gitsecret 文件夹，然后运行 git secret tell $email，如果您希望其他用户解密密钥文件，则必须导入其 gpg 公钥，然后再次运行 git secret tell $otheruseremailid。现在您可以运行 git secret add $secretfilename 和 git secret hide，这将创建名为 $secretfilename.secret 的加密的密钥文件。
+或许你会对在 Git 中存储加密的凭据感兴趣。
+现在，您可以提交 master 分支库了。git-secret 自动将 $secretfile 添加到 .gitignore，因此您只需提交 $secretfile.secret 文件。
+将 git-secret 集成到 Jenkins 中的主要挑战是 git-secret 使用 gpg 私钥和公钥。如果我们必须运行 git secret reveal，我们应该有一个 gpg 私钥。因此，我们如何在 Jenkins 上运行它，怎样使用一个从节点来拉取仓库并进行构建，如果您必须在从节点展示 git secret，则应该在从节点拥有 gpg 私钥。 我们如何在 Jenkins 流水线中实现这种加密和解密？</description>
+    </item>
+    
+    <item>
       <title>Jenkins CLI 命令行 v0.0.23</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/</link>
       <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
