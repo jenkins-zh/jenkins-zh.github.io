@@ -6,10 +6,21 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/meeting/2019-11-27/</link>
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/meeting/2019-11-27/</guid>
+      <description> 论坛
+ 邮箱没有配置好 更换域名（https://discourse.jenkins-zh.cn/t/topic/86/7）@yJunS 给管理更多的管理权限 把阿里云域名的权限给到管理员@linuxsuren 管理员招募 https://discourse.jenkins-zh.cn/t/topic/103  介绍 Jenkins 容器发行版
+ https://github.com/LinuxSuRen/docker-zh Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn    </description>
+    </item>
     
     <item>
       <title></title>

@@ -52,6 +52,19 @@
         "poster": "jenkins-cli.png"
     },
     {
+        "uri": "https://jenkins-zh.github.io/meeting/2019-11-27/",
+        "title": "",
+        "type": "meeting",
+        "date": "2019-11-27 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": " 论坛\n 邮箱没有配置好 更换域名（https://discourse.jenkins-zh.cn/t/topic/86/7）@yJunS 给管理更多的管理权限 把阿里云域名的权限给到管理员@linuxsuren 管理员招募 https://discourse.jenkins-zh.cn/t/topic/103  介绍 Jenkins 容器发行版\n https://github.com/LinuxSuRen/docker-zh Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3\u0026amp;plugin=localization-zh-cn    ",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/",
         "title": "Jenkins 插件文档即代码：将文档迁移到 GitHub",
         "type": "wechat",
@@ -1563,7 +1576,7 @@
         "uri": "https://jenkins-zh.github.io/meeting/",
         "title": "",
         "type": "meeting",
-        "date": "2019-11-13 00:00:00 +0000 UTC",
+        "date": "2019-11-27 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": " Jenkins 中文社区例会，每个双周周三（遇到法定节假日时延后）的 21:00 进行。准备参加的小伙伴，需要提前安装好 zoom 软件， 然后点击 https://zoom.us/j/691718976 即可进入会议。\n注意事项⚠️  要发言的小伙伴要提前找好一个相对比较安静的环境 不发言的时候，及时关闭麦克风🎤 例会是讨论社区的事情，而不是技术分享  如何接入？ 可以下载桌面客户端，或者移动客户端来接入会议。\n如果不想下载软件，或者由于某种原因无法访问国外网站的，可以点击此处打开国内的 Web 客户端， 直接在浏览器中参加会议。\n会议 ID 为：691718976\n",
