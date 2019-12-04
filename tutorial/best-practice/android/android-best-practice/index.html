@@ -603,7 +603,7 @@ git commit -m &ldquo;Add &lsquo;Test&rsquo; stage&rdquo;</p></li>
         }
         stage('Archive') {  
             steps {
-                archiveArtifacts artifacts: 'app/build/outputs/**/*.apk'， fingerprint: true 
+                archiveArtifacts artifacts: 'app/build/outputs/**/*.apk', fingerprint: true 
             }
         }
     }
