@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/</loc>
+    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-29-jenkins-cicd-with-git-secrets/</loc>
     <lastmod>2019-11-29T00:00:00+00:00</lastmod>
   </url>
@@ -754,6 +759,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/cloudbees/</loc>
+    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/community/</loc>
     <lastmod>2019-11-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -945,7 +956,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins/</loc>
-    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1233,7 +1244,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

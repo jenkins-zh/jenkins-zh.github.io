@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 中文社区技术交流微信群问题集之一 - Jenkins 中文社区</title>
+     <title>Jenkins 健康检查顾问 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="群里讨论过的问题（使用方法、缺陷）太多，无法全部包含在一篇文章中">
+    <meta name="description" content="CloudBees 推出了一项新的免费服务:Jenkins Health Advisor，帮助您保持 master 节点的健康">
     
     
-    <meta name="keywords" content="jenkins,wechat">
+    <meta name="keywords" content="jenkins,health,healthcheck,stability">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 中文社区技术交流微信群问题集之一" />
-<meta property="og:description" content="群里讨论过的问题（使用方法、缺陷）太多，无法全部包含在一篇文章中" />
+<meta property="og:title" content="Jenkins 健康检查顾问" />
+<meta property="og:description" content="CloudBees 推出了一项新的免费服务:Jenkins Health Advisor，帮助您保持 master 节点的健康" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-08-wechat-answer-1/" /><meta property="article:published_time" content="2019-07-08T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-07-08T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" /><meta property="article:published_time" content="2019-12-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-12-11T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 中文社区技术交流微信群问题集之一">
-<meta itemprop="description" content="群里讨论过的问题（使用方法、缺陷）太多，无法全部包含在一篇文章中">
-
-
-<meta itemprop="datePublished" content="2019-07-08T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-07-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="251">
+<meta itemprop="name" content="Jenkins 健康检查顾问">
+<meta itemprop="description" content="CloudBees 推出了一项新的免费服务:Jenkins Health Advisor，帮助您保持 master 节点的健康">
 
 
+<meta itemprop="datePublished" content="2019-12-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="81">
 
-<meta itemprop="keywords" content="pipeline," />
+
+
+<meta itemprop="keywords" content="Jenkins,CloudBees," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 中文社区技术交流微信群问题集之一"/>
-<meta name="twitter:description" content="群里讨论过的问题（使用方法、缺陷）太多，无法全部包含在一篇文章中"/>
+<meta name="twitter:title" content="Jenkins 健康检查顾问"/>
+<meta name="twitter:description" content="CloudBees 推出了一项新的免费服务:Jenkins Health Advisor，帮助您保持 master 节点的健康"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -196,22 +196,23 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            翟志军
+            wenjunzhangp
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          热衷开源，贡献开源
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/wenjunzhangp" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -219,59 +220,17 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
+  <div>
+    作者：<span class="originalAuthor">Arnaud Héritier</span>
+    <div>
+      <a class="originalLink" href="https://jenkins.io/blog/2019/11/22/jenkins-health-advisor-by-cloudbees/" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-同一流水线-如何做某个阶段定时执行代码扫描">1. 同一流水线，如何做某个阶段定时执行代码扫描</a>
-<ul>
-<li><a href="#回答一">回答一</a></li>
-<li><a href="#回答二">回答二</a></li>
-<li><a href="#回答三">回答三</a></li>
-</ul></li>
-<li><a href="#2-有人做过增量包构建么">2. 有人做过增量包构建么？</a>
-<ul>
-<li><a href="#回答一-1">回答一</a></li>
-<li><a href="#回答二-1">回答二</a></li>
-</ul></li>
-<li><a href="#3-post-里如何指定-agent">3. post 里如何指定 agent</a>
-<ul>
-<li><a href="#回答">回答</a></li>
-</ul></li>
-<li><a href="#4-windows-上-无法使用-curl">4. windows 上 无法使用 curl</a>
-<ul>
-<li><a href="#回答-1">回答</a></li>
-</ul></li>
-<li><a href="#4-怎么把-slave-的内容-copy-到-master-机器上">4. 怎么把 slave 的内容 copy 到 master 机器上？</a>
-<ul>
-<li><a href="#回答-2">回答</a></li>
-</ul></li>
-<li><a href="#5-httprequest-如何发-post-请求">5. httpRequest 如何发 POST 请求</a>
-<ul>
-<li><a href="#回答-3">回答</a></li>
-</ul></li>
-<li><a href="#6-我仓库特多-怎么设计流水线">6. 我仓库特多，怎么设计流水线</a>
-<ul>
-<li><a href="#回答-4">回答</a></li>
-</ul></li>
-<li><a href="#7-流水线中如何指定工作目录">7. 流水线中如何指定工作目录</a>
-<ul>
-<li><a href="#回答-5">回答</a></li>
-</ul></li>
-<li><a href="#8-如何在-pipeline-中使用第三方-jar-包">8. 如何在 pipeline 中使用第三方 jar 包</a>
-<ul>
-<li><a href="#回答-6">回答</a></li>
-</ul></li>
-<li><a href="#后记">后记</a></li>
-</ul></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -284,17 +243,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 长期支持版更新 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 插件的微基准测试框架">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-29-jenkins-cicd-with-git-secrets/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins CI/CD 集成 Git Secrets">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -314,13 +265,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 中文社区技术交流微信群问题集之一</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 健康检查顾问</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      群里讨论过的问题（使用方法、缺陷）太多，无法全部包含在一篇文章中
+      CloudBees 推出了一项新的免费服务:Jenkins Health Advisor，帮助您保持 master 节点的健康
     </div>
   
 
@@ -331,155 +282,45 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
+<p><img src="cover.png" alt="cover" /></p>
 
+<p>管理任何软件都面临着独特的挑战。Jenkins Masters 也不例外。例如，</p>
 
-<p><img src="wechat.png" alt="wechat" /></p>
+<ul>
+<li>您如何掌握 Jenkins 环境中发生的所有事情？您是否正在查看问题跟踪器中打开的每个新缺陷？</li>
+<li>您如何确保您的 master 或 agents 不会默默失效？您是否正在监控其日志？监控其所有内部组件？如果出现问题，您该如何解决？</li>
+<li>您如何避免出现 “Angry Jenkins” 图标？</li>
+</ul>
 
-<p><strong>申明</strong>：下文中的问题是群友发起的，回答则是由笔者收集整理的。</p>
+<p>这就是我们通过 CloudBees 创建 Jenkins Health Advisor 的原因。</p>
 
-<h2 id="1-同一流水线-如何做某个阶段定时执行代码扫描">1. 同一流水线，如何做某个阶段定时执行代码扫描</h2>
+<p>在 <a href="https://www.cloudbees.com/?utm_medium=blog&amp;utm_source=jenkins.io&amp;utm_campaign=cloudbees-jenkins-advisor-plugin">CloudBees</a>，我们拥有多年为<a href="https://www.cloudbees.com/products/cloudbees-jenkins-support/overview">使用 Jenkins 的客户提供支持</a>的经验，其中包括基于 Jenkins 构建的专有产品，例如 <a href="https://www.cloudbees.com/products/core/overview">CloudBees Core</a>。因此，我们的支持团队由拥有 Jenkins 知识的自动化专家组成，您在其他任何地方都无法获得。</p>
 
-<p>这个需求的意思是存在一条流水线，流水线中的阶段为：构建阶段 &ndash;&gt; 代码扫描阶段 &ndash;&gt; 发布测试环境阶段 &ndash;&gt; &hellip; 而提问者希望当有代码提交时，就执行整条流水线。当到某个时间点时，就只执行扫描阶段。</p>
+<p>当我们的工程师创建一个平台时，便会开始自动运行状况检查，以便他们可以编写规则来检测客户提供的 <a href="https://plugins.jenkins.io/support-core">support bundles</a> 中的已知问题，并将其重定向到所需的知识源以诊断和解决问题。</p>
 
-<h3 id="回答一">回答一</h3>
+<p>经过多年的内部使用，我们决定与社区共享此服务，我们很高兴为 <strong>每个 Jenkins 用户推出一项新的免费服务</strong>：<a href="https://www.cloudbees.com/jenkins/health-advisor-plugin">Jenkins Health Advisor by CloudBees</a>。</p>
 
-<p>当代码没有变化，我们为什么要重复执行扫描呢？</p>
+<p><a href="https://www.cloudbees.com/jenkins/health-advisor-plugin">Jenkins Health Advisor by CloudBees</a> 自动分析您的 Jenkins 环境，主动识别潜在问题，并通过详细的电子邮件报告为您提供解决方案和建议。</p>
 
-<h3 id="回答二">回答二</h3>
+<p><img src="logo.svg" alt="logo" /></p>
 
-<p>换成两个流水线，一个提交触发，一个定时触发</p>
+<p><a href="https://www.cloudbees.com/jenkins/health-advisor-plugin">Jenkins Health Advisor by CloudBees</a> 可以检测到各种问题，从简单的配置问题到安全性和最佳实践问题-Jenkins 实现的所有关键要素。入门过程分为 <a href="https://www.cloudbees.com/jenkins/health-advisor-plugin#download">3 个步骤</a>，您将在 24 小时内收到第一份报告。</p>
 
-<h3 id="回答三">回答三</h3>
+<p><img src="overview.png" alt="overview" /></p>
 
-<p>一条流水线加个开关设置是否跳过扫描。</p>
+<p>我们希望您会喜欢这项服务，它将帮助您保持 masters 的健康。</p>
 
-<h2 id="2-有人做过增量包构建么">2. 有人做过增量包构建么？</h2>
+<p>花几分钟时间阅读我们的<a href="https://docs.cloudbees.com/docs/admin-resources/latest/plugins/cloudbees-jenkins-advisor?utm_medium=blog&amp;utm_source=jenkins.io&amp;utm_campaign=cloudbees-jenkins-advisor-plugin">文档</a>，发现服务，并随时通过 Jenkins 社区渠道（<a href="https://gitter.im/jenkinsci/jenkins">Gitter</a>、<a href="https://groups.google.com/forum/#!forum/jenkinsci-users">jenkinsci-users@googlegroups.com</a>，…）与我们联系。</p>
 
-<blockquote>
-<p>有人做过增量包构建么？问下要用哪些插件，怎么做？
-经确认，提问人的需求是有一个代码仓库 x，然后 x 里有 a,b,c 三个模块，开发提交了 a 模块的代码，这时，只打包 a 模块的制品。</p>
-</blockquote>
+<p>也不要错过在 <a href="https://www.cloudbees.com/devops-world/lisbon">DevOps World|Jenkins World 2019</a>上与我们的支持团队会面的机会。</p>
 
-<h3 id="回答一-1">回答一</h3>
+<p>参考链接：</p>
 
-<p>要做的是在流水线里判断提交代码中修改了哪个模块，然后执行你的 ant 命令指定构建某个模块就好了。代码 demo 如下：</p>
-
-<pre><code class="language-groovy">pipeline{
-    agent any
-    stages{
-        stage('build a'){
-            when{
-                changeset &quot;a/**&quot;
-            }
-            steps{
-                echo &quot;build a&quot;
-            }
-        }
-        stage('build b'){
-            when{
-                changeset &quot;b/**&quot;
-            }
-            steps{
-                echo &quot;build b&quot;
-            }
-        }
-    }
-}
-</code></pre>
-
-<h3 id="回答二-1">回答二</h3>
-
-<p>增量包，四五年前我有过相关实践，构建工具也是 ant。记得当初是根据修改的文件路径，解析出 ant target 列表，然后根据事先声明好的依赖关系对它排序，然后执行 ant 构建命令，最后将生成的二进制包挑出来生成增量包，大致这么个思路。</p>
-
-<h2 id="3-post-里如何指定-agent">3. post 里如何指定 agent</h2>
-
-<blockquote>
-<p>请教一下，jenkinsfile中 post里面可以指定agent吗？</p>
-</blockquote>
-
-<h3 id="回答">回答</h3>
-
-<pre><code class="language-groovy">post {
- always {
-  node('master') {
-   cleanWs()
-   }
-   }
-}
-</code></pre>
-
-<p>笔者注：<code>node('&lt;node&gt;')</code> 中的 <code>&lt;node&gt;</code> 可以是 agent 节点名称，也可以是 agent 的标签。</p>
-
-<h2 id="4-windows-上-无法使用-curl">4. windows 上 无法使用 curl</h2>
-
-<blockquote>
-<p>有些步骤是跑在 Windows 节点上，在 Windows 上又希望能发 http 请求。</p>
-</blockquote>
-
-<h3 id="回答-1">回答</h3>
-
-<p>这时，应该使用 <a href="https://wiki.jenkins.io/display/JENKINS/HTTP+Request+Plugin">HTTPRequest</a> 插件，它是平台无关的。</p>
-
-<h2 id="4-怎么把-slave-的内容-copy-到-master-机器上">4. 怎么把 slave 的内容 copy 到 master 机器上？</h2>
-
-<blockquote>
-<p>因为比如我用有一个 windows 节点，然后我代码拉取后，需要进行一些测试，测试完成后生成数据和 HTML 报告，这部分测试全都在节点上完成，我想把测试完成后到数据发到 master 上，然后由 master 生成 html 报告</p>
-</blockquote>
-
-<h3 id="回答-2">回答</h3>
-
-<p>不确定，我是否理解正确。可以考虑这样做，把你现在的事情分成两个阶段，阶段一在 windows 上测试，然后将数据和 html 报告上传到某个地方，阶段二，将数据和报告下载回来，比如下载到 master 上。接着，想干嘛就干嘛了。</p>
-
-<h2 id="5-httprequest-如何发-post-请求">5. httpRequest 如何发 POST 请求</h2>
-
-<blockquote>
-<p>httprequest这个插件
-请求body这块一行一个参数？
-<img src="./httprequest.png" alt="httpRequest" /></p>
-</blockquote>
-
-<h3 id="回答-3">回答</h3>
-
-<pre><code class="language-groovy">httpRequest authentication: credentialName, contentType: 'APPLICATION_JSON_UTF8', httpMode: 'POST', requestBody: &quot;&quot;&quot;{&quot;reportJson&quot;: &quot;111&quot;,&quot;id&quot;: &quot;111&quot;,&quot;executeNum&quot;: 111}&quot;&quot;&quot;, responseHandle: 'LEAVE_OPEN', url: &quot;http://127.0.0.1/echo&quot;
-
-</code></pre>
-
-<h2 id="6-我仓库特多-怎么设计流水线">6. 我仓库特多，怎么设计流水线</h2>
-
-<blockquote>
-<p>我的仓库一共有4个 分别存放 代码 战斗脚本 资源 协议。4个代码仓库各有3个分支  名字都是对应的，比如1号仓库分支 master develop production.  2号仓库 也是这几个分支 以此类推  我拉取代码进行打包的时候 会拉取 4个仓库名字都叫 master 的分支 或者名字都叫 develop 的分支进行打包
-现在问题就出在 我拉取4分仓库都叫 master 的分支的时候 拉取完代码后 最后一个仓库的代码会把前个仓库的代码覆盖掉，后来有老哥给了建议  用 dir 分别存到 workspace 下的好几个目录
-现在遇到的问题是  我多分支流水线第一次启动时，会把1号仓库的代码直接拉到 workspace 下
-我的问题就是可以不可在多分支流水线第一次启动时，不要拉取代码</p>
-</blockquote>
-
-<h3 id="回答-4">回答</h3>
-
-<p>建立一条流水线，接受 gitlab 触发，然后根据触发请求中的数据，决定拉取哪个代码仓库。参考 <a href="https://wiki.jenkins.io/display/JENKINS/Generic+Webhook+Trigger+Plugin">Generic Webhook Trigger 插件</a>。</p>
-
-<h2 id="7-流水线中如何指定工作目录">7. 流水线中如何指定工作目录</h2>
-
-<blockquote>
-<p>pipeline 中怎么指定这个流水线的工作目录，我在开头定义 WORKSPACE 但是没用</p>
-</blockquote>
-
-<h3 id="回答-5">回答</h3>
-
-<p><img src="custom-workspace.png" alt="自定义工作空间" /></p>
-
-<h2 id="8-如何在-pipeline-中使用第三方-jar-包">8. 如何在 pipeline 中使用第三方 jar 包</h2>
-
-<blockquote>
-<p>请教下 pipeline 需要引用第三方 jar 包时，要放在哪里才能被 import 进来啊，我放到 classpath 下还是不行，总是提示找不到包。在本地执行 groovy，impor t进来没有问题</p>
-</blockquote>
-
-<h3 id="回答-6">回答</h3>
-
-<p>把 jar 包放到 tomcat 安装 jenkins 的目录下的 lib 里貌似能解决。</p>
-
-<h2 id="后记">后记</h2>
-
-<p>如果读者朋友在使用 Jenkins 过程中也遇到各种问题，可关注<strong>Jenkins</strong>微信公众号。后台回复“微信群”入群。群里会有热心朋友回复。</p>
+<ul>
+<li><a href="https://docs.cloudbees.com/docs/admin-resources/latest/plugins/cloudbees-jenkins-advisor?utm_medium=blog&amp;utm_source=jenkins.io&amp;utm_campaign=cloudbees-jenkins-advisor-plugin">插件文档</a></li>
+<li><a href="https://plugins.jenkins.io/cloudbees-jenkins-advisor">Jenkins 插件网站</a></li>
+<li><a href="https://www.cloudbees.com/products/cloudbees-jenkins-support/overview">CloudBees Jenkins 支持</a></li>
+</ul>
 
 </div>
 
@@ -505,13 +346,13 @@ var trackOutboundLink = function(id, url) {
 <h2>参考</h2>
 <ul>
 	
-	<li><a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/">Jenkins 健康检查顾问</a></li>
-	
 	<li><a href="/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/">Jenkins 可视化阶段视图的改进</a></li>
 	
 	<li><a href="/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/">让我们庆祝 Jenkins 对 Java 11的支持</a></li>
 	
 	<li><a href="/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/">持续交付落地实践工作坊</a></li>
+	
+	<li><a href="/wechat/articles/2019/07/2019-07-08-wechat-answer-1/">Jenkins 中文社区技术交流微信群问题集之一</a></li>
 	
 	<li><a href="/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/">还在苦恼不会写 Jenkins 流水线？来场工作坊！</a></li>
 	
@@ -527,14 +368,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-08-wechat-answer-1/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 中文社区技术交流微信群问题集之一”
-  </a> 更新于：July 8, 2019
+    “Jenkins 健康检查顾问”
+  </a> 更新于：December 11, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/07/2019-07-08-wechat-answer-1.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudBees-is-here.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -552,8 +393,14 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/pipeline">
-              pipeline
+            <a class="tag" href="/tags/jenkins">
+              Jenkins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/cloudbees">
+              CloudBees
             </a>
           </li>
         
@@ -561,26 +408,11 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/" class="link">
-              介绍新的 GitLab 分支源插件
-            </a>
-          </li>
-        
       
         
           <li class="db b mt4 mb2 mr2">
             Related entries:
           </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/" class="link">
-              Jenkins 可视化阶段视图的改进
-            </a>
-          </li>
-        
-      
         
         
           <li class="db dib-l mb2 mr3">
@@ -602,15 +434,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/" class="link">
-              在 Kubernetes 上使用 Jenkins 
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/" class="link">
               持续交付落地实践工作坊
             </a>
@@ -619,12 +442,9 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
-      
-        
-        
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/" class="link">
-              多分支流水线任务对 GitLab SCM 的支持
+            <a href="/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/" class="link">
+              Jenkins 每周版更新
             </a>
           </li>
         
@@ -632,8 +452,26 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" class="link">
-              介绍 Jenkins 模板引擎
+            <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
+              Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/" class="link">
+              30分钟搞定 Jenkins CI
             </a>
           </li>
         
@@ -650,8 +488,170 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/" class="link">
-              应该使用什么 CI/CD 工具？
+            <a href="/wechat/articles/2019/05/2019-05-29-jenkins-release/" class="link">
+              Jenkins 2.176~2.178版本更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/" class="link">
+              如何对 Jenkins 共享库进行单元测试
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/" class="link">
+              基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="link">
+              使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link">
+              从 Jenkins 到 Jenkins X
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/" class="link">
+              19年 GSoC 中 Jenkins 的七个项目
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" class="link">
+              基于 Jenkins 的 DevOps 平台应该如何设计凭证管理
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/" class="link">
+              Jenkins 公众号送书福利
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-09-jenkins-release/" class="link">
+              Jenkins 版本发布
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="link">
+              Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="link">
+              Jenkins 自动化安装插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="link">
+              Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" class="link">
+              使用 Jenkins X 渐进式交付：自动化金丝雀部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/" class="link">
+              使用 Jenkins X 渐进式交付
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" class="link">
+              使用 Jenkins &#43; Ansible 实现自动化部署 Nginx
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" class="link">
+              关于 Jenkins master 共享 JENKINS_HOME 目录的实验
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="link">
+              持续交付的商业价值
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="link">
+              使用 Zabbix 监控 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="link">
+              简析 Jenkins 专有用户数据库加密算法
             </a>
           </li>
         
@@ -668,8 +668,26 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
+              介绍：成为一名 Jenkins 贡献者的旅程
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
               Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-ready-for-cdf/" class="link">
+              为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
           </li>
         
@@ -686,8 +704,26 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/" class="link">
-              使用 YAML 文件配置 Jenkins 流水线
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link">
+              在安全防火墙内通过 WebHook 触发构建
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link">
+              成为一名 Jenkins 贡献者：对新手友好的工单
             </a>
           </li>
         
@@ -716,7 +752,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/07\/2019-07-08-wechat-answer-1\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/12\/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
