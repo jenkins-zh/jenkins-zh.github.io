@@ -1794,6 +1794,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.github.io/tutorial/best-practice/android/",
+        "title": "Android 应用构建",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "本教程将展示 Jenkins 如何使用 Jenkins 和 Gradle 构建一个简单的 Android 应用程序。并涵盖打包，测试，交付的过程。\n",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.github.io/tags/ansible/",
         "title": "Ansible",
         "type": "tags",
@@ -3621,19 +3634,6 @@
         "tags": [],
         "description": "",
         "content": "待完善\n",
-        "auhtor": "",
-        "translator": "",
-        "original": "",
-        "poster": ""
-    },
-    {
-        "uri": "https://jenkins-zh.github.io/tutorial/best-practice/android/",
-        "title": "构建 Android 应用最佳实践",
-        "type": "tutorial",
-        "date": "0001-01-01 00:00:00 +0000 UTC",
-        "tags": [],
-        "description": "",
-        "content": "本教程将展示 Jenkins 如何使用 Jenkins 和 Gradle 构建一个简单的 Android 应用程序。并涵盖打包，测试，交付的过程。\n",
         "auhtor": "",
         "translator": "",
         "original": "",

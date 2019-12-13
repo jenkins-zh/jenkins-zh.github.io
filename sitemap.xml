@@ -672,6 +672,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tutorial/best-practice/android/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/ansible/</loc>
     <lastmod>2019-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1439,10 +1443,6 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tutorial/scm/svn/svn/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.github.io/tutorial/best-practice/android/</loc>
   </url>
   
   <url>
