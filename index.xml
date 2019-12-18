@@ -37,6 +37,18 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/meeting/2019-12-11/</link>
+      <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/meeting/2019-12-11/</guid>
+      <description> 论坛
+ 邮箱没有配置好 更换域名（ok）@yJunS  还有一些链接没有更换，不紧急  给管理更多的管理权限  依赖邮箱的配置  把阿里云域名的权限给到管理员 (ok) @linuxsuren 管理员招募 https://discourse.jenkins-zh.cn/t/topic/103 把论坛的版本调整为正式版 @yJunS  介绍 Jenkins 容器发行版
+ https://github.com/LinuxSuRen/docker-zh (ok) Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn   及时把公共信息放在很明显的位置，还是有人不去仔细看
+  </description>
+    </item>
+    
+    <item>
       <title>Jenkins 健康检查顾问</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/</link>
       <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
