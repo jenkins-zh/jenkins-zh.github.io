@@ -46,7 +46,7 @@
 
 
 
-<meta itemprop="wordCount" content="84">
+<meta itemprop="wordCount" content="119">
 
 
 
@@ -269,6 +269,26 @@ var trackOutboundLink = function(id, url) {
 <li>相同字段：报错</li>
 </ul>
 
+<h2 id="cli">CLI</h2>
+
+<p>除了可以在 UI 界面上操作 CasC 的相关功能，CLI 也有对应的支持。</p>
+
+<pre><code>$ jcli casc
+Configuration as Code
+
+Usage:
+  jcli casc [command]
+
+Available Commands:
+  apply       从应用已有的配置
+  export      导出配置及代码的配置
+  open        在浏览器中打开配置及代码的页面
+  reload      重新加载配置及代码的配置
+  schema      获取配置及代码的结构
+</code></pre>
+
+<p><strong>注意</strong>：该功能从 <code>jcli v0.0.24</code> 开始支持。详情，请参考对应的 PR <a href="https://github.com/jenkins-zh/jenkins-cli/pull/265">链接</a>。</p>
+
 <h2 id="restful-api">Restful API</h2>
 
 <p>导出配置 <code>curl -X POST -u admin:112e74ac1ded9b9af4854e594405819df9  http://localhost:8080/configuration-as-code/export</code></p>
@@ -294,6 +314,7 @@ var trackOutboundLink = function(id, url) {
 <li><a href="#配置文件加载流程">配置文件加载流程</a></li>
 <li><a href="#资源加载协议">资源加载协议</a></li>
 <li><a href="#多配置文件">多配置文件</a></li>
+<li><a href="#cli">CLI</a></li>
 <li><a href="#restful-api">Restful API</a></li>
 </ul></li>
 </ul>
