@@ -266,7 +266,7 @@
     <item>
       <title>Docker</title>
       <link>https://jenkins-zh.github.io/tags/docker/</link>
-      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/docker/</guid>
       <description></description>
@@ -435,6 +435,15 @@
     </item>
     
     <item>
+      <title>Java</title>
+      <link>https://jenkins-zh.github.io/tags/java/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Java11</title>
       <link>https://jenkins-zh.github.io/tags/java11/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
@@ -446,7 +455,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.github.io/tags/jenkins/</link>
-      <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/jenkins/</guid>
       <description></description>
@@ -653,7 +662,7 @@
     <item>
       <title>Pipeline</title>
       <link>https://jenkins-zh.github.io/tags/pipeline/</link>
-      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.github.io/tags/pipeline/</guid>
       <description></description>

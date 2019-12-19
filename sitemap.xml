@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/meeting/2019-12-11/</loc>
     <lastmod>2019-12-11T00:00:00+00:00</lastmod>
   </url>
@@ -847,7 +852,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/docker/</loc>
-    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -958,6 +963,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/java/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/java11/</loc>
     <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -965,7 +976,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins/</loc>
-    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1123,7 +1134,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/pipeline/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1253,7 +1264,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
