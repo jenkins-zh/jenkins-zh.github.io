@@ -44,7 +44,7 @@
 
 <meta itemprop="datePublished" content="2019-12-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-12-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1031">
+<meta itemprop="wordCount" content="1039">
 
 
 
@@ -323,11 +323,17 @@ jenkins-complete/
 └── trigger-job.sh
 </code></pre>
 
-<p>我们来看看它们都是干嘛的：
-- <strong>default-user.groovy</strong> - 这个文件用来创建默认用户 admin/admin。
-- <strong>executors.groovy</strong> - 这个 Groovy 脚本设置 Jenkins 的执行器数量为 5。一个 Jenkins 执行器相当于一个处理进程，Jenkins job 就是通过它运行在对应的 slave/agent 机器上。
-- <strong>create-credential.groovy</strong> - 用来创建 Jenkins 全局凭据的 Groovy 脚本。这个文件可以创建任意的 Jenkins 全局凭据，包括 Docker hub 凭据。我们要修改文件里 Docker hub 的用户名密码，改成我们自己的。这个文件会被复制到镜像里，然后在 Jenkins 启动时运行。
-- <strong>credentials.xml</strong> - XML 凭据文件。这个文件包含了 Github 和 Docker 凭据的。它看起来是这样的：</p>
+<p>我们来看看它们都是干嘛的：</p>
+
+<ul>
+<li><p><strong>default-user.groovy</strong> - 这个文件用来创建默认用户 admin/admin。</p></li>
+
+<li><p><strong>executors.groovy</strong> - 这个 Groovy 脚本设置 Jenkins 的执行器数量为 5。一个 Jenkins 执行器相当于一个处理进程，Jenkins job 就是通过它运行在对应的 slave/agent 机器上。</p></li>
+
+<li><p><strong>create-credential.groovy</strong> - 用来创建 Jenkins 全局凭据的 Groovy 脚本。这个文件可以创建任意的 Jenkins 全局凭据，包括 Docker hub 凭据。我们要修改文件里 Docker hub 的用户名密码，改成我们自己的。这个文件会被复制到镜像里，然后在 Jenkins 启动时运行。</p></li>
+
+<li><p><strong>credentials.xml</strong> - XML 凭据文件。这个文件包含了 Github 和 Docker 凭据。它看起来是这样的：</p></li>
+</ul>
 
 <pre><code class="language-xml">&lt;com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl&gt;
   &lt;scope&gt;GLOBAL&lt;/scope&gt;
@@ -385,84 +391,70 @@ println(secret.getEncryptedValue())
 <li><p><strong>Install-plugins.sh</strong> - 这是我们用来安装所有所需插件的脚本。我们会把这个脚本复制到 Jenkins 镜像，并把插件名作为它的参数。
 容器启动好以后，这个脚本就会根据插件名对应的插件。</p></li>
 
-<li><p><strong>Dockerfile</strong> - 这是自动化过程中最重要的文件。我们会用这个 Docker 文件来创建完整的 Jenkins 服务和所有配置。理解这个文件对于编写你自己的自动化构建是很重要的。
-```dockerfile
-FROM jenkins/jenkins:lts
-ARG HOST_DOCKER_GROUP_ID</p>
-
-<h1 id="使用内置的-install-plugins-sh-脚本安装我们所需的插件">使用内置的 install-plugins.sh 脚本安装我们所需的插件</h1>
-
-<p>RUN install-plugins.sh pipeline-graph-analysis:1.9 <br />
-cloudbees-folder:6.7 <br />
-docker-commons:1.14 <br />
-jdk-tool:1.2 <br />
-script-security:1.56 <br />
-pipeline-rest-api:2.10 <br />
-command-launcher:1.3 <br />
-docker-workflow:1.18 <br />
-docker-plugin:1.1.6</p>
-
-<h1 id="设置-admin-用户的环境变量">设置 admin 用户的环境变量</h1>
-
-<p>ENV JENKINS_USER admin
-ENV JENKINS_PASS admin</p>
-
-<h1 id="跳过初始设置向导">跳过初始设置向导</h1>
-
-<p>ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false</p>
-
-<h1 id="启动脚本-设置执行器的数量-创建-admin-用户">启动脚本，设置执行器的数量、创建 admin 用户</h1>
-
-<p>COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/
-COPY default-user.groovy /usr/share/jenkins/ref/init.groovy.d/
-COPY create-credential.groovy /usr/share/jenkins/ref/init.groovy.d/</p>
-
-<h1 id="命名-job">命名 job</h1>
-
-<p>ARG job_name_1=&ldquo;sample-maven-job&rdquo;
-RUN mkdir -p &ldquo;$JENKINS_HOME&rdquo;/jobs/${job_name_1}/latest/<br />
-RUN mkdir -p &ldquo;$JENKINS_HOME&rdquo;/jobs/${job_name_1}/builds/1/
-COPY ${job_name_1}_config.xml /usr/share/jenkins/ref/jobs/${job_name_1}/config.xml
-COPY credentials.xml /usr/share/jenkins/ref/
-COPY trigger-job.sh /usr/share/jenkins/ref/</p>
-
-<h1 id="添加自定义配置到容器里">添加自定义配置到容器里</h1>
-
-<p>#COPY ${job_name_1}_config.xml &ldquo;$JENKINS_HOME&rdquo;/jobs/${job_name_1}/config.xml<br />
-USER root
-#RUN chown -R jenkins:jenkins &ldquo;$JENKINS_HOME&rdquo;/
-RUN chmod -R 777 /usr/share/jenkins/ref/trigger-job.sh</p>
-
-<h1 id="用给定的用户组-id-创建-docker-用户组">用给定的用户组 ID 创建 &lsquo;Docker&rsquo; 用户组</h1>
-
-<h1 id="将-jenkins-用户加到-docker-用户组">将 &lsquo;jenkins&rsquo; 用户加到 &lsquo;Docker&rsquo; 用户组</h1>
-
-<p>RUN groupadd docker -g ${HOST_DOCKER_GROUP_ID} &amp;&amp; <br />
-usermod -a -G docker jenkins</p></li>
+<li><p><strong>Dockerfile</strong> - 这是自动化过程中最重要的文件。我们会用这个 Docker 文件来创建完整的 Jenkins 服务和所有配置。理解这个文件对于编写你自己的自动化构建是很重要的。</p></li>
 </ul>
 
-<p>RUN apt-get update &amp;&amp; apt-get install -y tree nano curl sudo
-RUN curl <a href="https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz">https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz</a> | tar xvz -C /tmp/ &amp;&amp; mv /tmp/docker/docker /usr/bin/docker
-RUN curl -L &ldquo;<a href="https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname">https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname</a> -s)-$(uname -m)&rdquo; -o /usr/local/bin/docker-compose
+<pre><code class="language-dockerfile">FROM jenkins/jenkins:lts
+ARG HOST_DOCKER_GROUP_ID
+# 使用内置的 install-plugins.sh 脚本安装我们所需的插件
+RUN install-plugins.sh pipeline-graph-analysis:1.9 \
+   cloudbees-folder:6.7 \
+   docker-commons:1.14 \
+   jdk-tool:1.2 \
+   script-security:1.56 \
+   pipeline-rest-api:2.10 \
+   command-launcher:1.3 \
+   docker-workflow:1.18 \
+   docker-plugin:1.1.6
+# 设置 admin 用户的环境变量
+ENV JENKINS_USER admin
+ENV JENKINS_PASS admin
+# 跳过初始设置向导
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+# 启动脚本，设置执行器的数量、创建 admin 用户
+COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/
+COPY default-user.groovy /usr/share/jenkins/ref/init.groovy.d/
+COPY create-credential.groovy /usr/share/jenkins/ref/init.groovy.d/
+# 命名 job
+ARG job_name_1=&quot;sample-maven-job&quot;
+RUN mkdir -p &quot;$JENKINS_HOME&quot;/jobs/${job_name_1}/latest/  
+RUN mkdir -p &quot;$JENKINS_HOME&quot;/jobs/${job_name_1}/builds/1/
+COPY ${job_name_1}_config.xml /usr/share/jenkins/ref/jobs/${job_name_1}/config.xml
+COPY credentials.xml /usr/share/jenkins/ref/
+COPY trigger-job.sh /usr/share/jenkins/ref/
+# 添加自定义配置到容器里
+#COPY ${job_name_1}_config.xml &quot;$JENKINS_HOME&quot;/jobs/${job_name_1}/config.xml  
+USER root
+#RUN chown -R jenkins:jenkins &quot;$JENKINS_HOME&quot;/
+RUN chmod -R 777 /usr/share/jenkins/ref/trigger-job.sh
+# 用给定的用户组 ID 创建 'Docker' 用户组
+# 将 'jenkins' 用户加到 'Docker' 用户组
+RUN groupadd docker -g ${HOST_DOCKER_GROUP_ID} &amp;&amp; \
+   usermod -a -G docker jenkins
+
+RUN apt-get update &amp;&amp; apt-get install -y tree nano curl sudo
+RUN curl https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz | tar xvz -C /tmp/ &amp;&amp; mv /tmp/docker/docker /usr/bin/docker
+RUN curl -L &quot;https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
 RUN chmod 755 /usr/local/bin/docker-compose
 RUN usermod -a -G sudo jenkins
-RUN echo &ldquo;jenkins ALL=(ALL:ALL) NOPASSWD:ALL&rdquo; &gt;&gt; /etc/sudoers
+RUN echo &quot;jenkins ALL=(ALL:ALL) NOPASSWD:ALL&quot; &gt;&gt; /etc/sudoers
 RUN newgrp docker
 USER jenkins
-#ENTRYPOINT [&ldquo;/bin/sh -c /var/jenkins_home/trigger-job.sh&rdquo;]</p>
+#ENTRYPOINT [&quot;/bin/sh -c /var/jenkins_home/trigger-job.sh&quot;]
+</code></pre>
 
-<pre><code>
-- **FROM jenkins/jenkins:lts** - 我们将使用 Jenkins 官方提供的镜像。
-- **ARG HOST_DOCKER_GROUP_ID** - 需要记住的重点出现了，虽然我们在 Jenkins 容器里创建了 Docker 容器，但我们没有在 Jenkins 自身内部创建容器。
-相反，我们是在它们自己的宿主机上创建了容器。确切的说，是我们让安装在 Jenkins 容器里的 Docker tool 部署一个 Maven 容器到宿主机上。为了实现这个部署，我们需要 Jenkins 容器和宿主机设置一样的用户组。
+<ul>
+<li><strong>FROM jenkins/jenkins:lts</strong> - 我们将使用 Jenkins 官方提供的镜像。</li>
+<li><strong>ARG HOST_DOCKER_GROUP_ID</strong> - 需要记住的重点出现了，虽然我们在 Jenkins 容器里创建了 Docker 容器，但我们没有在 Jenkins 自身内部创建容器。
+相反，我们是在它们自己的宿主机上创建了容器。确切的说，是我们让安装在 Jenkins 容器里的 Docker tool 部署一个 Maven 容器到宿主机上。为了实现这个部署，我们需要 Jenkins 容器和宿主机设置一样的用户组。</li>
+</ul>
 
-为了允许 Jenkins 这样的未授权用户访问，我们要把 Jenkins 用户加到 Docker 用户组里去。要做到这件事，我们只需要保证容器里的 Docker 
-用户组与宿主机上的 Docker 有一致的 GID 即可。用户组 id 可以通过命令 `getent group Docker` 获得。
+<p>为了允许 Jenkins 这样的未授权用户访问，我们要把 Jenkins 用户加到 Docker 用户组里去。要做到这件事，我们只需要保证容器里的 Docker
+用户组与宿主机上的 Docker 有一致的 GID 即可。用户组 id 可以通过命令 <code>getent group Docker</code> 获得。</p>
 
-`HOST_DOCKER_GROUP_ID` 被设为了构建参数，我们要在构建时将宿主机的 Docker 用户组 id 做为参数传进来参与构建。
+<p><code>HOST_DOCKER_GROUP_ID</code> 被设为了构建参数，我们要在构建时将宿主机的 Docker 用户组 id 做为参数传进来参与构建。</p>
 
-```dockerfile
-# 使用内置的 install-plugins.sh 脚本安装我们所需的插件
+<pre><code class="language-dockerfile"># 使用内置的 install-plugins.sh 脚本安装我们所需的插件
 RUN install-plugins.sh pipeline-graph-analysis:1.9 \
    cloudbees-folder:6.7 \
    docker-commons:1.14 \
@@ -630,15 +622,15 @@ USER jenkins
 <p>当构建结束后，新的镜像会被上传到 Dockerhub，本地的镜像则会被删除。</p>
 
 <ul>
-<li><strong>Dockerfile</strong> - 这个仓库包含的 Dockerfile 用来创建 jar 包的镜像。它会拷贝我的 <code>my-app-1.0-SNAPSHOT.jar</code> 到镜像中去。它的内容是这样：
-<code>dockerfile
-FROM alpine:3.2
+<li><strong>Dockerfile</strong> - 这个仓库包含的 Dockerfile 用来创建 jar 包的镜像。它会拷贝我的 <code>my-app-1.0-SNAPSHOT.jar</code> 到镜像中去。它的内容是这样：</li>
+</ul>
+
+<pre><code class="language-dockerfile">FROM alpine:3.2
 RUN apk --update add openjdk7-jre
 CMD [&quot;/usr/bin/java&quot;, &quot;-version&quot;]
 COPY /target/my-app-1.0-SNAPSHOT.jar   /
 CMD /usr/bin/java -jar /my-app-1.0-SNAPSHOT.jar
-</code></li>
-</ul>
+</code></pre>
 
 </div>
 
