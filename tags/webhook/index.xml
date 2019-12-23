@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webhook on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.github.io/tags/webhook/</link>
+    <description>Recent content in Webhook on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 23 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.github.io/tags/webhook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Webhook 通用触发插件</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/</link>
+      <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/</guid>
+      <description>这篇文章将介绍我在 Jenkins 上遇到的一些常见问题，以及如何通过开发通用 Webhook 触发插件来解决这些问题。
+问题 在使用 Jenkins 工作时，我经常遇到同样的问题：
+ 代码重复和安全性-每个仓库中的 Jenkinsfiles。 分支不是功能-master 上的参数化任务通常会混合与不同功能相关的参数。 记录不良的触发器插件-记录正常服务但记录不佳的使用插件  代码重复和安全性 每个 Git 仓库中都有 Jenkinsfiles，使开发人员可以使这些文件分开。开发人员 push 他们的项目，并且很难维护共享代码的模式。
+我几乎用共享库解决了代码重复问题，但是它不允许我设置必须遵循的严格模式。任何开发人员仍然可以决定不调用共享库提供的功能。
+还允许开发人员运行 Jenkinsfiles 中的任何代码的安全性方面。例如，开发人员可能会打印从凭据收集的密码。让开发人员在 Jenkins 节点上执行任何代码对我来说似乎不合适。
+分支不是功能 在 Bitbucket 中有项目，每个项目都有 git 仓库的集合。像这样：
+ PROJ_1  REPO_1 REPO_2  PROJ_2  REPO_3   让我们考虑一下我们要为这些仓库提供的一些功能：
+ pull request 验证 构建快照（如果需要的话，也可以预发布） 构建发布  如果开发人员习惯于在 Bitbucket 中像这样组织仓库，我们是否应该在 Jenkins 中以同样的方式组织它们？而且，如果他们浏览 Jenkins，是否不应该为每种功能（例如 pull-request，snapshot 和 release）找到一份构建任务？每个具有仅与该功能相关的参数的任务。我认同！像这样：
+ / - Jenkins root  /PROJ_1 - 一个文件夹，列出 git 仓库。  /PROJ_1/REPO_1 - 一个文件夹，列出与该仓库相关的任务。 /PROJ_1/REPO_1/release - 一份构建任务，执行发布。 /PROJ_1/REPO_1/snapshot - 一份构建任务，执行快照发布。 /PROJ_1/REPO_1/pull-request - 一份构建任务，验证 pull-request。   …​  在此示例中，snapshot 和 release 任务都可以在同一 git 分支上工作。不同之处在于它们提供的功能。它们的参数可以很好地记录下来，因为您不必混合与发行版和快照相关的参数。使用多分支流水线插件无法做到这一点，在多分支流水线插件中，您将参数指定为每个分支的 properties。</description>
+    </item>
+    
+  </channel>
+</rss>
