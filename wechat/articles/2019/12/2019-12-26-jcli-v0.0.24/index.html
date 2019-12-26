@@ -9,11 +9,11 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins CLI 命令行 v0.0.23 - Jenkins 中文社区</title>
+     <title>Jenkins CLI 命令行 v0.0.24 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="jcli-v0.0.23 发布">
+    <meta name="description" content="jcli-v0.0.24 发布">
     
     
     <meta name="keywords" content="jcli 版本发布">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins CLI 命令行 v0.0.23" />
-<meta property="og:description" content="jcli-v0.0.23 发布" />
+<meta property="og:title" content="Jenkins CLI 命令行 v0.0.24" />
+<meta property="og:description" content="jcli-v0.0.24 发布" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/" /><meta property="article:published_time" content="2019-11-28T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-11-28T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/" /><meta property="article:published_time" content="2019-12-26T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-12-26T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins CLI 命令行 v0.0.23">
-<meta itemprop="description" content="jcli-v0.0.23 发布">
+<meta itemprop="name" content="Jenkins CLI 命令行 v0.0.24">
+<meta itemprop="description" content="jcli-v0.0.24 发布">
 
 
-<meta itemprop="datePublished" content="2019-11-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-11-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="141">
+<meta itemprop="datePublished" content="2019-12-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="189">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins CLI 命令行 v0.0.23"/>
-<meta name="twitter:description" content="jcli-v0.0.23 发布"/>
+<meta name="twitter:title" content="Jenkins CLI 命令行 v0.0.24"/>
+<meta name="twitter:description" content="jcli-v0.0.24 发布"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -234,17 +234,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-29-jenkins-cicd-with-git-secrets/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins CI/CD 集成 Git Secrets ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 插件文档即代码：将文档迁移到 GitHub">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Webhook 通用触发插件">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -264,13 +256,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins CLI 命令行 v0.0.23</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins CLI 命令行 v0.0.24</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      jcli-v0.0.23 发布
+      jcli-v0.0.24 发布
     </div>
   
 
@@ -285,60 +277,72 @@ var trackOutboundLink = function(id, url) {
 
 <p><img src="jenkins-cli.png" alt="jenkins-cli" /></p>
 
-<p>Jenkins CLI 在参加 2019 年谁是最受欢迎的中国开源软件投票，如果您已经是 Jenkins CLI 的用户，请点击下面的链接帮忙投上一票。</p>
+<p>本次发布，主要增加了 jcli 对凭据、计算节点的管理能力，以及通过 jcli 启动 jenkins.war。
+对于部分子命令，还可以通过参数 <code>--doctor</code> 来实现错误诊断。</p>
 
-<p><img src="vote-invitation.jpg" alt="vote-invitation" />
-<a href="https://www.oschina.net/project/top_cn_2019#jenkins-cli">https://www.oschina.net/project/top_cn_2019#jenkins-cli</a></p>
+<p>部分数据指标
+* 测试覆盖率：87.1%
+* 下载量：2.8k+
+* 贡献者：9</p>
 
-<p>如果，您还没有听说或者使用过 Jenkins CLI，欢迎阅读我们的官方文档，以及下面的 v0.0.23 版本更新内容。</p>
-
-<p>Jenkins 国内镜像中心发布后，收到了很多的反馈。鉴于之前的操作步骤相对较多，本次 Jenkins CLI 给出了一键启动国内镜像源的方案：
-只要执行命令：<code>jcli center mirror</code> 即可启动镜像源。如果希望使用原有的地址，也非常简单：<code>jcli center mirror --enable=false</code></p>
-
-<p>更多有意思的玩法，请参考 <a href="https://discourse.jenkins-zh.cn/c/7-category/25-category">Jenkins 中文社区论坛</a>。</p>
+<p>更多内容，请参考<a href="http://jcli.jenkins-zh.cn/zh/">官方文档</a></p>
 
 <h2 id="功能">🚀 功能</h2>
 
 <ul>
-<li>支持创建插件 (#255) @LinuxSuRen</li>
-<li>支持子 shell 命令 (#253) @LinuxSuRen</li>
-<li>支持启用（或禁用）更新中心镜像源 (#251) @LinuxSuRen</li>
-<li>增加以键值对的形式触发参数化流水线 (#249) @LinuxSuRen</li>
-<li>支持停止最近一次的构建任务 (#248) @LinuxSuRen</li>
-<li>支持命令多语言的描述 (#245) @LinuxSuRen</li>
-<li>支持选择以及移除 Jenkins 连接配置项 (#246) @LinuxSuRen</li>
-<li>支持命令行自动补全 (#242) @LinuxSuRen</li>
-<li>支持下载特定版本的 Jenkins war (#240) @LinuxSuRen</li>
-<li>支持配置诊断 (#169) @yJunS</li>
-<li>支持从镜像中心下载插件 (#222) @LinuxSuRen</li>
-<li>支持从镜像中心下载 Jenkins war (#221) @LinuxSuRen</li>
-<li>支持从本地或者 URL 中加载 Jenkinsfile (#220) @LinuxSuRen</li>
-<li>支持多种方式编辑流水线 (#206) @LinuxSuRen</li>
-<li>支持安装指定版本的插件 (#211) @sbcd90</li>
+<li>增加对配置即代码插件的支持 (#265) @LinuxSuRen</li>
+<li>为 jcli 增加 Docker 镜像 (#260) @LinuxSuRen</li>
+<li>增加 Jenkins 的 go 语言客户端的文档 (#256) @1179325921</li>
+<li>支持获取 Jenkins 的唯一标识信息 (#292) @LinuxSuRen</li>
+<li>支持在命令行中设置 Jenkins 连接地址 (#291) @LinuxSuRen</li>
+<li>支持通过管理员为 Jenkins 的其他用户创建令牌 (#289) @LinuxSuRen</li>
+<li>支持创建 JNLP 类型的计算节点 (#290) @LinuxSuRen</li>
+<li>改进命令行的数据输出 (#285) @LinuxSuRen</li>
+<li>增强 Jenkins 任务的搜索功能 (#284) @LinuxSuRen</li>
+<li>增加搜索 Jenkins 任务以及文件夹 (#281) @LinuxSuRen</li>
+<li>为 casc 命令增加诊断功能 (#280) @LinuxSuRen</li>
+<li>增加计算节点的子命令 (#278) @LinuxSuRen</li>
+<li>支持对 Jenkins 凭据的管理 (#266) @LinuxSuRen</li>
+<li>支持发布插件的子命令 (#276) @LinuxSuRen</li>
+<li>增加命令行输出中对配色的支持 (#273) @LinuxSuRen</li>
+<li>支持同时取消队列中的多个任务 (#274) @LinuxSuRen</li>
+<li>支持在启动 jenkins.war 时传递系统配置 (#275) @LinuxSuRen</li>
+<li>支持通过 docker 的方式下载最新开发版本的 jcli (#267) @LinuxSuRen</li>
+<li>支持启动 Jenkins (#262) @LinuxSuRen</li>
+<li>支持列出 Jenkins 的计算节点 (#259) @LinuxSuRen</li>
+</ul>
+
+<h2 id="缺陷修复">🐛 缺陷修复</h2>
+
+<ul>
+<li>修复 PO 文件中的拼写错误 (#282) @anxk</li>
+<li>修复了当没有配置文件时命令崩溃的问题 (#269) @LinuxSuRen</li>
+<li>修复由 lgtm.com 发现的告警 (#293) @LinuxSuRen</li>
+<li>修复由于代码重构导致的 bash 下的命令行无法自动补全 (#294) @LinuxSuRen</li>
 </ul>
 
 <h2 id="文档完善">📝 文档完善</h2>
 
 <ul>
-<li>完善 README-zh.md (#241) @donhui</li>
+<li>增加对开发环境要求的描述 (#263) @yJunS</li>
+<li>增加下载 jcli 的其他方式的描述 (#264) @LinuxSuRen</li>
 </ul>
 
 <h2 id="维护">👻 维护</h2>
 
 <ul>
-<li>增加关于分支策略的检查清单 (#227) @LinuxSuRen</li>
-<li>升级 go.uber.org/zap 从 1.12.0 到 1.13.0 (#237) @dependabot-preview</li>
-<li>升级 gopkg.in/yaml.v2 从 2.2.4 到 2.2.5 (#225) @dependabot-preview</li>
-<li>升级 github.com/onsi/ginkgo 从 1.10.2 到 1.10.3 (#218) @dependabot-preview</li>
-<li>升级 github.com/onsi/gomega 从 1.7.0 到 1.7.1 (#217) @dependabot-preview</li>
+<li>移除 markdown 模板中的链接 (#271) @LinuxSuRen</li>
+<li>优化 jcli 的开发版 docker 镜像，使得更小 (#268) @LinuxSuRen</li>
+<li>增加垃取镜像数量的徽章 (#261) @LinuxSuRen</li>
+<li>把 github.com/onsi/ginkgo 从 1.10.3 升级到 1.11.0 (#288) @dependabot-preview</li>
+<li>把 github.com/onsi/gomega 从 1.7.1 升级到 1.8.1 (#287) @dependabot-preview</li>
+<li>把 github.com/AlecAivazis/survey/v2 从 2.0.4 升级到 2.0.5 (#270) @dependabot-preview</li>
 </ul>
 
 <h2 id="测试">🚦 测试</h2>
 
 <ul>
-<li>增加流水线参数命令的单元测试 (#232) @LinuxSuRen</li>
-<li>增加插件检查的单元测试 (#224) @LinuxSuRen</li>
-<li>增加任务历史命令的单元测试 (#228) @LinuxSuRen</li>
+<li>为 open 子命令增加测试用例 (#272) @LinuxSuRen</li>
 </ul>
 
 </div>
@@ -365,7 +369,7 @@ var trackOutboundLink = function(id, url) {
 <h2>参考</h2>
 <ul>
 	
-	<li><a href="/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/">Jenkins CLI 命令行 v0.0.24</a></li>
+	<li><a href="/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/">Jenkins CLI 命令行 v0.0.23</a></li>
 	
 	<li><a href="/wechat/articles/2019/11/2019-11-04-jcli-v0.0.22/">Jenkins CLI 命令行 v0.0.22</a></li>
 	
@@ -383,14 +387,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins CLI 命令行 v0.0.23”
-  </a> 更新于：November 28, 2019
+    “Jenkins CLI 命令行 v0.0.24”
+  </a> 更新于：December 26, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -417,7 +421,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/11\/2019-11-28-jcli-v0.0.23\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/12\/2019-12-26-jcli-v0.0.24\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

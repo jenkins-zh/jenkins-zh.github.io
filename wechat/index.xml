@@ -6,10 +6,22 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins CLI 命令行 v0.0.24</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/</guid>
+      <description>本次发布，主要增加了 jcli 对凭据、计算节点的管理能力，以及通过 jcli 启动 jenkins.war。 对于部分子命令，还可以通过参数 --doctor 来实现错误诊断。
+部分数据指标 * 测试覆盖率：87.1% * 下载量：2.8k+ * 贡献者：9
+更多内容，请参考官方文档
+🚀 功能  增加对配置即代码插件的支持 (#265) @LinuxSuRen 为 jcli 增加 Docker 镜像 (#260) @LinuxSuRen 增加 Jenkins 的 go 语言客户端的文档 (#256) @1179325921 支持获取 Jenkins 的唯一标识信息 (#292) @LinuxSuRen 支持在命令行中设置 Jenkins 连接地址 (#291) @LinuxSuRen 支持通过管理员为 Jenkins 的其他用户创建令牌 (#289) @LinuxSuRen 支持创建 JNLP 类型的计算节点 (#290) @LinuxSuRen 改进命令行的数据输出 (#285) @LinuxSuRen 增强 Jenkins 任务的搜索功能 (#284) @LinuxSuRen 增加搜索 Jenkins 任务以及文件夹 (#281) @LinuxSuRen 为 casc 命令增加诊断功能 (#280) @LinuxSuRen 增加计算节点的子命令 (#278) @LinuxSuRen 支持对 Jenkins 凭据的管理 (#266) @LinuxSuRen 支持发布插件的子命令 (#276) @LinuxSuRen 增加命令行输出中对配色的支持 (#273) @LinuxSuRen 支持同时取消队列中的多个任务 (#274) @LinuxSuRen 支持在启动 jenkins.</description>
+    </item>
     
     <item>
       <title>Webhook 通用触发插件</title>
