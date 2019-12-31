@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</loc>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/</loc>
     <lastmod>2019-12-26T00:00:00+00:00</lastmod>
   </url>
@@ -986,7 +991,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/jenkins/</loc>
-    <lastmod>2019-12-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1090,7 +1095,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/multi-branch/</loc>
-    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1280,7 +1285,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-12-26T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,26 @@
     <description>Recent content in Multi Branch on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/tags/multi-branch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Jenkins 实现 CI/CD 多分支流水线</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</guid>
+      <description>简介 Jenkins 是一个持续集成服务器，用于从版本控制系统（VCS）中获取最新代码，然后对其进行构建、测试并将结果通知给开发人员。除了作为一个持续集成（CI）服务器之外，Jenkins 还可以做很多其它的事情。最初它被称为 Hudson，是川口耕介（Kohsuke Kawaguchi）基于 Java 编写的一个开源项目，因此，在安装和运行 Jenkins 之前，首先需要安装 Java 8。
+多分支流水线是 Jenkins 中的一种流水线类型，它允许您在 Jenkinsfile 的帮助下为源码管理（SCM）库中的每个分支自动地创建一支流水线。
+什么是 Jenkinsfile Jenkinsfile 是一个文本文件，被用来定义一个 Jenkins 流水线。在 Jenkinsfile 中可以使用领域特定语言（DSL）编写运行 Jenkins 流水线所需要的步骤，从而将流水线实现为代码。
+来自 Jenkins 的定义 使用多分支流水线，您可以为同一项目的不同分支实现不同的 Jenkinsfile，Jenkins 将会自动发现、管理和执行那些分支中包含 Jenkinsfile 的流水线。
+创建一个简单多分支流水线任务的步骤  点击 Jenkins 工作台左上角的 New Item 选项：   在 Enter an item name 中填入任务名，向下滚动，然后选择 Multibranch Pipeline，最后点击 OK 按钮：   填写任务描述（可选）。
+ 添加一个分支源（例如：GitHub）并且填写代码仓库的位置。
+ 选择 Add 按钮添加凭证并点击 Jenkins。
+ 键入 GitHub 用户名、密码、ID 和描述。</description>
+    </item>
     
     <item>
       <title>在大型企业里维护多分支流水线</title>
