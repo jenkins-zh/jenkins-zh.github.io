@@ -65,6 +65,22 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/meeting/2019-12-25/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/meeting/2019-12-25/</guid>
+      <description> 论坛
+ 邮箱没有配置好（网络超时，怀疑是由于网络代理设置的有问题） 给管理更多的管理权限  依赖邮箱的配置  把论坛的版本调整为正式版 @yJunS  介绍 Jenkins 容器发行版
+ 尝试提一个 proposal 到 GSOC（https://jenkins.io/sigs/gsoc/） Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn   增加文章作者（译者）的统计
+ 增加例会参加成员的统计
+ 定期的网络研讨会（https://community.jenkins-zh.cn/t/jenkins/149）
+ 媒体情况统计
+ 论坛 公众号  文章翻译 https://github.com/jenkins-infra/wechat/pull/282
+  </description>
+    </item>
+    
+    <item>
       <title>Webhook 通用触发插件</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/</link>
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
