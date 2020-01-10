@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url>
@@ -730,6 +735,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/tags/blog/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/tags/blueocean/</loc>
     <lastmod>2019-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -772,6 +783,12 @@
   <url>
     <loc>https://jenkins-zh.github.io/tags/ci/</loc>
     <lastmod>2019-07-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.github.io/tags/ci-cd/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1290,7 +1307,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/wechat/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
