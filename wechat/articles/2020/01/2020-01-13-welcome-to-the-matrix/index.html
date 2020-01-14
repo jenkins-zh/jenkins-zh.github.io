@@ -9,11 +9,11 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 自动化安装插件 - Jenkins 中文社区</title>
+     <title>欢迎使用流水线指令-矩阵 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="Jenkins 批量安装指定版本插件">
+    <meta name="description" content="介绍了声明式流水线中 `matrix` 指令的使用方法，并介绍了 `matrix` 指令在pipeline中的句式">
     
     
     <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 自动化安装插件" />
-<meta property="og:description" content="Jenkins 批量安装指定版本插件" />
+<meta property="og:title" content="欢迎使用流水线指令-矩阵" />
+<meta property="og:description" content="介绍了声明式流水线中 `matrix` 指令的使用方法，并介绍了 `matrix` 指令在pipeline中的句式" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" /><meta property="article:published_time" content="2019-05-07T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-07T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" /><meta property="article:published_time" content="2019-12-29T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-12-29T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 自动化安装插件">
-<meta itemprop="description" content="Jenkins 批量安装指定版本插件">
-
-
-<meta itemprop="datePublished" content="2019-05-07T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="128">
+<meta itemprop="name" content="欢迎使用流水线指令-矩阵">
+<meta itemprop="description" content="介绍了声明式流水线中 `matrix` 指令的使用方法，并介绍了 `matrix` 指令在pipeline中的句式">
 
 
+<meta itemprop="datePublished" content="2019-12-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1029">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="Jenkins,pipeline," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 自动化安装插件"/>
-<meta name="twitter:description" content="Jenkins 批量安装指定版本插件"/>
+<meta name="twitter:title" content="欢迎使用流水线指令-矩阵"/>
+<meta name="twitter:description" content="介绍了声明式流水线中 `matrix` 指令的使用方法，并介绍了 `matrix` 指令在pipeline中的句式"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -196,28 +196,36 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            翟志军
+            s1mple_zj
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          You only got one shot,do not miss your chance to blow.
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/0N0thing" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
 
       </a>
 
+  
+  <div>
+    作者：<span class="originalAuthor">Liam Newman</span>
+    <div>
+      <a class="originalLink" href="https://jenkins.io/blog/2019/11/22/welcome-to-the-matrix/" target="_blank">原文链接</a>
+    </div>
+  </div>
   
   </aside>
 
@@ -235,7 +243,7 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 插件开发之旅：两天内从 idea 到发布(下篇) ">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/" class="dib f6 pl1 hover-bg-light-gray br-100" title="使用 Jenkins 实现 CI/CD 多分支流水线 ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -245,7 +253,7 @@ var trackOutboundLink = function(id, url) {
 		
 
 		
-			<a href="https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)">
+			<a href="https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins CLI 命令行 v0.0.24">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -265,13 +273,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 自动化安装插件</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">欢迎使用流水线指令-矩阵</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 批量安装指定版本插件
+      介绍了声明式流水线中 <code>matrix</code> 指令的使用方法，并介绍了 <code>matrix</code> 指令在pipeline中的句式
     </div>
   
 
@@ -284,76 +292,332 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<h3 id="手工安装-jenkins-插件的方法">手工安装 Jenkins 插件的方法</h3>
+<p><img src="cover.jpg" alt="cover" /></p>
 
-<p>通常，我们有两种方法安装 Jenkins 插件。第一种方法是到 Jenkins 插件管理页面搜索插件，然后安装。第二种方法是上传 Jenkins 插件的 hpi 文件安装。这两种方法能满足大多数人的需求。</p>
+<p>我经常发现自己需要在一堆不同的配置上执行相同的操作。到目前为止，意味着我需要在流水线上的同一阶段制作多个副本。当我需要修改时，必须在整个流水线的多个地方做相同的修改。对于一个更大型的流水线来说，即便维护很少的配置也会变得困难。
+声明式流水线1.5.0-beta1（可以从<a href="https://updates.jenkins.io/experimental/"> Jenkins 实验性更新中心</a>获取）添加了一个新的  <code>matrix</code> 部分，该部分能让我一次指定一个阶段列表，然后在多个配置上并行运行同一列表。让我们来看一看！</p>
 
-<p>第一种方法，如下图所示：
-<img src="pc1.png" alt="搜索安装" /></p>
+<h2 id="单一配置流水线">单一配置流水线</h2>
 
-<p>第二种方法，如下图所示：
-<img src="pc2.png" alt="上传插件" /></p>
+<p>开始我会使用一个带有构建和测试阶段的简单流水线。我使用 <code>echo</code> 步骤作为构建和测试行为的占位符。</p>
 
-<p>但是对于需要保证 Jenkins 稳定或在 Jenkins 上进行二次开发的同学来说，以上方法是无法满足需求的。</p>
+<p><em>Jenkinsfile</em></p>
 
-<p>第一种方法是无法指定插件的版本。第二种方式必须自己找到该插件的依赖树，然后根据依赖关系一个个地安装。是的，手工上传插件的这种方法，Jenkins 是不会自动下载依赖的。</p>
-
-<p>还有，就是这两种方式都无法实现批量安装。</p>
-
-<h3 id="自动安装插件的方法">自动安装插件的方法</h3>
-
-<p>那么，有什么方法能指定插件的版本，又能自动下载它的依赖，还能批量下载呢？</p>
-
-<p>幸运的是，Jenkins 的 Docker 镜像的代码仓库里的 install-plugins.sh 脚本已经实现。只不过需要我们拿过来小小修改才能使用。笔者修改后创建了相应的代码仓库：<a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">jenkins-install-plugins-shell</a> 。链接在文章末尾。</p>
-
-<p>以下是 jenkins-install-plugins-shell 的使用方法：
-1. 将代码 clone 到 JENKINS_HOME 目录中。</p>
-
-<pre><code>cd $JENKINS_HOME
-git clone https://github.com/zacker330/jenkins-install-plugins-shell.git
-cd jenkins-install-plugins-shell
+<pre><code>pipeline {
+	agent none
+    stages {
+        stage('BuildAndTest') {
+            agent any
+            stages {
+                stage('Build') {
+                    steps {
+                        echo 'Do Build'
+                    }
+                }
+                stage('Test') {
+                    steps {
+                        echo 'Do Test'
+                    }
+                }
+            }
+        }
+    }
+}
 </code></pre>
 
-<ol>
-<li>在 plugins.txt 中加入希望安装的插件
-在 <code>jenkins-install-plugins-shell</code> 目录中，有一个 plugins.txt 文件，在文件中写入希望安装的插件及版本号。例如：
-<code>
-ansible:1.0
-powershell:1.3
-</code></li>
+<h2 id="多平台与浏览器的流水线">多平台与浏览器的流水线</h2>
 
-<li><p>执行安装</p>
+<p>我更喜欢在多系统以及浏览器结合的情况下执行我的构建和测试。新的 <code>metrix</code> 指令能让我定义一个 <code>axes</code> 的集合。每个 <code>axis</code> 有一个 <code>name</code> 以及包含了一个或多个 <code>values</code> 的列表。当流水线运行的时候，Jenkins 会将这些托管过来并将每个“轴”上所有可能值的组合运行在我的阶段内。一个“矩阵”上所有的元素都是并行运行的（只受限于可用的节点数量）。
+我的“矩阵”有两个“轴”： <code>PLATFORM</code> 和 <code>BROWSER</code> 。<code>PLATFORM</code> 有三个值 <code>BROWSER</code> 有四个值，所以我的阶段会运行12个不同的组合。我已经修改了我的 <code>echo</code> 步骤用来使用每个元素中“轴”的值。</p>
 
-<pre><code class="language-bash"># Jenkins War 的路径，用于分析
-export JENKINS_WAR_PATH=&lt;Jenkins war文件的路径&gt;
-chmod +x install-plugins.sh jenkins-support
-./install-plugins.sh &lt; plugins.txt
-</code></pre></li>
+<p><em>Jenkinsfile</em></p>
 
-<li><p>重启 Jenkins
-install-plugins 本质上做的事情就只是将插件从云端下载到 JENKINS_HOME 下的 plugins 目录中。要使安装的插件生效，还需要重启 Jenkins。</p></li>
-</ol>
+<pre><code>pipeline {
+    agent none
+    stages {
+        stage('BuildAndTest') {
+            matrix {
+                agent any
+                axes {
+                    axis {
+                        name 'PLATFORM'
+                        values 'linux', 'windows', 'mac'
+                    }
+                    axis {
+                        name 'BROWSER'
+                        values 'firefox', 'chrome', 'safari', 'edge'
+                    }
+                }
+                stages {
+                    stage('Build') {
+                        steps {
+                            echo &quot;Do Build for ${PLATFORM} - ${BROWSER}&quot;
+                        }
+                    }
+                    stage('Test') {
+                        steps {
+                            echo &quot;Do Test for ${PLATFORM} - ${BROWSER}&quot;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
 
-<h3 id="关于-jenkins-插件的名称">关于 Jenkins 插件的名称</h3>
+<p><em>日志输出（部分内容）</em></p>
 
-<p>Jenkins 插件有两个名称。一个叫 display name，一个叫 short name。比如 Ansible 插件的 disply name 为 Ansible plugin，short  name 为 ansible。</p>
+<pre><code>...
+[Pipeline] stage
+[Pipeline] { (BuildAndTest)
+[Pipeline] parallel
+[Pipeline] { (Branch: Matrix - OS = 'linux', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'linux', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'linux', BROWSER = 'safari')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'safari')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'safari')
+[Pipeline] { (Branch: Matrix - OS = 'linux', BROWSER = 'edge') (hide)
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'edge')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'edge')
+...
+Do Build for linux - safari
+Do Build for linux - firefox
+Do Build for windows - firefox
+Do Test for linux - firefox
+Do Build for mac - firefox
+Do Build for linux - chrome
+Do Test for windows - firefox
+...
+</code></pre>
 
-<p>如何知道一个插件的 short name 呢？可以在 Jenkins 插件官网上找到，比如 Ansible 的：</p>
+<h2 id="排除无效的组合">排除无效的组合</h2>
 
-<p><img src="pc3.png" alt="image.png" /></p>
+<p>现在我已经创建一个基本的“矩阵”了，我注意到我有一些无效的组合。  Edge 浏览器只在 Windows 系统上运行以及没有 Linux 版本的 Safari。
+我可以使用 <code>exclude</code> 命令去掉我的“矩阵”中无效的元素。每个 <code>exclude</code> 含有一个或多个带有 <code>name</code> 和 <code>values</code> 的 <code>axis</code> 指令。一个 <code>exclude</code> 中的 <code>axis</code> 指令会生成一组组合（类似于生成“矩阵”中的元素）。“矩阵”中的元素匹配一个 <code>exclude</code> 中所有需要从“矩阵”中移出的值。如果我有不止一个 <code>exclude</code> 指令，每个都将分别评估来移除元素。
+当需要处理一个长的排除列表时，我可以使用 <code>notValues</code> 而不是 <code>values</code> 去指定“轴”中我们<strong>不想</strong>排除的值。是的，这有点双重否定的意思，所以会有一点困惑。我只会在我真正想用的时候才会用它。
+下面的流水线示例，我排除了 <code>linux, safari</code> 的组合同样我排除了<strong>除了</strong> <code>windows</code> 之外的其他平台 和 <code>edge</code> 浏览器的组合。
+<strong>重要</strong>
+本流水线使用两个“轴”，但是<strong>没有</strong>使用 <code>axis</code> 指令数量的限制。
+同样，在这个流水线里每个 <code>exclude</code> 指定这两个“轴”的值，但是这不是必须的。如果我们想只在“linux”元素中运行，我们需要使用以下的 <code>exclude</code> ：</p>
 
-<p>在 <code>plugins.txt</code> 中使用的是 short name。</p>
+<pre><code>exclude {
+    axis {
+        name 'PLATFORM'
+        notValues 'linux'
+    }
+}
+</code></pre>
 
-<h3 id="总结">总结</h3>
+<pre><code>pipeline {
+    agent none
+    stages {
+        stage('BuildAndTest') {
+            matrix {
+                agent any
+                axes {
+                    axis {
+                        name 'PLATFORM'
+                        values 'linux', 'windows', 'mac'
+                    }
+                    axis {
+                        name 'BROWSER'
+                        values 'firefox', 'chrome', 'safari', 'edge'
+                    }
+                }
+                excludes {
+                    exclude {
+                        axis {
+                            name 'PLATFORM'
+                            values 'linux'
+                        }
+                        axis {
+                            name 'BROWSER'
+                            values 'safari'
+                        }
+                    }
+                    exclude {
+                        axis {
+                            name 'PLATFORM'
+                            notValues 'windows'
+                        }
+                        axis {
+                            name 'BROWSER'
+                            values 'edge'
+                        }
+                    }
+                }
+                stages {
+                    stage('Build') {
+                        steps {
+                            echo &quot;Do Build for ${PLATFORM} - ${BROWSER}&quot;
+                        }
+                    }
+                    stage('Test') {
+                        steps {
+                            echo &quot;Do Test for ${PLATFORM} - ${BROWSER}&quot;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
 
-<p>笔者为什么一定要确定 Jenkins 插件的版本？是因为插件的版本会影响 Jenkins 流水线的可靠性。所以，笔者才会这么在意 Jenkins 插件的版本。</p>
+<p><em>日志输出（部分内容）</em></p>
 
-<h3 id="附录">附录</h3>
+<pre><code>...
+[Pipeline] stage
+[Pipeline] { (BuildAndTest)
+[Pipeline] parallel
+[Pipeline] { (Branch: Matrix - OS = 'linux', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'linux', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'safari')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'safari')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'edge')
+...
+Do Build for linux - firefox
+...
+</code></pre>
+
+<h2 id="运行时控制元素行为">运行时控制元素行为</h2>
+
+<p>在 <code>matrix</code> 指令中同样我可以添加“每个-元素”指令。这些相同的指令我可以添加到一个 <code>stage</code> 中让我可以控制“矩阵”中每一个元素的行为。这些指令可以从它们的元素的“轴”中获取值作为输入，允许我自定义每一个元素的行为以匹配它的“轴”的值。
+在我的 Jenkins 服务器中我已经配置了各个节点并为各个节点配置了系统名称的标签（“linux-agent”，“windows-agent”，和“mac-agent” ）。为了在正确的操作系统上运行“矩阵”中的元素，我配置了 Groovy 字符模板为元素配置标签。</p>
+
+<pre><code>matrix {
+    axes { ... }
+    excludes { ... }
+    agent {
+        label &quot;${PLATFORM}-agent&quot;
+    }
+    stages { ... }
+    // ...
+}
+</code></pre>
+
+<p>有时我通过 Jenkins 的网页手动运行流水线任务。当我这样做时，我能够只选择一个运行的平台。 <code>axis</code> 和 <code>exclude</code> 指令定义了一个组成“矩阵”的一组静态的元素。这一组合的集合在运行开始之前就被创建出来，也早于任何的参数获取。也就意味着我不能在任务已经开始后从“矩阵”上添加或者移除元素。
+另一方面，“每个-元素”指令，在运行时会被评估。我可以使用“每个-元素” <code>metrix</code> 中的 <code>when</code> 指令来控制“矩阵”中哪个元素会被执行。我添加了一个带有平台列表的 <code>choice</code> 字段，以及在 <code>when</code> 指令添加了判断，这样会确定是所有的平台都执行还是只执行我指定的平台的元素。</p>
+
+<pre><code>pipeline {
+    parameters {
+        choice(name: 'PLATFORM_FILTER', choices: ['all', 'linux', 'windows', 'mac'], description: 'Run on specific platform')
+    }
+    agent none
+    stages {
+        stage('BuildAndTest') {
+            matrix {
+                agent {
+                    label &quot;${PLATFORM}-agent&quot;
+                }
+                when { anyOf {
+                    expression { params.PLATFORM_FILTER == 'all' }
+                    expression { params.PLATFORM_FILTER == env.PLATFORM }
+                } }
+                axes {
+                    axis {
+                        name 'PLATFORM'
+                        values 'linux', 'windows', 'mac'
+                    }
+                    axis {
+                        name 'BROWSER'
+                        values 'firefox', 'chrome', 'safari', 'edge'
+                    }
+                }
+                excludes {
+                    exclude {
+                        axis {
+                            name 'PLATFORM'
+                            values 'linux'
+                        }
+                        axis {
+                            name 'BROWSER'
+                            values 'safari'
+                        }
+                    }
+                    exclude {
+                        axis {
+                            name 'PLATFORM'
+                            notValues 'windows'
+                        }
+                        axis {
+                            name 'BROWSER'
+                            values 'edge'
+                        }
+                    }
+                }
+                stages {
+                    stage('Build') {
+                        steps {
+                            echo &quot;Do Build for ${PLATFORM} - ${BROWSER}&quot;
+                        }
+                    }
+                    stage('Test') {
+                        steps {
+                            echo &quot;Do Test for ${PLATFORM} - ${BROWSER}&quot;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>如果我从 Jenkins 的 UI 页面上运行流水线设置 <code>PLATFORM_FILTER</code> 字段为 <code>mac</code> ，我会得到如下的输出：</p>
+
+<p><em>日志输出（部分内容 - PLATFORM_FILTER = &lsquo;mac&rsquo;）</em></p>
+
+<pre><code>...
+[Pipeline] stage
+[Pipeline] { (BuildAndTest)
+[Pipeline] parallel
+[Pipeline] { (Branch: Matrix - OS = 'linux', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'firefox')
+[Pipeline] { (Branch: Matrix - OS = 'linux', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'chrome')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'safari')
+[Pipeline] { (Branch: Matrix - OS = 'mac', BROWSER = 'safari')
+[Pipeline] { (Branch: Matrix - OS = 'windows', BROWSER = 'edge')
+...
+Stage &quot;Matrix - OS = 'linux', BROWSER = 'chrome'&quot; skipped due to when conditional
+Stage &quot;Matrix - OS = 'linux', BROWSER = 'firefox'&quot; skipped due to when conditional
+...
+Do Build for mac - firefox
+Do Build for mac - chrome
+Do Build for mac - safari
+...
+Stage &quot;Matrix - OS = 'windows', BROWSER = 'chrome'&quot; skipped due to when conditional
+Stage &quot;Matrix - OS = 'windows', BROWSER = 'edge'&quot; skipped due to when conditional
+...
+Do Test for mac - safari
+Do Test for mac - firefox
+Do Test for mac - chrome
+</code></pre>
+
+<p><strong>重要</strong>
+在<a href="https://www.cloudbees.com/devops-world/lisbon"> DevOps World | Jenkins World 2019</a> “<a href="https://sched.co/UeQe">声明式流水线2019：知识点，技巧，以及接下来的事情</a>”中与我一起参与。我会回顾过去的一年有哪些加入到了流水线（包括“矩阵”）以及探讨一些关于流水线下一步走向的想法。</p>
+
+<h2 id="结论">结论</h2>
+
+<p>这篇博客里面，我们已经看到了怎样使用 <code>matrix</code> 指令来构成简洁但又强大的声明式流水线。同样的一个不带有 <code>matrix</code> 的流水线会容易一些，但会消耗更多的时间同样也会更难理解和维护。</p>
+
+<h2 id="链接">链接</h2>
 
 <ul>
-<li>Jenkins 官方 Docker 镜像中的自动化插件安装脚本：<a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">https://github.com/jenkinsci/docker/blob/master/install-plugins.sh</a></li>
-<li>笔者修改后的自动化插件安装脚本：
-<a href="https://github.com/zacker330/jenkins-install-plugins-shell">https://github.com/zacker330/jenkins-install-plugins-shell</a></li>
+<li><a href="https://updates.jenkins.io/experimental/">Jenkins 实验性更新中心</a></li>
+<li><a href="https://jenkins.io/doc/developer/publishing/releasing-experimental-updates/#using-the-experimental-update-center">使用 Jenkins 实验性更新中心</a></li>
 </ul>
 
 </div>
@@ -387,14 +651,14 @@ install-plugins 本质上做的事情就只是将插件从云端下载到 JENKIN
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 自动化安装插件”
-  </a> 更新于：May 7, 2019
+    “欢迎使用流水线指令-矩阵”
+  </a> 更新于：December 29, 2019
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -413,7 +677,13 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
           <li class="db dib-l mr3">
             <a class="tag" href="/tags/jenkins">
-              jenkins
+              Jenkins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/pipeline">
+              pipeline
             </a>
           </li>
         
@@ -433,12 +703,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
             Related entries:
           </li>
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
         
       
         
@@ -632,6 +896,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="link">
+              Jenkins 自动化安装插件
+            </a>
+          </li>
+        
       
         
         
@@ -801,7 +1071,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2019\/05\/2019-05-07-jenkins-install-plugins-shell\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.github.io\/wechat\/articles\/2020\/01\/2020-01-13-welcome-to-the-matrix\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

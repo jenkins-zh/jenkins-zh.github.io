@@ -22,6 +22,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/</loc>
+    <lastmod>2019-12-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/</loc>
     <lastmod>2019-12-26T00:00:00+00:00</lastmod>
   </url>
@@ -1171,7 +1176,7 @@
   
   <url>
     <loc>https://jenkins-zh.github.io/tags/pipeline/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

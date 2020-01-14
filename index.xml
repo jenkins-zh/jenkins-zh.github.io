@@ -62,6 +62,19 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>欢迎使用流水线指令-矩阵</title>
+      <link>https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/</link>
+      <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/</guid>
+      <description>我经常发现自己需要在一堆不同的配置上执行相同的操作。到目前为止，意味着我需要在流水线上的同一阶段制作多个副本。当我需要修改时，必须在整个流水线的多个地方做相同的修改。对于一个更大型的流水线来说，即便维护很少的配置也会变得困难。 声明式流水线1.5.0-beta1（可以从Jenkins 实验性更新中心获取）添加了一个新的 matrix 部分，该部分能让我一次指定一个阶段列表，然后在多个配置上并行运行同一列表。让我们来看一看！
+单一配置流水线 开始我会使用一个带有构建和测试阶段的简单流水线。我使用 echo 步骤作为构建和测试行为的占位符。
+Jenkinsfile
+pipeline { agent none stages { stage(&#39;BuildAndTest&#39;) { agent any stages { stage(&#39;Build&#39;) { steps { echo &#39;Do Build&#39; } } stage(&#39;Test&#39;) { steps { echo &#39;Do Test&#39; } } } } } }  多平台与浏览器的流水线 我更喜欢在多系统以及浏览器结合的情况下执行我的构建和测试。新的 metrix 指令能让我定义一个 axes 的集合。每个 axis 有一个 name 以及包含了一个或多个 values 的列表。当流水线运行的时候，Jenkins 会将这些托管过来并将每个“轴”上所有可能值的组合运行在我的阶段内。一个“矩阵”上所有的元素都是并行运行的（只受限于可用的节点数量）。 我的“矩阵”有两个“轴”： PLATFORM 和 BROWSER 。PLATFORM 有三个值 BROWSER 有四个值，所以我的阶段会运行12个不同的组合。我已经修改了我的 echo 步骤用来使用每个元素中“轴”的值。
+Jenkinsfile</description>
+    </item>
+    
+    <item>
       <title>Jenkins CLI 命令行 v0.0.24</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/</link>
       <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
