@@ -6,10 +6,22 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.github.io/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/meeting/2020-01-08/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/meeting/2020-01-08/</guid>
+      <description> 线下活动
+ 北京 其他城市  GSoC
+ Jenkins 发行版（https://community.jenkins-zh.cn/t/jenkins/241）  论坛
+ 自动同步博客文章   </description>
+    </item>
     
     <item>
       <title></title>

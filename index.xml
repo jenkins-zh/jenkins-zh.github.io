@@ -46,6 +46,18 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.github.io/meeting/2020-01-08/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.github.io/meeting/2020-01-08/</guid>
+      <description> 线下活动
+ 北京 其他城市  GSoC
+ Jenkins 发行版（https://community.jenkins-zh.cn/t/jenkins/241）  论坛
+ 自动同步博客文章   </description>
+    </item>
+    
+    <item>
       <title>使用 Jenkins 实现 CI/CD 多分支流水线</title>
       <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
