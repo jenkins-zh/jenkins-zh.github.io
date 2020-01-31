@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>贡献激励 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/</link>
+    <link>https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/</link>
     <description>Recent content in 贡献激励 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 中文社区第二届明星贡献者名单</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-05-award/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-05-award/</link>
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-05-award/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-05-award/</guid>
       <description>有这样一群人，他们是一群富有热情的英雄，他们本着内心的使命感，从四面八方汇聚到开源社区，并且为社区贡献自己的一份力量。他们就是“Jenkins 中文社区贡献者”
 Jenkins 中文社区贡献激励活动是一个旨在长期为社区贡献者谋福利的活动。在社区伙伴们的积极参与下，第二届社区激励活动结果新鲜出炉了!
 让我们用热烈的掌声恭喜五位明星贡献——donghui、李楠、yJunS、李煜东、书生。他们在社区运营、活动组织、技术交流等方面有着卓越的贡献，并得到社区伙伴们的广泛认可。

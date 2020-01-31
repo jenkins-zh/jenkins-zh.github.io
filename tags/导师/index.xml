@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>导师 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/%E5%AF%BC%E5%B8%88/</link>
+    <link>https://jenkins-zh.cn/tags/%E5%AF%BC%E5%B8%88/</link>
     <description>Recent content in 导师 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 16 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/%E5%AF%BC%E5%B8%88/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/%E5%AF%BC%E5%B8%88/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>持续交付黑客松--导师招募</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-16-tutor-recruitment/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-16-tutor-recruitment/</link>
       <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-16-tutor-recruitment/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-16-tutor-recruitment/</guid>
       <description>  Jenkins 中文社区计划于2019年10月25日发起一场以 DevOps 为主题的黑客松编程比赛，我们将以开源、开放的方式策划、组织本次活动。开源&amp;ndash;黑客松上产生的所有代码、文档甚至想法都是开源的，都会托管在国内最大的代码托管网站&amp;ndash;码云上。开放&amp;ndash;任何岗位、背景的人都可以参与我们的活动，不仅仅只有研发、测试、运维等岗位的同学，我们非常欢迎文档工程师、产品经理、敏捷教练的加入，甚至 HR、PR 的同学也可以来参与。
  集结这么多具有不同技能的同学后，我们希望能解决什么问题呢？我们希望让大家切实地体会到，参与开源并没有你想的那么困难、无趣，也绝不仅仅只有键盘侠的 Coding 独秀，人人都可以参与开源社区。通过开源社区可以集中解决很多通用性的问题，通过开源的黑客松活动，更是可以集中地解决我们在使用开源的持续交付方案中遇到的诸多通点。
 主办方  Jenkins 中文社区  合作方  CloudBees 码云 京东云 开源社 微软  导师招募 如果你在 - Java、JavaScript、Golang、css、Hugo - K8S 、Jenkins、Jenkins API - CI/CD、敏捷等 DevOps

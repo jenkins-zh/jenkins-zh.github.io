@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/security/</link>
+    <link>https://jenkins-zh.cn/tags/security/</link>
     <description>Recent content in Security on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>我们为什么需要 DevSecOps 和制品仓库？</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-28-devsecops/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-28-devsecops/</link>
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-28-devsecops/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-28-devsecops/</guid>
       <description>Helen Beal 曾经在一次讨论什么是 DevSecOps 工程师的会议上发言。令她惊讶的是，在与会人员中，许多人都没有将安全机制引入 DevOps。在与人们讨论之后，她将大家的问题总结为三类：安全机制会制造额外的隔阂；组织中的人很难理解 DevOps，因此安全机制可能会造成更多困惑；可能没有为安全机制预留空间。
 当然，Helen 不同意这些观点。她在技术领域从业近20年，专注于软件开发生命周期，对于 DevOps 和DevSecOps 有一些自己的理解。她自称为 Ranger4 的 「DevOpsologist」，因为她帮助那里的组织实现 DevOps。她在世界各地分享知识，并且她将参加我们在 2018 年的 Nexus User Conference ，讨论工具仓库及其在 DevSecOps 工具链中的角色。
 从高层次来看，Helen 为 DevSecOps 提出了一些重要建议：
@@ -29,10 +29,10 @@
     
     <item>
       <title>在安全防火墙内通过 WebHook 触发构建</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-webhook-firewalls/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-16-webhook-firewalls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-webhook-firewalls/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-16-webhook-firewalls/</guid>
       <description>在这篇文章中，我将向大家展示，如何让运行在防火墙内的 Jenkins 依然可以实时地收到 GitHub 的 WebHook。当然，你也可以把这个方法应用到如 BitBucket、 DockerHub 或任何可以推送 WebHook 的其他服务中。但是，下面的步骤仅适用于托管在 GitHub 上的项目。
 什么是 WebHook 简单地描述下什么是 WebHook：事件消息（通常是 JSON，也可以是其他的）由服务端以 HTTP(S) 协议发送到监听的客户端。
 事件流自左到右，Jenkins 会监听类似 /github-webhook/ 或 /dockerhub-webhook/ 等路径上的 HTTP 请求，唤醒并执行一些任务。
@@ -47,10 +47,10 @@ GitHub 或 BitBucket 可能会报告一个新的提交或 PR，DockerHub 报告�
     
     <item>
       <title>春季安全清查</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</guid>
       <description>今天我们公布了一个 安全报告， 主要是关于 Jenkins 的插件中 还没有被修复 的问题。 发生了什么？
 Jenkins 安全团队将 漏洞反馈分类发布在 Jira 和我们的非公开邮件列表中。 一旦我们确定它不是由 Jenkins 安全团队成员维护的插件，我们会尝试将该问题通知插件维护者，以帮助我们开发，审查和发布修复。
 这种情况下，我们会发布 安全报告，将这些问题告知用户，即使没有发布修复版本。 这样可以让管理员作出决定，是否继续使用具有未解决的安全漏洞的插件。 今天发布的报告里大多数都是这样的安全问题。

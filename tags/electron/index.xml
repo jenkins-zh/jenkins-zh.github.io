@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Electron on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/electron/</link>
+    <link>https://jenkins-zh.cn/tags/electron/</link>
     <description>Recent content in Electron on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/electron/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Electron 应用的流水线设计</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/</guid>
       <description>审校：LinuxSuRen（https://github.com/LinuxSuRen）
  面向读者：需要了解 Jenkins 流水线的基本语法。
 Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。

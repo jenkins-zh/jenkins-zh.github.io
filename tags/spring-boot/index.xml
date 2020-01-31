@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spring Boot on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/spring-boot/</link>
+    <link>https://jenkins-zh.cn/tags/spring-boot/</link>
     <description>Recent content in Spring Boot on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 24 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</link>
       <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</guid>
       <description>过去五年中的变化，如迁移到公有云以及从虚拟机向容器的转变，已经彻底改变了构建和部署软件的意义。
 以 Kubernetes 为例。Google 于2014年开源，现在所有主流的公有云供应商都支持它&amp;mdash;它为开发人员提供了一种很好的方式，可以将应用程序打包到 Docker 容器中，并部署到任意 Kubernetes 集群中。
 使用 CI/CD、Kubernetes 和 Jenkins X 进行高性能开发 在技术上，高性能团队几乎总是成功的必要条件，而持续集成、持续部署(CI/CD)、小迭代以及快速反馈是构建模块。为你的云原生应用程序设置 CI/CD 可能比较困难。通过自动化所有内容，开发人员可以花费宝贵的时间来交付实际的业务。

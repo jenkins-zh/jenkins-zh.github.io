@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>运营转型 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/</link>
+    <link>https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/</link>
     <description>Recent content in 运营转型 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>为 DevOps 构建新的运营模型</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</link>
       <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</guid>
       <description>我一直在撰写有关企业面临的 DevOps 挑战的文章。从根本上讲，它是关于规模的：当企业尝试将其扩展到大型企业通常拥有的 800 多个应用程序中时，它们正努力实现在小型 DevOps 概念验证中看到的相同收益。 如果 DevOps 能够兑现其诺言并为企业带来可观的价值，那么就必须克服这一规模挑战。
 重塑业务 今天，我想看看企业内部的关键变化，在实现 DevOps 的好处之前，这绝对是必须发生的：运营转型。
 如今，大多数企业都围绕具有单向命令和控制结构的分层模型工作。这是自去年以来建立企业的方式：公司高层的“高级主管”领导层以相当专制的方式设定了公司的目标和战略。在此模型中，经理和业务部门负责人是高级管理人员意愿的执行者，以确保公司其他所有人都可以执行其战略方向。DevOps 的发展方向相反-从开发人员和运营人员的基层运动开始，然后逐步发展到如今在董事会席位上占有一席之地。

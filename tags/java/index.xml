@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/java/</link>
+    <link>https://jenkins-zh.cn/tags/java/</link>
     <description>Recent content in Java on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Docker 全自动构建 Java 应用</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</link>
       <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</guid>
       <description>这次的流水线中，我们使用 Docker 容器来构建我们的 Java 应用。
 我们会在 Docker 容器里运行 Jenkins，再使用 Jenkins 启动一个 Maven 容器，用来编译我们的代码，接着在另一个 Maven 容器中运行测试用例并生成制品（例如 jar 包），然后再在 Jenkins 容器中制作 Docker 镜像，最后将镜像推送到 Docker Hub。
 我们会用到两个 Github 仓库。

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>关于我们 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/about/</link>
+    <link>https://jenkins-zh.cn/about/</link>
     <description>Recent content in 关于我们 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 07 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>社区捐助</title>
-      <link>https://jenkins-zh.github.io/about/sponsors-list/</link>
+      <link>https://jenkins-zh.cn/about/sponsors-list/</link>
       <pubDate>Sat, 07 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/sponsors-list/</guid>
+      <guid>https://jenkins-zh.cn/about/sponsors-list/</guid>
       <description> 社区得以持续、健康地发展，需要很多方面的支持，尤其对于社区的基础运营、活动组织上，资金和物资的捐助是非常重要的。
 用途 对于所收到的资金、物资捐助，我们都会用于社区基础设施（域名、服务器等）、线下活动、社区成员奖励。
 列表 为了对给予社区捐助的朋友们表示感谢，我们在此列出来：
@@ -25,10 +25,10 @@
     
     <item>
       <title>行为规范</title>
-      <link>https://jenkins-zh.github.io/about/code-of-conduct/</link>
+      <link>https://jenkins-zh.cn/about/code-of-conduct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/code-of-conduct/</guid>
+      <guid>https://jenkins-zh.cn/about/code-of-conduct/</guid>
       <description>留言 留言之前需要使用 GitHub 账号登陆。大家要注意文明用语，严禁攻击、诋毁、灌水、广告等无关的话。对于违反人，一经发现将会被拉入黑名单。
 提问 欢迎每一位朋友在这里提出与 Jenkins 或相关领域的技术问题，但是，在提问之前建议先在搜索引擎和本站中进行搜索。
 问题至少要包含如下部分：
@@ -38,10 +38,10 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     
     <item>
       <title>活动志愿者报名</title>
-      <link>https://jenkins-zh.github.io/about/volunteer-part-in/</link>
+      <link>https://jenkins-zh.cn/about/volunteer-part-in/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/volunteer-part-in/</guid>
+      <guid>https://jenkins-zh.cn/about/volunteer-part-in/</guid>
       <description>  Jenkins 中文社区将不定期举行一些活动，志愿者的参与是不可或缺的。希望有更多的小伙伴可以通过志愿者的身份参与进来
  如何报名 以邮件的形式发送到志愿者申请 內容如下（注： Github ID 示例：https://github.com/githubId）：
 活动名称： 姓名： 公司名称（选填）： 所在地： 职业： 联系电话： 微信号： Github ID: 个人擅长： 参加志愿者的初衷：  志愿者福利：  免费参加自本活动启动时一年内的所有活动 活动纪念品(小型活动没有纪念品) 赠送与本社区有合作关系的其他公司或者社区组织的活动门票  申明  欢迎小伙伴们报名志愿者，并且为志愿者准备了一些社区福利。但为了避免有人浑水摸鱼的事情发生，我们会根据实际参与情况以及参与活动的态度积极性来评判是否拥有志愿者福利的待遇。  </description>
@@ -49,10 +49,10 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     
     <item>
       <title>活动策划</title>
-      <link>https://jenkins-zh.github.io/about/about-event-planning/</link>
+      <link>https://jenkins-zh.cn/about/about-event-planning/</link>
       <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/about-event-planning/</guid>
+      <guid>https://jenkins-zh.cn/about/about-event-planning/</guid>
       <description>本文讨论社区组织 meetup 、workshop 等活动策划的参考指引，方便社区其他地区组织者及志愿者借鉴使用。
 活动策划分为以下几步骤： - 活动地区及组织者确定 - 招募志愿者 - 活动任务分工认领 - 活动宣传
 1、活动地区及组织者确定 组织者需向 Jenkins 中文社区申请活动组织者得到许可后，才可以进行后续步骤。 - 确定活动地区 - 确定活动主题 - 确定大概活动日期
@@ -64,10 +64,10 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     
     <item>
       <title>分支策略</title>
-      <link>https://jenkins-zh.github.io/about/branching-strategy/</link>
+      <link>https://jenkins-zh.cn/about/branching-strategy/</link>
       <pubDate>Tue, 09 Jul 2019 19:56:04 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/branching-strategy/</guid>
+      <guid>https://jenkins-zh.cn/about/branching-strategy/</guid>
       <description>本文讨论分支策略主要是提供执行并行任务时的参考指引，方便社区贡献者借鉴使用。
 需要理解和注意以下几点： - 三个代码仓库 - 每个任务一个分支 - 分支策略
 三个 repo git 是一个分布式版本管理系统。以提交文章到 jenkins-infra/wechat 为例，在这个过程中，我们会涉及到三个代码仓库。 1. jenkins-infra/wechat repo，也就是 upstream repo，你需要 git remote add upstream 将其配置为 upstream repo 。 2. fork/wechat repo，如果你从这里 clone 的话，也就是对应的 origin repo 。 3. local repo，所有的分支管理都是从这里发起的。
@@ -79,30 +79,30 @@ jenkins-infra/wechat: master fork/wechat: master dev-01 local: master dev-01  �
     
     <item>
       <title>插件列表</title>
-      <link>https://jenkins-zh.github.io/about/plugins/</link>
+      <link>https://jenkins-zh.cn/about/plugins/</link>
       <pubDate>Wed, 15 May 2019 20:30:05 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/plugins/</guid>
+      <guid>https://jenkins-zh.cn/about/plugins/</guid>
       <description>下面的列表是由 Jenkins 中文社区的成员维护的插件：
    插件 GitHub 仓库 版本 安装量 主要维护者     Simplified Chinese Plugin jenkinsci/localization-zh-cn-plugin    LinuxSuRen    Hugo Plugin jenkinsci/hugo-plugin    LinuxSuRen    Maven SNAPSHOT Check Plugin jenkinsci/maven-snapshot-check-plugin    donhui    Code Coverage API Plugin jenkinsci/code-coverage-api-plugin    cizezsy    WeiBo Plugin jenkinsci/weibo-plugin    LinuxSuRen    Job priorty sorter for Multi-branch Job jenkinsci/multi-branch-priority-sorter-plugin    LinuxSuRen     同时也期待有更多的贡献者增砖添瓦。</description>
     </item>
     
     <item>
       <title>社交媒体</title>
-      <link>https://jenkins-zh.github.io/about/social-media/</link>
+      <link>https://jenkins-zh.cn/about/social-media/</link>
       <pubDate>Fri, 12 Apr 2019 14:26:05 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/social-media/</guid>
+      <guid>https://jenkins-zh.cn/about/social-media/</guid>
       <description>社区所有的技术、活动类的文章都会同步发布到下面的社交媒体平台上。
    媒体 方式 负责人     微信公众号 人工  LinuxSuRen    开源中国 人工  donhui    思否 SegmentFault 人工  LinuxSuRen    CSDN 人工  P01son6415    简书 人工  yJunS    掘金 人工  zacker330    腾讯 云+社区 自动同步  LinuxSuRen    企鹅号 自动同步  LinuxSuRen    百家号 自动同步  LinuxSuRen     </description>
     </item>
     
     <item>
       <title>社区贡献激励方案</title>
-      <link>https://jenkins-zh.github.io/about/star-plan/</link>
+      <link>https://jenkins-zh.cn/about/star-plan/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/star-plan/</guid>
+      <guid>https://jenkins-zh.cn/about/star-plan/</guid>
       <description>为了激励社区成员积极地为社区作出贡献，我们会不定期给予积极活跃、付出重大贡献的小伙伴一定形式的奖励。
 定期激励：每个季度被选中的贡献者，可以在人民邮电出版社微店中自行挑选图书一本。
 大会门票赠送：不定期会有合作社区的大会门票赠送给有需要的贡献者。
@@ -116,10 +116,10 @@ jenkins-infra/wechat: master fork/wechat: master dev-01 local: master dev-01  �
     
     <item>
       <title>如何参与</title>
-      <link>https://jenkins-zh.github.io/about/how-to-involve/</link>
+      <link>https://jenkins-zh.cn/about/how-to-involve/</link>
       <pubDate>Sat, 05 Jan 2019 22:56:04 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/how-to-involve/</guid>
+      <guid>https://jenkins-zh.cn/about/how-to-involve/</guid>
       <description>为什么要参与开源社区  翟志军：想亲身参与一个开源社区，了解其运行机制。而为什么选择 Jenkins 中文社区？是想更多人了解持续交付。 zhangc819：日常工作里经常需要开源社区的力量来解决问题、学习经验，参与开源社区建设也是为了给社区提供更多的力量，相互左右才能壮大下去。  如何参与 Jenkins 中文社区 参与 Jenkins 中文社区的方式不只有 Coding 一条路可选，还有很多方式，比如：
  发表或翻译 Jenkins 相关的文章，并发表到社区网站及微信公众号。 Jenkins 本地化。 成为 Jenkins 线下或线上活动的志愿者。 Review 别人提交到 Pull Request。 发现 Jenkins 社区哪里可以改善，然后提个 Issue 或 Pull Request。  等等。所有你能想到的，促进 Jenkins 中文社区发展的事情都算是参与 Jenkins 中文社区。
 但是，具体怎么做呢？
@@ -132,10 +132,10 @@ Jenkins 中文社区代码仓库列表 那么，我们可以向哪些源代码�
     
     <item>
       <title>交流</title>
-      <link>https://jenkins-zh.github.io/about/channels/</link>
+      <link>https://jenkins-zh.cn/about/channels/</link>
       <pubDate>Fri, 04 Jan 2019 21:13:30 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/channels/</guid>
+      <guid>https://jenkins-zh.cn/about/channels/</guid>
       <description>为了方便各位 Jenkins 的爱好者、用户以及贡献者之间互相交流，我这里列出来一些途径：
  邮件组 即时聊天 在本站留言  邮件组 Jenkins 社区有很多 邮件组 ，感兴趣的童鞋请自行翻阅。本文仅介绍中文相关的邮件组：
             Jenkins 中文用户邮件组  查看历史  订阅 取消订阅 求助   Jenkins 中文本地化兴趣邮件组  查看历史  订阅 取消订阅 求助     注意：点击上面的订阅或者取消都应该会弹出一个发送邮件的窗口，请不要做任何修改，邮件正文保持空白（不要添加邮件签名等内容）直接发送即可。邮件发送成功后，会收到确认的回复。鉴于邮件组是由 Google 提供的服务，无法科学上网的童鞋是无法查看历史邮件的。
@@ -146,10 +146,10 @@ Jenkins 中文社区代码仓库列表 那么，我们可以向哪些源代码�
     
     <item>
       <title>Jenkins 培训</title>
-      <link>https://jenkins-zh.github.io/about/course/</link>
+      <link>https://jenkins-zh.cn/about/course/</link>
       <pubDate>Thu, 03 Jan 2019 22:50:02 +0800</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/course/</guid>
+      <guid>https://jenkins-zh.cn/about/course/</guid>
       <description>class: center, middle
 Jenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器环境  插件管理 构建任务  流水线 多分支流水线 API  计算节点管理  静态 动态   大纲  日志、任务外部存储 权限、认证体系 安全防护 备份、恢复 集成 社区介绍  Gitter &amp;amp;&amp;amp; 邮件组 Meetup 特别兴趣小组（SIG） 基础设施   安装、部署 Jenkins 的版本分为长期支持版（LTS）和每周更新版。
  安装手册 Docker  插件管理  介绍 仓库 托管  计算节点管理  节点类型  固定 动态（虚拟机、Docker、Kubernetes）  通道  SSH JNLP  标签（label）  表达式   流水线（Pipeline） Jenkins 流水线采用 Groovy 来编写，通常会保存在代码库根目录下名为 Jenkinsfile 的文件中。根据写法不同，分为：脚本式、申明式流水线。</description>
@@ -157,10 +157,10 @@ Jenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器
     
     <item>
       <title>Jenkins Area Meetup</title>
-      <link>https://jenkins-zh.github.io/about/meetups/</link>
+      <link>https://jenkins-zh.cn/about/meetups/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/meetups/</guid>
+      <guid>https://jenkins-zh.cn/about/meetups/</guid>
       <description> 各地活动组织者    城市 组织者 邮箱     北京  Rick  📭    希望在当地组织活动？ 我们非常欢迎全国各地的 Jenkins 爱好者积极地承担起在当地组织 Jenkins 线下活动的责任。为了能够保证我们社区的健康发展，申请人需要清楚、明确地了解下面的权益和义务：
 权益 组织线下活动是比较累但有趣的工作，要举办一次好的活动，需要投入不少的精力来筹划、安排、宣传等。因此，活动组织者将会享受到如下的权益：
  优先获得合作社区（公司）举办的会议门票 社区协调场地、茶歇以及礼品等赞助 丰富的人脉资源 使用社区邮箱 其他社区提供的激励  义务 在享受权益的前提，必须要尊重和遵守我们的义务要求：
@@ -171,10 +171,10 @@ Jenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器
     
     <item>
       <title>关于本站</title>
-      <link>https://jenkins-zh.github.io/about/about-site/</link>
+      <link>https://jenkins-zh.cn/about/about-site/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/about/about-site/</guid>
+      <guid>https://jenkins-zh.cn/about/about-site/</guid>
       <description>Jenkins 中文社区站点是基于 Hugo 生成的静态文件，托管在 GitHub Page 上。下面列出相关的源码位置：
  网站内容 网站主题 微信订阅号  </description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maven on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/maven/</link>
+    <link>https://jenkins-zh.cn/tags/maven/</link>
     <description>Recent content in Maven on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/</link>
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/</guid>
       <description>本文分上下两篇，上篇介绍了从产生 idea 到插件开发完成的过程； 下篇将介绍将插件托管到 Jenkins 插件更新中心的一系列过程。
 托管插件 托管插件包括一系列流程步骤。 笔者完成了它所有步骤（包括非必须的步骤），其中主要有两个具有标志性的任务： - 插件代码被托管在 jenkinsci GitHub 组织的一个仓库，然后作者拥有它的管理权限。
 笔者插件的代码仓库为：jenkinsci/maven-snapshot-check-plugin 。 - 你可以将插件发布到 Jenkins 项目的 Maven 仓库，它是 Jenkins 项目所使用的更新站点的数据来源。
@@ -32,10 +32,10 @@ artifactId 插件的 artifactId 被用于文件基本名称，是 Jenkins 插件
     
     <item>
       <title>Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/</link>
       <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/</guid>
       <description>本文介绍了笔者首个 Jenkins 插件开发的旅程， 包括从产生 idea 开始，然后经过插件定制开发， 接着申请将代码托管到 jenkinsci GitHub 组织， 最后将插件发布到 Jenkins 插件更新中心的过程。
 鉴于文章篇幅过长，将分为上下两篇进行介绍。
 从一个 idea 说起 前几天和朋友聊天时，聊到了 Maven 版本管理领域的 SNAPSHOT 版本依赖问题， 这给他带来了一些困扰，消灭掉历史遗留应用的 SNAPSHOT 版本依赖并非易事。

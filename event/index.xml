@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>活动 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/event/</link>
+    <link>https://jenkins-zh.cn/event/</link>
     <description>Recent content in 活动 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/event/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/event/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/event/readme/</link>
+      <link>https://jenkins-zh.cn/event/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/event/readme/</guid>
+      <guid>https://jenkins-zh.cn/event/readme/</guid>
       <description>该目录下，保存 Jenkins 社区相关的活动内容。文件格式为 Markdown，包含的头信息（字段）包括如下：
  type 活动类型，目前只支持 meetup（必需） city 活动举办地（必需） hostDate 活动时间（必需） year 活动所属年份，用于按年度分开展示（必需） poster 活动海报（必需） topic 活动主题 speakers 分享人，数组格式 sponsors 赞助商（公司、社区等），数组格式 abstract 活动简介 agenda 活动日程  time 时间 item 事项  status 活动状态  发起活动 希望发起活动的人或者组织，请按照如上格式写入一个 Markdown 文件中，并打开一个 Pull Request 到该仓库，等待审核。
 分享人 对某个活动感兴趣的同学，请在目录 content/speaker 下以 JSON 格式增加自己的个人信息，文件名为 GitHub 账户 ID。然后在您感兴趣的活动中的 speakers 下添加您的 ID。
@@ -24,46 +24,46 @@
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/event/beijing-2019-04-20/</link>
+      <link>https://jenkins-zh.cn/event/beijing-2019-04-20/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/event/beijing-2019-04-20/</guid>
+      <guid>https://jenkins-zh.cn/event/beijing-2019-04-20/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/event/beijing-2019-06-22/</link>
+      <link>https://jenkins-zh.cn/event/beijing-2019-06-22/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/event/beijing-2019-06-22/</guid>
+      <guid>https://jenkins-zh.cn/event/beijing-2019-06-22/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/event/beijing-2019-07-27/</link>
+      <link>https://jenkins-zh.cn/event/beijing-2019-07-27/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/event/beijing-2019-07-27/</guid>
+      <guid>https://jenkins-zh.cn/event/beijing-2019-07-27/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/event/beijing-2019-08-24/</link>
+      <link>https://jenkins-zh.cn/event/beijing-2019-08-24/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/event/beijing-2019-08-24/</guid>
+      <guid>https://jenkins-zh.cn/event/beijing-2019-08-24/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/event/beijing-2019-10-25/</link>
+      <link>https://jenkins-zh.cn/event/beijing-2019-10-25/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/event/beijing-2019-10-25/</guid>
+      <guid>https://jenkins-zh.cn/event/beijing-2019-10-25/</guid>
       <description>资源需求 志愿者 五名志愿者，负责场地秩序维护、活动事项问题解答等工作。具体包括如下： * 拍照/摄像 1～2名 * 签到、场地布置 1～2名 * 文案、宣传 1～2名
 志愿者福利： * 免费参加自本活动启动时一年内的所有活动 * 活动纪念品 * 赠送与本社区有合作关系的其他公司或者社区组织的活动门票
 技术教练 Kubernetes、Jenkins 领域的技术教练（导师）各两名，负责参赛选手过程中的问题解答，服务器资源 维护管理。
@@ -77,10 +77,10 @@
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/event/shanghai-2019-09/</link>
+      <link>https://jenkins-zh.cn/event/shanghai-2019-09/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/event/shanghai-2019-09/</guid>
+      <guid>https://jenkins-zh.cn/event/shanghai-2019-09/</guid>
       <description></description>
     </item>
     

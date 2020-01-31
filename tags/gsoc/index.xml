@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gsoc on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/gsoc/</link>
+    <link>https://jenkins-zh.cn/tags/gsoc/</link>
     <description>Recent content in Gsoc on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 25 Oct 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Alpha 版本的插件管理库和 CLI 工具</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</link>
       <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</guid>
       <description>&amp;ldquo;人人都在重复造轮子，部分像实现插件管理的&amp;rdquo;细节&amp;rdquo;（签名元数据，制品校验和，从核心独立出来的插件&amp;hellip;）。 很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&amp;rdquo; JENKINS-53767
 我的 Google Summer of Code project 项目试图解决这个问题，方法是创建一个库，该库将在 Jenkins 的不同实现中统一插件管理逻辑，并提供一个可以使用户轻松下载插件并在 Jenkins 启动之前查看插件信息的 CLI 工具。 我很高兴分享我们刚刚发布的 Alpha 版本，您可以在此处查看！
 GSoC 阶段 1 更新 当我考虑将插件管理器从 Jenkins 核心中移出时，由于依赖项的复杂性和数量，这最终成为了最具挑战性的第一步。相反，我们决定首先将 Jenkins Docker 中的 install-plugins.sh bash 脚本转换为 Java。 install-plugins.sh 脚本存在多个问题，即它是 bash 脚本并且扩展性有限，此外，它不会检索所有最新的更新中心的元数据。
@@ -27,10 +27,10 @@ Alpha 版本详情 模仿官方 Jenkins Docker 镜像中 install-plugins.sh 脚�
     
     <item>
       <title>React Plugin Template，让你可以使用 React 来编写 Jenkins 插件</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</guid>
       <description>模板地址
 React Plugin Template https://github.com/jenkinsci/react-plugin-template
 起因 这个模板是笔者在今年的 Google Summer of Code 中的项目 Working Hours - UI Improvement 中产出的。由于我们想使用 React 的一些组件来优化用户体验，例如在 Working Hours 里面我们想用 ReactDatepicker 来帮助用户选择日期，于是整个 Working Hours 插件的前端部分都试图用 React 来编写，而由于 Jenkins 的传统插件编写主要还是用的 Jelly ，一套类似 JSP 的后端渲染引擎，因此笔者在一开始也踩了不少坑。以至于想到，可以抽象出一套插件的脚手架来帮助有相似需求的同学。
@@ -44,10 +44,10 @@ Github：Working Hours 插件 https://github.com/jenkinsci/working-hours-plugin
     
     <item>
       <title>介绍新的 GitLab 分支源插件</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</guid>
       <description>GitLab 分支源插件已经走出 beta 阶段，并已发布到 Jenkins 更新中心。 它允许您基于 GitLab 用户 或 组 或 子组 项目创建任务。 您可以:
  从 GitLab 用户/组/子组导入单个项目的分支作为任务（多分支流水线任务） 从 GitLab 用户/组/子组导入所有或部分项目的分支作为任务（GitLab 组任务或 GitLab 文件夹组织）  GitLab 组项目对项目进行扫描， 根据设置的规则导入流水线任务。 导入项目之后， Jenkins 立即基于 Jenkinsfile 流水线脚本运行任务并且将状态通知到 GitLab 流水线状态。 这个插件与其他分支源插件不同，它提供了 GitLab 服务器配置，可以在系统配置中配置。 Jenkins 配置即代码 (JCasC) 也可以用于配置服务器。 要想了解更多关于服务器配置的信息，请参考我之前的博客。
 要求  Jenkins - 2.176.2 (LTS)
@@ -57,10 +57,10 @@ Github：Working Hours 插件 https://github.com/jenkinsci/working-hours-plugin
     
     <item>
       <title>Jenkins 插件的微基准测试框架</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
       <description>Jenkins 插件的微基准测试框架 作为我 Google 编程夏令营的一部分，我一直致力于改进角色策略插件（Role Strategy Plugin）的性能。 由于没有现有的方法来度量性能以及在 Jenkins 插件上做基准测试， 我在项目第一阶段的工作是创建一个框架在一个 Jenkins 实例中运行 Jenkins 插件中的基准测试。 为了让我们的工作更容易些，我们选择了 Java微基准测试工具来运行这些基准。 这使我们能够可靠地度量对时间要求严格的功能的性能，将有助于让 Jenkins 为每个人更快的运转。
 最近在 Jenkins 单元测试工具2.50中发布了微基准测试框架。 下面的博客文章展示了如何在插件中运行基准测试。
 介绍 该框架通过为 JMH 基准的每个 fork 启动一个临时的 Jenkins 实例来运行， 就像 Jenkins 测试工具中的 JenkinsRule。 基准测试是直接从 JUnit 测试运行的，它允许在运行过程中失败构建，并且很容易从 IDE 中运行基准测试，就像单元测试一样。 你可以很容易地通过使用 Java 方法或使用 Jenkins plugin:configuration-as-code:[配置即代码插件]来配置基准并将路径传递到 YAML 文件。
@@ -70,20 +70,20 @@ Github：Working Hours 插件 https://github.com/jenkinsci/working-hours-plugin
     
     <item>
       <title>多分支流水线任务对 GitLab SCM 的支持</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
       <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件： * GitLab API 插件 - 包装 GitLab Java APIs。 * GitLab 分支源插件 - 包括两个包： * io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 * io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。
 现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
     </item>
     
     <item>
       <title>Jenkins 已经被 Google Summer Of Code 2019 接受！</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</link>
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/</guid>
       <description>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在2019年的 Google Summer of Code上 已经被接受。 今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。
 这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。 我们有25个项目想法，而且有超过30个准导师（不断增多！）。 这已经超过了2016年以及2018年的总和。 有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！
 下一步？ GSoC 已经正式启动，请期待更多的学生在我们的Gitter 频道和邮件列表中联系项目。 在特别兴趣小组和子项目频道中已经有了很多沟通。 我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。 然后，我们将会继续这个申请，选择项目并分配导师团队。

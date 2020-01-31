@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>email on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tutorial/notify/email/</link>
+    <link>https://jenkins-zh.cn/tutorial/notify/email/</link>
     <description>Recent content in email on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/tutorial/notify/email/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tutorial/notify/email/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>在 Jenkins 中配置邮件服务器</title>
-      <link>https://jenkins-zh.github.io/tutorial/notify/email/email/</link>
+      <link>https://jenkins-zh.cn/tutorial/notify/email/email/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/tutorial/notify/email/email/</guid>
+      <guid>https://jenkins-zh.cn/tutorial/notify/email/email/</guid>
       <description>我们需要在系统管理》系统设置中配置邮件服务器的信息。
 在邮件通知区域，给出类似如下的配置：
    配置项 样例值 说明     SMTP服务器 smtp.exmail.qq.com    用户默认邮件后缀 @jenkins-zh.cn    SMTP服务器 smtp.exmail.qq.com    用户名 demo@jenkins-zh.cn    密码 demo    使用SSL协议     SMTP端口 465    Reply-To Address demo@jenkins-zh.cn    字符集 UTF-8     腾讯企业邮箱 上面给出的例子就是腾讯企业邮箱的配置，对于密码部分，我们需要生成客户端密码。

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Springboot on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/springboot/</link>
+    <link>https://jenkins-zh.cn/tags/springboot/</link>
     <description>Recent content in Springboot on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/</link>
       <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/</guid>
       <description>本文要点： 1. 设计一条 Spring Boot 最基本的流水线：包括构建、制品上传、部署。 1. 使用 Docker 容器运行构建逻辑。 1. 自动化整个实验环境：包括 Jenkins 的配置，Jenkins agent 的配置等。
 1. 代码仓库安排 本次实验涉及以下多个代码仓库：
 % tree -L 1 ├── 1-cd-platform # 实验环境相关代码 ├── 1-env-conf # 环境配置代码-实现配置独立 └── 1-springboot # Spring Boot 应用的代码及其部署代码  1-springboot 的目录结构如下：

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>React Plugins Gsoc Gsoc2019 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/react-plugins-gsoc-gsoc2019/</link>
+    <link>https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/</link>
     <description>Recent content in React Plugins Gsoc Gsoc2019 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/react-plugins-gsoc-gsoc2019/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Working Hours 插件的第一阶段更新</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/</link>
       <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/</guid>
       <description>Working Hour Plugin 提供了一个界面，用于设置允许的构建日期和时间。在配置 Working Hour 之外运行的作业将保留到下一个允许的构建时间为止。
 在 Google Summer of Code 的第一个代码阶段，我一直在从事 Working Hours Project 项目，该项目还有待于改善可用性。
 当我们想设计一个具有大量可以使用自定义库的 UI 时，React 似乎比经典的 Jelly 页面更受青睐，尤其是日期选择器之类的开源组件。

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Devops on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/devops/</link>
+    <link>https://jenkins-zh.cn/tags/devops/</link>
     <description>Recent content in Devops on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>为 DevOps 构建新的运营模型</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</link>
       <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</guid>
       <description>我一直在撰写有关企业面临的 DevOps 挑战的文章。从根本上讲，它是关于规模的：当企业尝试将其扩展到大型企业通常拥有的 800 多个应用程序中时，它们正努力实现在小型 DevOps 概念验证中看到的相同收益。 如果 DevOps 能够兑现其诺言并为企业带来可观的价值，那么就必须克服这一规模挑战。
 重塑业务 今天，我想看看企业内部的关键变化，在实现 DevOps 的好处之前，这绝对是必须发生的：运营转型。
 如今，大多数企业都围绕具有单向命令和控制结构的分层模型工作。这是自去年以来建立企业的方式：公司高层的“高级主管”领导层以相当专制的方式设定了公司的目标和战略。在此模型中，经理和业务部门负责人是高级管理人员意愿的执行者，以确保公司其他所有人都可以执行其战略方向。DevOps 的发展方向相反-从开发人员和运营人员的基层运动开始，然后逐步发展到如今在董事会席位上占有一席之地。
@@ -29,10 +29,10 @@ DevOps 的理想运营模式是一种权力民主化的模式，并且公司中�
     
     <item>
       <title>持续测试的那些事</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</link>
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</guid>
       <description>敏捷，DevOps 和持续交付已然存在于现今每个技术人员的词汇当中。我们都想要像硅谷里的巨头和初创公司一样，敏捷开发，快速发布软件，做出创新的产品。 向敏捷转型在多方面都已有总结，并且到了能被顺利实践的程度。然而，测试仍然是一个有思想困惑和实践挑战的领域。 当软件发布周期从以年、月缩短到以周、天为单位，或者更短时； 我们该如何重塑测试实践，以保证当软件发布到生产环境时能令用户满意， 而不是掉链子？
 鉴于大多数 DevOps 实践仍然把测试视为软件生产中最令人头疼的瓶颈，显然，这是一个常见的挑战。
 持续测试就是答案，但持续测试究竟是什么？你又如何实现它呢？ 维基百科定义持续测试为「在软件交付流水线中执行自动化测试的过程，目的是为了获得关于预发布软件业务风险的即时反馈」。 但是这个定义缺少了本质，缺少了持续测试所示意的转变的量纲。 除了自动化是一个重要的部分以外，持续测试从根本上转变了测试， 它把线性过程中的时间点事件嵌入到整个过程当中去，作为基础贯穿于整个软件交付周期的所有活动中。
@@ -46,10 +46,10 @@ DevOps 的理想运营模式是一种权力民主化的模式，并且公司中�
     
     <item>
       <title>10节课带你深入学习 DevOps 工程</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</link>
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</guid>
       <description>DevOps 现在真的很热门，对于杰出的工程师和 DevOps 专业人员来说有许多工作机会。 如果你想成为一名 DevOps 工程师，那么你来对地方了。在本文中，我将分享一下最好的在线培训课程， 让你成为 DevOps 专业人员。
 Devops 最重要的优势，它可以帮助你更好地发布软件并且利用现代自动化工具对环境和软件开发过程中提供更多控制。这就是 DevOps 专业人员需求呈指数增长的原因。除了 Data Science 和 Machine Learning 外，它也是薪酬最高的 IT 工作之一。
 根据 Glassdoor 的数据，DevOps 的工程师每年的收入从105000美元到146000美元不等。这意味着，如果你正在寻找加薪或想在美好年纪从事一些令人兴奋的工作赚更多的钱，学习 DevOps 可能是一个不错的选择。
@@ -61,10 +61,10 @@ Devops 最重要的优势，它可以帮助你更好地发布软件并且利用�
     
     <item>
       <title>2019年 DevOps 面临的挑战以及如何战胜它们</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/</link>
       <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/</guid>
       <description>随着 DevOps 逐渐成为主流，许多团队都在问自己应该从哪里开始采用 DevOps ， 他们将在此过程中面临哪些挑战，以及如何解决那些挑战。 每年都有越来越多的公司希望从传统的瀑布式方法转向 DevOps 。
 许多软件开发公司将 DevOps 看作是一个公司在效率方面所能达到的顶峰，并且这有点难。 应对挑战可能大大降低你的生产力，同时适应 DevOps 方法会导致各种自动化工具和开发过程之间缺乏协调。
 在本文中，我们将讨论 DevOps 在2019年面临的一些重大挑战，以及可以采取哪些措施来战胜它们。
@@ -77,10 +77,10 @@ Devops 最重要的优势，它可以帮助你更好地发布软件并且利用�
     
     <item>
       <title>从 Jenkins 到 Jenkins X</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</link>
       <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</guid>
       <description>这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事。
 我们的上下文 在 dailymotion ，我们坚信 devops 最佳实践，并且在 Kubernetes 投入了大量投资。 我们的部分产品已经部署在 Kubernetes 上，但并不是全部。 因此，当迁移我们的广告技术平台的时候，我们想要完全采用“ Kubernetes 式”——或者云原生，以追随技术趋势！ 这意味着要重新定义整个 CI/CD 流水线，从静态/永久环境迁移，转向动态按需分配环境。 我们的目标是授权给我们的开发人员，缩短我们的上线时间以及降低我们的运营成本。
 对于新的 CI/CD 平台我们的初始需求是: - 尽可能避免从零开始：我们的开发人员已经习惯使用 Jenkins 和声明式流水线，并且它们可以很好地满足我们当前的需求。 - 以公有云基础设施为目标——Google 云平台和 Kubernetes 集群 - 与 gitops 方法论兼容——因为我们喜欢版本控制、同行评审和自动化
@@ -90,10 +90,10 @@ Kubernetes 之上的 Jenkins Jenkins X 的设置相当简单，并且在他们�
     
     <item>
       <title>基于 Jenkins 的 DevOps 平台应该如何设计凭证管理</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/</link>
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/</guid>
       <description>背景 了解到行业内有些团队是基于 Jenkins 开发 DevOps 平台。而基于 Jenkins 实现的 DevOps 平台，就不得不考虑凭证的管理问题。
 本文就此问题进行讨论，尝试找出相对合理的管理凭证的方案。
 一开始我们想到的方案可能是这样的：用户在 DevOps 平台增加凭证后，DevOps 再将凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，使用的是存储在 Jenkins 上的凭证，而不是 DevOps 平台上的。
@@ -106,10 +106,10 @@ withCredentials([usernameColonPassword(credentialsId: &#39;mylogin&#39;, variabl
     
     <item>
       <title>我们为什么需要 DevSecOps 和制品仓库？</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-28-devsecops/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-28-devsecops/</link>
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-28-devsecops/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-28-devsecops/</guid>
       <description>Helen Beal 曾经在一次讨论什么是 DevSecOps 工程师的会议上发言。令她惊讶的是，在与会人员中，许多人都没有将安全机制引入 DevOps。在与人们讨论之后，她将大家的问题总结为三类：安全机制会制造额外的隔阂；组织中的人很难理解 DevOps，因此安全机制可能会造成更多困惑；可能没有为安全机制预留空间。
 当然，Helen 不同意这些观点。她在技术领域从业近20年，专注于软件开发生命周期，对于 DevOps 和DevSecOps 有一些自己的理解。她自称为 Ranger4 的 「DevOpsologist」，因为她帮助那里的组织实现 DevOps。她在世界各地分享知识，并且她将参加我们在 2018 年的 Nexus User Conference ，讨论工具仓库及其在 DevSecOps 工具链中的角色。
 从高层次来看，Helen 为 DevSecOps 提出了一些重要建议：
@@ -122,10 +122,10 @@ withCredentials([usernameColonPassword(credentialsId: &#39;mylogin&#39;, variabl
     
     <item>
       <title>Jenkins 2.173 发布通知</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</guid>
       <description>本次更新移除了一些不太推荐的功能，请管理员及时关注，如果希望能恢复的旧的形态，可以按照下面的提示操作。
 另外，有一项重要的更新，使得我们可以把所有的中文本地化资源文件从 Jenkins 核心中移除。因此， 请关注 Jenkins 简体中文插件后续的动态，我们会及时完成所有的迁移。
  移除对 CCtray 文件的内置支持。
@@ -137,10 +137,10 @@ withCredentials([usernameColonPassword(credentialsId: &#39;mylogin&#39;, variabl
     
     <item>
       <title>持续交付的商业价值</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/</guid>
       <description>持续交付使你能够以更低地风险、更快低交付新软件或是更新已有软件。
 降低风险很重要，但是，支持持续交付的流程将转化为对业务更重要的价值： - 加速价值时间。 一个小企业不需要一个 MBA 就可以认识到持续交付可以帮助他们完成工作。 一家大型企业已经规划了其价值流， 并且在整个大型组织中拥有复杂的投资和合约， 将发现持续交付有助于加速实现价值的时间。 - 数据驱动决策。 部署、度量和调整。 你仍然可以推动更大规模的发布，但你的流程将更适合于持续的数据收集。 这将缩短与客户的反馈循环。 它提高了你的反应能力，计划你的下一步行动，并保持领先的竞争力。 - 质量。 你持续发布的行为使你必须提高你的质量标准以及完全的自动化测试实践。 更好的质量意味着更快乐的客户、更低的成本、更少的消防演习和更少的计划外工作。 - 试验 = 创新。 开发人员和业务线可以自由地以较低的成本尝试新的想法， 从而释放出长期高投资发布周期背后的创新想法。 - 降低成本。 大的发布会有巨大的成本，如果出现错误会有严重的后果。 保持可交付成果处于可发布状态会降低交付成本。
 对企业来说，这些价值一起使持续交付成为真正的游戏变革者。 尽管可以在团队或项目级别开始采用和验证，但持续交付的本质是它以需要真正投资和自上而下承诺的方式跨越了组织边界。 选择与现有投资互补并共存的持续交付工具链是走向成功的关键一步， 特别是因为 CD 可以引导你的组织采用 DevOps 文化。
@@ -150,10 +150,10 @@ withCredentials([usernameColonPassword(credentialsId: &#39;mylogin&#39;, variabl
     
     <item>
       <title>AIOps：DevOps 的未来</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/</link>
       <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/</guid>
       <description>DevOps 和云技术正在逼近极限 范式转变往往会产生意想不到的后果，这些后果可能需要数年才能被完全消化。 云计算就是一个很好的例子。 云计算迎来了灵活的基础设施和低资本要求的时代，由于资源只是一个API调用，工程师们无需等待部署。 然而，这一切只是开始。
 敏捷的公司利用云来打破开发和运维之间的隔阂，并采用敏捷方法以缩短开发周期，从而创造战略优势。 他们将应用程序生命周期中的工程师团队分工从之前的开发和测试变为部署和运维， 并创建了需要一系列新技能的职位。这些公司使用 CI/CD 和 DevOps 进一步推动自动化流水线， 以实现更快的交付。
 这样有隐患吗？去问你的 DevOps 团队 DevOps 团队的任务是维护一个工具链，以便自动交付新代码，按需扩展，以及五个 9 的正常运行时间。 在空闲时间，他们致力于提高性能和控制成本。 对于大的应用程序，可以有数千个虚拟机或容器，每个虚拟机或容器都有一堆软件， 还有负载平衡器和自动扩容等云服务，所有这些都必须进行配置和维护。 这一切都在不断发展中。

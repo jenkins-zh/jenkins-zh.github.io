@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Plugin on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/plugin/</link>
+    <link>https://jenkins-zh.cn/tags/plugin/</link>
     <description>Recent content in Plugin on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>React Plugin Template，让你可以使用 React 来编写 Jenkins 插件</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/</guid>
       <description>模板地址
 React Plugin Template https://github.com/jenkinsci/react-plugin-template
 起因 这个模板是笔者在今年的 Google Summer of Code 中的项目 Working Hours - UI Improvement 中产出的。由于我们想使用 React 的一些组件来优化用户体验，例如在 Working Hours 里面我们想用 ReactDatepicker 来帮助用户选择日期，于是整个 Working Hours 插件的前端部分都试图用 React 来编写，而由于 Jenkins 的传统插件编写主要还是用的 Jelly ，一套类似 JSP 的后端渲染引擎，因此笔者在一开始也踩了不少坑。以至于想到，可以抽象出一套插件的脚手架来帮助有相似需求的同学。
@@ -30,10 +30,10 @@ Github：Working Hours 插件 https://github.com/jenkinsci/working-hours-plugin
     
     <item>
       <title>介绍 Jenkins 模板引擎</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</link>
       <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/</guid>
       <description>在企业范围内实施 DevSecOps 实践具有挑战性。由于组织内的不同应用程序正在使用多种编程语言、自动化测试框架和安全遵从性安全合规工具，因此每个团队构建和维护流水线变得很难。
 无论应用程序使用哪个特定的技术栈，大多数流水线都将遵循相同的通用工作流。模板引擎插件（简写为 JTE ，用于 Jenkins 模板引擎）允许您通过创建不依赖于工具的模板化工作流来获取效率，每个团队都可以重用这些工作流。
 作为公共部门和私营部门客户的技术顾问，我们在 Booz Allen 发现，每个新项目都要从头开始建造 DevSecOps 流水线。通过开发 Jenkins 模板引擎，我们已经看到流水线开发从几个月减少到几天，现在我们可以重用工具集成，同时为 Jenkins 流水线带来新的治理级别。
@@ -51,10 +51,10 @@ Github：Working Hours 插件 https://github.com/jenkinsci/working-hours-plugin
     
     <item>
       <title>使用Active-Choices-Plugin插件将十个Job合成一个</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/</link>
       <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/</guid>
       <description>现在Spring Cloud越来越火爆，许多公司也都在如火如荼投入使用中，而微服务最大的一个特点，就是多，同一大项目之下，可能会被拆分成十几二十几个子服务，对于运维而言，可能也需要一个对应一个地在Jenkins中创建十几二十几个Job。
 刚刚还在一个博主的自我介绍里看到这样一句话：喜欢一切优雅的运维方式···
 于是，我一直在想着，通过一些合理的参数变幻，从而将刚刚提到的十几二十几个服务，汇集到一个Job当中就能完成。

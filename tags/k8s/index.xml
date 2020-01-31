@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>K8s on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/k8s/</link>
+    <link>https://jenkins-zh.cn/tags/k8s/</link>
     <description>Recent content in K8s on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 24 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</link>
       <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/</guid>
       <description>过去五年中的变化，如迁移到公有云以及从虚拟机向容器的转变，已经彻底改变了构建和部署软件的意义。
 以 Kubernetes 为例。Google 于2014年开源，现在所有主流的公有云供应商都支持它&amp;mdash;它为开发人员提供了一种很好的方式，可以将应用程序打包到 Docker 容器中，并部署到任意 Kubernetes 集群中。
 使用 CI/CD、Kubernetes 和 Jenkins X 进行高性能开发 在技术上，高性能团队几乎总是成功的必要条件，而持续集成、持续部署(CI/CD)、小迭代以及快速反馈是构建模块。为你的云原生应用程序设置 CI/CD 可能比较困难。通过自动化所有内容，开发人员可以花费宝贵的时间来交付实际的业务。
@@ -29,10 +29,10 @@ Jenkins X 入门 要安装 Jenkins X，首先需要在你的机器或云供应�
     
     <item>
       <title>使用 Jenkins X 渐进式交付</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/</guid>
       <description>这是渐进式交付系列的第二篇文章，第一篇请看：Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署。
 我使用的我的 Croc Hunter 示例项目评估了 Jenkins X 中金丝雀部署和蓝绿色部署的三种渐进式交付方案。 - Shipper 为 Jenkins X 构建的 Helm 图表启用了蓝绿部署和多集群部署，但是对图表的内容有限制。 你可以在 staging 和生产环境之间做蓝绿部署。 - Istio 允许通过创建一个虚拟服务将一定比例的流量发送到 staging 或预览环境。 - Flagger 构建在 Istio 之上，并添加了金丝雀部署，可以根据指标自动进行滚动部署和回滚。 Jenkins X 可以通过创建一个 Canary 对象自动启用金丝雀功能，从而实现优雅的滚动部署，以升级到生产环境。
 这里可以查看 Shipper、Isito 和 Flager 的示例代码。
@@ -42,10 +42,10 @@ Shipper 由于 Shipper 对创建的 Helm 图表有多个限制，因此我必须
     
     <item>
       <title>Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/</guid>
       <description>渐进式交付是持续交付的下一步， 它将新版本部署到用户的一个子集，并在将其滚动到全部用户之前对其正确性和性能进行评估， 如果不匹配某些关键指标，则进行回滚。
 这里有一些有趣的项目，使得渐进式交付在 Kubernetes 中变得更简单。 我将使用一个 Jenkins X 示例项目 对它们之中的三个进行讨论：Shipper、Istio 以及 Flagger。
 Shipper shipper 是来自 booking.com 的一个项目， 它对 Kubernetes 进行了扩展，添加了复杂的部署策略和多集群编排（文档）。 它支持从一个集群到多个集群的部署，允许多区域部署。

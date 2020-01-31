@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Multi Branch on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/multi-branch/</link>
+    <link>https://jenkins-zh.cn/tags/multi-branch/</link>
     <description>Recent content in Multi Branch on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/multi-branch/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/multi-branch/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Jenkins 实现 CI/CD 多分支流水线</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/</guid>
       <description>简介 Jenkins 是一个持续集成服务器，用于从版本控制系统（VCS）中获取最新代码，然后对其进行构建、测试并将结果通知给开发人员。除了作为一个持续集成（CI）服务器之外，Jenkins 还可以做很多其它的事情。最初它被称为 Hudson，是川口耕介（Kohsuke Kawaguchi）基于 Java 编写的一个开源项目，因此，在安装和运行 Jenkins 之前，首先需要安装 Java 8。
 多分支流水线是 Jenkins 中的一种流水线类型，它允许您在 Jenkinsfile 的帮助下为源码管理（SCM）库中的每个分支自动地创建一支流水线。
 什么是 Jenkinsfile Jenkinsfile 是一个文本文件，被用来定义一个 Jenkins 流水线。在 Jenkinsfile 中可以使用领域特定语言（DSL）编写运行 Jenkins 流水线所需要的步骤，从而将流水线实现为代码。
@@ -29,10 +29,10 @@
     
     <item>
       <title>在大型企业里维护多分支流水线</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/</guid>
       <description>Jenkins 是 DevOps 领域里非常好的 CI/CD 工具，它凭借其独特的功能，几乎可以满足你一切的的业务要求。其中一个独特的功能是多分支流水线(Multi-branch 流水线)，可以动态配置流水线。但是，随着公司的发展，单独的多分支流水线并不能完全满足你的所有需求，特别是在涉及大型企业时，你需要考虑流水线的集中管理，治理，稳定性，限制和安全性等其他事项。因此对于具有 Jenkins 流水线的大规模 CI/CD 环境，你需要添加之前没有想到的更多功能。
 动态配置流水线 当一个开发人员创建一个新分支并将其推送到远程代码仓库时，Jenkins 会为这个新分支动态创建流水线。根据代码仓库，甚至也可以作为动态创建 Pull Request 流水线。这个动态功能在使用 Feature 分支或其他类似功能的团队中非常有用，由于本文的主题不是多分支流水线，你可以在端到端多分支流水线项目创建中找到详细信息和一些示例。
 流水线即代码 在多分支流水线中，脚本存储在项目代码仓库中，这就是“流水线即代码”的概念。此外，当你拥有小型开发人员团队或项目没有大量分支时，它非常有用。这样，开发人员可以根据需要更改流水线，将更改推送到分支，并立即看到更改生效，但对于拥有数百或数千名拥有大量项目的开发人员的大型企业而言，这种方案就完成不可行了。

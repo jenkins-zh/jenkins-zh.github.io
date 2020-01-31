@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins Ci on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/jenkins-ci/</link>
+    <link>https://jenkins-zh.cn/tags/jenkins-ci/</link>
     <description>Recent content in Jenkins Ci on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 18 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/jenkins-ci/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/jenkins-ci/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins CI 自动构建与 C-STAT 代码分析的集成</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</link>
       <pubDate>Mon, 18 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</guid>
       <description>介绍 我们大多数人都知道，为嵌入式软件设置 CI/CD 总是有局限性或挑战性的，并且我们还看到在某些情况下仍然没有其他可用的选择，这会导致工作量加大和代码质量缺失。
 在本文中，我们将看到一个这样的嵌入式开发工具（IAR 嵌入式工作台），以及如何将 C-STAT 静态代码分析与持续集成版本 Jenkins 集成在一起，以及如何通过自动构建。
 先决条件： a. IAR 嵌入式工作台 IDE b. C-STAT 许可证 c. Jenkins 安装

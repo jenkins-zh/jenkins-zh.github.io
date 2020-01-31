@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Contributing on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/contributing/</link>
+    <link>https://jenkins-zh.cn/tags/contributing/</link>
     <description>Recent content in Contributing on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 08 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/contributing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/contributing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>介绍：成为一名 Jenkins 贡献者的旅程</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</guid>
       <description>作为一名软件工程师，这些年来在我工作过的不同公司里用到过许多开源软件（包括框架、库、工具等）。 然而，在此之前我从没有以一名贡献者的身份参与过开源项目。
 自从我向 Jenkins 提交第一个简单又滑稽的 commit 已经过去六个月（2018 年 9 月）了， 我也尝试过作出更多贡献。然而总的来说，向开源项目贡献代码是具有挑战的， 特别是像 Jenkins 这样有着很长生命周期的项目，项目中不乏遗留代码和系统知识。 它通常难以入手，也很难想到一个计划来持续贡献使你的付出从长远看来是有意义的。
 对于 Jenkins 社区来说，我在尝试加入社区时所遇到的困难是其它人也有可能会面临的， 因此我决定分享我成为 Jenkins 活跃贡献者的心路历程。
@@ -36,10 +36,10 @@
     
     <item>
       <title>成为一名 Jenkins 贡献者：对新手友好的工单</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</guid>
       <description>两个月前，我发表了一篇介绍性文章， 成为一名 Jenkins 贡献者的旅程。在那篇第一次发表的文章 review 过后，学习到了我们可以参与和贡献的多种途径。 因此，在这个站点仓库中有对首次、基础的贡献的描述。
 现在，我们将会在这篇文章中探索更多高级的贡献，向 Jenkins 核心中提交代码。
 从工单和过程开始 新手贡献指导以及 Jenkins Jira 查看位于 jenins.io 上的开发者章节可能是最好的起点， 参考链接也很方便。同时，向 Jenkins 贡献的新手指导也很有用，因为它指出了不同的仓库、工具（例如问题跟踪系统）以及治理文档。 此外，它还描述了提交消息、代码风格约定、PR 指导等的最佳实践。

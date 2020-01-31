@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkinsworld on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/jenkinsworld/</link>
+    <link>https://jenkins-zh.cn/tags/jenkinsworld/</link>
     <description>Recent content in Jenkinsworld on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/jenkinsworld/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/jenkinsworld/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins World 贡献者峰会及专家答疑展位</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</link>
       <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/</guid>
       <description>Jenkins 15周岁啦！Jenkins World 将 DevOps 思想领袖、IT 主管、持续交付实践者以及 Jenkins 社区和生态系统齐聚这场全球活动，让与会者有机会学习、探索以及面对面交流，帮助塑造 Jenkins 的下一次发展以及针对 DevOps 的解决方案。
 此外，Jenkins 贡献者峰会也于旧金山举行。Jenkins 贡献者峰会是现有贡献者以及未来贡献者围绕 Jenkins 项目，以最新思考和最大努力来共同探讨、学习和协作的地方。上午峰会安排是由核心贡献者进行一系列展示介绍。这些介绍突出了每项工作的内容，以及社区成员可以提供哪些帮助。下午分组讨论会上，与同好小组进行了深入讨论，并同子项目贡献者进行合作。
 我非常荣幸能成为其中一员。 第一天 第一天以贡献者峰会开场。这让大家有机会聚在一起讨论对社区的贡献，把脑海中熟悉的名字和本人对上号。大多数人我只通过视频聊天和在 gitter 上见过，所以当时我特别激动。我们聚在一起了解 Jenkins 开源画卷的起点。
@@ -29,10 +29,10 @@ GSoC 学生 Natasha Stopa 介绍了她的项目——Plugin Installation Manager
     
     <item>
       <title>Jenkins 和 Kubernetes -云上的神秘代理</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</guid>
       <description>最近我们构建和部署服务的方式与原来相比简直就是突飞猛进，像那种笨拙的、单一的、用于构建单体式应用程序的方式已经是过去式了。我们努力了这么久，终于达到了现在的效果。现在的应用为了提供更好的拓展性和可维护性，都会去拆解成各种相互依赖小、解耦性强的微服务，这些服务有各自的依赖和进度。如果你想去构建你所负责的服务，那么从一开始，就应该使用 CI/CD 的方式；当然，如果你走上了这条路， Jenkins 就是你的良师益友。
 如果你是做微服务的话，那让我们在开始之前先花些时间想一想。如果你只在 Jenkins 上构建单体式应用程序，那你肯定每天都会运行很多 Jenkins job, 而且还要不厌其烦地运行很多次。所以，我们应该好好想清楚怎么样来做出一些改变来适应这种事情。其实只需要付出一些努力，Jenkins 就可以帮我们很好地解决这种事情。
 我的 Jenkins 的进阶之路 作为一个 Devops 从业者，我遇到的最大问题是如何管理并优化自己的 Jenkins agent 结构。如果只是用 Jenkins 玩玩，实验性地跑一些流水线，那根本不用考虑 agent 的事情。如果你每天要跑成百上千条流水线的话，那考虑怎么去做优化就是一件非常非常重要的事情了。在 Jenkins 进阶之路中，我也尝试了各种不同的方式来寻找最好的 Jenkins agent 的使用方式。相信如果你也和我一样经历过，那下面这些事情你一定会很熟悉喽。
@@ -42,10 +42,10 @@ GSoC 学生 Natasha Stopa 介绍了她的项目——Plugin Installation Manager
     
     <item>
       <title>自动更新、易于使用的 Jenkins</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</guid>
       <description>当我第一次 写 Jenkins Evergreen 相关的文章 ， 后来被称为 &amp;ldquo;Jenkins Essentials&amp;rdquo;，我提到的一系列的未来的发展在接下来的几个月里已经变成了 现实 。 今年在旧金山举办的 DevOps World - Jenkins World 会议上，我会介绍 Jenkins Evergreen 背后哲学的更多细节，展示我们已经做了什么，并且讨论这个激进的 Jenkins 发行版的走向。
 正如我在第一篇博客以及 JEP-300 中所讨论的 Jenkins Evergreen 的前两大支柱是我们关注的要点.
 自动更新的发行版 不出所料, 实现安全、自动地更新Jenkins发行版（包括核心和插件）所需的机制需要很多的工作。在 Baptiste 的演讲中 他将讨论如何使 Evergreen &amp;ldquo;走起来&amp;rdquo;，而我会讨论 为何 自动更新的发行版很重要。

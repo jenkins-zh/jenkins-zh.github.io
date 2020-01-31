@@ -2,83 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/partner/</link>
+    <link>https://jenkins-zh.cn/partner/</link>
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/partner/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/partner/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/partner/alauda/</link>
+      <link>https://jenkins-zh.cn/partner/alauda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/partner/alauda/</guid>
+      <guid>https://jenkins-zh.cn/partner/alauda/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/partner/harmony-cloud/</link>
+      <link>https://jenkins-zh.cn/partner/harmony-cloud/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/partner/harmony-cloud/</guid>
+      <guid>https://jenkins-zh.cn/partner/harmony-cloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/partner/hogwarts/</link>
+      <link>https://jenkins-zh.cn/partner/hogwarts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/partner/hogwarts/</guid>
+      <guid>https://jenkins-zh.cn/partner/hogwarts/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/partner/jingdongyun/</link>
+      <link>https://jenkins-zh.cn/partner/jingdongyun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/partner/jingdongyun/</guid>
+      <guid>https://jenkins-zh.cn/partner/jingdongyun/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/partner/junzi/</link>
+      <link>https://jenkins-zh.cn/partner/junzi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/partner/junzi/</guid>
+      <guid>https://jenkins-zh.cn/partner/junzi/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/partner/kaiyuanshe/</link>
+      <link>https://jenkins-zh.cn/partner/kaiyuanshe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/partner/kaiyuanshe/</guid>
+      <guid>https://jenkins-zh.cn/partner/kaiyuanshe/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/partner/pinganyun/</link>
+      <link>https://jenkins-zh.cn/partner/pinganyun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/partner/pinganyun/</guid>
+      <guid>https://jenkins-zh.cn/partner/pinganyun/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://jenkins-zh.github.io/partner/press/</link>
+      <link>https://jenkins-zh.cn/partner/press/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/partner/press/</guid>
+      <guid>https://jenkins-zh.cn/partner/press/</guid>
       <description></description>
     </item>
     

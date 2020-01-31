@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Open Source on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/open-source/</link>
+    <link>https://jenkins-zh.cn/tags/open-source/</link>
     <description>Recent content in Open Source on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 30 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>庆祝开源人线下见面会圆满结束</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-30-open-source-meeting/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-30-open-source-meeting/</link>
       <pubDate>Fri, 30 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-30-open-source-meeting/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-30-open-source-meeting/</guid>
       <description>什么是开源精神、为什么以及如何参与开源、开源与个人以及企业之间的关系、开源社区存在的重要意义、996是否与开源背道而驰。
  活动介绍 于2019年8月24日（周六）下午2点举办的开源人线下见面会圆满结束啦。本次活动是由Jenkins 中文社区与开源社首次联合主办的一次以社区、开源为主题的活动。
 活动主要分为几个部分： * 签到 * 嘉宾演讲 * Panel * 活动复盘

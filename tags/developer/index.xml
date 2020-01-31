@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Developer on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/developer/</link>
+    <link>https://jenkins-zh.cn/tags/developer/</link>
     <description>Recent content in Developer on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/developer/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/developer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 插件文档即代码：将文档迁移到 GitHub</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</link>
       <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</guid>
       <description>在2019年9月，我们宣布了对 GitHub 作为 Jenkins 插件站点文档来源的支持。 感谢 Zbynek Konecny 和 Olivier Vernin 以及其他贡献者， 现在可以将插件文档直接存储在插件储存库中，而不是 Jenkins Wiki 中，对于插件维护者和 Jenkins 基础设施团队来说，这在过去是很难维护的。
 这篇博文可能对插件维护者和那些想为 Jenkins 文档做贡献的人来说很有趣。 我将描述如何将插件文档迁移到 GitHub 并获得如下页面:
 为什么？ 通过使用插件的 GitHub 仓库存储文档， 插件维护者可以遵循 文档即代码 的方法，将文档更改作为 pull request 的一部分，这样就不会忘记文档的后续工作。 它还提供了一个 review 文档更改以及增加文档贡献者的认可度的机会，尤其是如果 story 与 Release Drafter 结合。
@@ -27,10 +27,10 @@
     
     <item>
       <title>让我们庆祝 Jenkins 对 Java 11的支持</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
       <description>NOTE：这是由 Java 11支持团队准备的联合博客文章：Adrien Lecharpentier、Ashton Treadway、Baptiste Mathus、Jenn Briden、Kevin Earls、MaríaIsabelVilacides、Mark Waite、RamónLeón 和 Oleg Nenashev。
   我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
 从2018年6月开始，组织了许多活动来改进 Jenkins 代码库并添加 Java 11支持。除了这些事件之外，Core/Plugins 维护者和许多其他贡献者都在努力工作，确保他们发现并解决与 Java 11支持相关的尽可能多的问题。
@@ -42,10 +42,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>Jenkins 插件的微基准测试框架</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
       <description>Jenkins 插件的微基准测试框架 作为我 Google 编程夏令营的一部分，我一直致力于改进角色策略插件（Role Strategy Plugin）的性能。 由于没有现有的方法来度量性能以及在 Jenkins 插件上做基准测试， 我在项目第一阶段的工作是创建一个框架在一个 Jenkins 实例中运行 Jenkins 插件中的基准测试。 为了让我们的工作更容易些，我们选择了 Java微基准测试工具来运行这些基准。 这使我们能够可靠地度量对时间要求严格的功能的性能，将有助于让 Jenkins 为每个人更快的运转。
 最近在 Jenkins 单元测试工具2.50中发布了微基准测试框架。 下面的博客文章展示了如何在插件中运行基准测试。
 介绍 该框架通过为 JMH 基准的每个 fork 启动一个临时的 Jenkins 实例来运行， 就像 Jenkins 测试工具中的 JenkinsRule。 基准测试是直接从 JUnit 测试运行的，它允许在运行过程中失败构建，并且很容易从 IDE 中运行基准测试，就像单元测试一样。 你可以很容易地通过使用 Java 方法或使用 Jenkins plugin:configuration-as-code:[配置即代码插件]来配置基准并将路径传递到 YAML 文件。
@@ -55,20 +55,20 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>多分支流水线任务对 GitLab SCM 的支持</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
       <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件： * GitLab API 插件 - 包装 GitLab Java APIs。 * GitLab 分支源插件 - 包括两个包： * io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 * io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。
 现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
     </item>
     
     <item>
       <title>介绍：成为一名 Jenkins 贡献者的旅程</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</guid>
       <description>作为一名软件工程师，这些年来在我工作过的不同公司里用到过许多开源软件（包括框架、库、工具等）。 然而，在此之前我从没有以一名贡献者的身份参与过开源项目。
 自从我向 Jenkins 提交第一个简单又滑稽的 commit 已经过去六个月（2018 年 9 月）了， 我也尝试过作出更多贡献。然而总的来说，向开源项目贡献代码是具有挑战的， 特别是像 Jenkins 这样有着很长生命周期的项目，项目中不乏遗留代码和系统知识。 它通常难以入手，也很难想到一个计划来持续贡献使你的付出从长远看来是有意义的。
 对于 Jenkins 社区来说，我在尝试加入社区时所遇到的困难是其它人也有可能会面临的， 因此我决定分享我成为 Jenkins 活跃贡献者的心路历程。
@@ -88,10 +88,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>Java 11 预览支持已在 Jenkins 2.155&#43; 中可用</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</link>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/</guid>
       <description>NOTE: 这是由 Java 11 支持团队 联合撰写的博客。 在 12 月 18 号（UTC时间下午4点）我们也会在 Jenkins 在线 Meetup 展示对 Java 11 的预览支持。（链接）
  Jenkins 作为领先的开源自动化服务器之一，目前仍然只支持到 Java 8。在 9 月 25 日 OpenJDK 11 发布了。这是一个长期支持版本，并将持续多年，我们想要在 Jenkins 项目中对这个版本进行全面的支持。在过去的一年中，许多贡献者一直致力于在项目中支持 Java 11（Jenkins JEP-211）。这是一条艰辛的道路，但是现在，代表 Jenkins Platform SIG，我们很高兴的宣布在 Jenkins 每周发布提供 Java 11 预览！
 为什么我们需要 Java 11 的预览？
@@ -102,10 +102,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
     
     <item>
       <title>成为一名 Jenkins 贡献者：对新手友好的工单</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</guid>
       <description>两个月前，我发表了一篇介绍性文章， 成为一名 Jenkins 贡献者的旅程。在那篇第一次发表的文章 review 过后，学习到了我们可以参与和贡献的多种途径。 因此，在这个站点仓库中有对首次、基础的贡献的描述。
 现在，我们将会在这篇文章中探索更多高级的贡献，向 Jenkins 核心中提交代码。
 从工单和过程开始 新手贡献指导以及 Jenkins Jira 查看位于 jenins.io 上的开发者章节可能是最好的起点， 参考链接也很方便。同时，向 Jenkins 贡献的新手指导也很有用，因为它指出了不同的仓库、工具（例如问题跟踪系统）以及治理文档。 此外，它还描述了提交消息、代码风格约定、PR 指导等的最佳实践。

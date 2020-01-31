@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gitlab on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/gitlab/</link>
+    <link>https://jenkins-zh.cn/tags/gitlab/</link>
     <description>Recent content in Gitlab on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 11 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>介绍新的 GitLab 分支源插件</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</guid>
       <description>GitLab 分支源插件已经走出 beta 阶段，并已发布到 Jenkins 更新中心。 它允许您基于 GitLab 用户 或 组 或 子组 项目创建任务。 您可以:
  从 GitLab 用户/组/子组导入单个项目的分支作为任务（多分支流水线任务） 从 GitLab 用户/组/子组导入所有或部分项目的分支作为任务（GitLab 组任务或 GitLab 文件夹组织）  GitLab 组项目对项目进行扫描， 根据设置的规则导入流水线任务。 导入项目之后， Jenkins 立即基于 Jenkinsfile 流水线脚本运行任务并且将状态通知到 GitLab 流水线状态。 这个插件与其他分支源插件不同，它提供了 GitLab 服务器配置，可以在系统配置中配置。 Jenkins 配置即代码 (JCasC) 也可以用于配置服务器。 要想了解更多关于服务器配置的信息，请参考我之前的博客。
 要求  Jenkins - 2.176.2 (LTS)
@@ -26,10 +26,10 @@
     
     <item>
       <title>多分支流水线任务对 GitLab SCM 的支持</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
       <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件： * GitLab API 插件 - 包装 GitLab Java APIs。 * GitLab 分支源插件 - 包括两个包： * io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 * io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。
 现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
     </item>

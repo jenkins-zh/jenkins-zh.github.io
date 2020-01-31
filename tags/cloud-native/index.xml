@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud Native on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/cloud-native/</link>
+    <link>https://jenkins-zh.cn/tags/cloud-native/</link>
     <description>Recent content in Cloud Native on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/cloud-native/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/cloud-native/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/</guid>
       <description>KubeCon + CloudNativeCon | Open Source Summit | 持续交付峰会 中国2019 2019年4月10日，旧金山 - Linux基金会是一家以开源促进大众创新的非营利组织，今天公布将于2019年6月24至26日在中国上海举行的 KubeCon + CloudNativeCon + Open Source Summit 中国2019日程。
 Open Source Summit 中国2019前身为 LinuxCon + ContainerCon + CloudOpen 中国（LC3），是开源社区寻求合作、共享信息、了解当今最有影响力的开源技术和议题的重要平台，包括：云原生、无服务器、微服务、物联网、人工智能、网络、Linux 等。
 2019年，首次将Open Source Summit中国和KubeCon + CloudNativeCon中国整合成一项活动，只需购票一次即可参加KubeCon + CloudNativeCon + Open Source Summit中国。
@@ -26,10 +26,10 @@ Jenkins 中文社区邀您参与社区共同成长 在开源盛会开展的同�
     
     <item>
       <title>Jenkins 和 Kubernetes -云上的神秘代理</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</guid>
       <description>最近我们构建和部署服务的方式与原来相比简直就是突飞猛进，像那种笨拙的、单一的、用于构建单体式应用程序的方式已经是过去式了。我们努力了这么久，终于达到了现在的效果。现在的应用为了提供更好的拓展性和可维护性，都会去拆解成各种相互依赖小、解耦性强的微服务，这些服务有各自的依赖和进度。如果你想去构建你所负责的服务，那么从一开始，就应该使用 CI/CD 的方式；当然，如果你走上了这条路， Jenkins 就是你的良师益友。
 如果你是做微服务的话，那让我们在开始之前先花些时间想一想。如果你只在 Jenkins 上构建单体式应用程序，那你肯定每天都会运行很多 Jenkins job, 而且还要不厌其烦地运行很多次。所以，我们应该好好想清楚怎么样来做出一些改变来适应这种事情。其实只需要付出一些努力，Jenkins 就可以帮我们很好地解决这种事情。
 我的 Jenkins 的进阶之路 作为一个 Devops 从业者，我遇到的最大问题是如何管理并优化自己的 Jenkins agent 结构。如果只是用 Jenkins 玩玩，实验性地跑一些流水线，那根本不用考虑 agent 的事情。如果你每天要跑成百上千条流水线的话，那考虑怎么去做优化就是一件非常非常重要的事情了。在 Jenkins 进阶之路中，我也尝试了各种不同的方式来寻找最好的 Jenkins agent 的使用方式。相信如果你也和我一样经历过，那下面这些事情你一定会很熟悉喽。

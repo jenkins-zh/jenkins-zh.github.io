@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cdsummit on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/cdsummit/</link>
+    <link>https://jenkins-zh.cn/tags/cdsummit/</link>
     <description>Recent content in Cdsummit on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/cdsummit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/cdsummit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/</guid>
       <description>KubeCon + CloudNativeCon | Open Source Summit | 持续交付峰会 中国2019 2019年4月10日，旧金山 - Linux基金会是一家以开源促进大众创新的非营利组织，今天公布将于2019年6月24至26日在中国上海举行的 KubeCon + CloudNativeCon + Open Source Summit 中国2019日程。
 Open Source Summit 中国2019前身为 LinuxCon + ContainerCon + CloudOpen 中国（LC3），是开源社区寻求合作、共享信息、了解当今最有影响力的开源技术和议题的重要平台，包括：云原生、无服务器、微服务、物联网、人工智能、网络、Linux 等。
 2019年，首次将Open Source Summit中国和KubeCon + CloudNativeCon中国整合成一项活动，只需购票一次即可参加KubeCon + CloudNativeCon + Open Source Summit中国。

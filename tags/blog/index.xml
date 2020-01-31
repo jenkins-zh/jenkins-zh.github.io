@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/blog/</link>
+    <link>https://jenkins-zh.cn/tags/blog/</link>
     <description>Recent content in Blog on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>完整的 CI/CD 集合[教程]</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/</guid>
       <description> 什么是 CI/CD？  什么是 CI/CD？作者：Izzy Azeri-让我们看一下 CI 和 CD，这是所有 DevOps 商店的基本基石，并看看如何利用这些概念来帮助更好地交付下一个项目。 什么是持续集成和持续交付？作者：Arnab Roy—我们深入探讨了 DevOps 环境的两个基本要素。 什么是持续交付？好处和最佳实践，作者：ATC 团队-看看持续交付如何适合 DevOps 流水线，它与持续部署有何不同以及一些最佳实践。 持续集成与持续交付，作者：Rebecca Pruess—持续集成和交付是最常见的 DevOps 术语中的两个。但是，从字面上和您的业务来讲，它们是什么意思？ 持续交付与持续部署与持续集成之间的差异（以及如何最佳利用它们），作者：Angela Stringfellow—所有这些持续概念之间的真正区别是什么？从 DevOps 专家那里了解有关此内容的更多信息，以充分利用 CI 和 CD。 持续集成和工作流程简介，作者：Rekha Sree—所有这些持续概念之间的真正区别是什么？从 DevOps 专家那里了解有关此内容的更多信息，以充分利用 CI 和 CD。  CI/CD 入门  了解如何从头开始建立 CI/CD 流水线，作者：Samarpit Tuli—作为现代 DevOps 流程的基础，理解 CI/CD 并学习如何从头开始建立流水线非常重要。 持续输送流水线的各个阶段，作者：Pavan Belagatti—使用 CD 流水线是采用敏捷和 DevOps 的重要组成部分，这将提高组织的整体生产力。 AWS 提供的安全且可扩展的 CI/CD 流水线，作者：Chandani Patel—Amazon 和 DevOps 与许多工具和流程紧密结合，可实现高效的 CI/CD 流水线。 使用 Visual Studio 建立 CI/CD 流水线，作者：Mohamed Radwan—了解如何在 Visual Studio Team Services 中设置 CI/CD 流水线以自动执行代码的构建，测试和部署。 Kubernetes、Jenkins、Spinnaker 的 CI/CD，作者：Arvind Rajpurohit 和 Karan Patil—这是一个新工具，可以帮助您将新的构建不断地部署到 Kubernetes 集群。 使持续交付到数据库，作者：Matt Hilbert—无需使用不熟悉的流程和强制执行的策略将其添加到您现有的基础架构中，而是可以将数据库 CD 与现有系统一起实施。 用 Git 和 Jenkins 建立一个持续交付流水线，作者：Lyndsey Padget—了解如何利用 Git 的强大功能和简单性与 Jenkins 建立自动持续交付流水线。 使用 Jenkins、Helm、Kubernetes 轻松自动化 CI/CD 流水线，作者：Eldad Assis—了解如何使用 Jenkins、Helm、Kubernetes 设置工作流以自动化 CI/CD 流水线，以快速轻松地进行部署。 使用 Hashicorp Terraform 和 Jenkins 的不可变基础架构 CI/CD，作者：Radhakrishnan Rk—这篇内容广泛的文章应该会留下一些关于创建基础设施的问题没有得到解答。  CI/CD 工具和技术  20 种最佳持续集成工具：优化 CI/CD 流程的指南，作者：Ben Patterson—CI/CD 流水线是创建可靠的 DevOps 流程的关键，该流程可将稳定的产品更快地推向市场。 CI/CD 工具的淘汰：Jenkins vs、TeamCity vs、Bamboo，作者：Ben Putano—看看 DevOps 的三个顶级 CI/CD 工具-Jenkins、TeamCity、Bamboo-为您提供做出选择的建议。 我应该使用哪种 CI/CD 工具，作者：Anita Buehrle—了解典型的自动化 CI/CD 部署流水线的组件以及为什么需要它。 适用于 DevOps 和持续交付的最佳自动化测试工具（前 10 名），作者：Lavanya C—检查这些自动化测试工具，以在软件开发生命周期中实现持续交付。 前 8 个持续集成工具，作者：Vladimir Pecanac—如果您未来使用 C/I，Vladimir Pecanac 很好地概述了您的组织应考虑使用的 8 种持续集成工具。 Ansible 安装 CI/CD 工具：您需要知道的一切，作者：Evgeny Mekhanikov—了解如何使用 IT 自动化工具 Ansible 为 CI/CD 流水线设置工具。 Kubernetes 的 11 种持续交付工具（第 1 部分），作者：Anita Buehrle—一旦您的 Kubernetes 应用程序启动并运行，您将需要为 CI/CD 流水线构建其余部分。  CI/CD 最佳实践和关注点  CI 失败的 5 大原因，作者：Shashikant Jagtap—使用质量低下的服务器会浪费每个人的时间，因为构建时间太长，无法完成，从而导致测试结果断断续续，并使工程师感到沮丧。 降低持续交付速度的 6 个常见挑战，作者：Ben Putano—按照以下步骤进行持续交付和高质量代码，克服障碍并加速您的成功。 2019 年学习 Jenkins 和 CI/CD 的 5 门课程，作者：Javin Paul—查看这些免费课程，以帮助您了解有关使用 DevOps 工具 Jenkins 的更多信息。 CD/CI 成功所需的基本方法，作者：Ben Putano—如果您希望开始使用 CI/CD 流水线，则需要掌握一些基础知识。这篇文章将帮助您。 选择 CI 平台时应考虑的 10 件事，作者：Pavan Belagatti—持续集成是采用 DevOps 的第一步。选择 CI 平台时，请牢记这十个因素。 持续集成第 3 部分：最佳做法，作者：Deepak Karanth 和 RJ Williams—本文介绍了持续集成的最佳实践，以及采用 DevOps 原则（如自动部署等）的提示和预防措施。  </description>
     </item>
     

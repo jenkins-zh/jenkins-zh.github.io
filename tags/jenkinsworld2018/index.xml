@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkinsworld2018 on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/jenkinsworld2018/</link>
+    <link>https://jenkins-zh.cn/tags/jenkinsworld2018/</link>
     <description>Recent content in Jenkinsworld2018 on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/jenkinsworld2018/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/jenkinsworld2018/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 和 Kubernetes -云上的神秘代理</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/</guid>
       <description>最近我们构建和部署服务的方式与原来相比简直就是突飞猛进，像那种笨拙的、单一的、用于构建单体式应用程序的方式已经是过去式了。我们努力了这么久，终于达到了现在的效果。现在的应用为了提供更好的拓展性和可维护性，都会去拆解成各种相互依赖小、解耦性强的微服务，这些服务有各自的依赖和进度。如果你想去构建你所负责的服务，那么从一开始，就应该使用 CI/CD 的方式；当然，如果你走上了这条路， Jenkins 就是你的良师益友。
 如果你是做微服务的话，那让我们在开始之前先花些时间想一想。如果你只在 Jenkins 上构建单体式应用程序，那你肯定每天都会运行很多 Jenkins job, 而且还要不厌其烦地运行很多次。所以，我们应该好好想清楚怎么样来做出一些改变来适应这种事情。其实只需要付出一些努力，Jenkins 就可以帮我们很好地解决这种事情。
 我的 Jenkins 的进阶之路 作为一个 Devops 从业者，我遇到的最大问题是如何管理并优化自己的 Jenkins agent 结构。如果只是用 Jenkins 玩玩，实验性地跑一些流水线，那根本不用考虑 agent 的事情。如果你每天要跑成百上千条流水线的话，那考虑怎么去做优化就是一件非常非常重要的事情了。在 Jenkins 进阶之路中，我也尝试了各种不同的方式来寻找最好的 Jenkins agent 的使用方式。相信如果你也和我一样经历过，那下面这些事情你一定会很熟悉喽。
@@ -25,10 +25,10 @@
     
     <item>
       <title>自动更新、易于使用的 Jenkins</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/</guid>
       <description>当我第一次 写 Jenkins Evergreen 相关的文章 ， 后来被称为 &amp;ldquo;Jenkins Essentials&amp;rdquo;，我提到的一系列的未来的发展在接下来的几个月里已经变成了 现实 。 今年在旧金山举办的 DevOps World - Jenkins World 会议上，我会介绍 Jenkins Evergreen 背后哲学的更多细节，展示我们已经做了什么，并且讨论这个激进的 Jenkins 发行版的走向。
 正如我在第一篇博客以及 JEP-300 中所讨论的 Jenkins Evergreen 的前两大支柱是我们关注的要点.
 自动更新的发行版 不出所料, 实现安全、自动地更新Jenkins发行版（包括核心和插件）所需的机制需要很多的工作。在 Baptiste 的演讲中 他将讨论如何使 Evergreen &amp;ldquo;走起来&amp;rdquo;，而我会讨论 为何 自动更新的发行版很重要。

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/docker/</link>
+    <link>https://jenkins-zh.cn/tags/docker/</link>
     <description>Recent content in Docker on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Docker 全自动构建 Java 应用</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</link>
       <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/</guid>
       <description>这次的流水线中，我们使用 Docker 容器来构建我们的 Java 应用。
 我们会在 Docker 容器里运行 Jenkins，再使用 Jenkins 启动一个 Maven 容器，用来编译我们的代码，接着在另一个 Maven 容器中运行测试用例并生成制品（例如 jar 包），然后再在 Jenkins 容器中制作 Docker 镜像，最后将镜像推送到 Docker Hub。
 我们会用到两个 Github 仓库。
@@ -28,10 +28,10 @@
     
     <item>
       <title>10节课带你深入学习 DevOps 工程</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</link>
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</guid>
       <description>DevOps 现在真的很热门，对于杰出的工程师和 DevOps 专业人员来说有许多工作机会。 如果你想成为一名 DevOps 工程师，那么你来对地方了。在本文中，我将分享一下最好的在线培训课程， 让你成为 DevOps 专业人员。
 Devops 最重要的优势，它可以帮助你更好地发布软件并且利用现代自动化工具对环境和软件开发过程中提供更多控制。这就是 DevOps 专业人员需求呈指数增长的原因。除了 Data Science 和 Machine Learning 外，它也是薪酬最高的 IT 工作之一。
 根据 Glassdoor 的数据，DevOps 的工程师每年的收入从105000美元到146000美元不等。这意味着，如果你正在寻找加薪或想在美好年纪从事一些令人兴奋的工作赚更多的钱，学习 DevOps 可能是一个不错的选择。
@@ -43,10 +43,10 @@ Devops 最重要的优势，它可以帮助你更好地发布软件并且利用�
     
     <item>
       <title>Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/</guid>
       <description>Docker 已经非常出名并且更多的组织正在转向基于 Docker 的应用开发和部署。这里有一个关于如何容器化现有 Java Web 应用以及使用 Jenkins 为它建立一个端到端部署流水线的快速指南。
 为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。
 步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。

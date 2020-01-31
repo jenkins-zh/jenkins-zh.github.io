@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Plugins on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/plugins/</link>
+    <link>https://jenkins-zh.cn/tags/plugins/</link>
     <description>Recent content in Plugins on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 25 Oct 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/plugins/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/plugins/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Alpha 版本的插件管理库和 CLI 工具</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</link>
       <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</guid>
       <description>&amp;ldquo;人人都在重复造轮子，部分像实现插件管理的&amp;rdquo;细节&amp;rdquo;（签名元数据，制品校验和，从核心独立出来的插件&amp;hellip;）。 很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&amp;rdquo; JENKINS-53767
 我的 Google Summer of Code project 项目试图解决这个问题，方法是创建一个库，该库将在 Jenkins 的不同实现中统一插件管理逻辑，并提供一个可以使用户轻松下载插件并在 Jenkins 启动之前查看插件信息的 CLI 工具。 我很高兴分享我们刚刚发布的 Alpha 版本，您可以在此处查看！
 GSoC 阶段 1 更新 当我考虑将插件管理器从 Jenkins 核心中移出时，由于依赖项的复杂性和数量，这最终成为了最具挑战性的第一步。相反，我们决定首先将 Jenkins Docker 中的 install-plugins.sh bash 脚本转换为 Java。 install-plugins.sh 脚本存在多个问题，即它是 bash 脚本并且扩展性有限，此外，它不会检索所有最新的更新中心的元数据。
@@ -27,10 +27,10 @@ Alpha 版本详情 模仿官方 Jenkins Docker 镜像中 install-plugins.sh 脚�
     
     <item>
       <title>介绍新的 GitLab 分支源插件</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</guid>
       <description>GitLab 分支源插件已经走出 beta 阶段，并已发布到 Jenkins 更新中心。 它允许您基于 GitLab 用户 或 组 或 子组 项目创建任务。 您可以:
  从 GitLab 用户/组/子组导入单个项目的分支作为任务（多分支流水线任务） 从 GitLab 用户/组/子组导入所有或部分项目的分支作为任务（GitLab 组任务或 GitLab 文件夹组织）  GitLab 组项目对项目进行扫描， 根据设置的规则导入流水线任务。 导入项目之后， Jenkins 立即基于 Jenkinsfile 流水线脚本运行任务并且将状态通知到 GitLab 流水线状态。 这个插件与其他分支源插件不同，它提供了 GitLab 服务器配置，可以在系统配置中配置。 Jenkins 配置即代码 (JCasC) 也可以用于配置服务器。 要想了解更多关于服务器配置的信息，请参考我之前的博客。
 要求  Jenkins - 2.176.2 (LTS)
@@ -40,10 +40,10 @@ Alpha 版本详情 模仿官方 Jenkins Docker 镜像中 install-plugins.sh 脚�
     
     <item>
       <title>Jenkins 流水线配置历史插件介绍</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</link>
       <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</guid>
       <description>流水线是在 Jenkins 中创建任务的有效的和现代的方式。 为了快速、简单地识别流水线变更，我们开发了流水线配置历史插件。 这个插件检测流水线的变更，并为用户提供一个选项，以明显地、可追溯地查看流水线配置两次构建（差异）之间的变更。
 一切是如何开始的 这一切开始于十年之前 —— 经典的任务类型 (例如：自由风格、Maven 等等)。 每隔一段时间，用户就会联系我们，因为他们的任务无法在一夜之间完成。 为什么这个任务失败了呢？ 这次失败和任务配置变更有关系吗？ 用户典型的回答是：&amp;rdquo;我们没有改任何东西&amp;rdquo;，但这是真的吗？ 我们思考了这个问题，并决定开发一个插件来帮助我们解决这个问题。 这就是plugin:jobConfigHistory[任务配置历史]的想法和开始。
 现在可以查看任务配置的变更(例如其他分支、JDK版本等)，而且更常见的情况是，破坏构建的原因是任务配置的变更。
@@ -54,10 +54,10 @@ Alpha 版本详情 模仿官方 Jenkins Docker 镜像中 install-plugins.sh 脚�
     
     <item>
       <title>在 Kubernetes 上使用 Jenkins </title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</link>
       <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/</guid>
       <description>​有几种方法可以在 DevOps 环境中管理您的云基础架构。 DevOps 是一种鼓励快速流动的应用程序开发以及促进 IT 团队开发、测试、发布过程无缝无缝衔接的方法。
 Jenkins 通过自动化将持续集成（CI）和持续交付（CD）无缝集成到开发流程中来优化工作流程。
 可以使用 Kubernetes 中的 Jenkins pod 部署这些技术， Jenkins pod 可以根据团队的具体需求进行扩展。
@@ -68,10 +68,10 @@ CI/CD 流水线 Jenkins 是 CI/CD 的同义词，它是自动化开发、部署�
     
     <item>
       <title>Jenkins 插件的微基准测试框架</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</guid>
       <description>Jenkins 插件的微基准测试框架 作为我 Google 编程夏令营的一部分，我一直致力于改进角色策略插件（Role Strategy Plugin）的性能。 由于没有现有的方法来度量性能以及在 Jenkins 插件上做基准测试， 我在项目第一阶段的工作是创建一个框架在一个 Jenkins 实例中运行 Jenkins 插件中的基准测试。 为了让我们的工作更容易些，我们选择了 Java微基准测试工具来运行这些基准。 这使我们能够可靠地度量对时间要求严格的功能的性能，将有助于让 Jenkins 为每个人更快的运转。
 最近在 Jenkins 单元测试工具2.50中发布了微基准测试框架。 下面的博客文章展示了如何在插件中运行基准测试。
 介绍 该框架通过为 JMH 基准的每个 fork 启动一个临时的 Jenkins 实例来运行， 就像 Jenkins 测试工具中的 JenkinsRule。 基准测试是直接从 JUnit 测试运行的，它允许在运行过程中失败构建，并且很容易从 IDE 中运行基准测试，就像单元测试一样。 你可以很容易地通过使用 Java 方法或使用 Jenkins plugin:configuration-as-code:[配置即代码插件]来配置基准并将路径传递到 YAML 文件。
@@ -81,20 +81,20 @@ CI/CD 流水线 Jenkins 是 CI/CD 的同义词，它是自动化开发、部署�
     
     <item>
       <title>多分支流水线任务对 GitLab SCM 的支持</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
       <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件： * GitLab API 插件 - 包装 GitLab Java APIs。 * GitLab 分支源插件 - 包括两个包： * io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 * io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。
 现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
     </item>
     
     <item>
       <title>春季安全清查</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/</guid>
       <description>今天我们公布了一个 安全报告， 主要是关于 Jenkins 的插件中 还没有被修复 的问题。 发生了什么？
 Jenkins 安全团队将 漏洞反馈分类发布在 Jira 和我们的非公开邮件列表中。 一旦我们确定它不是由 Jenkins 安全团队成员维护的插件，我们会尝试将该问题通知插件维护者，以帮助我们开发，审查和发布修复。
 这种情况下，我们会发布 安全报告，将这些问题告知用户，即使没有发布修复版本。 这样可以让管理员作出决定，是否继续使用具有未解决的安全漏洞的插件。 今天发布的报告里大多数都是这样的安全问题。

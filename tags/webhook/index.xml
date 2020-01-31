@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webhook on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/webhook/</link>
+    <link>https://jenkins-zh.cn/tags/webhook/</link>
     <description>Recent content in Webhook on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 23 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/webhook/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/webhook/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Webhook 通用触发插件</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/</link>
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/</guid>
       <description>这篇文章将介绍我在 Jenkins 上遇到的一些常见问题，以及如何通过开发通用 Webhook 触发插件来解决这些问题。
 问题 在使用 Jenkins 工作时，我经常遇到同样的问题：
  代码重复和安全性-每个仓库中的 Jenkinsfiles。 分支不是功能-master 上的参数化任务通常会混合与不同功能相关的参数。 记录不良的触发器插件-记录正常服务但记录不佳的使用插件  代码重复和安全性 每个 Git 仓库中都有 Jenkinsfiles，使开发人员可以使这些文件分开。开发人员 push 他们的项目，并且很难维护共享代码的模式。

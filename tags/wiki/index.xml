@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wiki on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/wiki/</link>
+    <link>https://jenkins-zh.cn/tags/wiki/</link>
     <description>Recent content in Wiki on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/wiki/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/wiki/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins 插件文档即代码：将文档迁移到 GitHub</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</link>
       <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</guid>
       <description>在2019年9月，我们宣布了对 GitHub 作为 Jenkins 插件站点文档来源的支持。 感谢 Zbynek Konecny 和 Olivier Vernin 以及其他贡献者， 现在可以将插件文档直接存储在插件储存库中，而不是 Jenkins Wiki 中，对于插件维护者和 Jenkins 基础设施团队来说，这在过去是很难维护的。
 这篇博文可能对插件维护者和那些想为 Jenkins 文档做贡献的人来说很有趣。 我将描述如何将插件文档迁移到 GitHub 并获得如下页面:
 为什么？ 通过使用插件的 GitHub 仓库存储文档， 插件维护者可以遵循 文档即代码 的方法，将文档更改作为 pull request 的一部分，这样就不会忘记文档的后续工作。 它还提供了一个 review 文档更改以及增加文档贡献者的认可度的机会，尤其是如果 story 与 Release Drafter 结合。

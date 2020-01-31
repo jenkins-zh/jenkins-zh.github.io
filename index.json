@@ -1,6 +1,6 @@
 [
     {
-        "uri": "https://jenkins-zh.github.io/about/sponsors-list/",
+        "uri": "https://jenkins-zh.cn/about/sponsors-list/",
         "title": "社区捐助",
         "type": "about",
         "date": "2019-09-07 00:00:00 +0000 UTC",
@@ -13,7 +13,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/code-of-conduct/",
+        "uri": "https://jenkins-zh.cn/about/code-of-conduct/",
         "title": "行为规范",
         "type": "about",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -26,7 +26,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/",
         "title": "完整的 CI/CD 集合[教程]",
         "type": "wechat",
         "date": "2020-01-10 00:00:00 +0000 UTC",
@@ -39,7 +39,7 @@
         "poster": "12682719-befunky-photo-2.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2020-01-08/",
+        "uri": "https://jenkins-zh.cn/meeting/2020-01-08/",
         "title": "",
         "type": "meeting",
         "date": "2020-01-08 00:00:00 +0000 UTC",
@@ -52,7 +52,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/",
         "title": "使用 Jenkins 实现 CI/CD 多分支流水线",
         "type": "wechat",
         "date": "2019-12-31 00:00:00 +0000 UTC",
@@ -65,7 +65,7 @@
         "poster": "cover.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/",
         "title": "欢迎使用流水线指令-矩阵",
         "type": "wechat",
         "date": "2019-12-29 00:00:00 +0000 UTC",
@@ -78,7 +78,7 @@
         "poster": "cover.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/",
         "title": "Jenkins CLI 命令行 v0.0.24",
         "type": "wechat",
         "date": "2019-12-26 00:00:00 +0000 UTC",
@@ -91,7 +91,7 @@
         "poster": "jenkins-cli.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-12-25/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-12-25/",
         "title": "",
         "type": "meeting",
         "date": "2019-12-25 00:00:00 +0000 UTC",
@@ -104,7 +104,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/",
         "title": "Webhook 通用触发插件",
         "type": "wechat",
         "date": "2019-12-23 00:00:00 +0000 UTC",
@@ -117,7 +117,7 @@
         "poster": "cover.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/",
         "title": "使用 Docker 全自动构建 Java 应用",
         "type": "wechat",
         "date": "2019-12-19 00:00:00 +0000 UTC",
@@ -130,7 +130,7 @@
         "poster": "Jenkins-Docker.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-12-11/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-12-11/",
         "title": "",
         "type": "meeting",
         "date": "2019-12-11 00:00:00 +0000 UTC",
@@ -143,7 +143,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/",
         "title": "Jenkins 健康检查顾问",
         "type": "wechat",
         "date": "2019-12-11 00:00:00 +0000 UTC",
@@ -156,7 +156,7 @@
         "poster": "cover.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-29-jenkins-cicd-with-git-secrets/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-29-jenkins-cicd-with-git-secrets/",
         "title": "Jenkins CI/CD 集成 Git Secrets",
         "type": "wechat",
         "date": "2019-11-29 00:00:00 +0000 UTC",
@@ -169,7 +169,7 @@
         "poster": "connection-netwok.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/",
         "title": "Jenkins CLI 命令行 v0.0.23",
         "type": "wechat",
         "date": "2019-11-28 00:00:00 +0000 UTC",
@@ -182,7 +182,7 @@
         "poster": "jenkins-cli.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-11-27/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-11-27/",
         "title": "",
         "type": "meeting",
         "date": "2019-11-27 00:00:00 +0000 UTC",
@@ -195,7 +195,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/",
         "title": "Jenkins 插件文档即代码：将文档迁移到 GitHub",
         "type": "wechat",
         "date": "2019-11-22 00:00:00 +0000 UTC",
@@ -208,7 +208,7 @@
         "poster": "jenkins-plugin-docs-to-github.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-20-jenkins-cli-help-you-manage-jenkins/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-20-jenkins-cli-help-you-manage-jenkins/",
         "title": "Jenkins CLI，助你轻松管理 Jenkins",
         "type": "wechat",
         "date": "2019-11-20 00:00:00 +0000 UTC",
@@ -221,7 +221,7 @@
         "poster": "jenkins-cli.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/",
         "title": "Jenkins CI 自动构建与 C-STAT 代码分析的集成",
         "type": "wechat",
         "date": "2019-11-18 00:00:00 +0000 UTC",
@@ -234,7 +234,7 @@
         "poster": "cover.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/",
         "title": "了解如何使用 Jenkins-X UpdateBot",
         "type": "wechat",
         "date": "2019-11-15 00:00:00 +0000 UTC",
@@ -247,7 +247,7 @@
         "poster": "cover.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/",
         "title": "Working Hours 插件的第一阶段更新",
         "type": "wechat",
         "date": "2019-11-14 00:00:00 +0000 UTC",
@@ -260,7 +260,7 @@
         "poster": "cover.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-11-13/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-11-13/",
         "title": "",
         "type": "meeting",
         "date": "2019-11-13 00:00:00 +0000 UTC",
@@ -273,7 +273,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-13-a-thanks-letter/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-13-a-thanks-letter/",
         "title": "致霍格沃兹测试学院的一封感谢信",
         "type": "wechat",
         "date": "2019-11-13 00:00:00 +0000 UTC",
@@ -286,7 +286,7 @@
         "poster": "open-source.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/",
         "title": "Jenkins 2019 年 Board 和 Officer positions 选举更新",
         "type": "wechat",
         "date": "2019-11-12 00:00:00 +0000 UTC",
@@ -299,7 +299,7 @@
         "poster": "cover.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-11-update-center-mirror-announcement/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-11-update-center-mirror-announcement/",
         "title": "Jenkins 插件中心国内镜像源发布",
         "type": "wechat",
         "date": "2019-11-11 00:00:00 +0000 UTC",
@@ -312,7 +312,7 @@
         "poster": "flash.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/",
         "title": "在 Kubernetes 中通过 Apache Kafka 插件远程处理 Kafka 启动程序",
         "type": "wechat",
         "date": "2019-11-08 00:00:00 +0000 UTC",
@@ -325,7 +325,7 @@
         "poster": "“./2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/cover.jpg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/",
         "title": "为 DevOps 构建新的运营模型",
         "type": "wechat",
         "date": "2019-11-06 00:00:00 +0000 UTC",
@@ -338,7 +338,7 @@
         "poster": "devops.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/11/2019-11-04-jcli-v0.0.22/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-04-jcli-v0.0.22/",
         "title": "Jenkins CLI 命令行 v0.0.22",
         "type": "wechat",
         "date": "2019-11-04 00:00:00 +0000 UTC",
@@ -351,7 +351,7 @@
         "poster": "“great-wall.jpeg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-10-30/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-10-30/",
         "title": "",
         "type": "meeting",
         "date": "2019-10-30 00:00:00 +0000 UTC",
@@ -364,7 +364,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-28-introducing-new-folder-authorization-plugin/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-28-introducing-new-folder-authorization-plugin/",
         "title": "介绍新的文件夹授权插件",
         "type": "wechat",
         "date": "2019-10-28 00:00:00 +0000 UTC",
@@ -377,7 +377,7 @@
         "poster": "“./2019-10-28-introducing-new-folder-authorization-plugin/cover.jpg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/",
         "title": "Alpha 版本的插件管理库和 CLI 工具",
         "type": "wechat",
         "date": "2019-10-25 00:00:00 +0000 UTC",
@@ -390,7 +390,7 @@
         "poster": "devopsworld.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-20-online-activity/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-20-online-activity/",
         "title": "Jenkins 线上技术交流",
         "type": "wechat",
         "date": "2019-10-20 00:00:00 +0000 UTC",
@@ -403,7 +403,7 @@
         "poster": "eagle.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/10/2019-10-17-jcli-v0.0.21/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-17-jcli-v0.0.21/",
         "title": "Jenkins CLI 命令行",
         "type": "wechat",
         "date": "2019-10-17 00:00:00 +0000 UTC",
@@ -416,7 +416,7 @@
         "poster": "“great-wall.jpeg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-10-16/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-10-16/",
         "title": "",
         "type": "meeting",
         "date": "2019-10-16 00:00:00 +0000 UTC",
@@ -429,7 +429,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-27-jenkins-in-hacktoberfest/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-27-jenkins-in-hacktoberfest/",
         "title": "Jenkins 喊你参加 Hacktoberfest",
         "type": "wechat",
         "date": "2019-09-27 00:00:00 +0000 UTC",
@@ -442,7 +442,7 @@
         "poster": "hacktoberfest_19_logo.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-23-devops-world-jenkins-world/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-23-devops-world-jenkins-world/",
         "title": "2019 DEVOPS WORLD和JENKINS WORLD 获奖者公布",
         "type": "wechat",
         "date": "2019-09-23 00:00:00 +0000 UTC",
@@ -455,7 +455,7 @@
         "poster": "jenkins-world.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-09-22/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-09-22/",
         "title": "",
         "type": "meeting",
         "date": "2019-09-22 00:00:00 +0000 UTC",
@@ -468,7 +468,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/",
         "title": "React Plugin Template，让你可以使用 React 来编写 Jenkins 插件",
         "type": "wechat",
         "date": "2019-09-19 00:00:00 +0000 UTC",
@@ -481,7 +481,7 @@
         "poster": "plugin-ui.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-09-18/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-09-18/",
         "title": "",
         "type": "meeting",
         "date": "2019-09-18 00:00:00 +0000 UTC",
@@ -494,7 +494,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/",
         "title": "Jenkins World 贡献者峰会及专家答疑展位",
         "type": "wechat",
         "date": "2019-09-15 00:00:00 +0000 UTC",
@@ -507,7 +507,7 @@
         "poster": "./2019-09-15-jenkins-world-contributor-summit/cover.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/",
         "title": "介绍新的 GitLab 分支源插件",
         "type": "wechat",
         "date": "2019-09-11 00:00:00 +0000 UTC",
@@ -520,7 +520,7 @@
         "poster": "./2019-09-11-introducing-gitlab-branch-source-plugin/gitlab_and_jenkins.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-09-05/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-09-05/",
         "title": "",
         "type": "meeting",
         "date": "2019-09-05 00:00:00 +0000 UTC",
@@ -533,7 +533,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/09/2019-09-05-award/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-05-award/",
         "title": "Jenkins 中文社区第二届明星贡献者名单",
         "type": "wechat",
         "date": "2019-09-05 00:00:00 +0000 UTC",
@@ -546,7 +546,7 @@
         "poster": "eagle.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-30-open-source-meeting/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-30-open-source-meeting/",
         "title": "庆祝开源人线下见面会圆满结束",
         "type": "wechat",
         "date": "2019-08-30 00:00:00 +0000 UTC",
@@ -559,7 +559,7 @@
         "poster": "551566921548_.pic_hd.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-23-cloud-native-jenkins-on-aws/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-23-cloud-native-jenkins-on-aws/",
         "title": "AWS 上的云原生 Jenkins",
         "type": "wechat",
         "date": "2019-08-23 00:00:00 +0000 UTC",
@@ -572,7 +572,7 @@
         "poster": "butler-in-action.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-08-21/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-08-21/",
         "title": "",
         "type": "meeting",
         "date": "2019-08-21 00:00:00 +0000 UTC",
@@ -585,7 +585,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-19-hackathon-signup/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-19-hackathon-signup/",
         "title": "开源持续交付黑客松，5000大奖等你来拿",
         "type": "wechat",
         "date": "2019-08-19 00:00:00 +0000 UTC",
@@ -598,7 +598,7 @@
         "poster": "hackathon-poster.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-17-award/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-17-award/",
         "title": "提名 Jenkins 中文社区激励候选人",
         "type": "wechat",
         "date": "2019-08-17 00:00:00 +0000 UTC",
@@ -611,7 +611,7 @@
         "poster": "eagle.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-16-tutor-recruitment/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-16-tutor-recruitment/",
         "title": "持续交付黑客松--导师招募",
         "type": "wechat",
         "date": "2019-08-16 00:00:00 +0000 UTC",
@@ -624,7 +624,7 @@
         "poster": "./2019-08-16-tutor-recruitment/tutor.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/",
         "title": "Jenkins 可视化阶段视图的改进",
         "type": "wechat",
         "date": "2019-08-15 00:00:00 +0000 UTC",
@@ -637,7 +637,7 @@
         "poster": "./superhero.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/",
         "title": "持续测试的那些事",
         "type": "wechat",
         "date": "2019-08-14 00:00:00 +0000 UTC",
@@ -650,7 +650,7 @@
         "poster": "./2019-08-14-continuous-testing-what-why-and-how/test_automation.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-09-volunteer-recruitment/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-09-volunteer-recruitment/",
         "title": "持续交付黑客松--志愿者招募",
         "type": "wechat",
         "date": "2019-08-09 00:00:00 +0000 UTC",
@@ -663,7 +663,7 @@
         "poster": "./2019-08-09-volunteer-recruitment/needyou.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/2019-08-08/",
+        "uri": "https://jenkins-zh.cn/meeting/2019-08-08/",
         "title": "",
         "type": "meeting",
         "date": "2019-08-08 00:00:00 +0000 UTC",
@@ -676,7 +676,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-08-jenkins-x-new-logo/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-08-jenkins-x-new-logo/",
         "title": "Jenkins X 新 logo",
         "type": "wechat",
         "date": "2019-08-08 00:00:00 +0000 UTC",
@@ -689,7 +689,7 @@
         "poster": "./2019-08-08-jenkins-x-new-logo/jenkinsx-stacked-color.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-07-hackathon-startup/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-07-hackathon-startup/",
         "title": "开源持续交付黑客松--号角声起",
         "type": "wechat",
         "date": "2019-08-07 00:00:00 +0000 UTC",
@@ -702,7 +702,7 @@
         "poster": "hackthon.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/",
         "title": "在大型企业里维护多分支流水线",
         "type": "wechat",
         "date": "2019-08-05 00:00:00 +0000 UTC",
@@ -715,7 +715,7 @@
         "poster": "./2019-08-05-jenkins-multi-branch-pipeline/cover.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/volunteer-part-in/",
+        "uri": "https://jenkins-zh.cn/about/volunteer-part-in/",
         "title": "活动志愿者报名",
         "type": "about",
         "date": "2019-08-05 00:00:00 +0000 UTC",
@@ -728,7 +728,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/",
         "title": "Jenkins 流水线配置历史插件介绍",
         "type": "wechat",
         "date": "2019-07-31 00:00:00 +0000 UTC",
@@ -741,7 +741,7 @@
         "poster": "./2019-07-31-pipeline-config-history-plugin/sunset.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/about-event-planning/",
+        "uri": "https://jenkins-zh.cn/about/about-event-planning/",
         "title": "活动策划",
         "type": "about",
         "date": "2019-07-31 00:00:00 +0000 UTC",
@@ -754,7 +754,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-30-jenkins-meetup/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-30-jenkins-meetup/",
         "title": "开源人线下见面会",
         "type": "wechat",
         "date": "2019-07-30 00:00:00 +0000 UTC",
@@ -767,7 +767,7 @@
         "poster": "./2019-07-30-jenkins-meetup/shou.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/",
         "title": "在 Kubernetes 上使用 Jenkins ",
         "type": "wechat",
         "date": "2019-07-29 00:00:00 +0000 UTC",
@@ -780,7 +780,7 @@
         "poster": "./2019-07-29-leveraging-jenkins-on-kubernetes/sea.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/",
         "title": "让我们庆祝 Jenkins 对 Java 11的支持",
         "type": "wechat",
         "date": "2019-07-15 00:00:00 +0000 UTC",
@@ -793,7 +793,7 @@
         "poster": "./2019-07-15-let-s-celebrate-java-11-support/c3bd32a48c96b4f10dad51a10f644233.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/",
         "title": "持续交付落地实践工作坊",
         "type": "wechat",
         "date": "2019-07-14 00:00:00 +0000 UTC",
@@ -806,7 +806,7 @@
         "poster": "pipeline-example.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/branching-strategy/",
+        "uri": "https://jenkins-zh.cn/about/branching-strategy/",
         "title": "分支策略",
         "type": "about",
         "date": "2019-07-09 19:56:04 +0800 +0800",
@@ -819,7 +819,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/",
         "title": "Jenkins 每周版更新",
         "type": "wechat",
         "date": "2019-07-09 00:00:00 +0000 UTC",
@@ -832,7 +832,7 @@
         "poster": "“./2019-07-09-jenkins-release/great-wall.jpeg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-09-jenkins-release/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/",
         "title": "Jenkins 长期支持版更新",
         "type": "wechat",
         "date": "2019-07-09 00:00:00 +0000 UTC",
@@ -845,7 +845,7 @@
         "poster": "“./2019-07-09-jenkins-release/great-wall.jpeg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-08-wechat-answer-1/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-08-wechat-answer-1/",
         "title": "Jenkins 中文社区技术交流微信群问题集之一",
         "type": "wechat",
         "date": "2019-07-08 00:00:00 +0000 UTC",
@@ -858,7 +858,7 @@
         "poster": "./2019-07-08-wechat-answer-1/wechat.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/",
         "title": "Jenkins 插件的微基准测试框架",
         "type": "wechat",
         "date": "2019-07-04 00:00:00 +0000 UTC",
@@ -871,7 +871,7 @@
         "poster": "./2019-07-04-performance-testing-jenkins/reflection.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/",
         "title": "多分支流水线任务对 GitLab SCM 的支持",
         "type": "wechat",
         "date": "2019-07-04 00:00:00 +0000 UTC",
@@ -884,7 +884,7 @@
         "poster": "./2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/tea.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/",
         "title": "介绍 Jenkins 模板引擎",
         "type": "wechat",
         "date": "2019-07-01 00:00:00 +0000 UTC",
@@ -897,7 +897,7 @@
         "poster": "./2019-07-01-introducing-the-jenkins-templating-engine/JTE.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/",
         "title": "使用Active-Choices-Plugin插件将十个Job合成一个",
         "type": "wechat",
         "date": "2019-06-26 00:00:00 +0000 UTC",
@@ -910,7 +910,7 @@
         "poster": "./2019-06-26-使用Active-Choices-Plugin插件将十个Job合成一个/the_one.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/",
         "title": "10节课带你深入学习 DevOps 工程",
         "type": "wechat",
         "date": "2019-06-17 00:00:00 +0000 UTC",
@@ -923,7 +923,7 @@
         "poster": "./2019-06-17-10-courses-to-learn-devops-engineering-in-depth/devops.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/",
         "title": "30分钟搞定 Jenkins CI",
         "type": "wechat",
         "date": "2019-06-14 00:00:00 +0000 UTC",
@@ -936,7 +936,7 @@
         "poster": "./2019-06-15-setup-jenkins-ci-in-30-minutes/788b731c3a30bba88e622c162ec0ea54.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/",
         "title": "还在苦恼不会写 Jenkins 流水线？来场工作坊！",
         "type": "wechat",
         "date": "2019-06-10 00:00:00 +0000 UTC",
@@ -949,7 +949,7 @@
         "poster": "pipeline-example.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-09-github-share/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-09-github-share/",
         "title": "在线分享 - 作为一名开源贡献者是如何使用 GitHub 的？",
         "type": "wechat",
         "date": "2019-06-09 00:00:00 +0000 UTC",
@@ -962,7 +962,7 @@
         "poster": "./github.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/",
         "title": "2019年 DevOps 面临的挑战以及如何战胜它们",
         "type": "wechat",
         "date": "2019-06-05 00:00:00 +0000 UTC",
@@ -975,7 +975,7 @@
         "poster": "./2019-06-05-devops-challenges-in-2019-how-to-overcome-them/xian.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-29-jenkins-release/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-29-jenkins-release/",
         "title": "Jenkins 2.176~2.178版本更新",
         "type": "wechat",
         "date": "2019-05-29 00:00:00 +0000 UTC",
@@ -988,7 +988,7 @@
         "poster": "“./2019-05-29-jenkins-release/qingshanlake.jpg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/",
         "title": "如何对 Jenkins 共享库进行单元测试",
         "type": "wechat",
         "date": "2019-05-28 00:00:00 +0000 UTC",
@@ -1001,7 +1001,7 @@
         "poster": "poster.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/",
         "title": "Jenkins 文档特别兴趣小组",
         "type": "wechat",
         "date": "2019-05-27 00:00:00 +0000 UTC",
@@ -1014,7 +1014,7 @@
         "poster": "./2019-05-27-docs-sig-announcement/Jenkins_Needs_You-02.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/",
         "title": "使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD",
         "type": "wechat",
         "date": "2019-05-24 00:00:00 +0000 UTC",
@@ -1027,7 +1027,7 @@
         "poster": "../05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/cicd.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-23-chinese-localization/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-23-chinese-localization/",
         "title": "Jenkins 中文本地化的重大进展",
         "type": "wechat",
         "date": "2019-05-23 00:00:00 +0000 UTC",
@@ -1040,7 +1040,7 @@
         "poster": "“great-wall.jpeg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/",
         "title": "基于 Jenkins + JaCoCo 实现功能测试代码覆盖率统计",
         "type": "wechat",
         "date": "2019-05-22 00:00:00 +0000 UTC",
@@ -1053,7 +1053,7 @@
         "poster": "“./2019-05-22-jacoco-coverage-for-functional-test/hangzhou.jpg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/",
         "title": "使用 Jenkins + Ansible 实现 Spring Boot 自动化部署101",
         "type": "wechat",
         "date": "2019-05-20 00:00:00 +0000 UTC",
@@ -1066,7 +1066,7 @@
         "poster": "./2019-05-20-jenkins-ansible-springboot/poster.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-20-translation-norms/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-translation-norms/",
         "title": "转载规范及声明",
         "type": "wechat",
         "date": "2019-05-20 00:00:00 +0000 UTC",
@@ -1079,7 +1079,7 @@
         "poster": "./2019-05-20-translation-norms/banquan.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/",
         "title": "从 Jenkins 到 Jenkins X",
         "type": "wechat",
         "date": "2019-05-17 00:00:00 +0000 UTC",
@@ -1092,7 +1092,7 @@
         "poster": "“./2019-05-20-from-jenkins-to-jenkins-x/journey.jpeg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/",
         "title": "与云无关的用于 Kubernetes 的自动化 CI/CD ",
         "type": "wechat",
         "date": "2019-05-16 00:00:00 +0000 UTC",
@@ -1105,7 +1105,7 @@
         "poster": "../../../images/articles/2019/04/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/blue.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/plugins/",
+        "uri": "https://jenkins-zh.cn/about/plugins/",
         "title": "插件列表",
         "type": "about",
         "date": "2019-05-15 20:30:05 +0800 +0800",
@@ -1118,7 +1118,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/",
         "title": "19年 GSoC 中 Jenkins 的七个项目",
         "type": "wechat",
         "date": "2019-05-15 00:00:00 +0000 UTC",
@@ -1131,7 +1131,7 @@
         "poster": "“../../../images/gsoc/gsoc-big-logo.jpeg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/",
         "title": "基于 Jenkins 的 DevOps 平台应该如何设计凭证管理",
         "type": "wechat",
         "date": "2019-05-14 00:00:00 +0000 UTC",
@@ -1144,7 +1144,7 @@
         "poster": "./2019-05-14-devops-jenkins-credential-manage/devops-platform-lock-jenkins.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/",
         "title": "Jenkins 公众号送书福利",
         "type": "wechat",
         "date": "2019-05-13 00:00:00 +0000 UTC",
@@ -1157,7 +1157,7 @@
         "poster": "./2019-05-13-jenkins-book-gift/poster.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-13-cdf-call-for-papers/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-cdf-call-for-papers/",
         "title": "持续交付峰会 Call For Papers",
         "type": "wechat",
         "date": "2019-05-13 00:00:00 +0000 UTC",
@@ -1170,7 +1170,7 @@
         "poster": "“../../../images/logos/cdf-logo.png”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-09-jenkins-release/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-09-jenkins-release/",
         "title": "Jenkins 版本发布",
         "type": "wechat",
         "date": "2019-05-09 00:00:00 +0000 UTC",
@@ -1183,7 +1183,7 @@
         "poster": "“../../../images/cow.jpg”"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/",
         "title": "Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)",
         "type": "wechat",
         "date": "2019-05-08 00:00:00 +0000 UTC",
@@ -1196,7 +1196,7 @@
         "poster": "./2019-05-08-jenkins-plugin-develop-within-two-days-part02/sunset.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/",
         "title": "Jenkins 自动化安装插件",
         "type": "wechat",
         "date": "2019-05-07 00:00:00 +0000 UTC",
@@ -1209,7 +1209,7 @@
         "poster": "./2019-05-07-jenkins-install-plugins-shell/poster.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/",
         "title": "Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)",
         "type": "wechat",
         "date": "2019-05-06 00:00:00 +0000 UTC",
@@ -1222,7 +1222,7 @@
         "poster": "./2019-05-06-jenkins-plugin-develop-within-two-days-part01/huashan.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/",
         "title": "应该使用什么 CI/CD 工具？",
         "type": "wechat",
         "date": "2019-04-30 00:00:00 +0000 UTC",
@@ -1235,7 +1235,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/",
         "title": "使用 Jenkins X 渐进式交付：自动化金丝雀部署",
         "type": "wechat",
         "date": "2019-04-29 00:00:00 +0000 UTC",
@@ -1248,7 +1248,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-28-devsecops/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-28-devsecops/",
         "title": "我们为什么需要 DevSecOps 和制品仓库？",
         "type": "wechat",
         "date": "2019-04-28 00:00:00 +0000 UTC",
@@ -1261,7 +1261,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/",
         "title": "使用 Jenkins X 渐进式交付",
         "type": "wechat",
         "date": "2019-04-26 00:00:00 +0000 UTC",
@@ -1274,7 +1274,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/",
         "title": "使用 Jenkins + Ansible 实现自动化部署 Nginx",
         "type": "wechat",
         "date": "2019-04-25 00:00:00 +0000 UTC",
@@ -1287,7 +1287,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/",
         "title": "Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署",
         "type": "wechat",
         "date": "2019-04-24 00:00:00 +0000 UTC",
@@ -1300,7 +1300,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/",
         "title": "关于 Jenkins master 共享 JENKINS_HOME 目录的实验",
         "type": "wechat",
         "date": "2019-04-23 00:00:00 +0000 UTC",
@@ -1313,7 +1313,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/",
         "title": "Jenkins 2.173 发布通知",
         "type": "wechat",
         "date": "2019-04-22 00:00:00 +0000 UTC",
@@ -1326,7 +1326,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/",
         "title": "持续交付的商业价值",
         "type": "wechat",
         "date": "2019-04-19 00:00:00 +0000 UTC",
@@ -1339,7 +1339,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-17-aiops/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/",
         "title": "AIOps：DevOps 的未来",
         "type": "wechat",
         "date": "2019-04-17 00:00:00 +0000 UTC",
@@ -1352,7 +1352,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/",
         "title": "使用 Zabbix 监控 Jenkins",
         "type": "wechat",
         "date": "2019-04-15 00:00:00 +0000 UTC",
@@ -1365,7 +1365,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/social-media/",
+        "uri": "https://jenkins-zh.cn/about/social-media/",
         "title": "社交媒体",
         "type": "about",
         "date": "2019-04-12 14:26:05 +0800 +0800",
@@ -1378,7 +1378,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/",
         "title": "简析 Jenkins 专有用户数据库加密算法",
         "type": "wechat",
         "date": "2019-04-12 00:00:00 +0000 UTC",
@@ -1391,7 +1391,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/",
         "title": "Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线",
         "type": "wechat",
         "date": "2019-04-10 00:00:00 +0000 UTC",
@@ -1404,7 +1404,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/",
         "title": "介绍：成为一名 Jenkins 贡献者的旅程",
         "type": "wechat",
         "date": "2019-04-08 00:00:00 +0000 UTC",
@@ -1417,7 +1417,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/",
         "title": "持续集成的收益与挑战",
         "type": "wechat",
         "date": "2019-04-03 00:00:00 +0000 UTC",
@@ -1430,7 +1430,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-18-weekly-version/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-18-weekly-version/",
         "title": "Jenkins 更新通知",
         "type": "wechat",
         "date": "2019-03-20 00:00:00 +0000 UTC",
@@ -1443,7 +1443,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-20-cdf-launch/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-20-cdf-launch/",
         "title": "Jenkins 正在加入持续交付基金会",
         "type": "wechat",
         "date": "2019-03-20 00:00:00 +0000 UTC",
@@ -1456,7 +1456,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/",
         "title": "Electron 应用的流水线设计",
         "type": "wechat",
         "date": "2019-03-13 00:00:00 +0000 UTC",
@@ -1469,7 +1469,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/",
         "title": "Jenkins 已经被 Google Summer Of Code 2019 接受！",
         "type": "wechat",
         "date": "2019-03-13 00:00:00 +0000 UTC",
@@ -1482,7 +1482,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/03/2019-03-13-ready-for-cdf/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-cdf/",
         "title": "为 Continuous Delivery Foundation 的成立感到兴奋",
         "type": "wechat",
         "date": "2019-03-13 00:00:00 +0000 UTC",
@@ -1495,7 +1495,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/",
         "title": "MPL - 模块化的流水线库",
         "type": "wechat",
         "date": "2019-03-06 00:00:00 +0000 UTC",
@@ -1508,7 +1508,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/star-plan/",
+        "uri": "https://jenkins-zh.cn/about/star-plan/",
         "title": "社区贡献激励方案",
         "type": "about",
         "date": "2019-03-03 00:00:00 +0000 UTC",
@@ -1521,7 +1521,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/",
         "title": "批量修改 Jenkins 任务的技巧",
         "type": "wechat",
         "date": "2019-02-27 00:00:00 +0000 UTC",
@@ -1534,7 +1534,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-contribution-inspire/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-contribution-inspire/",
         "title": "社区贡献激励活动",
         "type": "wechat",
         "date": "2019-02-27 00:00:00 +0000 UTC",
@@ -1547,7 +1547,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-20-java11-preview-availability/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/",
         "title": "Java 11 预览支持已在 Jenkins 2.155+ 中可用",
         "type": "wechat",
         "date": "2019-02-20 00:00:00 +0000 UTC",
@@ -1560,7 +1560,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/",
         "title": "Jenkins 对审计日志的支持",
         "type": "wechat",
         "date": "2019-02-13 00:00:00 +0000 UTC",
@@ -1573,7 +1573,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/how-to-involve/",
+        "uri": "https://jenkins-zh.cn/about/how-to-involve/",
         "title": "如何参与",
         "type": "about",
         "date": "2019-01-05 22:56:04 +0800 +0800",
@@ -1586,7 +1586,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/channels/",
+        "uri": "https://jenkins-zh.cn/about/channels/",
         "title": "交流",
         "type": "about",
         "date": "2019-01-04 21:13:30 +0800 +0800",
@@ -1599,7 +1599,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/course/",
+        "uri": "https://jenkins-zh.cn/about/course/",
         "title": "Jenkins 培训",
         "type": "slide",
         "date": "2019-01-03 22:50:02 +0800 +0800",
@@ -1612,7 +1612,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/event/readme/",
+        "uri": "https://jenkins-zh.cn/event/readme/",
         "title": "",
         "type": "event",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1625,7 +1625,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/event/beijing-2019-04-20/",
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-04-20/",
         "title": "",
         "type": "meetup",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1638,7 +1638,7 @@
         "poster": "/images/meetup/cloud-native-community-day.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/event/beijing-2019-06-22/",
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-06-22/",
         "title": "",
         "type": "meetup",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1651,7 +1651,7 @@
         "poster": "/images/meetup/ci-cd.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/event/beijing-2019-07-27/",
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-07-27/",
         "title": "",
         "type": "meetup",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1664,7 +1664,7 @@
         "poster": "/images/meetup/ci-cd.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/event/beijing-2019-08-24/",
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-08-24/",
         "title": "",
         "type": "meetup",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1677,7 +1677,7 @@
         "poster": "/images/meetup/kaiyuan.jpg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/event/beijing-2019-10-25/",
+        "uri": "https://jenkins-zh.cn/event/beijing-2019-10-25/",
         "title": "",
         "type": "hackthon",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1690,7 +1690,7 @@
         "poster": "/images/meetup/hackthon.png"
     },
     {
-        "uri": "https://jenkins-zh.github.io/event/shanghai-2019-09/",
+        "uri": "https://jenkins-zh.cn/event/shanghai-2019-09/",
         "title": "",
         "type": "meetup",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1703,7 +1703,7 @@
         "poster": "/images/meetup/shanghai.jpeg"
     },
     {
-        "uri": "https://jenkins-zh.github.io/meeting/",
+        "uri": "https://jenkins-zh.cn/meeting/",
         "title": "",
         "type": "meeting",
         "date": "2020-01-08 00:00:00 +0000 UTC",
@@ -1716,7 +1716,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/",
+        "uri": "https://jenkins-zh.cn/partner/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1729,7 +1729,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/alauda/",
+        "uri": "https://jenkins-zh.cn/partner/alauda/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1742,7 +1742,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/harmony-cloud/",
+        "uri": "https://jenkins-zh.cn/partner/harmony-cloud/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1755,7 +1755,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/hogwarts/",
+        "uri": "https://jenkins-zh.cn/partner/hogwarts/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1768,7 +1768,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/jingdongyun/",
+        "uri": "https://jenkins-zh.cn/partner/jingdongyun/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1781,7 +1781,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/junzi/",
+        "uri": "https://jenkins-zh.cn/partner/junzi/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1794,7 +1794,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/kaiyuanshe/",
+        "uri": "https://jenkins-zh.cn/partner/kaiyuanshe/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1807,7 +1807,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/pinganyun/",
+        "uri": "https://jenkins-zh.cn/partner/pinganyun/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1820,7 +1820,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/partner/press/",
+        "uri": "https://jenkins-zh.cn/partner/press/",
         "title": "",
         "type": "partner",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1833,7 +1833,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/sponsor/alauda/",
+        "uri": "https://jenkins-zh.cn/sponsor/alauda/",
         "title": "",
         "type": "sponsor",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1846,7 +1846,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/",
+        "uri": "https://jenkins-zh.cn/tutorial/",
         "title": "",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1859,7 +1859,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/readme/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/readme/",
         "title": "",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1872,7 +1872,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/weibo/weibo-operating-charter/",
+        "uri": "https://jenkins-zh.cn/weibo/weibo-operating-charter/",
         "title": "",
         "type": "weibo",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1885,7 +1885,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/api/",
+        "uri": "https://jenkins-zh.cn/tutorial/api/",
         "title": "API",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1898,7 +1898,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/ai/",
+        "uri": "https://jenkins-zh.cn/tags/ai/",
         "title": "Ai",
         "type": "tags",
         "date": "2019-04-22 00:00:00 +0000 UTC",
@@ -1911,7 +1911,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/best-practice/android/",
+        "uri": "https://jenkins-zh.cn/tutorial/best-practice/android/",
         "title": "Android 应用构建",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -1924,7 +1924,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/ansible/",
+        "uri": "https://jenkins-zh.cn/tags/ansible/",
         "title": "Ansible",
         "type": "tags",
         "date": "2019-05-20 00:00:00 +0000 UTC",
@@ -1937,7 +1937,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/asktheexperts/",
+        "uri": "https://jenkins-zh.cn/tags/asktheexperts/",
         "title": "Asktheexperts",
         "type": "tags",
         "date": "2019-09-15 00:00:00 +0000 UTC",
@@ -1950,7 +1950,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/aws/",
+        "uri": "https://jenkins-zh.cn/tags/aws/",
         "title": "Aws",
         "type": "tags",
         "date": "2019-08-23 00:00:00 +0000 UTC",
@@ -1963,7 +1963,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/benchmark/",
+        "uri": "https://jenkins-zh.cn/tags/benchmark/",
         "title": "Benchmark",
         "type": "tags",
         "date": "2019-07-04 00:00:00 +0000 UTC",
@@ -1976,7 +1976,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/blog/",
+        "uri": "https://jenkins-zh.cn/tags/blog/",
         "title": "Blog",
         "type": "tags",
         "date": "2020-01-10 00:00:00 +0000 UTC",
@@ -1989,7 +1989,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/blueocean/",
+        "uri": "https://jenkins-zh.cn/tags/blueocean/",
         "title": "Blueocean",
         "type": "tags",
         "date": "2019-08-15 00:00:00 +0000 UTC",
@@ -2002,7 +2002,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/c-stat/",
+        "uri": "https://jenkins-zh.cn/tags/c-stat/",
         "title": "C Stat",
         "type": "tags",
         "date": "2019-11-18 00:00:00 +0000 UTC",
@@ -2015,7 +2015,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/categories/",
+        "uri": "https://jenkins-zh.cn/categories/",
         "title": "Categories",
         "type": "categories",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2028,7 +2028,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/cd/",
+        "uri": "https://jenkins-zh.cn/tags/cd/",
         "title": "Cd",
         "type": "tags",
         "date": "2019-07-29 00:00:00 +0000 UTC",
@@ -2041,7 +2041,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/cdf/",
+        "uri": "https://jenkins-zh.cn/tags/cdf/",
         "title": "Cdf",
         "type": "tags",
         "date": "2019-05-13 00:00:00 +0000 UTC",
@@ -2054,7 +2054,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/cdsummit/",
+        "uri": "https://jenkins-zh.cn/tags/cdsummit/",
         "title": "Cdsummit",
         "type": "tags",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2067,7 +2067,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/cfp/",
+        "uri": "https://jenkins-zh.cn/tags/cfp/",
         "title": "Cfp",
         "type": "tags",
         "date": "2019-05-13 00:00:00 +0000 UTC",
@@ -2080,7 +2080,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/ci/",
+        "uri": "https://jenkins-zh.cn/tags/ci/",
         "title": "Ci",
         "type": "tags",
         "date": "2019-07-29 00:00:00 +0000 UTC",
@@ -2093,7 +2093,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/ci-cd/",
+        "uri": "https://jenkins-zh.cn/tags/ci-cd/",
         "title": "Ci/Cd",
         "type": "tags",
         "date": "2020-01-10 00:00:00 +0000 UTC",
@@ -2106,7 +2106,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/cicd/",
+        "uri": "https://jenkins-zh.cn/tags/cicd/",
         "title": "Cicd",
         "type": "tags",
         "date": "2019-03-13 00:00:00 +0000 UTC",
@@ -2119,7 +2119,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/cli/",
+        "uri": "https://jenkins-zh.cn/tags/cli/",
         "title": "Cli",
         "type": "tags",
         "date": "2019-10-25 00:00:00 +0000 UTC",
@@ -2132,7 +2132,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/cloud-native/",
+        "uri": "https://jenkins-zh.cn/tags/cloud-native/",
         "title": "Cloud Native",
         "type": "tags",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2145,7 +2145,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/cloudbees/",
+        "uri": "https://jenkins-zh.cn/tags/cloudbees/",
         "title": "Cloudbees",
         "type": "tags",
         "date": "2019-12-11 00:00:00 +0000 UTC",
@@ -2158,7 +2158,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/community/",
+        "uri": "https://jenkins-zh.cn/tags/community/",
         "title": "Community",
         "type": "tags",
         "date": "2019-11-12 00:00:00 +0000 UTC",
@@ -2171,7 +2171,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/continuous-integration/",
+        "uri": "https://jenkins-zh.cn/tags/continuous-integration/",
         "title": "Continuous Integration",
         "type": "tags",
         "date": "2019-04-03 00:00:00 +0000 UTC",
@@ -2184,7 +2184,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/contributing/",
+        "uri": "https://jenkins-zh.cn/tags/contributing/",
         "title": "Contributing",
         "type": "tags",
         "date": "2019-04-08 00:00:00 +0000 UTC",
@@ -2197,7 +2197,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/contributors/",
+        "uri": "https://jenkins-zh.cn/tags/contributors/",
         "title": "Contributors",
         "type": "tags",
         "date": "2019-11-22 00:00:00 +0000 UTC",
@@ -2210,7 +2210,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/contributorsummit/",
+        "uri": "https://jenkins-zh.cn/tags/contributorsummit/",
         "title": "Contributorsummit",
         "type": "tags",
         "date": "2019-09-15 00:00:00 +0000 UTC",
@@ -2223,7 +2223,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/core/",
+        "uri": "https://jenkins-zh.cn/tags/core/",
         "title": "Core",
         "type": "tags",
         "date": "2019-07-15 00:00:00 +0000 UTC",
@@ -2236,7 +2236,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/coverage/",
+        "uri": "https://jenkins-zh.cn/tags/coverage/",
         "title": "Coverage",
         "type": "tags",
         "date": "2019-05-22 00:00:00 +0000 UTC",
@@ -2249,7 +2249,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/credentials/",
+        "uri": "https://jenkins-zh.cn/tags/credentials/",
         "title": "Credentials",
         "type": "tags",
         "date": "2019-07-04 00:00:00 +0000 UTC",
@@ -2262,7 +2262,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/developer/",
+        "uri": "https://jenkins-zh.cn/tags/developer/",
         "title": "Developer",
         "type": "tags",
         "date": "2019-11-22 00:00:00 +0000 UTC",
@@ -2275,7 +2275,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/devops/",
+        "uri": "https://jenkins-zh.cn/tags/devops/",
         "title": "Devops",
         "type": "tags",
         "date": "2019-11-06 00:00:00 +0000 UTC",
@@ -2288,7 +2288,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/devops-jenkins/",
+        "uri": "https://jenkins-zh.cn/tags/devops-jenkins/",
         "title": "Devops Jenkins",
         "type": "tags",
         "date": "2019-09-23 00:00:00 +0000 UTC",
@@ -2301,7 +2301,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/devopsworld2019/",
+        "uri": "https://jenkins-zh.cn/tags/devopsworld2019/",
         "title": "Devopsworld2019",
         "type": "tags",
         "date": "2019-09-15 00:00:00 +0000 UTC",
@@ -2314,7 +2314,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/docker/",
+        "uri": "https://jenkins-zh.cn/tags/docker/",
         "title": "Docker",
         "type": "tags",
         "date": "2019-12-19 00:00:00 +0000 UTC",
@@ -2327,7 +2327,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/docs/",
+        "uri": "https://jenkins-zh.cn/tags/docs/",
         "title": "Docs",
         "type": "tags",
         "date": "2019-05-27 00:00:00 +0000 UTC",
@@ -2340,7 +2340,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/documentation/",
+        "uri": "https://jenkins-zh.cn/tags/documentation/",
         "title": "Documentation",
         "type": "tags",
         "date": "2019-11-22 00:00:00 +0000 UTC",
@@ -2353,7 +2353,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/elections/",
+        "uri": "https://jenkins-zh.cn/tags/elections/",
         "title": "Elections",
         "type": "tags",
         "date": "2019-11-12 00:00:00 +0000 UTC",
@@ -2366,7 +2366,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/electron/",
+        "uri": "https://jenkins-zh.cn/tags/electron/",
         "title": "Electron",
         "type": "tags",
         "date": "2019-03-13 00:00:00 +0000 UTC",
@@ -2379,7 +2379,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/events/",
+        "uri": "https://jenkins-zh.cn/tags/events/",
         "title": "Events",
         "type": "tags",
         "date": "2019-09-15 00:00:00 +0000 UTC",
@@ -2392,7 +2392,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/evergreen/",
+        "uri": "https://jenkins-zh.cn/tags/evergreen/",
         "title": "Evergreen",
         "type": "tags",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2405,7 +2405,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/flagger/",
+        "uri": "https://jenkins-zh.cn/tags/flagger/",
         "title": "Flagger",
         "type": "tags",
         "date": "2019-04-26 00:00:00 +0000 UTC",
@@ -2418,7 +2418,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/general/",
+        "uri": "https://jenkins-zh.cn/tags/general/",
         "title": "General",
         "type": "tags",
         "date": "2019-03-20 00:00:00 +0000 UTC",
@@ -2431,7 +2431,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/git/",
+        "uri": "https://jenkins-zh.cn/tags/git/",
         "title": "Git",
         "type": "tags",
         "date": "2019-06-17 00:00:00 +0000 UTC",
@@ -2444,7 +2444,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/git-secrets/",
+        "uri": "https://jenkins-zh.cn/tags/git-secrets/",
         "title": "Git Secrets",
         "type": "tags",
         "date": "2019-11-29 00:00:00 +0000 UTC",
@@ -2457,7 +2457,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/gitlab/",
+        "uri": "https://jenkins-zh.cn/tags/gitlab/",
         "title": "Gitlab",
         "type": "tags",
         "date": "2019-09-11 00:00:00 +0000 UTC",
@@ -2470,7 +2470,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/governance/",
+        "uri": "https://jenkins-zh.cn/tags/governance/",
         "title": "Governance",
         "type": "tags",
         "date": "2019-11-12 00:00:00 +0000 UTC",
@@ -2483,7 +2483,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/gsoc/",
+        "uri": "https://jenkins-zh.cn/tags/gsoc/",
         "title": "Gsoc",
         "type": "tags",
         "date": "2019-10-25 00:00:00 +0000 UTC",
@@ -2496,7 +2496,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/gsoc2019/",
+        "uri": "https://jenkins-zh.cn/tags/gsoc2019/",
         "title": "Gsoc2019",
         "type": "tags",
         "date": "2019-10-25 00:00:00 +0000 UTC",
@@ -2509,7 +2509,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/hacktoberfest/",
+        "uri": "https://jenkins-zh.cn/tags/hacktoberfest/",
         "title": "Hacktoberfest",
         "type": "tags",
         "date": "2019-11-22 00:00:00 +0000 UTC",
@@ -2522,7 +2522,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/installers/",
+        "uri": "https://jenkins-zh.cn/tags/installers/",
         "title": "Installers",
         "type": "tags",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2535,7 +2535,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/istio/",
+        "uri": "https://jenkins-zh.cn/tags/istio/",
         "title": "Istio",
         "type": "tags",
         "date": "2019-04-26 00:00:00 +0000 UTC",
@@ -2548,7 +2548,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jacoco/",
+        "uri": "https://jenkins-zh.cn/tags/jacoco/",
         "title": "Jacoco",
         "type": "tags",
         "date": "2019-05-22 00:00:00 +0000 UTC",
@@ -2561,7 +2561,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/java/",
+        "uri": "https://jenkins-zh.cn/tags/java/",
         "title": "Java",
         "type": "tags",
         "date": "2019-12-19 00:00:00 +0000 UTC",
@@ -2574,7 +2574,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/java11/",
+        "uri": "https://jenkins-zh.cn/tags/java11/",
         "title": "Java11",
         "type": "tags",
         "date": "2019-07-15 00:00:00 +0000 UTC",
@@ -2587,7 +2587,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jenkins/",
+        "uri": "https://jenkins-zh.cn/tags/jenkins/",
         "title": "Jenkins",
         "type": "tags",
         "date": "2019-12-31 00:00:00 +0000 UTC",
@@ -2600,7 +2600,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/meetups/",
+        "uri": "https://jenkins-zh.cn/about/meetups/",
         "title": "Jenkins Area Meetup",
         "type": "about",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2613,7 +2613,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jenkins-ci/",
+        "uri": "https://jenkins-zh.cn/tags/jenkins-ci/",
         "title": "Jenkins Ci",
         "type": "tags",
         "date": "2019-11-18 00:00:00 +0000 UTC",
@@ -2626,7 +2626,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jenkins-x/",
+        "uri": "https://jenkins-zh.cn/tags/jenkins-x/",
         "title": "Jenkins X",
         "type": "tags",
         "date": "2019-11-15 00:00:00 +0000 UTC",
@@ -2639,7 +2639,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/",
+        "uri": "https://jenkins-zh.cn/",
         "title": "Jenkins 中文社区",
         "type": "page",
         "date": "2019-09-07 00:00:00 +0000 UTC",
@@ -2652,7 +2652,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-kubecon-cn/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-kubecon-cn/",
         "title": "Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2665,7 +2665,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-localization-zh-cn-plugin/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-16-localization-zh-cn-plugin/",
         "title": "Jenkins 中文语言包",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2678,7 +2678,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/",
         "title": "Jenkins 和 Kubernetes -云上的神秘代理",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2691,7 +2691,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/",
+        "uri": "https://jenkins-zh.cn/tags/jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/",
         "title": "Jenkins 流水线",
         "type": "tags",
         "date": "2019-11-29 00:00:00 +0000 UTC",
@@ -2704,7 +2704,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jenkinsworld/",
+        "uri": "https://jenkins-zh.cn/tags/jenkinsworld/",
         "title": "Jenkinsworld",
         "type": "tags",
         "date": "2019-09-15 00:00:00 +0000 UTC",
@@ -2717,7 +2717,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jenkinsworld2018/",
+        "uri": "https://jenkins-zh.cn/tags/jenkinsworld2018/",
         "title": "Jenkinsworld2018",
         "type": "tags",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2730,7 +2730,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jira/",
+        "uri": "https://jenkins-zh.cn/tags/jira/",
         "title": "Jira",
         "type": "tags",
         "date": "2019-05-08 00:00:00 +0000 UTC",
@@ -2743,7 +2743,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jmh/",
+        "uri": "https://jenkins-zh.cn/tags/jmh/",
         "title": "Jmh",
         "type": "tags",
         "date": "2019-07-04 00:00:00 +0000 UTC",
@@ -2756,7 +2756,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/jte/",
+        "uri": "https://jenkins-zh.cn/tags/jte/",
         "title": "Jte",
         "type": "tags",
         "date": "2019-07-01 00:00:00 +0000 UTC",
@@ -2769,7 +2769,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/k8s/",
+        "uri": "https://jenkins-zh.cn/tags/k8s/",
         "title": "K8s",
         "type": "tags",
         "date": "2019-05-24 00:00:00 +0000 UTC",
@@ -2782,7 +2782,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/kafka-kubernetes-helm/",
+        "uri": "https://jenkins-zh.cn/tags/kafka-kubernetes-helm/",
         "title": "Kafka Kubernetes Helm",
         "type": "tags",
         "date": "2019-11-08 00:00:00 +0000 UTC",
@@ -2795,7 +2795,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/kubecon/",
+        "uri": "https://jenkins-zh.cn/tags/kubecon/",
         "title": "Kubecon",
         "type": "tags",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2808,7 +2808,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/kubernetes/",
+        "uri": "https://jenkins-zh.cn/tags/kubernetes/",
         "title": "Kubernetes",
         "type": "tags",
         "date": "2019-07-29 00:00:00 +0000 UTC",
@@ -2821,7 +2821,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/maven/",
+        "uri": "https://jenkins-zh.cn/tags/maven/",
         "title": "Maven",
         "type": "tags",
         "date": "2019-05-08 00:00:00 +0000 UTC",
@@ -2834,7 +2834,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/multi-branch/",
+        "uri": "https://jenkins-zh.cn/tags/multi-branch/",
         "title": "Multi Branch",
         "type": "tags",
         "date": "2019-12-31 00:00:00 +0000 UTC",
@@ -2847,7 +2847,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/multibranch/",
+        "uri": "https://jenkins-zh.cn/tags/multibranch/",
         "title": "Multibranch",
         "type": "tags",
         "date": "2019-09-11 00:00:00 +0000 UTC",
@@ -2860,7 +2860,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/newcomer/",
+        "uri": "https://jenkins-zh.cn/tags/newcomer/",
         "title": "Newcomer",
         "type": "tags",
         "date": "2019-04-08 00:00:00 +0000 UTC",
@@ -2873,7 +2873,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/nginx/",
+        "uri": "https://jenkins-zh.cn/tags/nginx/",
         "title": "Nginx",
         "type": "tags",
         "date": "2019-04-25 00:00:00 +0000 UTC",
@@ -2886,7 +2886,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/open-source/",
+        "uri": "https://jenkins-zh.cn/tags/open-source/",
         "title": "Open Source",
         "type": "tags",
         "date": "2019-08-30 00:00:00 +0000 UTC",
@@ -2899,7 +2899,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/opensource/",
+        "uri": "https://jenkins-zh.cn/tags/opensource/",
         "title": "Opensource",
         "type": "tags",
         "date": "2019-09-15 00:00:00 +0000 UTC",
@@ -2912,7 +2912,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/outreachy/",
+        "uri": "https://jenkins-zh.cn/tags/outreachy/",
         "title": "Outreachy",
         "type": "tags",
         "date": "2019-02-13 00:00:00 +0000 UTC",
@@ -2925,7 +2925,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/outreachy2018/",
+        "uri": "https://jenkins-zh.cn/tags/outreachy2018/",
         "title": "Outreachy2018",
         "type": "tags",
         "date": "2019-02-13 00:00:00 +0000 UTC",
@@ -2938,7 +2938,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/performance/",
+        "uri": "https://jenkins-zh.cn/tags/performance/",
         "title": "Performance",
         "type": "tags",
         "date": "2019-07-04 00:00:00 +0000 UTC",
@@ -2951,7 +2951,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/pipeline/",
+        "uri": "https://jenkins-zh.cn/tags/pipeline/",
         "title": "Pipeline",
         "type": "tags",
         "date": "2019-12-29 00:00:00 +0000 UTC",
@@ -2964,7 +2964,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/pipeline-authoring/",
+        "uri": "https://jenkins-zh.cn/tags/pipeline-authoring/",
         "title": "Pipeline Authoring",
         "type": "tags",
         "date": "2019-07-01 00:00:00 +0000 UTC",
@@ -2977,7 +2977,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/platform-sig/",
+        "uri": "https://jenkins-zh.cn/tags/platform-sig/",
         "title": "Platform Sig",
         "type": "tags",
         "date": "2019-10-25 00:00:00 +0000 UTC",
@@ -2990,7 +2990,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/plugin/",
+        "uri": "https://jenkins-zh.cn/tags/plugin/",
         "title": "Plugin",
         "type": "tags",
         "date": "2019-09-19 00:00:00 +0000 UTC",
@@ -3003,7 +3003,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/pluginmanagement/",
+        "uri": "https://jenkins-zh.cn/tags/pluginmanagement/",
         "title": "Pluginmanagement",
         "type": "tags",
         "date": "2019-10-25 00:00:00 +0000 UTC",
@@ -3016,7 +3016,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/plugins/",
+        "uri": "https://jenkins-zh.cn/tags/plugins/",
         "title": "Plugins",
         "type": "tags",
         "date": "2019-10-25 00:00:00 +0000 UTC",
@@ -3029,7 +3029,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/progressive-delivery/",
+        "uri": "https://jenkins-zh.cn/tags/progressive-delivery/",
         "title": "Progressive Delivery",
         "type": "tags",
         "date": "2019-04-26 00:00:00 +0000 UTC",
@@ -3042,7 +3042,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/react/",
+        "uri": "https://jenkins-zh.cn/tags/react/",
         "title": "React",
         "type": "tags",
         "date": "2019-09-19 00:00:00 +0000 UTC",
@@ -3055,7 +3055,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/react-plugins-gsoc-gsoc2019/",
+        "uri": "https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/",
         "title": "React Plugins Gsoc Gsoc2019",
         "type": "tags",
         "date": "2019-11-14 00:00:00 +0000 UTC",
@@ -3068,7 +3068,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/release/",
+        "uri": "https://jenkins-zh.cn/tags/release/",
         "title": "Release",
         "type": "tags",
         "date": "2019-07-09 00:00:00 +0000 UTC",
@@ -3081,7 +3081,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/remote-file/",
+        "uri": "https://jenkins-zh.cn/tags/remote-file/",
         "title": "Remote File",
         "type": "tags",
         "date": "2019-08-05 00:00:00 +0000 UTC",
@@ -3094,7 +3094,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/security/",
+        "uri": "https://jenkins-zh.cn/tags/security/",
         "title": "Security",
         "type": "tags",
         "date": "2019-04-28 00:00:00 +0000 UTC",
@@ -3107,7 +3107,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/shared-library/",
+        "uri": "https://jenkins-zh.cn/tags/shared-library/",
         "title": "Shared Library",
         "type": "tags",
         "date": "2019-03-06 00:00:00 +0000 UTC",
@@ -3120,7 +3120,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/shipper/",
+        "uri": "https://jenkins-zh.cn/tags/shipper/",
         "title": "Shipper",
         "type": "tags",
         "date": "2019-04-26 00:00:00 +0000 UTC",
@@ -3133,7 +3133,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/spec/",
+        "uri": "https://jenkins-zh.cn/tags/spec/",
         "title": "Spec",
         "type": "tags",
         "date": "2019-05-20 00:00:00 +0000 UTC",
@@ -3146,7 +3146,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/sponsor/",
+        "uri": "https://jenkins-zh.cn/sponsor/",
         "title": "Sponsors",
         "type": "sponsor",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3159,7 +3159,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/spring-boot/",
+        "uri": "https://jenkins-zh.cn/tags/spring-boot/",
         "title": "Spring Boot",
         "type": "tags",
         "date": "2019-05-24 00:00:00 +0000 UTC",
@@ -3172,7 +3172,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/springboot/",
+        "uri": "https://jenkins-zh.cn/tags/springboot/",
         "title": "Springboot",
         "type": "tags",
         "date": "2019-05-20 00:00:00 +0000 UTC",
@@ -3185,7 +3185,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/",
+        "uri": "https://jenkins-zh.cn/tags/",
         "title": "Tags",
         "type": "tags",
         "date": "2019-04-22 00:00:00 +0000 UTC",
@@ -3198,7 +3198,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/template/",
+        "uri": "https://jenkins-zh.cn/tags/template/",
         "title": "Template",
         "type": "tags",
         "date": "2019-09-19 00:00:00 +0000 UTC",
@@ -3211,7 +3211,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/updatebot/",
+        "uri": "https://jenkins-zh.cn/tags/updatebot/",
         "title": "Updatebot",
         "type": "tags",
         "date": "2019-11-15 00:00:00 +0000 UTC",
@@ -3224,7 +3224,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/webhook/",
+        "uri": "https://jenkins-zh.cn/tags/webhook/",
         "title": "Webhook",
         "type": "tags",
         "date": "2019-12-23 00:00:00 +0000 UTC",
@@ -3237,7 +3237,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/webhooks/",
+        "uri": "https://jenkins-zh.cn/tags/webhooks/",
         "title": "Webhooks",
         "type": "tags",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3250,7 +3250,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/",
+        "uri": "https://jenkins-zh.cn/wechat/",
         "title": "Wechats",
         "type": "wechat",
         "date": "2020-01-10 00:00:00 +0000 UTC",
@@ -3263,7 +3263,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/weekly/",
+        "uri": "https://jenkins-zh.cn/tags/weekly/",
         "title": "Weekly",
         "type": "tags",
         "date": "2019-03-20 00:00:00 +0000 UTC",
@@ -3276,7 +3276,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/weibo/",
+        "uri": "https://jenkins-zh.cn/weibo/",
         "title": "Weibos",
         "type": "weibo",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3289,7 +3289,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/wiki/",
+        "uri": "https://jenkins-zh.cn/tags/wiki/",
         "title": "Wiki",
         "type": "tags",
         "date": "2019-11-22 00:00:00 +0000 UTC",
@@ -3302,7 +3302,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/windows/",
+        "uri": "https://jenkins-zh.cn/tags/windows/",
         "title": "Windows",
         "type": "tags",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3315,7 +3315,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/02/2019-02-27-windows-installers/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/",
         "title": "Windows 安装程序更新",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3328,7 +3328,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/zabbix/",
+        "uri": "https://jenkins-zh.cn/tags/zabbix/",
         "title": "Zabbix",
         "type": "tags",
         "date": "2019-04-15 00:00:00 +0000 UTC",
@@ -3341,7 +3341,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/notify/email/",
+        "uri": "https://jenkins-zh.cn/tutorial/notify/email/",
         "title": "email",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3354,7 +3354,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/notify/",
+        "uri": "https://jenkins-zh.cn/tutorial/notify/",
         "title": "notify",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3367,7 +3367,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/pipeline/",
+        "uri": "https://jenkins-zh.cn/tutorial/pipeline/",
         "title": "pipeline",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3380,7 +3380,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/plugin-dev/",
+        "uri": "https://jenkins-zh.cn/tutorial/plugin-dev/",
         "title": "plugin-dev",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3393,7 +3393,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/scm/",
+        "uri": "https://jenkins-zh.cn/tutorial/scm/",
         "title": "scm",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3406,7 +3406,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-12-what-is-cicd/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/",
         "title": "什么是 CI/CD?",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3419,7 +3419,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/best-practice/android/android-best-practice/",
+        "uri": "https://jenkins-zh.cn/tutorial/best-practice/android/android-best-practice/",
         "title": "使用 Jenkins 构建 Android 应用",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3432,7 +3432,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/",
         "title": "使用 YAML 文件配置 Jenkins 流水线",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3445,7 +3445,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/pipeline/shared-library/",
+        "uri": "https://jenkins-zh.cn/tutorial/pipeline/shared-library/",
         "title": "共享库",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3458,7 +3458,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/",
+        "uri": "https://jenkins-zh.cn/about/",
         "title": "关于我们",
         "type": "about",
         "date": "2019-09-07 00:00:00 +0000 UTC",
@@ -3471,7 +3471,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/about/about-site/",
+        "uri": "https://jenkins-zh.cn/about/about-site/",
         "title": "关于本站",
         "type": "about",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3484,7 +3484,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/notify/email/email/",
+        "uri": "https://jenkins-zh.cn/tutorial/notify/email/email/",
         "title": "在 Jenkins 中配置邮件服务器",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3497,7 +3497,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-16-webhook-firewalls/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-16-webhook-firewalls/",
         "title": "在安全防火墙内通过 WebHook 触发构建",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3510,7 +3510,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/",
+        "uri": "https://jenkins-zh.cn/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/",
         "title": "在线分享",
         "type": "tags",
         "date": "2019-06-09 00:00:00 +0000 UTC",
@@ -3523,7 +3523,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/backup-restore/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/backup-restore/",
         "title": "备份与恢复",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3536,7 +3536,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E5%A4%96%E6%8C%82%E7%A8%8B%E5%BC%8F-%E5%AE%89%E5%85%A8-%E6%80%A7%E8%83%BD-gsoc-gsoc2019/",
+        "uri": "https://jenkins-zh.cn/tags/%E5%A4%96%E6%8C%82%E7%A8%8B%E5%BC%8F-%E5%AE%89%E5%85%A8-%E6%80%A7%E8%83%BD-gsoc-gsoc2019/",
         "title": "外挂程式 安全 性能 Gsoc Gsoc2019",
         "type": "tags",
         "date": "2019-10-28 00:00:00 +0000 UTC",
@@ -3549,7 +3549,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/pipeline/multi-branch/",
+        "uri": "https://jenkins-zh.cn/tutorial/pipeline/multi-branch/",
         "title": "多分支流水线",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3562,7 +3562,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E5%AF%BC%E5%B8%88/",
+        "uri": "https://jenkins-zh.cn/tags/%E5%AF%BC%E5%B8%88/",
         "title": "导师",
         "type": "tags",
         "date": "2019-08-16 00:00:00 +0000 UTC",
@@ -3575,7 +3575,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E5%BC%80%E6%BA%90/",
+        "uri": "https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/",
         "title": "开源",
         "type": "tags",
         "date": "2019-07-30 00:00:00 +0000 UTC",
@@ -3588,7 +3588,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/plugin-dev/pipeline/demo/",
+        "uri": "https://jenkins-zh.cn/tutorial/plugin-dev/pipeline/demo/",
         "title": "待完善",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3601,7 +3601,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/backup-restore/demo/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/backup-restore/demo/",
         "title": "待补充",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3614,7 +3614,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E5%BF%97%E6%84%BF%E8%80%85/",
+        "uri": "https://jenkins-zh.cn/tags/%E5%BF%97%E6%84%BF%E8%80%85/",
         "title": "志愿者",
         "type": "tags",
         "date": "2019-08-09 00:00:00 +0000 UTC",
@@ -3627,7 +3627,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/auth/lost-password/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/auth/lost-password/",
         "title": "忘记密码",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3640,7 +3640,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/",
         "title": "成为一名 Jenkins 贡献者：对新手友好的工单",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3653,7 +3653,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E6%8B%9B%E5%8B%9F/",
+        "uri": "https://jenkins-zh.cn/tags/%E6%8B%9B%E5%8B%9F/",
         "title": "招募",
         "type": "tags",
         "date": "2019-08-16 00:00:00 +0000 UTC",
@@ -3666,7 +3666,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98/",
+        "uri": "https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98/",
         "title": "持续交付",
         "type": "tags",
         "date": "2019-08-14 00:00:00 +0000 UTC",
@@ -3679,7 +3679,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95/",
+        "uri": "https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95/",
         "title": "持续测试",
         "type": "tags",
         "date": "2019-08-14 00:00:00 +0000 UTC",
@@ -3692,7 +3692,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/plugin/update-center/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/plugin/update-center/",
         "title": "插件更新中心",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3705,7 +3705,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/api/plugin/",
+        "uri": "https://jenkins-zh.cn/tutorial/api/plugin/",
         "title": "插件相关",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3718,7 +3718,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/plugin/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/plugin/",
         "title": "插件管理",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3731,7 +3731,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/",
         "title": "春季安全清查",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3744,7 +3744,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/best-practice/",
+        "uri": "https://jenkins-zh.cn/tutorial/best-practice/",
         "title": "最佳实践",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3757,7 +3757,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/scm/git/",
+        "uri": "https://jenkins-zh.cn/tutorial/scm/git/",
         "title": "有关 Git 的教程",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3770,7 +3770,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/scm/git/git/",
+        "uri": "https://jenkins-zh.cn/tutorial/scm/git/git/",
         "title": "有关 Git 的教程",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3783,7 +3783,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/scm/svn/",
+        "uri": "https://jenkins-zh.cn/tutorial/scm/svn/",
         "title": "有关 svn 的教程",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3796,7 +3796,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/scm/svn/svn/",
+        "uri": "https://jenkins-zh.cn/tutorial/scm/svn/svn/",
         "title": "有关 svn 的教程",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3809,7 +3809,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/api/core/",
+        "uri": "https://jenkins-zh.cn/tutorial/api/core/",
         "title": "核心",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3822,7 +3822,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/event/",
+        "uri": "https://jenkins-zh.cn/event/",
         "title": "活动",
         "type": "meetup",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3835,7 +3835,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/pipeline/pipeline/",
+        "uri": "https://jenkins-zh.cn/tutorial/pipeline/pipeline/",
         "title": "流水线",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3848,7 +3848,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/plugin-dev/pipeline/",
+        "uri": "https://jenkins-zh.cn/tutorial/plugin-dev/pipeline/",
         "title": "流水线插件",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3861,7 +3861,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E6%B5%8B%E8%AF%95/",
+        "uri": "https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/",
         "title": "测试",
         "type": "tags",
         "date": "2019-08-14 00:00:00 +0000 UTC",
@@ -3874,7 +3874,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/",
         "title": "管理",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3887,7 +3887,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/",
         "title": "自动更新、易于使用的 Jenkins",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3900,7 +3900,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/agent/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/agent/",
         "title": "计算节点",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3913,7 +3913,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/auth/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/auth/",
         "title": "认证",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3926,7 +3926,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/",
+        "uri": "https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/",
         "title": "贡献激励",
         "type": "tags",
         "date": "2019-09-05 00:00:00 +0000 UTC",
@@ -3939,7 +3939,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/",
+        "uri": "https://jenkins-zh.cn/tags/%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/",
         "title": "软件生命周期",
         "type": "tags",
         "date": "2019-08-14 00:00:00 +0000 UTC",
@@ -3952,7 +3952,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/",
+        "uri": "https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/",
         "title": "运营转型",
         "type": "tags",
         "date": "2019-11-06 00:00:00 +0000 UTC",
@@ -3965,7 +3965,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/auth/keyclock/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/auth/keyclock/",
         "title": "通过 KeyCloak 认证",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3978,7 +3978,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/plugin/configuration-as-code/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/plugin/configuration-as-code/",
         "title": "配置即代码",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -3991,7 +3991,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tutorial/management/mirror/",
+        "uri": "https://jenkins-zh.cn/tutorial/management/mirror/",
         "title": "镜像源",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -4004,7 +4004,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.github.io/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/",
+        "uri": "https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/",
         "title": "黑客松",
         "type": "tags",
         "date": "2019-08-16 00:00:00 +0000 UTC",
