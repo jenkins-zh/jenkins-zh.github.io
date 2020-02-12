@@ -473,7 +473,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -867,6 +867,15 @@
     </item>
     
     <item>
+      <title>Websocket</title>
+      <link>https://jenkins-zh.cn/tags/websocket/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Weekly</title>
       <link>https://jenkins-zh.cn/tags/weekly/</link>
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
@@ -899,6 +908,15 @@
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/zabbix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>公告</title>
+      <link>https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/</guid>
       <description></description>
     </item>
     
@@ -975,11 +993,29 @@
     </item>
     
     <item>
+      <title>治理</title>
+      <link>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>测试</title>
       <link>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>社区</title>
+      <link>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</guid>
       <description></description>
     </item>
     

@@ -37,6 +37,33 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins 创始人 Kohsuke 的新篇章</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-12-a-new-chapter-for-kohsuke/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-12-a-new-chapter-for-kohsuke/</guid>
+      <description>2020 年对我来说将是转变的一年。在 1 月底，我将正式退出 Jenkins，将我在 CloudBees 的角色转换为顾问，并将注意力转向我的新创业公司。这篇文章的其余部分将结合这种过渡的背景，如果您没有与我紧密合作，这可能会令您惊讶。
+Jenkins 之旅充满神奇，而且从未间断。我非常喜欢这一切，尤其是与造就 Jenkins 如今成就的世界各地的用户会面与交流。作为项目的创建者，在某个时候，我开始想如何将火炬传递给下一任领导者，如何使人们继续推动它前进。如今，由于有了 CloudBees 和社区，新一代的才华横溢、有才干的领导者正在热情地推动事情向前发展，这真令人高兴。例如，新选举的董事会成员和Jenkins X 的伙伴们。这些新人带来了新的文化和新的代码，并且总的来说，这产生了积极的影响，使 Jenkins 不再局限于我所谈论的局部最优方法，他们得到我所有的支持和尊重。实际上，我最近与 Jenkins 的关系更多的是象征意义，有点像日本的天皇或英国的皇后，这就是为什么此公告对 Jenkins 的前进动力几乎没有实际影响的原因。
+几年前，我曾经觉得如果我退出的话，天就会塌下开。在 2019 年的某个时刻，我突然发现我没有这种感觉了。这种转变是渐进的、稳定的，所以我不确定自己何时跨过的这道门槛，但是在 2019 年，我显然处于另一端。这样我才知道自己终于可以结束我的这一篇章。回首与 Jenkins 在一起 15 年，与 CloudBees 合作 9 年，这真是很长的一段时间。
+我希望您会想知道我的新篇章是什么。我将与我的老伙伴 Harpreet Singh 创办一家新的创业公司，即 Launchable。自从在 Sun Microsystems 和 JavaEE 工作以来，我就认识他，他是我在 CloudBees 领域的合伙人，从头开始建立 Jenkins 业务。他去 Atlassian 经营 BitBucket 业务已有一段时间，但是现在他和我又回到了一起。许多 CloudBees 人投资了 Launchable，包括 Sacha Labourey、Bob Bickel 和 John Vrionis。
+通过 Jenkins 和 CloudBees ，我得以推动软件开发中自动化的发展。这种自动化产生了大量数据，但我们并未使用这些数据来改善我们的生活，这确实是一个浪费的金矿。Launchable 正在努力利用这些信息来提高开发人员的生产力。我写了一篇单独的博客文章，以讨论有关我的想法的更多信息。
+最后，即使离开 CloudBees 不再作为其一名全职员工，也并没有完全离开，我将继续作为 CloudBees 的顾问，我仍然在情感和财务上都对 CloudBees 进行了大量投资。我仍然是狂热的粉丝，我会继续为他们加油，只不过是在默默观望。Jenkins 也一样，我仍然在董事会中，以确保连续性。我仍在持续交付基金会的技术监督委员会任职，虽然我的主席任期将于 3 月届满。</description>
+    </item>
+    
+    <item>
+      <title>WebSocket</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-websocket/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-websocket/</guid>
+      <description>我很高兴地提出报告，JEP-222 从 Jenkins 每周更新版开始落地。此改进为 Jenkins 带来了实验性的 WebSocket 支持，可在连接入站代理程序或运行 CLI 时使用。WebSocket 协议允许通过 HTTP（S）端口进行双向交互式通信.
+尽管 Jenkins 的许多用户都可以受益，但实现该系统对 CloudBees 尤为重要，因为 现代云平台上的 CloudBees Core（即在 Kubernetes 上运行）如何配置网络。当管理员希望将入站（以前称为“JNLP”）外部代理连接到 Jenkins 主服务器（例如在集群外部运行并使用代理服务包装器的 Windows 虚拟机）时，到目前为止，唯一的选择是使用特殊的 TCP 端口。需要使用低级网络配置将此端口开放给外部流量。例如，nginx 入口控制器的用户将需要为集群中的每个 Jenkins 服务代理一个单独的外部端口。有关此操作的说明很复杂，很难调试。
+使用 WebSocket，现在可以在存在反向代理的情况下更简单地连接入站代理：如果 HTTP（S）端口已在提供流量，则大多数代理将允许 WebSocket 连接而无需其他配置。可以在代理配置中启用 WebSocket 模式，并且即将推出 Kubernetes 插件中对基于 Pod 的代理的支持。您将需要一个4.0 或更高版本的代理，该代理版本以常规方式与 Jenkins 捆绑在一起（带有该版本的 Docker 镜像即将发布）。
+Jenkins 的另一个对反向代理用户造成麻烦的部分是 CLI。除了端口 22 上的 SSH 协议（这又是从外部打开的麻烦）之外，CLI 还具有使用 HTTP（S）传输的功能.不幸的是，用于实现混淆某些技巧的技巧并不十分可移植。Jenkins 2.217 提供了一个新的 webSocket CLI 模式，该模式避免了这些问题。再次说明，您将需要下载新版本的 jenkins-cli.jar 才能使用此模式。
+已经针对 Kubernetes 实现示例（包括 OpenShift）对 WebSocket 代码进行了测试，但是很可能仍然存在一些 bugs 和局限性，并且尚未测试重构建负载下代理的可伸缩性。暂时将此功能视为 Beta 版，并让我们了解其工作原理！</description>
+    </item>
+    
+    <item>
       <title>完整的 CI/CD 集合[教程]</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>

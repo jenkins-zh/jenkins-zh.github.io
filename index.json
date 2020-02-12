@@ -26,6 +26,32 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-12-a-new-chapter-for-kohsuke/",
+        "title": "Jenkins 创始人 Kohsuke 的新篇章",
+        "type": "wechat",
+        "date": "2020-02-12 00:00:00 +0000 UTC",
+        "tags": ["社区", "治理", "公告"],
+        "description": "Jenkins 创始人 Kohsuke 即将退出 Jenkins，并投身于一个新的创业公司 Launchable ",
+        "content": "2020 年对我来说将是转变的一年。在 1 月底，我将正式退出 Jenkins，将我在 CloudBees 的角色转换为顾问，并将注意力转向我的新创业公司。这篇文章的其余部分将结合这种过渡的背景，如果您没有与我紧密合作，这可能会令您惊讶。\nJenkins 之旅充满神奇，而且从未间断。我非常喜欢这一切，尤其是与造就 Jenkins 如今成就的世界各地的用户会面与交流。作为项目的创建者，在某个时候，我开始想如何将火炬传递给下一任领导者，如何使人们继续推动它前进。如今，由于有了 CloudBees 和社区，新一代的才华横溢、有才干的领导者正在热情地推动事情向前发展，这真令人高兴。例如，新选举的董事会成员和Jenkins X 的伙伴们。这些新人带来了新的文化和新的代码，并且总的来说，这产生了积极的影响，使 Jenkins 不再局限于我所谈论的局部最优方法，他们得到我所有的支持和尊重。实际上，我最近与 Jenkins 的关系更多的是象征意义，有点像日本的天皇或英国的皇后，这就是为什么此公告对 Jenkins 的前进动力几乎没有实际影响的原因。\n几年前，我曾经觉得如果我退出的话，天就会塌下开。在 2019 年的某个时刻，我突然发现我没有这种感觉了。这种转变是渐进的、稳定的，所以我不确定自己何时跨过的这道门槛，但是在 2019 年，我显然处于另一端。这样我才知道自己终于可以结束我的这一篇章。回首与 Jenkins 在一起 15 年，与 CloudBees 合作 9 年，这真是很长的一段时间。\n我希望您会想知道我的新篇章是什么。我将与我的老伙伴 Harpreet Singh 创办一家新的创业公司，即 Launchable。自从在 Sun Microsystems 和 JavaEE 工作以来，我就认识他，他是我在 CloudBees 领域的合伙人，从头开始建立 Jenkins 业务。他去 Atlassian 经营 BitBucket 业务已有一段时间，但是现在他和我又回到了一起。许多 CloudBees 人投资了 Launchable，包括 Sacha Labourey、Bob Bickel 和 John Vrionis。\n通过 Jenkins 和 CloudBees ，我得以推动软件开发中自动化的发展。这种自动化产生了大量数据，但我们并未使用这些数据来改善我们的生活，这确实是一个浪费的金矿。Launchable 正在努力利用这些信息来提高开发人员的生产力。我写了一篇单独的博客文章，以讨论有关我的想法的更多信息。\n最后，即使离开 CloudBees 不再作为其一名全职员工，也并没有完全离开，我将继续作为 CloudBees 的顾问，我仍然在情感和财务上都对 CloudBees 进行了大量投资。我仍然是狂热的粉丝，我会继续为他们加油，只不过是在默默观望。Jenkins 也一样，我仍然在董事会中，以确保连续性。我仍在持续交付基金会的技术监督委员会任职，虽然我的主席任期将于 3 月届满。\n对于本篇章所给予的宝贵机会和特权，我深表感谢。我周围有许多出色的、鼓舞人心和才华横溢的人，从他们那里学到很多东西。我只能希望我能够产生积极的影响，并回馈他们。 我不会说出名字，但您知道您是谁，我们会保持联系。\n对我来说，今年将是令人兴奋一年。 超越无限！！\n",
+        "auhtor": "kohsuke",
+        "translator": "zhaoying818",
+        "original": "https://jenkins.io/blog/2020/01/23/a-new-chapter-for-kohsuke/",
+        "poster": "thanks-kohsuke.png"
+    },
+    {
+        "uri": "https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-websocket/",
+        "title": "WebSocket",
+        "type": "wechat",
+        "date": "2020-02-10 00:00:00 +0000 UTC",
+        "tags": ["Jenkins", "WebSocket"],
+        "description": "谈谈 Jenkins 对 WebSocket 的实验性支持",
+        "content": "我很高兴地提出报告，JEP-222 从 Jenkins 每周更新版开始落地。此改进为 Jenkins 带来了实验性的 WebSocket 支持，可在连接入站代理程序或运行 CLI 时使用。WebSocket 协议允许通过 HTTP（S）端口进行双向交互式通信.\n尽管 Jenkins 的许多用户都可以受益，但实现该系统对 CloudBees 尤为重要，因为 现代云平台上的 CloudBees Core（即在 Kubernetes 上运行）如何配置网络。当管理员希望将入站（以前称为“JNLP”）外部代理连接到 Jenkins 主服务器（例如在集群外部运行并使用代理服务包装器的 Windows 虚拟机）时，到目前为止，唯一的选择是使用特殊的 TCP 端口。需要使用低级网络配置将此端口开放给外部流量。例如，nginx 入口控制器的用户将需要为集群中的每个 Jenkins 服务代理一个单独的外部端口。有关此操作的说明很复杂，很难调试。\n使用 WebSocket，现在可以在存在反向代理的情况下更简单地连接入站代理：如果 HTTP（S）端口已在提供流量，则大多数代理将允许 WebSocket 连接而无需其他配置。可以在代理配置中启用 WebSocket 模式，并且即将推出 Kubernetes 插件中对基于 Pod 的代理的支持。您将需要一个4.0 或更高版本的代理，该代理版本以常规方式与 Jenkins 捆绑在一起（带有该版本的 Docker 镜像即将发布）。\nJenkins 的另一个对反向代理用户造成麻烦的部分是 CLI。除了端口 22 上的 SSH 协议（这又是从外部打开的麻烦）之外，CLI 还具有使用 HTTP（S）传输的功能.不幸的是，用于实现混淆某些技巧的技巧并不十分可移植。Jenkins 2.217 提供了一个新的 webSocket CLI 模式，该模式避免了这些问题。再次说明，您将需要下载新版本的 jenkins-cli.jar 才能使用此模式。\n已经针对 Kubernetes 实现示例（包括 OpenShift）对 WebSocket 代码进行了测试，但是很可能仍然存在一些 bugs 和局限性，并且尚未测试重构建负载下代理的可伸缩性。暂时将此功能视为 Beta 版，并让我们了解其工作原理！\n",
+        "auhtor": "Jesse Glick",
+        "translator": "wenjunzhangp",
+        "original": "https://jenkins.io/blog/2020/02/02/web-socket/",
+        "poster": "cover.jpg"
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/",
         "title": "完整的 CI/CD 集合[教程]",
         "type": "wechat",
@@ -2590,7 +2616,7 @@
         "uri": "https://jenkins-zh.cn/tags/jenkins/",
         "title": "Jenkins",
         "type": "tags",
-        "date": "2019-12-31 00:00:00 +0000 UTC",
+        "date": "2020-02-10 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -3250,10 +3276,23 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tags/websocket/",
+        "title": "Websocket",
+        "type": "tags",
+        "date": "2020-02-10 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2020-01-10 00:00:00 +0000 UTC",
+        "date": "2020-02-12 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -3441,6 +3480,19 @@
         "content": " 几年前，我们的 CTO 写了一篇关于 使用 Jenkins 和 Docker 为 Ruby On Rails 应用提供持续集成服务 的文章。这些年，我们一直使用这个 CI 流水线解决方案，直到我们最近决定做一次升级。为什么呢？\n Jenkins 的版本过低，已经很难升级 Wolox 过去几年增长显著，一直面临着如何伸缩的问题 只有极少数人如何修复 Jenkins 服务的问题 配置 Jenkins 任务不是一件简单的任务，使我们的项目启动过程变慢 更改每个作业运行的命令也不是一件简单的任务，并且有权限更改的人并不多。 Wolox 拥有广泛的项目，语言种类繁多，使得这个问题尤为突显。  考虑到这些问题，我们开始深入研究最新版的 Jenkins，看看如何提升我们的 CI 服务。我们需要构建一个新的CI服务，至少要解决以下问题：\n 支持 Docker 构建。我们的项目依赖的一个或多个 Docker 镜像的执行（应用，数据库，Redis 等） 如有必要，易于配置和复制 易于增加新项目 易于修改构建步骤。工作在项目上的所有人都应该能修改它，如果他们希望执行 npm install 或 yarn install  安装Jenkins和Docker 安装 Jenkins 非常简单，直接从 官方教程 选择一种方式安装。\n以下是我们在 AWS 上的安装步骤：\nsudo rpm — import https://pkg.jenkins.io/debian/jenkins.io.key sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo sudo yum install java-1.8.0 -y sudo yum remove java-1.7.0-openjdk -y sudo yum install jenkins -y sudo yum update -y sudo yum install -y docker  从 GitHub 上自动添加项目 从 Github 上自动添加项目可以通过 GitHub Branch Source 插件实现。它能将 GitHub 的组织中符合规则的项目自动添加到 Jenkins 中。唯一的约束就是在每一个分支下都必须有一个 Jenkinsfile，用于描述如何构建项目。\n易于修改的配置 我们之前使用 Jenkins 最痛苦的是修改项目的构建步骤。在 Jenkins 任务中，你会看到像以下代码（用于构建）：\n#!/bin/bash +x set -e # Remove unnecessary files echo -e \u0026quot;\\033[34mRemoving unnecessary files...\\033[0m\u0026quot; rm -f log/*.log \u0026amp;\u0026gt; /dev/null || true \u0026amp;\u0026gt; /dev/null rm -rf public/uploads/* \u0026amp;\u0026gt; /dev/null || true \u0026amp;\u0026gt; /dev/null # Build Project echo -e \u0026quot;\\033[34mBuilding Project...\\033[0m\u0026quot; docker-compose --project-name=${JOB_NAME} build # Prepare test database COMMAND=\u0026quot;bundle exec rake db:drop db:create db:migrate\u0026quot; echo -e \u0026quot;\\033[34mRunning: $COMMAND\\033[0m\u0026quot; docker-compose --project-name=${JOB_NAME} run \\ -e RAILS_ENV=test web $COMMAND # Run tests COMMAND=\u0026quot;bundle exec rspec spec\u0026quot; echo -e \u0026quot;\\033[34mRunning: $COMMAND\\033[0m\u0026quot; unbuffer docker-compose --project-name=${JOB_NAME} run web $COMMAND # Run rubocop lint COMMAND=\u0026quot;bundle exec rubocop app spec -R --format simple\u0026quot; echo -e \u0026quot;\\033[34mRunning: $COMMAND\\033[0m\u0026quot; unbuffer docker-compose --project-name=${JOB_NAME} run -e RUBYOPT=\u0026quot;-Ku\u0026quot; web $COMMAND  在构建步骤后，执行 Docker 构建的清理工作：\n#!/bin/bash +x docker-compose --project-name=${JOB_NAME} stop \u0026amp;\u0026gt; /dev/null || true \u0026amp;\u0026gt; /dev/null docker-compose --project-name=${JOB_NAME} rm --force \u0026amp;\u0026gt; /dev/null || true \u0026amp;\u0026gt; /dev/null docker stop `docker ps -a -q -f status=exited` \u0026amp;\u0026gt; /dev/null || true \u0026amp;\u0026gt; /dev/null docker rm -v `docker ps -a -q -f status=exited` \u0026amp;\u0026gt; /dev/null || true \u0026amp;\u0026gt; /dev/null docker rmi `docker images --filter 'dangling=true' -q --no-trunc` \u0026amp;\u0026gt; /dev/null || true \u0026amp;\u0026gt; /dev/null  尽管这些命令并不复杂，但是更改其中的任何命令都需要具有权限的人员来操作相应的 Jenkins 任务，并清楚知道自己需要做什么。\nJenkinsfile的成与败 使用当前的 Jenkins 版本，我们可以利用 Jenkins pipeline 对我们的构建流进行建模，并保存到一个文件中。 该文件会被签入代码库。因此，任何有权访问它的人都可以修改其中的步骤。棒极了。\nJenkins 流水线还支持：\n Docker 及多个镜像可用于构建 使用 withEnv 设置环境变量，还支持很多其它内建的 函数  这为 Wolox 提供了完美的用例。我们可以将构建配置写入到一个被检入到代码库的文件中，并且允许任务有权限访问的人修改。但是，一个简单的 Rails 项目的 Jenkinsfile 看起来却像这样：\n# sample Jenkinsfile. Might not compile node { checkout scm withEnv(['MYTOOL_HOME=/usr/local/mytool']) { docker.image(\u0026quot;postgres:9.2\u0026quot;).withRun() { db -\u0026gt; withEnv(['DB_USERNAME=postgres', 'DB_PASSWORD=', \u0026quot;DB_HOST=db\u0026quot;, \u0026quot;DB_PORT=5432\u0026quot;]) { docker.image(\u0026quot;redis:X\u0026quot;).withRun() { redis -\u0026gt; withEnv([\u0026quot;REDIS_URL=redis://redis\u0026quot;]) { docker.build(imageName, \u0026quot;--file .woloxci/Dockerfile .\u0026quot;).inside(\u0026quot;--link ${db.id}:postgres --link ${redis.id}:redis\u0026quot;) { sh \u0026quot;rake db:create\u0026quot; sh \u0026quot;rake db:migrate\u0026quot; sh \u0026quot;bundle exec rspec spec\u0026quot; } } } } } } }  这样的文件不仅难以理解，还难以修改。这样的构建逻辑非常容易被破坏，如果你不熟悉 Groovy。如果你对 Jenkins 流水线是如何工作的一无所知，就更容易了。这样，修改或增加一个新的 Docker 镜像就变得不简单，也容易导致混淆。\n通过 YAML 配置 Jenkins 流水线 就个人而言，我总是期望为 CI 配置简单的配置文件。这次我们有机会构建使用 YAML 文件配置的 CI。经过分析，我们总结出以下这样的 YAML，它已经能满足我们的需求：\nconfig: dockerfile: .woloxci/Dockerfile project_name: some-project-name services: - postgresql - redis steps: analysis: - bundle exec rubocop -R app spec --format simple - bundle exec rubycritic --path ./analysis --minimum-score 80 --no-browser setup_db: - bundle exec rails db:create - bundle exec rails db:schema:load test: - bundle exec rspec security: - bundle exec brakeman --exit-on-error audit: - bundle audit check --update environment: RAILS_ENV: test GIT_COMMITTER_NAME: a GIT_COMMITTER_EMAIL: b LANG: C.UTF-8  它描述了项目基本的配置、构建过程中需要的环境变量、依赖的服务、还有构建步骤。\nJenkinsfile + Shared Libraries = WoloxCI 经过调研 Jenkins 和流水线之后，我们发现可以通过扩展共享库（shared libraries）来实现。共享库是用 Groovy 编写的，可以导入到流水线中，并在必要时执行。\n如果你细心观察以下 Jenkinsfile，你会看到代码是一个接收闭包的方法调用链，我们执行另一个方法将一个新的闭包传递给它。\n# sample Jenkinsfile. Might not compile node { checkout scm withEnv(['MYTOOL_HOME=/usr/local/mytool']) { docker.image(\u0026quot;postgres:9.2\u0026quot;).withRun() { db -\u0026gt; withEnv(['DB_USERNAME=postgres', 'DB_PASSWORD=', \u0026quot;DB_HOST=db\u0026quot;, \u0026quot;DB_PORT=5432\u0026quot;]) { docker.image(\u0026quot;redis:X\u0026quot;).withRun() { redis -\u0026gt; withEnv([\u0026quot;REDIS_URL=redis://redis\u0026quot;]) { docker.build(imageName, \u0026quot;--file .woloxci/Dockerfile .\u0026quot;).inside(\u0026quot;--link ${db.id}:postgres --link ${redis.id}:redis\u0026quot;) { sh \u0026quot;rake db:create\u0026quot; sh \u0026quot;rake db:migrate\u0026quot; sh \u0026quot;bundle exec rspec spec\u0026quot; } } } } } } }  Groovy 语言足够灵活，能在在运行时创建声明式代码，这使我们能使用 YAML 来配置我们的流水线！\nWolox-CI介绍 wolox-ci 诞生于 Jenkins 的共享库。以下是关于 Wolox-CI 的具体使用方式。\n使用 wolox-ci，Jenkinsfile 被精简成：\n@Library('wolox-ci') _ node { checkout scm woloxCi('.woloxci/config.yml'); }  它会检出代码，然后调用 wolox-ci。共享库代码会读取到 YAML 文件，如下：\nconfig: dockerfile: .woloxci/Dockerfile project_name: some-project-name services: - postgresql - redis steps: analysis: - bundle exec rubocop -R app spec –format simple - bundle exec rubycritic –path ./analysis –minimum-score 80 –no-browser setup_db: - bundle exec rails db:create - bundle exec rails db:schema:load test: - bundle exec rspec security: - bundle exec brakeman –exit-on-error audit: - bundle audit check –update environment: RAILS_ENV: test GIT_COMMITTER_NAME: a GIT_COMMITTER_EMAIL: b LANG: C.UTF-8  然后，Jenkins 就会执行你的构建任务。\n共享库有一个好处是我们可以集中扩展和修改我们的共享库代码。一旦添加新代码，Jenkins 就会自动更新它，还会通知所有的任务。\n由于我们有不同语言的项目，我们使用 Docker 来构建测试环境。WoloxCI 假设有一个 Dockerfile 要构建，并将在容器内运行所有指定的命令。\nconfig.yml 各部分介绍 config部分 这是 config.yml 的第一部分，用于指定基本配置，包括项目的名称，Dockerfile 的路径。Dockerfile 用于构建镜像，所有的命令都运行在该镜像的容器中。\nServices 部分 这部分定义了哪些服务被暴露到容器中。WoloxCI 支持以下开箱即用的服务：postgresql、mssql 和 redis。你还可以指定 Docker 镜像的版本。\n增加一个新的服务类型也不难。你只需要在该目录下（https://github.com/Wolox/wolox-ci/tree/development/vars）添加，然后告诉共享库该服务是如何被转换的，如https://github.com/Wolox/wolox-ci/blob/development/src/com/wolox/parser/ConfigParser.groovy#L76\nSteps 部分 在此部分列出的命令，都会被运行在 Docker 容器中。你可以在 Jenkins 界面上看到每一步的执行结果。\nEnvironment 部分 如果构建过程需要一些环境变量，你可以在这部分指定它们。Steps 部分中描述的步骤执行过程中，Docker 容器会提供你设置好的所有环境变量。\n总结 目前，WoloxCI 还在我们所有项目中一小部分项目进行测试。这让有权限访问它的人通过 YAML 文件更改构建步骤。这是对我们 CI 工作流程来说是一个重大改进。\nDocker 使我们轻松更换编程语言，而不用对 Jenkins 安装做任何的更改。并且，当检查到 GitHub 组织中的新项目（项目中有 Jenkinsfile）时，Jenkins GitHub Branch Source 插件会自动添加新的 Jenkins 项目。\n所有这些改进节约了我们维护 Jenkins 的大量时间，并使我们可以轻松扩展而无需任何额外配置。\n译者小结 本文最大的亮点是它介绍了一种实现自定义构建语言的方式。通过 Jenkins 的共享库技术，将构建逻辑从 Jenkinsfile 中移到了 YAML 文件中。同样的，我们可以将构建逻辑移动 JSON 文件中，或者任何格式的文件中，只你的共享库能解析它，并将它转换成 Jenkins 能理解的格式。\n",
         "auhtor": "Matias De Santi",
         "translator": "zacker330",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/",
+        "title": "公告",
+        "type": "tags",
+        "date": "2020-02-12 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
         "original": "",
         "poster": ""
     },
@@ -3822,6 +3874,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/",
+        "title": "治理",
+        "type": "tags",
+        "date": "2020-02-12 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/event/",
         "title": "活动",
         "type": "meetup",
@@ -3865,6 +3930,19 @@
         "title": "测试",
         "type": "tags",
         "date": "2019-08-14 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/",
+        "title": "社区",
+        "type": "tags",
+        "date": "2020-02-12 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",

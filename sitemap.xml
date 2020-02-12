@@ -12,6 +12,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-12-a-new-chapter-for-kohsuke/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-websocket/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
@@ -1023,7 +1033,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1316,8 +1326,14 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/websocket/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1383,6 +1399,12 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1519,6 +1541,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/event/</loc>
   </url>
   
@@ -1533,6 +1561,12 @@
   <url>
     <loc>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
