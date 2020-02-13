@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jenkins on Jenkins 中文社区</title>
+    <title>jenkins on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/jenkins/</link>
-    <description>Recent content in Jenkins on Jenkins 中文社区</description>
+    <description>Recent content in jenkins on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
@@ -203,7 +203,7 @@ Kubernetes 已经成为容器技术中必不可少的平台，甚至会作为未
 6，字符参数。 添加一个名为branch的字符参数以用于控制代码分支的变量。
 7，选项参数。 添加一个名为mode的选项参数以用于控制部署或者回滚的变量。
 8，选择参数。 1，主动选择参数 首先添加一个主动选择参数，用于控制项目名称这个变量。
- Name：project Groovy Script:  return[ &amp;quot;eureka&amp;quot;, &amp;quot;user&amp;quot; ]  Description：选择对应的应用名称部署对应的应用。 Choice Type：Radio Buttons  2，主动选择反应参数 接着添加一个主动选择反应参数，用于控制项目类型这个变量。</description>
+ Name：project Groovy Script:</description>
     </item>
     
     <item>
@@ -383,7 +383,8 @@ artifactId 插件的 artifactId 被用于文件基本名称，是 Jenkins 插件
 自动安装插件的方法 那么，有什么方法能指定插件的版本，又能自动下载它的依赖，还能批量下载呢？
 幸运的是，Jenkins 的 Docker 镜像的代码仓库里的 install-plugins.sh 脚本已经实现。只不过需要我们拿过来小小修改才能使用。笔者修改后创建了相应的代码仓库：jenkins-install-plugins-shell 。链接在文章末尾。
 以下是 jenkins-install-plugins-shell 的使用方法： 1. 将代码 clone 到 JENKINS_HOME 目录中。
-cd $JENKINS_HOME git clone https://github.com/zacker330/jenkins-install-plugins-shell.git cd jenkins-install-plugins-shell   在 plugins.txt 中加入希望安装的插件 在 jenkins-install-plugins-shell 目录中，有一个 plugins.txt 文件，在文件中写入希望安装的插件及版本号。例如：  ansible:1.0 powershell:1.3  执行安装
+cd $JENKINS_HOME git clone https://github.com/zacker330/jenkins-install-plugins-shell.git cd jenkins-install-plugins-shell   在 plugins.txt 中加入希望安装的插件 在 jenkins-install-plugins-shell 目录中，有一个 plugins.txt 文件，在文件中写入希望安装的插件及版本号。例如：
+ansible:1.0 powershell:1.3  执行安装
 # Jenkins War 的路径，用于分析 export JENKINS_WAR_PATH=&amp;lt;Jenkins war文件的路径&amp;gt; chmod +x install-plugins.</description>
     </item>
     
@@ -440,7 +441,8 @@ Shipper 由于 Shipper 对创建的 Helm 图表有多个限制，因此我必须
       <description>本文介绍如何使用 Jenkins + Ansible 实现对 Nginx 的自动化部署。最终达到的效果有如下几点： 1. 只要你将 Nginx 的配置推送到 GitHub 中，Jenkins 就会自动执行部署，然后目标服务器的 Nginx 配置自动生效。这个过程是幂等（idempotent）的，只要代码不变，执行多少遍，最终效果不变。 2. 如果目标机器没有安装 Nginx，则会自动安装 Nginx。 3. 自动设置服务器防火墙规则。
 1. 实验环境介绍 本次实验使用 Docker Compose 搭建 Jenkins 及 Jenkins agent。使用 Vagrant 启动一台虚拟机，用于部署 Nginx。使用 Vagrant 是可选的，读者可以使用 VirtualBox 启动一个虚拟机。使用 Vagrant 完全是为了自动化搭建实验环境。
 以下是整个实验环境的架构图： 注意，图中的 5123 &amp;lt;-&amp;gt; 80 代表将宿主机的 5123 端口请求转发到虚拟机中的 80 端口。
- Vagrant：虚拟机管理工具，通过它，我们可以使用文本来定义、管理虚拟机。 Ansible：自动化运维工具 Docker Compose：它是一个用于定义和运行多容器 Docker 应用程序的工具。可以使用 YAML 文件来配置应用程序的服务。  2. 启动实验环境  克隆代码并进入文件夹 bash git clone https://github.com/zacker330/jenkins-ansible-nginx.git cd jenkins-ansible-nginx  构建 Jenkins agent 的镜像 需要自定义 Jenkins agent 镜像有两个原因：  本次实验，使用 Swarm 插件实现 Jenkins master 与 agent 之间的通信，所以 Jenkins agent 需要启动 swarm 客户端。 Jenkins agent 必须支持 Ansible。 bash docker build -f JenkinsSlaveAnsibleDockerfile -t jenkins-swarm-ansible .</description>
+ Vagrant：虚拟机管理工具，通过它，我们可以使用文本来定义、管理虚拟机。 Ansible：自动化运维工具 Docker Compose：它是一个用于定义和运行多容器 Docker 应用程序的工具。可以使用 YAML 文件来配置应用程序的服务。  2. 启动实验环境  克隆代码并进入文件夹
+git clone https://github.com/zacker330/jenkins-ansible-nginx.git cd jenkins-ansible-nginx  构建 Jenkins agent 的镜像 需要自定义 Jenkins agent 镜像有两个原因：</description>
     </item>
     
     <item>

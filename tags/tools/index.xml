@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tools on Jenkins 中文社区</title>
-    <link>https://jenkins-zh.github.io/tags/tools/</link>
+    <link>https://jenkins-zh.cn/tags/tools/</link>
     <description>Recent content in tools on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://jenkins-zh.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jenkins-zh.cn/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Custom WAR Packager</title>
-      <link>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-5-custom-war-packager/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-5-custom-war-packager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.github.io/wechat/articles/2018/12/2018-12-5-custom-war-packager/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-5-custom-war-packager/</guid>
       <description>我打算给 Jenkins 管理员和开发者介绍一个新的工具 Custom WAR Packager。该工具可以打包 Jenkins 的自定义 WAR 发行版、 Docker 镜像和 Jenkinsfile Runner 包。 它可以打包 Jenkins、插件以及配置为开箱即用的发行版。 Custom WAR Packager 是我们在博客 A Cloud Native Jenkins(/blog/2018/09/12/speaker-blog-a-cloud-native-jenkins/) 中介绍过的无状态 Jenkins master 工具链的一部分。这个工具链已经在 Jenkins X 中被使用，用于构建 serverless 镜像(https://github.com/jenkins-x/jenkins-x-serverless)。
 在这篇文章中，我将会介绍几种 Custom WAR Packager 常见的使用场景。
 == 历史

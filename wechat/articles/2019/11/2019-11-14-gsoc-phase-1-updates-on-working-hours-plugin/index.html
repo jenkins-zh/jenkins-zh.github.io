@@ -20,7 +20,7 @@
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.53" />
+     <meta name="generator" content="Hugo 0.58.3" />
 
       
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -35,9 +35,9 @@
 <meta property="og:title" content="Working Hours 插件的第一阶段更新" />
 <meta property="og:description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/" /><meta property="article:published_time" content="2019-11-14T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-11-14T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/" />
+<meta property="article:published_time" content="2019-11-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-11-14T00:00:00+00:00" />
 <meta itemprop="name" content="Working Hours 插件的第一阶段更新">
 <meta itemprop="description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器">
 
@@ -328,9 +328,9 @@ var trackOutboundLink = function(id, url) {
 </code></pre>
 
 <ul>
-<li>使用 React 之后，传统的请求将不再可用，处理请求的另一种方法是使用 stapler。您可以定义如下的过程函数[source, java]
-<code>
-public HttpResponse doDynamic(StaplerRequest request) {
+<li><p>使用 React 之后，传统的请求将不再可用，处理请求的另一种方法是使用 stapler。您可以定义如下的过程函数[source, java]</p>
+
+<pre><code>public HttpResponse doDynamic(StaplerRequest request) {
     if (config == null) {
         config = ExtensionList.lookup(WorkingHoursPlugin.class).get(0);
     }
@@ -348,7 +348,7 @@ public HttpResponse doDynamic(StaplerRequest request) {
             return setTimeRanges(request);
     }
 }
-</code></li>
+</code></pre></li>
 </ul>
 
 <h2 id="运行我们的应用程序">运行我们的应用程序</h2>

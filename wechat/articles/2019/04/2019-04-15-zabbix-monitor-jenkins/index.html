@@ -20,7 +20,7 @@
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.53" />
+     <meta name="generator" content="Hugo 0.58.3" />
 
       
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -35,9 +35,9 @@
 <meta property="og:title" content="使用 Zabbix 监控 Jenkins" />
 <meta property="og:description" content="介绍了如何使用 Zabbix 监控 Jenkins" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" /><meta property="article:published_time" content="2019-04-15T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-15T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" />
+<meta property="article:published_time" content="2019-04-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-15T00:00:00+00:00" />
 <meta itemprop="name" content="使用 Zabbix 监控 Jenkins">
 <meta itemprop="description" content="介绍了如何使用 Zabbix 监控 Jenkins">
 
@@ -349,25 +349,26 @@ var trackOutboundLink = function(id, url) {
 <li>/ping：接口返回 <code>pong</code> 代表 Jenkins 存活，如下图：
 <img src="292372-15e36249b868625a.png" alt="" /></li>
 <li>/threads：返回 Jenkins 的线程信息</li>
-<li>/healthcheck：返回以下指标：</li>
-</ul>
 
-<pre><code class="language-json">  {
-    disk-space: {
-     healthy: true
-    },
-    plugins: {
-      healthy: true,
-      message: &quot;No failed plugins&quot;
-    },
-    temporary-space: {
-      healthy: true
-    },
-    thread-deadlock: {
-      healthy: true
-    }
-  }
-</code></pre>
+<li><p>/healthcheck：返回以下指标：</p>
+
+<pre><code class="language-json">{
+disk-space: {
+ healthy: true
+},
+plugins: {
+  healthy: true,
+  message: &quot;No failed plugins&quot;
+},
+temporary-space: {
+  healthy: true
+},
+thread-deadlock: {
+  healthy: true
+}
+}
+</code></pre></li>
+</ul>
 
 <h2 id="2-配置-zabbix-server-与-agent-实现监控及告警">2. 配置 Zabbix server 与 agent 实现监控及告警</h2>
 

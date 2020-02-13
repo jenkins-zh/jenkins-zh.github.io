@@ -20,7 +20,7 @@
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.53" />
+     <meta name="generator" content="Hugo 0.58.3" />
 
       
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -269,26 +269,23 @@ var trackOutboundLink = function(id, url) {
 <ol>
 <li><p>打开终端窗口。</p></li>
 
-<li><p>使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为 Docker 中的一个容器（记住，如果本地没有镜像，这个命令会自动下载）：</p></li>
-</ol>
+<li><p>使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为 Docker 中的一个容器（记住，如果本地没有镜像，这个命令会自动下载）：</p>
 
 <pre><code>docker run \
-  --rm \
-  -u root \
-  -p 8080:8080 \
-  -v jenkins-data:/var/jenkins_home \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v &quot;$HOME&quot;:/home \ 
-  jenkinsci/blueocean
+--rm \
+-u root \
+-p 8080:8080 \
+-v jenkins-data:/var/jenkins_home \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v &quot;$HOME&quot;:/home \ 
+jenkinsci/blueocean
 </code></pre>
 
-<pre><code> ① `-v jenkins-data:/var/jenkins_home` 表示将容器中的 /var/jenkins_home 目录映射到 Docker volume，并将其命名为 jenkins-data。如果该卷不存在，那么 docker run 命令会自动为你创建卷。  
+<p>① <code>-v jenkins-data:/var/jenkins_home</code> 表示将容器中的 /var/jenkins_home 目录映射到 Docker volume，并将其命名为 jenkins-data。如果该卷不存在，那么 docker run 命令会自动为你创建卷。</p>
 
- ② `-v &quot;$HOME&quot;:/home` 将主机上的 $HOME 目录（即你的本地）映射到（通常是 /Users/&lt;your-username&gt; 目录）到容器的 /home 目录。
-</code></pre>
+<p>② <code>-v &quot;$HOME&quot;:/home</code> 将主机上的 $HOME 目录（即你的本地）映射到（通常是 /Users/<your-username> 目录）到容器的 /home 目录。</p></li>
 
-<ol>
-<li>继续向导</li>
+<li><p>继续向导</p></li>
 </ol>
 
 <h2 id="在-windows-系统">在 Windows 系统</h2>
@@ -296,24 +293,21 @@ var trackOutboundLink = function(id, url) {
 <ol>
 <li><p>打开命令提示窗口。</p></li>
 
-<li><p>使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为 Docker 中的一个容器（记住，如果本地没有镜像，这个命令会自动下载）：</p></li>
-</ol>
+<li><p>使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为 Docker 中的一个容器（记住，如果本地没有镜像，这个命令会自动下载）：</p>
 
 <pre><code>docker run ^
-  --rm ^
-  -u root ^
-  -p 8080:8080 ^
-  -v jenkins-data:/var/jenkins_home ^
-  -v /var/run/docker.sock:/var/run/docker.sock ^
-  -v &quot;%HOMEPATH%&quot;:/home ^
-  jenkinsci/blueocean
+--rm ^
+-u root ^
+-p 8080:8080 ^
+-v jenkins-data:/var/jenkins_home ^
+-v /var/run/docker.sock:/var/run/docker.sock ^
+-v &quot;%HOMEPATH%&quot;:/home ^
+jenkinsci/blueocean
 </code></pre>
 
-<pre><code>对这些选项的解释，请参考上面的 macOS 和 Linux 说明。
-</code></pre>
+<p>对这些选项的解释，请参考上面的 macOS 和 Linux 说明。</p></li>
 
-<ol>
-<li>继续安装向导。</li>
+<li><p>继续安装向导。</p></li>
 </ol>
 
 <h2 id="访问-jenkins-blue-ocean-docker-容器">访问 Jenkins/Blue Ocean Docker 容器</h2>
@@ -443,36 +437,33 @@ var trackOutboundLink = function(id, url) {
 <ol>
 <li><p>使用你最称手的文本编辑器或者 IDE，在你本地的 jenkins-android-sample Git 仓库的根目录创建并保存一个名为 Jenkinsfile 的文本文件。</p></li>
 
-<li><p>复制以下声明式流水线代码并粘贴到 Jenkinsfile 文件中：</p></li>
-</ol>
+<li><p>复制以下声明式流水线代码并粘贴到 Jenkinsfile 文件中：</p>
 
 <pre><code>pipeline{
-    agent {
-        docker {
-            image 'allbears/jenkins-android:1.0.1' //①
-        }
+agent {
+    docker {
+        image 'allbears/jenkins-android:1.0.1' //①
     }
-    stages {
-        stage('Build'){
-             steps {
-                sh './gradlew clean &amp;&amp; rm -rf ./app/build/' //②
-                sh './gradlew assembleRelease'  //③
-             }
-        }
+}
+stages {
+    stage('Build'){
+         steps {
+            sh './gradlew clean &amp;&amp; rm -rf ./app/build/' //②
+            sh './gradlew assembleRelease'  //③
+         }
+    }
 
-    }
+}
 
 }
 </code></pre>
 
-<pre><code>① 这里的 image 参数是用来下载 allbears/jenkins-android:1.0.1 Docker 镜像（如果你的机器还没下载过它）并将该镜像作为单独的容器运行。你也可以用 `docker pull allbears/jenkins-android:1.0.1` 命令预先将镜像下载到你的宿主机上。
+<p>① 这里的 image 参数是用来下载 allbears/jenkins-android:1.0.1 Docker 镜像（如果你的机器还没下载过它）并将该镜像作为单独的容器运行。你也可以用 <code>docker pull allbears/jenkins-android:1.0.1</code> 命令预先将镜像下载到你的宿主机上。</p>
 
-② 这里的 sh step 是在编译前进行一些准备动作，对你的工程环境进行清理，确保工作时，编译工程环境干净。
+<p>② 这里的 sh step 是在编译前进行一些准备动作，对你的工程环境进行清理，确保工作时，编译工程环境干净。</p>
 
-③ 这里的 sh step 运行的是一个 gradle 构建 release 包的命令。
-</code></pre>
+<p>③ 这里的 sh step 运行的是一个 gradle 构建 release 包的命令。</p></li>
 
-<ol>
 <li><p>保存对 Jenkinsfile 的修改并且将其提交到你本地的 jenkins-android-sample Git 仓库。例如，在 jenkins-android-sample 目录下，运行以下命令：<br />
 git add .<br />
 继续运行：<br />
@@ -504,20 +495,20 @@ git commit -m &ldquo;Add initial Jenkinsfile&rdquo;</p></li>
 
 <ol>
 <li>打开你的 Jenkinsfile 文件，编辑。</li>
-<li>下面的代码复制到你的 Jenkinsflie 中并置于 Build 阶段下方，保存。</li>
+
+<li><p>下面的代码复制到你的 Jenkinsflie 中并置于 Build 阶段下方，保存。</p>
+
+<pre><code>   stage('UnitTest'){   
+         steps {
+            sh './gradlew test' 
+         }
+    }
+</code></pre>
+
+<p>① <code>stage('UnitTest')</code> 这里增加了一个 UnitTest 的 stage，之后会出现在 Jenkins UI 上。</p>
+
+<p>② <code>sh './gradlew test'</code> 这里的 sh step 运行的是一个 gradle 执行单元测试的命令，该命令执行之后会进行单元测试。</p></li>
 </ol>
-
-<pre><code>       stage('UnitTest'){   
-             steps {
-                sh './gradlew test' 
-             }
-        }
-</code></pre>
-
-<pre><code>① `stage('UnitTest')` 这里增加了一个 UnitTest 的 stage，之后会出现在 Jenkins UI 上。
-
-② `sh './gradlew test'` 这里的 sh step 运行的是一个 gradle 执行单元测试的命令，该命令执行之后会进行单元测试。  
-</code></pre>
 
 <p>最终代码如下所示：</p>
 
@@ -566,20 +557,20 @@ git commit -m &ldquo;Add &lsquo;Test&rsquo; stage&rdquo;</p></li>
 
 <ol>
 <li>回到你的文本编辑器/ IDE，打开你的 Jenkinsfile。</li>
-<li>复制以下声明式流水线代码，并粘贴到 Jenkinsfile 中 UnitTest 阶段的下方：</li>
-</ol>
 
-<pre><code>        stage('Archive') {  
-            steps {
-                archiveArtifacts artifacts: 'app/build/outputs/**/*.apk'， fingerprint: true   
-            }
+<li><p>复制以下声明式流水线代码，并粘贴到 Jenkinsfile 中 UnitTest 阶段的下方：</p>
+
+<pre><code>    stage('Archive') {  
+        steps {
+            archiveArtifacts artifacts: 'app/build/outputs/**/*.apk'， fingerprint: true   
         }
+    }
 </code></pre>
 
-<pre><code>① `stage('Archive')` 这里定义了一个名为 Archive 的 stage，之后会出现在 Jenkins UI 上。  
+<p>① <code>stage('Archive')</code> 这里定义了一个名为 Archive 的 stage，之后会出现在 Jenkins UI 上。</p>
 
-② `archiveArtifacts` 这一行执行了一个归档构建产物的操作，执行完这步操作后我们将在任务界面看见我们执行成功后的产物输出。  
-</code></pre>
+<p>② <code>archiveArtifacts</code> 这一行执行了一个归档构建产物的操作，执行完这步操作后我们将在任务界面看见我们执行成功后的产物输出。</p></li>
+</ol>
 
 <p>最终的代码如下：</p>
 

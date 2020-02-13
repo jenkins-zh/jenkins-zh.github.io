@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Devops on Jenkins 中文社区</title>
+    <title>devops on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/devops/</link>
-    <description>Recent content in Devops on Jenkins 中文社区</description>
+    <description>Recent content in devops on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>展望 2020 年 DevOps 的发展趋势</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-14-devops-trends-to-watch-for-in-2020/</link>
+      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-14-devops-trends-to-watch-for-in-2020/</guid>
+      <description>Netscape 的创始人 Marc Andreessen 很久之前就谈到过软件是如何吞噬整个世界的。他还说过，当今，每一家公司都可谓是软件公司，它们已经做好准备来接管广阔的经济领域。在 2020 年，您会清晰地看到 DevOps 持续不断的更新是如何改变交付方式的，将软件交付到几乎是无限的市场中。在这个技术竞争激烈的世界中，DevOps 已成为蓬勃发展的必需品了。
+导引 虽然每个企业对 DevOps 有着不同的理解，但我们仍然可以将 DevOps 定义为一个团队为了将其工程能力提升到新的高度而采用的一种心态。DevOps 的主要目的是消除工程实践上的障碍，重点是那些存在于想法和实践之间的文化障碍，从而使软件的交付过程变的更好、更快、更廉价和更安全。
+无论您怎样称呼 DevOps，它最终都应该归结为自动化，而自动化反过来又应该有助于公司的快速发展、快速交付、快速失败、快速恢复以及快速学习。
+从 SDLC（System Development Life Cycle，系统生命周期）模型的出现到今天，情况已经发生了巨大的变化。在 2009 年，DevOps 诞生了，它倡导文化的转型和一些将所有事物都视为代码的技术原则。随后出现了诸如 CI/CD 之类的理念，但是，软件曾经是作为一个巨大的单体被编写的，这个转变过程带来了许多挑战。
+因此，在 2011 年引入了微服务架构，它提倡细粒度和松耦合的组件划分方式，其中每个组件都承担特定的职责。
+遵循这种松耦合、微服务架构而编写的应用程序被称为云原生应用。当前，众多企业根据其业务需求和目标，正在从虚拟机过渡到 Kubernetes 和 Serverless。
+根据 Kelly Shortridge 和 Nicole Forsgren 博士在 Black Hat USA 2019 上发布的幻灯片，在与 DevOps 行业中卓越的实践者进行对标时，有四个因素特别关键，分别是：
+ 变更前置时间 发布频率 恢复时长 变更失败率  在本文中，我们将会了解到 DevOps 在未来的发展趋势。
+云原生将成为必然 Diamanti 对 500 多位 IT 主管进行了调查。结果表明，从所有方面来看，容器技术已经远远超出了预期，它在一年内迅速成熟，并从开发者试验转向了生产环境。云原生技术将会上升到一个新的高度，尤其是对 Kubernetes 的采用。云原生为公司提供了更大的优势，使其以更快的速度将产品推向市场。
+什么是云原生 采用云原生意味着更好的创新、更先进的转型以及更丰富的客户体验。如我在的另一篇文章“ Cloud-Native DevOps”中所述，云原生从根本上促进了云自动化，这里指的是云计算服务的安装、配置和监控的自动化管理，它是关于使用技术在恰当的时间为您的云计算资源做出更可靠的业务决策。</description>
+    </item>
     
     <item>
       <title>为 DevOps 构建新的运营模型</title>

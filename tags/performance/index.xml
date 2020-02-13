@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Performance on Jenkins 中文社区</title>
+    <title>performance on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/performance/</link>
-    <description>Recent content in Performance on Jenkins 中文社区</description>
+    <description>Recent content in performance on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 04 Jul 2019 00:00:00 +0000</lastBuildDate>
@@ -22,6 +22,17 @@
 介绍 该框架通过为 JMH 基准的每个 fork 启动一个临时的 Jenkins 实例来运行， 就像 Jenkins 测试工具中的 JenkinsRule。 基准测试是直接从 JUnit 测试运行的，它允许在运行过程中失败构建，并且很容易从 IDE 中运行基准测试，就像单元测试一样。 你可以很容易地通过使用 Java 方法或使用 Jenkins plugin:configuration-as-code:[配置即代码插件]来配置基准并将路径传递到 YAML 文件。
 要从您的插件运行基准测试，您需要做以下工作：
  将所需的最低 Jenkins 版本升级到2.60.3或更高版本 将 Plugin-POM 升级到 ≥ 3.46 的版本或手动更新 Jenkins 测试工具到 ≥ 2.51 的版本  现在，要运行基准测试，您需要有一个包含 @Test 的基准测试运行程序，以便它可以像 JUnit 测试一样运行。 从测试方法内部，可以使用 JMH 提供的 OptionsBuilder 来配置基准。 例如：</description>
+    </item>
+    
+    <item>
+      <title>从 Jenkins Master 扩展网络连接</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-scaling-network-connections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-scaling-network-connections/</guid>
+      <description>Oleg Nenashev 和我今年将在旧金山的 DevOps World | Jenkins World 上，做从 Jenkins Master 扩展网络连接 的演讲。 多年来，我们一直致力于分析、优化和加强 Remoting channel， 才有了现如今 master 能够协调 agent 的活动，并且接收构建的结果。 尽管许多技术可以改进服务，比如优化代理启动器，但是想要有质的改变，只有从根本上改变传播的内容和方式。
+3月，JENKINS-27035 引入了一个框架，用于检查 Remoting channel 在高级别上的通信。 以前，开发人员只能使用一般的低级工具，例如 Wireshark， 它不能精确的识别 Jenkins 负责通信的代码片段。
+在过去的几个月里，Cloud Native SIG 在解决根本原因方面取得了进展。 Artifact Manager on S3 plugin 已经发布并与 Jenkins Evergreen 整合， 支持在 agent 和 Amazon 服务器之间，进行大制品的上传和下载， 源生插件允许由 agent 生成的所有构建的日志内容（例如在 steps 的 sh 中） 直接定向流到外部存储服务，如 AWS CloudWatch Logs。 与此同时也开始上传 junit 格式的测试结果，这些测试结果有时会变的很大，将直接从 agent 到存储数据库。 所有这些努力都可以减轻 Jenkins Master 和本地网络的负载，而不需要开发人员修改他们的 pipeline 脚本。</description>
     </item>
     
   </channel>

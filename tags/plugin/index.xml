@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Plugin on Jenkins 中文社区</title>
+    <title>plugin on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/plugin/</link>
-    <description>Recent content in Plugin on Jenkins 中文社区</description>
+    <description>Recent content in plugin on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate>
@@ -71,7 +71,7 @@ Github：Working Hours 插件 https://github.com/jenkinsci/working-hours-plugin
 6，字符参数。 添加一个名为branch的字符参数以用于控制代码分支的变量。
 7，选项参数。 添加一个名为mode的选项参数以用于控制部署或者回滚的变量。
 8，选择参数。 1，主动选择参数 首先添加一个主动选择参数，用于控制项目名称这个变量。
- Name：project Groovy Script:  return[ &amp;quot;eureka&amp;quot;, &amp;quot;user&amp;quot; ]  Description：选择对应的应用名称部署对应的应用。 Choice Type：Radio Buttons  2，主动选择反应参数 接着添加一个主动选择反应参数，用于控制项目类型这个变量。</description>
+ Name：project Groovy Script:</description>
     </item>
     
   </channel>
