@@ -20,7 +20,7 @@
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.58.3" />
+     <meta name="generator" content="Hugo 0.53" />
 
       
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -35,9 +35,9 @@
 <meta property="og:title" content="Java 11 预览支持已在 Jenkins 2.155&#43; 中可用" />
 <meta property="og:description" content="Java 11 预览支持已在 Jenkins 2.155&#43; 中可用" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/" />
-<meta property="article:published_time" content="2019-02-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-02-20T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/" /><meta property="article:published_time" content="2019-02-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-02-20T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="Java 11 预览支持已在 Jenkins 2.155&#43; 中可用">
 <meta itemprop="description" content="Java 11 预览支持已在 Jenkins 2.155&#43; 中可用">
 
@@ -382,15 +382,14 @@ var trackOutboundLink = function(id, url) {
 <li><a href="http://central.maven.org/maven2/com/sun/xml/bind/jaxb-impl/2.3.0.1/jaxb-impl-2.3.0.1.jar">jaxb-impl-2.3.0.1.jar</a> (保存为 jaxb-impl.jar)</li>
 <li><a href="https://github.com/javaee/activation/releases/download/JAF-1_2_0/javax.activation.jar">javax.activation v.1.2.0</a>  (保存为 javax.activation.jar)</li>
 </ul></li>
-
-<li><p>运行下列命令</p>
+<li>运行下列命令</li>
+</ol>
 
 <pre><code class="language-sh">Run Jenkins with ${JAVA11_HOME}/bin/java \
--p jaxb-api.jar:javax.activation.jar --add-modules java.xml.bind,java.activation \
--cp jaxb-core.jar:jaxb-impl.jar \
--jar jenkins.war --enable-future-java --httpPort=8080 --prefix=/jenkins
-</code></pre></li>
-</ol>
+    -p jaxb-api.jar:javax.activation.jar --add-modules java.xml.bind,java.activation \
+    -cp jaxb-core.jar:jaxb-impl.jar \
+    -jar jenkins.war --enable-future-java --httpPort=8080 --prefix=/jenkins
+</code></pre>
 
 <h3 id="已知的兼容性问题">已知的兼容性问题</h3>
 
@@ -542,24 +541,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
             Related entries:
           </li>
         
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2018/12/2018-12-26-security-updates/" class="link">
-              Jenkins 的重要安全更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2018/12/2018-12-25-year-in-review/" class="link">
-              回顾 2018: 革新的一年
-            </a>
-          </li>
         
       
     </ul>

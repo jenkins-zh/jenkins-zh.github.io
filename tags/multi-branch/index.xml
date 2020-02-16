@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>multi-branch on Jenkins 中文社区</title>
+    <title>Multi Branch on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/multi-branch/</link>
-    <description>Recent content in multi-branch on Jenkins 中文社区</description>
+    <description>Recent content in Multi Branch on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>

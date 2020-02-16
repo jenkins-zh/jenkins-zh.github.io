@@ -20,7 +20,7 @@
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.58.3" />
+     <meta name="generator" content="Hugo 0.53" />
 
       
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -35,9 +35,9 @@
 <meta property="og:title" content="使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD" />
 <meta property="og:description" content="通过使用 Jenkins X 和 Kubernetes 来改进 Spring Boot 应用程序，使 Jenkins X 成为 CI/CD 过程的关键部分。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/" />
-<meta property="article:published_time" content="2019-05-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-05-24T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/" /><meta property="article:published_time" content="2019-05-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-24T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD">
 <meta itemprop="description" content="通过使用 Jenkins X 和 Kubernetes 来改进 Spring Boot 应用程序，使 Jenkins X 成为 CI/CD 过程的关键部分。">
 
@@ -405,12 +405,11 @@ sudo mv jx /usr/local/bin
 <ol>
 <li>为你的项目创建一个<a href="https://github.com/oktadeveloper/okta-spring-jx-example/releases/tag/v0.0.1">版本</a>。</li>
 <li>为演示环境项目创建 <a href="https://github.com/mraible/environment-marespring-staging/pull/1">pull request</a>。</li>
-
-<li><p>将其自动部署到演示环境，以便你可以查看它的运行情况。</p>
-
-<pre><code>Merge status checks all passed so the promotion worked!
+<li>将其自动部署到演示环境，以便你可以查看它的运行情况。
+<code>
+Merge status checks all passed so the promotion worked!
 Application is available at: http://okta-spring-jx-example.jx-staging.35.230.106.169.nip.io
-</code></pre></li>
+</code></li>
 </ol>
 
 <p>注意：由于 Spring Boot 默认情况下不提供欢迎页面，所以打开上面的 URL 时将返回404。</p>
@@ -618,11 +617,10 @@ dir ('./holdings-api') {
 <li>应用名称： <code>Jenkins X</code></li>
 <li>默认 URI： <code>http://localhost:8080</code></li>
 <li>登录重定向 URI： <code>http://localhost:8080/login</code></li>
-
-<li><p>注销重定向 URI： <code>http://localhost:8080</code>
-打开 <code>holdings-api/src/main/resources/application.yml</code> 并将你 org/app 中的值粘贴到其中。</p>
-
-<pre><code>okta:
+<li>注销重定向 URI： <code>http://localhost:8080</code>
+打开 <code>holdings-api/src/main/resources/application.yml</code> 并将你 org/app 中的值粘贴到其中。
+<code>
+okta:
 client:
 orgUrl: https://okta.okta.com
 token: XXX
@@ -635,7 +633,7 @@ oauth2:
    client-secret: {clientSecret}
  resource:
    user-info-uri: https://okta.okta.com/oauth2/default/v1/userinfo
-</code></pre></li>
+</code></li>
 </ul>
 
 <p>你将注意到 <code>token</code> 值是 <code>xxx</code>。这是因为我更喜欢从环境变量中读取它，而不是签入源代码控制。你可能也想为你的客户密钥执行此操作，但我只是为了简洁而做一个属性。要创建 API token：</p>
@@ -649,14 +647,13 @@ oauth2:
 <ul>
 <li>显示名称： <code>Holdings</code></li>
 <li>变量名： <code>holdings</code></li>
-
-<li><p>描述： <code>Cryptocurrency Holdings</code>
-执行这些步骤后，你应该能够导航到 <code>http://localhost:8080</code>, 并在运行以下命令后登录：</p>
-
-<pre><code>cd holdings-api
+<li>描述： <code>Cryptocurrency Holdings</code>
+执行这些步骤后，你应该能够导航到 <code>http://localhost:8080</code>, 并在运行以下命令后登录：
+<code>
+cd holdings-api
 ./mvnw -Pprod package
 java -jar target/*.jar
-</code></pre></li>
+</code></li>
 </ul>
 
 <p>在 Jenkins X 中存储 Secrets
@@ -1135,15 +1132,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/" class="link">
               使用 Jenkins X 渐进式交付
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2018/12/2018-12-5-custom-war-packager/" class="link">
-              Custom WAR Packager
             </a>
           </li>
         

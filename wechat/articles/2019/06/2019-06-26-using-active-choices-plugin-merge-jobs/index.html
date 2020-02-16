@@ -20,7 +20,7 @@
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.58.3" />
+     <meta name="generator" content="Hugo 0.53" />
 
       
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -35,9 +35,9 @@
 <meta property="og:title" content="使用Active-Choices-Plugin插件将十个Job合成一个" />
 <meta property="og:description" content="使用Active-Choices-Plugin插件将十个Job合成一个" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" />
-<meta property="article:published_time" content="2019-06-26T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-06-26T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" /><meta property="article:published_time" content="2019-06-26T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-06-26T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="使用Active-Choices-Plugin插件将十个Job合成一个">
 <meta itemprop="description" content="使用Active-Choices-Plugin插件将十个Job合成一个">
 
@@ -415,18 +415,15 @@ Active Choices参数使用Groovy脚本或Scriptler目录中的脚本动态生成
 
 <ul>
 <li><code>Name</code>：project</li>
-
-<li><p><code>Groovy Script</code>:</p>
-
-<pre><code>return[
+<li><code>Groovy Script</code>:
+<code>
+return[
 &quot;eureka&quot;,
 &quot;user&quot;
 ]
-</code></pre></li>
-
-<li><p><code>Description</code>：选择对应的应用名称部署对应的应用。</p></li>
-
-<li><p><code>Choice Type</code>：Radio Buttons</p></li>
+</code></li>
+<li><code>Description</code>：选择对应的应用名称部署对应的应用。</li>
+<li><code>Choice Type</code>：Radio Buttons</li>
 </ul>
 
 <h3 id="2-主动选择反应参数">2，主动选择反应参数</h3>
@@ -461,21 +458,17 @@ return B
 
 <ul>
 <li><code>Name</code>：port</li>
-
-<li><p><code>Groovy Script</code>:</p>
-
-<pre><code>if(project.equals(&quot;eureka&quot;)){
+<li><code>Groovy Script</code>:
+<code>
+if(project.equals(&quot;eureka&quot;)){
 return [&quot;8761&quot;]
 } else if (project.equals(&quot;user&quot;)){
 return [&quot;6666&quot;]
 }
-</code></pre></li>
-
-<li><p><code>Description</code>：跟随跟随项目的选择自动弹出对应端口</p></li>
-
-<li><p><code>Choice Type</code>：Single Select</p></li>
-
-<li><p><code>Referenced parameters</code>：project</p></li>
+</code></li>
+<li><code>Description</code>：跟随跟随项目的选择自动弹出对应端口</li>
+<li><code>Choice Type</code>：Single Select</li>
+<li><code>Referenced parameters</code>：project</li>
 </ul>
 
 <p>这样，对应的参数都创建完毕了，大概有以下几个小的注意点需要注意：</p>
