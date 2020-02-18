@@ -6,10 +6,23 @@
     <description>Recent content in Cd on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 29 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/cd/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Happy Second Birthday Jenkins X!</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/</guid>
+      <description>始于 2019 年初的 Jenkins X 项目在去年的1月14号庆祝了它的第一个生日，这对任何开源项目来说都是一件大事，我们刚刚又庆祝了它的第二个生日。
+Jenkins X 的两周年！ Jenkins X 已经从一个关于 CI/CD 如何在云原生世界中被重新设计的愿景，进化到了一个快速发展、创新并迅速成熟的开源项目。
+Jenkins X 是为了帮助开发者们能够快速的将代码发布到 Kubernetes 上而创建的。从一开始，Jenkins X 就致力于改善开发者的开发体验。使用一个命令行工具，开发者就能构建 Kubernetes 集群，部署流水线，创建应用，新建 Github 仓库，将应用推送至 Github 仓库，新建 Pull Request，构建容器，在 Kubernetes 中运行该容器并最终合并到产品中。为了做到这些，Jenkins X 对一系列同类最佳开源工具进行了自动化安装与配置，并且自动化了所有流水线的生成。Jenkins X 还通过测试、过渡和生产环境对应用程序的升级进行了自动化改造，使开发人员能够获取大量到的变更反馈。例如，Jenkins X 的预览环境容许快速与及早的反馈，这样开发者便能在自动构建的环境中查看应用的实际功能。我们发现，由 Jenkins X 在流水线中自动创建的预览环境在开发者中十分流行，因为他们能够在将代码合并到 master 分支之前查看变更情况。
+Jenkins X 本身是功能专一的，但是却极易拓展。Jenkins X 是为实现 DevOps 最佳实践而创建的，旨在跨团队的可重复、可管理的方式中，能够完成大量分布式微服务的部署工作。Jenkins X 促进了大量已被检验的最佳实践，如基于主干的开发和 GitOps。为了让您能够快速上手与使用，Jenkins X 提供了许多快速入门的例子。
+属于 Jenkins X 的 2019 高光时刻 2019 年 2 月：Tekton 的崛起！ 在 2018 年的后半年，Jenkins X 开始了一趟提供 Serverless Jenkins 与仅在需要时运行流水线引擎的旅程。这种流水线引擎基于 knative build-pipeline 项目，该项目进化成为了受到 Jenkins 和 Jenkins X 社区众多帮助与热爱的 Tekton 。Jenkins X 项目在 2019 的 2 月完成了与 Tekton 的初次集成。Tekton 是一个强大和灵活的 Kubernetes 原生开源框架，用于创建 CI/CD 流水线、管理制品和渐进部署。</description>
+    </item>
     
     <item>
       <title>在 Kubernetes 上使用 Jenkins </title>

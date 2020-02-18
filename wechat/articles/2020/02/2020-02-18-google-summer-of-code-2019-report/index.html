@@ -9,11 +9,11 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>关于 Jenkins master 共享 JENKINS_HOME 目录的实验 - Jenkins 中文社区</title>
+     <title>2019 年 Google 编程之夏活动报告 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？">
+    <meta name="description" content="主要介绍了 GSoC 2019 活动的几个课题并讲述了整个活动的组织过程">
     
     
     <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验" />
-<meta property="og:description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？" />
+<meta property="og:title" content="2019 年 Google 编程之夏活动报告" />
+<meta property="og:description" content="主要介绍了 GSoC 2019 活动的几个课题并讲述了整个活动的组织过程" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" /><meta property="article:published_time" content="2019-04-23T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-23T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" /><meta property="article:published_time" content="2020-02-18T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-02-18T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验">
-<meta itemprop="description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？">
-
-
-<meta itemprop="datePublished" content="2019-04-23T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="234">
+<meta itemprop="name" content="2019 年 Google 编程之夏活动报告">
+<meta itemprop="description" content="主要介绍了 GSoC 2019 活动的几个课题并讲述了整个活动的组织过程">
 
 
+<meta itemprop="datePublished" content="2020-02-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="449">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="Jenkins,gsoc2019,gsoc,community,events," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验"/>
-<meta name="twitter:description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？"/>
+<meta name="twitter:title" content="2019 年 Google 编程之夏活动报告"/>
+<meta name="twitter:description" content="主要介绍了 GSoC 2019 活动的几个课题并讲述了整个活动的组织过程"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -196,22 +196,23 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            翟志军
+            s1mple_zj
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          You only got one shot,do not miss your chance to blow.
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/0N0thing" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -219,31 +220,17 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
+  <div>
+    作者：<span class="originalAuthor">Martin d&#39;Anjou，Jeff Pearce，Oleg Nenashev，Marky Jackson</span>
+    <div>
+      <a class="originalLink" href="https://jenkins.io/blog/2020/01/29/gsoc-report/#google-summer-of-code-2019-report" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#jenkins-home-介绍">JENKINS_HOME 介绍</a></li>
-<li><a href="#实验环境介绍">实验环境介绍</a></li>
-<li><a href="#实验1-创建任务">实验1：创建任务</a></li>
-<li><a href="#实验2-任务结果可见性">实验2：任务结果可见性</a></li>
-<li><a href="#实验3-两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</a></li>
-<li><a href="#实验4-编辑任务">实验4：编辑任务</a></li>
-<li><a href="#实验5-定时任务的结果是什么">实验5：定时任务的结果是什么？</a></li>
-<li><a href="#小结">小结</a></li>
-<li><a href="#附录">附录</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -256,17 +243,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 2.173 发布通知">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Happy Second Birthday Jenkins X!">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -286,13 +265,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">关于 Jenkins master 共享 JENKINS_HOME 目录的实验</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">2019 年 Google 编程之夏活动报告</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？
+      主要介绍了 GSoC 2019 活动的几个课题并讲述了整个活动的组织过程
     </div>
   
 
@@ -305,94 +284,142 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<blockquote>
-<p>审校：<a href="https://github.com/donhui">王冬辉</a>，<a href="https://github.com/LinuxSuRen">linuxsuren</a></p>
-</blockquote>
+<p><img src="cover.png" alt="cover" /></p>
 
-<p>Jenkins master 的高可用是个老大难的问题。和很多人一样，笔者也想过两个 Jenkins master 共享同一个 JENKINS_HOME 的方案。了解 Jenkins 原理的人，都会觉得这个方案不可行。但是真的不可行吗？</p>
+<p>Google 编程之夏活动不仅仅是一个夏日的实习项目，对于组织和一些社区的成员来说，这个活动是他们一整年努力的成果。现在，在里斯本举行的 Devops World | Jenkins World 会议以及最后的回顾会议之后，我们宣布 GSoC 2019 正式画上结束的句号。首先我们感谢所有的参与者：学生们、导师们、主题专家、以及其他一些提出课题构想，参与学生选择，社区联系以及一些后期的讨论与回顾的贡献者们。Google 编程之夏活动是一个大型的活动，如果没有 Jenkins 社区的积极参与此次活动也就无法成行。</p>
 
-<p>由于工作原因，笔者需要亲自验证以上猜想。</p>
+<p>在这篇博客里我们想要与各位分享这次活动的成果以及我们从这一年总结的一些经验。</p>
 
-<h3 id="jenkins-home-介绍">JENKINS_HOME 介绍</h3>
+<h2 id="成果">成果</h2>
 
-<p>Jenkins 所有状态数据都存放文件系统的目录中，这个目录被称为 JENKINS_HOME 目录。</p>
+<p>今年成功完成了 5 个 GSoC 课题：<a href="https://jenkins.io/projects/gsoc/2019/role-strategy-performance">角色策略插件性能优化</a>，<a href="https://jenkins.io/projects/gsoc/2019/plugin-installation-manager-tool-cli">插件安装管理 CLI 工具/库</a>，<a href="https://jenkins.io/projects/gsoc/2019/working-hours-improvements">working-hours 插件 - UI 优化</a>，<a href="https://jenkins.io/projects/gsoc/2019/remoting-over-apache-kafka-docker-k8s-features">具有 Kubernetes 功能的 Apache Kafka 远程处理</a>，<a href="https://jenkins.io/projects/gsoc/2019/gitlab-support-for-multibranch-pipeline">GitLab SCM 多分支流水线支持</a>。我们会在后面的内容中讨论一下上面提到的这几个课题。</p>
 
-<h3 id="实验环境介绍">实验环境介绍</h3>
+<p><img src="gsoc2019-highlights.png" alt="gsoc2019-highlights" /></p>
 
-<p>笔者通过 Docker compose 启动两个独立的 Jenkins master，分别为 jenkins-a 和 jenkins-b。它们共用同一个 JENKINS_HOME 目录。相应的代码仓库的链接放在文章底部。</p>
+<h2 id="项目细节">项目细节</h2>
 
-<p>将代码克隆到本地后，进入仓库，执行 <code>docker-compose up -d</code> 即可启动实验环境。启动完成，在浏览器中输入 <a href="http://localhost:7088">http://localhost:7088</a> 可访问 jenkins-a，jenkins-b 的地址是 <a href="http://localhost:7089">http://localhost:7089</a> 。但是你会发现它们启动后的界面显示是不一样的。</p>
+<p>我们在 8 月底举行了最后一次 Jenkins 线上例会的演讲然后 Google 在 9 月 3 日发布了这些成果。最后的这些演讲内容可以从这里找到：<a href="https://www.youtube.com/watch?v=g19o24uzy6c">第一部分</a>，<a href="https://www.youtube.com/watch?v=cMSbdGwGWp0">第二部分</a>，<a href="https://www.youtube.com/watch?v=41dhyFC5Iak">第三部分</a>。我们也在 <a href="https://www.cloudbees.com/devops-world/san-francisco">DevOps World | Jenkins World 旧金山</a>以及 <a href="https://www.previous.cloudbees.com/devops-world/lisbon">DevOps World | Jenkins World 2019 里斯本</a>会议中发布了<a href="https://docs.google.com/presentation/d/e/2PACX-1vQf5RLIJXq8cPEKbCIaA4Bn3tMy5ITB4z2oGJKwLOJz_ne2AiNuSSvXi51nMDDDgA/pub?start=false&amp;loop=false&amp;delayms=3000">2019 Jenkins GSoC 报告</a>。</p>
 
-<p>jenkins-b 的界面如下图所示：</p>
+<p>在下面的章节中，我们对每一个项目做一个简单的总结，第三阶段编码演示文稿的链接以及最后的成品。</p>
 
-<p><img src="292372-fd4b85d5b9c8bdf6.png" alt="" /></p>
+<h2 id="角色策略插件性能优化">角色策略插件性能优化</h2>
 
-<p>而 jenkins-a 的界面如下图所示：</p>
+<p><a href="https://plugins.jenkins.io/role-strategy">角色策略插件</a>是 Jenkins 中最广泛被使用的认证插件之一，但因为其架构问题以及对项目角色的正则表达式检查使其没有因性能著称。<a href="https://jenkins.io/blog/authors/abhyudayasharma">Abhyudaya Sharma</a> 与他的几位导师：<a href="https://jenkins.io/blog/authors/oleg_nenashev">Oleg Nenashev</a>，<a href="https://jenkins.io/blog/authors/runzexia">Runze Xia</a>，<a href="https://jenkins.io/blog/authors/supun94">Supun Wanniarachchi</a> 一起进行该项目。他为 Jenkins 插件创建了一个基于 <a href="https://openjdk.java.net/projects/code-tools/jmh/">JMH</a> 的微基准测试框架，创建微基准测试然后在一些真实场景中得到了 3501% 的提升。然后他继续深入研究创建了一个<a href="https://plugins.jenkins.io/folder-auth">基于目录的认证策略插件</a>，当权限范围为目录时该插件为 Jenkins 实例提供了更佳的性能。在他的项目中 Abhyudaya 还修复了对 Jenkins 组策略的配置即代码的支持并为 <a href="https://plugins.jenkins.io/folder-auth">JCasC 插件</a>贡献了一些优化与修复的代码。
+- <a href="https://jenkins.io/projects/gsoc/2019/role-strategy-performance">项目页面</a>
+- 发布的博客：<a href="https://jenkins.io/blog/2019/06/21/performance-testing-jenkins/">Jenkins 微基准测试框架</a>，
+<a href="https://jenkins.io/blog/2019/08/16/folder-auth-plugin/">引入一个新的目录认证插件</a>，<a href="https://jenkins.io/blog/2019/08/26/role-strategy-performance/">角色策略插件性能优化</a>
+- 最终评估：<a href="https://drive.google.com/file/d/1lAXDljWXypCq6noiqPHI-eZJqBqaSYue/view?usp=sharing">幻灯片</a>，<a href="https://youtu.be/g19o24uzy6c?t=1234">视频</a>
+- 源码：<a href="https://github.com/jenkinsci/role-strategy-plugin">角色策略插件</a>，<a href="https://github.com/jenkinsci/folder-auth-plugin">目录认证插件</a></p>
 
-<p><img src="292372-1bfd4e033b6c25c8.png" alt="" /></p>
+<p><img src="benchmarks2.png" alt="benchmarks2" /></p>
 
-<p>这时，将 jenkins-a 日志中的解锁密码（Unlock password）输入到 jenkins-b 的页面中，会得到报错信息：</p>
+<h2 id="插件安装管理-cli-工具-库">插件安装管理 CLI 工具/库</h2>
 
-<pre><code>ERROR: The password entered is incorrect, please check the file for the correct password
-</code></pre>
+<p><a href="https://jenkins.io/blog/authors/stopalopa">Natasha Stopa</a> 正在研究一个新的<a href="https://github.com/jenkinsci/plugin-installation-manager-tool">插件管理 CLI 工具</a> ，该工具可以统一其他例如 Docker 镜像中的 <code>install-plugin.sh</code> 这样的工具。它还引入了许多新的特性比如 YAML 配置的格式支持，列出可用的升级以及安全性修复。这个新开发的工具最终可以取代刚才提到的的那个工具。Natasha 的导师：<a href="https://jenkins.io/blog/authors/kwhetstone">Kristin Whetstone</a>，<a href="https://jenkins.io/blog/authors/jonbrohauge">Jon Brohauge</a>，<a href="https://jenkins.io/blog/authors/arnab1896">Arnab Banerjee</a> 与许多来自 <a href="https://jenkins.io/sigs/platform">Platform SIG</a>和 <a href="https://jenkins.io/projects/jcasc">JCasC 插件团队</a>的贡献者们作为利益相关者和项目专家一同参与了这个课题。
+- <a href="https://jenkins.io/projects/gsoc/2019/plugin-installation-manager-tool-cli">项目页面</a>
+- 发布的博客：<a href="https://jenkins.io/blog/2019/07/02/plugin-management-tool-alpha-release/">alpha 版本发布</a>，<a href="https://jenkins.io/blog/2020/01/29/gsoc-report/blog/2019/07/30/plugin-management-tool-phase2-updates/">第二阶段编码更新</a>
+- 最终评估：<a href="https://docs.google.com/presentation/d/14yiudx6uJ_FEyoSnVMsRwYdSr5KqpgXcZKVenp1ebgM/">幻灯片</a>，<a href="https://youtu.be/g19o24uzy6c?t=431">视频</a>
+- 源码：<a href="https://github.com/jenkinsci/plugin-installation-manager-tool">插件管理工具</a></p>
 
-<p>这时，再次 jenkins-b 日志中的解锁密码（Unlock password）输入到表单中即可进入下一步。接下来就是按照提示一步步完成了。在 jenkins-b 安装步骤的最后一步，我们设置了管理员的用户名密码：admin/admin。然后就算完成任务了。</p>
+<p><img src="yamlexample.png" alt="yamlexample" /></p>
 
-<p>然后我们再在 jenkins-a 使用 admin/admin 进行登录，登录是报错的：用户密码不正确。</p>
+<h2 id="working-hours-插件-ui-优化">working-hours 插件 - UI 优化</h2>
 
-<p>接下来，执行 <code>docker-compose restart jenkins-a</code> 命令重启 jenkins-a。再次使用 admin/admin 就可以登录成功了。</p>
+<p>Jenkins UI 和前端框架在Jenkins项目中成为了一个共同的话题，特别是最近这几个月发布了新的 <a href="https://jenkins.io/sigs/ux">UX SIG</a> 之后。<a href="https://jenkins.io/blog/authors/jshen">Jack Shen</a> 与他的导师 <a href="https://jenkins.io/blog/authors/jeffpearce">Jeff Pearce</a> 正在探索一种新的途径来统一构建 Jenkins 的 Web UI。Jack 更新了<a href="https://plugins.jenkins.io/working-hours">运行时间插件</a> 使用的 UI 控件是由标准的 React 库提供的。然后他将他的这些工作经验文档化并创建了<a href="https://github.com/jenkinsci/react-plugin-template">使用基于 React UI 的插件模板</a>
+- <a href="https://jenkins.io/projects/gsoc/2019/working-hours-improvements">项目页面</a>
+- 发布的博客：<a href="https://jenkins.io/blog/2019/07/09/Phase1-Updates-On-Working-Hours-Plugin/">working-hours 的 UI 更新</a>，<a href="https://jenkins.io/blog/2019/08/23/introduce-react-plugin-template/">React 插件模板</a>
+- 最终评估：<a href="https://docs.google.com/presentation/d/1txLbDliqsZhbKvKR7RBFLue0kvLIcoRpXpB1MthWonI/edit#slide=id.p1">幻灯片</a>，<a href="https://youtu.be/g19o24uzy6c?t=2493">视频</a>
+- 源码：<a href="https://github.com/jenkinsci/working-hours-plugin">working-hours 插件</a>，<a href="https://github.com/jenkinsci/react-plugin-template">基于 React UI 的 Jenkins 插件模板</a></p>
 
-<p>当两个 Jenkins 启动完成后，接下来开始做实验。</p>
+<p><img src="working-hours-example-time-range.png" alt="working-hours-example-time-range" /></p>
 
-<h3 id="实验1-创建任务">实验1：创建任务</h3>
+<h2 id="具有-kubernetes-功能的-apache-kafka-远程处理">具有 Kubernetes 功能的 Apache Kafka 远程处理</h2>
 
-<p>在 jenkins-a 创建任务 x，刷新 jenkins-b 的页面，jenkins-b 上会不会显示出任务 x ？</p>
+<p><a href="https://jenkins.io/blog/authors/longnguyen">Long Le Vu Nguyen</a> 正在为  <a href="https://plugins.jenkins.io/TODO">Apache Kafka 远程插件</a>扩展 Kubernetes 支持。他的导师 <a href="https://jenkins.io/blog/authors/afalko">Andrey Falco</a>和 <a href="https://jenkins.io/blog/authors/pvtuan10">Pham vu Tuan</a> 是我们 GSoC 2018 的学生和插件发明者。在这个项目过程中 Long 添加了一个新的代理启动器，该启动器规定了在 Kubernetes 中的 Jenkins 节点使其让它们连接到 master 节点。他还为其创建了一个 Cloud API 接口以及一个新的 Helm 图表，该图表可以将 Jenkins 作为 Kubernetes 中的一个完整的系统，默认启用 Apache Kafka。所有这些特性都发布在了 <a href="https://jenkins.io/blog/2019/08/19/remoting-kafka-kubernetes-release-2/">Apache Kafka 远程插件 2.0 </a>中。
+- <a href="https://jenkins.io/projects/gsoc/2019/remoting-over-apache-kafka-docker-k8s-features">项目页面</a>
+- <a href="https://jenkins.io/blog/2019/08/19/remoting-kafka-kubernetes-release-2/">Apache Kafka 远程插件 2.0 发布的博客</a>
+- 最终评估：<a href="https://docs.google.com/presentation/d/1QMjeAt6on3RPQdjlz4SiFg8YgpJ2xNOQhfzXDWgn2AY/">幻灯片</a>，<a href="https://youtu.be/g19o24uzy6c?t=3685">视频</a>
+- <a href="https://github.com/jenkinsci/remoting-kafka-plugin">插件源码</a></p>
 
-<p>结果：jenkins-b 不会出现任务 x。重启 jenkins-b 后，任务 x 出现在任务列表中。</p>
+<p><img src="helm-chart.png" alt="helm-chart" /></p>
 
-<h3 id="实验2-任务结果可见性">实验2：任务结果可见性</h3>
+<h2 id="gitlab-scm-支持多分支流水线">Gitlab SCM 支持多分支流水线</h2>
 
-<p>jenkins-a 上任务执行，jenkins-b 上能否看到任务执行结果？</p>
+<p><a href="https://jenkins.io/blog/authors/baymac">Parichay Barpanda</a> 正在开发具有多分支流水线任务以及基于文件夹组织支持的新的 <a href="https://plugins.jenkins.io/gitlab-branch-source">GitLab 分支源码插件</a>。他的导师是 <a href="https://jenkins.io/blog/authors/markyjackson-taulia">Marky Jackson-Taulia</a>，<a href="https://jenkins.io/blog/authors/justinharringa">Justin Harringa</a>，<a href="https://jenkins.io/blog/authors/surenpi">Zhao Xiaojie</a> 和 <a href="https://jenkins.io/blog/authors/casz">Joseph Petersen</a>。该插件扫描项目，并根据提供的的条件导入流水线任务。项目导入后，Jenkins 立即运行基于 Jenkinsfile 脚本的任务然后发送通知到 GitLab 流水线状态。该插件同样提供了 GitLab 服务器配置可以在系统配置或者通过 Jenkins 配置即代码进行配置（JCasC）。在 <a href="https://jenkins.io/blog/2019/08/23/introducing-gitlab-branch-source-plugin/">GitLab 分支源码 1.0 声明</a>获取更多内容。
+- <a href="https://jenkins.io/projects/gsoc/2019/gitlab-support-for-multibranch-pipeline">项目页面</a>
+- <a href="https://docs.google.com/presentation/d/1avMoEPMf5Ksc99106fv7bGikAh17GQZJZdwUWKOzYBY/">第三阶段编码演示</a>
+- <a href="https://github.com/jenkinsci/gitlab-branch-source-plugin/">GitLab 分支源码插件</a>，<a href="https://github.com/jenkinsci/gitlab-api-plugin">GitLab API 插件</a></p>
 
-<p>jenkins-a 执行任务 x，并且执行成功。刷新 jenkins-b 看不到任何执行记录。重启 jenkins-b 后，可看到执行记录。</p>
+<p><img src="multibranch-folder.png" alt="multibranch-folder" /></p>
 
-<h3 id="实验3-两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</h3>
+<h2 id="没有完成的项目">没有完成的项目</h2>
 
-<p>分别在两个 Jenkins master 上（几乎）开始同一个任务 x。其中一个任务的 build number 会更新，但是另一个不会。</p>
+<p>今年并非所有的项目都完成了。我们也在 <a href="https://jenkins.io/projects/gsoc/2019/artifact-promotion-plugin-for-jenkins-pipeline">Jenkins 流水线 artifact-promotion 插件</a>和<a href="https://jenkins.io/projects/gsoc/2019/ext-workspace-manager-cloud-features">云特性的外部工作区管理插件</a>进行了尝试，但不幸的是这两个项目都在第一阶段编码后即停止了。无论如何，我们在这些领域得到了许多经验与收获。（请参阅链接的 Jira 门票！）我们希望这些故事的某一点能够被 Jenkins 贡献者实现出来。或许 <a href="https://jenkins.io/blog/2019/12/20/call-for-mentors/">Google 编程之夏 2020</a> 可以？</p>
 
-<p>其中 jenkins-a 任务 x 的 build number 会升到 2，而 jenkins-b 保持的是 1。这时，单独执行 jenkins-b 的任务 x，日志会出现错误：</p>
+<h2 id="以组织层面运营-gsoc-项目">以组织层面运营 GSoC 项目</h2>
 
-<pre><code>jenkins-b_1  | WARNING: A new build could not be created in job x
-jenkins-b_1  | java.lang.IllegalStateException: JENKINS-23152: /var/jenkins_home/jobs/x/builds/2 already existed; will not overwrite with x #2
-</code></pre>
+<p>这里有一些在我们组织 GSoC 前后的一些幕后的小故事跟大家分享。为了给即将涌入进来的学生们做好准备，我们更新了所有的 GSoC 页面，收录进去了我们这几年运营这个项目的所有知识。我们从 2018 年 10 月份开始准备，此时离项目开始还有很长一段时间。主要的目标是解决在 GSoC 2018 期间得到的一些反馈。</p>
 
-<h3 id="实验4-编辑任务">实验4：编辑任务</h3>
+<p><strong>课题构想</strong>。我们在 2018 年的最后一个月开始收集课题的构想。我们在 Google 文档准备了<a href="https://jenkins.io/projects/gsoc/2019/project-ideas/">课题构想清单</a>，并在文档的表格中追踪了每个课题的所有权情况。每个课题构想都在其 Google 文档中作进一步阐述。我们发现每个课题在定义阶段都非常的复杂，也许他们本身就太复杂了并且也应该完成不了。</p>
 
-<p>jenkins-a 上设置任务 x 定时执行，刷新 jenkins-b 页面，任务 x 中并没有定时执行的设置。重启 jenkins-b 后，任务 x 更新。</p>
+<p>自从我们想让所有的课题构想都能用相同的方法编写成文档时，我们创建了一个模板来指导这些贡献者们。大多数课题构想的文档是由组织的管理员或者导师来编写的，但是偶尔也有一个学生提出一个极妙的点子。我们也在那个文档中获取了一些其他信息比如 GitHub 以及 Gitter 账号以及课题的潜在导师清单。我们将所有的课题文档放到了我们的网站上。</p>
 
-<h3 id="实验5-定时任务的结果是什么">实验5：定时任务的结果是什么？</h3>
+<p><strong>导师与学生指导</strong>。我们更新了<a href="https://jenkins.io/projects/gsoc/mentors/">导师信息</a>页面的一些细节是关于我们希望导师们在项目中做哪些事情，包括导师们工作的小时数，甚至我们有一部分专门写了避免<a href="https://jenkins.io/projects/gsoc/mentors/#conflict-of-interest-prevention">利益冲突</a>的内容，当招募了导师之后，我们引导他们访问导师信息页面。</p>
 
-<p>如果 jenkins-a 和 jenkins-b 两个任务均为定时任务，而且都生效了。它们运行结果是什么的呢？</p>
+<p>我们同样更新了<a href="https://jenkins.io/projects/gsoc/students/">学生信息页面</a>。我们发现当每一位学生咨询我们相同的问题都是关于报名和参与项目时这个页面节省了我们很大一部分时间。我们只是把这些页面的链接发给他们而不是每次都要去解释这个项目。</p>
 
-<p>看到的现象是，两个任务都会按时执行，但是只有一个任务能将运行结果写入到磁盘中。界面如下图：</p>
+<p><strong>应用阶段</strong>。在 GSoC 正式开始的几周前，学生们就已经开始接触这个项目。这真的很振奋人心。一些学生甚至在项目官方开始之前就开始着手课题构想了。</p>
 
-<p><img src="292372-38c7a7f8aade0793.png" alt="" /></p>
+<p><strong>课题选择</strong>。这一年组织管理团队做了一些非常艰难的决定。面对众多的学生，导师和课题，我们必须要正确数量的并且尝试匹配最有可能成功的课题。我们尝试通知导师团队的同时也在寻求课题的数量，在截止时间之前得到所有导师们的回复是困难的。最终我们寻求的课题数量要少于我们可以添加进来的数量。当我们寻求课题时我们提交了两个数字：一个最小值一个最大值。<a href="https://google.github.io/gsocguides/mentor/selecting-a-student#googles-selection-process">GSoC 指南</a>说明如下：
+- 最小值基于一些非常棒的课题数量，他们非常想要在一个夏天的时间内看到这些项目可以取得成功。
+- 最大值是一些他们想要这一整个夏天可以指导的可信赖并且非常棒项目的数量。</p>
 
-<p>另，从日志中，可以确认 jenkins-a 和 jenkins-b 确实按时执行了。如下图日志中，看出 jenkins-a 定时执行 #6 次构建时报错，因为 jenkins-b 已经执行过 #6 次构建了：</p>
+<p>我们选择了最小数量的课题。所以我们必须做非常艰难的决定：我们必须在“很棒”与“可信赖”的原则之间进行选择。一些原则上来说，非常好的那一个，选择起来很简单，但是对其他的来说，这很困难。我们知道我们无法做到真正的完美，过往的经验中，我们也知道一些学生或者一些导师会因为一些不可控的生活琐事而无法完成整个项目，即使是一些出色的提案亦如是。所以我们必须做出最好的决定，要知道我们选择的一些项目可能不会完成。</p>
 
-<p><img src="292372-55e80e61f0d36dfb.png" alt="" /></p>
+<p><strong>社区联系</strong>。我们发现<a href="https://developers.google.com/open-source/gsoc/resources/glossary#community_bonding_period">社区联系阶段</a>对于每一个课题的成功至关重要。社区联系有困难的课题通常来说不会做的很好。为了让学生们更好的融入进社区中，几乎所有的课题都在<a href="https://jenkins.io/sigs">特别兴趣小组</a>的指导下进行，这样可以与更多相关人士交流。</p>
 
-<h3 id="小结">小结</h3>
+<p><strong>沟通</strong>。每年我们都有学生通过个人社交工具与导师进行交流。学生们，如果你们正在读这篇文章，请<strong>不要</strong>给我们通过个人社交工具发送有关课题方面的内容，你不会收到任何额外的照顾。显然，开源化的目的是我们希望所有的讨论都是公开化的，所以学生们需要时刻牢记这一点。2019 年我们使用 Gitter 处理了最多的聊天信息，但是从一名管理员角度来说相比邮箱沟通来说这样有点太碎片化了。并且它很难去搜索消息。聊天室很方便毕竟消息集中一些，但是从一名管理员角度来说，缺少话题功能很难从 Gitter 获得概要信息。最近 Gitter 添加了话题功能（2019 年 11 月）但是在 Android 和 iOS 上并不能使用。在项目尾声我们使用 Zoom 会议并且我们发现使用它工作要比 Google 的 Hangouts 要容易一些。</p>
 
-<p>可以确认的是，当两个 Jenkins 进程共用同一个 JENKINS_HOME 目录时，其中一个 Jenkins 进程更新了 JENKINS_HOME 的内容，另一个是不会实时更新的。所以，同时启动两个 Jenkins master 共用同一个 JENKINS_HOME 的方案是不可行的。我们不能在 jenkins-a 挂了后，直接将流量切到 jenkins-b。因为 jenkins-b 必须重启。</p>
+<p><strong>状态跟踪</strong>。另一个很麻烦的事情就是一旦开始后获取每一个课题运行的概况。我们扩展了 Google 表格的用途，在项目期间跟踪表单中的课题与参与者来为课题排名以及追踪课题各阶段的状态（社区联系，编码，等等。）。让这些表格持续更新是一件很有挑战性的工作，每一个课题包括了好几位参与者以及好几个链接。在这件事上消耗的时间让我们发现让这些表格保持更新，准确，完整有一点困难，直到编码阶段开始之前都是这样。</p>
 
-<p>最后结论：多个 Jenkins master 共享同一个 JENKINS_HOME 的方案是无法使用 Jenkins master 的高可用。</p>
+<p>或许一些状态跟踪工具可以帮上忙。我们使用 Jenkins Jira 来跟踪这些课题，每个阶段代表了一个独立的冲刺竞赛。这给成功的课题帮了大忙。在我们的组织里，我们尝试让每个人都在提前截止日的几天完成，因为我们知道会有一些意外因素比如停电，糟糕的天气（甚至在西雅图都有这事儿！），或者其他无法控制的事情，这些或多或少会影响课题数据的提交。我们同样想到截止日跟周末“撞车”的话人们会忘记这些事情，这同样也是危机所在。</p>
 
-<h3 id="附录">附录</h3>
+<p><strong>回顾</strong>。课题尾声，我们同样会举行一个回顾来为以后获取一些新的构想。你可以在<a href="https://docs.google.com/document/d/1qWeuQzMr1lGQUuirgorODwvqEXYH7RiyKkRByIed9co/edit?usp=sharing">这里</a>找到这些笔记。我们已经处理了文档中最重要的一些评论以及明年课题的构想。</p>
 
-<ul>
-<li>Jenkins standby 实验环境：<a href="https://github.com/zacker330/jenkins-standby-experiment">https://github.com/zacker330/jenkins-standby-experiment</a></li>
-</ul>
+<h2 id="奖励">奖励</h2>
+
+<p>去年，我们想要通过发送纪念品的方式感谢每一位在项目中参与的人。今年，我们收集了所有我们能找到的邮寄地址准备给每一位送上 Jenkins 15 周年纪念版 T 恤以及一些贴纸。这是一个非常棒的时刻。我也同样以个人名义感谢 Alyssa Tong 对我们 T 恤以及贴纸设计上的一些帮助。</p>
+
+<p><img src="swag-before-shipping.jpg" alt="swag-before-shipping" /></p>
+
+<h2 id="导师峰会">导师峰会</h2>
+
+<p>每年 Google 会邀请每个组织的两位或多位导师参加 Google 编程之夏导师峰会。这个活动中，数以百计的开源项目维护者以及导师们齐聚一堂对 GSoC，社区管理以及各种工具进行一些非正式会议。今年峰会在慕尼黑举办，<a href="https://github.com/markyjackson-taulia">Marky Jackson</a> 和 <a href="https://github.com/oleg-nenashev">Oleg Nenashev</a> 作为代表参与了此次会议。
+除了探讨课题和分享巧克力，我们在那里展示了 Jenkins，发表了简短的讲话以及主持了一个有关 GitHub 自动机器人的非正式会议，我们不能在那里拍摄团队照片，所以试着在这张照片里找到 Oleg 和 Marky 吧：</p>
+
+<p><img src="gsoc2019-mentor-summit.jpg" alt="gsoc2019-mentor-summit" /></p>
+
+<h2 id="devops-world-jenkins-world-中的-gsoc-团队">DevOps World | Jenkins World 中的 GSoC  团队</h2>
+
+<p>一般来说我们使用 GSoC 组织的经费和差旅经费来赞助学生们的旅行以及主要跟 Jenkins 相关的活动。今年四名学生参加了在<a href="https://www.cloudbees.com/devops-world/san-francisco">旧金山</a>与<a href="https://www.cloudbees.com/devops-world/lisbon">里斯本</a>的 DevOps World | Jenkins World 会议。这些学生在社区展位和贡献者峰会上展示了他们的课题，他们的作品在社区获得了非常多的关注！
+非常感谢 Google 和 CloudBees 能让此次旅行能够成行。你可以在<a href="https://jenkins.io/blog/2019/08/22/devops-world/">这里</a>找到来自 Natasha Stopa 的报告，更多的旅行报告后期奉上。</p>
+
+<p><img src="gsoc2019-team-jw-us.jpg" alt="gsoc2019-team-jw-us" />
+<img src="gsoc2019-team-jw-lisbon.jpg" alt="gsoc2019-team-jw-lisbon" /></p>
+
+<h2 id="结论">结论</h2>
+
+<p>今年，5 个课题成功完成。我们从其他参加的组织那里得到的消息也说明这是一个正常的数字。
+早些时间更新 GSoC 页面为我们后期的工作节省了很多时间因为有人联系我们的时候我们不能每次都重复所有的信息。我们发现保持跟进所有的导师们，学生们，课题以及元信息是必须的但又耗时的工作。我们希望有一个工具用来帮我们做这些事情。协调会议以及提醒参与者截止日之前需要完成的工作也是  GSoC 组织工作的一方面，我们需要持续做这件事。
+最后，我想再次感谢所有的参与者，没有你们我们不能做到这些。每年都有一些做的很棒工作以及为 Jenkins 社区贡献一些很棒作品的学生给我们留下了很深刻的印象。</p>
+
+<h2 id="gsoc-2020">GSoC 2020？</h2>
+
+<p>是的，会有 Google 编程之夏 2020 这个活动的！我们计划参加也在寻找课题构想，导师以及学生。Jenkins GSoC 页面已经更新了，我们邀请每一个人明年都能参与进来。
+- <a href="https://jenkins.io/projects/gsoc/">活动主页面</a>
+- <a href="https://jenkins.io/projects/gsoc/2020/project-ideas/">GSoC 2020 课题构想</a>
+- <a href="https://jenkins.io/blog/2019/12/20/call-for-mentors/">GSoC 2020 导师招募与课题构想收集</a>
+- <a href="https://jenkins.io/projects/gsoc/students/">学生</a>与<a href="https://jenkins.io/projects/gsoc/mentors/">导师</a>信息页面</p>
 
 </div>
 
@@ -425,14 +452,14 @@ jenkins-b_1  | java.lang.IllegalStateException: JENKINS-23152: /var/jenkins_home
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “关于 Jenkins master 共享 JENKINS_HOME 目录的实验”
-  </a> 更新于：April 23, 2019
+    “2019 年 Google 编程之夏活动报告”
+  </a> 更新于：February 18, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -451,19 +478,37 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
           <li class="db dib-l mr3">
             <a class="tag" href="/tags/jenkins">
-              jenkins
+              Jenkins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/gsoc2019">
+              gsoc2019
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/gsoc">
+              gsoc
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/community">
+              community
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/events">
+              events
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
         
       
         
@@ -733,6 +778,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" class="link">
+              关于 Jenkins master 共享 JENKINS_HOME 目录的实验
+            </a>
+          </li>
+        
       
         
         
@@ -857,7 +908,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/04\/2019-04-23-jenkins-master-shared-home\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/02\/2020-02-18-google-summer-of-code-2019-report\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

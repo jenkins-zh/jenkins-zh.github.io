@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>关于 Jenkins master 共享 JENKINS_HOME 目录的实验 - Jenkins 中文社区</title>
+     <title>Happy Second Birthday Jenkins X! - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？">
+    <meta name="description" content="Jenkins X 2019 年终回顾">
     
     
-    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+    <meta name="keywords" content="jenkins-x">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验" />
-<meta property="og:description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？" />
+<meta property="og:title" content="Happy Second Birthday Jenkins X!" />
+<meta property="og:description" content="Jenkins X 2019 年终回顾" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" /><meta property="article:published_time" content="2019-04-23T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-23T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/" /><meta property="article:published_time" content="2020-02-17T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-02-17T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验">
-<meta itemprop="description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？">
-
-
-<meta itemprop="datePublished" content="2019-04-23T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="234">
+<meta itemprop="name" content="Happy Second Birthday Jenkins X!">
+<meta itemprop="description" content="Jenkins X 2019 年终回顾">
 
 
+<meta itemprop="datePublished" content="2020-02-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="339">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="jenkins-x,ci,cd," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验"/>
-<meta name="twitter:description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？"/>
+<meta name="twitter:title" content="Happy Second Birthday Jenkins X!"/>
+<meta name="twitter:description" content="Jenkins X 2019 年终回顾"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -196,22 +196,23 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            翟志军
+            Kezhi Xiong
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          Student
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/XiongKezhi" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -219,31 +220,17 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
+  <div>
+    作者：<span class="originalAuthor">Rob Davies</span>
+    <div>
+      <a class="originalLink" href="https://jenkins-x.io/blog/2020/01/14/happy-second-birthday/" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">此页面上的内容</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#jenkins-home-介绍">JENKINS_HOME 介绍</a></li>
-<li><a href="#实验环境介绍">实验环境介绍</a></li>
-<li><a href="#实验1-创建任务">实验1：创建任务</a></li>
-<li><a href="#实验2-任务结果可见性">实验2：任务结果可见性</a></li>
-<li><a href="#实验3-两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</a></li>
-<li><a href="#实验4-编辑任务">实验4：编辑任务</a></li>
-<li><a href="#实验5-定时任务的结果是什么">实验5：定时任务的结果是什么？</a></li>
-<li><a href="#小结">小结</a></li>
-<li><a href="#附录">附录</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -256,7 +243,7 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署 ">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="dib f6 pl1 hover-bg-light-gray br-100" title="2019 年 Google 编程之夏活动报告 ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -266,7 +253,7 @@ var trackOutboundLink = function(id, url) {
 		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 2.173 发布通知">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-14-devops-trends-to-watch-for-in-2020/" class="dib f6 pr1 hover-bg-light-gray br-100" title="展望 2020 年 DevOps 的发展趋势">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -286,13 +273,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">关于 Jenkins master 共享 JENKINS_HOME 目录的实验</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Happy Second Birthday Jenkins X!</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？
+      Jenkins X 2019 年终回顾
     </div>
   
 
@@ -305,94 +292,79 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<blockquote>
-<p>审校：<a href="https://github.com/donhui">王冬辉</a>，<a href="https://github.com/LinuxSuRen">linuxsuren</a></p>
-</blockquote>
+<p><img src="7th-birthday.png" alt="图片来自 Ashley McNamara" /></p>
 
-<p>Jenkins master 的高可用是个老大难的问题。和很多人一样，笔者也想过两个 Jenkins master 共享同一个 JENKINS_HOME 的方案。了解 Jenkins 原理的人，都会觉得这个方案不可行。但是真的不可行吗？</p>
+<p>始于 2019 年初的 Jenkins X 项目在去年的1月14号庆祝了它的第一个生日，这对任何开源项目来说都是一件大事，我们刚刚又庆祝了它的第二个生日。</p>
 
-<p>由于工作原因，笔者需要亲自验证以上猜想。</p>
+<h2 id="jenkins-x-的两周年">Jenkins X 的两周年！</h2>
 
-<h3 id="jenkins-home-介绍">JENKINS_HOME 介绍</h3>
+<p>Jenkins X 已经从一个关于 CI/CD 如何在云原生世界中被重新设计的愿景，进化到了一个快速发展、创新并迅速成熟的开源项目。</p>
 
-<p>Jenkins 所有状态数据都存放文件系统的目录中，这个目录被称为 JENKINS_HOME 目录。</p>
+<p>Jenkins X 是为了帮助开发者们能够快速的将代码发布到 Kubernetes 上而创建的。从一开始，Jenkins X 就致力于改善开发者的开发体验。使用一个命令行工具，开发者就能构建 Kubernetes 集群，部署流水线，创建应用，新建 Github 仓库，将应用推送至 Github 仓库，新建 Pull Request，构建容器，在 Kubernetes 中运行该容器并最终合并到产品中。为了做到这些，Jenkins X 对一系列同类最佳开源工具进行了自动化安装与配置，并且自动化了所有流水线的生成。Jenkins X 还通过测试、过渡和生产环境对应用程序的升级进行了自动化改造，使开发人员能够获取大量到的变更反馈。例如，Jenkins X 的预览环境容许快速与及早的反馈，这样开发者便能在自动构建的环境中查看应用的实际功能。我们发现，由 Jenkins X 在流水线中自动创建的预览环境在开发者中十分流行，因为他们能够在将代码合并到 master 分支之前查看变更情况。</p>
 
-<h3 id="实验环境介绍">实验环境介绍</h3>
+<p>Jenkins X 本身是功能专一的，但是却极易拓展。Jenkins X 是为实现 DevOps 最佳实践而创建的，旨在跨团队的可重复、可管理的方式中，能够完成大量分布式微服务的部署工作。Jenkins X 促进了大量已被检验的最佳实践，如基于主干的开发和 GitOps。为了让您能够快速上手与使用，Jenkins X 提供了许多快速入门的例子。</p>
 
-<p>笔者通过 Docker compose 启动两个独立的 Jenkins master，分别为 jenkins-a 和 jenkins-b。它们共用同一个 JENKINS_HOME 目录。相应的代码仓库的链接放在文章底部。</p>
+<h2 id="属于-jenkins-x-的-2019-高光时刻">属于 Jenkins X 的 2019 高光时刻</h2>
 
-<p>将代码克隆到本地后，进入仓库，执行 <code>docker-compose up -d</code> 即可启动实验环境。启动完成，在浏览器中输入 <a href="http://localhost:7088">http://localhost:7088</a> 可访问 jenkins-a，jenkins-b 的地址是 <a href="http://localhost:7089">http://localhost:7089</a> 。但是你会发现它们启动后的界面显示是不一样的。</p>
+<h3 id="2019-年-2-月-tekton-的崛起">2019 年 2 月：Tekton 的崛起！</h3>
 
-<p>jenkins-b 的界面如下图所示：</p>
+<p>在 2018 年的后半年，Jenkins X 开始了一趟提供 Serverless Jenkins 与仅在需要时运行流水线引擎的旅程。这种流水线引擎基于 knative build-pipeline 项目，该项目进化成为了受到 Jenkins 和 Jenkins X 社区众多帮助与热爱的 Tekton 。<a href="https://jenkins-x.io/blog/2019/02/19/jenkins-x-next-gen-pipeline-engine/">Jenkins X 项目在 2019 的 2 月完成了与 Tekton 的初次集成</a>。Tekton 是一个强大和灵活的 Kubernetes 原生开源框架，用于创建 CI/CD 流水线、管理制品和渐进部署。</p>
 
-<p><img src="292372-fd4b85d5b9c8bdf6.png" alt="" /></p>
+<p><img src="plane.png" alt="Tekton-plane" /></p>
 
-<p>而 jenkins-a 的界面如下图所示：</p>
+<h3 id="2019-年-3-月-jenkins-x-加入了持续交付基金会">2019 年 3 月：Jenkins X 加入了持续交付基金会！</h3>
 
-<p><img src="292372-1bfd4e033b6c25c8.png" alt="" /></p>
+<p><img src="cdf-logo.png" alt="cdf-logo" /></p>
 
-<p>这时，将 jenkins-a 日志中的解锁密码（Unlock password）输入到 jenkins-b 的页面中，会得到报错信息：</p>
+<p>Jenkins X 加入了 Continuous Delivery Foundation (CDF)，与 Jenkins、Spinnaker 和 Tekton 一起作为创始项目。加入一个专注于持续交付的中立供应商基金会对于 Jenkins X 社区意义重大。</p>
 
-<pre><code>ERROR: The password entered is incorrect, please check the file for the correct password
-</code></pre>
+<h3 id="2019-年-6-月-lighthouse-项目">2019 年 6 月：Lighthouse 项目</h3>
 
-<p>这时，再次 jenkins-b 日志中的解锁密码（Unlock password）输入到表单中即可进入下一步。接下来就是按照提示一步步完成了。在 jenkins-b 安装步骤的最后一步，我们设置了管理员的用户名密码：admin/admin。然后就算完成任务了。</p>
+<p>当 Jenkins X 开始它的 serverless jenkins 旅程时，它选择了使用 <a href="https://github.com/kubernetes/test-infra/tree/master/prow">Prow</a>，一个用于 Github 事件和 ChatOps 的事件处理器。Prow 被 Kubernetes 项目用于构建所有的仓库，除此以外，它还包含了一个强大的 webhook 事件处理器。Prow 已久经考验，但它却严重的依赖于 Github，并且难以拓展至其他的 SCM 提供商上。 在 2019 年 6 月末，一项轻量级、可拓展至 Prow 的项目开始了，它叫做 <a href="https://jenkins-x.io/docs/reference/components/lighthouse/">Lighthouse</a>。Lighthouse 跟 Prow 支持同样的插件（因此你仍然可以通过 ChatOps 请求各种各样的东西）和配置 —— 这使得 Prow 和 Lighthouse 间的迁移变得极其容易。</p>
 
-<p>然后我们再在 jenkins-a 使用 admin/admin 进行登录，登录是报错的：用户密码不正确。</p>
+<h3 id="2019-年-6-月-jenkins-x-boot">2019 年 6 月：Jenkins X Boot！</h3>
 
-<p>接下来，执行 <code>docker-compose restart jenkins-a</code> 命令重启 jenkins-a。再次使用 admin/admin 就可以登录成功了。</p>
+<p>我们在整个六月都十分的忙碌 —— 暑期到来前一个疯狂的活动爆发期。Jenkins X 用户面临的一个常见问题便是在不同的 Kubernetes 集群上安装 Jenkins X 。按照正确的顺序安装服务和确保 DNS 和 Secrets 正确性的工作是因供应商的不同而完全不同，有时也因集群的不同而不同。我们意识到，要简化安装，我们确实需要一个流水线，虽然这听起来有点像一个电影情节，但运行 Jenkins X 流水线来安装 jx 确实是最好的选择。<a href="https://jenkins-x.io/docs/getting-started/setup/boot/">jx boot 命令</a>使用本地 jx 二进制文件解释引导流水线。jx boot 命令也可以用于更新你的集群。</p>
 
-<p>当两个 Jenkins 启动完成后，接下来开始做实验。</p>
+<h3 id="2019-年-7-月-一个新的-logo">2019 年 7 月：一个新的 Logo！</h3>
 
-<h3 id="实验1-创建任务">实验1：创建任务</h3>
+<p><img src="new-logo.png" alt="jenkins-x-logo" /></p>
 
-<p>在 jenkins-a 创建任务 x，刷新 jenkins-b 的页面，jenkins-b 上会不会显示出任务 x ？</p>
+<p>作为转移到 CDF 的一部分，Jenkins X 项目利用这个机会重新设计了它的标志。一个机器人就代表了 Jenkins X 在 Kubernetes 上提供自动化 CI/CD 的能力等等！</p>
 
-<p>结果：jenkins-b 不会出现任务 x。重启 jenkins-b 后，任务 x 出现在任务列表中。</p>
+<h3 id="2019-年的后半年-聚焦于稳定性和可靠性">2019 年的后半年：聚焦于稳定性和可靠性</h3>
 
-<h3 id="实验2-任务结果可见性">实验2：任务结果可见性</h3>
+<p>Jenkins X 项目与很多不同的组件和活动部件一起进展的很快。不幸的是，这一快速的发展招致了一些不稳定性和导致了严重 issue 的增长，这些问题有可能破坏我们已经在 Jenkins X 上所做的所有杰出工作。于是，社区一直在努力提高稳定性和解决显著的 issue —— 下图展示了去年 issue 数量的走势，可以看出，在最后6个月内，创造的 issue 数量有一个显著的下降趋势。</p>
 
-<p>jenkins-a 上任务执行，jenkins-b 上能否看到任务执行结果？</p>
+<p><img src="graph.png" alt="cloubees" /></p>
 
-<p>jenkins-a 执行任务 x，并且执行成功。刷新 jenkins-b 看不到任何执行记录。重启 jenkins-b 后，可看到执行记录。</p>
+<p>CloudBees 还通过引入 <a href="https://www.cloudbees.com/products/cloudbees-jenkins-x-distribution/overview">CloudBees Jenkins X</a> 发行版帮助了这项工作，该发行版增加了围绕稳定配置和部署的测试，并且在每月定期发布。</p>
 
-<h3 id="实验3-两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</h3>
+<h3 id="2019-年-10-月-jenkins-x-steering-committee-成立会议">2019 年 10 月：Jenkins X Steering Committee 成立会议</h3>
 
-<p>分别在两个 Jenkins master 上（几乎）开始同一个任务 x。其中一个任务的 build number 会更新，但是另一个不会。</p>
+<p>Jenkins X Bootstrap <a href="https://github.com/jenkins-x/steering">Steering Committee</a> 的任务是组织其向选举制 Steering Committee 的过渡工作，并确定 Steering Committee 在指导 Jenkins X 项目方面将承担的责任。</p>
 
-<p>其中 jenkins-a 任务 x 的 build number 会升到 2，而 jenkins-b 保持的是 1。这时，单独执行 jenkins-b 的任务 x，日志会出现错误：</p>
+<h3 id="2019-年-12-月-第一个-jenkins-x-outreachy-学员">2019 年 12 月：第一个 Jenkins X Outreachy 学员</h3>
 
-<pre><code>jenkins-b_1  | WARNING: A new build could not be created in job x
-jenkins-b_1  | java.lang.IllegalStateException: JENKINS-23152: /var/jenkins_home/jobs/x/builds/2 already existed; will not overwrite with x #2
-</code></pre>
+<p><img src="outreachy.png" alt="outreachy" /></p>
 
-<h3 id="实验4-编辑任务">实验4：编辑任务</h3>
+<p>Neha Gupta 正在向 Jenkins X 中添加对 Kustomize 的支持以确保 Kubernetes 本机配置管理功能的实现，同时将在 2019 年 12 月到 2020 年 3 月期间参与 Outreachy。我们欢迎 Neha 在 Jenkins X 上所做的工作，并且期待着我们能在持续培养的文化基础上再接再厉！</p>
 
-<p>jenkins-a 上设置任务 x 定时执行，刷新 jenkins-b 页面，任务 x 中并没有定时执行的设置。重启 jenkins-b 后，任务 x 更新。</p>
+<h3 id="jenkins-x-在产品中的使用">Jenkins X 在产品中的使用</h3>
 
-<h3 id="实验5-定时任务的结果是什么">实验5：定时任务的结果是什么？</h3>
+<p>尝试 Jenkins X 最简单的方法无疑是使用<a href="https://www.cloudbees.com/products/cloudbees-ci-cd/overview">由 Jenkins X 驱动的 CloudBees CI/CD</a>，它通过方便易用的 SaaS 提供 Jenkins X 。无需设置集群，无需安装 Jenkins X，这些它都已经为你完成了！目前，<a href="https://www.cloudbees.com/products/cloudbees-ci-cd/overview">由 Jenkins X 驱动的 CloudBees CI/CD</a> 已经可供预览。在<a href="https://www.cloudbees.com/products/cloudbees-ci-cd/overview">这里</a>注册试试新的 Jenkins X Saas 吧！</p>
 
-<p>如果 jenkins-a 和 jenkins-b 两个任务均为定时任务，而且都生效了。它们运行结果是什么的呢？</p>
+<p><img src="boxes.png" alt="boxes" /></p>
 
-<p>看到的现象是，两个任务都会按时执行，但是只有一个任务能将运行结果写入到磁盘中。界面如下图：</p>
+<h3 id="下一步">下一步？</h3>
 
-<p><img src="292372-38c7a7f8aade0793.png" alt="" /></p>
+<p>Jenkins X 项目将鼓励社区参与到更多的创新活动中。同时，有很多不错的想法也将继续扩展的我们的故事，比如：集成渐进式交付（A/B 测试、Canary 和 Blue/Green 部署）、持续化验证以及更多的平台支持。我们也期待着在 Jenkins X 的 CloudBees UI 中能涌现出更多更棒的新特性。</p>
 
-<p>另，从日志中，可以确认 jenkins-a 和 jenkins-b 确实按时执行了。如下图日志中，看出 jenkins-a 定时执行 #6 次构建时报错，因为 jenkins-b 已经执行过 #6 次构建了：</p>
+<p>敬请期待 Jenkins X 将在 2020 年带来的更多令人振奋的新公告吧！</p>
 
-<p><img src="292372-55e80e61f0d36dfb.png" alt="" /></p>
+<p><a href="https://jenkins.io/zh" title="Jenkins 中文网站">Jenkins</a></p>
 
-<h3 id="小结">小结</h3>
-
-<p>可以确认的是，当两个 Jenkins 进程共用同一个 JENKINS_HOME 目录时，其中一个 Jenkins 进程更新了 JENKINS_HOME 的内容，另一个是不会实时更新的。所以，同时启动两个 Jenkins master 共用同一个 JENKINS_HOME 的方案是不可行的。我们不能在 jenkins-a 挂了后，直接将流量切到 jenkins-b。因为 jenkins-b 必须重启。</p>
-
-<p>最后结论：多个 Jenkins master 共享同一个 JENKINS_HOME 的方案是无法使用 Jenkins master 的高可用。</p>
-
-<h3 id="附录">附录</h3>
-
-<ul>
-<li>Jenkins standby 实验环境：<a href="https://github.com/zacker330/jenkins-standby-experiment">https://github.com/zacker330/jenkins-standby-experiment</a></li>
-</ul>
+<p><a href="https://jenkins-zh.cn/">Jenkins 中文社区链接</a></p>
 
 </div>
 
@@ -425,14 +397,14 @@ jenkins-b_1  | java.lang.IllegalStateException: JENKINS-23152: /var/jenkins_home
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “关于 Jenkins master 共享 JENKINS_HOME 目录的实验”
-  </a> 更新于：April 23, 2019
+    “Happy Second Birthday Jenkins X!”
+  </a> 更新于：February 17, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -450,20 +422,26 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jenkins">
-              jenkins
+            <a class="tag" href="/tags/jenkins-x">
+              jenkins-x
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/ci">
+              ci
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/cd">
+              cd
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
         
       
         
@@ -473,8 +451,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-websocket/" class="link">
-              WebSocket
+            <a href="/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/" class="link">
+              了解如何使用 Jenkins-X UpdateBot
             </a>
           </li>
         
@@ -482,8 +460,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/" class="link">
-              使用 Jenkins 实现 CI/CD 多分支流水线
+            <a href="/wechat/articles/2019/08/2019-08-08-jenkins-x-new-logo/" class="link">
+              Jenkins X 新 logo
             </a>
           </li>
         
@@ -491,143 +469,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
-              使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/" class="link">
-              Jenkins 流水线配置历史插件介绍
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/" class="link">
-              持续交付落地实践工作坊
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/" class="link">
-              Jenkins 每周版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
-              Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/" class="link">
-              30分钟搞定 Jenkins CI
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/" class="link">
-              还在苦恼不会写 Jenkins 流水线？来场工作坊！
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-29-jenkins-release/" class="link">
-              Jenkins 2.176~2.178版本更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/" class="link">
-              如何对 Jenkins 共享库进行单元测试
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/" class="link">
-              基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="link">
-              使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101
+            <a href="/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/" class="link">
+              使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD
             </a>
           </li>
         
@@ -644,191 +487,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/" class="link">
-              19年 GSoC 中 Jenkins 的七个项目
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" class="link">
-              基于 Jenkins 的 DevOps 平台应该如何设计凭证管理
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/" class="link">
-              Jenkins 公众号送书福利
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-09-jenkins-release/" class="link">
-              Jenkins 版本发布
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="link">
-              Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="link">
-              Jenkins 自动化安装插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="link">
-              Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" class="link">
-              使用 Jenkins X 渐进式交付：自动化金丝雀部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/" class="link">
               使用 Jenkins X 渐进式交付
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" class="link">
-              使用 Jenkins &#43; Ansible 实现自动化部署 Nginx
-            </a>
-          </li>
-        
-      
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="link">
-              持续交付的商业价值
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="link">
-              使用 Zabbix 监控 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="link">
-              简析 Jenkins 专有用户数据库加密算法
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="link">
-              Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
-              介绍：成为一名 Jenkins 贡献者的旅程
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-ready-for-cdf/" class="link">
-              为 Continuous Delivery Foundation 的成立感到兴奋
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
-              MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link">
-              在安全防火墙内通过 WebHook 触发构建
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link">
-              成为一名 Jenkins 贡献者：对新手友好的工单
             </a>
           </li>
         
@@ -857,7 +517,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/04\/2019-04-23-jenkins-master-shared-home\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/02\/2020-02-17-happy-second-birthday-jenkins-x\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

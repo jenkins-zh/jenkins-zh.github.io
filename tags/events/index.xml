@@ -6,10 +6,24 @@
     <description>Recent content in Events on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/events/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2019 年 Google 编程之夏活动报告</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/</guid>
+      <description>Google 编程之夏活动不仅仅是一个夏日的实习项目，对于组织和一些社区的成员来说，这个活动是他们一整年努力的成果。现在，在里斯本举行的 Devops World | Jenkins World 会议以及最后的回顾会议之后，我们宣布 GSoC 2019 正式画上结束的句号。首先我们感谢所有的参与者：学生们、导师们、主题专家、以及其他一些提出课题构想，参与学生选择，社区联系以及一些后期的讨论与回顾的贡献者们。Google 编程之夏活动是一个大型的活动，如果没有 Jenkins 社区的积极参与此次活动也就无法成行。
+在这篇博客里我们想要与各位分享这次活动的成果以及我们从这一年总结的一些经验。
+成果 今年成功完成了 5 个 GSoC 课题：角色策略插件性能优化，插件安装管理 CLI 工具/库，working-hours 插件 - UI 优化，具有 Kubernetes 功能的 Apache Kafka 远程处理，GitLab SCM 多分支流水线支持。我们会在后面的内容中讨论一下上面提到的这几个课题。
+项目细节 我们在 8 月底举行了最后一次 Jenkins 线上例会的演讲然后 Google 在 9 月 3 日发布了这些成果。最后的这些演讲内容可以从这里找到：第一部分，第二部分，第三部分。我们也在 DevOps World | Jenkins World 旧金山以及 DevOps World | Jenkins World 2019 里斯本会议中发布了2019 Jenkins GSoC 报告。
+在下面的章节中，我们对每一个项目做一个简单的总结，第三阶段编码演示文稿的链接以及最后的成品。
+角色策略插件性能优化 角色策略插件是 Jenkins 中最广泛被使用的认证插件之一，但因为其架构问题以及对项目角色的正则表达式检查使其没有因性能著称。Abhyudaya Sharma 与他的几位导师：Oleg Nenashev，Runze Xia，Supun Wanniarachchi 一起进行该项目。他为 Jenkins 插件创建了一个基于 JMH 的微基准测试框架，创建微基准测试然后在一些真实场景中得到了 3501% 的提升。然后他继续深入研究创建了一个基于目录的认证策略插件，当权限范围为目录时该插件为 Jenkins 实例提供了更佳的性能。在他的项目中 Abhyudaya 还修复了对 Jenkins 组策略的配置即代码的支持并为 JCasC 插件贡献了一些优化与修复的代码。 - 项目页面 - 发布的博客：Jenkins 微基准测试框架， 引入一个新的目录认证插件，角色策略插件性能优化 - 最终评估：幻灯片，视频 - 源码：角色策略插件，目录认证插件</description>
+    </item>
     
     <item>
       <title>Jenkins World 贡献者峰会及专家答疑展位</title>

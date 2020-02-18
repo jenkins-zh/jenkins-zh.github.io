@@ -37,6 +37,33 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>2019 年 Google 编程之夏活动报告</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/</guid>
+      <description>Google 编程之夏活动不仅仅是一个夏日的实习项目，对于组织和一些社区的成员来说，这个活动是他们一整年努力的成果。现在，在里斯本举行的 Devops World | Jenkins World 会议以及最后的回顾会议之后，我们宣布 GSoC 2019 正式画上结束的句号。首先我们感谢所有的参与者：学生们、导师们、主题专家、以及其他一些提出课题构想，参与学生选择，社区联系以及一些后期的讨论与回顾的贡献者们。Google 编程之夏活动是一个大型的活动，如果没有 Jenkins 社区的积极参与此次活动也就无法成行。
+在这篇博客里我们想要与各位分享这次活动的成果以及我们从这一年总结的一些经验。
+成果 今年成功完成了 5 个 GSoC 课题：角色策略插件性能优化，插件安装管理 CLI 工具/库，working-hours 插件 - UI 优化，具有 Kubernetes 功能的 Apache Kafka 远程处理，GitLab SCM 多分支流水线支持。我们会在后面的内容中讨论一下上面提到的这几个课题。
+项目细节 我们在 8 月底举行了最后一次 Jenkins 线上例会的演讲然后 Google 在 9 月 3 日发布了这些成果。最后的这些演讲内容可以从这里找到：第一部分，第二部分，第三部分。我们也在 DevOps World | Jenkins World 旧金山以及 DevOps World | Jenkins World 2019 里斯本会议中发布了2019 Jenkins GSoC 报告。
+在下面的章节中，我们对每一个项目做一个简单的总结，第三阶段编码演示文稿的链接以及最后的成品。
+角色策略插件性能优化 角色策略插件是 Jenkins 中最广泛被使用的认证插件之一，但因为其架构问题以及对项目角色的正则表达式检查使其没有因性能著称。Abhyudaya Sharma 与他的几位导师：Oleg Nenashev，Runze Xia，Supun Wanniarachchi 一起进行该项目。他为 Jenkins 插件创建了一个基于 JMH 的微基准测试框架，创建微基准测试然后在一些真实场景中得到了 3501% 的提升。然后他继续深入研究创建了一个基于目录的认证策略插件，当权限范围为目录时该插件为 Jenkins 实例提供了更佳的性能。在他的项目中 Abhyudaya 还修复了对 Jenkins 组策略的配置即代码的支持并为 JCasC 插件贡献了一些优化与修复的代码。 - 项目页面 - 发布的博客：Jenkins 微基准测试框架， 引入一个新的目录认证插件，角色策略插件性能优化 - 最终评估：幻灯片，视频 - 源码：角色策略插件，目录认证插件</description>
+    </item>
+    
+    <item>
+      <title>Happy Second Birthday Jenkins X!</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/</guid>
+      <description>始于 2019 年初的 Jenkins X 项目在去年的1月14号庆祝了它的第一个生日，这对任何开源项目来说都是一件大事，我们刚刚又庆祝了它的第二个生日。
+Jenkins X 的两周年！ Jenkins X 已经从一个关于 CI/CD 如何在云原生世界中被重新设计的愿景，进化到了一个快速发展、创新并迅速成熟的开源项目。
+Jenkins X 是为了帮助开发者们能够快速的将代码发布到 Kubernetes 上而创建的。从一开始，Jenkins X 就致力于改善开发者的开发体验。使用一个命令行工具，开发者就能构建 Kubernetes 集群，部署流水线，创建应用，新建 Github 仓库，将应用推送至 Github 仓库，新建 Pull Request，构建容器，在 Kubernetes 中运行该容器并最终合并到产品中。为了做到这些，Jenkins X 对一系列同类最佳开源工具进行了自动化安装与配置，并且自动化了所有流水线的生成。Jenkins X 还通过测试、过渡和生产环境对应用程序的升级进行了自动化改造，使开发人员能够获取大量到的变更反馈。例如，Jenkins X 的预览环境容许快速与及早的反馈，这样开发者便能在自动构建的环境中查看应用的实际功能。我们发现，由 Jenkins X 在流水线中自动创建的预览环境在开发者中十分流行，因为他们能够在将代码合并到 master 分支之前查看变更情况。
+Jenkins X 本身是功能专一的，但是却极易拓展。Jenkins X 是为实现 DevOps 最佳实践而创建的，旨在跨团队的可重复、可管理的方式中，能够完成大量分布式微服务的部署工作。Jenkins X 促进了大量已被检验的最佳实践，如基于主干的开发和 GitOps。为了让您能够快速上手与使用，Jenkins X 提供了许多快速入门的例子。
+属于 Jenkins X 的 2019 高光时刻 2019 年 2 月：Tekton 的崛起！ 在 2018 年的后半年，Jenkins X 开始了一趟提供 Serverless Jenkins 与仅在需要时运行流水线引擎的旅程。这种流水线引擎基于 knative build-pipeline 项目，该项目进化成为了受到 Jenkins 和 Jenkins X 社区众多帮助与热爱的 Tekton 。Jenkins X 项目在 2019 的 2 月完成了与 Tekton 的初次集成。Tekton 是一个强大和灵活的 Kubernetes 原生开源框架，用于创建 CI/CD 流水线、管理制品和渐进部署。</description>
+    </item>
+    
+    <item>
       <title>展望 2020 年 DevOps 的发展趋势</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-14-devops-trends-to-watch-for-in-2020/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>

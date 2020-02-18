@@ -12,6 +12,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/</loc>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-14-devops-trends-to-watch-for-in-2020/</loc>
     <lastmod>2020-02-14T00:00:00+00:00</lastmod>
   </url>
@@ -784,7 +794,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/cd/</loc>
-    <lastmod>2019-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -807,7 +817,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/ci/</loc>
-    <lastmod>2019-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -842,7 +852,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/community/</loc>
-    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -944,7 +954,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/events/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -991,13 +1001,13 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/gsoc/</loc>
-    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
-    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1038,7 +1048,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1054,7 +1064,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins-x/</loc>
-    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1338,7 +1348,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-02-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
