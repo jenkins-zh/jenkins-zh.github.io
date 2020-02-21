@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-21-the-abc-of-devops-implementation-with-containerization-and-docker/</loc>
+    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
@@ -906,7 +911,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2020-02-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -924,7 +929,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/docker/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1348,7 +1353,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1461,6 +1466,12 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/pipeline/multi-branch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/</loc>
+    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
