@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-24-jcli-v0.0.26/</loc>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-21-the-abc-of-devops-implementation-with-containerization-and-docker/</loc>
     <lastmod>2020-02-21T00:00:00+00:00</lastmod>
   </url>
@@ -1353,7 +1358,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
