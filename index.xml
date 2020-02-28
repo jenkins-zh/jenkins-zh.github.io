@@ -37,6 +37,31 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>T-Mobile 和 Jenkins 案例研究</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/</guid>
+      <description>Jenkins 在 T-Mobile 节省数千小时和数百万美元 大多数人都知道 T-Mobile 是无线服务提供商。毕竟，我们拥有国际化的业务，并且是美国第三大移动运营商。但是我们还是一家技术公司，提供的新产品包括 TVision 家庭电视服务，T-Mobile Money 个人银行产品以及 SyncUp Drive 车辆监控和路边辅助设备。
+在幕后，T-Mobile 还是开源社区的领导者。我们已经在 GitHub 上共享了 35+ 个代码存储库（包括我们的 POET 流水线框架自动化库），以通过采用健壮和智能的做法来加快 CI/CD 周期，从而帮助其他组织支持内部和外部客户。
+我是 T-Mobile 系统可靠性工程（SRE）部门的高级系统可靠性工程师。我们的团队成功地将 POET 实施的第一阶段推广到了 30 多个团队。这是一个巨大的成功，并且计划使用结合在 Kubernetes 集群上运行的 Jenkins 和 CloudBees Core 的稳定、可靠的 CI/CD 流水线，将其扩展到我们的 350 个开发团队和 5,000 个活跃用户。
+更少的插件，更多的 Master 我们从构建简化的基于容器的流水线基础结构开始，该基础结构可以集中管理并易于适应开发方法。结果使我们的开发团队有更多的精力专注于开发和测试应用程序，而不是维护 Jenkins 环境。
+然后，我们将在 master 中使用的 Jenkins 插件的数量从 200 个减少到了 4 个。有超过 1,000 种此类附加组件，包括构建工具，测试实用程序和云集成资源。它们是扩展平台的绝佳方法，但它们也是 Jenkins 的致命弱点，因为它们可能引起冲突。
+接下来，我们从一个单一的 Master 给我们所有的 Jenkins slave 提供动力变成了多个 Master，现在拥有 30 个流水线引擎，每个引擎为大约 10 个团队提供动力。此设置减少了 CPU 负载和其他瓶颈，同时允许 T-Mobile 的 DevOps 团队继续享受水平扩展的优势。</description>
+    </item>
+    
+    <item>
+      <title>基于 JNLP 协议的 Docker 代理节点</title>
+      <link>https://jenkins-zh.cn/tutorial/management/agent/docker-jnlp/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/management/agent/docker-jnlp/</guid>
+      <description>Jenkins 支持多种类型的代理节点，本篇教程介绍的是基于 JNLP 协议的 Docker 代理节点。
+步骤如下： 1. 在节点管理界面，新增一个代理节点；启动方式为：通过 Java Web 启动代理 2. 点击保存后，进入到该节点的状态页面 3. 参考下面的启动命令来启动 Docker 容器 * 注意替换 IP 为你的服务器地址，不能使用127.0.0.1或者 localhost * secret 可以从节点状态页面找到
+docker run -u root -d --rm jenkins/slave:4.0.1-1-alpine java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://192.168.31.239:8080/computer/jnlp/slave-agent.jnlp -secret ad36ea3aff1fea65a803f32e7020bd6c6b5866db9f587fb2079d308661691911 -workDir &amp;quot;/tmp&amp;quot;  如果希望了解更多这种代理节点的话，可以参考官方源码。</description>
+    </item>
+    
+    <item>
       <title>Jenkins CLI 命令行 v0.0.26</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-24-jcli-v0.0.26/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>

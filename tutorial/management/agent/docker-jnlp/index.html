@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Wechats - Jenkins 中文社区</title>
+     <title>基于 JNLP 协议的 Docker 代理节点 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
     <meta name="description" content="共建开放、包容、活跃的 Jenkins 社区">
     
     
-    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+    <meta name="keywords" content="jnlp,docker,agent">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -26,24 +26,38 @@
         <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
       
 
-    <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/wechat/index.xml">
     <link href='/dist/main.css' rel='stylesheet' type="text/css" /><style>
   img.avatar {
     width: 32px;
     display: inline;
   }
 </style>
-<meta property="og:title" content="Wechats" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/" />
+<meta property="og:title" content="基于 JNLP 协议的 Docker 代理节点" />
+<meta property="og:description" content="Jenkins 支持多种类型的代理节点，本篇教程介绍的是基于 JNLP 协议的 Docker 代理节点。
+步骤如下： 1. 在节点管理界面，新增一个代理节点；启动方式为：通过 Java Web 启动代理 2. 点击保存后，进入到该节点的状态页面 3. 参考下面的启动命令来启动 Docker 容器 * 注意替换 IP 为你的服务器地址，不能使用127.0.0.1或者 localhost * secret 可以从节点状态页面找到
+docker run -u root -d --rm jenkins/slave:4.0.1-1-alpine java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://192.168.31.239:8080/computer/jnlp/slave-agent.jnlp -secret ad36ea3aff1fea65a803f32e7020bd6c6b5866db9f587fb2079d308661691911 -workDir &quot;/tmp&quot;  如果希望了解更多这种代理节点的话，可以参考官方源码。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/tutorial/management/agent/docker-jnlp/" /><meta property="article:published_time" content="2020-02-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-02-27T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Wechats">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="基于 JNLP 协议的 Docker 代理节点">
+<meta itemprop="description" content="Jenkins 支持多种类型的代理节点，本篇教程介绍的是基于 JNLP 协议的 Docker 代理节点。
+步骤如下： 1. 在节点管理界面，新增一个代理节点；启动方式为：通过 Java Web 启动代理 2. 点击保存后，进入到该节点的状态页面 3. 参考下面的启动命令来启动 Docker 容器 * 注意替换 IP 为你的服务器地址，不能使用127.0.0.1或者 localhost * secret 可以从节点状态页面找到
+docker run -u root -d --rm jenkins/slave:4.0.1-1-alpine java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://192.168.31.239:8080/computer/jnlp/slave-agent.jnlp -secret ad36ea3aff1fea65a803f32e7020bd6c6b5866db9f587fb2079d308661691911 -workDir &quot;/tmp&quot;  如果希望了解更多这种代理节点的话，可以参考官方源码。">
 
+
+<meta itemprop="datePublished" content="2020-02-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="43">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Wechats"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="基于 JNLP 协议的 Docker 代理节点"/>
+<meta name="twitter:description" content="Jenkins 支持多种类型的代理节点，本篇教程介绍的是基于 JNLP 协议的 Docker 代理节点。
+步骤如下： 1. 在节点管理界面，新增一个代理节点；启动方式为：通过 Java Web 启动代理 2. 点击保存后，进入到该节点的状态页面 3. 参考下面的启动命令来启动 Docker 容器 * 注意替换 IP 为你的服务器地址，不能使用127.0.0.1或者 localhost * secret 可以从节点状态页面找到
+docker run -u root -d --rm jenkins/slave:4.0.1-1-alpine java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://192.168.31.239:8080/computer/jnlp/slave-agent.jnlp -secret ad36ea3aff1fea65a803f32e7020bd6c6b5866db9f587fb2079d308661691911 -workDir &quot;/tmp&quot;  如果希望了解更多这种代理节点的话，可以参考官方源码。"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -86,7 +100,7 @@ var trackOutboundLink = function(id, url) {
         <li class="f5 dib mr4" role="menuitem">
             
             
-          <a href="/wechat/" class="dim link gray "
+          <a href="/wechat/" class="dim link light-silver"
             >
             博客
               
@@ -179,456 +193,67 @@ var trackOutboundLink = function(id, url) {
     
     <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
       
-  
-  
-  <div class="w-100 ph4 pb5 pb6-ns pt1 mt4 pt3-ns">
 
-  <div class="flex">
-    
+<main>
+    <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+        <div class="flex-l">
+            <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+                <div class="prose">
+                    <h1>基于 JNLP 协议的 Docker 代理节点</h1>
+                    <p>Jenkins 支持多种类型的代理节点，本篇教程介绍的是基于 JNLP 协议的 Docker 代理节点。</p>
 
-    <div class="w-100 w-80-l ph0 ph4-l">
-      <article class="w-100 nested-copy-line-height nested-links nested-img">
-        <h1 class="primary-color-dark f2">
-          Wechats
-        </h1>
-        <div class=" mid-gray f5 f4-l">
-          
+<p>步骤如下：
+1. 在节点管理界面，新增一个代理节点；启动方式为：<code>通过 Java Web 启动代理</code>
+2. 点击保存后，进入到该节点的状态页面
+3. 参考下面的启动命令来启动 Docker 容器
+    * 注意替换 IP 为你的服务器地址，不能使用127.0.0.1或者 localhost
+    * secret 可以从节点状态页面找到</p>
+
+<pre><code>docker run -u root -d --rm jenkins/slave:4.0.1-1-alpine java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://192.168.31.239:8080/computer/jnlp/slave-agent.jnlp -secret ad36ea3aff1fea65a803f32e7020bd6c6b5866db9f587fb2079d308661691911 -workDir &quot;/tmp&quot;
+</code></pre>
+
+<p>如果希望了解更多这种代理节点的话，可以参考<a href="https://github.com/jenkinsci/docker-slave">官方源码</a>。</p>
+
+                </div>
+            </aside>
+            
+            <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+                <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+                    作者：<a href="https://github.com/linuxsuren" target="_blank">linuxsuren</a>
+                    
+
+                    
+
+                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                        <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/tutorial/management/agent/docker-jnlp.md" target="_blank">改善此页</a>
+                    </div>
+                </aside>
+            </div>
         </div>
-      </article>
+    </article>
+</main>
 
-      
 
-      <div class="flex flex-wrap">
-        
-        <section class="flex-ns flex-wrap justify-between w-100">
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
 
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
+<style>
+div[class=utterances] {
+    max-width: inherit;
+    width: auto;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+</style>
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        label="tutorial"
+        crossorigin="linuxsuren"
+        async>
+</script>
 
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/04/2019-04-15-kubecon-cn/" class="link primary-color dim">Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴</a>
-    </h1>
 
-    <div class="lh-copy links">
-      
-          KubeCon + CloudNativeCon | Open Source Summit | 持续交付峰会 中国2019 2019年4月10日，旧金山 - Linux基金会是一家以开源促进大众创新的非营利组织，今天公布将于2019年6月24至26日在中国上海举行的 KubeCon + CloudNativeCon + Open Source Summit 中国2019日程。
-Open Source Summit 中国2019前身为 LinuxCon + ContainerCon + CloudOpen 中国（LC3），是开源社区寻求合作、共享信息、了解当今最有影响力的开源技术和议题的重要平台，包括：云原生、无服务器、微服务、物联网、人工智能、网络、Linux 等。
-2019年，首次将Open Source Summit中国和KubeCon + CloudNativeCon中国整合成一项活动，只需购票一次即可参加KubeCon + CloudNativeCon + Open Source Summit中国。
-本届持续交付峰会将由 CNCF 承办在大会的第 0 天举行，汇聚了各个开源 CI/CD 社区。
-Jenkins 中文社区成员在大会上将进行分享 Jenkins 中文社区成员夏润泽（北京优帆科技有限公司）将在大会上作为演讲嘉宾为大家带来主题为 Jenkins X 在 kubernetes 之上运行的无服务器 Jenkins 的分享。
-Jenkins 中文社区邀您参与社区共同成长 在开源盛会开展的同时，我们希望能够与更多的小伙伴们一同在线上完善开源社区氛围、线下深度互动，努力构建一个有内容、有态度的优质技术社区。
-      
 
-        <a href="/wechat/articles/2019/04/2019-04-15-kubecon-cn/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/01/2019-01-16-localization-zh-cn-plugin/" class="link primary-color dim">Jenkins 中文语言包</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Jenkins 中文版本升级通知
-        
-
-        <a href="/wechat/articles/2019/01/2019-01-16-localization-zh-cn-plugin/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/" class="link primary-color dim">Jenkins 和 Kubernetes -云上的神秘代理</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          运行在 K8S 上的 Jenkins 动态节点
-        
-
-        <a href="/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/02/2019-02-27-windows-installers/" class="link primary-color dim">Windows 安装程序更新</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          平台特别兴趣小组提供了 Windows 安装程序的更新
-        
-
-        <a href="/wechat/articles/2019/02/2019-02-27-windows-installers/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/04/2019-04-12-what-is-cicd/" class="link primary-color dim">什么是 CI/CD?</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          本文介绍了 CI/CD 的概念及应用场景
-        
-
-        <a href="/wechat/articles/2019/04/2019-04-12-what-is-cicd/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/" class="link primary-color dim">使用 YAML 文件配置 Jenkins 流水线</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          这也是一种自定义流水线 DSL 的方法
-        
-
-        <a href="/wechat/articles/2019/01/2019-01-23-configuring-jenkins-pipeline-with-yaml-file/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link primary-color dim">在安全防火墙内通过 WebHook 触发构建</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          谁说局域网里就不能带 GitHub 的 WebHook 玩？
-        
-
-        <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link primary-color dim">成为一名 Jenkins 贡献者：对新手友好的工单</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          修复 Jenkins 核心中的一个缺陷——从工单到 PR，再到发布
-        
-
-        <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/" class="link primary-color dim">春季安全清查</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Jenkins 管理员们应该关注的安全问题
-        
-
-        <a href="/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/" class="link primary-color dim">自动更新、易于使用的 Jenkins</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          借助 Evergreen 持续提供易于使用的 Jenkins
-        
-
-        <a href="/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-        </section>
-      </div>
-
-      
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/wechat/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/wechat/page/11/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/page/11/">11</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/wechat/page/12/">12</a></li>
-    
-    
-    <li class="page-item disabled">
-    <a href="" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/wechat/page/12/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-
-
-    </div>
-
-  </div>
-
-</div>
 
     </main>
 

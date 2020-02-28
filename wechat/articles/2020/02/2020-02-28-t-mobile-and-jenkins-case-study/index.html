@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>使用 Zabbix 监控 Jenkins - Jenkins 中文社区</title>
+     <title>T-Mobile 和 Jenkins 案例研究 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="介绍了如何使用 Zabbix 监控 Jenkins">
+    <meta name="description" content="聊聊 POET Pipeline 对流水线的改变以及给您带来的巨大的价值">
     
     
-    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+    <meta name="keywords" content="T-Mobile,Pipeline,POET Pipeline">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="使用 Zabbix 监控 Jenkins" />
-<meta property="og:description" content="介绍了如何使用 Zabbix 监控 Jenkins" />
+<meta property="og:title" content="T-Mobile 和 Jenkins 案例研究" />
+<meta property="og:description" content="聊聊 POET Pipeline 对流水线的改变以及给您带来的巨大的价值" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" /><meta property="article:published_time" content="2019-04-15T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-15T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" /><meta property="article:published_time" content="2020-02-28T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-02-28T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="使用 Zabbix 监控 Jenkins">
-<meta itemprop="description" content="介绍了如何使用 Zabbix 监控 Jenkins">
-
-
-<meta itemprop="datePublished" content="2019-04-15T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="423">
+<meta itemprop="name" content="T-Mobile 和 Jenkins 案例研究">
+<meta itemprop="description" content="聊聊 POET Pipeline 对流水线的改变以及给您带来的巨大的价值">
 
 
+<meta itemprop="datePublished" content="2020-02-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="172">
 
-<meta itemprop="keywords" content="jenkins,zabbix," />
+
+
+<meta itemprop="keywords" content="Jenkins,T-Mobile," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="使用 Zabbix 监控 Jenkins"/>
-<meta name="twitter:description" content="介绍了如何使用 Zabbix 监控 Jenkins"/>
+<meta name="twitter:title" content="T-Mobile 和 Jenkins 案例研究"/>
+<meta name="twitter:description" content="聊聊 POET Pipeline 对流水线的改变以及给您带来的巨大的价值"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -196,28 +196,36 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            翟志军
+            wenjunzhangp
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          All things are difficult before they are easy. 
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/wenjunzhangp" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
 
       </a>
 
+  
+  <div>
+    作者：<span class="originalAuthor">Alyssa Tong and Ravi Sharma</span>
+    <div>
+      <a class="originalLink" href="https://jenkins.io/blog/2020/02/10/t-mobile-case-study/" target="_blank">原文链接</a>
+    </div>
+  </div>
   
   </aside>
 
@@ -235,17 +243,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/" class="dib f6 pl1 hover-bg-light-gray br-100" title="AIOps：DevOps 的未来 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="dib f6 pr1 hover-bg-light-gray br-100" title="简析 Jenkins 专有用户数据库加密算法">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-24-jcli-v0.0.26/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins CLI 命令行 v0.0.26">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -265,13 +265,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用 Zabbix 监控 Jenkins</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">T-Mobile 和 Jenkins 案例研究</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      介绍了如何使用 Zabbix 监控 Jenkins
+      聊聊 POET Pipeline 对流水线的改变以及给您带来的巨大的价值
     </div>
   
 
@@ -284,184 +284,57 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<blockquote>
-<p>本文假设读者已经了解 Jenkins 基本概念及插件安装，Zabbix 基础概念。基于 Zabbix 3.4，Jenkins 2.8 做实验</p>
-</blockquote>
+<p><img src="t-mobile-and-jenkins.png" alt="t-mobile-and-jenkins" /></p>
 
-<p>笔者最近的工作涉及到使用 Zabbix 监控 Jenkins。在谷歌上搜索到的文章非常少，能操作的就更少了。所以决定写一篇文章介绍如何使用 Zabbix 监控 Jenkins。</p>
+<h2 id="jenkins-在-t-mobile-节省数千小时和数百万美元">Jenkins 在 T-Mobile 节省数千小时和数百万美元</h2>
 
-<p>下图为整体架构图：</p>
+<p>大多数人都知道 T-Mobile 是无线服务提供商。毕竟，我们拥有国际化的业务，并且是美国第三大移动运营商。但是我们还是一家技术公司，提供的新产品包括 TVision 家庭电视服务，T-Mobile Money 个人银行产品以及 SyncUp Drive 车辆监控和路边辅助设备。</p>
 
-<p><img src="292372-ecc7d290dd4d0f0f.png" alt="" /></p>
+<p>在幕后，T-Mobile 还是开源社区的领导者。我们已经在 GitHub 上共享了 35+ 个代码存储库（包括我们的 POET 流水线框架自动化库），以通过采用健壮和智能的做法来加快 CI/CD 周期，从而帮助其他组织支持内部和外部客户。</p>
 
-<p>整体并不复杂，大体步骤如下：</p>
+<p>我是 T-Mobile 系统可靠性工程（SRE）部门的高级系统可靠性工程师。我们的团队成功地将 POET 实施的第一阶段推广到了 30 多个团队。这是一个巨大的成功，并且计划使用结合在  Kubernetes 集群上运行的 Jenkins 和 CloudBees Core 的稳定、可靠的 CI/CD 流水线，将其扩展到我们的 350 个开发团队和 5,000 个活跃用户。</p>
 
-<ol>
-<li>在 Jenkins 上安装 Metrics 插件，使 Jenkins 暴露 metrics api。</li>
-<li>配置 Zabbix server 及 agent 以实现监控及告警</li>
-</ol>
+<h2 id="更少的插件-更多的-master">更少的插件，更多的 Master</h2>
 
-<p>为方便读者实验，笔者将自己做实验的代码上传到了 GitHub，链接在文章末尾。使用的是 Docker Compose 技术（方便一次性启动所有的系统）。</p>
+<p>我们从构建简化的基于容器的流水线基础结构开始，该基础结构可以集中管理并易于适应开发方法。结果使我们的开发团队有更多的精力专注于开发和测试应用程序，而不是维护 Jenkins 环境。</p>
 
-<p>接下来，我们详细介绍 Metrics插件及如何实现 Zabbix 监控 Jenkins。</p>
+<p>然后，我们将在 master 中使用的 Jenkins 插件的数量从 200 个减少到了 4 个。有超过 1,000 种此类附加组件，包括构建工具，测试实用程序和云集成资源。它们是扩展平台的绝佳方法，但它们也是 Jenkins 的致命弱点，因为它们可能引起冲突。</p>
 
-<h2 id="1-使-jenkins-暴露-metrics-api">1. 使 Jenkins 暴露 metrics api</h2>
+<p>接下来，我们从一个单一的 Master 给我们所有的 Jenkins slave 提供动力变成了多个 Master，现在拥有 30 个流水线引擎，每个引擎为大约 10 个团队提供动力。此设置减少了 CPU 负载和其他瓶颈，同时允许  T-Mobile 的 DevOps 团队继续享受水平扩展的优势。</p>
 
-<p>安装 Metrics 插件，在系统配置中，会多出“Metrics”的配置，如下图：
-<img src="292372-ba867bb2509c6fc4.png" alt="" /></p>
+<h2 id="在两分钟内启动-jenkins-流水线">在两分钟内启动 Jenkins 流水线</h2>
 
-<p>配置项不复杂。我们需要点击“Generate&hellip;”生成一个 Access Key（生成后，记得要保存）。这个 Key 用于身份校验，后面我们会用到。</p>
+<p>这项工作的成果是，我的 SRE 团队现在可以在大约两分钟的时间内从 Docker 镜像启动 Jenkins 主机，对其进行测试并将其推广到我们的生产环境。然后，各个团队可以自定义其 CI/CD 流水线，以满足特定项目的需求。我们允许这些团队扩展平台，但我们将加载项列表限制为 16 个核心插件。这些插件是在 Docker 容器中预先配置的，每个团队都以相同的 CI/CD 流水线开始，然后可以在文件夹级别根据自己的喜好对其进行设置。</p>
 
-<p>保存后，我们在浏览器中输入URL：<code>http://localhost:8080/metrics/&lt;刚生成的 Access Key&gt;</code> 验证 Jenkins 是否已经暴露 metrics。如果看到如下图，就说明可以进行下一步了。</p>
+<p>这种简化且集中的方式来部署我们的流水线，使 SRE 团队能够将所有事情付诸行动，然后再加以解决。但这只是故事的一半。当我们的开发团队拥有简化的 CI/CD 流水线时，真正的魅力就会展现出来。他们不再需要担心底层的 Jenkins 技术，而可以将注意力转移到采用其解决方案上。</p>
 
-<p><img src="292372-011d7fc64d176d63.png" alt="" /></p>
+<p>POET 流水线最大程度地减少了对 Jenkins Groovy 代码的需求，该代码繁琐，容易出错并且难以集成到第三方库中。相反，一切都从位于流水线源代码中的流水线定义文件开始，并创建步骤容器以执行构建，部署和其他流水线功能。</p>
 
-<h3 id="1-1-metrics-插件介绍">1.1 Metrics 插件介绍</h3>
+<p>我们在 POET 流水线中引入 40 个通用容器，因此我们的开发人员不必从头开始。当然，他们必须知道如何创建 Docker 容器以及如何编写 YAML 文件以扩展流水线功能。通过简化基础架构，减少插件数量并消除对 Groovy 的需求，我们使开发人员可以自由定义自己的流水线，而不必依赖集中的管理团队。</p>
 
-<p>Metrics 插件是基于 dropwizard/metrics 实现。它通过4个接口暴露指标数据：/metrics，/ping，/threads，/healthcheck。</p>
+<h2 id="我们的开发人员不再是基础架构工程师">我们的开发人员不再是基础架构工程师</h2>
 
-<h3 id="1-2-metrics-插件-metrics-接口介绍">1.2 Metrics 插件：/metrics 接口介绍</h3>
+<p>为了进一步增强我们的开发人员的能力，我们编写了全面的 POET Pipeline 文档，包括易于理解的帮助文件，教程和视频，以进行自学成才和自助服务。这种宝贵的资源还释放了我们的流水线管理团队和开发人员的精力，使其可以专注于创新。</p>
 
-<p>点击上图中的<code>metric</code>链接（<code>http://localhost:8080/metrics/&lt;Access Key&gt;/metrics</code>），它暴露了以下指标数据：</p>
+<p>本文档是我们采用的“以客户为中心”方法的一部分。我们将内部开发团队视为客户，而 POET Pipeline 是我们的产品。您能想象 T-Mobile 要求订户在每次通话时重建智能手机吗？还是让他们在发送短信之前与 CSR 对话？那我们为什么要要求我们的开发商兼任基础设施工程师呢？</p>
 
-<pre><code class="language-json">{
-  version: &quot;3.0.0&quot;,
-  gauges: {...},
-  counters: {...},
-  histograms: {...},
-  meters: {...},
-  timers: {...}
-}
-</code></pre>
+<h2 id="减少停机时间">减少停机时间</h2>
 
-<p>从数据结构中可以看出它将指标分成 5 种数据类型：
-* Gauges：某项指标的瞬时值，例如：当前 Jenkins executor 的总个数（jenkins.executor.count.value）
-* Counters：某项指标的总数值，例如：http 请求活动连接数（http.activeRequests）
-* Meters：一段时间内，某事件的发生概率，例如：Jenkins成功执行的任务每分钟的执行次数（jenkins.runs.success.m1_rate）
-* Histogram：统计指标的分布情况。例如：Jenkins executor 数量的分布（jenkins.executor.count.history）
-* Timer：某项指标的持续时间。例如：Jenkins 任务等待时间（jenkins.job.waiting.duration）</p>
+<p>除了使开发人员满意并简化管理任务之外，我们简化的 POET Pipeline 框架还大大减少了停机时间。我们的插件繁重的、单主机的 Jenkins 环境占用了 CPU 周期，引起了各种配置难题，并且不断下降。</p>
 
-<p>由于指标非常之多，我们就不分别介绍了。具体有哪些指标，读者朋友可以从代码仓库中的 metrics.json 文件了解。</p>
+<p>在任何给定的一周内，我们必须重新启动 Jenkins 两到三次。有时，我们的构建会对我们的环境造成很大的压力，以至于我们不得不在一夜之间重新启动它，并在团队无法工作时重置所有内容。借助 POET Pipeline，我们将停机时间减少到每年一次此类事件。</p>
 
-<h3 id="1-2-metrics-插件其它接口介绍">1.2 Metrics 插件其它接口介绍</h3>
+<h2 id="扩大我们的成功">扩大我们的成功</h2>
 
-<ul>
-<li>/ping：接口返回 <code>pong</code> 代表 Jenkins 存活，如下图：
-<img src="292372-15e36249b868625a.png" alt="" /></li>
-<li>/threads：返回 Jenkins 的线程信息</li>
-<li>/healthcheck：返回以下指标：</li>
-</ul>
+<p>通过消除每个开发团队对流水线专家的需求，由于与 Jenkins 和 CloudBees Core 的合作，我们还节省了大量人工和成本。如果您将一个典型的工作年数定为 2,000 个小时，再乘以 350 个团队，那么您要计算的是数十万个小时和数千万美元。现在，我们可以将这些资源重新定向到构建收益产品中，从而更好地为 T-Mobile 的外部客户提供服务。</p>
 
-<pre><code class="language-json">  {
-    disk-space: {
-     healthy: true
-    },
-    plugins: {
-      healthy: true,
-      message: &quot;No failed plugins&quot;
-    },
-    temporary-space: {
-      healthy: true
-    },
-    thread-deadlock: {
-      healthy: true
-    }
-  }
-</code></pre>
+<p>这些数字很大，但不要让他们以为 POET 流水线不适合您。我们可能有数百个团队和数千名开发人员，但是 Jenkins 具有可扩展性，任何规模的组织都可以使用我们开发的工具。因此，我们选择与 GitHub 上的开源社区共享流水线。</p>
 
-<h2 id="2-配置-zabbix-server-与-agent-实现监控及告警">2. 配置 Zabbix server 与 agent 实现监控及告警</h2>
+<h2 id="与世界一起创新">与世界一起创新</h2>
 
-<p>Zabbix server 通过与 Zabbix agent 进行通信实现数据的采集。而 Zabbix agent 又分为被动和主动两种模式。我们使用的是被动模式，也就是Zabbix server 向 agent 索要数据。</p>
+<p>创新不是凭空发生的。通过将我们的代码发布给其他人使用和修改，我们正在帮助世界各地的开发人员将重点从管理流水线转移到构建更好的应用程序。反过来，我们将从更广泛的社区的智慧应用于我们的内部项目中受益。</p>
 
-<p>所以，我们需要在 Zabbix agent 所在机器放一个获取 Jenkins 指标数据的脚本。再配置 Zabbix server 定时从该 agent 获取数据，最后配置触发器（trigger）实现告警。</p>
-
-<p>接下来的关于 Zabbix 的配置，基于我的 jenkins-zabbix 实验环境，读者朋友需要根据自己的实际情况变更。</p>
-
-<h3 id="2-1-配置-zabbix-server-如何从-agent-获取指标数据">2.1 配置 Zabbix server 如何从 agent 获取指标数据</h3>
-
-<p>首先，我们需要告诉 Zabbix server 要与哪些 Zabbix agent 通信。所以，第一步是创建主机，如下图：
-  <img src="292372-82ae4d1864e7abc7.png" alt="" />
-第二步，在主机列表中点击“Iterms”进行该主机的监控项设置：
-  <img src="292372-6903c525459cb7a6.png" alt="" />
-第三步，进入创建监控项页面：
-  <img src="292372-a6ab0ea028cbadb0.png" alt="" />
-第四步，创建监控项：
-  <img src="292372-47570ec3796d857a.png" alt="" /></p>
-
-<p>这里需要解释其中几个选项为什么要那样填：
-* <strong>Type</strong>：是 Zabbix server 采集指标的类型，我们选择的是 Zabbix agent，如上文所说。
-* <strong>Key</strong>：由于我们要监控的指标并不是 Zabbix 预定义的。所以，需要使用用户自定义参数来实现监控 Jenkins 指标。Key 填的值为：jenkins.metrics[gauges.jenkins.node.count.value.value]。<code>jenkins.metrics</code>是需要执行的真正的 Key 名称。而 <code>[]</code> 内是传给该 Key 对应的命令的参数。对于初学者，Zabbix 这部分概念非常不好理解。也许这样会更好理解：在使用用户自定义参数来实现监控的情况下，Zabbix server 会将这个 Key 发送给 agent，然后 agent 根据这个 Key 执行指定的 <strong>逻辑</strong> 以获取指标数据。这个 <strong>逻辑</strong> 通常是一段脚本（shell命令或Python脚本等）。而脚本也是可以传参的，<code>[]</code>中的值就是传给脚本的参数。具体更多细节，下文会继续介绍。
-* <strong>Type of information</strong>：监控数据的数据类型，由于我们监控的是 Jenkins node 节点的个数，所以，使用数字整型。
-* <strong>Update interval</strong>：指 Zabbix server 多长时间向 agent 获取一次数据，为方便实验，我们设置为 2s。</p>
-
-<p>到此，Zabbix server 端已经配置完成。</p>
-
-<h3 id="2-2-配置-zabbix-agent-使其有能力从-jenkins-获取指标数据">2.2 配置 Zabbix agent 使其有能力从 Jenkins 获取指标数据</h3>
-
-<p>当 Zabbix agent 接收到 server 端的请求，如 <code>jenkins.metrics[gauges.jenkins.node.count.value.value]</code>。Zabbix agent 会读取自己的配置（agent 启动时会配置），配置内容如下：</p>
-
-<pre><code>## Zabbix Agent Configuration File for Jenkins Master
-UserParameter=jenkins.metrics[*], python /usr/lib/zabbix/externalscripts/jenkins.metrics.py $1
-</code></pre>
-
-<p>根据 Key 名称（jenkins.metrics）找到相应的命令，即：<code>python /usr/lib/zabbix/externalscripts/jenkins.metrics.py $1</code>。并执行它，同时将参数 <code>gauges.jenkins.node.count.value.value</code> 传入到脚本 jenkins.metrics.py 中。jenkins.metrics.py 需要我们在 Jenkins agent 启动前放到 /usr/lib/zabbix/externalscripts/ 目录下。</p>
-
-<p>jenkins.metrics.py 的源码在 jenkins-zabbix 实验环境中可以找到，篇幅有限，这里就简单介绍一下其中的逻辑。</p>
-
-<p>jenkins.metrics.py 所做的事情，无非就是从 Jenkins master 的 metrics api 获取指标数据。但是由于 api 返回的是 JSON 结构，并不是 Zabbix server 所需要的格式。所以，jenkins.metrics.py 还做了一件事情，就是将 JSON 数据进行扁平化，比如原来的数据为：<code>{&quot;gauges&quot;:{&quot;jenkins.node.count.value&quot;: { &quot;value&quot;: 1 }}}</code> 扁平化后变成： <code>gauges.jenkins.node.count.value.value=1</code>。</p>
-
-<p>如果 jenkins.metrics.py 脚本没有接收参数的执行，它将一次性返回所有的指标如：</p>
-
-<pre><code>......
-histograms.vm.memory.pools.Metaspace.used.window.15m.stddev=0.0
-histograms.vm.file.descriptor.ratio.x100.window.5m.p75=0.0
-histograms.vm.memory.pools.PS-Old-Gen.used.window.5m.count=4165
-gauges.vm.runnable.count.value=10
-timers.jenkins.task.waiting.duration.mean=0.0
-histograms.vm.memory.non-heap.committed.history.p99=123797504.0
-gauges.vm.memory.pools.PS-Eden-Space.used.value=19010928
-gauges.jenkins.node.count.value.value=1
-histograms.vm.memory.pools.Code-Cache.used.window.15m.mean=44375961.6
-......
-</code></pre>
-
-<p>但是，如果接收到具体参数，如 <code>gauges.jenkins.node.count.value.value</code> ，脚本只返回该参数的值。本例中，它将只返回 <code>1</code>。</p>
-
-<p>jenkins.metrics.py 脚本之所以对 JSON 数据进行扁平化，是因为 Zabbix server 一次只拿一个指标的值（这点需要向熟悉 Zabbix 的人求证，笔者从文档中没有找到明确的说明）。</p>
-
-<p>注意：在 2.1 节中，如果 Key 值设置为：jenkins.metrics，Zabbix server 不会拿 jenkins.metrics.py 返回的所有的指标值自动创建对应的监控项。所以，Key 值必须设置为类似于 jenkins.metrics[gauges.jenkins.node.count.value.value] 这样的值。</p>
-
-<h2 id="3-配置-zabbix-server-监控指标-并告警">3. 配置 Zabbix server 监控指标，并告警</h2>
-
-<p>在经过 2.2 节的配置后，如果 Zabbix server 采集到数据，可通过_Monitoring -&gt; Latest data -&gt; Graph_菜单（如下图），看到图形化的报表：</p>
-
-<p><img src="292372-e46c6e7f12c1716a.png" alt="" /></p>
-
-<p>图形化的报表：
-<img src="292372-7ad0297b73be9bbb.png" alt="" /></p>
-
-<p>有了指标数据就可以根据它进行告警了。告警在 Zabbix 中称为触发器（trigger）。如下图，我们创建了一个当 Jenkins node 小于 2 时，就触发告警的触发器：</p>
-
-<p><img src="292372-dcb88e44931b70fa.png" alt="" /></p>
-
-<p>至于最终触发器的后续行为是发邮件，还是发短信，属于细节部分，读者朋友可根据自己的情况进行设置。</p>
-
-<h2 id="小结">小结</h2>
-
-<p>在理解了 Zabbix server 与 agent 之间的通信原理的前提下，使用 Zabbix 监控 Jenkins 是不难的。笔者认为难点在于自动化整个过程。上文中，我们创建主机和添加监控项的过程，是手工操作的。虽然 Zabbix 能通过自动发现主机，自动关联模板来自动化上述过程，但是创建”自动化发现主机“和”自动关联动作“依然是手工操作。这不符合”自动化一切“的”追求“。</p>
-
-<p>最后，如果读者朋友不是历史包袱原因而选择 Zabbix，笔者在这里推荐 Prometheus，一款《Google 运维解密》推荐的开源监控系统。</p>
-
-<h2 id="附录">附录</h2>
-
-<ul>
-<li>Metrics 插件：<a href="https://wiki.jenkins.io/display/JENKINS/Metrics+Plugin">https://wiki.jenkins.io/display/JENKINS/Metrics+Plugin</a></li>
-<li>dropwizard/metrics：<a href="https://metrics.dropwizard.io/4.0.0/">https://metrics.dropwizard.io/4.0.0/</a></li>
-<li>Zabbix 监控项类型：<a href="https://www.zabbix.com/documentation/3.4/zh/manual/config/items/itemtypes">https://www.zabbix.com/documentation/3.4/zh/manual/config/items/itemtypes</a></li>
-<li>metrics.json： <a href="https://github.com/zacker330/jenkins-zabbix/blob/master/metrics.json">https://github.com/zacker330/jenkins-zabbix/blob/master/metrics.json</a></li>
-<li>jenkins-zabbix 实验环境：<a href="https://github.com/zacker330/jenkins-zabbix">https://github.com/zacker330/jenkins-zabbix</a></li>
-<li>Prometheus：<a href="https://prometheus.io/">https://prometheus.io/</a></li>
-</ul>
+<p>每个人都获得了一定的成果，但真正的赢家是 T-Mobile 的客户。他们可以期待提供新的和改进的产品，因为我们将花费更少的时间来管理流水线框架，而将更多的时间用于简化和改善生活的产品和服务上。</p>
 
 </div>
 
@@ -494,14 +367,14 @@ histograms.vm.memory.pools.Code-Cache.used.window.15m.mean=44375961.6
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “使用 Zabbix 监控 Jenkins”
-  </a> 更新于：April 15, 2019
+    “T-Mobile 和 Jenkins 案例研究”
+  </a> 更新于：February 28, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -520,25 +393,19 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
           <li class="db dib-l mr3">
             <a class="tag" href="/tags/jenkins">
-              jenkins
+              Jenkins
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/zabbix">
-              zabbix
+            <a class="tag" href="/tags/t-mobile">
+              T-Mobile
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
         
       
         
@@ -835,6 +702,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="link">
+              使用 Zabbix 监控 Jenkins
+            </a>
+          </li>
+        
       
         
         
@@ -941,7 +814,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/04\/2019-04-15-zabbix-monitor-jenkins\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/02\/2020-02-28-t-mobile-and-jenkins-case-study\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
