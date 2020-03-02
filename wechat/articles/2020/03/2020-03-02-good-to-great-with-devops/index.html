@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     
+     <title>DevOps 的出色表现 - Jenkins 中文社区</title>
+     <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    
+    <meta name="description" content="重点介绍了 2019 年 DevOps 状态报告的一些发现，包括 DevOps 的出现和盛行">
+    
+    
+    <meta name="keywords" content="DevOps,DevOps 状态,DevOps 状态报告,精英绩效,DevOps 指标,J 转换曲线">
+    
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     <meta name="generator" content="Hugo 0.53" />
+
+      
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      
+
+    <link href='/dist/main.css' rel='stylesheet' type="text/css" /><style>
+  img.avatar {
+    width: 32px;
+    display: inline;
+  }
+</style>
+<meta property="og:title" content="DevOps 的出色表现" />
+<meta property="og:description" content="重点介绍了 2019 年 DevOps 状态报告的一些发现，包括 DevOps 的出现和盛行" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-02-good-to-great-with-devops/" /><meta property="article:published_time" content="2020-03-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-03-02T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="DevOps 的出色表现">
+<meta itemprop="description" content="重点介绍了 2019 年 DevOps 状态报告的一些发现，包括 DevOps 的出现和盛行">
+
+
+<meta itemprop="datePublished" content="2020-03-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="58">
+
+
+
+<meta itemprop="keywords" content="DevOps,DevOps 状态,DevOps 状态报告,精英绩效,DevOps 指标,J 转换曲线," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DevOps 的出色表现"/>
+<meta name="twitter:description" content="重点介绍了 2019 年 DevOps 状态报告的一些发现，包括 DevOps 的出现和盛行"/>
+
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
+  </head>
+  <body class="ma0 sans-serif bg-primary-color-light">
+    
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://jenkins-zh.cn" class="link white">
+         Jenkins 中文社区
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/wechat/" class="dim link light-silver"
+            >
+            博客
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/tutorial/" class="dim link light-silver"
+            >
+            教程
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/event/" class="dim link light-silver"
+            >
+            活动
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/partner/" class="dim link light-silver"
+            >
+            合作伙伴
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/about/" class="dim link light-silver"
+            >
+            关于我们
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="http://jenkins.io/zh" class="dim link light-silver"
+            target="_blank">
+            Jenkins 官网
+              
+            
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="email-address">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+      placeholder="搜索文档" type="text"
+      name="email-address" value="" style="background-image:url('/images/icon-search.png');background-size:16px 16px;">
+  </fieldset>
+</form>
+</div>
+
+    <div class="list ma0 pa0 dn dib-l"></div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/jenkins-zh/jenkins-zh/" data-size="large" data-show-count="false" aria-label="Star Jenkins WeChat GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+    
+    <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+      
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+
+  <aside class="mw5 br3 mv3 nested-links">
+    
+    
+      
+        <h3 class="f4 dib author">
+            zhaoying
+        </h3>
+
+      
+      
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
+          devops jenkins
+        </p>
+      
+      <a href="https://github.com/zhaoying818" target="_blank" class="link dim v-mid dib">
+        <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
+<path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
+</svg>
+
+      </a>
+
+  
+  <div>
+    作者：<span class="originalAuthor">Sandeep Joshi</span>
+    <div>
+      <a class="originalLink" href="https://dzone.com/articles/good-to-great-with-devops" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
+  </aside>
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+
+		
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="dib f6 pr1 hover-bg-light-gray br-100" title="T-Mobile 和 Jenkins 案例研究">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">DevOps 的出色表现</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      重点介绍了 2019 年 DevOps 状态报告的一些发现，包括 DevOps 的出现和盛行
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p>DevOps 不断发展，自从2009年提出此术语以来，DevOps 的状态每年都呈指数级增长。在2019年飞速发展的过程中，各种规模和形态的组织（从企业到初创公司）在 DevOps 方面都展现了极大的热情。每个组织都有其自己的 DevOps故事，其中一些故事尚未开始，一些故事还处于婴儿期，有些故事已经成熟，有些故事已经达到顶峰。 不同于其他故事，DevOps 故事源于不断改进。</p>
+
+<p>随着企业逐渐变得数字化和软件驱动，人们对 DevOps 旅程的本质和可能性有了更大的认识。不仅工程师或技术领导者，甚至商业领导者都对 DevOps 的概念、实践和应用非常感兴趣。对于实现商业成功的 DevOps 的需求已得到越来越广泛的接受。</p>
+
+<p><a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf">《 2019 年 DevOps 状态报告》</a>作为大量在线资源的提供者之一，可用于解和学习 DevOps 如何塑造跨行业的软件交付。该报告极大地总结了软件交付的趋势和挑战，它可以帮助团队研究可用于提升软件交付能力并最终成就卓越。</p>
+
+<p>在此报告中，IT 性能称为软件交付能力，以区分软件交付工作与 IT 服务台和其他支撑功能。这是一个期待已久的可喜变化。我也喜欢的关键更改之一是增加了运营指标以完成软件交付周期。该报告重点介绍了五个被称为“软件交付和运营（SDO）性能指标”的度量或指标，它们侧重于系统级结果。这有助于避免软件度量标准的常见陷阱，后者常常使不同的功能相互冲突，并导致以牺牲总结果为代价的局部优化。</p>
+
+<p><img src="img1.png" alt="图 1 ：5 个 SDO 性能指标" /></p>
+
+<p>该报告重点介绍了软件交付能力的四个方面，如下所示：</p>
+
+<ol>
+<li><strong>部署频率</strong> – 对于您从事的主应用程序或服务，您的组织多久部署一次代码？</li>
+<li><strong>变更的前置时间</strong> – 对于您从事的主应用程序或服务，您的变更前置时间是多少（即，从代码提交到成功在生产中运行的代码需要多长时间）？</li>
+<li><strong>恢复服务的时间</strong> – 对于您正在使用的主应用程序或服务，发生服务事件（例如计划外中断或服务受损）时，恢复服务通常需要多长时间？</li>
+<li><strong>变更失败率</strong> – 对于您使用的主应用程序或服务，导致服务质量下降或随后需要修复（例如，导致服务受损、服务中断，需要修改程序、回滚、向前修复、修补程序）的变更的百分比？</li>
+</ol>
+
+<p>然后对这四个方面进行度量，以对四个类别的性能进行排名：精英、高级、中级和低级。下表（从报告中引用）指示了各个方面的详细信息。</p>
+
+<p><img src="img2.png" alt="图 2 ：软件交付能力的各个方面" /></p>
+
+<hr />
+
+<p><strong><em>我强烈建议添加到此列表中的另一个方面是“团队敬业度指数”，即团队的快乐程度和参与度。我认为团队绩效与团队敬业度成正比。团队敬业度越高，即团队越快乐越敬业，他们产生的结果就越好。</em></strong></p>
+
+<hr />
+
+<p>报告中的另一个主题是“ J 转换曲线”。下图突出显示了自动化如何帮助绩效低下的人员提升到中等性能水平，然后测试需求、技术负担和复杂性增加导致手动操作，从而导致进度变慢。这是一个有趣且值得注意的观察。它强调了自动化并不总是答案。如果您使错误的流程自动化，那么您得到的只是错误的结果，而且更快。</p>
+
+<p><img src="img3.png" alt="图 3 ：J 转换曲线" /></p>
+
+<p>无休止的改进、学习、共享和利用专业知识可将您带到高水平或精英绩效水平 – 将团队提升为精英绩效的旅程需要的不仅仅是工具。在各个级别（即团队级别、领导级别和赞助者级别）的坚持、恒心和毅力对于从低绩效水平或中绩效水平取得突破以发挥团队最大潜力至关重要。如果我们踏上精英绩效之旅，您会发现自动化、技术实践和持续改进计划是您旅途的催化剂。鉴于测试需求、技术债务和日益增加的复杂性将成为您的阻碍，我发现锚定和引擎（帆船回顾展）格式提供了一种快速而有趣的方法，可在一幅图片中（如下所示）可视化催化剂（引擎）和阻滞剂（锚定）。</p>
+
+<p><img src="img4.png" alt="图 4 ：卓越绩效之旅" /></p>
+
+<h2 id="行业看到了更高的精英绩效">行业看到了更高的精英绩效</h2>
+
+<p>该报告证实，精英表演者的比例几乎增加了两倍，低表现者的比例下降了，中等表演者的比例上升了。要注意的一项主要观察结果是，从低性能到中性能再到高性能的移动不是单向的。当面对复杂性增加时，团队（从 J 曲线中突出显示）可以从高位降为中级，也可以从中级降为低级。总体而言，很高兴看到向上增加。</p>
+
+<p><img src="img5.png" alt="图 5 ：绩效集群" /></p>
+
+<h2 id="前进之路">前进之路</h2>
+
+<hr />
+
+<p><strong><em>软件交付性能可以通过多种方式确定业务成果。 组织推动软件交付绩效的能力包括文化，技术实践，清晰的变更流程，持续交付和基于价值的成果。 这些功能并不是一蹴而就的，需要对组织 DNA 进行根本性的改变。</em></strong></p>
+
+<hr />
+
+<p>根据我在不同行业和公司中工作的经验，我可以确认这些软件交付能力集群不是静态的。上面列出的任何功能的更改都会对软件交付能力产生影响，您可能会发现能力集群在两个方向上都从一个级别波动到另一个级别。关键是要保持专注并通过定期将其嵌入组织的工作方式中来维持它。</p>
+
+</div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+<h2>参考</h2>
+<ul>
+	
+	<li><a href="/wechat/articles/2020/02/2020-02-21-the-abc-of-devops-implementation-with-containerization-and-docker/">使用容器化和 Docker 实现 DevOps 的基础知识</a></li>
+	
+	<li><a href="/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/">为 DevOps 构建新的运营模型</a></li>
+	
+</ul>
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-02-good-to-great-with-devops/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “DevOps 的出色表现”
+  </a> 更新于：March 2, 2020
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/03/2020-03-02-good-to-great-with-devops.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">改善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/devops">
+              DevOps
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/devops-%E7%8A%B6%E6%80%81">
+              DevOps 状态
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/devops-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A">
+              DevOps 状态报告
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88">
+              精英绩效
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/devops-%E6%8C%87%E6%A0%87">
+              DevOps 指标
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/j-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF">
+              J 转换曲线
+            </a>
+          </li>
+        
+              
+      
+        
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-21-the-abc-of-devops-implementation-with-containerization-and-docker/" class="link">
+              使用容器化和 Docker 实现 DevOps 的基础知识
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-14-devops-trends-to-watch-for-in-2020/" class="link">
+              展望 2020 年 DevOps 的发展趋势
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/" class="link">
+              为 DevOps 构建新的运营模型
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/" class="link">
+              持续测试的那些事
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/" class="link">
+              10节课带你深入学习 DevOps 工程
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-05-devops-challenges-in-2019-how-to-overcome-them/" class="link">
+              2019年 DevOps 面临的挑战以及如何战胜它们
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link">
+              从 Jenkins 到 Jenkins X
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" class="link">
+              基于 Jenkins 的 DevOps 平台应该如何设计凭证管理
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-28-devsecops/" class="link">
+              我们为什么需要 DevSecOps 和制品仓库？
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/" class="link">
+              Jenkins 2.173 发布通知
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="link">
+              持续交付的商业价值
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-17-aiops/" class="link">
+              AIOps：DevOps 的未来
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/03\/2020-03-02-good-to-great-with-devops\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
+
+    </main>
+
+    <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    <div class="pb3 pt4 w-100 w-50-ns">
+
+      <div class="b f3  light-gray mb3 nested-links tc">
+        由 <a href="https://github.com/jenkins-zh/jenkins-zh/graphs/contributors" target="_blank"
+          class="link">Jenkins 社区贡献者</a> 维护<br />
+      </div>
+
+      <ul class="center f6 list ma0 mv3 pa0 tc" style="display:none"><li class="dib mr3"><a href="https://github.com/jenkins-zh/jenkins-zh/issues/new" class="dim link light-gray pv2">File an Issue</a></li></ul>
+
+      <ul class="center f6 list ma0 mv4 pa0 tc">
+        <li class="dib mr3">
+          <a href="https://twitter.com/jenkinsci" target="_blank" class="dim link light-gray pv2">Twitter</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://www.youtube.com/channel/UC63xz3pq26BBgwB3cnwCoqQ" target="_blank"
+            class="dim link light-gray pv2">YouTube</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://space.bilibili.com/433584098" target="_blank" class="dim link light-gray pv2">哔哩哔哩</a>
+        </li>
+        <li class="dib mr3">
+          <a href="http://jcli.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">Jenkins
+            CLI</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://discourse.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">社区论坛</a>
+        </li>
+      </ul>
+
+      
+    </div>
+
+    <div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">优酷视频
+        <div>
+          <a href="https://i.youku.com/jenkinszh" target="_blank">
+            <img src="/images/youku-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微信公众号
+        <div>
+          <a href="https://mp.weixin.qq.com/s/vifdduC3kRGSIMpyL03yVA" target="_blank">
+            <img src="https://jenkins.io/images/jenkins-wechat.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="f7 gray mb5 mb0-ns ph3 w-100" style="display:none"> 
+    <p class="dib mr4">Jenkins&reg; is a registered trademark of <a href="https://www.spi-inc.org/"
+        class="link">Software in the Public Interest, Inc.</a></p>
+    <p class="dib">Copyright 2018–2020 the original authors.</p>
+  </div>
+
+
+  <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu pb3 dn">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/wechat/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          博客
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/tutorial/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          教程
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/event/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          活动
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/partner/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          合作伙伴
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/about/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          关于我们
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="http://jenkins.io/zh" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Jenkins 官网
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">菜单</button>
+
+  
+</div>
+<script src="/dist/app.bundle.js" type="text/javascript"></script>
+</div>
+
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'jenkinsci/chinese'
+    };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</footer>
+
+    
+<link href="/dist/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/jenkins-zh.cn";
+    
+</script>
+<script src="/dist/lunr.js"></script>
+<script src="/dist/autocomplete.js"></script>
+<script src="/dist/jquery-3.2.1.min.js"></script>
+<script src="/dist/search.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6db234f713318730f0e5f6a95bdd8d47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?6276dcef5c15f276644151772390c1f9":"https://jspassport.ssl.qhimg.com/11.0.1.js?6276dcef5c15f276644151772390c1f9";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  </body>
+</html>

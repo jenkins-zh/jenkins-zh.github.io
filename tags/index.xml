@@ -257,7 +257,7 @@
     <item>
       <title>Devops</title>
       <link>https://jenkins-zh.cn/tags/devops/</link>
-      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/devops/</guid>
       <description></description>
@@ -269,6 +269,33 @@
       <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/devops-jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops 指标</title>
+      <link>https://jenkins-zh.cn/tags/devops-%E6%8C%87%E6%A0%87/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/devops-%E6%8C%87%E6%A0%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops 状态</title>
+      <link>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops 状态报告</title>
+      <link>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A/</guid>
       <description></description>
     </item>
     
@@ -440,6 +467,15 @@
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/istio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>J 转换曲线</title>
+      <link>https://jenkins-zh.cn/tags/j-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/j-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF/</guid>
       <description></description>
     </item>
     
@@ -1034,6 +1070,15 @@
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>精英绩效</title>
+      <link>https://jenkins-zh.cn/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88/</guid>
       <description></description>
     </item>
     
