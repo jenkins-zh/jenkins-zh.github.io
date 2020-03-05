@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-05-screwdriver-joins-cd-foundation/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/meeting/2020-03-04/</loc>
     <lastmod>2020-03-04T00:00:00+00:00</lastmod>
   </url>
@@ -830,7 +835,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/cdf/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1325,6 +1330,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/screwdriver/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/security/</loc>
     <lastmod>2019-04-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1408,7 +1419,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
