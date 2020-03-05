@@ -6,10 +6,21 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2020-03-04/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2020-03-04/</guid>
+      <description> GSoC
+ Jenkins 发行版（https://community.jenkins-zh.cn/t/jenkins/241） 有两个印度的学生有兴趣 每个人的配置保存到哪里？  官方 用户  https://github.com/jenkins-zh/jenkins-cli/pull/340/files  下次在线研讨会
+ 时间，提前到八点半  修改社区的日历为：每周八点半，持续一个半小时  直播  对带宽+电脑资源要求比较高    </description>
+    </item>
     
     <item>
       <title></title>
