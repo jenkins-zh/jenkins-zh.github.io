@@ -176,9 +176,18 @@
     <item>
       <title>Community</title>
       <link>https://jenkins-zh.cn/tags/community/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Community Bridge</title>
+      <link>https://jenkins-zh.cn/tags/community-bridge/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/community-bridge/</guid>
       <description></description>
     </item>
     
@@ -503,6 +512,15 @@
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/java11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jcasc</title>
+      <link>https://jenkins-zh.cn/tags/jcasc/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jcasc/</guid>
       <description></description>
     </item>
     
@@ -899,6 +917,15 @@
       <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/updatebot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vscode</title>
+      <link>https://jenkins-zh.cn/tags/vscode/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/vscode/</guid>
       <description></description>
     </item>
     

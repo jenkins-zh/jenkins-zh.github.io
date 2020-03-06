@@ -37,6 +37,20 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>使用 Visual Studio Code 验证 JCasC 配置文件</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/</guid>
+      <description>配置即代码插件 问题陈述：将现有的模式验证工作流程脚本语言 Jenkins 配置即代码插件转换为基于 Java 的重写，从而增强其可读性和可测试性，并由该测试框架提供支持。通过开发 VSCode 插件来促进自动完成和验证，从而增强开发人员的经验，这将有助于开发人员在应用到 Jenkins 实例之前编写正确的 yaml 文件。
+配置即代码插件已被设计为 Jenkins 基于声明式配置文件配置的基本方式，无需成为 Jenkins 专家亦可编写这样的文件，只需将配置过程中转换成用于在 web UI 中执行的代码即可。该插件使用此类模式来验证要应用于 Jenkins 实例的文件。
+启用了新的 JSON 模式后，开发人员现在可以针对其测试 yaml 文件。该模式检查 descriptors，即可以应用于插件或 Jenkins 核心的配置，使用正确的类型并在某些情况下提供帮助文本。 VSCode 允许我们通过一些修改立即测试架构。该项目是 Community Bridge 计划的一部分，Community Bridge 计划是 Linux 基金会创建的一个平台，旨在使开发人员以及支持他们的个人和公司提高开源技术的可持续性、安全性和多样性。您可以看一下Jenkins Community Bridge 项目。
+启用架构验证的步骤  第一步安装 Visual Studio Code 的 JCasC 插件，并通过扩展列表打开扩展。使用 Ctrl + Shift + X 在 VSCode 编辑器中打开扩展列表的快捷方式。
+ 为了启用验证，我们需要将其包括在工作空间设置中。依次导航到 File，Preference 和 Settings。内部设置中搜索 json，内部 settings.json 中包含以下配置。
+  { &amp;quot;yaml.</description>
+    </item>
+    
+    <item>
       <title>Screwdriver 作为 CD 基金会的第一个孵化项目加入 CD 基金会</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-05-screwdriver-joins-cd-foundation/</link>
       <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
