@@ -14,14 +14,15 @@ pipeline {
                 branch 'master'
             }
             steps{
-                try{
-                    postBuild()
-                }catch{
-                    retry(3){
+                script {
+                    try{
                         postBuild()
+                    } catch(e) {
+                        retry(3){
+                            postBuild()
+                        }
                     }
                 }
-                
             }
         }
     }
