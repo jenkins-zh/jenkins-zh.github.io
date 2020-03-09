@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-09-feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/</loc>
     <lastmod>2020-03-06T00:00:00+00:00</lastmod>
   </url>
@@ -886,7 +891,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/cloudbees/</loc>
-    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -952,7 +957,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1442,7 +1447,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1728,6 +1733,10 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/management/auth/keyclock/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/management/auth/oic-auth/</loc>
   </url>
   
   <url>

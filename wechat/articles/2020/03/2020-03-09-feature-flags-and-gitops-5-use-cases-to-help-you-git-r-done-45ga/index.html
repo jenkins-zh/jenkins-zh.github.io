@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>为 DevOps 构建新的运营模型 - Jenkins 中文社区</title>
+     <title>特性开关和 GitOps, 5个用例帮您搞定。 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="为 DevOps 构建新的运营模型">
+    <meta name="description" content="特性开关和 GitOps 以及 CloudBees Rollout">
     
     
-    <meta name="keywords" content="DevOps,运营转型">
+    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="为 DevOps 构建新的运营模型" />
-<meta property="og:description" content="为 DevOps 构建新的运营模型" />
+<meta property="og:title" content="特性开关和 GitOps, 5个用例帮您搞定。" />
+<meta property="og:description" content="特性开关和 GitOps 以及 CloudBees Rollout" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/" /><meta property="article:published_time" content="2019-11-06T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-11-06T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-09-feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga/" /><meta property="article:published_time" content="2020-03-09T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-03-09T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="为 DevOps 构建新的运营模型">
-<meta itemprop="description" content="为 DevOps 构建新的运营模型">
-
-
-<meta itemprop="datePublished" content="2019-11-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-11-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="39">
+<meta itemprop="name" content="特性开关和 GitOps, 5个用例帮您搞定。">
+<meta itemprop="description" content="特性开关和 GitOps 以及 CloudBees Rollout">
 
 
+<meta itemprop="datePublished" content="2020-03-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="151">
 
-<meta itemprop="keywords" content="DevOps,运营转型," />
+
+
+<meta itemprop="keywords" content="devops,cloudbees," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="为 DevOps 构建新的运营模型"/>
-<meta name="twitter:description" content="为 DevOps 构建新的运营模型"/>
+<meta name="twitter:title" content="特性开关和 GitOps, 5个用例帮您搞定。"/>
+<meta name="twitter:description" content="特性开关和 GitOps 以及 CloudBees Rollout"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -202,17 +202,8 @@ var trackOutboundLink = function(id, url) {
     
     
       
-        <h3 class="f4 dib author">
-            zhaoying
-        </h3>
-
       
-      
-        <p class="lh-copy measure center mt0 f6 black-60 bio">
-          devops jenkins
-        </p>
-      
-      <a href="https://github.com/zhaoying818" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/cycwll" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -221,9 +212,9 @@ var trackOutboundLink = function(id, url) {
 
   
   <div>
-    作者：<span class="originalAuthor">Jon Hammant</span>
+    作者：<span class="originalAuthor">Kristin Baskett</span>
     <div>
-      <a class="originalLink" href="https://www.linkedin.com/pulse/building-new-operating-model-devops-jon-hammant/" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://dev.to/cloudbees/feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -243,17 +234,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/" class="dib f6 pl1 hover-bg-light-gray br-100" title="在 Kubernetes 中通过 Apache Kafka 插件远程处理 Kafka 启动程序 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-04-jcli-v0.0.22/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins CLI 命令行 v0.0.22">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/" class="dib f6 pr1 hover-bg-light-gray br-100" title="使用 Visual Studio Code 验证 JCasC 配置文件">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -273,13 +256,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">为 DevOps 构建新的运营模型</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">特性开关和 GitOps, 5个用例帮您搞定。</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      为 DevOps 构建新的运营模型
+      特性开关和 GitOps 以及 CloudBees Rollout
     </div>
   
 
@@ -292,36 +275,47 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="devops.jpg" alt="Building a new operating model for DevOps" /></p>
+<p><img src="gitops.png" alt="cover" /></p>
 
-<p>我一直在<a href="https://www.linkedin.com/pulse/main-challenge-devops-doing-scale-jon-hammant/">撰写</a>有关企业面临的 DevOps 挑战的文章。从根本上讲，它是关于规模的：当企业尝试将其扩展到大型企业通常拥有的 800 多个应用程序中时，它们正努力实现在小型 DevOps 概念验证中看到的相同收益。 如果 DevOps 能够兑现其诺言并为企业带来可观的价值，那么就必须克服这一规模挑战。</p>
+<p>GitOps 的实践是持续交付的下一个替代。它允许开发人员进入 IT 运维的传统工作范围-许多历史关卡的所在地-自动更新生产环境的应用程序和运行程序的基础设施。在 GitOps 中，所有变更管理和版本控制的唯一可信来源是软件配置管理（SCM）。GitOps 抛弃了传统 ITIL 类型的管理，将基础设施和应用程序视为版本化的制品，包括在软件开发期间捕获的相同粒度的审计轨迹（提交 ID，时间戳等）。</p>
 
-<h2 id="重塑业务">重塑业务</h2>
+<h2 id="我的看法">我的看法</h2>
 
-<p><img src="reshaping.jpg" alt="reshaping the business" /></p>
+<p>GitOps 的思想是通过 Git  提交将整个系统的期望状态存储在版本控制系统中。从本质上，您可以将 GitOps 视为一个文件版本控制系统。GitOps 一个关键的原则是通过使用遵守声明式规范的配置文件描述应用程序和环境的期望状态。</p>
 
-<p>今天，我想看看企业内部的关键变化，在实现 DevOps 的好处之前，这绝对是必须发生的：运营转型。</p>
+<p>这意味着配置根据实际情况而不是操作指南列表管理。它给你一个规则来检查结果是否正确，而不是给你一个配置清单去创建一个系统。你可以用这种方式描述你整个的 CI/CD 流水线并将其放在代码仓库中。为了变更到期望的状态，开发人员发出一个 Pull rquest ，这基本上告诉所有人您已发布到仓库的变更，并告知仓库将变更拉入。通过使用Git，您可以获得版本历史记录、审核日志、回滚功能以及查看谁更改了什么以及何时更改的功能。</p>
 
-<p>如今，大多数企业都围绕具有单向命令和控制结构的分层模型工作。这是自去年以来建立企业的方式：公司高层的“高级主管”领导层以相当专制的方式设定了公司的目标和战略。在此模型中，经理和业务部门负责人是高级管理人员意愿的执行者，以确保公司其他所有人都可以执行其战略方向。DevOps 的发展方向相反-从开发人员和运营人员的基层运动开始，然后逐步发展到如今在董事会席位上占有一席之地。</p>
+<h2 id="特性开关-gitops">特性开关 + GitOps</h2>
 
-<h2 id="民主发展">民主发展</h2>
+<p>当我们考虑 GitOps 时，会立即想到的用例是容器编排和集群管理—特别是使用声明性工具 Kubernetes。没有多少人会立即想到[特性标志][1]。那么为什么我们认为特性标志这么重要？这很重要，因为 GitOps 的愿景是对整个系统的全面控制。特性开关通常被视为“规则之外”的活动。我们相信，特性开关-尤其是达到一定规模-将成为一个非常强大的工具，如果它们的管理方式与代码的其他部分一样严格、管理和受重视。如果要使用 GitOps 来管理特性开关，则必须使用配置文件描述它们所需的状态。但这还不是全部。</p>
 
-<p><img src="development.jpg" alt="democratising development" /></p>
+<h2 id="有一种正确的方法可以将-gitops-应用于特性开关">有一种正确的方法可以将 GitOps 应用于特性开关</h2>
 
-<p>为了使 DevOps 大规模发展，需要用更加有机、松散和自治的东西来代替这种结构。如果旧模式是专制的，那么新模式与现代政治革命家在松散连接和组织上“扁平”的结构中融合的方式有更多的共同点。</p>
+<p>特性开关是一个粘性的小窗口。它们拥有进行生产变更的能力，但它们不会像其他代码一样承担生产准备就绪的检验的责任。如果它要成为软件交付生命周期的一部分，就需要不断发展。</p>
 
-<p>DevOps 的理想运营模式是一种权力民主化的模式，并且公司中的每个人都有权发挥自己的领导作用。在这里，高级主管确定了出行的方向，但是然后相信他们熟练的开发人员会做些必要的事情。在这种模式下，管理者促进和授权，而不是直接参与；确保开发人员拥有实现目标所需的一切，同时在这里和那里轻轻地推动，以确保他们的工作与整体公司议程和战略路线图保持一致。这涉及到我们在流动的劳动力中看到的宏观变化，并逐渐过渡到非中介的世界。</p>
+<p>如果我们想用 GitOps 管理特性标志，那么所需的状态（由声明性规范描述）必须保存到配置文件中。我们使用 YAML，以便它是人类可读和可编辑的。当需要更新到期望的状态时，只需简单的合并配置即可。此变更通过建立了审核跟踪的PR提交，并确保正确的人员正在验证更改—这正是当有人更改应用程序中的代码或更新基础设施设置时所发生的更改。我们相信这是用 GitOps 管理特性开关的正确方法。这也是最符合供应商中立的愿望的做法。</p>
 
-<p>毋庸置疑，进行这种转换并不容易。这意味着要颠覆数百年来公认的惯例，放弃某些人认为晋升和任期使他们有权获得的精细控制。而且要明确一点：IT 部门将首当其冲。长期以来，控制权的守卫者需要转变为促进者。IT 将围绕应用程序开发设置指南和策略，并在需要时进行干预，但在日常工作中，IT 部门将需要退后一步，让 DevOps 开发人员继续前进，然后一定会建立信任和真正创新的文化，并蓬勃发展。</p>
+<p>据我们所知，只有[ CloudBees Rollout ][2]能够支持这一点。我们的一些竞争对手也有一个配置文件，他们的SDK知道如何读取和更改它。但是，它不是可编辑的。它也不会自动保存在像 GitHub 这样的 SCM 中。它们迫使用户绕过管理代码的既定过程，以便管理特性开关。例如，如果需要功能回滚，客户将被迫使用第三方仪表板，而不是 Git。</p>
 
-<h2 id="让专家掌控">让专家掌控</h2>
+<h2 id="使用-cloudbees-rollout-管理特性开关的一些-git-用例">使用 CloudBees Rollout 管理特性开关的一些‘Git’用例</h2>
 
-<p><img src="experts.jpg" alt="Putting the experts in control" /></p>
+<p>[配置即代码][3]，这个术语经常与基础设施作为代码（IaC）互换使用，但它实际上是不同的。IaC 是关于基础设施栈的管理和配置，而 CaC 是关于在环境之间自动迁移配置。这都是为了进行环境配置的有力工具。不允许有雪花。我们对待特性开关的方式与配置对待应用程序的方式相同（我们在这里使用 CaC 术语而不是 IaC，因为特性开关不是基础设施的一部分，而是在软件应用程序上）。当我们讨论 GitOps 时，这意味着我们可以用 PR 跟踪 SCM 中应用程序的变更和版本控制的方式，记录特性开关中发生的更改和版本控制。将更改推送到主分支通过 SDK 触发一个待处理的事件。然后，系统知道如何将特性开关更新到 YAML 文件配置所期望的状态。</p>
 
-<p>开发人员团队比公司中的其他任何人都更了解他们的业务所面临的软件工程挑战。他们是理想的解决方案，同时敏捷的 DevOps 流程将帮助他们做到这一点。但是，如果开发人员大规模利用 DevOps，则需要摆脱来自 IT 和更广泛业务的严格监督。这不是关于信任的问题-人力资源和分析技术可供企业领导者远程监视和分析开发人员的效率。它只是归结为效率：以一种更加敏捷和有效的开发方法来消除障碍。以一种可以为您提供广泛、以业务为中心并且与供应商无关的方式执行此关键操作。如果没有民主变革的能力，并根据我们的经验来衡量结果，您将永远无法完全成功并获得真正的利益。</p>
+<p>CloudBees Rollout 将所有特性开关和目标数据存储为保存在 Git 存储库中的本地 YAML 文件。对本地 YAML 文件进行更改将更新 CloudBees Rollout 功能标记数据。我们利用 Git 的分布式版本控制系统的特性，即使在本地工作，也允许您有完整的可追溯性和修订历史的能力。如果直接在 GitHub 中编辑特性开关并将更改提交到主分支，则事件将被触发回仪表板，并反映在 Rollout 的审核日志中。如果更改是通过仪表板完成的，仪表板就像一个 Git 客户机，并将更新 GitHub 上的 YAML 文件。</p>
 
-<p>在我的下一个博客中，我将探讨帮助 DevOps 扩展的另一个关键因素：度量。
-因此，请再次访问。</p>
+<p><strong>一旦你用配置即代码来处理你的特性开关，你就可以实现这些很棒的用例；</strong></p>
+
+<p><strong>1. 治理和责任感：</strong>因为所有更改都在Git中，所以每次提交都会产生审计跟踪。你知道谁更改了你的特性开关中的内容和时间。因为所有的事情都是由 PR（Pull Rquest）管理的，所以你可以让团队成员批准你的变更，以增加责任感。</p>
+
+<p><strong>2. 渐进式交付、变更和版本控制：</strong>特性开关允许您将功能部署与代码发布分离。当将功能提交到主分支时，通过将功能包装到特性开关中，消除长期的分支。特性可以保持“关闭”状态，直到代码完成。在 Git 中减少分支可以让你做渐进式发布（通过少量发布，增加发布速度）。基于 GitOps 的特性开关方法可以确保每一个变更都被考虑在内。</p>
+
+<p><strong>3. 克隆环境：</strong>通过配置及代码，您可以克隆环境（dev、QA、prod、功能 X、Y、Z）之间的功能配置，通过跟踪功能切换变更。</p>
+
+<p><strong>4. 特性开关自动化：</strong>当您有描述系统期望状态的可编辑的配置文件时，您很容易基于各种期望状态运行自动化（用于测试或部署目的）。您可以使用 GitOps 方法将特性开关标记的功能自动部署到用户群的一个子集或各种分段。当将特性开关作为一个配置文件时，很容易将系统迁移到新的期望的状态。其他替代方法，如使用 rest API 更改特性标志的传统 CI 过程，则更为复杂。与等待对服务器的身份验证，等待网络向服务器报告然后。。。然后。。。相比，使用 GitOps 管理特性开关就像更改 Git 仓库中的配置文件以更改状态一样简单。</p>
+
+<p><strong>5. 通过 Git 命令回滚功能变更：</strong> 每个开发人员都曾经遇到过，需要回滚某个提交。您可以通过一个简单的 git revert 命令使用特性开关来实现这一点。由于 CloudBees Rollout 将配置代码保存在 Git 中，因此您可以使用分支隔离更改以及时回滚，并在并行流中工作，而不会影响生产/预备环境。</p>
+
+<p>尽管采用 GitOps 仍然是团队的理想选择，您也可以使用 CloudBees Rollout 来管理您的特性开关。API集成允许您链接到您最喜欢的性能、分析、监控和 APM 工具，使之更容易适应，而不管您如何管理 Dev 和 Ops 之间的桥梁。</p>
 
 </div>
 
@@ -344,15 +338,6 @@ var trackOutboundLink = function(id, url) {
 
           
 
-<h2>参考</h2>
-<ul>
-	
-	<li><a href="/wechat/articles/2020/03/2020-03-02-good-to-great-with-devops/">DevOps 的出色表现</a></li>
-	
-	<li><a href="/wechat/articles/2020/02/2020-02-21-the-abc-of-devops-implementation-with-containerization-and-docker/">使用容器化和 Docker 实现 DevOps 的基础知识</a></li>
-	
-</ul>
-
         </div>
       </div>
       
@@ -363,14 +348,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-09-feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “为 DevOps 构建新的运营模型”
-  </a> 更新于：November 6, 2019
+    “特性开关和 GitOps, 5个用例帮您搞定。”
+  </a> 更新于：March 9, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/03/2020-03-09-feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -389,25 +374,19 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
           <li class="db dib-l mr3">
             <a class="tag" href="/tags/devops">
-              DevOps
+              devops
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B">
-              运营转型
+            <a class="tag" href="/tags/cloudbees">
+              cloudbees
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/03/2020-03-09-feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga/" class="link">
-              特性开关和 GitOps, 5个用例帮您搞定。
-            </a>
-          </li>
         
       
         
@@ -442,6 +421,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
       
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/" class="link">
+              为 DevOps 构建新的运营模型
+            </a>
+          </li>
         
       
         
@@ -549,7 +534,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/11\/2019-11-06-building-new-operating-model-devops\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/03\/2020-03-09-feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
