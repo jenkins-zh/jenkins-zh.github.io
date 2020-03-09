@@ -37,6 +37,21 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2020-03-09/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2020-03-09/</guid>
+      <description>社区培训教程
+为了让使用 Jenkins 用户有一个清晰的学习路线。
+下次会议时间：下周一
+宣传 志愿者征集
+文档 https://jenkins-zh.cn/tutorial/ 作为基础，继续完善
+ 结构  针对不同层次的用户 下次讨论具体内容的会议  内容  比较少  格式  生成来一个 PDF 文件（流水线自动完成），需要调研工作 @lisong   教程结构  最佳实践  流水线+共享库 @cuidan   视频 https://space.bilibili.com/433584098
+ 剪辑  需求  初学者  环境搭建 jenkins+kubernetes jenkins 运行机制  master、agent 之间是如何通讯的 插件扩展机制  devops 的思路、流程、案例  自由风格转流水线  流水线+共享库 测试环境 生产环境发布  如何与现有系统集成  API http://surenpi.com/blog/devops/jenkins/api/  参考的项目（k8s）  演练场（playground）@yJunS  https://kubernetes.</description>
+    </item>
+    
+    <item>
       <title>特性开关和 GitOps, 5个用例帮您搞定。</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-09-feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga/</link>
       <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
