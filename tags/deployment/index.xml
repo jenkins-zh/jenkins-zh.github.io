@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deployment on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/deployment/</link>
+    <description>Recent content in Deployment on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 10 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/deployment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Kubernetes 和 Jenkins 创建一个 CI/CD 流水线</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/</guid>
+      <description>CI/CD 尝试解决什么问题？ CI/CD 同 DevOps、Agile、Scrum、Kanban、自动化以及其他术语一样，是一个一起被经常提及的专用术语。有时候，它被当做工作流的一部分，但是并没有搞清楚这是什么或者为什么它会被采用。对于年轻的 DevOps 工程师来说，使用 CI/CD 理所当然已经成为了常态，可能他们并没有看到“传统”的软件发布流程而因此不欣赏 CI/CD。
+CI/CD 表示持续集成/持续交付和/或部署。如果一个团队不接入 CI/CD 流程就必须要在产生一个新的软件产品时经历如下的阶段：
+ 产品经理（代表了客户利益）提供了产品需要有的功能以及产品需要遵从的行为。文档必须要越详实越好。
+ 具有业务分析能力的开发人员开始对应用进行编码，执行单元测试，然后将结果提交到版本控制系统（例如 git）。
+ 一旦开发阶段完成，项目移交到 QA。对产品进行多轮测试，比如用户验收测试，集成测试，性能测试。在此期间，直到 QA 阶段完成之前都不会有任何代码上的改动。如果有任何 bug 被发现，需要回退给开发人员做修改，然后再将产品移交给 QA。
+ 一旦 QA 完成，操作团队会将代码部署到生产环境中。
+  上述工作流存在一些弊端：
+ 首先，从产品经理提出需求到产品具备开发条件中间会消耗太多时间。
+ 对开发人员来说，从写了一个月甚至更长时间的代码中去定位问题真的很困难。请记住，bug 只能是在开发阶段完成 QA 阶段开始后被发现。
+ 当有一个*紧急的*代码修复比如像一个严重的 bug 需要热修复时，QA 阶段可能会因为需要尽快部署而被缩短。
+ 不同的团队之间很少会有协作，当 bug 出现的时候，人们就开始互相甩锅互相指责。每个人从一开始只是关心项目中自己的那部分工作而忽视了共同的目标。
+  CI/CD 通过引入自动化来解决上述的问题。代码中的每次改动一旦推送至版本控制系统，进行测试，然后在部署到用户使用的生产环境之前部署至预生产/UAT 环境进行进一步的测试。自动化确保了整体流程的快速，可信赖，可重复，以及不容易出错。
+所以，什么是 CI/CD 呢？ 关于这个主题已经有著作撰写完毕。如何，为什么，以及什么时候在你的架构中使用。然而，我们总是倾向于轻理论重实践。话虽如此，下文简单介绍了一下一旦修改的代码被提交后会执行哪些自动化步骤：
+ 持续集成（CI）：第一步不包括 QA。换句话说，它不关注代码是否提供了用户需要的功能。相反，它确保了代码的质量。通过单元测试，集成测试，开发人员能很快的就会发现代码质量中的缺陷。我们可以增加代码覆盖率的检查以及静态分析让代码质量保证做的更加完善。
+ 用户验收测试：这是 CD 流程的第一部分。这个阶段，会对代码执行自动化测试从而确保代码符合用户的期望。比如说，一个 web 应用没有任何报错产生能正常运行，但是客户想让访问者在导航到主页之前先进入到登录页面。但是当前的代码直接让访问者导航到了主页面，这与客户的需求不相符。这种问题会在 UAT 测试时被指出。而在非 CD 环境，就成了人工的 QA 测试人员的工作。</description>
+    </item>
+    
+  </channel>
+</rss>

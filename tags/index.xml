@@ -131,7 +131,7 @@
     <item>
       <title>Ci/Cd</title>
       <link>https://jenkins-zh.cn/tags/ci-cd/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/ci-cd/</guid>
       <description></description>
@@ -188,6 +188,15 @@
       <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/community-bridge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://jenkins-zh.cn/tags/configuration/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/configuration/</guid>
       <description></description>
     </item>
     
@@ -255,6 +264,15 @@
     </item>
     
     <item>
+      <title>Deployment</title>
+      <link>https://jenkins-zh.cn/tags/deployment/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Developer</title>
       <link>https://jenkins-zh.cn/tags/developer/</link>
       <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
@@ -266,7 +284,7 @@
     <item>
       <title>Devops</title>
       <link>https://jenkins-zh.cn/tags/devops/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/devops/</guid>
       <description></description>
@@ -608,7 +626,7 @@
     <item>
       <title>K8s</title>
       <link>https://jenkins-zh.cn/tags/k8s/</link>
-      <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/k8s/</guid>
       <description></description>
@@ -635,7 +653,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://jenkins-zh.cn/tags/kubernetes/</link>
-      <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/kubernetes/</guid>
       <description></description>
