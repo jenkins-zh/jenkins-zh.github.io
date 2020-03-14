@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/meeting/2020-03-13/</loc>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/</loc>
     <lastmod>2020-03-10T00:00:00+00:00</lastmod>
   </url>
@@ -731,7 +736,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/meeting/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -37,6 +37,18 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2020-03-13/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2020-03-13/</guid>
+      <description> Jenkins 中文社区基础设施运维
+项目  https://github.com/jenkins-zh/jenkins-cli/ https://github.com/jenkins-zh/wechat-backend https://github.com/jenkins-zh/docker-zh https://github.com/jenkins-zh/mirror-proxy https://github.com/jenkins-zh/jenkins-zh  https://updates.jenkins.io/update-center.json https://updates.jenkins-zh.cn/update-center.json
+服务器  阿里云2台  其中一台有外网  UCloud 规划中  告警 安全 优化 考虑 HA
+自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）  长期  自动化运维以及运维团队的培养   </description>
+    </item>
+    
+    <item>
       <title>使用 Kubernetes 和 Jenkins 创建一个 CI/CD 流水线</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
