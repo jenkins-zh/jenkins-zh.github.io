@@ -45,7 +45,7 @@
         "date": "2020-03-14 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
-        "content": " Jenkins 中文社区教程编写讨论\n介绍 https://github.com/jenkins-zh/jenkins-zh-courses\n交互式教程，可以有 UI 访问\n案例  构建 maven 项目，推送镜像 @donhui 构建 gradle 项目，推送镜像 @donhui 构建 golang 项目，推送镜像 @zhaoying818 构建 nodejs 项目，推送镜像 @yJunS 构建 helm chart 项目  下次会议时间：下周六8pm 03-21\n",
+        "content": " Jenkins 中文社区教程编写讨论\n介绍 https://github.com/jenkins-zh/jenkins-zh-courses\n交互式教程，可以有 UI 访问\n案例  构建 maven 项目，推送镜像 @donhui 构建 gradle 项目，推送镜像 @donhui 构建 golang 项目，推送镜像 @zhaoying818 构建 nodejs 项目，推送镜像 @yJunS 构建 helm chart 项目 @linuxsuren  下次会议时间：下周六8pm 03-21\n",
         "auhtor": "",
         "translator": "",
         "original": "",
