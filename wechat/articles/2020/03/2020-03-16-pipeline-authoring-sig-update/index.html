@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>Jenkins 对审计日志的支持 - Jenkins 中文社区</title>
+     <title>流水线编撰 SIG 公告 - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="Outreachy 实习生提供了 Jenkins 对审计日志的支持">
+    <meta name="description" content="带你了解公告 SIG 的变化，从而更好地利用 Jenkins 流水线">
     
     
-    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+    <meta name="keywords" content="Pipeline,SIG">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 对审计日志的支持" />
-<meta property="og:description" content="Outreachy 实习生提供了 Jenkins 对审计日志的支持" />
+<meta property="og:title" content="流水线编撰 SIG 公告" />
+<meta property="og:description" content="带你了解公告 SIG 的变化，从而更好地利用 Jenkins 流水线" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/" /><meta property="article:published_time" content="2019-02-13T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-02-13T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-16-pipeline-authoring-sig-update/" /><meta property="article:published_time" content="2020-03-16T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-03-16T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 对审计日志的支持">
-<meta itemprop="description" content="Outreachy 实习生提供了 Jenkins 对审计日志的支持">
-
-
-<meta itemprop="datePublished" content="2019-02-13T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-02-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="58">
+<meta itemprop="name" content="流水线编撰 SIG 公告">
+<meta itemprop="description" content="带你了解公告 SIG 的变化，从而更好地利用 Jenkins 流水线">
 
 
+<meta itemprop="datePublished" content="2020-03-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="60">
 
-<meta itemprop="keywords" content="community,outreachy,outreachy2018," />
+
+
+<meta itemprop="keywords" content="Pipeline-Authoring,SIG,community,opensource," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 对审计日志的支持"/>
-<meta name="twitter:description" content="Outreachy 实习生提供了 Jenkins 对审计日志的支持"/>
+<meta name="twitter:title" content="流水线编撰 SIG 公告"/>
+<meta name="twitter:description" content="带你了解公告 SIG 的变化，从而更好地利用 Jenkins 流水线"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -203,16 +203,16 @@ var trackOutboundLink = function(id, url) {
     
       
         <h3 class="f4 dib author">
-            Zhao Xiaojie
+            wenjunzhangp
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          Contributor of @jenkinsci . Jenkins press contact in China. Jenkins Chinese community leader.
+          All things are difficult before they are easy. 
         </p>
       
-      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/wenjunzhangp" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -221,9 +221,9 @@ var trackOutboundLink = function(id, url) {
 
   
   <div>
-    作者：<span class="originalAuthor">jvz</span>
+    作者：<span class="originalAuthor">Marky Jackson</span>
     <div>
-      <a class="originalLink" href="" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://jenkins.io/blog/2020/03/02/pipeline-authoring-sig-update/" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -243,17 +243,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-20-java11-preview-availability/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Java 11 预览支持已在 Jenkins 2.155&#43; 中可用 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/readme/" class="dib f6 pr1 hover-bg-light-gray br-100" title="">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/" class="dib f6 pr1 hover-bg-light-gray br-100" title="使用 Kubernetes 和 Jenkins 创建一个 CI/CD 流水线">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -273,13 +265,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 对审计日志的支持</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">流水线编撰 SIG 公告</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Outreachy 实习生提供了 Jenkins 对审计日志的支持
+      带你了解公告 SIG 的变化，从而更好地利用 Jenkins 流水线
     </div>
   
 
@@ -290,23 +282,43 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p>今年是 Jenkins 项目首次参与 <a href="https://www.outreachy.org/">Outreachy</a>. Outreachy 是一个类似于 Google Summer of Code (GSoC) 的项目，
-实习生有偿地为开源项目工作。
-关键的不同之处在于，Outreachy 面向那些在他们国家的技术行业中受到歧视或偏见的小众群体。
-当我了解到这个项目后，由于它的包容性与社区建设与我的理念相符就立即自愿作为导师来参与。
-我很高兴地说，Jenkins 项目和我的雇主 <a href="https://www.cloudbees.com">CloudBees</a> 对此非常支持。</p>
 
-<p>基于我们之前在 GSoC 上指导学生的付出，今年我们已经加入 Outreachy 并指导了两个实习生。
-在 Outreachy 的这次活动中，我们的实习生 <a href="https://github.com/davidolorundare">David Olorundare</a> 和 <a href="https://github.com/Lathaguna">LathaGunasekar</a> 将与我一起研发 <a href="https://github.com/jenkinsci/audit-log-plugin">Jenkins 对审计日志的支持</a>。
-我很高兴欢迎 David 和 Latha, 并期待他们能在软件工程专业和对开源社区的贡献上都有所收获。
-请继续关注后续博客对他们的介绍。</p>
 
-<p>该审计日志支持项目在 Jenkins 和 <a href="https://logging.apache.org/log4j/2.x/">Apache Log4j</a> 之间形成了一个新的链接，这给予我们的实习生学习
-更多有关开源治理和认识新朋友的机会。
-作为奖金，该项目旨在为支持高级的业务检测提供便利，例如：在认证事件中检测潜在的入侵尝试。
-我们也会编写一个 <a href="https://github.com/jenkinsci/jep">JEP</a> 来描述由插件提供的审计日志 API,以及其他插件如何定义并记录除 Jenkins 核心以外插件的审计事件。</p>
+<p><img src="cover.jpg" alt="封面图" /></p>
 
-<p>我期待我们将会一起完成了不起的作品，而且我希望在将来能够帮助更多的 Outreachy 实习生！</p>
+<h2 id="什么是流水线撰写特别兴趣小组">什么是流水线撰写特别兴趣小组</h2>
+
+<p>这个特别的兴趣小组旨在改善和策划 Jenkins Pipelines 的创作经验。这包括 <code>Jenkinsfile</code>、共享库的语法、代码共享、重用、流水线、共享库的测试、IDE 集成、其他开发工具、文档、最佳实践、示例。</p>
+
+<h2 id="流水线撰写特殊兴趣小组的重点领域是什么">流水线撰写特殊兴趣小组的重点领域是什么</h2>
+
+<ul>
+<li>语法-如何编写 <code>Jenkinsfiles</code> 和共享库。</li>
+<li>代码共享和重用-共享库和未来的改进。</li>
+<li>测试-Jenkinsfile 和共享库的单元和功能测试。</li>
+<li>IDE 集成，编辑器和其他开发工具-IDE 插件，可视化编辑器等。</li>
+<li>文档-参考文档，教程等。</li>
+<li>最佳做法-在 Jenkins Pipeline 中定义，维护和宣传最佳做法。</li>
+<li>示例-现实世界中的 <code>Jenkinsfile</code> 和共享库演示了如何利用流水线的各种功能，以及基本或入门版的 <code>Jenkinsfile</code> 用于常见模式，新用户可以将其用作起点。</li>
+</ul>
+
+<h2 id="我们已经做了哪些">我们已经做了哪些</h2>
+
+<p>新年伊始，成员们聚在一起讨论 2020 年的路线图。在最初的讨论中，我们认为最好检查一下先前会议的目标并确定最佳的前进道路。</p>
+
+<p>双方共同决定要更好地制定路线图。我们需要更好地了解我们打算帮助谁。我们认为创建角色非常有益。角色是虚构的角色，我们根据研究结果创建了这些角色，以代表可能使用 Jenkins 流水线的不同用户类型。创建角色可以帮助我们走出自我。它可以帮助我们认识到不同的人有不同的需求和期望，也可以帮助我们确定要为其制定路线图的用户。角色使当前的任务变得不那么复杂，可以指导我们的构思过程，并且可以帮助我们实现为目标用户组创造良好用户体验的目标。许多工作可以在这里找到：<a href="https://docs.google.com/document/d/1CdyzJwt50Wk3uUNsLMl2d4w2MGYss-phqet0s-KjbEs/edit">https://docs.google.com/document/d/1CdyzJwt50Wk3uUNsLMl2d4w2MGYss-phqet0s-KjbEs/edit</a>。这个想法是将角色映射到成熟度模型，然后再将成熟度模型映射到实际文档。该成熟度模型可以在这里找到：<a href="https://drive.google.com/file/d/1ByzWlPU0j1qM_gqspJppkNKkR5ZVLWlB/view">https://drive.google.com/file/d/1ByzWlPU0j1qM_gqspJppkNKkR5ZVLWlB/view</a>。</p>
+
+<h2 id="我如何参与其中">我如何参与其中</h2>
+
+<p>我们一直定期开会以定义角色，以帮助我们更好地创建 SIG 路线图。我们每周开会两次，一次在星期四（EMEA）时区，另一次在星期五（美国）时区。会议记录可以在这里找到：<a href="https://docs.google.com/document/d/1EhWoBplGl4M8bHz0uuP-iOynPGuONjcz4enQm8sDyUE/edit#">https://docs.google.com/document/d/1EhWoBplGl4M8bHz0uuP-iOynPGuONjcz4enQm8sDyUE/edit#</a>,如果您想参与的话，可以查看日历在这里：<a href="https://jenkins.io/event-calendar/">https://jenkins.io/event-calendar/</a>。会议的先前记录位于：<a href="https://www.youtube.com/watch?v=pz_kPpb9C1w&amp;list=PLN7ajX_VdyaOKKLBXek6iG8wTS24Ac7Y3">https://www.youtube.com/watch?v=pz_kPpb9C1w&amp;list=PLN7ajX_VdyaOKKLBXek6iG8wTS24Ac7Y3</a>。</p>
+
+<h2 id="下一步">下一步</h2>
+
+<p>我们有很多工作要做，期待您的帮助。如果您想加入我们，请查看会议链接。如果您想查看角色并提供反馈，请查看链接。完成角色配置工作后，我们将开始确定可用的文档，并在 Doc SIG 的帮助下确保我们有足够的文档。然后，我们最终将开始着手构建工具，以帮助社区更好地利用 Jenkins 中的流水线。</p>
+
+<h2 id="联系我们">联系我们</h2>
+
+<p>如果您想与 Pipeline-Authoring SIG 取得联系，可以通过加入 <a href="https://gitter.im/jenkinsci/pipeline-authoring-sig/">Pipeline-Authoring SIG gitter channel</a> 或通过 <a href="https://groups.google.com/forum/#!forum/jenkins-pipeline-authoring-sig/">Pipeline-Authoring SIG mailing list</a> 来进行联系。</p>
 
 </div>
 
@@ -329,6 +341,13 @@ var trackOutboundLink = function(id, url) {
 
           
 
+<h2>参考</h2>
+<ul>
+	
+	<li><a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/">T-Mobile 和 Jenkins 案例研究</a></li>
+	
+</ul>
+
         </div>
       </div>
       
@@ -339,14 +358,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-16-pipeline-authoring-sig-update/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 对审计日志的支持”
-  </a> 更新于：February 13, 2019
+    “流水线编撰 SIG 公告”
+  </a> 更新于：March 16, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/03/2020-03-16-pipeline-authoring-sig-update.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">改善此页</a>
 
@@ -364,32 +383,32 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
+            <a class="tag" href="/tags/pipeline-authoring">
+              Pipeline-Authoring
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/sig">
+              SIG
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
             <a class="tag" href="/tags/community">
               community
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/outreachy">
-              outreachy
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/outreachy2018">
-              outreachy2018
+            <a class="tag" href="/tags/opensource">
+              opensource
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/03/2020-03-16-pipeline-authoring-sig-update/" class="link">
-              流水线编撰 SIG 公告
-            </a>
-          </li>
         
       
         
@@ -399,101 +418,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/" class="link">
-              使用 Visual Studio Code 验证 JCasC 配置文件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/" class="link">
-              Jenkins 2019 年 Board 和 Officer positions 选举更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/" class="link">
-              Jenkins World 贡献者峰会及专家答疑展位
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/" class="link">
-              让我们庆祝 Jenkins 对 Java 11的支持
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/" class="link">
-              Jenkins 文档特别兴趣小组
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
-              介绍：成为一名 Jenkins 贡献者的旅程
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-20-cdf-launch/" class="link">
-              Jenkins 正在加入持续交付基金会
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" class="link">
-              Jenkins 已经被 Google Summer Of Code 2019 接受！
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-20-java11-preview-availability/" class="link">
-              Java 11 预览支持已在 Jenkins 2.155&#43; 中可用
-            </a>
-          </li>
-        
-      
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link">
-              成为一名 Jenkins 贡献者：对新手友好的工单
+            <a href="/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" class="link">
+              介绍 Jenkins 模板引擎
             </a>
           </li>
         
@@ -522,7 +448,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/02\/2019-02-13-outreachy-audit-log-plugin\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/03\/2020-03-16-pipeline-authoring-sig-update\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

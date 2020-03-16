@@ -176,7 +176,7 @@
     <item>
       <title>Community</title>
       <link>https://jenkins-zh.cn/tags/community/</link>
-      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/community/</guid>
       <description></description>
@@ -716,7 +716,7 @@
     <item>
       <title>Opensource</title>
       <link>https://jenkins-zh.cn/tags/opensource/</link>
-      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/opensource/</guid>
       <description></description>
@@ -761,7 +761,7 @@
     <item>
       <title>Pipeline Authoring</title>
       <link>https://jenkins-zh.cn/tags/pipeline-authoring/</link>
-      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/pipeline-authoring/</guid>
       <description></description>
@@ -881,6 +881,15 @@
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/shipper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sig</title>
+      <link>https://jenkins-zh.cn/tags/sig/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/sig/</guid>
       <description></description>
     </item>
     

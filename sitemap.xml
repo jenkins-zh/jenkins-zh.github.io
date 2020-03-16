@@ -12,6 +12,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-16-pipeline-authoring-sig-update/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/meeting/2020-03-14/</loc>
+    <lastmod>2020-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/meeting/2020-03-13/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
   </url>
@@ -736,7 +746,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/meeting/</loc>
-    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -912,7 +922,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/community/</loc>
-    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1290,7 +1300,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/opensource/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1320,7 +1330,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/pipeline-authoring/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1403,6 +1413,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/sig/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/spec/</loc>
     <lastmod>2019-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1474,7 +1490,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
