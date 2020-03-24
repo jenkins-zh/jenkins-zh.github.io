@@ -12,6 +12,21 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-24-7-devops-toolchains-orchestration-solutions-you-may-not-know/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/meeting/2020-03-18/</loc>
+    <lastmod>2020-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-17-jenkins-release/</loc>
+    <lastmod>2020-03-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-16-pipeline-authoring-sig-update/</loc>
     <lastmod>2020-03-16T00:00:00+00:00</lastmod>
   </url>
@@ -397,6 +412,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</loc>
+    <lastmod>2019-07-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</loc>
     <lastmod>2019-07-15T00:00:00+00:00</lastmod>
   </url>
@@ -409,11 +429,6 @@
   <url>
     <loc>https://jenkins-zh.cn/about/branching-strategy/</loc>
     <lastmod>2019-07-09T19:56:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</loc>
-    <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -746,7 +761,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/meeting/</loc>
-    <lastmod>2020-03-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -994,7 +1009,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1166,7 +1181,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1378,7 +1393,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/release/</loc>
-    <lastmod>2019-07-09T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1460,6 +1475,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/toolchains/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/updatebot/</loc>
     <lastmod>2019-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1490,7 +1511,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,46 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>7 款你或许不知道的 DevOps 工具链编排解决方案</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-24-7-devops-toolchains-orchestration-solutions-you-may-not-know/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-24-7-devops-toolchains-orchestration-solutions-you-may-not-know/</guid>
+      <description>这七款 DevOps 工具将会帮助你用来考虑将哪个工具包含到你的工具链中。
+团队之间的透明化沟通在应用程序开发过程中成为了一项巨大的挑战。一个组织中的大部分团队的独立性已经有相当长时间了。这也就意味着开发团队、业务分析团队、QA 以及业务运营团队之间的工作距离越来越疏远。
+在交付结果的时候，公司也因此遭受了不少损失。太长的软件交付流程导致了大多数操作的延迟。业务领域的任何人都能理解这意味着什么。仅仅是没有足够的产品创新。似乎这还不够，对市场需求的反应还不是那么令人满意。
+根据一位来自于提供安全编排解决方案的著名公司 Siemplify 的 CEO，Amos Stern 的说法，“使用带有安全编排解决方案的 DevOps 方法可以让你的公司在提高生产力这件事上变得一切皆有可能。”
+这些实践尝试将团队凝聚在一起从而避免各自为战。它们以在应用交付时确保高效为目标。这种方法提升了公司软件交付的功能性并且确保产生更少的风险。它们同样负责消除在 IT 响应中出现的各种障碍。
+但是这些实践没有工具是不能正常运转的。在不同 DevOps 环境下使用不同的控制工具的解决方案称为“DevOps 工具链编排解决方案”。主要有以下工具组成。
+或许你同样感兴趣: 2019 年你应该知道的 5 款 DveOps 工具
+1. 源码管理（SCM） 你为公司构建的所有公司想要表达的东西都是通过代码实现的。但是代码同样有窍门的，你必须确保它能尽可能容易地被理解。你必须对它们进行控制和操作分支。如果做不到这些，就有可能面临乱糟糟的情况。
+为此，它们拥有的 SCM 包括 GitHub 和 Gitlab。
+2. 持续集成（CI） 现在软件开发已经完全需要依赖 CI。这项可操作的技术可以让开发任何东西变得容易。安装一个可设置的 CI 是很重要的，这可以:
+ 减少与集成相关的任何问题
+ 提升代码质量
+ 提升沟通交流
+ 提高发布速度
+ 减少 bug
+  3. 构建工具 在继续构建组织时，你需要确定哪些工具是重要的哪些又不是你需要的。这不仅仅是重要的，如果你想削减开销这也是必须的。记住，一个公司不注意开支花销的话是很容易出现财务问题的。为此，你需要最好的构建工具来发展你的公司。
+4. 测试 任何业务都存在风险。除了危险的风险之外，还有质量保证的整个方面。如果你想实现你的业务目标的话，拥有准确实时这两方面的考量就变得至关重要。
+例如 JUnit 和 Mocha 以及其他的一些测试工具可以在追踪它们怎样运行这方面成为可能。
+5. 制品管理 一旦你的项目能顺利推进，你需要存储你在流水线中生成的产物。它们需要跟源码存放在 SCM 一样的方式进行保存。存储制品是在需要获取过去产品版本并进行优化时最可靠的方法。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 长期支持版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-17-jenkins-release/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-17-jenkins-release/</guid>
+      <description>2.176.2 (2019-07-17)  用于等待外部进程完成的线程池可能会使类加载器泄露。 当分离的插件（其插件功能曾经是 Jenkins 本身的一部分）作为已经存在的其他插件的隐含依赖时，确保 Jenkins 在启动时对其进行安装。这简化了不使用更新中心的专用安装方案的兼容性，例如当从带有某些插件的预包装 Docker 镜像运行 Jenkins 时。 更新 WinP 从 1.27 到 1.28 ，以修复 Windows 正常进程关闭逻辑中缺少 DLL 和控制台窗口闪退的问题 用更简单的消息替换一些与代理通道有关的异常堆栈跟踪。  2.176.3 (2019-08-28)  当其他插件对其仅具有可选依赖时，插件管理器 UI 不再阻止禁用插件。 解决使用 &amp;ldquo;记住我&amp;rdquo; 时的性能问题。 (由 2.160 引入的缺陷回归) 测试代理配置时不要抛出异常。 (由 2.168 引入的缺陷回归) 防止 Jenkins 重启和用户会话无效时的偶发 IllegalStateException 异常。  2.176.4 (2019-09-25)  2.176.4 和 2.190.1 包含相同的安全修复程序。我们将提供 2.176.x LTS 系列的附加版本，以允许管理员应用安全更新，而无需进行重大升级。  2.190.1  修复 RSS / Atom 提要中缺少的绝对 URL 。 (由 2.</description>
+    </item>
     
     <item>
       <title>流水线编撰 SIG 公告</title>
@@ -898,6 +934,15 @@ CI/CD 流水线 Jenkins 是 CI/CD 的同义词，它是自动化开发、部署�
     </item>
     
     <item>
+      <title>Jenkins 每周版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</link>
+      <pubDate>Thu, 18 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</guid>
+      <description>2.184 (2019-07-07)  注销时，移除过期的会话 cookies ，阻止头信息中的相关错误太大。 (issue 25046) 当运行在 Java 11 上时，增加缺失类相关的 telemetry 实验。 (issue 57223) 修复使用“记住我”时的性能问题（于 2.160 中退化） (issue 56243) 开发者：清理 AbstractCloudSlave 的构造器 (pull 4086)  2.183 (2019-06-30)  在 Jenkins 的 URL 配置增加对 IPv6 地址的支持。 (issue 58041) 更新 args4j 2.0.31 到 2.33。 (issue 57959) 开发者：允许插件为 CodeMirror 文本域控制提供 onBlur() 的支持。 (issue 58240) 开发者：使得 WindowsUtil 可以让插件使用。 (pull 4038) 内部：更新 maven-war-plugin 3.0.0 到 3.2.3 (issue 47127)  2.182 (2019-06-23)  当删除目录时，移除 Windows 下的只读标记。 (issue 57855) 更新 Remoting 3.</description>
+    </item>
+    
+    <item>
       <title>让我们庆祝 Jenkins 对 Java 11的支持</title>
       <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
@@ -927,15 +972,6 @@ Kubernetes 已经成为容器技术中必不可少的平台，甚至会作为未
 而对于参加本次工作坊实践活动的同学，可以根据自身的情况选择练习上面的题目或者下面进阶的题目：
  构建 Maven 项目并发布到 Nexus 使用私有 Nexus 中的依赖进行构建 构建 Docker 镜像并推送到 Harbor 构建 Heml Charts 并推送到 Chartmuseum  我们期望每一位参加的同学都可以从中学习并掌握基于 Jenkins 的持续交付技术，助力你所在团队的 DevOps 实践。更多的实训项目请参考 https://jenkins-zh.cn/about/course/#17
 最后，让我们一起感谢京东云为我们本次活动提供的 Kubernetes 云计算资源。因此，每一位参加练习的同学，只需要带上自己的笔记本，以及 SSH 客户端即可。</description>
-    </item>
-    
-    <item>
-      <title>Jenkins 每周版更新</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</link>
-      <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</guid>
-      <description>2.184 (2019-07-07)  注销时，移除过期的会话 cookies ，阻止头信息中的相关错误太大。 (issue 25046) 当运行在 Java 11 上时，增加缺失类相关的 telemetry 实验。 (issue 57223) 修复使用“记住我”时的性能问题（于 2.160 中退化） (issue 56243) 开发者：清理 AbstractCloudSlave 的构造器 (pull 4086)  2.183 (2019-06-30)  在 Jenkins 的 URL 配置增加对 IPv6 地址的支持。 (issue 58041) 更新 args4j 2.0.31 到 2.33。 (issue 57959) 开发者：允许插件为 CodeMirror 文本域控制提供 onBlur() 的支持。 (issue 58240) 开发者：使得 WindowsUtil 可以让插件使用。 (pull 4038) 内部：更新 maven-war-plugin 3.0.0 到 3.2.3 (issue 47127)  2.182 (2019-06-23)  当删除目录时，移除 Windows 下的只读标记。 (issue 57855) 更新 Remoting 3.</description>
     </item>
     
     <item>

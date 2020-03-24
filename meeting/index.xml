@@ -6,10 +6,19 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 14 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2020-03-18/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2020-03-18/</guid>
+      <description> 案例  构建 maven 项目，推送镜像 @donhui  https://github.com/jenkins-zh/jenkins-zh-courses/pull/3/files  构建 gradle 项目，推送镜像 @donhui 构建 golang 项目，推送镜像 @zhaoying818 构建 nodejs 项目，推送镜像 @yJunS 构建 helm chart 项目 @linuxsuren  自定义发行版 </description>
+    </item>
     
     <item>
       <title></title>
