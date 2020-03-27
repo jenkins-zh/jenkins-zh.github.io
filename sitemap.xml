@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-27-jenkins-tutorial-configure-scm-github-triggers-and-git-polling-using-ngrok/</loc>
+    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-26-thanks-ucloud/</loc>
     <lastmod>2020-03-26T00:00:00+00:00</lastmod>
   </url>
@@ -1115,13 +1120,19 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/git/</loc>
-    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/git-secrets/</loc>
     <lastmod>2019-11-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/github/</loc>
+    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1325,6 +1336,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/ngrok/</loc>
+    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/open-source/</loc>
     <lastmod>2019-08-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1422,6 +1439,12 @@
   <url>
     <loc>https://jenkins-zh.cn/tags/remote-file/</loc>
     <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/scm/</loc>
+    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1533,7 +1556,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-03-26T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

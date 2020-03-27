@@ -419,7 +419,7 @@
     <item>
       <title>Git</title>
       <link>https://jenkins-zh.cn/tags/git/</link>
-      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/git/</guid>
       <description></description>
@@ -431,6 +431,15 @@
       <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/git-secrets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://jenkins-zh.cn/tags/github/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/github/</guid>
       <description></description>
     </item>
     
@@ -705,6 +714,15 @@
     </item>
     
     <item>
+      <title>Ngrok</title>
+      <link>https://jenkins-zh.cn/tags/ngrok/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/ngrok/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Open Source</title>
       <link>https://jenkins-zh.cn/tags/open-source/</link>
       <pubDate>Fri, 30 Aug 2019 00:00:00 +0000</pubDate>
@@ -845,6 +863,15 @@
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/remote-file/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scm</title>
+      <link>https://jenkins-zh.cn/tags/scm/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/scm/</guid>
       <description></description>
     </item>
     
