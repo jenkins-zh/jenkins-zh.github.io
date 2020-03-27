@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-26-thanks-ucloud/</loc>
+    <lastmod>2020-03-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-24-7-devops-toolchains-orchestration-solutions-you-may-not-know/</loc>
     <lastmod>2020-03-24T00:00:00+00:00</lastmod>
   </url>
@@ -765,6 +770,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/ops/monitoring-and-alarm-draft/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/partner/</loc>
   </url>
   
@@ -1328,6 +1337,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/ops/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/outreachy/</loc>
     <lastmod>2019-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1519,7 +1533,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
