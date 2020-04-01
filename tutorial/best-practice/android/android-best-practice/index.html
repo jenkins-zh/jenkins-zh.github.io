@@ -222,7 +222,7 @@ var trackOutboundLink = function(id, url) {
 <main>
     <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
         <div class="flex-l">
-            <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+            <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-80">
                 <div class="prose">
                     <h1>使用 Jenkins 构建 Android 应用</h1>
                     
@@ -635,17 +635,25 @@ git commit -m &ldquo;Add &lsquo;Archive&rsquo; stage&rdquo;</p></li>
 <p>刚刚使用 Jenkins 构建了一个简单的 Android 应用程序，覆盖编译，测试，产物输出的全过程，当然其中还有些优化点，比如我们可以将编译环境中的 Gradle 路径挂载到宿主机，避免每次运行都需要下载依赖包。</p>
 
                 </div>
+
+                
             </aside>
-            
-            <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
-                <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+
+            <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky pt3 mt2">
+                <aside
+                    class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
                     作者：<a href="https://github.com/Sakuragi" target="_blank">Sakuragi</a>
+
+                    
+
                     
 
                     
 
+                    <hr>
                     <div style="margin-top: 20px; margin-bottom: 20px;">
-                        <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/tutorial/best-practice/Android/android-best-practice.md" target="_blank">改善此页</a>
+                        <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/tutorial/best-practice/Android/android-best-practice.md"
+                            target="_blank">改善此页</a>
                     </div>
                 </aside>
             </div>
@@ -656,21 +664,17 @@ git commit -m &ldquo;Add &lsquo;Archive&rsquo; stage&rdquo;</p></li>
 
 
 <style>
-div[class=utterances] {
-    max-width: inherit;
-    width: auto;
-    margin-left: 32px;
-    margin-right: 32px;
-}
+    div[class=utterances] {
+        max-width: inherit;
+        width: auto;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
 </style>
-<script src="https://utteranc.es/client.js"
-        repo="jenkins-zh/jenkins-zh.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        label="tutorial"
-        crossorigin="linuxsuren"
-        async>
-</script>
+<script src="https://utteranc.es/client.js" repo="jenkins-zh/jenkins-zh.github.io"
+    issue-term="pathname" theme="github-light" label="tutorial"
+    crossorigin="linuxsuren" async>
+    </script>
 
 
 

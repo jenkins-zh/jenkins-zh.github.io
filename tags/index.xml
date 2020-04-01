@@ -275,7 +275,7 @@
     <item>
       <title>Developer</title>
       <link>https://jenkins-zh.cn/tags/developer/</link>
-      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/developer/</guid>
       <description></description>
@@ -815,7 +815,7 @@
     <item>
       <title>Plugins</title>
       <link>https://jenkins-zh.cn/tags/plugins/</link>
-      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/plugins/</guid>
       <description></description>
@@ -975,11 +975,29 @@
     </item>
     
     <item>
+      <title>Ui</title>
+      <link>https://jenkins-zh.cn/tags/ui/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Updatebot</title>
       <link>https://jenkins-zh.cn/tags/updatebot/</link>
       <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/updatebot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ux</title>
+      <link>https://jenkins-zh.cn/tags/ux/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/ux/</guid>
       <description></description>
     </item>
     

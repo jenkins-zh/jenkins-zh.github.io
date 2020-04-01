@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     
+     <title>动手实践：美化 Jenkins 报告插件的用户界面 - Jenkins 中文社区</title>
+     <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    
+    <meta name="description" content="进来看看，关于 Jenkins 新的 UI 插件介绍以及他们的教程、用法都在这里了">
+    
+    
+    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+    
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     <meta name="generator" content="Hugo 0.53" />
+
+      
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      
+
+    <link href='/dist/main.css' rel='stylesheet' type="text/css" /><style>
+  img.avatar {
+    width: 32px;
+    display: inline;
+  }
+</style>
+<meta property="og:title" content="动手实践：美化 Jenkins 报告插件的用户界面" />
+<meta property="og:description" content="进来看看，关于 Jenkins 新的 UI 插件介绍以及他们的教程、用法都在这里了" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins/" /><meta property="article:published_time" content="2020-04-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-04-01T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="动手实践：美化 Jenkins 报告插件的用户界面">
+<meta itemprop="description" content="进来看看，关于 Jenkins 新的 UI 插件介绍以及他们的教程、用法都在这里了">
+
+
+<meta itemprop="datePublished" content="2020-04-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1030">
+
+
+
+<meta itemprop="keywords" content="ui,ux,plugins,developer," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="动手实践：美化 Jenkins 报告插件的用户界面"/>
+<meta name="twitter:description" content="进来看看，关于 Jenkins 新的 UI 插件介绍以及他们的教程、用法都在这里了"/>
+
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+      
+  </head>
+  <body class="ma0 sans-serif bg-primary-color-light">
+    
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://jenkins-zh.cn" class="link white">
+         Jenkins 中文社区
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/wechat/" class="dim link light-silver"
+            >
+            博客
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/tutorial/" class="dim link light-silver"
+            >
+            教程
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/event/" class="dim link light-silver"
+            >
+            活动
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/partner/" class="dim link light-silver"
+            >
+            合作伙伴
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/about/" class="dim link light-silver"
+            >
+            关于我们
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="http://jenkins.io/zh" class="dim link light-silver"
+            target="_blank">
+            Jenkins 官网
+              
+            
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="email-address">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+      placeholder="搜索文档" type="text"
+      name="email-address" value="" style="background-image:url('/images/icon-search.png');background-size:16px 16px;">
+  </fieldset>
+</form>
+</div>
+
+    <div class="list ma0 pa0 dn dib-l"></div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/jenkins-zh/jenkins-zh/" data-size="large" data-show-count="false" aria-label="Star Jenkins WeChat GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+    
+    <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+      
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+
+  <aside class="mw5 br3 mv3 nested-links">
+    
+    
+      
+        <h3 class="f4 dib author">
+            wenjunzhangp
+        </h3>
+
+      
+      
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
+          All things are difficult before they are easy. 
+        </p>
+      
+      <a href="https://github.com/wenjunzhangp" target="_blank" class="link dim v-mid dib">
+        <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
+<path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
+</svg>
+
+      </a>
+
+  
+  <div>
+    作者：<span class="originalAuthor">Ullrich Hafner</span>
+    <div>
+      <a class="originalLink" href="https://jenkins.io/blog/2020/03/17/ui-plugins/" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
+  </aside>
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+
+		
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-27-jenkins-tutorial-configure-scm-github-triggers-and-git-polling-using-ngrok/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 教程：使用 Ngrok 配置（SCM）Github 触发器和 Git 轮询">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">动手实践：美化 Jenkins 报告插件的用户界面</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      进来看看，关于 Jenkins 新的 UI 插件介绍以及他们的教程、用法都在这里了
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p><img src="cover.jpg" alt="封面图" /></p>
+
+<p>对于 Jenkins 而言，可以使用大量插件来可视化各种构建步骤的结果。有一些插件可用于呈现测试结果、代码覆盖率、静态分析等。所有这些插件通常都会获取给定构建步骤的构建结果，并在用户界面中显示它们。为了呈现这些细节，大多数插件使用静态 HTML 页面，因为这种类型的用户界面是 Jenkins 自 2007 年成立以来的标准可视化。</p>
+
+<p>为了改善这些插件的外观和用户体验，有必要向前发展并合并一些现代 Java Script 库和组件。由于 Blue Ocean 的开发已经停止（请参阅 <a href="https://groups.google.com/forum/?utm_medium=email&amp;utm_source=footer#!msg/jenkinsci-users/xngZrSsXIjc/btasuPpYCgAJ">Jenkins mailing list post</a>），因此插件作者需要自己决定，哪些 UI 技术可帮助完成该任务。但是，现代 UI 组件的种类繁多，以至于只挑选一小部分被证明是有用的并且与 Jenkins 基础 Web 技术兼容的组件是有意义的。而且，合并这样一个新组件的初始设置相当大，因此如果该工作仅需要执行一次，将会有很大的帮助。</p>
+
+<p>本指南介绍了一些 UI 组件，以后所有插件作者都可以使用这些 UI 组件，从而为 Jenkins 中的报告提供丰富的用户界面。为了简化这些库在 Jenkins 作为基于 Java 的 Web 应用程序的上下文中的使用，这些 Java Script 库和组件已打包为普通的 Jenkins 插件。</p>
+
+<p>在以下各小节中，将逐步介绍这些新组件。为了了解如何使用这些组件的插件，我将演示新功能，同时使用新的用户界面增强现有的 <a href="https://github.com/jenkinsci/forensics-api-plugin">Forensics Plugin</a>。由于 Warnings Next Generation 插件也使用这些新组件，因此您可以在 <a href="https://github.com/jenkinsci/warnings-ng-plugin/blob/master/doc/Documentation.md">warnings 插件的文档</a>中或在我们的公共 <a href="https://ci.jenkins.io/job/Plugins/job/warnings-ng-plugin/job/master/pmd/">ci.jenkins.io 实例</a>中看到其他示例，这些示例已经在 warnings 插件的详细信息视图中使用了这些组件。</p>
+
+<h2 id="新的用户界面插件">新的用户界面插件</h2>
+
+<p>新的 Jenkins 插件提供了以下 UI 组件:</p>
+
+<ul>
+<li><a href="https://github.com/jenkinsci/jquery3-api-plugin">jquery3-api-plugin</a>:为 Jenkins 插件提供 <a href="https://jquery.com/">jQuery 3</a>。如其首页所述，jQuery 是一个快速、小型且功能丰富的 JavaScript 库。借助易于使用的 API（可在多种浏览器中使用），使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等事情变得更加简单。兼具多功能性和可扩展性，jQuery 改变了数百万人编写 JavaScript 的方式。</li>
+<li><a href="https://github.com/jenkinsci/bootstrap4-api-plugin">bootstrap4-api-plugin</a>:为 Jenkins 插件提供 <a href="https://getbootstrap.com/">Bootstrap 4</a>。Bootstrap 自称是世界上最流行的前端组件库，用于在 Web 上构建响应式，移动优先的项目。它是一个用于使用 HTML、CSS 和 JS 开发的开源工具包。开发人员可以使用他们的 Sass 变量和 mixins、响应式栅格系统、大量的预构建组件以及基于 jQuery 构建的强大插件，快速构建其思想原型或整个应用程序。</li>
+<li><a href="https://github.com/jenkinsci/data-tables-api-plugin">data-tables-api-plugin</a>:提供 Jenkins 插件的<a href="https://datatables.net/">数据表格</a>。DataTables 是 jQuery Javascript 库的插件。这是一个高度灵活的工具，建立在逐步增强的基础上，可将所有这些高级功能添加到任何 HTML 表中:
+
+<ul>
+<li>上一页，下一页和页面导航</li>
+<li>通过文本搜索过滤结果</li>
+<li>一次按多列对数据排序</li>
+<li>DOM、Javascript、Ajax、服务器端处理</li>
+<li>简单主题化</li>
+<li>手机端兼容友好</li>
+</ul></li>
+<li><a href="https://github.com/jenkinsci/echarts-api-plugin">echarts-api-plugin</a>:为 Jenkins 插件提供 <a href="https://echarts.apache.org/en/index.html">ECharts</a>。ECharts 是一种开放源代码的 JavaScript 可视化工具，用于创建直观、交互式和高度可定制的图表。它可以在 PC 和移动设备上流畅运行，并且与大多数现代 Web 浏览器兼容。</li>
+<li><a href="https://github.com/jenkinsci/font-awesome-api-plugin">font-awesome-api-plugin</a>:为 Jenkins 插件提供 <a href="https://fontawesome.com/">Font Awesome</a>。Font Awesome 具有矢量图标和社交徽标，号称是网络上最受欢迎的图标集和工具包。目前，它包含 1,500 多个免费图标。</li>
+<li><a href="https://github.com/jenkinsci/popper-api-plugin">popper-api-plugin</a>:为 Jenkins 插件提供 <a href="https://popper.js.org/">Popper.js</a>。Popper 只需一行代码即可轻松定位工具提示，弹出窗口或其他任何内容。</li>
+<li><a href="https://github.com/jenkinsci/plugin-util-api-plugin">plugin-util-api-plugin</a>:这个小插件提供了一些帮助程序和基类，以简化 Jenkins 中报告程序的创建。该插件还提供了一组体系结构规则，这些规则可以包含在插件的体系结构测试套件中。</li>
+</ul>
+
+<h2 id="pom-文件必要的改变">POM 文件必要的改变</h2>
+
+<p>为了使用这些插件，您需要将它们作为依赖项添加到插件 pom 中。您可以使用以下代码段将其全部添加:</p>
+
+<pre><code>pom.xml
+&lt;project&gt;
+
+ [...]
+
+  &lt;properties&gt;
+    &lt;plugin-util-api.version&gt;1.0.2&lt;/plugin-util-api.version&gt;
+    &lt;font-awesome-api.version&gt;5.12.0-7&lt;/font-awesome-api.version&gt;
+    &lt;bootstrap4-api.version&gt;4.4.1-10&lt;/bootstrap4-api.version&gt;
+    &lt;echarts-api.version&gt;4.6.0-8&lt;/echarts-api.version&gt;
+    &lt;data-tables-api.version&gt;1.10.20-13&lt;/data-tables-api.version&gt;
+    [...]
+  &lt;/properties&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.jenkins.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;plugin-util-api&lt;/artifactId&gt;
+      &lt;version&gt;${plugin-util-api.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.jenkins.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;font-awesome-api&lt;/artifactId&gt;
+      &lt;version&gt;${font-awesome-api.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.jenkins.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;bootstrap4-api&lt;/artifactId&gt;
+      &lt;version&gt;${bootstrap4-api.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.jenkins.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;echarts-api&lt;/artifactId&gt;
+      &lt;version&gt;${echarts-api.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.jenkins.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;data-tables-api&lt;/artifactId&gt;
+      &lt;version&gt;${data-tables-api.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    [...]
+  &lt;/dependencies&gt;
+
+  [...]
+
+&lt;/project&gt;
+</code></pre>
+
+<p>或者，您可以查看 <a href="https://github.com/jenkinsci/warnings-ng-plugin/blob/master/pom.xml#L249">Warnings Next Generation 插件</a>或<a href="https://github.com/jenkinsci/forensics-api-plugin/blob/master/pom.xml#L76">Forensics API 插件</a>的 POM 文件，它们已经使用了这些插件。</p>
+
+<h2 id="报告的总体结构">报告的总体结构</h2>
+
+<p>在本节中，我将解释 Jenkins 设计的一些基础知识，即 Java 模型和相关的用户界面元素。如果您已经熟悉如何实现报告插件的相应扩展点（请参阅 Jenkins 开发人员指南中的<a href="https://jenkins.io/doc/developer/extensibility/">可扩展性</a>部分），则可以跳过本节，直接进入第 <a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#extending-jenkins-model">3.1</a> 节。</p>
+
+<p>Jenkins 使用 <a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#jenkins-model">图 1</a> 所示的静态对象模型结构来组织项目。</p>
+
+<p><img src="jenkins-design.png" alt="jenkins-design" /></p>
+
+<p>Jenkins 用户界面中的顶级项目是工作（至少是我们感兴趣的顶级项目）。Jenkins 包含多个不同类型的任务（自由式任务、Maven任务、流水线等）。</p>
+
+<p>这些任务中的每一个都包含任意数量的构建（或更确切地说，是运行）。每个版本均由其唯一的版本号标识。Jenkins 插件可以将结果附加到这些版本中，例如生成工件、测试结果、分析报告等。为了附加这样的结果，插件在技术上需要实现并创建存储这些结果的操作。</p>
+
+<p>这些 Java 对象在几种不同的视图中可视化，以下各节将对其进行详细描述。显示所有可用任务的顶级视图如<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#img-jobs">图 2</a> 所示。</p>
+
+<p><img src="jobs.png" alt="jobs" /></p>
+
+<p>插件还可以在这些视图中提供 UI 元素，但这超出了本指南的范围。</p>
+
+<p>每个任务都有一个详细视图，插件可以在其中扩展相应的扩展点并提供摘要框和趋势图。通常，在工作级别上不需要报告者摘要框，因此我仅更详细地描述趋势图，请参见第 <a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#trend-charts">5.5.2</a> 节。</p>
+
+<p><img src="job.png" alt="job" /></p>
+
+<p>每个版本也都有一个详细视图。在这里，插件可以提供类似于“工作详细信息”视图的框的摘要框。通常，插件在这里仅显示简短摘要，并提供指向详细结果的链接，有关示例，请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#img-build">图 4</a>。</p>
+
+<p><img src="build.png" alt="build" /></p>
+
+<p>视图层次结构中的最后一个元素实际上是一个专用视图，它显示特定插件的结果。例如，有些视图可显示测试结果，分析结果等。完全由给定的插件决定应在此处显示哪些元素。在接下来的几节中，我将介绍一些新的 UI 组件，这些组件可用于以愉悦的方式显示相应的结果。</p>
+
+<h3 id="扩展-jenkins-对象模型">扩展 Jenkins 对象模型</h3>
+
+<p>由于报告程序通常以类似的方式构成，因此我用一些其他元素扩展了 Jenkins 的原始对象模型（参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#jenkins-model">图 1</a>），因此创建或实现新的报告程序插件将更加简单。这个新模型如<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#jenkins-reporter-model">图 5</a> 所示。中心元素是构建操作，它将存储插件报告程序的结果。此操作将附加到每个内部版本，并将为报告者保存（并保留）结果。每个动作的详细数据将自动存储在其他文件中，因此，如果用户从不要求提供详细信息，则 Jenkins 的内存占用空间可以保持较小。另外，该动作还用于简化项目动作和趋势图的创建，请参见第 <a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#trend-charts">5.5.2</a> 节。</p>
+
+<h2 id="git-forensics-插件">Git Forensics 插件</h2>
+
+<p>本教程中的元素将全部在新的 <a href="https://github.com/jenkinsci/forensics-api-plugin">Forensics API 插件</a>中使用（实际上，该插件不是新的，它是 <a href="https://github.com/jenkinsci/warnings-ng-plugin">Warnings Next Generation</a> 插件的依赖项）。您可以下载插件内容，并详细了解如何在实践中使用这些新组件。或者，您可以更改此插件，只是为了了解如何对这些新组件进行参数设置。</p>
+
+<p>如果您将 Git 用作源代码管理系统，则此插件将以<a href="https://www.adamtornhill.com/articles/crimescene/codeascrimescene.htm">犯罪现场代码</a>的样式（Adam Tornhill，2013 年 11 月）挖掘存储库，以确定所包含源代码文件的统计信息:</p>
+
+<ul>
+<li>提交总数</li>
+<li>不同作者总数</li>
+<li>创建时间</li>
+<li>最后一次编辑时间</li>
+</ul>
+
+<p>该插件提供了一个新的步骤（或发布后的发布者）该步骤开始了存储库挖掘并将收集的信息存储在 Jenkins 操作中（请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#jenkins-reporter-model">图 5</a>）。然后，您将获得一个新的构建摘要，该摘要显示扫描文件的总数（趋势和构建结果）。从这里，您可以导航到详细信息视图，该视图在可以简单排序和过滤的表中显示扫描的文件。您还将获得一些饼图，这些饼图显示提交历史记录的重要方面。</p>
+
+<p>请注意，插件的此功能仍是概念证明:此步骤的性能在很大程度上取决于 Git 存储库的大小和提交次数。当前，它会扫描每个版本中的整个存储库。在不久的将来，我希望找到一个有志于用增量扫描仪替代这种愚蠢算法的志愿者。</p>
+
+<h2 id="引入新的-ui-组件">引入新的 UI 组件</h2>
+
+<p>如<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#reporter-structure">第 3 节</a>所述，详细信息视图特定于插件。显示的内容以及这些元素的显示方式取决于各个插件作者。因此，在接下来的部分中，我将提供一些示例和新概念，插件可以将这些示例和新概念用作其自身内容的构建块。</p>
+
+<h2 id="现代化图标">现代化图标</h2>
+
+<p>Jenkins 插件通常不经常使用图标。大多数插件都提供了操作图标，仅此而已。如果您打算在其他地方使用图标，那么插件作者将自己留着:推荐的 Tango 图标集已有 10 多年的历史了，如今太有限了。有几个选项可用，但最受欢迎的是 <a href="https://fontawesome.com/">Font Awesome Icon Set</a>。它提供超过 1500 个遵循相同设计准则的免费图标:</p>
+
+<p><img src="font-awesome.png" alt="font-awesome" /></p>
+
+<p>为了在插件中使用 Font Awesome 图标，您只需要依赖于相应的 <a href="https://github.com/jenkinsci/font-awesome-api-plugin">font-awesome-api-plugin</a> 即可。然后，您可以在果冻视图中使用新标签 <code>svg-icon</code> 来使用任何实心图标:</p>
+
+<pre><code>index.jelly
+1 &lt;j:jelly xmlns:j=&quot;jelly:core&quot; xmlns:st=&quot;jelly:stapler&quot; xmlns:l=&quot;/lib/layout&quot; xmlns:fa=&quot;/font-awesome&quot;&gt;
+2
+3 [...]
+4 &lt;fa:svg-icon name=&quot;check-double&quot; class=&quot;no-issues-banner&quot;/&gt;
+5 [...]
+6
+7 &lt;/j:jelly&gt;
+</code></pre>
+
+<p>如果要使用 Java 代码生成视图，则也可以使用 <code>SvgTag</code> 类为此类图标生成 HTML 标记。</p>
+
+<h3 id="栅格布局">栅格布局</h3>
+
+<p>目前，Jenkins 在所有视图中都包含 Boostrap 栅格系统的旧版本和补丁版本（24 列）。该版本与 Boostrap4 或任何依赖 Bootstrap4 的 JS 库不兼容。为了使用 Bootstrap4 功能，我们需要用补丁版本替换 Jenkins 提供的 <code>layout.jelly</code> 文件，该文件不会加载损坏的栅格系统。我打算创建一个PR，以修复 Jenkins 核心中的栅格，但这将需要一些时间。在此之前，您将需要使用 Boostrap4 插件提供的 <code>layout.jelly</code>，请参见下文。</p>
+
+<p>首先要确定的是，哪些元素应显示在插件页面上以及每个元素应占用多少空间。通常，所有可见组件都使用简单的栅格映射到可用空间上。在 Jenkins 视图中，我们具有固定的页眉和页脚以及左侧的导航栏（水平空间的20％）。屏幕的其余部分可由详细信息视图使用。为了简化剩余空间中元素的分布，我们使用 <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap 的栅格系统</a>。</p>
+
+<p><img src="grid.png" alt="grid" /></p>
+
+<p>这意味着，一个视图被分为 12 列和任意数量的行。此栅格系统易于使用（但足够复杂，还可以支持精美的屏幕布局）-我在这里不做详细介绍，请参考 <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap 文档</a>。</p>
+
+<p>对于取证详细视图，我们使用两行两列的简单栅格。由于列数始终为 12，因此我们需要创建两个宽列以填充 6 个标准列。为了在我们的插件中创建这样的视图，我们需要创建一个以果冻文件和相应的 Java 视图模型对象形式给出的视图。以下代码段显示了具有这种布局的视图:</p>
+
+<pre><code>index.jelly
+1 &lt;?jelly escape-by-default='true'?&gt;
+2 &lt;j:jelly xmlns:j=&quot;jelly:core&quot; xmlns:st=&quot;jelly:stapler&quot; xmlns:l=&quot;/lib/layout&quot; xmlns:bs=&quot;/bootstrap&quot;&gt;
+3
+4   &lt;bs:layout title=&quot;${it.displayName}&quot; norefresh=&quot;true&quot;&gt; 
+5       &lt;st:include it=&quot;${it.owner}&quot; page=&quot;sidepanel.jelly&quot;/&gt;
+6       &lt;l:main-panel&gt;
+7           &lt;st:adjunct includes=&quot;io.jenkins.plugins.bootstrap4&quot;/&gt; 
+8           &lt;div class=&quot;fluid-container&quot;&gt; 
+9
+10              &lt;div class=&quot;row py-3&quot;&gt; 
+11                  &lt;div class=&quot;col-6&quot;&gt;
+12                      Content of column 1 in row 1
+13                  &lt;/div&gt;
+14                  &lt;div class=&quot;col-6&quot;&gt; 
+15                      Content of column 2 in row 1
+16                  &lt;/div&gt;
+17              &lt;/div&gt;
+18          
+19              &lt;div class=&quot;row py-3&quot;&gt; 
+20                  &lt;div class=&quot;col&quot;&gt;
+21                      Content of row 2
+22                  &lt;/div&gt;
+23              &lt;/div&gt;
+24
+25          &lt;/div&gt;
+26      &lt;/l:main-panel&gt;
+27  &lt;/bs:layout&gt;
+28 &lt;/j:jelly&gt;
+</code></pre>
+
+<ol>
+<li>使用基于 Bootstrap 的自定义布局:由于 Jenkins 核心包含旧版本的 Bootstrap，因此我们需要替换标准的 layout.jelly 文件。</li>
+<li>导入 Bootstrap4:使用辅助概念完成 JS 和 CSS 组件的导入，这是在 Jenkins 的 Stapler Web 框架中引用静态资源的首选方式。</li>
+<li>整个视图将被放入一个充满整个屏幕（宽度为100％）的流体容器中。</li>
+<li>视图的新行由类 <code>row</code> 指定。附加类 <code>py-3</code> 定义了用于此行的填充，有关更多详细信息，请参见 <a href="https://getbootstrap.com/docs/4.0/utilities/spacing/">Bootstrap Spacing</a>。</li>
+<li>由于 Bootstrap 会自动将一行分成 12 个相等大小的列，因此我们在此定义第一列应占据这 12 列中的 6 列。您也可以省略详细编号，然后 Bootstrap 将自动在可用空间中分发内容。请注意，在大多数情况下这不是您想要的。</li>
+<li>第二列使用剩余空间，即 12 列中的 6 列。</li>
+<li>第二行使用与第一行相同的布局。</li>
+<li>第 1 行只有一列，它将填满整个可用空间。</li>
+</ol>
+
+<p>您还可以根据屏幕的实际可见大小为一行指定不同的列布局。这有助于改善大屏幕的布局。在警告插件中，您将找到一个示例:在小型设备上，有一张可见的卡片可以在轮播中显示一张饼图。 如果要在较大的设备上打开同一页面，则会并排显示两个饼图，并且轮播会被隐藏。</p>
+
+<h3 id="卡片">卡片</h3>
+
+<p>当将插件信息显示为一个块时，通常会显示纯文本元素。通常，这将导致某些无关紧要的网页。为了创建一个更具吸引力的界面，在具有边框、标题、图标等的卡片中显示此类信息是有意义的。为了创建这样的 <a href="https://getbootstrap.com/docs/4.4/components/card/">Bootstrap 卡片</a>，新的 <a href="https://github.com/jenkinsci/bootstrap4-api-plugin">Bootstrap 插件</a>提供了一个小的果冻标签，该标签简化了插件的此任务。可以通过以下方式在果冻视图中轻松创建此类卡片:</p>
+
+<pre><code>1 &lt;bs:card title=&quot;${%Card Title}&quot; fontAwesomeIcon=&quot;icon-name&quot;&gt;
+2 Content of the card
+3 &lt;/bs:card&gt;
+</code></pre>
+
+<p>在<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#img-card">图 8</a> 中显示了此类卡的示例。上排的卡片包含饼图，这些饼图显示了整个存储库中作者和提交数量的分布。底部的卡在数据表中显示详细信息。可视化不仅限于图表或表格，您可以在其中显示任何类型的 HTML 内容。您可以在这些卡中显示插件的任何图标，但是建议使用现有的 <a href="https://fontawesome.com/">Font Awesome</a> 图标之一，以在 Jenkins 的插件生态系统中获得一致的外观。</p>
+
+<p><img src="card.png" alt="card" /></p>
+
+<p>注意，卡片的大小由网格配置决定，请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#boostrap-grid">第 5.2 节</a>。</p>
+
+<h3 id="表格">表格</h3>
+
+<p>用于显示插件详细信息的常见 UI 元素是表格控件。大多数插件（和 Jenkins 核心）通常使用纯 HTML 表格。但是，如果表格应显示大量行，则使用像 <a href="https://datatables.net/">DataTables</a> 这样的更复杂的控件更有意义。使用此基于 JS 的表控件可免费提供其他功能:</p>
+
+<ul>
+<li>通过文本搜索过滤结果</li>
+<li>提供结果集的分页</li>
+<li>一次按多列排序数据</li>
+<li>使用 Ajax 调用获取表行</li>
+<li>根据屏幕分辨率显示和隐藏列</li>
+</ul>
+
+<p>为了在视图中使用 <a href="https://datatables.net/">DataTables</a>，有两个选项，您可以装饰现有的静态 HTML 表（请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#tables-static">第 5.4.1 节</a>）或使用 Ajax 填充表内容（请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#tables-dynamic">第 5.4.2 节</a>）。</p>
+
+<h4 id="静态-html-内容的表格">静态 HTML 内容的表格</h4>
+
+<p>使用 DataTables 的最简单方法是创建一个静态 HTML 表格，只需调用 datatable 的构造函数即可对其进行修饰。这种方法在 Java 和 Jelly 方面不涉及任何特殊处理，因此我认为只需遵循 DataTables 文档中的<a href="https://datatables.net/examples/basic_init/zero_configuration.html">示例</a>即可。只需确保在您的 Jelly 文件中构建了表之后，您需要使用以下代码装饰表:</p>
+
+<pre><code>&lt;j:jelly xmlns:j=&quot;jelly:core&quot; xmlns:st=&quot;jelly:stapler&quot; &gt;
+
+  &lt;st:adjunct includes=&quot;io.jenkins.plugins.jquery3&quot;/&gt;
+  &lt;st:adjunct includes=&quot;io.jenkins.plugins.data-tables&quot;/&gt;
+
+  [...]
+
+    &lt;div class=&quot;table-responsive&quot;&gt;
+        &lt;table class=&quot;table table-hover table-striped display&quot; id=&quot;id&quot;&gt;
+            [...]
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+  [...]
+  &lt;script&gt;
+     $('#id').DataTable(); 
+  &lt;/script&gt;
+
+&lt;/j:jelly&gt;
+</code></pre>
+
+<ol>
+<li>用您的 HTML 表格元素的 ID 替换上面代码中的 ID</li>
+</ol>
+
+<p>到目前为止，在 Forensics 插件中还没有使用过此类静态表格，但是您可以查看警告插件中显示固定警告的表，以了解如何<a href="https://github.com/jenkinsci/warnings-ng-plugin/blob/master/src/main/resources/io/jenkins/plugins/analysis/core/model/FixedWarningsDetail/index.jelly">装饰此类表</a>。</p>
+
+<h4 id="具有基于动态模型内容的表">具有基于动态模型内容的表</h4>
+
+<p>尽管静态 HTML 表格易于实现，但它们有一些限制。因此，遵循更复杂的方法是有意义的。通常，用户界面中的表是通过使用相应的表（和行）模型定义的。自 Java 成立以来，Java Swing 成功地提供了这样的表模型概念。我也为 Jenkins 和 DataTables 修改了这些概念。为了在 Jenkins 视图中创建表，插件需要提供一个<a href="https://docs.oracle.com/javase/tutorial/uiswing/components/table.html">表模型类</a>，该类提供以下信息:</p>
+
+<ul>
+<li>表的 ID（因为视图中可能有多个表）</li>
+<li>列的模型（即列的编号，类型和标题标签）</li>
+<li>表格的内容（即各个行对象）</li>
+</ul>
+
+<p>您可以在 Forensics 插件中找到此类表格的示例:此处的表格列出了 Git 存储库中的文件以及相应的提交统计信息（作者数量、提交数量、最后修改、首次提交）。该表的屏幕截图如<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#img-table">图 9</a> 所示。</p>
+
+<p><img src="table.png" alt="table" /></p>
+
+<p>为了在 Jenkins 中创建这样的表，您需要创建一个从 <code>TableModel</code> 派生的表模型类。在<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#forensics-table-model">图 10</a> 中，显示了取证插件中相应类的图。</p>
+
+<p><img src="table-model.png" alt="table-model" /></p>
+
+<p><strong>表格栏模型</strong></p>
+
+<p>表格模型类定义的第一件事是通过创建相应的 <code>TableColumn</code> 实例来创建可用列的模型。对于每一列，您需要指定标题标签和应在相应列中显示的 bean 属性的名称（行元素实际上是 Java bean:每一列将显示此类 bean 的一个独特属性，请参阅下一节）。您可以通过简单地提供基于 <code>String</code> 或 <code>Integer</code> 的列来使用任何受<a href="https://datatables.net/reference/option/columns.type">支持的列类型</a>。</p>
+
+<p><strong>表格行内容</strong></p>
+
+<p>此外，表模型类提供行的内容。此 <code>getRows()</code> 方法将使用 Ajax 调用异步调用。通常，此方法仅返回 Java Bean 实例的列表，该列表提供每一列的属性（请参见上一节）。这些对象将自动转换为 JSON 对象数组，这是 DataTables API 所需的基本数据结构。您可以在 <a href="https://github.com/jenkinsci/forensics-api-plugin/blob/master/src/main/java/io/jenkins/plugins/forensics/miner/ForensicsTableModel.java">ForensicsTableModel</a> 类的取证插件的 Git 存储库中找到一个可以正常工作的示例表模型实现。</p>
+
+<p>为了在插件视图中使用这样的表，您需要使用新的 <code>table</code> 标签在关联的 Jelly 文件中创建表:</p>
+
+<pre><code>index.jelly
+&lt;j:jelly xmlns:j=&quot;jelly:core&quot; xmlns:dt=&quot;/data-tables&quot; &gt;
+    [...]
+    &lt;st:adjunct includes=&quot;io.jenkins.plugins.data-tables&quot;/&gt;
+
+    &lt;dt:table model=&quot;${it.getTableModel('id')}&quot;/&gt; 
+    [...]
+&lt;/j:jelly&gt;
+</code></pre>
+
+<ol>
+<li>用自己的 ID 替换上面代码的 ID</li>
+</ol>
+
+<p>您需要为表提供的唯一参数是 model，它通常是对应的 Jenkins 视图模型类的一部分（此对象在视图中用<code>${it}</code>引用）。为了将对应的 Jenkins 视图模型类与表连接，视图模型类需要实现 <code>AsyncTableContentProvider</code> 接口。甚至更简单，让您的视图模型类派生自 <code>DefaultAsyncTableContentProvider</code>。此关系是必需的，以便 Jenkins 可以自动创建和绑定 Ajax 调用的代理，该代理将在创建 HTML 页面后自动填充表内容。</p>
+
+<p>如果将所有这些部分放在一起，则需要定义一个类似于 Forensics 插件的模型的模型，如<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#jenkins-view-model">图 11</a> 所示。</p>
+
+<p><img src="forensics-view-model.png" alt="forensics-view-model" /></p>
+
+<p>如在<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#jenkins-reporter-model">图 5</a> 中已经描述的，插件需要将 <code>BuildAction</code> 附加到每个构建。Forensics 插件将 <code>ForensicBuildAction</code> 附加到构建。该操作存储一个 <code>RepositoryStatistics</code> 实例，该实例包含给定构建的存储库结果。该操作将所有 Stapler 请求委派给新的 <a href="https://stapler.kohsuke.org/apidocs/org/kohsuke/stapler/StaplerProxy.html">Stapler 代理实例</a>，因此我们可以使该操作清除用户界面代码。然后，此 <code>ForensicsViewModel</code> 类充当视图模型，为文件 <code>index.jelly</code> 给出的相应 Jelly 视图提供服务器端模型。</p>
+
+<p>虽然这种方法在第一眼看上去很复杂，但是您会看到实际的实现部分很小。基本类已经提供了大多数样板代码，您只需要实现一些方法即可。使用此概念还提供了一些其他功能，这些功能是 DataTables 插件的一部分:</p>
+
+<ul>
+<li>列的顺序会自动保存在浏览器本地存储中。</li>
+<li>分页大小会自动保存在浏览器本地存储中。</li>
+<li>仅当表格可见时才实际调用 Ajax 调用。因此，如果选项卡中隐藏了几个表，则仅按需加载内容，从而减少了要传输的数据量。</li>
+<li>有一个选项可用于提供其他详细信息行，该行可以用 + 符号扩展，有关详细信息，请参阅 <a href="https://github.com/jenkinsci/warnings-ng-plugin/blob/master/doc/images/details.png">warnings plugin table</a>。</li>
+</ul>
+
+<h3 id="图表">图表</h3>
+
+<p>插件报告程序通常还会报告从构建到构建的某种趋势。到目前为止，Jenkins 核心仅提供了一个非常有限的概念来呈现诸如趋势图之类的趋势。Jenkins 核心提供的 <a href="http://www.jfree.org/jfreechart/">JFreeChart</a> 框架是服务器端渲染引擎，可将图表创建为静态 PNG 图像，并将其包含在任务和详细信息页面中。如今，有几个功能强大的基于 JS 的图表库可供使用，它们在客户端完成相同的工作（实际上甚至做得更好）。这样做的好处是可以在每个客户端上自定义这些图表，而不会影响服务器性能。此外，您还可以免费获得许多其他功能（例如缩放，动画等）。此外，这些图表库不仅支持典型的构建趋势图，而且还支持许多其他图表类型，可用于改善插件的用户体验。这些图表库之一是 <a href="https://echarts.apache.org/en/index.html">ECharts</a>:该库具有强大的 API，并且实际上支持一个人可以想象的每种图表类型。您可以在库的<a href="https://echarts.apache.org/examples/en/">示例页面</a>上获得一些功能印象。</p>
+
+<p>为了使用这些图表，可以通过导入相应的 JS 文件并在相应的 Jelly 文件中定义图表来嵌入使用该库的图表。尽管这已经很好地工作了，但是从詹金斯的构建结果中为这些图表提供相应的模型仍然有些麻烦。因此，我添加了功能强大的 Java API，可帮助在 Java 端为这些图表创建模型。该 API 提供以下功能:</p>
+
+<ul>
+<li>根据构建结果的集合创建趋势图。</li>
+<li>将图表类型与聚合分开，以简化图表模型的单元测试。</li>
+<li>在内部版本号或内部版本日期之间切换 X 轴的类型（自动汇总当天记录的结果）。</li>
+<li>将 Java 模型自动转换为 JS 端所需的 JSON 模型。</li>
+<li>支持饼图和折线图（更多内容即将推出）。</li>
+</ul>
+
+<p>这些图表可以在项目页面中用作趋势图（请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#img-job">图 3</a>），也可以在插件的详细信息视图中用作信息图（请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#reporter-detail">第 5 节</a>）。</p>
+
+<h4 id="饼状图">饼状图</h4>
+
+<p>一个简单但仍然有用的图表是一个饼图，它说明了插件数据的数字比例。在 Forensics 插件中，我使用此图表来显示 Git 存储库中源代码文件的作者或提交数量的数字比例（请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#img-card">图 8</a>）。在警告插件中，我使用此图表显示新警告，突出警告或固定警告的数字比例，请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#img-pie">图 12</a>。</p>
+
+<p><img src="pie.png" alt="pie" /></p>
+
+<p>为了在您的详细信息视图中包括这样的图表，您可以使用提供的 <code>pie-chart</code> 标签。在以下代码片段中，您可以看到此标签的使用情况（嵌入在 Bootstrap 卡片中，请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#cards">第 5.3 节</a>）:</p>
+
+<pre><code>index.jelly
+1 &lt;?jelly escape-by-default='true'?&gt;
+2   &lt;j:jelly xmlns:j=&quot;jelly:core&quot;  xmlns:c=&quot;/charts&quot; xmlns:bs=&quot;/bootstrap&quot;&gt;
+3
+4   [...]
+5   &lt;bs:card title=&quot;${%Number of authors}&quot; fontAwesomeIcon=&quot;users&quot;&gt;
+6       &lt;c:pie-chart id=&quot;authors&quot; model=&quot;${it.authorsModel}&quot; height=&quot;256&quot; /&gt;
+7   &lt;/bs:card&gt;
+8   [...]
+9
+10 &lt;/j:jelly&gt;
+</code></pre>
+
+<p>您需要为此图表提供唯一的 ID 和相应的模型值。该模型必须是对应的 <code>PieChartModel</code> 实例的 JSON 表示形式。可以使用以下几行来创建这样的模型:</p>
+
+<pre><code>ViewModel.java
+1 [...]
+2 PieChartModel model = new PieChartModel(&quot;Title&quot;);
+3
+4 model.add(new PieData(&quot;Segment 1 name&quot;, 10), Palette.RED);
+5 model.add(new PieData(&quot;Segment 2 name&quot;, 15), Palette.GREEN);
+6 model.add(new PieData(&quot;Segment 3 name&quot;, 20), Palette.YELLOW);
+7
+8 String json = new JacksonFacade().toJson(model);
+9 [...]  
+</code></pre>
+
+<h4 id="任务级别视图上的趋势图">任务级别视图上的趋势图</h4>
+
+<p>为了显示在任务页面上呈现折线图的趋势（请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#img-job">图 3</a>），您需要提供一个所谓的浮动框（存储在任务操作的 <code>floatBox.jelly</code> 文件中（请参见<a href="https://jenkins.io/blog/2020/03/17/ui-plugins/#reporter-structure">第 3 节</a>））。该文件的内容非常简单，仅包含一个 <code>trend-chart</code> 标签:</p>
+
+<pre><code>floatingBox.jelly
+1 &lt;?jelly escape-by-default='true'?&gt;
+2 &lt;j:jelly xmlns:j=&quot;jelly:core&quot; xmlns:c=&quot;/charts&quot;&gt;
+3
+4   &lt;c:trend-chart it=&quot;${from}&quot; title=&quot;${%SCM Files Count Trend}&quot; enableLinks=&quot;true&quot;/&gt;
+5
+6 &lt;/j:jelly&gt;
+</code></pre>
+
+<p>在 Java 方面，需要在 <code>JobAction</code> 的相应子类（浮动框的所有者）中提供图表的模型。由于趋势图的计算在服务器端也非常昂贵（需要从磁盘读取多个构建，并且需要计算有趣的数据点），因此该过程已放入单独的后台任务中。一旦计算完成，将通过 Ajax 调用显示结果。为了为插件作者隐藏这些详细信息，您应该简单地从相应的 <code>AsyncTrendJobAction</code> 类派生 <code>JobAction</code> 类，该类已经包含样板代码。因此，您的静态插件对象模型实际上会变得有些复杂:</p>
+
+<p><img src="chart-model.png" alt="chart-model" /></p>
+
+<p>基本上，您需要实现 <code>LinesChartModel 方法 createChartModel()</code> 来创建折线图。该方法的实现非常简单，因为大多数艰苦的工作都是由库提供的:从最新的构建开始，您将使用构建动作的迭代器进行调用。迭代器从一个版本开始构建，直到没有更多可用结果为止（或已达到要考虑的最大构建数量）。在插件中实现的最重要的事情是如何为给定的 <code>BuildAction</code> 计算数据点。这是取证插件中此类 <code>SeriesBuilder</code> 实现的示例:</p>
+
+<pre><code>FilesCountSeriesBuilder.java
+1 package io.jenkins.plugins.forensics.miner;
+2
+3 import java.util.HashMap;
+4 import java.util.Map;
+5
+6 import edu.hm.hafner.echarts.SeriesBuilder;
+7
+8 /**
+9  * Builds one x-axis point for the series of a line chart showing the number of files in the repository.
+10 *
+11 * @author Ullrich Hafner
+12 */
+13 public class FilesCountSeriesBuilder extends SeriesBuilder&lt;ForensicsBuildAction&gt; {
+14      static final String TOTALS_KEY = &quot;total&quot;;
+15
+16      @Override
+17      protected Map&lt;String, Integer&gt; computeSeries(final ForensicsBuildAction current) {
+18          Map&lt;String, Integer&gt; series = new HashMap&lt;&gt;();
+19          series.put(TOTALS_KEY, current.getNumberOfFiles());
+20          return series;
+21      }
+22 }
+</code></pre>
+
+<p>您不仅限于单个折线图。您可以在一个图表中显示多条线，可以显示堆叠的值，甚至可以显示某些值之间的差异。您也可以查看 <a href="https://github.com/jenkinsci/warnings-ng-plugin/tree/master/src/main/java/io/jenkins/plugins/analysis/core/charts">charts of the warnings plugin</a>，以详细了解其中一些功能。</p>
+
+<p><img src="trend-lines.png" alt="trend-lines" /></p>
+
+<p><img src="trend-stacked.png" alt="trend-stacked" /></p>
+
+</div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “动手实践：美化 Jenkins 报告插件的用户界面”
+  </a> 更新于：April 1, 2020
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">改善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/ui">
+              ui
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/ux">
+              ux
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/plugins">
+              plugins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/developer">
+              developer
+            </a>
+          </li>
+        
+              
+      
+        
+        
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/04\/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
+
+    </main>
+
+    <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    <div class="pb3 pt4 w-100 w-50-ns">
+
+      <div class="b f3  light-gray mb3 nested-links tc">
+        由 <a href="https://github.com/jenkins-zh/jenkins-zh/graphs/contributors" target="_blank"
+          class="link">Jenkins 社区贡献者</a> 维护<br />
+      </div>
+
+      <ul class="center f6 list ma0 mv3 pa0 tc" style="display:none"><li class="dib mr3"><a href="https://github.com/jenkins-zh/jenkins-zh/issues/new" class="dim link light-gray pv2">File an Issue</a></li></ul>
+
+      <ul class="center f6 list ma0 mv4 pa0 tc">
+        <li class="dib mr3">
+          <a href="https://twitter.com/jenkinsci" target="_blank" class="dim link light-gray pv2">Twitter</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://www.youtube.com/channel/UC63xz3pq26BBgwB3cnwCoqQ" target="_blank"
+            class="dim link light-gray pv2">YouTube</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://space.bilibili.com/433584098" target="_blank" class="dim link light-gray pv2">哔哩哔哩</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://jcli.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">Jenkins
+            CLI</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://community.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">社区论坛</a>
+        </li>
+      </ul>
+
+      
+    </div>
+
+    <div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">优酷视频
+        <div>
+          <a href="https://i.youku.com/jenkinszh" target="_blank">
+            <img src="/images/youku-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微信公众号
+        <div>
+          <a href="https://mp.weixin.qq.com/s/vifdduC3kRGSIMpyL03yVA" target="_blank">
+            <img src="https://jenkins.io/images/jenkins-wechat.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微博
+        <div>
+          <a href="https://www.weibo.com/jenkinszh" target="_blank">
+            <img src="/images/weibo-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="f7 gray mb5 mb0-ns ph3 w-100"> 
+    <p class="dib mr4"><a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow" class="dim link light-gray pv2"><u>晋ICP备15000444号-2</u></a></p>
+  </div>
+
+
+  <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu pb3 dn">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/wechat/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          博客
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/tutorial/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          教程
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/event/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          活动
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/partner/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          合作伙伴
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/about/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          关于我们
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="http://jenkins.io/zh" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Jenkins 官网
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">菜单</button>
+
+  
+</div>
+<script src="/dist/app.bundle.js" type="text/javascript"></script>
+</div>
+
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'jenkinsci/chinese'
+    };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</footer>
+    
+<link href="/dist/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/jenkins-zh.cn";
+    
+</script>
+<script src="/dist/lunr.js"></script>
+<script src="/dist/autocomplete.js"></script>
+<script src="/dist/jquery-3.2.1.min.js"></script>
+<script src="/dist/search.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6db234f713318730f0e5f6a95bdd8d47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?6276dcef5c15f276644151772390c1f9":"https://jspassport.ssl.qhimg.com/11.0.1.js?6276dcef5c15f276644151772390c1f9";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  </body>
+</html>

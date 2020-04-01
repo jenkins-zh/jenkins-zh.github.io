@@ -6,10 +6,24 @@
     <description>Recent content in Developer on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/developer/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>动手实践：美化 Jenkins 报告插件的用户界面</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins/</guid>
+      <description>对于 Jenkins 而言，可以使用大量插件来可视化各种构建步骤的结果。有一些插件可用于呈现测试结果、代码覆盖率、静态分析等。所有这些插件通常都会获取给定构建步骤的构建结果，并在用户界面中显示它们。为了呈现这些细节，大多数插件使用静态 HTML 页面，因为这种类型的用户界面是 Jenkins 自 2007 年成立以来的标准可视化。
+为了改善这些插件的外观和用户体验，有必要向前发展并合并一些现代 Java Script 库和组件。由于 Blue Ocean 的开发已经停止（请参阅 Jenkins mailing list post），因此插件作者需要自己决定，哪些 UI 技术可帮助完成该任务。但是，现代 UI 组件的种类繁多，以至于只挑选一小部分被证明是有用的并且与 Jenkins 基础 Web 技术兼容的组件是有意义的。而且，合并这样一个新组件的初始设置相当大，因此如果该工作仅需要执行一次，将会有很大的帮助。
+本指南介绍了一些 UI 组件，以后所有插件作者都可以使用这些 UI 组件，从而为 Jenkins 中的报告提供丰富的用户界面。为了简化这些库在 Jenkins 作为基于 Java 的 Web 应用程序的上下文中的使用，这些 Java Script 库和组件已打包为普通的 Jenkins 插件。
+在以下各小节中，将逐步介绍这些新组件。为了了解如何使用这些组件的插件，我将演示新功能，同时使用新的用户界面增强现有的 Forensics Plugin。由于 Warnings Next Generation 插件也使用这些新组件，因此您可以在 warnings 插件的文档中或在我们的公共 ci.jenkins.io 实例中看到其他示例，这些示例已经在 warnings 插件的详细信息视图中使用了这些组件。
+新的用户界面插件 新的 Jenkins 插件提供了以下 UI 组件:
+ jquery3-api-plugin:为 Jenkins 插件提供 jQuery 3。如其首页所述，jQuery 是一个快速、小型且功能丰富的 JavaScript 库。借助易于使用的 API（可在多种浏览器中使用），使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等事情变得更加简单。兼具多功能性和可扩展性，jQuery 改变了数百万人编写 JavaScript 的方式。 bootstrap4-api-plugin:为 Jenkins 插件提供 Bootstrap 4。Bootstrap 自称是世界上最流行的前端组件库，用于在 Web 上构建响应式，移动优先的项目。它是一个用于使用 HTML、CSS 和 JS 开发的开源工具包。开发人员可以使用他们的 Sass 变量和 mixins、响应式栅格系统、大量的预构建组件以及基于 jQuery 构建的强大插件，快速构建其思想原型或整个应用程序。 data-tables-api-plugin:提供 Jenkins 插件的数据表格。DataTables 是 jQuery Javascript 库的插件。这是一个高度灵活的工具，建立在逐步增强的基础上，可将所有这些高级功能添加到任何 HTML 表中:  上一页，下一页和页面导航 通过文本搜索过滤结果 一次按多列对数据排序 DOM、Javascript、Ajax、服务器端处理 简单主题化 手机端兼容友好  echarts-api-plugin:为 Jenkins 插件提供 ECharts。ECharts 是一种开放源代码的 JavaScript 可视化工具，用于创建直观、交互式和高度可定制的图表。它可以在 PC 和移动设备上流畅运行，并且与大多数现代 Web 浏览器兼容。 font-awesome-api-plugin:为 Jenkins 插件提供 Font Awesome。Font Awesome 具有矢量图标和社交徽标，号称是网络上最受欢迎的图标集和工具包。目前，它包含 1,500 多个免费图标。 popper-api-plugin:为 Jenkins 插件提供 Popper.</description>
+    </item>
     
     <item>
       <title>Jenkins 插件文档即代码：将文档迁移到 GitHub</title>
