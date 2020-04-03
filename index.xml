@@ -37,6 +37,18 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2020-04-01/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2020-04-01/</guid>
+      <description>中文教程  在jenkins中配置钉钉通知  https://github.com/jenkins-infra/wechat/pull/333/files  helm chart 的应用  https://github.com/jenkins-zh/jenkins-zh-courses/pull/5/files  会议记录页面改善  https://github.com/jenkins-zh/jenkins-zh/pull/204   UCloud 服务器管理  容器中运行 nginx 在测试 流水线更新 nginx 配置文件的在测试  https://github.com/jenkins-zh/shared-library  ssh 端口的修改 ✅ ssh 证书过期的程序正在进行  python(crontab)  用户审计 ✅  用户远程登录的操作记录都能记录下来  Jenkins 节点的挂载 需要在私有 git 仓库中记录服务区文件以及其他的配置信息 @linuxsuren  每个服务器 ssh 端口 列出一个清单，要记录哪些私有信息 @anxk   社区媒体账号运营情况  活跃的成员
+ wenjunzhangp 0N0thing zhaoying818  微信公众号的文章发布以及效果都比之前要好
+ 定期激励 @yJunS
+ 文章 review 或者修改的不及时 @yJunS</description>
+    </item>
+    
+    <item>
       <title>动手实践：美化 Jenkins 报告插件的用户界面</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>

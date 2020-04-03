@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/meeting/2020-04-01/",
+        "title": "",
+        "type": "meeting",
+        "date": "2020-04-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": " 中文教程  在jenkins中配置钉钉通知  https://github.com/jenkins-infra/wechat/pull/333/files  helm chart 的应用  https://github.com/jenkins-zh/jenkins-zh-courses/pull/5/files  会议记录页面改善  https://github.com/jenkins-zh/jenkins-zh/pull/204   UCloud 服务器管理  容器中运行 nginx 在测试 流水线更新 nginx 配置文件的在测试  https://github.com/jenkins-zh/shared-library  ssh 端口的修改 ✅ ssh 证书过期的程序正在进行  python(crontab)  用户审计 ✅  用户远程登录的操作记录都能记录下来  Jenkins 节点的挂载 需要在私有 git 仓库中记录服务区文件以及其他的配置信息 @linuxsuren  每个服务器 ssh 端口 列出一个清单，要记录哪些私有信息 @anxk   社区媒体账号运营情况  活跃的成员\n wenjunzhangp 0N0thing zhaoying818  微信公众号的文章发布以及效果都比之前要好\n 定期激励 @yJunS\n 文章 review 或者修改的不及时 @yJunS\n 建立微信翻译组 GCTT (Go Chinese Translation Team) https://studygolang.com/gctt  wechat 仓库失败\n Jenkinsfile 重名了  迁移 wechat 到 jenins-zh 中 @linuxsuren\n  ",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins/",
         "title": "动手实践：美化 Jenkins 报告插件的用户界面",
         "type": "wechat",
@@ -2031,7 +2044,7 @@
         "uri": "https://jenkins-zh.cn/meeting/",
         "title": "",
         "type": "meeting",
-        "date": "2020-03-18 00:00:00 +0000 UTC",
+        "date": "2020-04-01 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": " Jenkins 中文社区例会，每个双周周三（遇到法定节假日时延后）的 21:00 进行。准备参加的小伙伴，需要提前安装好 zoom 软件， 然后点击 https://zoom.us/j/691718976 即可进入会议。\n注意事项⚠️  要发言的小伙伴要提前找好一个相对比较安静的环境 不发言的时候，及时关闭麦克风🎤 例会是讨论社区的事情，而不是技术分享  如何接入？ 可以下载桌面客户端，或者移动客户端来接入会议。\n如果不想下载软件，或者由于某种原因无法访问国外网站的，可以点击此处打开国内的 Web 客户端， 直接在浏览器中参加会议。\n会议 ID 为：691718976\n",
