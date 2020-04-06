@@ -201,6 +201,15 @@
     </item>
     
     <item>
+      <title>Configuration as Code</title>
+      <link>https://jenkins-zh.cn/tags/configuration-as-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/configuration-as-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Continuous Integration</title>
       <link>https://jenkins-zh.cn/tags/continuous-integration/</link>
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
@@ -867,6 +876,24 @@
     </item>
     
     <item>
+      <title>Remoting</title>
+      <link>https://jenkins-zh.cn/tags/remoting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/remoting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scalability</title>
+      <link>https://jenkins-zh.cn/tags/scalability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/scalability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Scm</title>
       <link>https://jenkins-zh.cn/tags/scm/</link>
       <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
@@ -948,6 +975,15 @@
     </item>
     
     <item>
+      <title>Survey</title>
+      <link>https://jenkins-zh.cn/tags/survey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/survey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>T Mobile</title>
       <link>https://jenkins-zh.cn/tags/t-mobile/</link>
       <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
@@ -971,6 +1007,15 @@
       <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/toolchains/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://jenkins-zh.cn/tags/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/tools/</guid>
       <description></description>
     </item>
     

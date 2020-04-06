@@ -841,11 +841,11 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/wechat/articles/readme/</loc>
+    <loc>https://jenkins-zh.cn/weibo/weibo-operating-charter/</loc>
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/weibo/weibo-operating-charter/</loc>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-jenkins-survey/</loc>
   </url>
   
   <url>
@@ -986,6 +986,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/configuration-as-code/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/continuous-integration/</loc>
     <lastmod>2019-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1025,6 +1030,10 @@
     <loc>https://jenkins-zh.cn/tags/credentials/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-5-custom-war-packager/</loc>
   </url>
   
   <url>
@@ -1079,6 +1088,10 @@
     <loc>https://jenkins-zh.cn/tags/docker/</loc>
     <lastmod>2020-02-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-26-official-docker-image/</loc>
   </url>
   
   <url>
@@ -1242,6 +1255,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-12-gasc/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/jenkins-x/</loc>
     <lastmod>2020-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1266,9 +1283,17 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/11/2018-11-14-first-voice/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</loc>
     <lastmod>2019-11-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-26-security-updates/</loc>
   </url>
   
   <url>
@@ -1461,6 +1486,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/remoting/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/scalability/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/scm/</loc>
     <lastmod>2020-03-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1520,6 +1555,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/survey/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/t-mobile/</loc>
     <lastmod>2020-02-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1540,6 +1580,11 @@
   <url>
     <loc>https://jenkins-zh.cn/tags/toolchains/</loc>
     <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/tools/</loc>
     <priority>0</priority>
   </url>
   
@@ -1647,6 +1692,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-scaling-network-connections/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tutorial/best-practice/android/android-best-practice/</loc>
   </url>
   
@@ -1674,7 +1723,15 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-25-year-in-review/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tutorial/notify/email/email/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2018/11/2018-11-21-validate-jenkinsfile/</loc>
   </url>
   
   <url>
