@@ -140,7 +140,7 @@
     <item>
       <title>Cicd</title>
       <link>https://jenkins-zh.cn/tags/cicd/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/cicd/</guid>
       <description></description>
@@ -498,6 +498,15 @@
     </item>
     
     <item>
+      <title>Iaac</title>
+      <link>https://jenkins-zh.cn/tags/iaac/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/iaac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Installers</title>
       <link>https://jenkins-zh.cn/tags/installers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -554,7 +563,7 @@
     <item>
       <title>Jcasc</title>
       <link>https://jenkins-zh.cn/tags/jcasc/</link>
-      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jcasc/</guid>
       <description></description>
@@ -563,7 +572,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -620,6 +629,15 @@
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jjb</title>
+      <link>https://jenkins-zh.cn/tags/jjb/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jjb/</guid>
       <description></description>
     </item>
     

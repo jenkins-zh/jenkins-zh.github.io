@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jjb on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/jjb/</link>
+    <description>Recent content in Jjb on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/jjb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>以代码的形式构建 Jenkins</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-08-build-jenkins-as-a-code/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-08-build-jenkins-as-a-code/</guid>
+      <description>在我们公司，我们尝试使用‘一切事物即代码’的模式，该模式涉及到可复制的基础架构，监控，任务等方面。但是，在这篇文章当中，我将向你展示怎样将这种模式运用到 Jenkins 上。是的，我的意思是对于 Jenkins 完全可复制的配置，以及基础架构、插件、凭据、任务以及代码中的其他东西。另外，这篇文章你将解惑下面的疑问:
+ 我们的 Jenkins 已经变得更加稳定了吗？
+ 我们可以频繁地改变 Jenkins 和任务配置吗？
+ 升级 Jenkins 及其插件对我们来说是否不再是一种痛苦了呢？
+ 我们是否已经管理了 Jenkins 上所有的变更？
+ 故障发生后，是否我们可以快速的恢复 Jenkins？
+  我的名字叫 Amet Umerov 是一名 Preply.com 的DevOps 工程师。让我们开始吧！
+前期介绍 当我们谈论 DevOps 工具，脑海中首先出现的是一个 CI/CD 系统。我们在 Preply 使用 Jenkins 因为我们每天有数以百计的任务，我们使用的许多特性在其他系统里面是没法提供的，即使提供了这些功能，也会是一些简化的功能。
+我们想要让 Jenkins 以及基础架构、配置、任务和插件完全代码化。并且，我们之前有过在 Kubernetes 运行的经验，但是因为 Jenkins 架构以及我们自身的目的发现它并不适合我们。
+这是我们想要实现的目标
+为 Jenkins 构建底层架构 我们用的是 AWS 使用 Terraform 管理我们所有的基础架构还有其他一些来自于 HashiStack 的工具比如 Packer 或者 Vault。
+就像我之前提到的，我们尝试使用 Kubernetes 来托管 Jenkins，但我们在扩展 PVC，资源还有一些没有经过深思熟虑的架构时遇到了问题。</description>
+    </item>
+    
+  </channel>
+</rss>
