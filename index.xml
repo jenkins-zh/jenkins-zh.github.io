@@ -38,10 +38,10 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     
     <item>
       <title>以代码的形式构建 Jenkins</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-08-build-jenkins-as-a-code/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-08-build-jenkins-as-a-code/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/</guid>
       <description>在我们公司，我们尝试使用‘一切事物即代码’的模式，该模式涉及到可复制的基础架构，监控，任务等方面。但是，在这篇文章当中，我将向你展示怎样将这种模式运用到 Jenkins 上。是的，我的意思是对于 Jenkins 完全可复制的配置，以及基础架构、插件、凭据、任务以及代码中的其他东西。另外，这篇文章你将解惑下面的疑问:
  我们的 Jenkins 已经变得更加稳定了吗？
  我们可以频繁地改变 Jenkins 和任务配置吗？

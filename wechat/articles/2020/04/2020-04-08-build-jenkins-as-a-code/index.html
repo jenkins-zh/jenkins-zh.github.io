@@ -9,14 +9,14 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      
-     <title>使用Active-Choices-Plugin插件将十个Job合成一个 - Jenkins 中文社区</title>
+     <title>以代码的形式构建 Jenkins - Jenkins 中文社区</title>
      <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     
-    <meta name="description" content="使用Active-Choices-Plugin插件将十个Job合成一个">
+    <meta name="description" content="主要介绍了关于 Jenkins “配置即代码”模式的具体方法，结合工具以及脚本对该模式进行了说明">
     
     
-    <meta name="keywords" content="Active-Choices-Plugin">
+    <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
     
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -32,26 +32,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="使用Active-Choices-Plugin插件将十个Job合成一个" />
-<meta property="og:description" content="使用Active-Choices-Plugin插件将十个Job合成一个" />
+<meta property="og:title" content="以代码的形式构建 Jenkins" />
+<meta property="og:description" content="主要介绍了关于 Jenkins “配置即代码”模式的具体方法，结合工具以及脚本对该模式进行了说明" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" /><meta property="article:published_time" content="2019-06-26T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-06-26T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" /><meta property="article:published_time" content="2020-04-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-04-08T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="使用Active-Choices-Plugin插件将十个Job合成一个">
-<meta itemprop="description" content="使用Active-Choices-Plugin插件将十个Job合成一个">
-
-
-<meta itemprop="datePublished" content="2019-06-26T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-06-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="299">
+<meta itemprop="name" content="以代码的形式构建 Jenkins">
+<meta itemprop="description" content="主要介绍了关于 Jenkins “配置即代码”模式的具体方法，结合工具以及脚本对该模式进行了说明">
 
 
+<meta itemprop="datePublished" content="2020-04-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="629">
 
-<meta itemprop="keywords" content="Jenkins,plugin," />
+
+
+<meta itemprop="keywords" content="Jenkins,Jcasc,Jjb,Cicd,Iaac," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="使用Active-Choices-Plugin插件将十个Job合成一个"/>
-<meta name="twitter:description" content="使用Active-Choices-Plugin插件将十个Job合成一个"/>
+<meta name="twitter:title" content="以代码的形式构建 Jenkins"/>
+<meta name="twitter:description" content="主要介绍了关于 Jenkins “配置即代码”模式的具体方法，结合工具以及脚本对该模式进行了说明"/>
 
         
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -196,21 +196,23 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            eryajf
+            s1mple_zj
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          悟已往之不谏，知来者之可追。实迷途其未远，觉今是而昨非。
+          You only got one shot,do not miss your chance to blow.
         </p>
       
-      <a href="https://github.com/eryajf" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/0N0thing" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -218,40 +220,17 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
+  <div>
+    作者：<span class="originalAuthor">Amet Umerov</span>
+    <div>
+      <a class="originalLink" href="https://medium.com/preply-engineering/jenkins-omg-275e2df5d647" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">内容目录</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-环境说明">1，环境说明</a></li>
-<li><a href="#2-安装插件">2，安装插件。</a></li>
-<li><a href="#3-使用前介绍">3，使用前介绍。</a></li>
-<li><a href="#4-配置前分析">4，配置前分析。</a>
-<ul>
-<li><a href="#1-eureka">1，eureka</a></li>
-<li><a href="#2-user">2，user</a></li>
-</ul></li>
-<li><a href="#5-创建项目">5，创建项目。</a></li>
-<li><a href="#6-字符参数">6，字符参数。</a></li>
-<li><a href="#7-选项参数">7，选项参数。</a></li>
-<li><a href="#8-选择参数">8，选择参数。</a>
-<ul>
-<li><a href="#1-主动选择参数">1，主动选择参数</a></li>
-<li><a href="#2-主动选择反应参数">2，主动选择反应参数</a></li>
-<li><a href="#3-主动选择反应参数">3，主动选择反应参数</a></li>
-</ul></li>
-<li><a href="#9-git地址配置">9，Git地址配置。</a></li>
-<li><a href="#10-执行脚本">10，执行脚本。</a></li>
-<li><a href="#11-构建后操作">11，构建后操作。</a></li>
-<li><a href="#12-效果展示">12，效果展示。</a></li>
-</ul></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -264,17 +243,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" class="dib f6 pl1 hover-bg-light-gray br-100" title="介绍 Jenkins 模板引擎 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/" class="dib f6 pr1 hover-bg-light-gray br-100" title="10节课带你深入学习 DevOps 工程">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins/" class="dib f6 pr1 hover-bg-light-gray br-100" title="动手实践：美化 Jenkins 报告插件的用户界面">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -294,13 +265,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用Active-Choices-Plugin插件将十个Job合成一个</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">以代码的形式构建 Jenkins</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      使用Active-Choices-Plugin插件将十个Job合成一个
+      主要介绍了关于 Jenkins “配置即代码”模式的具体方法，结合工具以及脚本对该模式进行了说明
     </div>
   
 
@@ -313,262 +284,477 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="the_one.jpg" alt="" /></p>
+<p><img src="cover.jpg" alt="cover" /></p>
 
-<p>现在Spring Cloud越来越火爆，许多公司也都在如火如荼投入使用中，而微服务最大的一个特点，就是多，同一大项目之下，可能会被拆分成十几二十几个子服务，对于运维而言，可能也需要一个对应一个地在Jenkins中创建十几二十几个Job。</p>
-
-<p>刚刚还在一个博主的自我介绍里看到这样一句话：<code>喜欢一切优雅的运维方式···</code></p>
-
-<p>于是，我一直在想着，通过一些合理的参数变幻，从而将刚刚提到的十几二十几个服务，汇集到一个Job当中就能完成。</p>
-
-<h2 id="1-环境说明">1，环境说明</h2>
+<p>在我们公司，我们尝试使用‘一切事物即代码’的模式，该模式涉及到可复制的基础架构，监控，任务等方面。但是，在这篇文章当中，我将向你展示怎样将这种模式运用到 Jenkins 上。是的，我的意思是对于 Jenkins  完全可复制的配置，以及基础架构、插件、凭据、任务以及代码中的其他东西。另外，这篇文章你将解惑下面的疑问:</p>
 
 <ul>
-<li>主机：CentOS-7.5</li>
-<li>Jdk：jdk1.8.0_192</li>
-<li>Tomcat：8</li>
-<li>Jenkins：2.177</li>
+<li><p>我们的 Jenkins 已经变得更加稳定了吗？</p></li>
+
+<li><p>我们可以频繁地改变 Jenkins 和任务配置吗？</p></li>
+
+<li><p>升级 Jenkins 及其插件对我们来说是否不再是一种痛苦了呢？</p></li>
+
+<li><p>我们是否已经管理了 Jenkins 上所有的变更？</p></li>
+
+<li><p>故障发生后，是否我们可以快速的恢复 Jenkins？</p></li>
 </ul>
 
-<p>如上环境的准备工作本文就不赘述了。</p>
+<p><img src="job-page.png" alt="job-page" /></p>
 
-<h2 id="2-安装插件">2，安装插件。</h2>
+<p>我的名字叫 Amet Umerov 是一名 <a href="https://preply.com/en/">Preply.com</a> 的DevOps 工程师。让我们开始吧！</p>
 
-<ul>
-<li>官方地址：<a href="https://wiki.jenkins.io/display/JENKINS/Active+Choices+Plugin">https://wiki.jenkins.io/display/JENKINS/Active+Choices+Plugin</a></li>
-<li>安装方式：在Jenkins插件当中直接搜索即可安装。</li>
-<li>功能说明：根据所选参数，自动调出对应参数所依赖的后续参数。</li>
-</ul>
+<h2 id="前期介绍">前期介绍</h2>
 
-<h2 id="3-使用前介绍">3，使用前介绍。</h2>
+<p>当我们谈论 DevOps 工具，脑海中首先出现的是一个 CI/CD 系统。我们在 Preply 使用 Jenkins  因为我们每天有数以百计的任务，我们使用的许多特性在其他系统里面是没法提供的，即使提供了这些功能，也会是一些简化的功能。</p>
 
-<p>插件安装之后，可以在项目配置中的参数化配置中看到一些新增了的选项。</p>
+<p><img src="DevOps-system.png" alt="DevOps-system" /></p>
 
-<p><img src="Active-Choices-plugin1.png" alt="" /></p>
+<p>我们想要让 Jenkins 以及基础架构、配置、任务和插件完全代码化。并且，我们之前有过在 Kubernetes 运行的经验，但是因为 <a href="https://jenkins.io/doc/book/architecting-for-scale/">Jenkins 架构</a>以及我们自身的目的发现它并不适合我们。</p>
 
-<ul>
-<li>1，Active Choices Parameter（主动选择参数）
-Active Choices参数使用Groovy脚本或Scriptler目录中的脚本动态生成构建参数的值选项列表。</li>
-<li>2，Active Choices Reactive Parameter（主动选择反应参数）
-根据主动选择参数的选项而提供不同的对应值或者列表选项。</li>
-<li>3，Active Choices Reactive Reference Parameter（主动选择反应参考参数）
-根据主动选择参数的选项而展示对应参数的一些说明，与第二项的区别在于本参数只作为说明信息，而不能够作为变量往下传递。</li>
-</ul>
+<p><img src="target.png" alt="target" /></p>
 
-<p>可能刚刚这些说明都比较抽象，接下来容我通过项目实战，来对其进行一一解析。</p>
+<p>这是我们想要实现的目标</p>
 
-<h2 id="4-配置前分析">4，配置前分析。</h2>
+<h2 id="为-jenkins-构建底层架构">为 Jenkins 构建底层架构</h2>
 
-<p>优秀的插件，它的优秀之处，往往是需要我们结合生产实际，开动聪明的大脑，打破常规使用套路来成就的。</p>
+<p><img src="infrastructure.png" alt="infrastructure" /></p>
 
-<p>因此，如何才能更好地应用插件的优秀功能，需要我们先对项目进行分析，从全局的眼光，判断项目前后该配置什么样的参数来进行联动。</p>
+<p>我们用的是 AWS 使用 Terraform 管理我们所有的基础架构还有其他一些来自于 HashiStack 的工具比如 <a href="https://packer.io/">Packer</a> 或者 <a href="https://www.vaultproject.io/">Vault</a>。</p>
 
-<p>这里我说明一下我准备的实验项目情况，为了简便测试，我这里仅使用两个项目来进行举例，聪明的你也一定能够通过案例进行举一反三，将二合一推广为十合一的。</p>
+<p>就像我之前提到的，我们尝试使用 Kubernetes 来托管 Jenkins，但我们在扩展 PVC，资源还有一些没有经过深思熟虑的架构时遇到了问题。</p>
 
-<p>两个项目的情况如下：</p>
+<p>这里，我们使用了 AWS 资源，比如 EC2 实例、SSL 认证、负载均衡、CloudFront 分配等。AMI 由完美集成了 Terraform 和 Vault 的 Packer 构建。</p>
 
-<h3 id="1-eureka">1，eureka</h3>
+<pre><code>{
 
-<ul>
-<li>Gitlab地址：git@192.168.10.0:ishangjie/ishangjie-eureka-server.git</li>
-<li>port：8761</li>
-<li>包名：ishangjie-eureka-server-1.0.0.jar</li>
-</ul>
+&quot;variables&quot;: {
 
-<h3 id="2-user">2，user</h3>
+&quot;aws_access_key&quot;: &quot;{{vault `packer/aws_access_key_id` `key`}}&quot;,
 
-<ul>
-<li>Gitlab地址：git@192.168.10.0:ishangjie/ishangjie-user-service.git</li>
-<li>port：6666</li>
-<li>包名：ishangjie-user-service-1.0.0.jar</li>
-</ul>
+&quot;aws_secret_key&quot;: &quot;{{vault `packer/aws_secret_access_key` `key`}}&quot;,
 
-<p>从刚刚这些配置里边可以看出，有不少共同点，也有不少不同点，我们只需把眼光放在不同点上，通过一些统一的变量控制，就能达到二合一的目的。</p>
+&quot;aws_region&quot;: &quot;{{vault `packer/aws_region` `key`}}&quot;,
 
-<p>另外说明一点，这个项目已经部署在k8s环境当中，因此我的脚本内容也就展示成了k8s项目部署的流程了。</p>
+&quot;vault_token&quot;: &quot;{{env `VAULT_TOKEN`}}&quot;
 
-<h2 id="5-创建项目">5，创建项目。</h2>
+},
 
-<p>首先创建一个<code>自由风格</code>的Jenkins项目，然后配置一下项目构建保存历史。</p>
+&quot;builders&quot;: [{
 
-<p><img src="Active-Choices-plugin2.png" alt="" /></p>
+&quot;access_key&quot;: &quot;{{ user `aws_access_key` }}&quot;,
 
-<h2 id="6-字符参数">6，字符参数。</h2>
+&quot;secret_key&quot;: &quot;{{ user `aws_secret_key` }}&quot;,
 
-<p>添加一个名为<code>branch</code>的字符参数以用于控制代码分支的变量。</p>
+&quot;region&quot;: &quot;{{ user `aws_region` }}&quot;,
 
-<p><img src="Active-Choices-plugin3.png" alt="" /></p>
+&quot;type&quot;: &quot;amazon-ebs&quot;,
 
-<h2 id="7-选项参数">7，选项参数。</h2>
+&quot;communicator&quot;: &quot;ssh&quot;,
 
-<p>添加一个名为<code>mode</code>的选项参数以用于控制部署或者回滚的变量。</p>
+&quot;ssh_username&quot;: &quot;ubuntu&quot;,
 
-<p><img src="Active-Choices-plugin4.png" alt="" /></p>
+&quot;instance_type&quot;: &quot;c5.xlarge&quot;,
 
-<h2 id="8-选择参数">8，选择参数。</h2>
+&quot;security_group_id&quot;: &quot;sg-12345&quot;,
 
-<h3 id="1-主动选择参数">1，主动选择参数</h3>
+&quot;iam_instance_profile&quot;: &quot;packer-role-profile&quot;,
 
-<p>首先添加一个主动选择参数，用于控制项目名称这个变量。</p>
+&quot;ami_name&quot;: &quot;packer-jenkins-master-{{timestamp}}&quot;,
 
-<p><img src="Active-Choices-plugin5.png" alt="" /></p>
+&quot;ami_description&quot;: &quot;Jenkins master image&quot;,
 
-<ul>
-<li><code>Name</code>：project</li>
-<li><code>Groovy Script</code>:
-<code>
-return[
-&quot;eureka&quot;,
-&quot;user&quot;
-]
-</code></li>
-<li><code>Description</code>：选择对应的应用名称部署对应的应用。</li>
-<li><code>Choice Type</code>：Radio Buttons</li>
-</ul>
+&quot;launch_block_device_mappings&quot;: [{
 
-<h3 id="2-主动选择反应参数">2，主动选择反应参数</h3>
+&quot;device_name&quot;: &quot;/dev/sda1&quot;,
 
-<p>接着添加一个主动选择反应参数，用于控制项目类型这个变量。</p>
+&quot;volume_size&quot;: 50,
 
-<p><img src="Active-Choices-plugin6.png" alt="" /></p>
+&quot;volume_type&quot;: &quot;gp2&quot;,
 
-<p><code>Name</code>：type
-- <code>Groovy Script</code>:</p>
+&quot;delete_on_termination&quot;: true
 
-<pre><code>A=[&quot;server&quot;]
-B=[&quot;service&quot;]
-if(project.equals(&quot;eureka&quot;)){
-return A
-} else if(project.equals(&quot;user&quot;)){
-return B
+}],
+
+&quot;source_ami_filter&quot;: {
+
+&quot;filters&quot;: {
+
+&quot;virtualization-type&quot;: &quot;hvm&quot;,
+
+&quot;name&quot;: &quot;ubuntu/images/*ubuntu-bionic-18.04-amd64-server-*&quot;,
+
+&quot;root-device-type&quot;: &quot;ebs&quot;
+
+},
+
+&quot;owners&quot;: [&quot;099720109477&quot;],
+
+&quot;most_recent&quot;: true
+
+}
+
+}],
+
+&quot;provisioners&quot;: [{
+
+&quot;type&quot;: &quot;shell&quot;,
+
+&quot;environment_vars&quot;: [&quot;VAULT_TOKEN={{ user `vault_token` }}&quot;],
+
+&quot;scripts&quot;: [&quot;packer_bootstrap.sh&quot;]
+
+}]
+
 }
 </code></pre>
 
-<ul>
-<li><code>Description</code>：跟随项目的选择自动弹出对应类型</li>
-<li><code>Choice Type</code>：Single Select</li>
-<li><code>Referenced parameters</code>：project</li>
-</ul>
+<p>packer的配置是这样的</p>
 
-<h3 id="3-主动选择反应参数">3，主动选择反应参数</h3>
+<p>Bootstrap 文件 <code>packer_bootstrap.sh</code> 包含了在 AMI 预安装软件的所有命令。举个例子，我们使用 Docker、docker-compose 以及 <a href="https://github.com/channable/vaultenv">vaultenv</a> 或者安装 Datadog 节点用来监控。</p>
 
-<p>然后再添加一个主动选择反应参数，用于控制项目端口这个变量。</p>
+<p>考虑到这个 AMI 的架构，我们可以使用 Terraform、CloudFormation、Pulumi 甚至是 Ansible。这个是在 AWS 上使用 Jenkins 的可能会使用的架构之一。</p>
 
-<p><img src="Active-Choices-plugin7.png" alt="" /></p>
+<p><img src="AWS-infrastructure.png" alt="AWS-infrastructure" /></p>
 
-<ul>
-<li><code>Name</code>：port</li>
-<li><code>Groovy Script</code>:
-<code>
-if(project.equals(&quot;eureka&quot;)){
-return [&quot;8761&quot;]
-} else if (project.equals(&quot;user&quot;)){
-return [&quot;6666&quot;]
-}
-</code></li>
-<li><code>Description</code>：跟随跟随项目的选择自动弹出对应端口</li>
-<li><code>Choice Type</code>：Single Select</li>
-<li><code>Referenced parameters</code>：project</li>
-</ul>
+<p>用户通过内部 LB 访问 Jenkins，通过公共 LB 访问 GitHub webhook。</p>
 
-<p>这样，对应的参数都创建完毕了，大概有以下几个小的注意点需要注意：</p>
+<p>我们使用的 Jenkins 集成了 GitHub，所以我们应该通过外部网络为 Github 提供一些 Jenkins URL。有很多可操作的方案（<a href="https://api.github.com/meta">IP 白名单</a>，URL 或者令牌白名单，等等）而我们则结合 Cloudfront 以允许路径以及令牌验证。</p>
 
-<ul>
-<li>1，参数的名称将是整个构建流程使用的一个变量，因此起名的时候需要注意。</li>
-<li>2，创建了一个主动选择参数，和两个主动选择反应参数，是因为我们的实际需求需要两个真实有效的参数，如果最后的port项选择了主动选择反应参考参数，那么到后边是无法显式使用的。</li>
-<li>3，注意后两个跟随参数中的<code>Referenced parameters</code>，都需要填写主动参数的名称，才能够前后贯通，实现联动。</li>
-</ul>
+<p>做完这些事情之后，我们已经有一个现成的带有 AMI 的基础架构了。为监控提供了可能性以及用来获取公司凭据的 Vault 同样可以获得。</p>
 
-<h2 id="9-git地址配置">9，Git地址配置。</h2>
+<h2 id="使用-docker-管理-jenkins-以及它的插件版本">使用 Docker 管理 Jenkins 以及它的插件版本</h2>
 
-<p>接着就该添加Git地址了，同样，这个地方也应该合理利用项目标准化的优势，合理应用变量来进行配置。</p>
+<p><img src="docker.png" alt="docker" /></p>
 
-<p>具体如下图所示：</p>
+<p>好的，下一步就是 Jenkins 以及插件了。我们之前在升级 Jenkins 插件时遇到了很多问题，所以主要目标就是为它们固定版本。</p>
 
-<p><img src="Active-Choices-plugin8.png" alt="" /></p>
+<p>这个时候 Docker 帮了我们大忙。我们使用<a href="https://hub.docker.com/r/jenkins/jenkins/">事先构建好的 Jenkins 镜像</a>用它作为我们安装的基础镜像。</p>
 
-<h2 id="10-执行脚本">10，执行脚本。</h2>
+<pre><code>FROM jenkins/jenkins:2.215
 
-<p>接下来就该通过脚本来完成构建的主要流程了。</p>
+ENV CASC_JENKINS_CONFIG /jenkins_configs
 
-<pre><code class="language-shell">#!/bin/bash
-source /etc/profile
-#
-##set color##
-echoRed() { echo $'\e[0;31m'&quot;$1&quot;$'\e[0m'; }
-echoGreen() { echo $'\e[0;32m'&quot;$1&quot;$'\e[0m'; }
-echoYellow() { echo $'\e[0;33m'&quot;$1&quot;$'\e[0m'; }
-##set color##
-#
-version=`date +%Y%m%d%H%M%S`
-echo -------------------------------------
+USER root
 
-# 克隆项目并编译
-echoGreen &quot;开始进行mvn编译！&quot;
-cd  $WORKSPACE &amp;&amp; mvn clean install -DskipTests=true
-[ $? != 0 ] &amp;&amp; echoRed &quot;请注意，在执行mvn编译时出错，故而退出构建，需开发同学自检代码！&quot; &amp;&amp; exit 1
-cd  $WORKSPACE/target/ &amp;&amp; mv ishangjie-$project-$type-1.0.0.jar app.jar
+# Install additional packages
 
-# 创建docker镜像
-cat &gt; run.sh &lt;&lt; EOF
-#!/bin/bash
-source /etc/profile
-java -jar /opt/app.jar --spring.profiles.active=test1
-EOF
+RUN apt update &amp;&amp; \
 
-chmod +x run.sh
+apt install -y python3 python3-pip &amp;&amp; \
 
-cat &gt;Dockerfile &lt;&lt; EOF
-FROM 192.168.10.1/public/jdk:1.8
-MAINTAINER eryajf &lt;liqilong@edspay.com&gt;
-ENV LANG en_US.UTF-8
-ADD   app.jar /opt/app.jar
-ADD   run.sh  /
-EXPOSE $port
-ENTRYPOINT [ &quot;sh&quot;, &quot;-c&quot;, &quot;/run.sh&quot; ]
-EOF
+pip3 install awscli jenkins-job-builder jjb-reactive-choice-param --no-cache-dir
 
-# 构建镜像
-echoGreen &quot;开始构建当次镜像！&quot;
-docker build -t 192.168.10.1/isj/$project:$version .
-[ $? != 0 ] &amp;&amp; echoRed &quot;请注意，在执行镜像构建时出错，故而退出构建，请联系运维同学处理！&quot; &amp;&amp; exit 1
+USER jenkins
 
-# 上传到docker私服
-echoGreen &quot;开始将镜像push到私服！&quot;
-docker push 192.168.10.1/isj/$project:$version
-[ $? != 0 ] &amp;&amp; echoRed &quot;请注意，在执行镜像上传时出错，故而退出构建，请联系运维同学处理！&quot; &amp;&amp; exit 1
-docker rmi 192.168.10.1/isj/$project:$version
+VOLUME /jenkins_configs
 
-#更新镜像
-echoGreen &quot;开始将最新镜像部署到远端！&quot;
-rancher kubectl set image deployment/isj-$project isj-$project=192.168.10.1/isj/$project:$version -n isj-wfw
-[ $? != 0 ] &amp;&amp; echoRed &quot;请注意，在执行镜像更新时出错，故而退出构建，请联系运维同学处理！&quot; &amp;&amp; exit 1
-echoGreen &quot;部署完成！&quot;
+VOLUME /var/jenkins_home
+
+# Install plugins
+
+COPY plugins.txt /usr/share/jenkins/ref/
+
+RUN /usr/local/bin/install-plugins.sh &lt; /usr/share/jenkins/ref/plugins.txt
 </code></pre>
 
-<p>针对这个脚本有几点简单说明：</p>
+<p>我们为 Job Builder 安装了一些额外的安装包，我们后面会用到，还传递了一个数据卷用于 Jenkins 和安装插件。</p>
+
+<p>我们在 <strong><a href="https://our-jenkins-url/script">https://our-jenkins-url/script</a></strong> 上得到的 Groovy 代码将其粘贴保存到 <code>plugins.txt</code> ，通过它我们可以很轻松的得到插件列表。</p>
+
+<pre><code>Jenkins.instance.pluginManager.plugins.each{
+
+plugin -&gt;
+
+println (&quot;${plugin.getShortName()}:${plugin.getVersion()}&quot;)
+
+}
+</code></pre>
+
+<p>最后，docker-compose 配置在 Docker 中运行 Jenkins（我们还使用了 vaultenv 用来从 Vault 到 docker-compose 传递凭据）:</p>
+
+<pre><code>version: &quot;3&quot;
+
+services:
+
+jenkins:
+
+build: .
+
+container_name: jenkins
+
+restart: always
+
+ports:
+
+- &quot;50000:50000&quot;
+
+- &quot;8080:8080&quot;
+
+volumes:
+
+- ./configs/:/jenkins_configs/:ro
+
+- ./jenkins_home/:/var/jenkins_home/:rw
+
+environment:
+
+- VAULT_TOKEN
+
+- GITHUB_TOKEN
+
+- AWS_ACCESS_KEY_ID
+
+- AWS_SECRET_ACCESS_KEY
+
+- JAVA_OPTS=-Xms4G -Xmx8G -Xloggc:/var/jenkins_home/gc-%t.log -XX:NumberOfGCLogFiles=5 -XX:+UseGCLogFileRotation -XX:GCLogFileSize=20m -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintHeapAtGC -XX:+PrintGCCause -XX:+PrintTenuringDistribution -XX:+PrintReferenceGC -XX:+PrintAdaptiveSizePolicy -XX:+UseG1GC -XX:+ExplicitGCInvokesConcurrent -XX:+ParallelRefProcEnabled -XX:+UseStringDeduplication -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+UnlockDiagnosticVMOptions -XX:G1SummarizeRSetStatsPeriod=1
+
+volumes:
+
+configs:
+
+driver: local
+
+jenkins_home:
+
+driver: local
+</code></pre>
+
+<p>记住，一些 Java 参数可以帮助我们处理一些垃圾收集以及资源限制，这是很重要的。<a href="https://jenkins.io/blog/2016/11/21/gc-tuning/">这篇文章</a>在调节 Jenkins 这方面写的非常棒。</p>
+
+<p><strong>当然，我们可以在本地运行 Jenkins 安装插件，或者是新版本的 Jenkins。同样也很棒。</strong></p>
+
+<p><em>现在我们有了安装了插件的 Jenkins，甚至我们可以在本地运行以及轻松将其部署到生产环境。让我们为它多添加一些配置吧。</em></p>
+
+<h2 id="为主节点配置-jenkins-即代码-jcasc-插件">为主节点配置 Jenkins 即代码（JCasC）插件</h2>
+
+<p><img src="JCasC-plugin.png" alt="JCasC-plugin" /></p>
+
+<p>Jenkins 配置即代码（<a href="https://github.com/jenkinsci/configuration-as-code-plugin">JCasC</a>）插件以一种可读性的格式存储配置。</p>
+
+<p>这个插件可以让我们描述安全配置、凭据、插件配置、节点、视图以及很多其他的一些东西。</p>
+
+<p>这个 YAML 配置文件分为 5 块:</p>
 
 <ul>
-<li>1，因为应用到了颜色输出，因此记得在构建环境当中开启color颜色输出。</li>
-<li>2，尽量在关键地方添加一下判断，然后输出明了的内容以提高生产效率，比如编译有问题，直接退出构建，输出开发自检，如果是后边构建问题，同样退出构建，输出联系运维解决。</li>
-<li>3，巧用cat的EOF特性，从而也可以将不同的变量控制进来。</li>
-<li>4，尽量将所有构建过程的内容都写到Jenkins这里来，以便于后期问题排查与分析。</li>
-<li>5，因为这是实验，因此没有添加回滚功能，如果添加的话，就针对mode参数做一个判断即可。</li>
+<li><p><code>credentials</code>（系统凭据描述）</p></li>
+
+<li><p><code>jenkins</code>（授权、云设置、全局参数、节点、安全领域以及视图）</p></li>
+
+<li><p><code>security</code>（全局安全配置，比如脚本权限）</p></li>
+
+<li><p><code>tool</code>（外部工具配置，比如 git，allure等）</p></li>
+
+<li><p><code>unclassified</code>（其他配置，比如 Slack 集成）</p></li>
 </ul>
 
-<h2 id="11-构建后操作">11，构建后操作。</h2>
+<p><img src="JCasC-plugin-configuration.png" alt="JCasC-plugin-configuration" /></p>
 
-<p>因为是多个项目在同一个<code>WORKSPACE</code>下工作，因此，为了避免出现不可预知问题，这里添加了构建后清空<code>WORKSPACE</code>的选项。</p>
+<p><img src="JCasC-plugin-configuration-file.png" alt="JCasC-plugin-configuration-file" /></p>
 
-<p><img src="Active-Choices-plugin9.png" alt="" /></p>
+<p>我们可以从现有的 Jenkins 安装过程导入配置</p>
 
-<h2 id="12-效果展示">12，效果展示。</h2>
+<p>它支持<a href="https://github.com/jenkinsci/configuration-as-code-plugin/blob/master/docs/features/secrets.adoc#using-credential-provider-plugins">不同凭据提供者</a>用来管理凭据，但是我们同样需要使用环境变量。</p>
 
-<p>一切配置完成之后，就可以尝试一下点击构建了。</p>
+<pre><code>credentials:
 
-<p><img src="Active-Choices-plugin10.gif" alt="" /></p>
+system:
 
-<p>好了，这就是本期的分享，当然，关于这个插件，这里也只是介绍了其中一种一个思路，可能还有很多种其他的方案，期待各位发挥思维发掘更多妙用。</p>
+domainCredentials:
+
+- credentials:
+
+- usernamePassword:
+
+description: &quot;AWS credentials&quot;
+
+id: &quot;aws-creds&quot;
+
+password: ${AWS_SECRET_ACCESS_KEY}
+
+scope: GLOBAL
+
+username: ${AWS_ACCESS_KEY_ID}
+
+- string:
+
+description: &quot;Vault token&quot;
+
+id: &quot;vault-token&quot;
+
+scope: GLOBAL
+
+secret: ${VAULT_TOKEN}
+
+...
+</code></pre>
+
+<p>我们还将 <a href="https://wiki.jenkins.io/display/JENKINS/Amazon+EC2+Plugin">Amazon EC2 插件</a>用于 AWS 上的自举代理，它的配置同样可以使用这个插件管理。基于矩阵的授权允许我们以代码的方式管理用户的权限。</p>
+
+<pre><code>jenkins:
+
+authorizationStrategy:
+
+projectMatrix:
+
+permissions:
+
+- &quot;Overall/Administer:steve.a@example.org&quot;
+
+- &quot;Credentials/View:john.d@example.org&quot;
+
+...
+
+clouds:
+
+- amazonEC2:
+
+cloudName: &quot;AWS&quot;
+
+privateKey: ${EC2_PRIVATE_KEY}
+
+region: &quot;${AWS_REGION}&quot;
+
+templates:
+
+- ami: &quot;ami-12345678&quot;
+
+amiType:
+
+unixData:
+
+sshPort: &quot;22&quot;
+
+connectionStrategy: PRIVATE_IP
+
+deleteRootOnTermination: true
+
+description: &quot;jenkins_agent&quot;
+
+idleTerminationMinutes: &quot;20&quot;
+
+instanceCapStr: &quot;100&quot;
+
+minimumNumberOfInstances: 0
+
+mode: EXCLUSIVE
+
+numExecutors: 1
+
+remoteAdmin: &quot;jenkins&quot;
+
+remoteFS: &quot;/home/jenkins&quot;
+
+securityGroups: &quot;sg-12345678&quot;
+
+subnetId: &quot;subnet-12345678&quot;
+
+type: C52xlarge
+...
+</code></pre>
+
+<p>我们还用了很多很酷的东西。如果我们有一个是测试 Jenkins 本地变更的流程，我们就可以在投入到生产环境之前发现和修复 bug。</p>
+
+<p><em>所以我们安装了一个可复用的 Jenkins 配置，最后但并非不重要的是我们的任务</em></p>
+
+<h2 id="为自由风格任务集成-job-builder">为自由风格任务集成 Job Builder</h2>
+
+<p><img src="job-builder.png" alt="job-builder" /></p>
+
+<p>当我们讨论自由风格任务时，在 Jenkins 里有几种不同的方式来创建它们:</p>
+
+<ul>
+<li><p>使用 GUI（最简单的方法，仅需要点击即可）</p></li>
+
+<li><p>直接使用 <a href="https://wiki.jenkins.io/display/JENKINS/Remote+access+API">REST API</a></p></li>
+
+<li><p>使用类似 <a href="https://github.com/jenkinsci/job-dsl-plugin">Job DSL</a> 或者 JJB wrapper 的插件</p></li>
+</ul>
+
+<p>Jenkins Job Builder（JJB）可以让我们配置任务到一个可读的文本格式中（YAML 或者 JSON）。这样使用 SCM 管理这些任务时会非常舒服。基本上，我们可以使用 JJB 为我们的 CI/CD 工具创建一个 CI/CD 流程。</p>
+
+<pre><code>.
+
+├── config.ini
+
+├── jobs
+
+│ ├── Job1.yaml
+
+│ | ...
+
+│ └── Job2.yaml
+
+└── scripts
+
+├── job1.sh
+
+| ...
+
+└── job2.sh
+</code></pre>
+
+<p>这里，我们可以在一个 Job1.yaml 的文件里描述<a href="https://jenkins-job-builder.readthedocs.io/en/latest/definition.html">任务的定义</a>，任务步骤在脚本中（比如 job1.sh）。</p>
+
+<pre><code>- job:
+
+name: Job1
+
+project-type: freestyle
+
+auth-token: mytoken
+
+disabled: false
+
+concurrent: false
+
+node: jenkins_agent
+
+triggers:
+
+- timed: '0 3 * * *'
+
+builders:
+
+- shell:
+
+!include-raw: ../scripts/job1.sh
+</code></pre>
+
+<p>这是一个<a href="https://jenkins-job-builder.readthedocs.io/en/latest/execution.html">配置</a>文件的例子：</p>
+
+<pre><code>$ cat config.ini
+
+[job_builder]
+
+ignore_cache=True
+
+exclude=jobs/Job2
+
+[jenkins]
+
+url=https://jenkins.example.org
+
+user=some_user
+
+password=some_password
+
+$ jenkins-jobs --conf config.ini test -r jobs/
+
+$ jenkins-jobs --conf config.ini update -r jobs/
+</code></pre>
+
+<p>在 jenkins 任务升级命令中它应该会被很轻松的运行</p>
+
+<p>当然，我们的 Jenkins 用户需要有创建和配置任务的权限。我们只是需要在主节点上运行一个用来从 JJB 导入到 Jenkins 所有配置的子任务。</p>
+
+<p>JJB 并不是灵丹妙药，因为仍有一些不是很常用的插件是不支持的。但是它仍是一个非常灵活的插件。另外，它可以使用 <a href="https://docs.openstack.org/infra/jenkins-job-builder/definition.html#macro">macroses</a> 进行配置。</p>
+
+<h2 id="结论">结论</h2>
+
+<p>现在我们已经看到了‘一切事物即代码’模式的一个大概的轮廓以及我们怎样使用 Jenkins，我们可以回到文章开头提到的那几个问题那里。你找到答案了吗？或许，显而易见了，5 个问题的答案都是 “yes”。</p>
+
+<p>我们仅仅想同你一同分享我们的经验，这篇文章中参数配置以及 <a href="https://wiki.jenkins.io/display/JENKINS/Jenkins+Best+Practices">Jenkins 最佳实践</a>我们没有深入展开讲。</p>
 
 </div>
 
@@ -601,14 +787,14 @@ echoGreen &quot;部署完成！&quot;
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “使用Active-Choices-Plugin插件将十个Job合成一个”
-  </a> 更新于：June 26, 2019
+    “以代码的形式构建 Jenkins”
+  </a> 更新于：April 8, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -632,20 +818,32 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/plugin">
-              plugin
+            <a class="tag" href="/tags/jcasc">
+              Jcasc
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/jjb">
+              Jjb
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/cicd">
+              Cicd
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/iaac">
+              Iaac
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
         
       
         
@@ -779,6 +977,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
       
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
+            </a>
+          </li>
         
       
         
@@ -1066,7 +1270,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/06\/2019-06-26-using-active-choices-plugin-merge-jobs\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/04\/2020-04-08-build-jenkins-as-a-code\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
