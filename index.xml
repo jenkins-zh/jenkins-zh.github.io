@@ -37,6 +37,19 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins CLI 命令行 v0.0.27</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-10-jcli-v0.0.27/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-10-jcli-v0.0.27/</guid>
+      <description>在本次更新中，利用 GitHub Actions 和 GoReleaser 实现了自动化版本发布。为了满足更多用户的使用场景，给出了包括：.deb、.rpm 以及 arm 架构等20种不同的包格式。
+截止到编辑本文时，GitHub 上统计到的下载量为：4,985次。GitHub 上的 Star 数为146，码云上的 Star 数为87。
+另外，为了让更多的 Jenkins 用户尽快地熟悉 Jenkins CLI 的功能，并上手改进日常的工作。大家可以访问下面的交互式教程：
+https://www.katacoda.com/jenkins-zh
+🚀 功能  支持构建插件工程 (#355) @LinuxSuRen 增加用于清空 Jenkinsfile 中的空白字符的参数 (#363) @LinuxSuRen 支持传递给自定义 Jenkins 配方的参数 (#364) @LinuxSuRen 增加对构建自定义 Jenkins 的支持 (#340) @LinuxSuRen 支持启用、禁用 Jenkins 任务 (#352) @LinuxSuRen 增加可以直接重启 Jenkins 的参数 (#345) @LinuxSuRen 支持编辑空的流水线时，提供一份样本 (#361) @LinuxSuRen 增加 goreleaser 配置文件 (#347) @LinuxSuRen  📝 文档完善  为 jcli 增加一个交互式教程 (#362) @LinuxSuRen 增加如何通过 yum 安装 jcli 的说明 (#348) @LinuxSuRen  👻 维护  不再推送开发中的 Docker 镜像 (#371) @LinuxSuRen 利用 GitHub Actions 来发布版本 (#370) @LinuxSuRen 增加对 arm 架构的支持 (#351) @LinuxSuRen github.</description>
+    </item>
+    
+    <item>
       <title>自定义 Jenkins 发行版就是这么简单</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-09-custom-jenkins-war/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
