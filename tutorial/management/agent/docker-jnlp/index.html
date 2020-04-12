@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    
-    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-     
-     <title>基于 JNLP 协议的 Docker 代理节点 - Jenkins 中文社区</title>
-     <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    
-    <meta name="description" content="共建开放、包容、活跃的 Jenkins 社区">
-    
-    
-    <meta name="keywords" content="jnlp,docker,agent">
-    
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
 
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-     <meta name="generator" content="Hugo 0.53" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>基于 JNLP 协议的 Docker 代理节点 - Jenkins 中文社区</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  
+  <meta name="description" content="共建开放、包容、活跃的 Jenkins 社区">
+  
+  
+  <meta name="keywords" content="jnlp,docker,agent">
+  
 
-      
-        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-      
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.53" />
 
-    <link href='/dist/main.css' rel='stylesheet' type="text/css" /><style>
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff"><style>
   img.avatar {
     width: 32px;
     display: inline;
@@ -59,7 +66,7 @@
 步骤如下：
  在节点管理界面，新增一个代理节点；启动方式为：通过 Java Web 启动代理 点击保存后，进入到该节点的状态页面 参考下面的启动命令来启动 Docker 容器  注意替换 IP 为你的服务器地址，不能使用127.0.0.1或者 localhost secret 可以从节点状态页面找到   docker run -u root -d --rm jenkins/slave:4.0.1-1-alpine java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://192.168.31.239:8080/computer/jnlp/slave-agent.jnlp -secret ad36ea3aff1fea65a803f32e7020bd6c6b5866db9f587fb2079d308661691911 -workDir &quot;/tmp&quot;  如果希望了解更多这种代理节点的话，可以参考官方源码。"/>
 
-        
+  
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -82,10 +89,11 @@ var trackOutboundLink = function(id, url) {
 
 </script>
 
-      
-  </head>
-  <body class="ma0 sans-serif bg-primary-color-light">
-    
+  
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
 <nav class="bg-primary-color-dark pv4 w-100" role="navigation">
 
   <div class="center flex-ns flex-wrap items-center justify-start mw9">
@@ -190,9 +198,9 @@ var trackOutboundLink = function(id, url) {
   </div>
 </nav>
 
+  
+  <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
     
-    <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
-      
 
 <main>
     <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
@@ -265,9 +273,9 @@ var trackOutboundLink = function(id, url) {
 
 
 
-    </main>
+  </main>
 
-    <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
   <div class="center flex-ns flex-wrap justify-between mw9 w-90">
     <div class="pb3 pt4 w-100 w-50-ns">
 
@@ -393,7 +401,7 @@ var trackOutboundLink = function(id, url) {
   </script>
   <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 </footer>
-    
+  
 <link href="/dist/auto-complete.css" rel="stylesheet">
 <script type="text/javascript">
     
@@ -423,5 +431,6 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 </script>
 
 
-  </body>
+</body>
+
 </html>
