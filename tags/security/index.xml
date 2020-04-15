@@ -6,10 +6,27 @@
     <description>Recent content in Security on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Vault 与 Kubernetes 为密码提供强有力的保障</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/</guid>
+      <description>介绍 Kubernetes 已经成为了容器编排方案的工业标准，而来自 HashiCorp 的 Vault 则是密码管理的工业标准。那问题来了: 怎样将这两项技术结合使用从而可以让你在 Kubernetes 的应用程序中使用来自于 Vault 中心实例的密码呢？
+一种解决方法是使用 AppRole 认证。Boostport 为 AppRoles 在 Kubernetes 上的使用提供了完美的集成。另一个可行的方法是使用 Kubernetes 认证。这种认证机制为 Vault 和 Kubernetes 集群创建一个可信的联系因而你可以使用一个服务账号到 Vault 进行认证。后期你可以使用 Kubernetes 的 Vault 节点获取和更新认证令牌。
+这篇实践的文章中，我会向你展示如何使用一些 Go 助手工具实现诸如认证更新令牌这些相同的工作，并且还会进一步实现-从 Vault 到 Kubernetes 同步预定义的密码子集。
+等级: 高级
+准备工作 简单起见我有一些选项:
+ 用多种不同的方法启动一个 Kubernetes 集群。通常来说，minikube 用来测试或者开发。我会使用 kubeadm 因为它非常简单的就可以启动一个*真正的*集群。
+ 在 Kubernetes 中，会使用 default 命名空间。
+ Vault 会在*开发*模式下运行。不要像在生产环境下那样使用它！ 确保在环境变量中设置了 VAULT_ADDR。
+ 代码示例中会使用 Ubuntu。这些已经在 GCE 上配置为 2 vCPU 和 7.</description>
+    </item>
     
     <item>
       <title>我们为什么需要 DevSecOps 和制品仓库？</title>

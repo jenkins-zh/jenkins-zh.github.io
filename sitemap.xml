@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-10-jcli-v0.0.27/</loc>
     <lastmod>2020-04-10T00:00:00+00:00</lastmod>
   </url>
@@ -973,6 +978,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/cloud-native/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1181,6 +1187,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/golang/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/governance/</loc>
     <lastmod>2019-11-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1371,7 +1383,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1536,7 +1548,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/security/</loc>
-    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1634,6 +1646,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/vault/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/vscode/</loc>
     <lastmod>2020-03-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1658,7 +1676,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

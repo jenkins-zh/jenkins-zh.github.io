@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>使用 Vault 与 Kubernetes 为密码提供强有力的保障 - Jenkins 中文社区</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  
+  <meta name="description" content="结合具体的例子讲解了 Vault 和 Kubernetes 的集成，从而为 Kubernetes 运行的应用程序更安全的使用密码">
+  
+  
+  <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+  
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff"><style>
+  img.avatar {
+    width: 32px;
+    display: inline;
+  }
+</style>
+<meta property="og:title" content="使用 Vault 与 Kubernetes 为密码提供强有力的保障" />
+<meta property="og:description" content="结合具体的例子讲解了 Vault 和 Kubernetes 的集成，从而为 Kubernetes 运行的应用程序更安全的使用密码" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/" /><meta property="article:published_time" content="2020-04-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-04-15T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="使用 Vault 与 Kubernetes 为密码提供强有力的保障">
+<meta itemprop="description" content="结合具体的例子讲解了 Vault 和 Kubernetes 的集成，从而为 Kubernetes 运行的应用程序更安全的使用密码">
+
+
+<meta itemprop="datePublished" content="2020-04-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1404">
+
+
+
+<meta itemprop="keywords" content="Kubernetes,Vault,Cloud Native,Golang,Security," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 Vault 与 Kubernetes 为密码提供强有力的保障"/>
+<meta name="twitter:description" content="结合具体的例子讲解了 Vault 和 Kubernetes 的集成，从而为 Kubernetes 运行的应用程序更安全的使用密码"/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+  
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://jenkins-zh.cn" class="link white">
+         Jenkins 中文社区
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/wechat/" class="dim link light-silver"
+            >
+            博客
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/tutorial/" class="dim link light-silver"
+            >
+            教程
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/event/" class="dim link light-silver"
+            >
+            活动
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/partner/" class="dim link light-silver"
+            >
+            合作伙伴
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/about/" class="dim link light-silver"
+            >
+            关于我们
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="http://jenkins.io/zh" class="dim link light-silver"
+            target="_blank">
+            Jenkins 官网
+              
+            
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="email-address">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+      placeholder="搜索文档" type="text"
+      name="email-address" value="" style="background-image:url('/images/icon-search.png');background-size:16px 16px;">
+  </fieldset>
+</form>
+</div>
+
+    <div class="list ma0 pa0 dn dib-l"></div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/jenkins-zh/jenkins-zh/" data-size="large" data-show-count="false" aria-label="Star Jenkins WeChat GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+  
+  <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+    
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+
+  <aside class="mw5 br3 mv3 nested-links">
+    
+    
+      
+        <h3 class="f4 dib author">
+            s1mple_zj
+        </h3>
+
+      
+      
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
+          You only got one shot,do not miss your chance to blow.
+        </p>
+      
+      <a href="https://github.com/0N0thing" target="_blank" class="link dim v-mid dib">
+        <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
+<path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
+</svg>
+
+      </a>
+
+  
+  <div>
+    作者：<span class="originalAuthor">Johann Gyger</span>
+    <div>
+      <a class="originalLink" href="https://itnext.io/effective-secrets-with-vault-and-kubernetes-9af5f5c04d06" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
+  </aside>
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+
+		
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-10-jcli-v0.0.27/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins CLI 命令行 v0.0.27">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用 Vault 与 Kubernetes 为密码提供强有力的保障</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      结合具体的例子讲解了 Vault 和 Kubernetes 的集成，从而为 Kubernetes 运行的应用程序更安全的使用密码
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p><img src="cover.jpg" alt="cover" /></p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>Kubernetes 已经成为了容器编排方案的工业标准，而来自 HashiCorp 的  Vault 则是密码管理的工业标准。那问题来了: 怎样将这两项技术结合使用从而可以让你在 Kubernetes 的应用程序中使用来自于 Vault 中心实例的密码呢？</p>
+
+<p>一种解决方法是使用 <a href="https://www.vaultproject.io/docs/auth/approle.html">AppRole</a> 认证。<a href="https://github.com/Boostport/kubernetes-vault">Boostport</a> 为 AppRoles 在 Kubernetes 上的使用提供了完美的集成。另一个可行的方法是使用  <a href="https://www.vaultproject.io/docs/auth/kubernetes.html">Kubernetes 认证</a>。这种认证机制为 Vault 和 Kubernetes 集群创建一个可信的联系因而你可以使用一个服务账号到 Vault 进行认证。后期你可以使用 <a href="https://www.vaultproject.io/docs/auth/kubernetes.html">Kubernetes 的 Vault 节点</a>获取和更新认证令牌。</p>
+
+<p>这篇实践的文章中，我会向你展示如何使用一些 Go 助手工具实现诸如认证更新令牌这些相同的工作，并且还会进一步实现-从 Vault 到 Kubernetes 同步预定义的密码子集。</p>
+
+<p><em>等级: 高级</em></p>
+
+<h2 id="准备工作">准备工作</h2>
+
+<p>简单起见我有一些选项:</p>
+
+<ul>
+<li><p>用多种不同的方法启动一个 Kubernetes 集群。通常来说，<code>minikube</code> 用来测试或者开发。我会使用 <code>kubeadm</code> 因为它非常简单的就可以启动一个*真正的*集群。</p></li>
+
+<li><p>在 Kubernetes 中，会使用 <code>default</code> 命名空间。</p></li>
+
+<li><p>Vault 会在*开发*模式下运行。<em>不要像在生产环境下那样使用它！</em> 确保在环境变量中设置了 <code>VAULT_ADDR</code>。</p></li>
+
+<li><p>代码示例中会使用 Ubuntu。这些已经在 GCE 上配置为 2 vCPU 和 7.5 GB 的 Ubuntu 18.10 VM 上进行了测试。（可以看看 GCP 上 $300 的免费套餐，就是说说而已哈&hellip;）</p></li>
+
+<li><p>除非另有说明，将会使用 Bash。</p></li>
+</ul>
+
+<h2 id="kubernetes">Kubernetes</h2>
+
+<p>让我们从一个简单的测试集群开始。下面的代码你会看到一个简单节点的安装步骤是什么样的。</p>
+
+<pre><code># 1) Install Kubernetes on a Ubuntu machine
+sudo -i
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+echo 'deb http://apt.kubernetes.io/ kubernetes-xenial main' &gt;&gt; /etc/apt/sources.list.d/kubernetes.list
+apt update &amp;&amp; apt install -y docker.io kubelet kubeadm kubectl
+sudo systemctl enable docker.service
+kubeadm init --pod-network-cidr=10.244.0.0/16  # Flannel pod network, see below
+exit
+
+# 2) Prepare kubectl
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+echo &quot;source &lt;(kubectl completion bash); alias k=kubectl; complete -F __start_kubectl k&quot; &gt;&gt; .bashrc &amp;&amp; exec $SHELL
+
+# 3) Finalize K8s config 
+kubectl cluster-info 
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl taint nodes --all node-role.kubernetes.io/master-
+kubectl get nodes -o wide
+
+# For details, see: 
+# - https://kubernetes.io/docs/setup/independent/install-kubeadm/
+# - https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
+</code></pre>
+
+<h2 id="vault">Vault</h2>
+
+<h3 id="安装">安装</h3>
+
+<p>Vault 的安装非常的直接: 下载解压二进制包即可:</p>
+
+<pre><code># Install Vault
+sudo apt install -y zip
+curl -OL https://releases.hashicorp.com/vault/1.1.1/vault_1.1.1_linux_amd64.zip
+unzip vault_1.1.1_linux_amd64.zip
+sudo mv vault /usr/local/bin/
+vault -autocomplete-install &amp;&amp; exec $SHELL
+</code></pre>
+
+<h3 id="运行一个-vault-服务器">运行一个 Vault 服务器</h3>
+
+<p>我们会以*开发*模式运行一个 Vault 服务器。同样，这也非常的简单。请记住，当启动一个开发服务器的时候，一个 root 令牌会被写入到 <code>$HOME/.vault-token</code> 中，对 root 用户来说同样如此。使用 <code>&amp;</code> 符号会让 Vault 进程在后台运行因此我们可以继续使用相同的 shell。</p>
+
+<pre><code>$ vault server -dev -dev-listen-address=0.0.0.0:8200 &amp;
+==&gt; Vault server configuration:
+
+             Api Address: http://0.0.0.0:8200
+                     Cgo: disabled
+         Cluster Address: https://0.0.0.0:8201
+              Listener 1: tcp (addr: &quot;0.0.0.0:8200&quot;, cluster address: &quot;0.0.0.0:8201&quot;, max_request_duration: &quot;1m30s&quot;, max_request_size: &quot;33554432&quot;, tls: &quot;disabled&quot;)
+               Log Level: info
+                   Mlock: supported: true, enabled: false
+                 Storage: inmem
+                 Version: Vault v1.1.1
+             Version Sha: a3dcd63451cf6da1d04928b601bbe9748d53842e
+</code></pre>
+
+<h3 id="配置-kubernetes-认证">配置 Kubernetes 认证</h3>
+
+<p>现在我们必须确保 Kubernetes 可以通过 Kubernetes 认证与 Vault 进行通信。这将会在 Kubernetes 和 Vault 之间建立一个信任的联系。预命名的 <code>vault-demo-role</code> 将会映射策略以及定义一个 TTL。</p>
+
+<p>因为我们使用 <code>kubeadm</code> 启动的 Kubernetes 集群，它非常轻松的就可以找到 <code>kubernetes_ca_cert</code> 参数的证书颁发机构（CA）存储的值。如果使用一个在云安装的 Kubernetes 该过程会比较困难一些。</p>
+
+<pre><code># NOTE: You may need to set these addresses differently.
+export INTERNAL_IP=$(dig +short `hostname -f`)
+export VAULT_ADDR=http://${INTERNAL_IP}:8200
+
+# Enable and configure the Kubernetes auth method.
+# For details, see: 
+# - https://www.vaultproject.io/docs/auth/kubernetes.html
+# - https://www.vaultproject.io/api/auth/kubernetes/index.html
+vault auth enable kubernetes
+vault write auth/kubernetes/config \
+    kubernetes_host=https://${INTERNAL_IP}:6443 \
+    kubernetes_ca_cert=@/etc/kubernetes/pki/ca.crt 
+vault write auth/kubernetes/role/vault-demo-role \
+    bound_service_account_names=vault-serviceaccount \
+    bound_service_account_namespaces=default \
+    policies=vault-demo-policy \
+    ttl=1h
+
+# Create a policy for demo purposes
+cat &lt;&lt;EOF | vault policy write vault-demo-policy -
+path &quot;sys/mounts&quot; { capabilities = [&quot;read&quot;] }
+path &quot;secret/data/demo/*&quot; { capabilities = [&quot;read&quot;] }
+path &quot;secret/metadata/demo/*&quot; { capabilities = [&quot;list&quot;] }
+EOF
+
+# Write some demo secret
+vault kv put secret/demo/most-used-password password=123456
+vault kv put secret/demo/first one=1234567890 two=2345678901
+vault kv put secret/demo/second green=lantern poison=ivy
+vault kv put secret/demo/greek/alpha philosopher=plato
+vault kv put secret/demo/greek/beta god=zeus
+vault kv put secret/demo/greek/gamma mountain=olympus
+</code></pre>
+
+<h3 id="基于角色的访问控制-rbac">基于角色的访问控制（RBAC）</h3>
+
+<p>在 Kubernetes 这边，我们现在需要安装设置相匹配的 RBAC。首先我们创建一个名称为 <code>vault-serviceaccount</code> 的服务账号。然后我们会添加一个叫做 <code>vault-closterrolebinding</code> 的集群角色绑定，因而我们新创建的服务账号可以被允许使用默认的集群角色 <code>system:auth-delegator</code> 发送认证请求。角色 <code>vault-secrectadmin-role</code> 和角色绑定 <code>vault-secretadmin-rolebinding</code> 也绑定到了 <code>vault-serviceaccount</code> 上这样我们就可以同步密码了。</p>
+
+<pre><code>---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: vault-serviceaccount
+
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: vault-clusterrolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+  - kind: ServiceAccount
+    name: vault-serviceaccount
+    namespace: default
+
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: vault-secretadmin-role
+rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;secrets&quot;]
+  verbs: [&quot;*&quot;]
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: vault-secretadmin-rolebinding
+subjects:
+- kind: ServiceAccount
+  name: vault-serviceaccount
+roleRef:
+  kind: Role
+  name: vault-secretadmin-role
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+
+<p>让我们应用下面的配置:</p>
+
+<pre><code>$ k apply -f vault-rbac.yaml 
+serviceaccount/vault-serviceaccount created
+clusterrolebinding.rbac.authorization.k8s.io/vault-clusterrolebinding created
+role.rbac.authorization.k8s.io/vault-secret-admin-role created
+rolebinding.rbac.authorization.k8s.io/vault-demo-secret-admin-rolebinding created
+</code></pre>
+
+<p>准备工作完成了。现在我们可以移步到我们的用例上了。</p>
+
+<h2 id="用例">用例</h2>
+
+<p>我们将会覆盖下面的这三个用例:</p>
+
+<ul>
+<li><p>第一个例子会演示怎样认证到 Vault 然后使用一个初始化的容器获取一个认证令牌。</p></li>
+
+<li><p>第二个例子会演示怎样使用 sidecar 容器更新这个令牌。</p></li>
+
+<li><p>第三个例子将会演示怎样从 Vault 到 Kubernetes 同步密码。</p></li>
+</ul>
+
+<p>所有这三个用例均由我在 PostFinance 的同事构建的三个 Docker 镜像上运行的。特别感谢 Marc Sauter，他在 <a href="https://github.com/sethvargo/vault-kubernetes-authenticator">Seth Vargo</a> 工作的启发下编纂了最初的实现方案。创建的这三个镜像-在 <a href="https://hub.docker.com/u/postfinance">Docker Hub</a> 上均可获取到-包括了一点 Go 的助手工具，代码均可以从 <a href="https://github.com/postfinance/vault-kubernetes">GitHub</a> 上找到。</p>
+
+<h3 id="使用初始容器进行认证">使用初始容器进行认证</h3>
+
+<p>第一个例子会展示 <code>vault-kubernetes-authenticator</code> （简称 *auther*）镜像的用法。auther 在一个初始容器中运行，使用服务账号 <code>vault-serviceaccount</code> 向 Vault 进行认证然后将 Vault 的认证令牌写入到 <code>/home/vault/.vault-token</code> 中。</p>
+
+<pre><code>---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-kubernetes-authenticator-demo
+  labels:
+    appl: vault-kubernetes-authenticator-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appl: vault-kubernetes-authenticator-demo
+  template:
+    metadata:
+      labels:
+        appl: vault-kubernetes-authenticator-demo
+    spec:
+      serviceAccountName: vault-serviceaccount
+      volumes:
+      - name: vault-token
+        emptyDir:
+          medium: Memory
+      initContainers:
+      - name: vault-kubernetes-authenticator
+        image: postfinance/vault-kubernetes-authenticator
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: vault-token
+          mountPath: /home/vault
+        env:
+        - name: VAULT_ADDR
+          value: ${VAULT_ADDR}
+        - name: VAULT_ROLE
+          value: vault-demo-role
+        - name: VAULT_TOKEN_PATH
+          value: /home/vault/.vault-token
+      containers:
+      - name: kuard
+        image: gcr.io/kuar-demo/kuard-amd64:blue
+        volumeMounts:
+        - name: vault-token
+          mountPath: /home/vault
+</code></pre>
+
+<p>我们应用这些配置然后执行一些测试来验证所有配置都能成功运行。</p>
+
+<pre><code>$ envsubst &lt; vault-kubernetes-authenticator-demo.yaml | k apply -f -
+deployment.apps/vault-kubernetes-authenticator-demo created
+
+$ k get all
+NAME                                                      READY   STATUS    RESTARTS   AGE
+pod/vault-kubernetes-authenticator-demo-fc49b957c-b5bnx   1/1     Running   0          81s
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   20h
+NAME                                                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/vault-kubernetes-authenticator-demo   1/1     1            1           81s
+NAME                                                            DESIRED   CURRENT   READY   AGE
+replicaset.apps/vault-kubernetes-authenticator-demo-fc49b957c   1         1         1       81s
+
+$ k logs vault-kubernetes-authenticator-demo-fc49b957c-b5bnx -c vault-kubernetes-authenticator 
+2019/04/16 04:45:23 successfully authenticated to vault
+2019/04/16 04:45:23 successfully stored vault token at /home/vault/.vault-token
+
+$ k exec vault-kubernetes-authenticator-demo-fc49b957c-b5bnx -- sh -c &quot;VAULT_ADDR=${VAULT_ADDR} sh&quot;
+~ $ cat /home/vault/.vault-token; echo
+s.xrrJoCARIC0Z84vcvcwuH5XG
+~ $ wget --header=&quot;X-Vault-Token: $(cat /home/vault/.vault-token)&quot; -q -O - ${VAULT_ADDR}/v1/secret/data/demo/most-used-password
+{&quot;request_id&quot;:&quot;12660a6b-7ad0-85bc-8841-d21c7cc8248a&quot;,&quot;lease_id&quot;:&quot;&quot;,&quot;renewable&quot;:false,&quot;lease_duration&quot;:0,&quot;data&quot;:{&quot;data&quot;:{&quot;password&quot;:&quot;123456&quot;},&quot;metadata&quot;:{&quot;created_time&quot;:&quot;2019-04-16T05:11:44.651116748Z&quot;,&quot;deletion_time&quot;:&quot;&quot;,&quot;destroyed&quot;:false,&quot;version&quot;:1}},&quot;wrap_info&quot;:null,&quot;warnings&quot;:null,&quot;auth&quot;:null}
+~ $ wget --header=&quot;X-Vault-Token: $(cat /home/vault/.vault-token)&quot; -q -O - ${VAULT_ADDR}/v1/secret/data/sensitive-password
+wget: server returned error: HTTP/1.1 403 Forbidden
+</code></pre>
+
+<h3 id="使用-sidecar-更新令牌">使用 Sidecar 更新令牌</h3>
+
+<p>第二个例子将向你展示 <code>vault-kubernetes-token-renewer</code> （简称 *renewer*）镜像的使用。renewer 运行在一个 sidecar 容器中，周期性地检查 TTL 然后根据检查的情况更新认证令牌。</p>
+
+<pre><code>---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-kubernetes-token-renewer-demo
+  labels:
+    appl: vault-kubernetes-token-renewer-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appl: vault-kubernetes-token-renewer-demo
+  template:
+    metadata:
+      labels:
+        appl: vault-kubernetes-token-renewer-demo
+    spec:
+      shareProcessNamespace: true
+      serviceAccountName: vault-serviceaccount
+      volumes:
+        - name: vault-token
+          emptyDir:
+            medium: Memory
+      initContainers:
+        - name: vault-kubernetes-authenticator
+          image: postfinance/vault-kubernetes-authenticator
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: vault-token
+              mountPath: /home/vault
+          env:
+            - name: VAULT_ADDR
+              value: ${VAULT_ADDR}
+            - name: VAULT_ROLE
+              value: vault-demo-role
+            - name: VAULT_TOKEN_PATH
+              value: /home/vault/.vault-token
+      containers:
+        - name: vault-kubernetes-token-renewer
+          image: postfinance/vault-kubernetes-token-renewer
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: vault-token
+              mountPath: /home/vault
+          env:
+            - name: VAULT_ADDR
+              value: ${VAULT_ADDR}
+            - name: VAULT_ROLE
+              value: vault-demo-role
+            - name: VAULT_TOKEN_PATH
+              value: /home/vault/.vault-token
+        - name: kuard
+          image: gcr.io/kuar-demo/kuard-amd64:blue
+          volumeMounts:
+            - name: vault-token
+              mountPath: /home/vault
+</code></pre>
+
+<p>我们也同样应用一下这些配置然后做一些验证。（我删除了先前的 deployment。）</p>
+
+<pre><code>$ envsubst &lt; vault-kubernetes-token-renewer-demo.yaml | k apply -f -
+deployment.apps/vault-kubernetes-token-renewer-demo created
+
+$ k get all
+NAME                                                       READY   STATUS    RESTARTS   AGE
+pod/vault-kubernetes-token-renewer-demo-694cc7dbbd-rkbbs   2/2     Running   0          4s
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   31h
+NAME                                                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/vault-kubernetes-token-renewer-demo   1/1     1            1           4s
+NAME                                                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/vault-kubernetes-token-renewer-demo-694cc7dbbd   1         1         1       4s
+
+$ k logs vault-kubernetes-token-renewer-demo-694cc7dbbd-rkbbs -c vault-kubernetes-authenticator 
+2019/04/16 15:40:55 successfully authenticated to vault
+2019/04/16 15:40:55 successfully stored vault token at /home/vault/.vault-token
+
+$ k logs vault-kubernetes-token-renewer-demo-694cc7dbbd-rkbbs -c vault-kubernetes-token-renewer 
+2019/04/16 15:40:56 start renewer loop
+2019/04/16 15:40:56 token renewed
+</code></pre>
+
+<h3 id="从-vault-到-kubernetes-同步密码">从 Vault 到 Kubernetes 同步密码</h3>
+
+<p>第三个例子将向你展示 <code>vault-kubernetes-synchronizer</code> （简称 *syncer*）的用法。syncer 可以用在多个方面。在这个 demo 里面，一个 Kubernetes 任务将被用来从预定义的路径一次性同步 Vault 密码。这些 Vault 密码将会被写入到相应的 Kubernetes 密码中。</p>
+
+<pre><code>---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vault-kubernetes-synchronizer-demo
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      serviceAccountName: vault-serviceaccount
+      restartPolicy: Never
+      volumes:
+        - name: vault-token
+          emptyDir:
+            medium: Memory
+      initContainers:
+        - name: vault-kubernetes-authenticator
+          image: postfinance/vault-kubernetes-authenticator
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: vault-token
+              mountPath: /home/vault
+          env:
+            - name: VAULT_ADDR
+              value: ${VAULT_ADDR}
+            - name: VAULT_ROLE
+              value: vault-demo-role
+            - name: VAULT_TOKEN_PATH
+              value: /home/vault/.vault-token
+      containers:
+        - name: vault-kubernetes-synchronizer
+          image: postfinance/vault-kubernetes-synchronizer
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: vault-token
+              mountPath: /home/vault
+          env:
+            - name: VAULT_ADDR
+              value: ${VAULT_ADDR}
+            - name: VAULT_ROLE
+              value: vault-demo-role
+            - name: VAULT_TOKEN_PATH
+              value: /home/vault/.vault-token
+            - name: VAULT_SECRETS
+              value: secret/demo/first,secret/demo/second,secret/demo/first:third,secret/demo/greek/
+</code></pre>
+
+<p>同样，我们也应用一下这些配置然后看看所有的配置是否如预期一样运行正常:</p>
+
+<pre><code>$ envsubst &lt; vault-kubernetes-synchronizer-demo.yaml | k apply -f -
+job.batch/vault-kubernetes-synchronizer-demo created
+
+$ k get all
+NAME                                           READY   STATUS    RESTARTS   AGE
+pod/vault-kubernetes-synchronizer-demo-m2xnz   1/1     Running   0          4s
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   3d5h
+NAME                                           COMPLETIONS   DURATION   AGE
+job.batch/vault-kubernetes-synchronizer-demo   0/1           4s         4s
+
+$ k logs pod/vault-kubernetes-synchronizer-demo-m2xnz -c vault-kubernetes-authenticator
+2019/04/18 14:29:42 successfully authenticated to vault
+2019/04/18 14:29:42 successfully stored vault token at /home/vault/.vault-token
+
+$ k logs pod/vault-kubernetes-synchronizer-demo-m2xnz
+2019/04/18 14:29:43 read secret/demo/first from vault
+2019/04/18 14:29:43 update secret third from vault secret secret/demo/first
+2019/04/18 14:29:43 read secret/demo/greek/alpha from vault
+2019/04/18 14:29:43 update secret alpha from vault secret secret/demo/greek/alpha
+2019/04/18 14:29:43 read secret/demo/greek/beta from vault
+2019/04/18 14:29:43 update secret beta from vault secret secret/demo/greek/beta
+2019/04/18 14:29:43 read secret/demo/greek/gamma from vault
+2019/04/18 14:29:43 update secret gamma from vault secret secret/demo/greek/gamma
+2019/04/18 14:29:43 read secret/demo/first from vault
+2019/04/18 14:29:43 update secret first from vault secret secret/demo/first
+2019/04/18 14:29:43 read secret/demo/second from vault
+2019/04/18 14:29:43 update secret second from vault secret secret/demo/second
+2019/04/18 14:29:44 secrets successfully synchronized
+
+$ k get secrets
+NAME                               TYPE                                  DATA   AGE
+alpha                              Opaque                                1      2m43s
+beta                               Opaque                                1      2m43s
+default-token-ssd7f                kubernetes.io/service-account-token   3      3d5h
+first                              Opaque                                2      2m43s
+gamma                              Opaque                                1      2m43s
+second                             Opaque                                2      2m43s
+third                              Opaque                                2      2m43s
+vault-serviceaccount-token-f6tnw   kubernetes.io/service-account-token   3      2d20h
+
+$ k describe secret first
+Name:         first
+Namespace:    default
+Labels:       &lt;none&gt;
+Annotations:  vault-secret: secret/demo/first
+Type:  Opaque
+Data
+====
+one:  10 bytes
+two:  10 bytes
+
+$ k describe secret alpha
+Name:         alpha
+Namespace:    default
+Labels:       &lt;none&gt;
+Annotations:  vault-secret: secret/demo/greek/alpha
+Type:  Opaque
+Data
+====
+philosopher:  5 bytes
+</code></pre>
+
+<p>syncer 同样可以用在 Kubernetes 的 cron 任务中从 Vault 周期性同步密码或者同步到另一个  Kubernetes deployment 的初始容器中，这样密码就会保持最新状态。</p>
+
+<p>需要注意的是 Kubernetes 密码保护不是很好。Seth Vargo 在最近的 FOSDEM <a href="https://fosdem.org/2019/schedule/event/base64_not_encryption/">访谈</a>中指出，默认情况下，它们仅做了 base64 编码和存储，就像在 etcd 中那样。你应该允许<a href="https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/">数据的静态加密</a>。也请确保你只同步那些你的 Kubernetes 应用程序使用的那些密码，这些密码由相应的 Vault 策略以及命名角色保护。除此之外，该方法还允许你以云原生行为使用密码。你的应用程序不能直接访问 Vault 密码可以被注入到环境变量中。</p>
+
+<h2 id="结论">结论</h2>
+
+<p>Kubernetes 和 Vault 这两项技术在结合使用或者集成它们使用时均是很棒的组合。集成的方案看似不简单但是依旧可行。这篇文章中我已经向你展示了怎样实现这两者的集成，希望会对你有所帮助。</p>
+
+<p>你或许会问了为什么明明可以用 Vault 官方提供的镜像运行一个节点用来实现相同的事情却偏偏选择了一些第三方提供的镜像呢。原因如下: Vault 节点需要一个配置文件而不是环境变量，这也就意味着你必须去管理其他的配置映射。并且当前的节点不能同步密码。另外，第三方的镜像更轻量。官方的 Vault 镜像大概 100 MB。而 auther 和 renewer 镜像大约也就 10 MB syncer 镜像大约40 MB。</p>
+
+</div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “使用 Vault 与 Kubernetes 为密码提供强有力的保障”
+  </a> 更新于：April 15, 2020
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">完善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/kubernetes">
+              Kubernetes
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/vault">
+              Vault
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/cloud-native">
+              Cloud Native
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/golang">
+              Golang
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/security">
+              Security
+            </a>
+          </li>
+        
+              
+      
+        
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/" class="link">
+              使用 Kubernetes 和 Jenkins 创建一个 CI/CD 流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/" class="link">
+              在 Kubernetes 上使用 Jenkins 
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/" class="link">
+              使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link">
+              从 Jenkins 到 Jenkins X
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/" class="link">
+              与云无关的用于 Kubernetes 的自动化 CI/CD 
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/" class="link">
+              使用 Jenkins X 渐进式交付
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-24-progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/" class="link">
+              Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-15-kubecon-cn/" class="link">
+              Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/01/2019-01-30-k8s-jenkins-secet-agent/" class="link">
+              Jenkins 和 Kubernetes -云上的神秘代理
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/04\/2019-04-15-effective-secret-with-vault-and-kubernetes\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
+
+  </main>
+
+  <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    <div class="pb3 pt4 w-100 w-50-ns">
+
+      <div class="b f3  light-gray mb3 nested-links tc">
+        由 <a href="https://github.com/jenkins-zh/jenkins-zh/graphs/contributors" target="_blank"
+          class="link">Jenkins 社区贡献者</a> 维护<br />
+      </div>
+
+      <ul class="center f6 list ma0 mv3 pa0 tc" style="display:none"><li class="dib mr3"><a href="https://github.com/jenkins-zh/jenkins-zh/issues/new" class="dim link light-gray pv2">File an Issue</a></li></ul>
+
+      <ul class="center f6 list ma0 mv4 pa0 tc">
+        <li class="dib mr3">
+          <a href="https://twitter.com/jenkinsci" target="_blank" class="dim link light-gray pv2">Twitter</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://www.youtube.com/channel/UC63xz3pq26BBgwB3cnwCoqQ" target="_blank"
+            class="dim link light-gray pv2">YouTube</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://space.bilibili.com/433584098" target="_blank" class="dim link light-gray pv2">哔哩哔哩</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://jcli.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">Jenkins
+            CLI</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://community.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">社区论坛</a>
+        </li>
+      </ul>
+
+      
+    </div>
+
+    <div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">优酷视频
+        <div>
+          <a href="https://i.youku.com/jenkinszh" target="_blank">
+            <img src="/images/youku-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微信公众号
+        <div>
+          <a href="https://mp.weixin.qq.com/s/vifdduC3kRGSIMpyL03yVA" target="_blank">
+            <img src="https://jenkins.io/images/jenkins-wechat.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微博
+        <div>
+          <a href="https://www.weibo.com/jenkinszh" target="_blank">
+            <img src="/images/weibo-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="f7 gray mb5 mb0-ns ph3 w-100"> 
+    <p class="dib mr4"><a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow" class="dim link light-gray pv2"><u>晋ICP备15000444号-2</u></a></p>
+  </div>
+
+
+  <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu pb3 dn">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/wechat/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          博客
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/tutorial/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          教程
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/event/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          活动
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/partner/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          合作伙伴
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/about/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          关于我们
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="http://jenkins.io/zh" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Jenkins 官网
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">菜单</button>
+
+  
+</div>
+<script src="/dist/app.bundle.js" type="text/javascript"></script>
+</div>
+
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'jenkinsci/chinese'
+    };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</footer>
+  
+<link href="/dist/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/jenkins-zh.cn";
+    
+</script>
+<script src="/dist/lunr.js"></script>
+<script src="/dist/autocomplete.js"></script>
+<script src="/dist/jquery-3.2.1.min.js"></script>
+<script src="/dist/search.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6db234f713318730f0e5f6a95bdd8d47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?6276dcef5c15f276644151772390c1f9":"https://jspassport.ssl.qhimg.com/11.0.1.js?6276dcef5c15f276644151772390c1f9";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+</body>
+
+</html>
