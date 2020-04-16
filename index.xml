@@ -37,6 +37,16 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2020-04-15/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2020-04-15/</guid>
+      <description> UCloud 服务器管理  开始部署 Jenkins  运行的位置保持不变（阿里云）   与 KubeSphaere 社区合（青云）作  技术方向  https://github.com/jenkins-zh/jenkins-formulas  内容  互相推送一些文章、投稿等等   社区激励 记录第三次社区激励的记录 @yJunS
+社区媒体账号运营情况  简书 @yJunS changelog 有定时更新 @zhaoying818 讲师征集 @linan607  </description>
+    </item>
+    
+    <item>
       <title>使用 Vault 与 Kubernetes 为密码提供强有力的保障</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>

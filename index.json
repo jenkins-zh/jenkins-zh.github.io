@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/meeting/2020-04-15/",
+        "title": "",
+        "type": "meeting",
+        "date": "2020-04-15 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": " UCloud 服务器管理  开始部署 Jenkins  运行的位置保持不变（阿里云）   与 KubeSphaere 社区合（青云）作  技术方向  https://github.com/jenkins-zh/jenkins-formulas  内容  互相推送一些文章、投稿等等   社区激励 记录第三次社区激励的记录 @yJunS\n社区媒体账号运营情况  简书 @yJunS changelog 有定时更新 @zhaoying818 讲师征集 @linan607  ",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/",
         "title": "使用 Vault 与 Kubernetes 为密码提供强有力的保障",
         "type": "wechat",
@@ -1904,7 +1917,7 @@
         "date": "2019-03-03 00:00:00 +0000 UTC",
         "tags": [],
         "description": "激励可以让社区活动更有趣",
-        "content": " 为了激励社区成员积极地为社区作出贡献，我们会不定期给予积极活跃、付出重大贡献的小伙伴一定形式的奖励。\n定期激励：每个季度被选中的贡献者，可以在人民邮电出版社微店中自行挑选图书一本。\n大会门票赠送：不定期会有合作社区的大会门票赠送给有需要的贡献者。\n其他激励： 此外，还会有其他形式的激励。\n下面是历次的奖励记录：\n大会门票赠送 不定期会有合作社区的大会门票赠送给有需要的贡献者。\n需要大会门票的成员需要在 GitHub 的 jenkins-zh/jenkins-zh 仓库提交一个 issue 用来申请门票，在该 issue 中需要提供最近贡献的 PR（Pull Request）链接。\n下面的表格中包括所有大会的历次赠票记录：\n   大会 举办时间 成员 奖励 申请链接     Jenkins User Conference China 2019年11月2日  donhui  门票一张 #138   Jenkins User Conference China 2019年11月2日  tomatofrommars  门票一张 #139    社区聚会    日期 城市 成员 备注     2020-1-5 北京  linuxsuren  50元   2020-1-5 北京  donhui  50元   2020-1-5 北京  linan607  50元   2020-1-5 北京  yJunS  50元 论坛帖子    定期激励 每个季度被选中的贡献者，可以在人民邮电出版社微店中自行挑选图书一本。\nNO.2 时间范围：2019年6月～8月\n赞助方：人民邮电出版社\n   成员 奖励      donhui  《人生护城河 如何建立自己真正的优势》    yJunS  《精通 jQuery(第二版)》    linan607  《持续交付 2.0 业务引领的 DevOps 精要》    P01son6415  《算法 第四版》    hummerstudio  《极简主义——风靡欧美的工作与生活理念》    NO.1 时间范围：2019年3月～5月\n赞助方：人民邮电出版社\n   成员 奖励      donhui  《黑客与画家》    zacker330  《基础设施即服务》    yJunS  《黑客与画家》    ",
+        "content": " 为了激励社区成员积极地为社区作出贡献，我们会不定期给予积极活跃、付出重大贡献的小伙伴一定形式的奖励。\n定期激励：每个季度被选中的贡献者，可以在人民邮电出版社微店中自行挑选图书一本。\n大会门票赠送：不定期会有合作社区的大会门票赠送给有需要的贡献者。\n其他激励： 此外，还会有其他形式的激励。\n下面是历次的奖励记录：\n大会门票赠送 不定期会有合作社区的大会门票赠送给有需要的贡献者。\n需要大会门票的成员需要在 GitHub 的 jenkins-zh/jenkins-zh 仓库提交一个 issue 用来申请门票，在该 issue 中需要提供最近贡献的 PR（Pull Request）链接。\n下面的表格中包括所有大会的历次赠票记录：\n   大会 举办时间 成员 奖励 申请链接     Jenkins User Conference China 2019年11月2日  donhui  门票一张 #138   Jenkins User Conference China 2019年11月2日  tomatofrommars  门票一张 #139    社区聚会    日期 城市 成员 备注     2020-1-5 北京  linuxsuren  50元   2020-1-5 北京  donhui  50元   2020-1-5 北京  linan607  50元   2020-1-5 北京  yJunS  50元 论坛帖子    定期激励 每个季度被选中的贡献者，可以在人民邮电出版社微店中自行挑选图书一本。\nNO.3 时间范围：2019年9月～2020年4月\n赞助方：人民邮电出版社\n   成员 奖励      wenjunzhangp  《微服务实战(Dubbox +Spring Boot+Docker)》    zhaoying818  《微服务设计》    0N0thing  《DevOps实践指南》    wst021  《DevOps入门与实践》    walker0921  《Python编程从入门到实践》    NO.2 时间范围：2019年6月～8月\n赞助方：人民邮电出版社\n   成员 奖励      donhui  《人生护城河 如何建立自己真正的优势》    yJunS  《精通 jQuery(第二版)》    linan607  《持续交付 2.0 业务引领的 DevOps 精要》    P01son6415  《算法 第四版》    hummerstudio  《极简主义——风靡欧美的工作与生活理念》    NO.1 时间范围：2019年3月～5月\n赞助方：人民邮电出版社\n   成员 奖励      donhui  《黑客与画家》    zacker330  《基础设施即服务》    yJunS  《黑客与画家》    ",
         "auhtor": "linuxsuren",
         "translator": "",
         "original": "",
@@ -2096,7 +2109,7 @@
         "uri": "https://jenkins-zh.cn/meeting/",
         "title": "",
         "type": "meeting",
-        "date": "2020-04-01 00:00:00 +0000 UTC",
+        "date": "2020-04-15 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": " Jenkins 中文社区例会，每个双周周三（遇到法定节假日时延后）的 21:00 进行。准备参加的小伙伴，需要提前安装好 zoom 软件， 然后点击 https://zoom.us/j/691718976 即可进入会议。\n注意事项⚠️  要发言的小伙伴要提前找好一个相对比较安静的环境 不发言的时候，及时关闭麦克风🎤 例会是讨论社区的事情，而不是技术分享  如何接入？ 可以下载桌面客户端，或者移动客户端来接入会议。\n如果不想下载软件，或者由于某种原因无法访问国外网站的，可以点击此处打开国内的 Web 客户端， 直接在浏览器中参加会议。\n会议 ID 为：691718976\n",
