@@ -6,10 +6,28 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes 构造可自由扩展的 Jenkins</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</guid>
+      <description>如果你是一名在职软件工程师，那你大概率已经使用过 Jenkins，至少听说过。
+Jenkins 是目前最受欢迎的开源持续集成与持续交付（CI/CD）工具。为何它会受到如此多用户的追捧？诸如 CloudBees 这样的组织及相关优秀社区提供了坚实的帮助与支持，此外，一大批开发人员贡献了数以千计的插件，加上 Jenkins 良好的易用性，都让 Jenkins 从开源工具中脱颖而出。
+基于以上特点，Jenkins 可以轻松实现以下事情：
+ 结合主流版本管理工具，如 Git，Subversion 和 Mercurial； 集成代码质量管理工具，如 Sonarqube，Fortify； 使用 Maven 或 Gradle 构建 ； 使用 Junit 进行单元测试；  虽然 Jenkins 如此强大，但其入门使用却非常简单，你只需要准备一个 Web 应用服务器如 Tomcat 和一份可执行的安装文件 jenkins.war 即可。Jenkins 的运行方式有很多种，这里将介绍几种非常典型的方式。
+独立的 Jenkins 服务器 在这种模式下，只有一个 Jenkins 服务器负责所有的构建任务并使用 TCP 连接部署到远程服务器上。这也是最简单的一种方式，你完全不需要担心其他可变因素。
+主从策略 采用单机模式运行 Jenkins 有一些弊端。
+尽管单机模式你无需考虑多服务器和节点，但当大量的构建任务在同一时间运行时，服务器可能会负荷过重。你可能会考虑增加节点可并发执行的构建任务数量，但是很快就会遇到性能瓶颈。
+为了解决这个问题，你可以将部分任务分发到其他的机器上去，即 Jenkins 从节点。Jenkins 从节点会运行一段程序与主节点进行通信，判断是够有可执行的构建任务。一旦 Jenkins 主节点调度安排好构建任务，就将其分发至相应的从节点。那我们的问题解决了吗？接着往下看。
+可扩展的 Jenkins 我们进一步来探索 Jenkins 的运行方式。当你的团队中还未建立 CI 时，你可能无需多台静态服务器来执行 Jenkins 任务。
+当你无需 7*24 运行时，你的服务器可能会空闲，这时就产生资源浪费了。</description>
+    </item>
     
     <item>
       <title>Jenkins 每周版更新</title>
@@ -1893,30 +1911,6 @@ import jenkins.model.Jenkins import hudson.model.Job import jenkins.model.BuildD
 基于我们之前在 GSoC 上指导学生的付出，今年我们已经加入 Outreachy 并指导了两个实习生。 在 Outreachy 的这次活动中，我们的实习生 David Olorundare 和 LathaGunasekar 将与我一起研发 Jenkins 对审计日志的支持。 我很高兴欢迎 David 和 Latha, 并期待他们能在软件工程专业和对开源社区的贡献上都有所收获。 请继续关注后续博客对他们的介绍。
 该审计日志支持项目在 Jenkins 和 Apache Log4j 之间形成了一个新的链接，这给予我们的实习生学习 更多有关开源治理和认识新朋友的机会。 作为奖金，该项目旨在为支持高级的业务检测提供便利，例如：在认证事件中检测潜在的入侵尝试。 我们也会编写一个 JEP 来描述由插件提供的审计日志 API,以及其他插件如何定义并记录除 Jenkins 核心以外插件的审计事件。
 我期待我们将会一起完成了不起的作品，而且我希望在将来能够帮助更多的 Outreachy 实习生！</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</guid>
-      <description>个&amp;mdash; title: Kubernetes 构造可自由扩展的 Jenkins
-date: 2020-04-22
-description: 主要介绍 Jenkins 在 kubernetes 集群上的运行模式及配置
-author: Gaurav Agarwal
-poster: cover.jpg
-translator: walker0921
-original: https://medium.com/better-programming/how-we-scaled-jenkins-in-less-than-a-day-ccbcada8e4a4
-tags:
-- Jenkins
-- Kubernetes
-- CI/CD
-如果你是一名在职软件工程师，那你大概率已经使用过 Jenkins，至少听说过。
-Jenkins 是目前最受欢迎的开源持续集成与持续交付（CI/CD）工具。为何它会受到如此多用户的追捧？诸如 CloudBees 这样的组织及相关优秀社区提供了坚实的帮助与支持，此外，一大批开发人员贡献了数以千计的插件，加上 Jenkins 良好的易用性，都让 Jenkins 从开源工具中脱颖而出。
-基于以上特点，Jenkins 可以轻松实现以下事情：
- 结合主流版本管理工具，如 Git，Subversion 和 Mercurial； 集成代码质量管理工具，如 Sonarqube，Fortify； 使用 Maven 或 Gradle 构建 ； 使用 Junit 进行单元测试；  虽然 Jenkins 如此强大，但其入门使用却非常简单，你只需要准备一个 Web 应用服务器如 Tomcat 和一份可执行的安装文件 jenkins.war 即可。Jenkins 的运行方式有很多种，这里将介绍几种非常典型的方式。
-独立的 Jenkins 服务器 在这种模式下，只有一个 Jenkins 服务器负责所有的构建任务并使用 TCP 连接部署到远程服务器上。这也是最简单的一种方式，你完全不需要担心其他可变因素。</description>
     </item>
     
     <item>

@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-20-weekly-release/</loc>
     <lastmod>2020-04-20T00:00:00+00:00</lastmod>
   </url>
@@ -875,10 +880,6 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</loc>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/weibo/weibo-operating-charter/</loc>
   </url>
   
@@ -978,7 +979,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/ci-cd/</loc>
-    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1283,7 +1284,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1401,7 +1402,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1694,7 +1695,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

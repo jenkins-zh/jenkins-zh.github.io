@@ -6,10 +6,28 @@
     <description>Recent content in Kubernetes on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes 构造可自由扩展的 Jenkins</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</guid>
+      <description>如果你是一名在职软件工程师，那你大概率已经使用过 Jenkins，至少听说过。
+Jenkins 是目前最受欢迎的开源持续集成与持续交付（CI/CD）工具。为何它会受到如此多用户的追捧？诸如 CloudBees 这样的组织及相关优秀社区提供了坚实的帮助与支持，此外，一大批开发人员贡献了数以千计的插件，加上 Jenkins 良好的易用性，都让 Jenkins 从开源工具中脱颖而出。
+基于以上特点，Jenkins 可以轻松实现以下事情：
+ 结合主流版本管理工具，如 Git，Subversion 和 Mercurial； 集成代码质量管理工具，如 Sonarqube，Fortify； 使用 Maven 或 Gradle 构建 ； 使用 Junit 进行单元测试；  虽然 Jenkins 如此强大，但其入门使用却非常简单，你只需要准备一个 Web 应用服务器如 Tomcat 和一份可执行的安装文件 jenkins.war 即可。Jenkins 的运行方式有很多种，这里将介绍几种非常典型的方式。
+独立的 Jenkins 服务器 在这种模式下，只有一个 Jenkins 服务器负责所有的构建任务并使用 TCP 连接部署到远程服务器上。这也是最简单的一种方式，你完全不需要担心其他可变因素。
+主从策略 采用单机模式运行 Jenkins 有一些弊端。
+尽管单机模式你无需考虑多服务器和节点，但当大量的构建任务在同一时间运行时，服务器可能会负荷过重。你可能会考虑增加节点可并发执行的构建任务数量，但是很快就会遇到性能瓶颈。
+为了解决这个问题，你可以将部分任务分发到其他的机器上去，即 Jenkins 从节点。Jenkins 从节点会运行一段程序与主节点进行通信，判断是够有可执行的构建任务。一旦 Jenkins 主节点调度安排好构建任务，就将其分发至相应的从节点。那我们的问题解决了吗？接着往下看。
+可扩展的 Jenkins 我们进一步来探索 Jenkins 的运行方式。当你的团队中还未建立 CI 时，你可能无需多台静态服务器来执行 Jenkins 任务。
+当你无需 7*24 运行时，你的服务器可能会空闲，这时就产生资源浪费了。</description>
+    </item>
     
     <item>
       <title>使用 Vault 与 Kubernetes 为密码提供强有力的保障</title>
