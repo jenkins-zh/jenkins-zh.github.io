@@ -6,10 +6,19 @@
     <description>Recent content in Release on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/release/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 每周版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-20-weekly-release/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-20-weekly-release/</guid>
+      <description>2.230 (2020-04-06)  改进告警横幅的样式，使其更具视觉吸引力并更好地匹配现有的用户界面组件。 现在，警报在显示时完全覆盖了导航栏，而不是仅覆盖导航栏的一部分。 (issue 61478) 检查任何一个权限时，权限错误中将不再显示已禁用的权限。 (issue 61467) 显示与标签相关而非单个节点的阻塞原因时，允许使用超链接。 (pull 4616) 添加选项以支持配置归档制品时的符号链接。 (issue 5597) 除了通常的全局/Administer权限之外，具有全局/管理权限的用户现在也可以访问准备关机管理链接。 (issue 61453) 更新页脚样式。 (issue 61496) 允许 configuration-as-code plugin 禁用管理员监控。 (issue 56937) 更新 Groovy Init hooks，使其在任务配置修改后运行。 (issue 61694) 修复指纹清除线程中的类强制转换异常。 (issue 61479)  2.229 (2020-03-29)  重新启动时使用保存的全局构建丢弃配置。 Jenkins 2.221 到 2.228 在重新启动时会忽略保存的全局构建丢弃配置。 (issue 61688) 修复设置密码后代理表单验证的问题(由 2.205 引入的缺陷回归)。 (issue 61692) 更新 .NET 版本检查，使其更适合自带的 .NET 版本。 (pull 4554) 具有全局/管理或全局/系统读取（以及通常的全局/Administer）权限的用户可以访问关于 Jenkins 的管理链接。 (issue 61455) 稳定性: 将 null 转换为 Secret 时不再抛出 NullPointerException。 (pull 4608) 升级到 Remoting 4.</description>
+    </item>
     
     <item>
       <title>Jenkins 长期支持版更新</title>
