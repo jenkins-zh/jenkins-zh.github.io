@@ -429,7 +429,7 @@
         "poster": "thanks-kohsuke.png"
     },
     {
-        "uri": "https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-websocket/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-webSocket/",
         "title": "WebSocket",
         "type": "wechat",
         "date": "2020-02-10 00:00:00 +0000 UTC",
@@ -1898,7 +1898,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-cdf/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-CDF/",
         "title": "为 Continuous Delivery Foundation 的成立感到兴奋",
         "type": "wechat",
         "date": "2019-03-13 00:00:00 +0000 UTC",
@@ -2028,7 +2028,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.cn/event/readme/",
+        "uri": "https://jenkins-zh.cn/event/README/",
         "title": "",
         "type": "event",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2353,7 +2353,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-jenkins-survey/",
+        "uri": "https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-Jenkins-survey/",
         "title": "2018年 Jenkins 国内使用情况调查问卷",
         "type": "wechat",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -2392,7 +2392,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.cn/tutorial/best-practice/android/",
+        "uri": "https://jenkins-zh.cn/tutorial/best-practice/Android/",
         "title": "Android 应用构建",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",
@@ -4381,7 +4381,7 @@
         "poster": ""
     },
     {
-        "uri": "https://jenkins-zh.cn/tutorial/best-practice/android/android-best-practice/",
+        "uri": "https://jenkins-zh.cn/tutorial/best-practice/Android/android-best-practice/",
         "title": "使用 Jenkins 构建 Android 应用",
         "type": "tutorial",
         "date": "0001-01-01 00:00:00 +0000 UTC",

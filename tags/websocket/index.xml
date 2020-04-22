@@ -13,10 +13,10 @@
     
     <item>
       <title>WebSocket</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-websocket/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-webSocket/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-websocket/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-webSocket/</guid>
       <description>我很高兴地提出报告，JEP-222 从 Jenkins 每周更新版开始落地。此改进为 Jenkins 带来了实验性的 WebSocket 支持，可在连接入站代理程序或运行 CLI 时使用。WebSocket 协议允许通过 HTTP（S）端口进行双向交互式通信.
 尽管 Jenkins 的许多用户都可以受益，但实现该系统对 CloudBees 尤为重要，因为 现代云平台上的 CloudBees Core（即在 Kubernetes 上运行）如何配置网络。当管理员希望将入站（以前称为“JNLP”）外部代理连接到 Jenkins 主服务器（例如在集群外部运行并使用代理服务包装器的 Windows 虚拟机）时，到目前为止，唯一的选择是使用特殊的 TCP 端口。需要使用低级网络配置将此端口开放给外部流量。例如，nginx 入口控制器的用户将需要为集群中的每个 Jenkins 服务代理一个单独的外部端口。有关此操作的说明很复杂，很难调试。
 使用 WebSocket，现在可以在存在反向代理的情况下更简单地连接入站代理：如果 HTTP（S）端口已在提供流量，则大多数代理将允许 WebSocket 连接而无需其他配置。可以在代理配置中启用 WebSocket 模式，并且即将推出 Kubernetes 插件中对基于 Pod 的代理的支持。您将需要一个4.0 或更高版本的代理，该代理版本以常规方式与 Jenkins 捆绑在一起（带有该版本的 Docker 镜像即将发布）。
