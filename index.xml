@@ -37,6 +37,16 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins 长期支持版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-24-jenkins-release/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-24-jenkins-release/</guid>
+      <description>2.222.1 (2020-03-25)  Jenkins 启动时将不从磁盘加载全局构建丢弃程序的配置(JENKINS-61688)。 配置已保存，但在重新启动时将不加载。 Jenkins 2.222.1 将始终以 Job Build Discarder 的默认配置启动。 重新启动时将忽略自定义全局构建丢弃配置。 每次 Jenkins 重新启动时，都会配置默认的全局构建丢弃。
+ 自 2.222 以来的变更：  重要安全修复。 (安全公告) 修复了任务配置表单中之前保存步骤中存在的拖放操作问题 (由 2.217 引入的缺陷回归)。 (issue 61429) Winstone 5.9: 修复最大表单内容大小和表单内容密钥的传递(由 Jetty 9.4.20 和 Jenkins 2.205 引入的缺陷回归)。 (pull 4542, issue 60409, Winstone 5.9 变更日志, Jetty 9.4.27 变更日志) Winstone 5.9: 修复由于 X-Forwarded-Host 和 X-Forwarded-Port 订阅问题而导致的将不正确的反向代理重定向到 Host 的问题(由 Jetty 9.4.20 和 Jenkins 2.205 引入的缺陷回归)。 (pull 4542, issue 60199, Winstone 5.</description>
+    </item>
+    
+    <item>
       <title>Kubernetes 构造可自由扩展的 Jenkins</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
