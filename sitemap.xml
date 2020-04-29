@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/</loc>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-24-jenkins-release/</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
   </url>
@@ -1131,7 +1136,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/docker/</loc>
-    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1401,13 +1406,19 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/kind/</loc>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/kubecon/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1426,6 +1437,12 @@
   <url>
     <loc>https://jenkins-zh.cn/tags/multibranch/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/mysql/</loc>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1700,7 +1717,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1728,6 +1745,12 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/wordpress/</loc>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

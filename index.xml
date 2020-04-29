@@ -37,6 +37,22 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>使用 kind 和 Docker 启动本地的 Kubernetes</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/</link>
+      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/</guid>
+      <description>介绍 你曾经花过一整天时间尝试入门 Kubernetes 吗？多亏最近新出现的一些工具，你可以不用再为此大费周章了。
+这篇文章中，我将向你展示使用 kind 在单个 Docker 容器中启动一个集群的步骤。
+什么是 kind？  kind 是一款使用 Docker 容器 “nodes” 运行 Kubernetes 集群的工具。 https://kind.sigs.k8s.io/
+ 介绍看起来没有描述信息，但是很明显能知道是源于 “Kubernetes IN Docker”。该工具具备了跨平台友好的优势即便你使用的是 Windows 版本的 Docker。当然了，缺点就是它的可追溯性比较差。
+安装 kind 因为 kind 是 go 语言实现的，请确保安装了最新版本的 golang。根据开发者文档，推荐使用 go1.11.5 及以上版本。为了安装 kind，请运行这些命令（可能需要运行一段时间）
+go get -u sigs.k8s.io/kind kind create cluster  然后确认 “kind” 集群是可用的。
+kind get clusters  设置 kubectl 同样的，使用 Homebrew 或者 Chocolatey 安装最新版本的 kubernetes-cli。最新版本的 Docker 包含了 Kubernetes 的功能，但使用的是老版本的 kubectl。
+运行该命令检查它的版本号。</description>
+    </item>
+    
+    <item>
       <title>Jenkins 长期支持版更新</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-24-jenkins-release/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
