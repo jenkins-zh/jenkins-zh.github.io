@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Development on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/software-development/</link>
+    <description>Recent content in Software Development on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>为你的 GitLab 项目使用 k3s Kubernetes 集群</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-06-using-a-k3s-kubernetes-cluster-for-your-gitlab-project/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-06-using-a-k3s-kubernetes-cluster-for-your-gitlab-project/</guid>
+      <description>TL;DR k3s 是一个轻量级的 Kubernetes 发行版（小于 40 MB），它非常容易安装，仅需要 512 MB 的 RAM。对 IoT 设备、边缘计算以及运行 CI 任务来说均是一个完美的选择。这篇文章中，我将创建一个 k3s 集群然后向你们展示怎样将它集成到一个 GitLab 项目中。
+关于 k3s k3s 是一款由 Rancher Labs 开发的轻量级的 Kubernetes 发行版。
+它作为 Kubernetes 认证的发行版使用最低的系统要求:
+ Linux 3.10+ 每个服务器 521 MB ram 每个节点 75 MB ram 200 MB 磁盘空间 x86_64，ARMv7，ARM64  这使得 k3s 非常适合 IoT 相关的事物。
+在 GitLab 创建一个项目 在安装 k3s 之前，我们先在 GitLab 上创建一个名为 api 的新项目。
+创建完成后，我们进入到 Operation &amp;gt; Kubernetes 菜单。
+这里我们有两种选择:
+ 我们可以在 GKE（Google Kubernetes Engine）上创建一个 Kubernetes 集群。 我们可以导入一个已存在的 Kubernetes 集群的配置（不管在哪里创建的）。  注意: 最新版本的 GitLab，新集群只能在 GKE 中创建。GitLab，有没有允许在其他 Kubernetes 提供商（AKS、EKS、DOKS&amp;hellip;）创建集群的计划呢？:)</description>
+    </item>
+    
+  </channel>
+</rss>

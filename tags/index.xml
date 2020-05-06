@@ -273,6 +273,15 @@
     </item>
     
     <item>
+      <title>Data Science</title>
+      <link>https://jenkins-zh.cn/tags/data-science/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deployment</title>
       <link>https://jenkins-zh.cn/tags/deployment/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
@@ -293,7 +302,7 @@
     <item>
       <title>Devops</title>
       <link>https://jenkins-zh.cn/tags/devops/</link>
-      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/devops/</guid>
       <description></description>
@@ -707,7 +716,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://jenkins-zh.cn/tags/kubernetes/</link>
-      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/kubernetes/</guid>
       <description></description>
@@ -876,6 +885,15 @@
     </item>
     
     <item>
+      <title>Programming</title>
+      <link>https://jenkins-zh.cn/tags/programming/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Progressive Delivery</title>
       <link>https://jenkins-zh.cn/tags/progressive-delivery/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
@@ -989,6 +1007,15 @@
       <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/sig/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Development</title>
+      <link>https://jenkins-zh.cn/tags/software-development/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/software-development/</guid>
       <description></description>
     </item>
     
