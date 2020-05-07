@@ -196,80 +196,91 @@ var trackOutboundLink = function(id, url) {
 <main style="background: #f5f5f5">
   <style>
     .topic {
-        display: flex;
-        margin: 20px auto;
-        max-width: 1000px;
-        padding: 20px;
-        background-color: #fff;
+      display: flex;
+      margin: 20px auto;
+      max-width: 1000px;
+      padding: 20px;
+      background-color: #fff;
     }
+
     .topic .detail {
-        margin-left: 20px;
-        display: flex;
-        flex-direction: column;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
     }
+
     .topic .detail .title {
-        color: #898989;
+      color: #898989;
     }
+
     .topic-detail {
-        margin: 20px auto;
-        max-width: 1000px;
-        padding: 20px;
-        background-color: #fff;
+      margin: 20px auto;
+      max-width: 1000px;
+      padding: 20px;
+      background-color: #fff;
     }
+
     .topic-title {
-        border-bottom: 1px solid #ddd;
-        padding: 10px;
-        display: flex;
-        border-left: 5px solid #1b809e;
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      display: flex;
+      border-left: 5px solid #1b809e;
     }
+
     .guest {
-        display: flex;
+      display: flex;
     }
+
     .guest img {
-        width: 100px;
-        height: 100px;
+      width: 100px;
+      height: 100px;
     }
+
     .guest-detail {
-        margin: 0 20px
+      margin: 0 20px
     }
+
     .job-title {
-        color: #777;
-        font-size: 12px;
+      color: #777;
+      font-size: 12px;
     }
+
     .schedule-content::after {
-        position: absolute;
-        top: 10px;
-        left: 2px;
-        content: '';
-        display: block;
-        width: 2px;
-        height: 100%;
-        background-color: rgba(31,99,175,0.5);
-        z-index: 0;
+      position: absolute;
+      top: 10px;
+      left: 2px;
+      content: '';
+      display: block;
+      width: 2px;
+      height: 100%;
+      background-color: rgba(31, 99, 175, 0.5);
+      z-index: 0;
     }
+
     .schedule-content {
-        padding-bottom: 32px;
-        position: relative;
-        display: table;
-        clear: both;
-        width: 100%;
-        padding-left: 20px;
+      padding-bottom: 32px;
+      position: relative;
+      display: table;
+      clear: both;
+      width: 100%;
+      padding-left: 20px;
     }
+
     .schedule-timeline::after {
-        position: absolute;
-        left: 0;
-        top:8px;
-        content: '';
-        display: block;
-        width: 7px;
-        height: 7px;
-        border-radius: 1px;
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-        background-color: #1b809e;
-        z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 8px;
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 1px;
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      background-color: #1b809e;
+      z-index: 1;
     }
-    </style>
+  </style>
   <div class="topic">
     <div>
       <img width="320px" height="160px" src="/images/meetup/ci-cd.jpeg" alt>
@@ -282,23 +293,29 @@ var trackOutboundLink = function(id, url) {
         <span>已结束</span>
       </div>
       <div>
-        <span class="title">时间:</span>
+        <span class="title">日期:</span>
         <span>2019-07-27</span>
       </div>
+      
       <div>
         <span class="title">地点:</span>
         <span>
-            <a target="_blank" href="https://j.map.baidu.com/Wp2jG">海淀区知春路56号中航科技大厦</a>
+          <a target="_blank"
+            href="https://j.map.baidu.com/Wp2jG">海淀区知春路56号中航科技大厦</a>
         </span>
       </div>
+      
       <div>
         <span class="title">费用:</span>
         <span>多种票</span>
       </div>
+      
+      
       <div>
         <span class="title">报名:</span>
-        <span><a target="_blank" style="color: crimson" href="https://www.huodongxing.com/event/5501173867300">活动行</a></span>
+        <span><a target="_blank" style="color: crimson" href="Page%28/event/beijing-2019-07-27.md%29">活动行</a></span>
       </div>
+      
     </div>
   </div>
   <div class="topic-detail">
@@ -322,10 +339,10 @@ var trackOutboundLink = function(id, url) {
         </div>
         <div class="guest-detail">
           <div class="title">
-            赵晓杰
-            <span class="job-title">Jenkins 中文社区发起人</span>
+            Rick
+            <span class="job-title">Jenkins Community contributor</span>
           </div>
-          <div>8年研发经历，目前在灵雀云负责 CI/CD 相关的研发工作，曾经先后就职于中科曙光、广联达。Jenkins 简体中文以及多个插件的维护者，致力于推广开源文化、技术。</div>
+          <div>多年研发经历，目前在灵雀云负责 CI/CD 相关的研发工作，曾经先后就职于中科曙光、广联达。Jenkins CLI、Jenkins 简体中文插件的作者，致力于推广开源文化、技术。</div>
         </div>
         
       </div>
@@ -372,25 +389,42 @@ var trackOutboundLink = function(id, url) {
     </div>
   </div>
 
+  
   <div class="topic-detail">
     <h4 class="topic-title">赞助单位</h4>
     <div>
-      
       
       <img style="max-height: 70px;" src="/images/sponsors/alauda.png">
       
       <img style="max-height: 70px;" src="/images/sponsors/jingdongyun.png">
       
-      
     </div>
   </div>
+  
 
+  
   <div class="topic-detail">
     <h4 class="topic-title">注意事项</h4>
     <div>
       1、在工作坊过程中，会进行实践操作，所以需要自备笔记本电脑<br/><br/>2、报名的朋友请确认填写的邮件地址和手机号码无误，我们会在活动开始前一天发送邮件进行确认。如果未收到确认函，可以在 Jenkins 微信公众号后台回复咨询
     </div>
   </div>
+  
+
+  
+  <style>
+    div[class=utterances] {
+      max-width: inherit;
+      width: auto;
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+  </style>
+  <script src="https://utteranc.es/client.js" repo="jenkins-zh/jenkins-zh.github.io"
+    issue-term="pathname" theme="github-light" label="tutorial"
+    crossorigin="linuxsuren" async>
+    </script>
+  
 
 </main>
 
