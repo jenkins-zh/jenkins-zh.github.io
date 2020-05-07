@@ -6,10 +6,22 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins CLI 命令行 v0.0.28</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-07-jcli-v0.0.28/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-07-jcli-v0.0.28/</guid>
+      <description>截止到编辑本文时，GitHub 上统计到的下载量为：5,498次。GitHub 上的 Star 数为157，码云上的 Star 数为89。
+Jenkins CLI 增加对了对插件机制的支持，用户可以通过编写插件的方式增强 jcli 的功能。第一个插件可以以 git 仓库的形式，在团队内部分享你的配置文件。
+为了保证交付质量，我们增加了 e2e 测试。后续，也会逐渐增加 e2e 的测试用例。
+🚀 功能  支持清理无效的配置项 (#383) @LinuxSuRen 在版本打印的命令中增加了日期 (#388) @LinuxSuRen 增加插件机制 (#385) @LinuxSuRen 支持打开外部链接 (#384) @LinuxSuRen 给命令 jcli center start 增加命令行补全 (#380) @LinuxSuRen 增加 man 文档的支持 (#382) @LinuxSuRen 给命令 jcli plugin upload 增加命令行补全 (#378) @LinuxSuRen 支持用指定的浏览器打开 (#377) @LinuxSuRen  🐛 缺陷修复  修复命令 job log 的错误帮助信息 (#375) @LinuxSuRen 命令 jcli doc 不需要读取配置文件 (#376) @yJunS  📝 文档完善  命令文档的完善 (#392) @LinuxSuRen  👻 维护  修复 readme 文件中失效的链接 (#393) @LinuxSuRen 升级 github.</description>
+    </item>
     
     <item>
       <title>为你的 GitLab 项目使用 k3s Kubernetes 集群</title>
