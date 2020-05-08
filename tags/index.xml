@@ -282,6 +282,15 @@
     </item>
     
     <item>
+      <title>Declarative Pipeline</title>
+      <link>https://jenkins-zh.cn/tags/declarative-pipeline/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/declarative-pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deployment</title>
       <link>https://jenkins-zh.cn/tags/deployment/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
@@ -590,7 +599,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -833,7 +842,7 @@
     <item>
       <title>Pipeline</title>
       <link>https://jenkins-zh.cn/tags/pipeline/</link>
-      <pubDate>Sun, 29 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/pipeline/</guid>
       <description></description>

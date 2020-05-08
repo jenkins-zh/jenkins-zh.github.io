@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Jenkins 自动化安装插件 - Jenkins 中文社区</title>
+  <title>如何使用 Jenkins 声明式流水线 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="Jenkins 批量安装指定版本插件">
+  <meta name="description" content="在本教程中了解如何使用 Jenkins 的声明性流水线，其中涵盖了开发流水线脚本的所有可用指令">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 自动化安装插件" />
-<meta property="og:description" content="Jenkins 批量安装指定版本插件" />
+<meta property="og:title" content="如何使用 Jenkins 声明式流水线" />
+<meta property="og:description" content="在本教程中了解如何使用 Jenkins 的声明性流水线，其中涵盖了开发流水线脚本的所有可用指令" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" /><meta property="article:published_time" content="2019-05-07T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-07T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" /><meta property="article:published_time" content="2020-05-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-05-08T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 自动化安装插件">
-<meta itemprop="description" content="Jenkins 批量安装指定版本插件">
-
-
-<meta itemprop="datePublished" content="2019-05-07T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="128">
+<meta itemprop="name" content="如何使用 Jenkins 声明式流水线">
+<meta itemprop="description" content="在本教程中了解如何使用 Jenkins 的声明性流水线，其中涵盖了开发流水线脚本的所有可用指令">
 
 
+<meta itemprop="datePublished" content="2020-05-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="686">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="Jenkins,Pipeline,Declarative Pipeline," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 自动化安装插件"/>
-<meta name="twitter:description" content="Jenkins 批量安装指定版本插件"/>
+<meta name="twitter:title" content="如何使用 Jenkins 声明式流水线"/>
+<meta name="twitter:description" content="在本教程中了解如何使用 Jenkins 的声明性流水线，其中涵盖了开发流水线脚本的所有可用指令"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -204,28 +204,36 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            翟志军
+            Tang Ming
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          Certified Jenkins Engineer.
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/hummerstudio" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
 
       </a>
 
+  
+  <div>
+    作者：<span class="originalAuthor">Alejandro Berardinelli</span>
+    <div>
+      <a class="originalLink" href="https://dzone.com/articles/how-to-use-the-jenkins-declarative-pipeline" target="_blank">原文链接</a>
+    </div>
+  </div>
   
   </aside>
 
@@ -243,17 +251,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 插件开发之旅：两天内从 idea 到发布(下篇) ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-07-jcli-v0.0.28/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins CLI 命令行 v0.0.28">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -273,13 +273,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 自动化安装插件</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">如何使用 Jenkins 声明式流水线</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 批量安装指定版本插件
+      在本教程中了解如何使用 Jenkins 的声明性流水线，其中涵盖了开发流水线脚本的所有可用指令
     </div>
   
 
@@ -292,77 +292,488 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<h3 id="手工安装-jenkins-插件的方法">手工安装 Jenkins 插件的方法</h3>
+<p><img src="Jenkins-Declarative-Pipeline.png" alt="封面" /></p>
 
-<p>通常，我们有两种方法安装 Jenkins 插件。第一种方法是到 Jenkins 插件管理页面搜索插件，然后安装。第二种方法是上传 Jenkins 插件的 hpi 文件安装。这两种方法能满足大多数人的需求。</p>
+<p>Jenkins 为您提供了两种开发流水线代码的方式：脚本式和声明式。</p>
 
-<p>第一种方法，如下图所示：
-<img src="pc1.png" alt="搜索安装" /></p>
+<p>脚本式流水线（也称为“传统”流水线）基于 Groovy 作为其特定于域的语言。 而声明式流水线提供了简化且更友好的语法，并带有用于定义它们的特定语句，而无需学习 Groovy。</p>
 
-<p>第二种方法，如下图所示：
-<img src="pc2.png" alt="上传插件" /></p>
+<p>Jenkins 的流水线插件版本2.5引入了对声明式流水线的支持。</p>
 
-<p>但是对于需要保证 Jenkins 稳定或在 Jenkins 上进行二次开发的同学来说，以上方法是无法满足需求的。</p>
+<p>在本文中，我们将介绍开发声明式流水线脚本的所有可用指令，这将清楚地说明其功能。</p>
 
-<p>第一种方法是无法指定插件的版本。第二种方式必须自己找到该插件的依赖树，然后根据依赖关系一个个地安装。是的，手工上传插件的这种方法，Jenkins 是不会自动下载依赖的。</p>
+<h2 id="声明式流水线语法">声明式流水线语法</h2>
 
-<p>还有，就是这两种方式都无法实现批量安装。</p>
-
-<h3 id="自动安装插件的方法">自动安装插件的方法</h3>
-
-<p>那么，有什么方法能指定插件的版本，又能自动下载它的依赖，还能批量下载呢？</p>
-
-<p>幸运的是，Jenkins 的 Docker 镜像的代码仓库里的 install-plugins.sh 脚本已经实现。只不过需要我们拿过来小小修改才能使用。笔者修改后创建了相应的代码仓库：<a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">jenkins-install-plugins-shell</a> 。链接在文章末尾。</p>
-
-<p>以下是 jenkins-install-plugins-shell 的使用方法：
-1. 将代码 clone 到 JENKINS_HOME 目录中。</p>
-
-<pre><code>cd $JENKINS_HOME
-git clone https://github.com/zacker330/jenkins-install-plugins-shell.git
-cd jenkins-install-plugins-shell
-</code></pre>
-
-<ol>
-<li>在 plugins.txt 中加入希望安装的插件
-在 <code>jenkins-install-plugins-shell</code> 目录中，有一个 plugins.txt 文件，在文件中写入希望安装的插件及版本号。例如：
-<code>
-ansible:1.0
-powershell:1.3
-</code></li>
-
-<li><p>执行安装</p>
-
-<pre><code class="language-bash"># Jenkins War 的路径，用于分析
-export JENKINS_WAR_PATH=&lt;Jenkins war文件的路径&gt;
-chmod +x install-plugins.sh jenkins-support
-./install-plugins.sh &lt; plugins.txt
-</code></pre></li>
-
-<li><p>重启 Jenkins
-install-plugins 本质上做的事情就只是将插件从云端下载到 JENKINS_HOME 下的 plugins 目录中。要使安装的插件生效，还需要重启 Jenkins。</p></li>
-</ol>
-
-<h3 id="关于-jenkins-插件的名称">关于 Jenkins 插件的名称</h3>
-
-<p>Jenkins 插件有两个名称。一个叫 display name，一个叫 short name。比如 Ansible 插件的 disply name 为 Ansible plugin，short  name 为 ansible。</p>
-
-<p>如何知道一个插件的 short name 呢？可以在 Jenkins 插件官网上找到，比如 Ansible 的：</p>
-
-<p><img src="pc3.png" alt="image.png" /></p>
-
-<p>在 <code>plugins.txt</code> 中使用的是 short name。</p>
-
-<h3 id="总结">总结</h3>
-
-<p>笔者为什么一定要确定 Jenkins 插件的版本？是因为插件的版本会影响 Jenkins 流水线的可靠性。所以，笔者才会这么在意 Jenkins 插件的版本。</p>
-
-<h3 id="附录">附录</h3>
+<p>必须使用 <code>pipeline</code> 语句定义有效的声明式流水线，并包括以下必需的部分：</p>
 
 <ul>
-<li>Jenkins 官方 Docker 镜像中的自动化插件安装脚本：<a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">https://github.com/jenkinsci/docker/blob/master/install-plugins.sh</a></li>
-<li>笔者修改后的自动化插件安装脚本：
-<a href="https://github.com/zacker330/jenkins-install-plugins-shell">https://github.com/zacker330/jenkins-install-plugins-shell</a></li>
+<li>agent</li>
+<li>stages</li>
+<li>stage</li>
+<li>steps</li>
 </ul>
+
+<p>另外，还有这些可用的指令：</p>
+
+<ul>
+<li>environment (在流水线或阶段级别定义)</li>
+<li>input (阶段级别定义)</li>
+<li>options (在流水线或阶段级别定义)</li>
+<li>parallel</li>
+<li>parameters</li>
+<li>post</li>
+<li>script</li>
+<li>tools</li>
+<li>triggers</li>
+<li>when</li>
+</ul>
+
+<p>现在，我们将从所需的指令/部分开始，对列出的每个指令/部分进行描述。</p>
+
+<h3 id="agent">agent</h3>
+
+<p>Jenkins 通过将分布式构建委托给“代理/agent”节点来提供执行分布式构建的能力。
+这样做可以使您仅使用 Jenkins 服务器的一个实例来执行多个项目，而工作负载却被分配给了它的代理。
+有关如何配置主/代理模式的详细信息超出了本博客的范围。请参阅 Jenkins 分布式构建以获取更多信息。</p>
+
+<p>代理应标记上标签，以便彼此轻松识别。 例如，节点可以通过其平台（Linux，Windows 等），其版本或位置等来标记。 “agent”部分配置流水线可以在哪些节点上运行。
+指定 <code>agent any</code> 意味着 Jenkins 将在任何可用节点上运行任务。</p>
+
+<p>其用法的一个示例可以是：</p>
+
+<pre><code>pipeline {
+    agent any
+...
+}
+</code></pre>
+
+<h3 id="stages">stages</h3>
+
+<p>本部分允许在流水线上生成不同的阶段，这些阶段将在运行任务时显示为不同的段。</p>
+
+<p>一个包含阶段语句的示例流水线：</p>
+
+<pre><code>pipeline {
+    agent any
+    stages {
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="stage">stage</h3>
+
+<p>必须在“stages”部分上定义至少一个“stage”部分。 它将包含流水线将执行的工作。 阶段必须命名，因为 Jenkins 将在界面上显示每个阶段，如下所示：</p>
+
+<p><img src="declarative1.png" alt="stage视图" /></p>
+
+<p>Jenkins 根据定义的阶段以图形方式拆分流水线执行，并显示它们的持续时间以及是否成功。</p>
+
+<p>上一个图像的流水线脚本如下所示：</p>
+
+<pre><code>pipeline {
+    agent any
+    stages {
+        stage ('build') {
+            ...
+        }
+        stage ('test: integration-&amp;-quality') {
+            ...
+        }
+        stage ('test: functional') {
+            ...
+        }
+        stage ('test: load-&amp;-security') {
+            ...
+        }
+        stage ('approval') {
+            ...
+        }
+        stage ('deploy:prod') {
+            ...
+        }
+    }
+}
+</code></pre>
+
+<h3 id="steps">steps</h3>
+
+<p>最后一个必需的部分是“steps”，它被定义为在“stage”内。 在“steps”部分中必须至少定义一个步骤。</p>
+
+<p>对于 Linux 和 MacOS，支持使用 shell。 这是一个例子：</p>
+
+<pre><code class="language-groovy">steps {
+    sh 'echo &quot;A one line step&quot;'
+    sh ''' 
+    echo &quot;A multiline step&quot;'
+    cd /tests/results
+    ls -lrt
+    '''
+}
+</code></pre>
+
+<p>对于 Windows，可以使用 bat 或 PowerShell，如下所示：</p>
+
+<pre><code class="language-groovy">steps {  
+    bat &quot;mvn clean test -Dsuite=SMOKE_TEST -Denvironment=QA&quot;
+    powershell &quot;.\funcional_tests.ps1&quot;
+}
+</code></pre>
+
+<p>其他非必需的指令将在以下段落中说明。</p>
+
+<h3 id="environment">environment</h3>
+
+<p>可以在阶段或流水线级别定义此指令，这将决定其定义的范围。在“pipeline”级别使用“environment”时，其定义将对所有流水线步骤均有效。
+相反，如果它是在“stage”中定义的，则它仅对特定阶段有效。</p>
+
+<p>该指令的示例用法：</p>
+
+<p>在“pipeline”级别：</p>
+
+<pre><code>pipeline {
+    agent any
+    environment {
+        OUTPUT_PATH = './outputs/'
+    }
+    stages {
+        stage ('build') {
+        ...
+    }
+    ...
+    }
+}
+</code></pre>
+
+<p>在&rdquo;stage&rdquo;级别：</p>
+
+<pre><code>pipeline {
+    agent any
+    stages {
+        stage ('build') {
+            environment {
+                OUTPUT_PATH = './outputs/'
+            }
+            ...
+        }
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="input">input</h3>
+
+<p>“input”指令在阶段级别定义，提供提示输入的功能。该阶段将被暂停，直到用户手动确认为止。</p>
+
+<p>以下配置选项可用于此指令：</p>
+
+<ul>
+<li>message：这是必需的选项，其中指定了要显示给用户的消息。</li>
+<li>id：可选标识符。 默认情况下，使用“阶段”名称。</li>
+<li>ok：“确定”按钮的可选文本。</li>
+<li>submitter：允许提交输入的用户或外部组名的可选列表。 默认情况下，允许任何用户。</li>
+<li>submitterParameter：要使用提交者名称设置的环境变量的可选名称（如果存在）。</li>
+<li>parameters：提交者将提供的可选参数列表。</li>
+</ul>
+
+<p>这是包含此指令的示例流水线：</p>
+
+<pre><code class="language-groovy">pipeline {
+    agent any
+    stages {
+        stage ('build') {
+            input{
+               message &quot;Press Ok to continue&quot;
+               submitter &quot;user1,user2&quot;
+                parameters {
+                   string(name:'username', defaultValue: 'user', description: 'Username of the user pressing Ok')
+                }
+            }
+            steps { 
+                echo &quot;User: ${username} said Ok.&quot;
+            }
+        }
+    }
+}
+</code></pre>
+
+<h3 id="options">options</h3>
+
+<p>在流水线级别定义，此指令将对整个流水线的特定选项进行分组。可用的选项有：</p>
+
+<ul>
+<li>buildDiscarder</li>
+<li>disableConcurrentBuilds</li>
+<li>overrideIndexTriggers</li>
+<li>skipDefaultCheckout</li>
+<li>skipStagesAfterUnstable</li>
+<li>checkoutToSubdirectory</li>
+<li>newContainerPerStage</li>
+<li>timeout</li>
+<li>retry</li>
+<li>timestamps</li>
+</ul>
+
+<p>请参阅 Jenkins 声明式流水线选项，以获取有关此内容的完整参考。</p>
+
+<p>例如，您可以通过以下操作将流水线配置为在失败前重试3次：</p>
+
+<pre><code class="language-groovy">pipeline {
+    agent any
+    options {
+        retry(3)
+    }
+    stages {
+        echo 'do something'
+    }
+}
+</code></pre>
+
+<h3 id="parallel">parallel</h3>
+
+<p>Jenkins 流水线阶段可以在内部嵌套其他阶段，这些阶段将并行执行。</p>
+
+<p>这是通过在脚本中添加“parallel”指令来完成的。 使用示例：</p>
+
+<pre><code class="language-groovy">stage('run-parallel-branches') {
+    steps {
+        parallel(
+            a: {
+                echo &quot;Tests on Linux&quot;
+            },
+            b: {
+                echo &quot;Tests on Windows&quot;
+            }
+        )
+    }
+}
+</code></pre>
+
+<p>从声明式流水线1.2版开始，引入了一种新语法，使并行语法的使用更像声明式的。</p>
+
+<p>使用此新语法重写的先前脚本如下所示：</p>
+
+<pre><code class="language-groovy">pipeline {
+    agent none
+    stages {
+        stage('Run Tests') {
+            parallel {
+                stage('Test On Windows') {
+                    agent {
+                        label &quot;windows&quot;
+                    }
+                steps {
+                    bat &quot;run-tests.bat&quot;
+                }
+                }
+                stage('Test On Linux') {
+                    agent {
+                        label &quot;linux&quot;
+                    }
+                    steps {
+                        sh &quot;run-tests.sh&quot;
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>上述的任何一个流水线都将如下所示：</p>
+
+<p><img src="declarative2-1.png" alt="declarative2-1.png" /></p>
+
+<p>由于两个脚本都运行特定的平台测试，因此它们将在不同的节点上运行测试。 如果您的 Jenkins 服务器具有足够的 CPU，则还可以通过使用多线程将并行用于在同一节点上同时运行阶段。</p>
+
+<p>使用并行阶段时有一些限制：</p>
+
+<ul>
+<li>stage 指令可以具有 parallel 指令或 steps 指令，但不能同时具有两者。</li>
+<li>parallel 指令中的一个 stage 指令不能嵌套另一个 parallel 指令，仅允许 steps。</li>
+<li>在内部具有 parallel 指令的 stage 指令不能定义“agent”或“tools”指令。</li>
+</ul>
+
+<h3 id="parameters">parameters</h3>
+
+<p>该指令允许您定义脚本中要使用的参数列表。一旦触发流水线，应提供参数。应该在“pipeline”级别定义它，并且整个流水线只允许一个指令。</p>
+
+<p>字符串和布尔值是可以使用的有效参数类型。</p>
+
+<pre><code class="language-groovy">pipeline {
+    agent any
+    parameters {
+        string(name: 'user', defaultValue: 'John', description: 'A user that triggers the pipeline')
+    }
+    stages {
+        stage('Trigger pipeline') {
+            steps {
+                echo &quot;Pipeline triggered by ${params.USER}&quot;
+            }
+        }
+    }
+}
+</code></pre>
+
+<h3 id="post">post</h3>
+
+<p>可以在流水线级别或每个阶段上添加 post，一旦阶段或流水线完成，便会执行其中包含的语句。可以使用几个 post 条件来控制是否执行该 post：</p>
+
+<ul>
+<li>always：无论完成状态如何，都会执行步骤。</li>
+<li>changed：仅当完成结果与上次运行的状态不同时才执行。</li>
+<li>fixed：仅在完成结果是成功且上次运行失败时执行</li>
+<li>regression：仅在当前执行失败，中止或不稳定并且上一次运行成功时执行。</li>
+<li>aborted：仅在流水线或阶段中止时才执行步骤。</li>
+<li>failure：仅在流水线或阶段失败时才执行步骤。</li>
+<li>success：仅在流水线或阶段成功时才执行步骤。</li>
+<li>unstable：仅当流水线或阶段不稳定时才执行步骤。</li>
+</ul>
+
+<p>由于流水线 post 包含的句子将在脚本的末尾运行，因此可以在此处执行清除任务或通知等。</p>
+
+<pre><code class="language-groovy">pipeline {
+    agent any
+    stages {
+        stage('Some steps') {
+            steps {
+                echo 'do something'
+            }
+        }
+    }
+    post {
+        always {
+            echo &quot;Pipeline finished&quot;
+            bat './performCleanUp.bat'
+        }
+    }
+}
+</code></pre>
+
+<h3 id="script">script</h3>
+
+<p>此步骤用于将脚本化流水线语句添加到声明式流水线中，从而提供更多功能。此步骤必须包括在“stage”级别。</p>
+
+<p>脚本块可以多次用于不同的项目。这些块使您可以扩展 Jenkins 功能，并可以实现为共享库。可以在 Jenkins 共享库中找到有关此内容的更多信息。
+同样，可以将共享库导入并使用到“script”中，从而扩展了流水线功能。</p>
+
+<p>接下来，我们将提供示例流水线。第一个只有一个包含一段脚本化流水线代码的块，而第二个将展示如何导入和使用共享库：</p>
+
+<pre><code class="language-groovy">pipeline {
+    agent any
+    stages {
+        stage('Sample') {
+            steps {
+                echo &quot;Scripted block&quot;
+                script {
+
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>有关此主题的更多信息，请参阅如何使用 Jenkins 脚本式流水线的文章。</p>
+
+<h3 id="tools">tools</h3>
+
+<p>可以在流水线级别或阶段级别添加“tools”指令。 它允许您指定要在脚本上使用的 Maven，JDK 或 Gradle 版本。 必须在“全局工具配置” Jenkins 菜单上配置这些工具中的任何一个，在撰写本文时，这三个工具都受支持。</p>
+
+<p>另外，Jenkins 将尝试安装列出的工具（如果尚未安装）。通过使用此指令，可以确保安装了项目所需的特定版本。</p>
+
+<pre><code class="language-groovy">pipeline {
+    agent any
+    tools {
+        maven 'apache-maven-3.0.1'
+    }
+    stages {
+         echo 'do something'
+    }
+}
+</code></pre>
+
+<h3 id="triggers">triggers</h3>
+
+<p>触发器允许 Jenkins 通过使用以下任何一个可用的方式自动触发流水线：</p>
+
+<ul>
+<li>cron：通过使用 cron 语法，它可以定义何时重新触发流水线。</li>
+<li>pollSCM：通过使用 cron 语法，它允许您定义 Jenkins 何时检查新的源存储库更新。如果检测到更改，则将重新触发流水线。（从 Jenkins 2.22 开始可用）。</li>
+<li>upstream：将 Jenkins 任务和阈值条件作为输入。 当列表中的任何任务符合阈值条件时，将触发流水线。</li>
+</ul>
+
+<p>带有可用触发器的示例流水线如下所示：</p>
+
+<pre><code>pipeline {
+    agent any
+    triggers {
+        //Execute weekdays every four hours starting at minute 0
+        cron('0 */4 * * 1-5')
+    }
+    stages {
+        ...
+    }
+}
+
+
+
+pipeline {
+    agent any
+    triggers {
+        //Query repository weekdays every four hours starting at minute 0
+        pollSCM('0 */4 * * 1-5')
+    }
+    stages {
+        ...
+    }
+}
+
+
+pipeline {
+    agent any
+    triggers {
+        //Execute when either job1 or job2 are successful
+        upstream(upstreamProjects: 'job1, job2', threshold: hudson.model.Result.SUCCESS)
+    }
+    stages {
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="when">when</h3>
+
+<p>可以根据“when”指令中定义的条件执行流水线步骤。如果条件匹配，将运行相应阶段中定义的步骤。它应该在阶段级别定义。</p>
+
+<p>有关条件及其说明的完整列表，请参阅 Jenkins 声明式流水线“when”指令。</p>
+
+<p>例如，流水线使您可以在具有多个分支的项目上执行任务。这被称为多分支流水线，其中可以根据分支名称（例如“master”，“ feature*”，“development”等）采取特定的操作。
+这是一个示例流水线，它将运行 master 分支的步骤：</p>
+
+<pre><code class="language-groovy">pipeline {
+    agent any
+    stages {
+        stage('Deploy stage') {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo 'Deploy master to stage'
+            }
+        }
+    }
+}
+</code></pre>
+
+<h2 id="最后2个-jenkins-声明式流水线提示">最后2个 Jenkins 声明式流水线提示</h2>
+
+<p>声明式流水线语法错误在脚本开始时报告。 这是一个很好的功能，因为您不会浪费时间，直到某个步骤未能意识到拼写错误或拼写错误。</p>
+
+<p>如前所述，流水线可以以声明式或脚本式编写。而且，声明式方法建立在脚本式方法的基础之上，通过添加&rdquo;script&rdquo;步骤，可以很容易地进行扩展。</p>
+
+<p>Jenkins 流水线已在 CI/CD 环境中广泛使用。不管是使用声明式或脚本式流水线都具有多个优点。在本文中，我们介绍了编写示例脚本展示声明式流水线的所有语法元素。
+就像我们已经说过的那样，声明式提供了更加友好的语法，而无需 Groovy 知识。</p>
 
 </div>
 
@@ -395,14 +806,14 @@ install-plugins 本质上做的事情就只是将插件从云端下载到 JENKIN
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 自动化安装插件”
-  </a> 更新于：May 7, 2019
+    “如何使用 Jenkins 声明式流水线”
+  </a> 更新于：May 8, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -420,451 +831,24 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jenkins">
-              jenkins
+            <a class="tag" href="/tags/Jenkins">
+              Jenkins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Pipeline">
+              Pipeline
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Declarative-Pipeline">
+              Declarative Pipeline
             </a>
           </li>
         
               
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
-              Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-20-weekly-release/" class="link">
-              Jenkins 每周版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
-              Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/" class="link">
-              使用 Jenkins 实现 CI/CD 多分支流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
-              使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/" class="link">
-              Jenkins 流水线配置历史插件介绍
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/" class="link">
-              Jenkins 每周版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/" class="link">
-              持续交付落地实践工作坊
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
-              Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/" class="link">
-              30分钟搞定 Jenkins CI
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/" class="link">
-              还在苦恼不会写 Jenkins 流水线？来场工作坊！
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-29-jenkins-release/" class="link">
-              Jenkins 2.176~2.178版本更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-28-jenkins-pipeline-shared-lib-unit-test/" class="link">
-              如何对 Jenkins 共享库进行单元测试
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/" class="link">
-              基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/" class="link">
-              使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link">
-              从 Jenkins 到 Jenkins X
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-15-gsoc-annoncement/" class="link">
-              19年 GSoC 中 Jenkins 的七个项目
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" class="link">
-              基于 Jenkins 的 DevOps 平台应该如何设计凭证管理
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/" class="link">
-              Jenkins 公众号送书福利
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-09-jenkins-release/" class="link">
-              Jenkins 版本发布
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="link">
-              Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)
-            </a>
-          </li>
-        
-      
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="link">
-              Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" class="link">
-              使用 Jenkins X 渐进式交付：自动化金丝雀部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/" class="link">
-              使用 Jenkins X 渐进式交付
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" class="link">
-              使用 Jenkins &#43; Ansible 实现自动化部署 Nginx
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" class="link">
-              关于 Jenkins master 共享 JENKINS_HOME 目录的实验
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-19-the-business-value-of-cd/" class="link">
-              持续交付的商业价值
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="link">
-              使用 Zabbix 监控 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="link">
-              简析 Jenkins 专有用户数据库加密算法
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="link">
-              Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
-              介绍：成为一名 Jenkins 贡献者的旅程
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
-              为 Continuous Delivery Foundation 的成立感到兴奋
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
-              MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link">
-              在安全防火墙内通过 WebHook 触发构建
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link">
-              成为一名 Jenkins 贡献者：对新手友好的工单
-            </a>
-          </li>
-        
       
     </ul>
   </div>
@@ -890,7 +874,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/05\/2019-05-07-jenkins-install-plugins-shell\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/05\/2020-05-08-how-to-use-the-jenkins-declarative-pipeline\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Declarative Pipeline on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/declarative-pipeline/</link>
+    <description>Recent content in Declarative Pipeline on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/declarative-pipeline/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何使用 Jenkins 声明式流水线</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/</guid>
+      <description>Jenkins 为您提供了两种开发流水线代码的方式：脚本式和声明式。
+脚本式流水线（也称为“传统”流水线）基于 Groovy 作为其特定于域的语言。 而声明式流水线提供了简化且更友好的语法，并带有用于定义它们的特定语句，而无需学习 Groovy。
+Jenkins 的流水线插件版本2.5引入了对声明式流水线的支持。
+在本文中，我们将介绍开发声明式流水线脚本的所有可用指令，这将清楚地说明其功能。
+声明式流水线语法 必须使用 pipeline 语句定义有效的声明式流水线，并包括以下必需的部分：
+ agent stages stage steps  另外，还有这些可用的指令：
+ environment (在流水线或阶段级别定义) input (阶段级别定义) options (在流水线或阶段级别定义) parallel parameters post script tools triggers when  现在，我们将从所需的指令/部分开始，对列出的每个指令/部分进行描述。
+agent Jenkins 通过将分布式构建委托给“代理/agent”节点来提供执行分布式构建的能力。 这样做可以使您仅使用 Jenkins 服务器的一个实例来执行多个项目，而工作负载却被分配给了它的代理。 有关如何配置主/代理模式的详细信息超出了本博客的范围。请参阅 Jenkins 分布式构建以获取更多信息。
+代理应标记上标签，以便彼此轻松识别。 例如，节点可以通过其平台（Linux，Windows 等），其版本或位置等来标记。 “agent”部分配置流水线可以在哪些节点上运行。 指定 agent any 意味着 Jenkins 将在任何可用节点上运行任务。
+其用法的一个示例可以是：
+pipeline { agent any ... }  stages 本部分允许在流水线上生成不同的阶段，这些阶段将在运行任务时显示为不同的段。
+一个包含阶段语句的示例流水线：
+pipeline { agent any stages { .</description>
+    </item>
+    
+  </channel>
+</rss>
