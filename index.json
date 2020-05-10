@@ -4264,6 +4264,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tutorial/use-cases/",
+        "title": "Use-cases",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tags/ux/",
         "title": "Ux",
         "type": "tags",
@@ -4856,6 +4869,19 @@
         "tags": [],
         "description": "",
         "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tutorial/use-cases/continue-test/",
+        "title": "持续测试",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "jmeter -n -t test-plan.jmx -l testresult.jtl\n-n 无界面运行\n-t 指定测试计划文件\n-l 测试日志文件\n",
         "auhtor": "",
         "translator": "",
         "original": "",
