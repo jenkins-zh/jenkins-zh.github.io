@@ -6,10 +6,27 @@
     <description>Recent content in Ci/Cd on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/ci-cd/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>手把手教会你 Jenkins 备份与恢复</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/</guid>
+      <description>前言 Jenkins 是一个 Java 语言编写的开源工具，结合持续集成与持续交付相关技术的运用可提升软件开发过程的自动化水平。
+Jenkins 从最开始安装到权限设置，插件安装，任务维护等是一个费力的工程，因此定期备份数据的重要性不言而喻。
+在本文中，我们将手把手演示如何备份并恢复 Jenkins。
+备份操作指引 Step1：创建一个新的任务 这里推荐自由风格任务类型，即 Freestyle project
+Step2：源码管理选择 None Step3：设置任务执行时间 选择 “Build Periodically”，然后可以根据需要设置备份时间和频率
+例如，25 12 * * * 会在每天白天 12:25 运行任务
+Step4：Build 模块添加 “Execute Shell” 在 Build 模块选择 Execute Shell，添加以下脚本内容
+为方便读者直接使用，脚本内容如下：
+ #!/bin/bash # Jenkins Configuraitons Directory cd $JENKINS_HOME # Add general configurations, job configurations, and user content git add -- *.xml jobs/*/*.xml userContent/* ansible/* # only add user configurations if they exist if [ -d users ]; then user_configs=`ls users/*/config.</description>
+    </item>
     
     <item>
       <title>Kubernetes 构造可自由扩展的 Jenkins</title>

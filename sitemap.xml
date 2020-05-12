@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/</loc>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/</loc>
     <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
@@ -1004,7 +1009,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/ci-cd/</loc>
-    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1321,7 +1326,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1761,7 +1766,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
