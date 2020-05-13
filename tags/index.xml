@@ -365,7 +365,7 @@
     <item>
       <title>Docker</title>
       <link>https://jenkins-zh.cn/tags/docker/</link>
-      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/docker/</guid>
       <description></description>
@@ -773,6 +773,15 @@
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/newcomer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nexus Oss</title>
+      <link>https://jenkins-zh.cn/tags/nexus-oss/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/nexus-oss/</guid>
       <description></description>
     </item>
     
