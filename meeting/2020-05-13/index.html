@@ -27,7 +27,6 @@
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
   
 
-  <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/meeting/index.xml">
   <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
@@ -41,17 +40,25 @@
   }
 </style>
 <meta property="og:title" content="" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jenkins-zh.cn/meeting/" />
-<meta property="og:updated_time" content="2020-05-13T00:00:00&#43;00:00"/>
+<meta property="og:description" content=" UCloud 服务器管理  Nexus 上线了  http://repo.jenkins-zh.cn/ https 有问题   企业合作  KubeSphere  5月19日 官宣 https://github.com/jenkins-zh/jenkins-zh/pull/252  中信  招聘信息的发布（论坛） 技术活动没有确定  句子互动  作为赞助商 提供了一年的套餐 https://github.com/jenkins-zh/jenkins-zh/pull/271  禅道  技术分享 5月20日 有礼品赞助 文章的贡献（原创、翻译）  杰蛙  5月23日下午（周六），沙龙  F5  Nginx 中文社区成立的官宣   著作权 * 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创） * 在社区提供的翻译稿，在我们的公众号上首次发布 * 应该说明作者、翻译者等的具体版权说明  社区激励  推文 https://github.com/jenkins-zh/jenkins-zh/issues/237  社区媒体账号运营情况  简书 @yJunS 开源中国 微博 公众号  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/meeting/2020-05-13/" /><meta property="article:published_time" content="2020-05-13T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-05-13T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="">
+<meta itemprop="description" content=" UCloud 服务器管理  Nexus 上线了  http://repo.jenkins-zh.cn/ https 有问题   企业合作  KubeSphere  5月19日 官宣 https://github.com/jenkins-zh/jenkins-zh/pull/252  中信  招聘信息的发布（论坛） 技术活动没有确定  句子互动  作为赞助商 提供了一年的套餐 https://github.com/jenkins-zh/jenkins-zh/pull/271  禅道  技术分享 5月20日 有礼品赞助 文章的贡献（原创、翻译）  杰蛙  5月23日下午（周六），沙龙  F5  Nginx 中文社区成立的官宣   著作权 * 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创） * 在社区提供的翻译稿，在我们的公众号上首次发布 * 应该说明作者、翻译者等的具体版权说明  社区激励  推文 https://github.com/jenkins-zh/jenkins-zh/issues/237  社区媒体账号运营情况  简书 @yJunS 开源中国 微博 公众号  ">
 
+
+<meta itemprop="datePublished" content="2020-05-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="47">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content=" UCloud 服务器管理  Nexus 上线了  http://repo.jenkins-zh.cn/ https 有问题   企业合作  KubeSphere  5月19日 官宣 https://github.com/jenkins-zh/jenkins-zh/pull/252  中信  招聘信息的发布（论坛） 技术活动没有确定  句子互动  作为赞助商 提供了一年的套餐 https://github.com/jenkins-zh/jenkins-zh/pull/271  禅道  技术分享 5月20日 有礼品赞助 文章的贡献（原创、翻译）  杰蛙  5月23日下午（周六），沙龙  F5  Nginx 中文社区成立的官宣   著作权 * 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创） * 在社区提供的翻译稿，在我们的公众号上首次发布 * 应该说明作者、翻译者等的具体版权说明  社区激励  推文 https://github.com/jenkins-zh/jenkins-zh/issues/237  社区媒体账号运营情况  简书 @yJunS 开源中国 微博 公众号  "/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -188,117 +195,127 @@ var trackOutboundLink = function(id, url) {
   
   <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
     
-<main style="margin-left: 25px; margin-right: 25px;">
-    <div class="prose">
-    
+<main>
+    <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+        <h1>Jenkins 中文社区例会</h1> 2020-05-13
+        <div class="flex-l">
+            <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-80">
+                <div class="prose">
+                    
 
-<p>Jenkins 中文社区例会，每个双周周三（遇到法定节假日时延后）的 21:00 进行。准备参加的小伙伴，需要提前安装好 zoom 软件，
-然后点击 
-
-<a href="https://zoom.us/j/691718976" target="_blank">https://zoom.us/j/691718976</a>
- 即可进入会议。</p>
-
-<h2 id="注意事项">注意事项⚠️</h2>
+<h2 id="ucloud-服务器管理">UCloud 服务器管理</h2>
 
 <ul>
-<li>要发言的小伙伴要提前找好一个相对比较安静的环境</li>
-<li>不发言的时候，及时关闭麦克风🎤</li>
-<li>例会是讨论社区的事情，而不是技术分享</li>
+<li>Nexus 上线了
+
+<ul>
+<li><a href="http://repo.jenkins-zh.cn/">http://repo.jenkins-zh.cn/</a></li>
+<li>https 有问题</li>
+</ul></li>
 </ul>
 
-<h2 id="如何接入">如何接入？</h2>
+<h2 id="企业合作">企业合作</h2>
 
-<p>可以下载<a href="http://www.zooms.vip/download/">桌面客户端</a>，或者移动客户端来接入会议。</p>
+<ul>
+<li>KubeSphere
 
-<p>如果不想下载软件，或者由于某种原因无法访问国外网站的，可以<a href="https://www.zoomus.cn/webclient/join">点击此处</a>打开国内的 Web 客户端，
-直接在浏览器中参加会议。</p>
+<ul>
+<li>5月19日 官宣</li>
+<li><a href="https://github.com/jenkins-zh/jenkins-zh/pull/252">https://github.com/jenkins-zh/jenkins-zh/pull/252</a></li>
+</ul></li>
+<li>中信
 
-<p>会议 ID 为：691718976</p>
+<ul>
+<li>招聘信息的发布（论坛）</li>
+<li>技术活动没有确定</li>
+</ul></li>
+<li>句子互动
 
-    </div>
+<ul>
+<li>作为赞助商</li>
+<li>提供了一年的套餐</li>
+<li><a href="https://github.com/jenkins-zh/jenkins-zh/pull/271">https://github.com/jenkins-zh/jenkins-zh/pull/271</a></li>
+</ul></li>
+<li>禅道
 
-    <div>社区例会记录列表：</div>
-    
-    <div>
-        <a href="/meeting/2020-05-13/">2020-05-13</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2020-04-15/">2020-04-15</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2020-04-01/">2020-04-01</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2020-03-18/">2020-03-18</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2020-03-14/">2020-03-14</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2020-03-13/">2020-03-13</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2020-03-09/">2020-03-09</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2020-03-04/">2020-03-04</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2020-01-08/">2020-01-08</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-12-25/">2019-12-25</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-12-11/">2019-12-11</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-11-27/">2019-11-27</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-11-13/">2019-11-13</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-10-30/">2019-10-30</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-10-16/">2019-10-16</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-09-22/">2019-09-22</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-09-18/">2019-09-18</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-09-05/">2019-09-05</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-08-21/">2019-08-21</a>
-    </div>
-    
-    <div>
-        <a href="/meeting/2019-08-08/">2019-08-08</a>
-    </div>
-    
+<ul>
+<li>技术分享 5月20日</li>
+<li>有礼品赞助</li>
+<li>文章的贡献（原创、翻译）</li>
+</ul></li>
+<li>杰蛙
+
+<ul>
+<li>5月23日下午（周六），沙龙</li>
+</ul></li>
+<li>F5
+
+<ul>
+<li>Nginx 中文社区成立的官宣</li>
+</ul></li>
+</ul>
+
+<h2 id="著作权">著作权</h2>
+
+<pre><code>* 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创）
+* 在社区提供的翻译稿，在我们的公众号上首次发布
+* 应该说明作者、翻译者等的具体版权说明
+</code></pre>
+
+<h2 id="社区激励">社区激励</h2>
+
+<ul>
+<li>推文 <a href="https://github.com/jenkins-zh/jenkins-zh/issues/237">https://github.com/jenkins-zh/jenkins-zh/issues/237</a></li>
+</ul>
+
+<h2 id="社区媒体账号运营情况">社区媒体账号运营情况</h2>
+
+<ul>
+<li>简书 @yJunS</li>
+<li>开源中国</li>
+<li>微博</li>
+<li>公众号</li>
+</ul>
+
+                </div>
+            </aside>
+
+            <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky pt3 mt2">
+                <aside
+                    class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                        
+                        <p class="b">签到列表：</p>
+                        
+                        <div style="margin-top: 5px;"><a href="https://github.com/linuxsuren" target="_blank">linuxsuren</a></div>
+                        
+                        <div style="margin-top: 5px;"><a href="https://github.com/yJunS" target="_blank">yJunS</a></div>
+                        
+                        <div style="margin-top: 5px;"><a href="https://github.com/donhui" target="_blank">donhui</a></div>
+                        
+                        <div style="margin-top: 5px;"><a href="https://github.com/linan607" target="_blank">linan607</a></div>
+                        
+                        <div style="margin-top: 5px;"><a href="https://github.com/wst021" target="_blank">wst021</a></div>
+                        
+                        
+                    </div>
+
+                    
+
+                    <hr>
+                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                        <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/meeting/2020-05-13.md"
+                            target="_blank">完善此页</a>
+                    </div>
+
+                    <hr>
+                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                        <a href="https://jenkins-zh.cn/meeting">会议列表</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </article>
 </main>
 
   </main>
