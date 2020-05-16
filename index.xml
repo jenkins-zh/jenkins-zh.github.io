@@ -37,6 +37,17 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>致广大Jenkins 中文社区关注者的感谢信</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-16-a-thank-you-letter-for-jenkins-fans/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-16-a-thank-you-letter-for-jenkins-fans/</guid>
+      <description>故事要从 2020/5/12 社区公众号发布的文章 手把手教会你 Jenkins 备份与恢复 说起。
+1-先从故事本身说起 5月12日，公众号发布了一篇有关 Jenkins 备份与恢复的文章，其中分享了以下一段备份 Shell 脚本：
+#!/bin/bash # Jenkins Configuraitons Directory cd $JENKINS_HOME # Add general configurations, job configurations, and user content git add -- *.xml jobs/*/*.xml userContent/* ansible/* # only add user configurations if they exist if [ -d users ]; then user_configs=`ls users/*/config.xml` if [ -n &amp;quot;$user_configs&amp;quot; ]; then git add $user_configs fi fi # mark as deleted anything that&#39;s been, well, deleted to_remove=`git status | grep &amp;quot;deleted&amp;quot; | awk &#39;{print $3}&#39;` if [ -n &amp;quot;$toremove&amp;quot; ]; then git rm --ignore-unmatch $toremove fi git commit -m &amp;quot;Automated Jenkins commit&amp;quot; git push -q -u origin master  文章格式核对完成后，便在公众号上发布了。</description>
+    </item>
+    
+    <item>
       <title>征集用户故事- Jenkins is the Way</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-15-call-for-user-stories-jenkins-is-the-way/</link>
       <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
