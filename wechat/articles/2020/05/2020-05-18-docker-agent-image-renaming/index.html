@@ -10,18 +10,18 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>WebSocket - Jenkins 中文社区</title>
+  <title>Jenkins agent Docker 镜像重新命名了，你知道吗？ - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="谈谈 Jenkins 对 WebSocket 的实验性支持">
+  <meta name="description" content="本文介绍了 Jenkins agent Docker 镜像新名称、重新命名的缘由、升级说明以及下一步计划">
   
   
-  <meta name="keywords" content="WebSocket,CloudBees,Kubernetes">
+  <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.55.6" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -39,26 +39,27 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="WebSocket" />
-<meta property="og:description" content="谈谈 Jenkins 对 WebSocket 的实验性支持" />
+<meta property="og:title" content="Jenkins agent Docker 镜像重新命名了，你知道吗？" />
+<meta property="og:description" content="本文介绍了 Jenkins agent Docker 镜像新名称、重新命名的缘由、升级说明以及下一步计划" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-webSocket/" /><meta property="article:published_time" content="2020-02-10T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-02-10T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-18-docker-agent-image-renaming/" />
+<meta property="article:published_time" content="2020-05-18T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-05-18T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="WebSocket">
-<meta itemprop="description" content="谈谈 Jenkins 对 WebSocket 的实验性支持">
-
-
-<meta itemprop="datePublished" content="2020-02-10T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-02-10T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="73">
+<meta itemprop="name" content="Jenkins agent Docker 镜像重新命名了，你知道吗？">
+<meta itemprop="description" content="本文介绍了 Jenkins agent Docker 镜像新名称、重新命名的缘由、升级说明以及下一步计划">
 
 
+<meta itemprop="datePublished" content="2020-05-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="223">
 
-<meta itemprop="keywords" content="Jenkins,WebSocket," />
+
+
+<meta itemprop="keywords" content="announcement,docker,jenkins,platform-sig," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="WebSocket"/>
-<meta name="twitter:description" content="谈谈 Jenkins 对 WebSocket 的实验性支持"/>
+<meta name="twitter:title" content="Jenkins agent Docker 镜像重新命名了，你知道吗？"/>
+<meta name="twitter:description" content="本文介绍了 Jenkins agent Docker 镜像新名称、重新命名的缘由、升级说明以及下一步计划"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -211,16 +212,16 @@ var trackOutboundLink = function(id, url) {
     
       
         <h3 class="f4 dib author">
-            wenjunzhangp
+            Donghui Wang
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          All things are difficult before they are easy. 
+          a long-time Jenkins user and contributor
         </p>
       
-      <a href="https://github.com/wenjunzhangp" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -229,9 +230,9 @@ var trackOutboundLink = function(id, url) {
 
   
   <div>
-    作者：<span class="originalAuthor">Jesse Glick</span>
+    作者：<span class="originalAuthor">Oleg Nenashev</span>
     <div>
-      <a class="originalLink" href="https://jenkins.io/blog/2020/02/02/web-socket/" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://www.jenkins.io/blog/2020/05/06/docker-agent-image-renaming/" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -251,17 +252,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-12-a-new-chapter-for-kohsuke/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 创始人 Kohsuke 的新篇章 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-10-the-complete-ci-cd-collection-tutorials/" class="dib f6 pr1 hover-bg-light-gray br-100" title="完整的 CI/CD 集合[教程]">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-16-a-thank-you-letter-for-jenkins-fans/" class="dib f6 pr1 hover-bg-light-gray br-100" title="致广大Jenkins 中文社区关注者的感谢信">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -281,13 +274,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">WebSocket</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins agent Docker 镜像重新命名了，你知道吗？</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      谈谈 Jenkins 对 WebSocket 的实验性支持
+      本文介绍了 Jenkins agent Docker 镜像新名称、重新命名的缘由、升级说明以及下一步计划
     </div>
   
 
@@ -298,17 +291,75 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="cover.jpg" alt="cover" /></p>
 
-<p>我很高兴地提出报告，<a href="https://github.com/jenkinsci/jep/blob/master/jep/222/README.adoc">JEP-222</a> 从 Jenkins 每周更新版开始落地。此改进为 Jenkins 带来了实验性的 WebSocket 支持，可在连接入站代理程序或运行 CLI 时使用。WebSocket 协议允许通过 HTTP（S）端口进行双向交互式通信.</p>
 
-<p>尽管 Jenkins 的许多用户都可以受益，但实现该系统对 CloudBees 尤为重要，因为 <a href="https://docs.cloudbees.com/docs/cloudbees-core/latest/">现代云平台上的 CloudBees Core</a>（即在 Kubernetes 上运行）如何配置网络。当管理员希望将入站（以前称为“JNLP”）外部代理连接到 Jenkins 主服务器（例如在集群外部运行并使用代理服务包装器的 Windows 虚拟机）时，到目前为止，唯一的选择是使用特殊的 TCP 端口。需要使用低级网络配置将此端口开放给外部流量。例如，nginx 入口控制器的用户将需要为集群中的每个 Jenkins 服务代理一个单独的外部端口。有关此操作的说明很复杂，很难调试。</p>
+<p><img src="dockerJenkins.png" alt="dockerJenkins" /></p>
 
-<p>使用 WebSocket，现在可以在存在反向代理的情况下更简单地连接入站代理：如果 HTTP（S）端口已在提供流量，则大多数代理将允许 WebSocket 连接而无需其他配置。可以在代理配置中启用 WebSocket 模式，并且即将推出 <a href="https://plugins.jenkins.io/kubernetes/">Kubernetes 插件</a>中对基于 Pod 的代理的支持。您将需要一个<a href="https://github.com/jenkinsci/remoting/releases/tag/remoting-4.0"> 4.0 </a>或更高版本的代理，该代理版本以常规方式与 Jenkins 捆绑在一起（带有该版本的 Docker 镜像即将发布）。</p>
+<p>我们正式宣布对 Jenkins agent 官方 Docker 镜像重新命名。
+它不会对 Jenkins 用户产生任何直接影响，但是希望他们逐渐升级其实例。
+本文提供了新的镜像名称、升级过程以及旧镜像支持策略等相关信息。
+我们还将讨论在 Jenkins 中 Docker 包的下一步计划。</p>
 
-<p>Jenkins 的另一个对反向代理用户造成麻烦的部分是 CLI。除了端口 22 上的 SSH 协议（这又是从外部打开的麻烦）之外，CLI 还具有使用 <a href="https://jenkins.io/blog/2017/04/11/new-cli/">HTTP（S）传输</a>的功能.不幸的是，用于实现混淆某些技巧的技巧并不十分可移植。Jenkins 2.217 提供了一个新的 <code>webSocket</code> CLI 模式，该模式避免了这些问题。再次说明，您将需要下载新版本的 <code>jenkins-cli.jar</code> 才能使用此模式。</p>
+<h2 id="新镜像名称">新镜像名称</h2>
 
-<p>已经针对 Kubernetes 实现示例（包括 OpenShift）对 WebSocket 代码进行了测试，但是很可能仍然存在一些 bugs 和局限性，并且尚未测试重构建负载下代理的可伸缩性。暂时将此功能视为 Beta 版，并让我们了解其工作原理！</p>
+<ul>
+<li><a href="https://hub.docker.com/r/jenkins/agent">jenkins/agent</a> 是旧的 <a href="https://hub.docker.com/r/jenkins/slave">jenkins/slave</a> 镜像从 <a href="https://github.com/jenkinsci/docker-agent/releases/tag/4.3-2">4.3-2</a> 开始的新名称</li>
+<li><a href="https://hub.docker.com/r/jenkins/inbound-agent">jenkins/inbound-agent</a> 是旧的 <a href="https://hub.docker.com/r/jenkins/jnlp-slave">jenkins/jnlp-slave</a> 镜像从 <a href="https://github.com/jenkinsci/docker-inbound-agent/releases/tag/4.3-2">4.3-2</a> 开始的新名称</li>
+<li><a href="https://hub.docker.com/r/jenkins/ssh-agent">jenkins/ssh-agent</a> 是旧的 <a href="https://hub.docker.com/r/jenkins/ssh-slave">jenkins/ssh-slave</a> 镜像从 <a href="https://github.com/jenkinsci/docker-ssh-agent/releases/tag/2.0.0">2.0.0</a> 开始的新名称</li>
+</ul>
+
+<p>请参阅下面的升级指南。</p>
+
+<h2 id="为什么要重新命名">为什么要重新命名？</h2>
+
+<p>&ldquo;slave&rdquo; 一词在开源社区中被广泛认为是不合适的。它已于2016年在 Jenkins 2.0中正式弃用，但在某些 Jenkins 组件中仍有遗留用法。
+这个 Epic —— <a href="https://issues.jenkins-ci.org/browse/JENKINS-42816">JENKINS-42816：Slave 到 Agent 的重命名遗留问题</a> 用于跟踪此类问题的清理。
+官方 Docker agent 镜像是一个显而易见的案例，要修改在 DockerHub 上的旧版本镜像并非易事。很高兴这次更新终于解决了镜像命名问题。</p>
+
+<p>另一个值得注意的变化是使用 <em>inbound agent</em> 代替 <em>JNLP agent</em> 术语。
+历史上，&rdquo;JNLP&rdquo; 已被用作<a href="https://github.com/jenkinsci/remoting/blob/master/docs/protocols.md">远程协议</a>的名称。
+JNLP 代表 <a href="https://en.wikipedia.org/wiki/Java_Web_Start#Java_Network_Launching_Protocol_(JNLP)">Java Network Launch Protocol</a>，它是 Java Web Start 的一部分。
+在 Java 1.8 上运行 agent 时，Jenkins 支持 agent 的 Java Web Start 模式，但是我们的网络协议基于 TCP 的，与 Java Network Launch Protocol 无关。
+此名称从一开始就非常混乱，随着 Jenkins 2.217（<a href="https://github.com/jenkinsci/jep/blob/master/jep/222/README.adoc">JEP-222</a>）中引入 WebSocket 支持而变得更糟。
+Docker agent 镜像支持 WebSockets，因此我们决定将镜像名称更改为 <a href="https://hub.docker.com/r/jenkins/inbound-agent">jenkins/inbound-agent</a>，这样可以防止进一步的混乱。
+<em>Inbound agent</em> 术语是指 agent 协议，其中 agent 通过不同的协议启动与 Jenkins master 的连接。</p>
+
+<p>非常感谢 <a href="https://www.jenkins.io/blog/authors/slide_o_mix/">Alex Earl</a> 和 <a href="https://github.com/krufab">krufab</a> 进行的存储库重组工作，这使重命名成为可能！还要感谢 <a href="https://www.jenkins.io/blog/authors/timja/">Tim Jacomb</a>、<a href="https://www.jenkins.io/blog/authors/markyjackson-taulia/">Marky Jackson</a>、<a href="https://www.jenkins.io/blog/authors/markewaite">Mark Waite</a>、<a href="https://github.com/kuisathaverat">Ivan Fernandez Calvo</a> 和其他贡献者的评审和测试。</p>
+
+<h2 id="升级和兼容性说明">升级和兼容性说明</h2>
+
+<p>好消息是此命名不会引起重大变化。所有镜像已被修改为在内部使用新术语。
+如果使用以前镜像的最新版本，那么可以使用新名称替换就名称。
+这些名称可以在 Dockerfile、脚本和 Jenkins 配置中引用。</p>
+
+<p>我们将继续在 DockerHub 上更新旧镜像至少3个月（直到2020年8月5日）。
+不会在旧镜像中添加任何新配置和平台，但是所有现有配置和平台都将保持可用（ Java 1.8的 Debian 和 Java 1.8的 Alpine，等等）。
+2020年8月5日之后，旧镜像将不再接收更新，但以前的版本将仍然对 DockerHub 的用户可用。</p>
+
+<h2 id="下一步计划是什么">下一步计划是什么？</h2>
+
+<p>我们将继续在 Jenkins 组件中重命名引用旧镜像名称的 Docker 镜像。
+还有一组<a href="https://github.com/jenkinsci/jnlp-agents">便利的 Docker 镜像</a>，其中包括 Maven 或 Gradle 之类的构建工具，这些工具将在以后重命名。
+该 <code>jenkins/ssh-agent</code> 镜像将来也可能会重命名；请参阅此开发人员<a href="https://groups.google.com/forum/#!msg/jenkinsci-dev/oxD-Hd_7l9k/WAbvqD-wEQAJ">邮件列表线程中</a>正在进行的讨论。</p>
+
+<p>如果您对 Jenkins Docker 包中的新功能非常感兴趣，请继续关注未来的公告！
+您可以在 <a href="https://www.jenkins.io/project/roadmap/">Jenkins 公开路线图中</a> 找到多个正在进行的计划 （在草案阶段，请参阅 <a href="https://github.com/jenkinsci/jep/blob/master/jep/14/README.adoc">JEP-14</a>）</p>
+
+<p>一些故事：</p>
+
+<ul>
+<li>Windows 镜像的一般可用性。</li>
+<li>支持更多平台（AArch64、IBM s390x、PowerPC）。</li>
+<li>切换到 AdoptOpenJDK。</li>
+<li>引入多平台 Docker 镜像。</li>
+</ul>
+
+<p>如果您对这些项目中的任何一个感兴趣并想做出贡献，请联系 <a href="https://www.jenkins.io/sigs/platform">Platform Special Interest Group</a>，该<a href="https://www.jenkins.io/sigs/platform">小组</a>负责协调与 Docker 中的 Jenkins 相关的计划。</p>
+
+<p>关于 Docker 镜像之外的 agent 术语清除，我们将继续在 <a href="https://www.jenkins.io/sigs/advocacy-and-outreach">Advocacy＆Outreach SIG</a> 中进行此项目。
+如果您在 Jenkins 组织中的任何地方（Web UI、文档等）看到过时的 &ldquo;slave&rdquo; 术语的使用，请随时提交 pull request 或在这个 Epic —— <a href="https://issues.jenkins-ci.org/browse/JENKINS-42816">JENKINS-42816：Slave 到 Agent 的重命名遗留问题</a>中报告问题。
+在 <code>jenkinsci</code> GitHub 组织中恰好有 <a href="https://github.com/search?q=org%3Ajenkinsci+slave&amp;type=Code">3000个问题</a>，但我们会完成这个目标。
+对于任何贡献将不胜感激！</p>
 
 </div>
 
@@ -331,13 +382,6 @@ var trackOutboundLink = function(id, url) {
 
           
 
-<h2>参考</h2>
-<ul>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/">在 Kubernetes 上使用 Jenkins </a></li>
-	
-</ul>
-
         </div>
       </div>
       
@@ -348,14 +392,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-webSocket/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-18-docker-agent-image-renaming/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “WebSocket”
-  </a> 更新于：February 10, 2020
+    “Jenkins agent Docker 镜像重新命名了，你知道吗？”
+  </a> 更新于：May 18, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/02/2020-02-10-webSocket.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat%5carticles%5c2020%5c05%5c2020-05-18-docker-agent-image-renaming.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -373,18 +417,46 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/Jenkins">
-              Jenkins
+            <a class="tag" href="/tags/announcement">
+              announcement
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/WebSocket">
-              WebSocket
+            <a class="tag" href="/tags/docker">
+              docker
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/jenkins">
+              jenkins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/platform-sig">
+              platform-sig
             </a>
           </li>
         
               
+      
+        
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-15-call-for-user-stories-jenkins-is-the-way/" class="link">
+              征集用户故事- Jenkins is the Way
+            </a>
+          </li>
+        
       
     </ul>
   </div>
@@ -410,7 +482,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/02\/2020-02-10-webSocket\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/05\/2020-05-18-docker-agent-image-renaming\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
