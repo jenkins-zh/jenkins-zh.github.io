@@ -32,7 +32,7 @@
     <item>
       <title>Announcement</title>
       <link>https://jenkins-zh.cn/tags/announcement/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/announcement/</guid>
       <description></description>
@@ -329,7 +329,7 @@
     <item>
       <title>Devops</title>
       <link>https://jenkins-zh.cn/tags/devops/</link>
-      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/devops/</guid>
       <description></description>
@@ -383,7 +383,7 @@
     <item>
       <title>Docker</title>
       <link>https://jenkins-zh.cn/tags/docker/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/docker/</guid>
       <description></description>
@@ -617,7 +617,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -750,6 +750,15 @@
     </item>
     
     <item>
+      <title>Kubesphere</title>
+      <link>https://jenkins-zh.cn/tags/kubesphere/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/kubesphere/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Maven</title>
       <link>https://jenkins-zh.cn/tags/maven/</link>
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
@@ -824,7 +833,7 @@
     <item>
       <title>Open Source</title>
       <link>https://jenkins-zh.cn/tags/open-source/</link>
-      <pubDate>Fri, 30 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/open-source/</guid>
       <description></description>
@@ -896,7 +905,7 @@
     <item>
       <title>Platform Sig</title>
       <link>https://jenkins-zh.cn/tags/platform-sig/</link>
-      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/platform-sig/</guid>
       <description></description>

@@ -12,6 +12,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-19-jenkins-kubesphere-partner/</loc>
+    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-18-docker-agent-image-renaming/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-16-a-thank-you-letter-for-jenkins-fans/</loc>
     <lastmod>2020-05-16T00:00:00+00:00</lastmod>
   </url>
@@ -959,7 +969,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/announcement/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1164,7 +1174,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1200,7 +1210,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/docker/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1358,7 +1368,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1487,6 +1497,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/kubesphere/</loc>
+    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/maven/</loc>
     <lastmod>2019-05-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1536,7 +1552,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/open-source/</loc>
-    <lastmod>2019-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1589,7 +1605,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/platform-sig/</loc>
-    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1810,7 +1826,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
