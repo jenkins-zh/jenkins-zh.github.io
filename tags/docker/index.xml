@@ -6,10 +6,32 @@
     <description>Recent content in Docker on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/</guid>
+      <description>这篇文章，我们将会分解关于你想了解的 DevOps 的所有知识，因而你可以着手构建自己的 CI/CD 流水线。
+这篇文章，我们将注意力集中于 DevOps 上。
+什么是 DevOps？它跟 Agile 有什么不同？有哪些受欢迎的 DevOps 工具？在 DevOps 中，Docker、Kubernetes 和 Azure DevOps 又是充当了什么样的角色。让我们从一个简单的使用场景开始这次的内容。
+你将会学习  什么是 DevOps？
+ 为什么我们需要 DevOps？
+ DevOps 和 Agile 有什么区别？
+ 有哪些重要的 DevOps 工具？
+ Docker 怎样能够帮助到 DevOps？
+ Kubernetes 怎样能够帮助到 DevOps？
+ Azure DevOps 怎样能够帮助到 DevOps？
+ 什么是持续集成，持续交付？
+ 什么是基础设施即代码？
+ Terraform 和 Ansible 怎样能够帮助 DevOps？
+  免费课程 - 10 步速成  10 步学习 Docker</description>
+    </item>
     
     <item>
       <title>Jenkins agent Docker 镜像重新命名了，你知道吗？</title>

@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-19-jenkins-kubesphere-partner/</loc>
     <lastmod>2020-05-19T00:00:00+00:00</lastmod>
   </url>
@@ -992,6 +997,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/azure-devops/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/benchmark/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1174,7 +1185,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1210,7 +1221,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/docker/</loc>
-    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1492,7 +1503,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1826,7 +1837,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
