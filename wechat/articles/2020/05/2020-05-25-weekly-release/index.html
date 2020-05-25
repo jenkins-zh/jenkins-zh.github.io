@@ -10,14 +10,14 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>持续交付落地实践工作坊 - Jenkins 中文社区</title>
+  <title>Jenkins 每周版更新 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="Jenkins 中文社区2019第二场工作坊">
+  <meta name="description" content="本次更新的版本包括：2.231~2.237">
   
   
-  <meta name="keywords" content="jenkins,pipeline,workshop">
+  <meta name="keywords" content="Jenkins 版本发布,Jenkins 2.231发布,Jenkins 2.232发布,Jenkins 2.233发布,Jenkins 2.234发布,Jenkins 2.235发布,Jenkins 2.236发布,Jenkins 2.237发布">
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="持续交付落地实践工作坊" />
-<meta property="og:description" content="Jenkins 中文社区2019第二场工作坊" />
+<meta property="og:title" content="Jenkins 每周版更新" />
+<meta property="og:description" content="本次更新的版本包括：2.231~2.237" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/" /><meta property="article:published_time" content="2019-07-14T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-07-14T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-25-weekly-release/" /><meta property="article:published_time" content="2020-05-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-05-25T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="持续交付落地实践工作坊">
-<meta itemprop="description" content="Jenkins 中文社区2019第二场工作坊">
-
-
-<meta itemprop="datePublished" content="2019-07-14T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-07-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="74">
+<meta itemprop="name" content="Jenkins 每周版更新">
+<meta itemprop="description" content="本次更新的版本包括：2.231~2.237">
 
 
+<meta itemprop="datePublished" content="2020-05-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="373">
 
-<meta itemprop="keywords" content="jenkins,pipeline," />
+
+
+<meta itemprop="keywords" content="jenkins,release," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="持续交付落地实践工作坊"/>
-<meta name="twitter:description" content="Jenkins 中文社区2019第二场工作坊"/>
+<meta name="twitter:title" content="Jenkins 每周版更新"/>
+<meta name="twitter:description" content="本次更新的版本包括：2.231~2.237"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -204,27 +204,36 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            Zhao Xiaojie
+            zhaoying
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          Contributor of @jenkinsci . Jenkins press contact in China. Jenkins Chinese community leader.
+          devops jenkins
         </p>
       
-      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/zhaoying818" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
 
       </a>
 
+  
+  <div>
+    作者：<span class="originalAuthor">jenkinsci</span>
+    <div>
+      <a class="originalLink" href="" target="_blank">原文链接</a>
+    </div>
+  </div>
   
   </aside>
 
@@ -242,17 +251,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/" class="dib f6 pl1 hover-bg-light-gray br-100" title="让我们庆祝 Jenkins 对 Java 11的支持 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 长期支持版更新">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/" class="dib f6 pr1 hover-bg-light-gray br-100" title="使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -272,13 +273,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">持续交付落地实践工作坊</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 每周版更新</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 中文社区2019第二场工作坊
+      本次更新的版本包括：2.231~2.237
     </div>
   
 
@@ -289,47 +290,98 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="21562976603_.pic.jpg" alt="工作坊活动-1" /></p>
 
-<p>Jenkins 中文社区第二次线下持续交付落地实践工作坊在召唤每一位希望学习并掌握持续交付技术的同学，就在 2019年7月27日（周六）。</p>
 
-<p>Kubernetes 已经成为容器技术中必不可少的平台，甚至会作为未来的“操作系统”。相信每一次 IT 从业人员都有理由把 Kubernetes 掌握，本次活动首先由 Linux 基金会与 CNCF 基金会官方认证 Kubernetes CKA 培训讲师（LFAI）的孟凡浩为我们分享 Kubernetes 的入门介绍。</p>
+<p><img src="great-wall.jpeg" alt="great-wall" /></p>
 
-<p>之后，分享如何基于 Kubernetes 强大的平台下实践持续交付。</p>
+<h2 id="2-237-2020-05-18">2.237 (2020-05-18)</h2>
 
-<p>在上次的工作坊实践中，我们首先完整地介绍了 Jenkins 的流水线功能，然后大家一起通过四个练习项目加强并巩固了 Jenkins 流水线 Jenkinsfile 文件的编写。</p>
+<ul>
+<li>防止以 Java 11 运行时缺少 javax.annotation 类的导致的遥测告警(由 2.231 引入的缺陷回归)。 (issue 61920)</li>
+<li>在类字段解组问题的情况下，防止 Old Data Monitor 插件加载失败。 (issue 62231)</li>
+<li>确保在 UserLanguages 遥测初始化程序总是在扩展后运行。 (issue 60118)</li>
+<li>确保 job/folder 创建事务正确检查请求的名称中是否包含无效字符。 (issue 61956)</li>
+<li>开发者: 将 Apache Ant 从 1.10.7 更新到 1.10.8。 (pull 4725)</li>
+<li>开发者: 将 JSTL API 库从 1.2.1 更新到 1.2.7。 (pull 4656, 变更日志更新到 1.2.5, 1.2.3 到 1.2.7 的差异, 1.2.1 到 1.2.3 的差异)</li>
+<li>开发者: 在 Java API 中弃用 jenkins.model.Configuration。 (pull 4715)</li>
+</ul>
 
-<p><img src="31562976607_.pic.jpg" alt="工作坊活动-2" /></p>
+<h2 id="2-236-2020-05-11">2.236 (2020-05-11)</h2>
 
-<p>上次练习的项目包括：</p>
+<ul>
+<li>使插件管理可以再次支持 Internet Explorer 11 (由 2.231 引入的缺陷回归)。 (issue 62163)</li>
+<li>安全增强: 即使没有加密的 Secret 字段支持，也始终以加密形式来回传递密码表单控制值。 如果出现问题，可以通过在启动时将系统属性 hudson.util.Secret.AUTO_ENCRYPT_PASSWORD_CONTROL 设置为 false 来禁用此功能。 (issue 61808)</li>
+<li>安全增强: 当用户缺少“项目/配置”权限时，即使没有加密的 Secret 字段支持，也始终在项目相关的配置表单中使用占位符值作为密码表单控制值。 如果出现问题，可以通过将系统属性 hudson.util.Secret.BLANK_NONSECRET_PASSWORD_FIELDS_WITHOUT_ITEM_CONFIGURE 设置为 false 来禁用此功能 (issue 61808)</li>
+<li>开发者: 使 SystemProperties API 可用于插件，以便它们的属性可以由标准引擎管理。 (pull 4707, Javadoc 系统属性, 受系统属性控制的 Jenkins 功能)</li>
+</ul>
 
-<ol>
-<li>构建 Maven 项目</li>
-<li>制品归档</li>
-<li>构建 Docker 镜像</li>
-<li>参数化构建，指定 Docker 镜像 Tag</li>
-</ol>
+<h2 id="2-235-2020-05-04">2.235 (2020-05-04)</h2>
 
-<p>过程中录制的视频，可以从我们的优酷地址上找到 <a href="https://i.youku.com/jenkinszh">https://i.youku.com/jenkinszh</a></p>
+<ul>
+<li>当根目录 URL 配置指向先前配置的根目录 URL 时，防止表单验证出现 “404 Not Found” 错误（由 2.205 引入的缺陷回归）。 (issue 62133)</li>
+<li>在通知告警可再次单击之前一直显示面包屑导航页面。 (issue 62065)</li>
+<li>允许系统读取以查看更多管理员监视器。 (issue 61208)</li>
+<li>限制某些操作（例如递归目录删除）引发的异常数。 在这之前，在极少数情况下，无法删除大目录时引发的异常会占用大量内存。 (issue 61841)</li>
+<li>指示哪个组件提供的 URL 在全局安全配置中无需身份验证即始终可用。 (pull 4668)</li>
+<li>解决执行 ProcessTree.get() 时的类加载问题。 (issue 62006)</li>
+<li>开发者: 一次可以从多个特定扩展点查找扩展实现。 (issue 62056)</li>
+<li>开发者: Add nogrid 在 layout.jelly 标签中添加 nogrid 选项，以禁止隐藏 bootstrap 3 网格。 详细信息，请参见 bootstrap4-api-plugin 。 (issue 61326)</li>
+<li>开发者: 升级 javax.mail 为 jakarta.mail 1.6.5。 (pull 4660)</li>
+<li>内部: 从 ReverseProxySetupMonitor 视图中删除内联资源。 当 Jenkins 根 URL 不包含 contextPath 时，添加特定的告警。 (issue 60866)</li>
+<li>内部: 从 LogRecorder 视图中删除内联资源。 将 bigtables 的列标题向左对齐。 (issue 60866)</li>
+</ul>
 
-<p>而对于参加本次工作坊实践活动的同学，可以根据自身的情况选择练习上面的题目或者下面进阶的题目：</p>
+<h2 id="2-234-2020-04-27">2.234 (2020-04-27)</h2>
 
-<ol>
-<li>构建 Maven 项目并发布到 Nexus</li>
-<li>使用私有 Nexus 中的依赖进行构建</li>
-<li>构建 Docker 镜像并推送到 Harbor</li>
-<li>构建 Heml Charts 并推送到 Chartmuseum</li>
-</ol>
+<ul>
+<li>修复插件管理 &ldquo;Available&rdquo; 页签中的排序顺序(由 2.233 引入的缺陷回归)。 (pull 4675)</li>
+<li>重新设置帮助图标的样式。 (issue 62001)</li>
+<li>允许具有系统读取权限的用户查看系统日志。 (issue 61207)</li>
+<li>改写插件设置向导的“以管理员身份继续”按钮。 (issue 46669)</li>
+<li>现在，以程序化方式（或代码化方式）创建的代理的默认执行者数量为 1 而不是 2。 (pull 4677)</li>
+<li>会话劫持保护功能得到加强。 (issue 61738)</li>
+<li>在具有“全局/系统读取”或“项目/扩展读取”权限的用户的只读配置表单上，区分已定义（*****）和未定义（N/A）密码。 (issue 61812)</li>
+<li>开发者: 删除了未使用的不推荐使用的 HudsonExceptionNote。 (pull 4667)</li>
+</ul>
 
-<p>我们期望每一位参加的同学都可以从中学习并掌握基于 Jenkins 的持续交付技术，助力你所在团队的 DevOps 实践。更多的实训项目请参考 <a href="https://jenkins-zh.cn/about/course/#17">https://jenkins-zh.cn/about/course/#17</a></p>
+<h2 id="2-233-2020-04-20">2.233 (2020-04-20)</h2>
 
-<p>最后，让我们一起感谢<strong>京东云</strong>为我们本次活动提供的 Kubernetes 云计算资源。因此，每一位参加练习的同学，只需要带上自己的笔记本，以及 SSH 客户端即可。</p>
+<ul>
+<li>允许使用预填充的过滤器字段链接到插件管理 URL。 将插件管理中的标签链接到预先过滤的列表。 (pull 4591)</li>
+<li>添加系统读取支持到管理监视器。 (issue 61208)</li>
+<li>允许具有系统读取权限的用户查看全局工具配置。 (pull 4519)</li>
+<li>如果更新站点提供了流行程度数据，将在 &ldquo;Available&rdquo; 插件管理选项卡上按流行程度对插件进行排序。 (pull 4588)</li>
+<li>重新设置了按钮样式。 增加了对于大按钮、超链接样式按钮和图标样式按钮的支持。 (issue 61840)</li>
+<li>跳转 Groovy 视图显示错误界面到登录表单。 当缺少必要的权限时，某些视图显示错误界面，而不是转发到登录表单。 (issue 61905)</li>
+</ul>
 
-<p><img src="jingdongyun.png" alt="京东云" /></p>
+<h2 id="2-232-2020-04-16">2.232 (2020-04-16)</h2>
 
-<p>想更多地了解本次活动，请在 Jenkins 公众号后台回复“社区活动”，让我们社区的小伙伴把你拉进微信群。</p>
+<ul>
+<li>修复 git 插件之类的工具（这些工具会在 PATH 中搜索其可执行文件）的输入字段提示 (由 2.205 和 2.222.1 引入的缺陷回归)。 (issue 61711)</li>
+<li>内部: 从任务视图中删除内联资源。 (issue 60866)</li>
+<li>内部: 引入新的 Jenkins 核心维护者指南。 (pull 4472)</li>
+</ul>
 
-<p>想报名的同学，请点击阅读原文。</p>
+<h2 id="2-231-2020-04-12">2.231 (2020-04-12)</h2>
+
+<ul>
+<li>将章节标题添加到 管理 Jenkins 的上下文菜单。 (pull 4586)</li>
+<li>改善没有任务时的视图显示。 (pull 4633)</li>
+<li>Configuration as code plugin 支持配置用户时区。 (pull 4557)</li>
+<li>默认情况下，禁止显示有关缺少可选扩展名的日志消息。 (pull 4617)</li>
+<li>默认不是显示所有可用的插件；使用搜索字段查找插件。 (pull 4580)</li>
+<li>允许在插件管理中使用以多个空格分隔的过滤条件。 (pull 4580)</li>
+<li>允许具有系统读取权限的用户查看插件管理 配置。 (issue 61203)</li>
+<li>增加对从资源根 URL 提供文件参数值的支持（如果已设置）。 (pull 4614)</li>
+<li>在 cookie 上设置 httpOnly 标头以存储 iconSize。 (pull 4609)</li>
+<li>修复安装向导中错误消息之间的间隔（由 2.217 引入的缺陷回归）。 (issue 61660)</li>
+<li>在代理上创建日志条目时，请确保日志消息不缺少数字参数。 修复由 Support Core 插件收集的日志。 (pull 4621)</li>
+<li>确保从系统日志消息中删除了编码的控制台注解。 (pull 4632)</li>
+<li>将 crypto-util 从 1.1 更新到 1.5，以修复 Jenkins Web UI 中的许可证链接。 (pull 4631)</li>
+<li>开发者: 将 bug 检测注解从 JSR-305 切换到 SpotBugs / net.jcp 等效项。 (pull 4604)</li>
+<li>开发者: commons-codec 升级到 1.14。 (pull 4636)</li>
+</ul>
 
 </div>
 
@@ -355,15 +407,13 @@ var trackOutboundLink = function(id, url) {
 <h2>参考</h2>
 <ul>
 	
-	<li><a href="/wechat/articles/2019/06/2019-06-10-jenkins-pipeline-workshop/">还在苦恼不会写 Jenkins 流水线？来场工作坊！</a></li>
+	<li><a href="/wechat/articles/2020/04/2020-04-20-weekly-release/">Jenkins 每周版更新</a></li>
 	
-	<li><a href="/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/">Jenkins 可视化阶段视图的改进</a></li>
+	<li><a href="/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/">Jenkins 每周版更新</a></li>
 	
-	<li><a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/">Webhook 通用触发插件</a></li>
+	<li><a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/">Jenkins 长期支持版更新</a></li>
 	
-	<li><a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/">Jenkins 健康检查顾问</a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/">让我们庆祝 Jenkins 对 Java 11的支持</a></li>
+	<li><a href="/wechat/articles/2019/05/2019-05-29-jenkins-release/">Jenkins 2.176~2.178版本更新</a></li>
 	
 </ul>
 
@@ -377,14 +427,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-25-weekly-release/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “持续交付落地实践工作坊”
-  </a> 更新于：July 14, 2019
+    “Jenkins 每周版更新”
+  </a> 更新于：May 25, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/05/2020-05-25-weekly-release.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -408,20 +458,14 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/pipeline">
-              pipeline
+            <a class="tag" href="/tags/release">
+              release
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-25-weekly-release/" class="link">
-              Jenkins 每周版更新
-            </a>
-          </li>
         
       
         
@@ -609,6 +653,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
       
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-14-jenkins-pipeline-workshop/" class="link">
+              持续交付落地实践工作坊
+            </a>
+          </li>
         
       
         
@@ -914,7 +964,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/07\/2019-07-14-jenkins-pipeline-workshop\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/05\/2020-05-25-weekly-release\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

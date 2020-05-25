@@ -37,6 +37,15 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins 每周版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-25-weekly-release/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-25-weekly-release/</guid>
+      <description>2.237 (2020-05-18)  防止以 Java 11 运行时缺少 javax.annotation 类的导致的遥测告警(由 2.231 引入的缺陷回归)。 (issue 61920) 在类字段解组问题的情况下，防止 Old Data Monitor 插件加载失败。 (issue 62231) 确保在 UserLanguages 遥测初始化程序总是在扩展后运行。 (issue 60118) 确保 job/folder 创建事务正确检查请求的名称中是否包含无效字符。 (issue 61956) 开发者: 将 Apache Ant 从 1.10.7 更新到 1.10.8。 (pull 4725) 开发者: 将 JSTL API 库从 1.2.1 更新到 1.2.7。 (pull 4656, 变更日志更新到 1.2.5, 1.2.3 到 1.2.7 的差异, 1.2.1 到 1.2.3 的差异) 开发者: 在 Java API 中弃用 jenkins.model.Configuration。 (pull 4715)  2.</description>
+    </item>
+    
+    <item>
       <title>使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
