@@ -37,6 +37,19 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Windows Docker Agent 镜像可以常规使用了</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-28-docker-windows-agents/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-28-docker-windows-agents/</guid>
+      <description>我们想宣布可以使用官方 Windows agent Docker 镜像，这些镜像允许在 Docker 和 Kubernetes 上使用 Windows 操作系统配置 Jenkins agent。
+新镜像 现在，所有 agent 的正式 Docker 镜像都提供 nanoserver-1809 和 windowsservercore-1809 标签，其中包括 Windows 镜像以及当前的 Java 8（类似于 latest 标签）。 我们还提供了明确的 Java 选择，例如 jdk8-windowsservercore-1809 或 jdk11-nanoserver-1809。 版本标记也可用，例如 jenkins/agent:4.3-4-jdk8-nanoserver-1809。
+ jenkins/agent 是一个基础的 agent，它捆绑 agent.jar 来进行 agent&amp;lt;= =&amp;gt; master之间的通讯，最有用的是可以作为其他镜像的基础镜像。Windows 镜像从版本 4.3-4 开始可用。
+ jenkins/inbound-agent 是一个基于上面 jenkins/agent 镜像的 agent，它提供了用 PowerShell 编写的包装类脚本，以帮助指定 agent.jar 的参数。Windows 镜像从版本 4.3-4 开始可用。
+ jenkins/ssh-agent 是一个安装了 OpenSSH 的镜像， 应该与 SSH Build Agents Plugin 一起使用。Windows 镜像从版本 2.</description>
+    </item>
+    
+    <item>
       <title>Jenkins 每周版更新</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-25-weekly-release/</link>
       <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>

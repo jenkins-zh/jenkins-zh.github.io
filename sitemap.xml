@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-28-docker-windows-agents/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-25-weekly-release/</loc>
     <lastmod>2020-05-25T00:00:00+00:00</lastmod>
   </url>
@@ -1226,7 +1231,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/docker/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1621,7 +1626,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/platform-sig/</loc>
-    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1842,7 +1847,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1865,6 +1870,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/windows/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1922,7 +1928,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
