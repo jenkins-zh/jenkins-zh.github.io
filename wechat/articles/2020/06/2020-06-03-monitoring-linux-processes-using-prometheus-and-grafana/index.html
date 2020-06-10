@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>使用 Prometheus 和 Grafana 监控 Linux 进程 - Jenkins 中文社区</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  
+  <meta name="description" content="从安装到配置使用讲解了如何使用 Prometheus 与 Grafana 监控 Linux 进程">
+  
+  
+  <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+  
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff"><style>
+  img.avatar {
+    width: 32px;
+    display: inline;
+  }
+</style>
+<meta property="og:title" content="使用 Prometheus 和 Grafana 监控 Linux 进程" />
+<meta property="og:description" content="从安装到配置使用讲解了如何使用 Prometheus 与 Grafana 监控 Linux 进程" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/" /><meta property="article:published_time" content="2020-06-03T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-06-03T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="使用 Prometheus 和 Grafana 监控 Linux 进程">
+<meta itemprop="description" content="从安装到配置使用讲解了如何使用 Prometheus 与 Grafana 监控 Linux 进程">
+
+
+<meta itemprop="datePublished" content="2020-06-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="658">
+
+
+
+<meta itemprop="keywords" content="DevOps,Monitoring,Grafana,Software Development,Software Engineering," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 Prometheus 和 Grafana 监控 Linux 进程"/>
+<meta name="twitter:description" content="从安装到配置使用讲解了如何使用 Prometheus 与 Grafana 监控 Linux 进程"/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+  
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://jenkins-zh.cn" class="link white">
+         Jenkins 中文社区
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/wechat/" class="dim link light-silver"
+            >
+            博客
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/tutorial/" class="dim link light-silver"
+            >
+            教程
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/event/" class="dim link light-silver"
+            >
+            活动
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/partner/" class="dim link light-silver"
+            >
+            合作伙伴
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/about/" class="dim link light-silver"
+            >
+            关于我们
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="http://jenkins.io/zh" class="dim link light-silver"
+            target="_blank">
+            Jenkins 官网
+              
+            
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="email-address">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+      placeholder="搜索文档" type="text"
+      name="email-address" value="" style="background-image:url('/images/icon-search.png');background-size:16px 16px;">
+  </fieldset>
+</form>
+</div>
+
+    <div class="list ma0 pa0 dn dib-l"></div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/jenkins-zh/jenkins-zh/" data-size="large" data-show-count="false" aria-label="Star Jenkins WeChat GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+  
+  <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+    
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+
+  <aside class="mw5 br3 mv3 nested-links">
+    
+    
+      
+        <h3 class="f4 dib author">
+            s1mple_zj
+        </h3>
+
+      
+      
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
+          You only got one shot,do not miss your chance to blow.
+        </p>
+      
+      <a href="https://github.com/0N0thing" target="_blank" class="link dim v-mid dib">
+        <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
+<path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
+</svg>
+
+      </a>
+
+  
+  <div>
+    作者：<span class="originalAuthor">Antoine Solnichkin</span>
+    <div>
+      <a class="originalLink" href="https://medium.com/schkn/monitoring-linux-processes-using-prometheus-and-grafana-113b3e271971" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
+  </aside>
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+
+		
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-01-Your-DevOps-Brain-Ways-of-Thinking-Ways-of-Working/" class="dib f6 pr1 hover-bg-light-gray br-100" title="你的 DevOps 大脑：思考方式和工作方式">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用 Prometheus 和 Grafana 监控 Linux 进程</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      从安装到配置使用讲解了如何使用 Prometheus 与 Grafana 监控 Linux 进程
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p><img src="cover.jpg" alt="cover" /></p>
+
+<p>无论你是否是一名 Linux 系统管理员或是一名 DevOps 工程师，你都会在<strong>监控服务器性能指标</strong>的时候花费很长时间。</p>
+
+<p>有时候<strong>实例运行非常慢</strong>但是哪里出的问题却没有任何线索。</p>
+
+<p>有一些<strong>不响应的实例</strong>会阻止你在这些实例上执行类似 top 或者 htop 的远程命令。</p>
+
+<p>服务器有一个<strong>瓶颈</strong>存在，但是你并不能简单快速的找到问题所在。</p>
+
+<blockquote>
+<p>如果我们有一个完整的仪表盘可以帮助我们跟踪整体性能以及独立的进程该怎么操作？</p>
+
+<p>可以在该链接中实时查看:
+ <a href="http://grafana.devconnected.com/d/nZMDMoiZk/grafana-top?orgId=1&amp;refresh=5s">http://grafana.devconnected.com/d/nZMDMoiZk/grafana-top?orgId=1&amp;refresh=5s</a></p>
+</blockquote>
+
+<p><img src="grafana-dashboard.png" alt="grafana-dashboard" /></p>
+
+<p>这篇入门文章旨在如何<strong>为 Linux 系统管理员</strong>创建一个<strong>完整的监控仪表盘</strong></p>
+
+<p>该仪表盘会展示完全可定制并且可扩展到分布式架构的多个实例的不同面板。</p>
+
+<h2 id="你将会学到什么">你将会学到什么</h2>
+
+<p>在即将踏入技术旅途之前，让我们快速看下通过阅读这篇文章你将学到哪些东西:</p>
+
+<ul>
+<li><p>了解在 Unix 系统性能监控方面的最新技术；</p></li>
+
+<li><p>怎样安装最新版本的 <strong>Prometheus v2.9.2、Pushgateway v0.8.0</strong> 以及 <strong>Grafana v6.2</strong>；</p></li>
+
+<li><p>构建一个简单的 <strong>bash 脚本</strong>用来导出指标项到 Pushgateway；</p></li>
+
+<li><p>构建一个<strong>完整的 Grafana 仪表盘</strong>包括最新的面板例如 ‘Gauge’ 和  ‘Bar Gauge’。</p></li>
+
+<li><p>额外内容: 集成 <strong>ad-hoc 过滤器</strong>跟踪单个进程或实例。</p></li>
+</ul>
+
+<p>现在我们大体浏览了一下我们将要学习哪些东西，并且没有进一步的要求，让我们介绍一些当前 Unix 系统中目前已有的内容。</p>
+
+<h2 id="unix-进程监控基础">Unix 进程监控基础</h2>
+
+<p>当提到 Unix 系统进程监控的时候，在你脑海中出现的有好几个选项。</p>
+
+<p>最流行的或许就是 ‘<strong>top</strong>’ 了。</p>
+
+<p>这个命令在系统管理员中间被广泛使用当系统出现性能瓶颈或许是第一条执行的命令（如果你可以访问它当然就是第一条！）</p>
+
+<p><img src="unix-top.png" alt="unix-top" /></p>
+
+<p>top 命令可读性已经是非常好了，但是仍有一条命令比 top 命令可读性更好：<strong>htop</strong>。</p>
+
+<p>Htop 提供了与 top 相同的一些功能（CPU、内存、正常运行时间&hellip;）但是是以一种彩色并且很友好的方式展示出来的。</p>
+
+<p>Htop 还提供当前系统使用情况的<strong>仪表盘</strong></p>
+
+<p><img src="unix-htop.png" alt="unix-htop" /></p>
+
+<blockquote>
+<p>既然已经有这两个命令了，那为什么我们想要构建另一种监控进程的方法呢？</p>
+</blockquote>
+
+<p>主要原因是<strong>系统可用性</strong>: 一旦系统过载，你或许没有办法从物理层面或者远程访问实例。</p>
+
+<p>通过外部监控进程，你可以在不需要访问服务器的前提下分析哪个地方出现的问题。</p>
+
+<p>另一个原因就是<strong>进程总是通过内核本身被创建以及被杀死</strong>。</p>
+
+<p>因此，运行 top 命令你得不到任何信息，当你想要分析什么导致系统出现性能问题时已经为时已晚。</p>
+
+<p>你或许需要挖掘内核日志去查看哪个进程被杀死了。</p>
+
+<p>使用监控仪表盘的话，你可以非常简单的回到过去查看哪个进程导致了这个问题。</p>
+
+<p>现在已知道了为什么我们想构建这样一个仪表盘了，让我们看下为了构建它的<strong>架构</strong>是什么样的吧。</p>
+
+<p><img src="next-step-1.png" alt="next-step-1" /></p>
+
+<h2 id="监控架构的细节">监控架构的细节</h2>
+
+<p>在我们查看我们将要使用的架构之前，我们想要使用一个这样的解决方案:</p>
+
+<ul>
+<li><p><strong>节省资源</strong>: 比如不会消耗我们主机上太多的资源；</p></li>
+
+<li><p><strong>易于安装</strong>: 不需要太多的时间进行实例化；</p></li>
+
+<li><p><strong>可扩展</strong>: 如果我们想要监控另一个主机，我们可以快速且高效的实现。</p></li>
+</ul>
+
+<p>这些特点需要我们在这篇文章中始终需要牢记的。</p>
+
+<p>我们今天将要实践的具体细节是这样的:</p>
+
+<p><img src="architecture-details.png" alt="architecture-details" /></p>
+
+<p>我们的架构使用了四种不同的组件:</p>
+
+<ul>
+<li><p>一个用来周期性提供指标到 Pushgateway 的 bash 脚本；</p></li>
+
+<li><p><strong>Pushgateway</strong>: 单个脚本用作目标的指标项缓存；</p></li>
+
+<li><p><strong>Prometheus</strong>:  实例化用于存储指标项的时间序列数据库。Prometheus 会将 Pushgateway 作为目标，以便检索并存储指标项；</p></li>
+
+<li><p>Grafana: 一个仪表盘监控工具通过 PromQL 从 Prometheus 检索数据然后绘制它们。</p></li>
+</ul>
+
+<p>对于已经非常熟悉 Prometheus 的朋友，你已经知道 Prometheus 从暴露 HTTP 的实例获取指标然后存储它们。</p>
+
+<p>在这篇文章中，bash 脚本的生命周期非常短并且不会给 Prometheus 暴露任何的 HTTP 实例。</p>
+
+<p>这也就是为什么我们需要使用 Pushgateway；为<strong>短命任务</strong>而设计，Pushgateway 会缓存从脚本中接收的指标并将它们暴露给 Prometheus。</p>
+
+<p><img src="gathering-metrics-with-prometheus.png" alt="gathering-metrics-with-prometheus" /></p>
+
+<p><img src="next-step-2.png" alt="next-step-2" /></p>
+
+<h2 id="安装不同的工具">安装不同的工具</h2>
+
+<p>现在你已经知道我们应用程序是怎样运行的了，让我们安装这些需要的工具吧。</p>
+
+<h2 id="a-安装-pushgateway">a &ndash; 安装 Pushgateway</h2>
+
+<p>为了安装 ** Pushgateway**，运行一个简单的 wget 命令来获取二进制文件。</p>
+
+<pre><code>wget https://github.com/prometheus/pushgateway/releases/download/v0.8.0/pushgateway-0.8.0.linux-amd64.tar.gz
+</code></pre>
+
+<p>现在你获取到了这个压缩文件，解压，在 pushgateway 目录下运行这个可执行文件。</p>
+
+<pre><code>&gt; tar xvzf pushgateway-0.8.0.linux-amd64.tar.gz  
+&gt; cd pushgateway-0.8.0.linux-amd64/  
+&gt; ./pushgateway &amp;
+</code></pre>
+
+<p>结果是，你的 <strong>Pushgateway 会以后台进程的形式启动</strong>。</p>
+
+<pre><code>me@schkn-ubuntu:~/softs/pushgateway/pushgateway-0.8.0.linux-amd64$ ./pushgateway &amp;  
+[1] 22806  
+me@schkn-ubuntu:~/softs/pushgateway/pushgateway-0.8.0.linux-amd64$ INFO[0000] Starting pushgateway (version=0.8.0, branch=HEAD, revision=d90bf3239c5ca08d72ccc9e2e2ff3a62b99a122e) source=&quot;main.go:65&quot;INFO[0000] Build context (go=go1.11.8, user=root@00855c3ed64f, date=20190413-11:29:19) source=&quot;main.go:66&quot;INFO[0000] Listening on :9091. source=&quot;main.go:108&quot;
+</code></pre>
+
+<p>干得漂亮！</p>
+
+<p>从那里，Pushgateway 会在 9091 端口上监听接收的指标。</p>
+
+<h2 id="b-安装-prometheus">b &ndash; 安装 Prometheus</h2>
+
+<p>如在 Prometheus 官网上 ‘Getting Started’ 章节讲的那样，请访问  <a href="https://prometheus.io/download/">https://prometheus.io/download/</a> 运行一个简单的 wget 命令从你的系统中获取 Prometheus 压缩包。</p>
+
+<pre><code>wget https://github.com/prometheus/prometheus/releases/download/v2.9.2/prometheus-2.9.2.linux -amd64.tar.gz
+</code></pre>
+
+<p>现在获取到压缩包之后，解压，切换到主目录:</p>
+
+<pre><code>&gt; tar xvzf prometheus-2.9.2.linux-amd64.tar.gz  
+&gt; cd prometheus-2.9.2.linux-amd64/
+</code></pre>
+
+<p>如之前所述，Prometheus 周期性地获取‘目标’然后收集指标。目标（在这里是 Pushgateway）需要被配置到 Prometheus 配置文件中。</p>
+
+<pre><code>&gt; vi prometheus.yml
+</code></pre>
+
+<p>在 ‘global’ 部分，编辑 ‘_scrape_interval’ 值减少为 1 秒。</p>
+
+<pre><code>global:  
+scrape_interval: 1s # Set the scrape interval to every 1 second.
+</code></pre>
+
+<p>在 ‘_scrape_configs_’ 部分，在 scrape_configs 部分的 targets 下新增一个值。</p>
+
+<pre><code>static_configs:  
+- targets: ['localhost:9090', 'localhost:9091']
+</code></pre>
+
+<p>退出 vi，最后运行目录下的 prometheus 可执行文件。</p>
+
+<p>当执行最后的 prometheus 命令 Prometheus 启动。为了确保所有配置都是正确的，你可以访问 <a href="http://localhost:9090/graph">http://localhost:9090/graph</a> 查看。</p>
+
+<p>如果你能访问 Prometheus web 控制台，也就证明所有的配置都是正确的。</p>
+
+<p>你也可以在 Web UI 的 ‘Status’ &gt; ‘Targets’ 验证 Pushgateway 是否正确配置为目标。</p>
+
+<p><img src="prometheus-web-console.png" alt="prometheus-web-console" /></p>
+
+<h2 id="c-安装-grafana">c &ndash; 安装 Grafana</h2>
+
+<p>最后，我们将要安装 <strong>Grafana v6.2</strong>。访问 <a href="https://grafana.com/grafana/download/beta">https://grafana.com/grafana/download/beta</a> 。</p>
+
+<p>同之前做的那些一样，运行一个简单的 wget 命令获取它。</p>
+
+<pre><code>&gt; wget https://dl.grafana.com/oss/release/grafana_6.2.0-beta1_amd64.deb&gt; sudo dpkg -i grafana_6.2.0-beta1_amd64.deb
+</code></pre>
+
+<p>现在你获取到了一个可执行的 deb 文件，grafana 会以服务的方式运行在你的实例上。</p>
+
+<p>你可以通过运行下面的命令验证:</p>
+
+<pre><code>&gt; sudo systemctl status grafana-server  
+● grafana-server.service - Grafana instance  
+Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; disabled; vendor preset: enabled)  
+Active: active (running) since Thu 2019-05-09 10:44:49 UTC; 5 days ago  
+Docs: http://docs.grafana.org
+</code></pre>
+
+<p>你可以查看 <a href="http://localhost:3000/">http://localhost:3000/</a> 这个是 Grafana Web UI 的默认地址。</p>
+
+<p>现在你已经将 Grafana 安装到你的实例上了，我们需要配置  <strong>Prometheus 作为数据源</strong>。</p>
+
+<p>你可以这样配置数据源:</p>
+
+<p><img src="configure-datasource.png" alt="configure-datasource" /></p>
+
+<p><strong>就是它！</strong></p>
+
+<p>点击 ‘Save and Test’ 确保你的数据源运行正常。</p>
+
+<p><img src="next-step-3.png" alt="next-step-3" /></p>
+
+<h2 id="构建脚本以检索指标">构建脚本以检索指标</h2>
+
+<p>下一个任务是构建一个简单的脚本用来检索指标比如单个进程的 CPU 使用率以及内存使用率。</p>
+
+<p>你的脚本可以定义为一个 cron 任务这样将会每秒运行一次。</p>
+
+<p>为了执行这个任务，你有多个候选。</p>
+
+<p>你可以每秒运行 top 命令，使用 sed 解析它然后发送指标给 Pushgateway。</p>
+
+<p>麻烦的部分是 top 运行多次，提供一个这段时间的平均指标值。这不是我们真正想要的。</p>
+
+<p>取而代之的，我们将会使用 <strong>ps</strong> 命令为了更精确的话使用 <strong>ps aux</strong> 命令。</p>
+
+<p><img src="ps-aux-command.png" alt="ps-aux-command" /></p>
+
+<p>该命令暴露了单独的 CPU 以及内存使用率以及运行后台实际运行的命令。</p>
+
+<p>这就是我们想要的。</p>
+
+<p>但是在继续后面的工作之前，让我们看看 <strong>Pushgateway 期望输入的内容</strong>。</p>
+
+<p>Pushgateway，非常像 Prometheus，使用键值对运行: 键描述了监控的指标然后值就不言自明了。</p>
+
+<p>这里有一些例子:</p>
+
+<p><img src="pushgateway-key-value.png" alt="pushgateway-key-value" /></p>
+
+<p>你可以说，第一个表格简单描述为 CPU 使用率，但是第二个描述了  java 进程的 CPU 使用率。</p>
+
+<p><strong>添加标签是指定你的指标描述更准确的一种方法</strong>。</p>
+
+<p>现在我们有这个信息了，我们需要构建最终的脚本。</p>
+
+<p>提醒一下，我们的脚本将会使用 ps aux 命令运行，解析结果，转换并通过我们之前描述的语法发送给 Pushgateway 。</p>
+
+<p>创建一个脚本文件，赋给一些权限然后切换至该位置。</p>
+
+<pre><code>&gt; touch better-top  
+&gt; chmod u+x better-top  
+&gt; vi better-top
+</code></pre>
+
+<p>脚本如下:</p>
+
+<p><em>如果你想用作收集内存使用率，将 ‘cpu_usage’ 标签修改为  ‘memory_usage’ 然后 $3z 改为 $4z</em></p>
+
+<pre><code>#!/bin/bash  
+z=$(ps aux)  
+while read -r z  
+do  
+var=$var$(awk '{print &quot;cpu_usage{process=\&quot;&quot;$11&quot;\&quot;, pid=\&quot;&quot;$2&quot;\&quot;}&quot;, $3z}');  
+done &lt;&lt;&lt; &quot;$z&quot;  
+curl -X POST -H &quot;Content-Type: text/plain&quot; --data &quot;$var  
+&quot; http://localhost:9091/metrics/job/top/instance/machine
+</code></pre>
+
+<p>所以这个脚本干了些啥呢？</p>
+
+<p>首先，它执行了我们之前说的 <strong>ps aux</strong> 命令。</p>
+
+<p>如同你所说的那样，这个脚本收集进程所有的指标但是它只执行一次。</p>
+
+<p>现在我们使用 sleep 只是简单的每秒运行一次。</p>
+
+<p>然后，你可以自由创建一个服务使用计时器每秒执行一次（至少使用 systemd）。</p>
+
+<blockquote>
+<p>对 systemd 好奇？<a href="http://devconnected.com/monitoring-systemd-services-in-realtime-with-chronograf/">我创建了一个关于使用 Chronograf 监控它们的完整教程</a></p>
+</blockquote>
+
+<pre><code>&gt; while sleep 1; do ./better-top; done;
+</code></pre>
+
+<p>现在我们的指标发送到 Pushgateway 了，让我们看看是否我们可以在 Prometheus Web 控制台看到它们。</p>
+
+<p>访问 <a href="http://localhost:9090/">http://localhost:9090/</a> 。在 ‘Expression’ 位置，简单输入 <strong>‘cpu_usage’</strong>。你可以在浏览器上看到所有的指标。</p>
+
+<p>恭喜你！你的 CPU 指标被存储到 Prometheus TSDB 中了。</p>
+
+<p><img src="cpu_usage-in-prometheus.png" alt="cpu_usage-in-prometheus" /></p>
+
+<p><img src="next-step-4.png" alt="next-step-4" /></p>
+
+<h2 id="使用-grafana-构建一个酷炫的仪表盘">使用 Grafana 构建一个酷炫的仪表盘</h2>
+
+<p>现在我们的指标存储到 Prometheus 了，我们需要简单的构建一个  <strong>Grafana 仪表盘</strong>目的是为了可视化它们。</p>
+
+<p>为了看起来舒服一些，我从 1 到 4 标注了最终的仪表盘。</p>
+
+<p>这些与这个章节的各个子章节匹配。如果你只对其中的一些面板感兴趣，就直接跳转到匹配的子章节即可。</p>
+
+<p><img src="grafana-dashboard-1.png" alt="grafana-dashboard-1" /></p>
+
+<h2 id="1-构建圆形仪表盘">1&ndash; 构建圆形仪表盘</h2>
+
+<p>这个是我们面板中圆形仪表盘的特写。</p>
+
+<p><img src="round-gauge.png" alt="round-gauge" /></p>
+
+<p>目前，我们主要专注于进程的 CPU 使用率，也可以简单的映射到内存使用率。</p>
+
+<p>通过这些面板，我们将要跟踪两个指标: <strong>所有进程当前的 CPU 使用率以及平均 CPU 使用率</strong>。</p>
+
+<p>为了检索这些指标，我们将在我们的 Prometheus 实例上执行 PromQL 队列。</p>
+
+<p>所以.. 什么是 PromQL 呢？</p>
+
+<p><strong>PromQL 是为 Prometheus 而设计的队列语言。</strong></p>
+
+<p>类似于使用 InfluxQL（或者是 IFQL）的 InfluxDB 实例，PromQL 队列查询可以使用求和、取平均值以及标准差之类的函数来汇总数据。</p>
+
+<p>语法使用起来非常简单我们将会在面板中使用它。</p>
+
+<h2 id="a-检索当前总体的-cpu-使用率">a &ndash; 检索当前总体的 CPU 使用率</h2>
+
+<p>为了检索当前的总体 CPU 使用率，我们将会使用 <strong>PromQL sum 函数。</strong></p>
+
+<p>在给定的时间内，我们总体的 CPU 使用率就是简单的各个使用率的总和。</p>
+
+<p>以下是配置清单:</p>
+
+<p><img src="cheat-sheet-sum.png" alt="cheat-sheet-sum" /></p>
+
+<h2 id="b-检索平均-cpu-使用率">b &ndash; 检索平均 CPU 使用率</h2>
+
+<p>平均 CPU 使用率不需要太多的工作，你只需要简单的使用 <strong>PromQL 的 avg 函数</strong>。你可以通过下面的配置清单查看到。</p>
+
+<p><img src="cheat-sheet-avg.png" alt="cheat-sheet-avg" /></p>
+
+<h2 id="2-构建水平仪表盘">2 &ndash; 构建水平仪表盘</h2>
+
+<p>水平仪表盘是最新版 Grafana v6.2 版本的一部分。</p>
+
+<p>我们的目标是显示 10 个消耗最系统的进程。</p>
+
+<p>为了实现这个，我们将会使用 <strong>topk 函数</strong>检索一个指标项的前 k  个元素。</p>
+
+<p>类似于之前所做的工作，我们将会定义几个阈当消耗太多资源的时候得到通知。</p>
+
+<p><img src="cheat-sheet-topk-horizontal.png" alt="cheat-sheet-topk-horizontal" /></p>
+
+<h2 id="3-构建垂直仪表盘">3 &ndash; 构建垂直仪表盘</h2>
+
+<p>垂直仪表盘与水平仪表盘类似，我们只需要在 Grafana 的可视化面板调整<strong>方向参数</strong>即可。</p>
+
+<p>同样，我们将会使用这个面板监控内存使用率因此队列会有轻微的不同。</p>
+
+<p><img src="cheat-sheet-topk-vertical.png" alt="cheat-sheet-topk-vertical" /></p>
+
+<p>棒极了！我们目前的进度好极了，还剩一个面板啦。</p>
+
+<h2 id="4-构建线性图">4 &ndash; 构建线性图</h2>
+
+<p>线性图在 Grafana 已经有很长时间了我们将会使用它来展示这段时间内进程演变的历史。</p>
+
+<p>这个图表在以下情况下特别方便:</p>
+
+<ul>
+<li><p>过去曾经发生过故障想要调查一下哪些进程在这个过程中是运行的。</p></li>
+
+<li><p>一些进程没有运行但是你想查看它们之前的一些行为。</p></li>
+</ul>
+
+<p>当提到错误排查的时候，真的需要这一整篇文章（特别似乎最近 Grafana Loki 新增的内容）。</p>
+
+<p>好的，这是最后一个配置清单！</p>
+
+<p><img src="cheat-sheet-graph.png" alt="cheat-sheet-graph" /></p>
+
+<p>到这里，<strong>我们已经设置了最后的仪表盘上所有需要的面板了</strong>。</p>
+
+<p>你可以以自己喜欢的方式安排它们或者从我们构建的方法中汲取灵感。</p>
+
+<p><img src="next-step-5.png" alt="next-step-5" /></p>
+
+<h2 id="额外内容-使用-ad-hoc-filters-探索数据">额外内容: 使用 ad hoc filters 探索数据</h2>
+
+<p>实时数据看起来很有意思 &ndash; 但是当你<strong>探索你的这些数据时</strong>才是真正的价值所在。</p>
+
+<p>在这部分额外内容里面，我们不会使用 ‘Explore’ 函数（或许在另一篇文章会说一下呢？），<strong>我们将要使用 ad hoc filters</strong>。</p>
+
+<p>使用 Grafana，你可以定义<strong>一个图表相关的变量</strong>。对变量来说有许多不同的选项: 比如你可以为你的数据源定义一个变量可以允许动态切换一个队列中的数据源。</p>
+
+<p>我们的话，将会使用简单的 <strong>ad hoc filters</strong> 来探索数据。</p>
+
+<p><img src="settings.png" alt="settings" /></p>
+
+<p>从这个地方，点击左边菜单的 ‘Variables’ ，然后点击 ‘New’。</p>
+
+<p><img src="variable-configuration.png" alt="variable-configuration" /></p>
+
+<p>如上图所示，ad hoc filters 自动应用到仪表盘中并指向 Prometheus 的数据源。回到我们的仪表盘上。</p>
+
+<p>看一下仪表盘左上角的地方。</p>
+
+<p><img src="top-left-corner.png" alt="top-left-corner" /></p>
+
+<p>现在假如你想在系统中查看某个进程的情况: 以 Prometheus 为例。</p>
+
+<p>简单的切换到过滤器然后可以看到仪表盘根据过滤器进行了更新。</p>
+
+<p><img src="udate-dashboard" alt="udate-dashboard.png" /></p>
+
+<p><strong>现在你可以直观的看到 Prometheus 在你的实例上是怎样的了。</strong></p>
+
+<p>甚至可以看过去这个进程做了什么，与它的 pid 无关！</p>
+
+<p><img src="next-step-6.png" alt="next-step-6" /></p>
+
+<h2 id="快速总结一下">快速总结一下</h2>
+
+<p>这篇文章中，你应该能更好的理解 <strong>Prometheus 和 Grafana</strong> 提供哪些功能了。</p>
+
+<p>你也知道了给一个实例配置一个<strong>完整的监控仪表盘</strong>，但是这只是扩展规模以及监控 Unix 实例整个集群的一小步。</p>
+
+<p><strong>DevOps 监控</strong>是一个非常有趣的话题 &ndash; 但是如果你做错了一些东西会成为你的梦魇。</p>
+
+<p>这也就是我们写这篇文章构建这些仪表盘的原因所在: 帮助你尽可能全面的使用这些工具所能提供功能。</p>
+
+<p>我们相信出色的技术通过有用的展示可以得到提升。</p>
+
+<p>我写了相同的文章，如果你喜欢这篇文章，可以再读一下其他的文章:</p>
+
+<p>在那之前，开心如常。</p>
+
+</div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “使用 Prometheus 和 Grafana 监控 Linux 进程”
+  </a> 更新于：June 3, 2020
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">完善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/DevOps">
+              DevOps
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Monitoring">
+              Monitoring
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Grafana">
+              Grafana
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Software-Development">
+              Software Development
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Software-Engineering">
+              Software Engineering
+            </a>
+          </li>
+        
+              
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/06\/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
+
+  </main>
+
+  <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    <div class="pb3 pt4 w-100 w-50-ns">
+
+      <div class="b f3  light-gray mb3 nested-links tc">
+        由 <a href="https://github.com/jenkins-zh/jenkins-zh/graphs/contributors" target="_blank"
+          class="link">Jenkins 社区贡献者</a> 维护<br />
+      </div>
+
+      <ul class="center f6 list ma0 mv3 pa0 tc" style="display:none"><li class="dib mr3"><a href="https://github.com/jenkins-zh/jenkins-zh/issues/new" class="dim link light-gray pv2">File an Issue</a></li></ul>
+
+      <ul class="center f6 list ma0 mv4 pa0 tc">
+        <li class="dib mr3">
+          <a href="https://twitter.com/jenkinsci" target="_blank" class="dim link light-gray pv2">Twitter</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://www.youtube.com/channel/UC63xz3pq26BBgwB3cnwCoqQ" target="_blank"
+            class="dim link light-gray pv2">YouTube</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://space.bilibili.com/433584098" target="_blank" class="dim link light-gray pv2">哔哩哔哩</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://jcli.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">Jenkins
+            CLI</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://community.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">社区论坛</a>
+        </li>
+      </ul>
+
+      
+    </div>
+
+    <div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">优酷视频
+        <div>
+          <a href="https://i.youku.com/jenkinszh" target="_blank">
+            <img src="/images/youku-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微信公众号
+        <div>
+          <a href="https://mp.weixin.qq.com/s/vifdduC3kRGSIMpyL03yVA" target="_blank">
+            <img src="https://jenkins.io/images/jenkins-wechat.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微博
+        <div>
+          <a href="https://www.weibo.com/jenkinszh" target="_blank">
+            <img src="/images/weibo-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="f7 gray mb5 mb0-ns ph3 w-100"> 
+    <p class="dib mr4"><a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow" class="dim link light-gray pv2"><u>晋ICP备15000444号-2</u></a></p>
+  </div>
+
+
+  <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu pb3 dn">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/wechat/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          博客
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/tutorial/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          教程
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/event/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          活动
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/partner/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          合作伙伴
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/about/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          关于我们
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="http://jenkins.io/zh" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Jenkins 官网
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">菜单</button>
+
+  
+</div>
+<script src="/dist/app.bundle.js" type="text/javascript"></script>
+</div>
+
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'jenkinsci/chinese'
+    };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</footer>
+  
+<link href="/dist/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/jenkins-zh.cn";
+    
+</script>
+<script src="/dist/lunr.js"></script>
+<script src="/dist/autocomplete.js"></script>
+<script src="/dist/jquery-3.2.1.min.js"></script>
+<script src="/dist/search.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6db234f713318730f0e5f6a95bdd8d47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?6276dcef5c15f276644151772390c1f9":"https://jspassport.ssl.qhimg.com/11.0.1.js?6276dcef5c15f276644151772390c1f9";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+</body>
+
+</html>

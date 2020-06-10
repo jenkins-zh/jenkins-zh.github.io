@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grafana on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/grafana/</link>
+    <description>Recent content in Grafana on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 03 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/grafana/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Prometheus 和 Grafana 监控 Linux 进程</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/</guid>
+      <description>无论你是否是一名 Linux 系统管理员或是一名 DevOps 工程师，你都会在监控服务器性能指标的时候花费很长时间。
+有时候实例运行非常慢但是哪里出的问题却没有任何线索。
+有一些不响应的实例会阻止你在这些实例上执行类似 top 或者 htop 的远程命令。
+服务器有一个瓶颈存在，但是你并不能简单快速的找到问题所在。
+ 如果我们有一个完整的仪表盘可以帮助我们跟踪整体性能以及独立的进程该怎么操作？
+可以在该链接中实时查看: http://grafana.devconnected.com/d/nZMDMoiZk/grafana-top?orgId=1&amp;amp;refresh=5s
+ 这篇入门文章旨在如何为 Linux 系统管理员创建一个完整的监控仪表盘
+该仪表盘会展示完全可定制并且可扩展到分布式架构的多个实例的不同面板。
+你将会学到什么 在即将踏入技术旅途之前，让我们快速看下通过阅读这篇文章你将学到哪些东西:
+ 了解在 Unix 系统性能监控方面的最新技术；
+ 怎样安装最新版本的 Prometheus v2.9.2、Pushgateway v0.8.0 以及 Grafana v6.2；
+ 构建一个简单的 bash 脚本用来导出指标项到 Pushgateway；
+ 构建一个完整的 Grafana 仪表盘包括最新的面板例如 ‘Gauge’ 和 ‘Bar Gauge’。
+ 额外内容: 集成 ad-hoc 过滤器跟踪单个进程或实例。
+  现在我们大体浏览了一下我们将要学习哪些东西，并且没有进一步的要求，让我们介绍一些当前 Unix 系统中目前已有的内容。
+Unix 进程监控基础 当提到 Unix 系统进程监控的时候，在你脑海中出现的有好几个选项。
+最流行的或许就是 ‘top’ 了。
+这个命令在系统管理员中间被广泛使用当系统出现性能瓶颈或许是第一条执行的命令（如果你可以访问它当然就是第一条！）
+top 命令可读性已经是非常好了，但是仍有一条命令比 top 命令可读性更好：htop。</description>
+    </item>
+    
+  </channel>
+</rss>

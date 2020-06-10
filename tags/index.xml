@@ -347,7 +347,7 @@
     <item>
       <title>Devops</title>
       <link>https://jenkins-zh.cn/tags/devops/</link>
-      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/devops/</guid>
       <description></description>
@@ -530,6 +530,15 @@
       <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/governance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grafana</title>
+      <link>https://jenkins-zh.cn/tags/grafana/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/grafana/</guid>
       <description></description>
     </item>
     
@@ -782,6 +791,15 @@
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://jenkins-zh.cn/tags/monitoring/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/monitoring/</guid>
       <description></description>
     </item>
     
@@ -1094,7 +1112,7 @@
     <item>
       <title>Software Development</title>
       <link>https://jenkins-zh.cn/tags/software-development/</link>
-      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/software-development/</guid>
       <description></description>
@@ -1103,7 +1121,7 @@
     <item>
       <title>Software Engineering</title>
       <link>https://jenkins-zh.cn/tags/software-engineering/</link>
-      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/software-engineering/</guid>
       <description></description>
