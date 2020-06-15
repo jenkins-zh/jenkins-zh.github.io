@@ -37,6 +37,15 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2020-06-10/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2020-06-10/</guid>
+      <description> UCloud 服务器管理  Nexus 上线了  https 有问题   企业合作  中信  技术活动没有确定  句子互动  作为赞助商 提供了一年的套餐 https://github.com/jenkins-zh/jenkins-zh/pull/271  kubesphere  https://github.com/kubesphere/kubesphere/issues/2182   著作权 * 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创） * 在社区提供的翻译稿，在我们的公众号上首次发布 * 应该说明作者、翻译者等的具体版权说明  </description>
+    </item>
+    
+    <item>
       <title>使用 Prometheus 和 Grafana 监控 Linux 进程</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
