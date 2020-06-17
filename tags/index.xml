@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>Authentication</title>
+      <link>https://jenkins-zh.cn/tags/authentication/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Automation</title>
       <link>https://jenkins-zh.cn/tags/automation/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
@@ -500,7 +509,7 @@
     <item>
       <title>Github</title>
       <link>https://jenkins-zh.cn/tags/github/</link>
-      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/github/</guid>
       <description></description>

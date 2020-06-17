@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/",
+        "title": "GitHub App 身份验证支持已发布",
+        "type": "wechat",
+        "date": "2020-06-17 00:00:00 +0000 UTC",
+        "tags": ["github", "authentication"],
+        "description": "GitHub App 身份验证支持已发布，本文教你简单使用以及一些注意事项",
+        "content": " 我很高兴的宣布在 Jenkins 中作为 GitHub 应用进行身份验证现已支持。这是许多用户期待已久的功能。它已在 GitHub Branch Source 2.7.1 中发布，现在可以在 Jenkins 更新中心使用。\n身份验证为 GitHub 应用带来了很多好处：\n 更高的请求频率限制 - GitHub 应用程序的速率限制随您的组织规模而定，而基于用户的令牌的限制为 5000，无论您拥有多少存储库。 与用户无关的身份验证 - 每个 GitHub 应用都有自己的用户独立身份验证。不再需要“机器人”用户或确定谁应该是 2FA 或 OAuth 令牌的所有者。 改进的安全性和更严格的权限 - 与服务用户及其个人访问令牌相比，GitHub Apps 提供了更精细的权限。这使 Jenkins GitHub 应用程序需要更少的权限集即可正常运行。 访问 GitHub Checks API - GitHub Apps 可以访问 GitHub Checks API 以从 Jenkins 作业创建检查运行和检查套件，并提供有关提交和代码注释的详细反馈。  开始使用 安装 GitHub Branch Source 插件，确保版本为 2.7.1 或更高。\n配置 GitHub Organization 文件夹 遵循 GitHub App Authentication setup guide。这些说明也可在 GitHub 上的插件 README 文件中看到。\n设置完成后，Jenkins 将验证您的凭据，并且您应该会看到新的速率限制。这是一个大型组织的示例：\n如何在流水线中获取 API 令牌？ 除了将 GitHub App 身份验证用于多分支流水线之外，您还可以直接在流水线中使用 app 身份验证。您只需照常加载“用户名/密码”凭据即可访问 GitHub API 的 Bearer 令牌，该插件将在后台处理 GitHub 的身份验证。\n这可以用于从流水线中调用其他 GitHub API 端点，可能是 deployments api，或者您可能希望实现自己的 checks api 集成，直到 Jenkins 开箱即用为止。\n注意：您获得的 API 令牌仅有效一小时，请勿在流水线开始时获得它，并假设它一直有效\n示例：让我们通过流水线向 Jenkins 提交检查运行：\npipeline { agent any stages{ stage('Check run') { steps { withCredentials([usernamePassword(credentialsId: 'githubapp-jenkins', usernameVariable: 'GITHUB_APP', passwordVariable: 'GITHUB_JWT_TOKEN')]) { sh ''' curl -H \u0026quot;Content-Type: application/json\u0026quot; \\ -H \u0026quot;Accept: application/vnd.github.antiope-preview+json\u0026quot; \\ -H \u0026quot;authorization: Bearer ${GITHUB_JWT_TOKEN}\u0026quot; \\ -d '{ \u0026quot;name\u0026quot;: \u0026quot;check_run\u0026quot;, \\ \u0026quot;head_sha\u0026quot;: \u0026quot;'${GIT_COMMIT}'\u0026quot;, \\ \u0026quot;status\u0026quot;: \u0026quot;in_progress\u0026quot;, \\ \u0026quot;external_id\u0026quot;: \u0026quot;42\u0026quot;, \\ \u0026quot;started_at\u0026quot;: \u0026quot;2020-03-05T11:14:52Z\u0026quot;, \\ \u0026quot;output\u0026quot;: { \u0026quot;title\u0026quot;: \u0026quot;Check run from Jenkins!\u0026quot;, \\ \u0026quot;summary\u0026quot;: \u0026quot;This is a check run which has been generated from Jenkins as GitHub App\u0026quot;, \\ \u0026quot;text\u0026quot;: \u0026quot;...and that is awesome\u0026quot;}}' https://api.github.com/repos/\u0026lt;org\u0026gt;/\u0026lt;repo\u0026gt;/check-runs ''' } } } } }  下一步打算 Jenkins 中的 GitHub Apps 身份验证是一个巨大的进步。许多团队已经开始使用它，并通过提供预发布反馈来帮助改进它。途中还有更多改进。\n有一个拟议的 Google Summer of Code 项目：GitHub Checks for Jenkins Plugins。它将着眼于与 Checks API 集成，重点是将使用 warnings-ng 插件直接发现的问题报告到 GitHub pull request 中，以及 GitHub 上的测试结果摘要。希望它将为 Jenkins 用户简化下面的 Pipeline 示例：）如果您想参与其中，请加入 GSoC Gitter 渠道并询问如何提供帮助。\n",
+        "auhtor": "Tim Jacomb",
+        "translator": "wenjunzhangp",
+        "original": "https://www.jenkins.io/blog/2020/04/16/github-app-authentication/#github-app-authentication-support-released",
+        "poster": "cover.jpg"
+    },
+    {
         "uri": "https://jenkins-zh.cn/meeting/2020-06-10/",
         "title": "",
         "type": "meeting",
@@ -2704,6 +2717,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tags/authentication/",
+        "title": "Authentication",
+        "type": "tags",
+        "date": "2020-06-17 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tags/automation/",
         "title": "Automation",
         "type": "tags",
@@ -3383,7 +3409,7 @@
         "uri": "https://jenkins-zh.cn/tags/github/",
         "title": "Github",
         "type": "tags",
-        "date": "2020-03-27 00:00:00 +0000 UTC",
+        "date": "2020-06-17 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -4683,7 +4709,7 @@
         "uri": "https://jenkins-zh.cn/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2020-06-03 00:00:00 +0000 UTC",
+        "date": "2020-06-17 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",

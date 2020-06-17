@@ -37,6 +37,18 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>GitHub App 身份验证支持已发布</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/</guid>
+      <description>我很高兴的宣布在 Jenkins 中作为 GitHub 应用进行身份验证现已支持。这是许多用户期待已久的功能。它已在 GitHub Branch Source 2.7.1 中发布，现在可以在 Jenkins 更新中心使用。
+身份验证为 GitHub 应用带来了很多好处：
+ 更高的请求频率限制 - GitHub 应用程序的速率限制随您的组织规模而定，而基于用户的令牌的限制为 5000，无论您拥有多少存储库。 与用户无关的身份验证 - 每个 GitHub 应用都有自己的用户独立身份验证。不再需要“机器人”用户或确定谁应该是 2FA 或 OAuth 令牌的所有者。 改进的安全性和更严格的权限 - 与服务用户及其个人访问令牌相比，GitHub Apps 提供了更精细的权限。这使 Jenkins GitHub 应用程序需要更少的权限集即可正常运行。 访问 GitHub Checks API - GitHub Apps 可以访问 GitHub Checks API 以从 Jenkins 作业创建检查运行和检查套件，并提供有关提交和代码注释的详细反馈。  开始使用 安装 GitHub Branch Source 插件，确保版本为 2.7.1 或更高。
+配置 GitHub Organization 文件夹 遵循 GitHub App Authentication setup guide。这些说明也可在 GitHub 上的插件 README 文件中看到。</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://jenkins-zh.cn/meeting/2020-06-10/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
