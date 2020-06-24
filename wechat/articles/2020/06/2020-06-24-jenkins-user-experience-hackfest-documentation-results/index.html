@@ -10,14 +10,14 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>在大型企业里维护多分支流水线 - Jenkins 中文社区</title>
+  <title>Jenkins Hackfest 用户体验文档报告 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="如果没有适当的解决方案，在大型企业可能难以创建和维护多分支流水线">
+  <meta name="description" content="通过 Hackfest，我们得到了很多的进步，我们会进一步丰富技术文档，来提高 Jenkins 用户体验">
   
   
-  <meta name="keywords" content="Jenkins 多分支流水线,Jenkins,remote-file">
+  <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="在大型企业里维护多分支流水线" />
-<meta property="og:description" content="如果没有适当的解决方案，在大型企业可能难以创建和维护多分支流水线" />
+<meta property="og:title" content="Jenkins Hackfest 用户体验文档报告" />
+<meta property="og:description" content="通过 Hackfest，我们得到了很多的进步，我们会进一步丰富技术文档，来提高 Jenkins 用户体验" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" /><meta property="article:published_time" content="2019-08-05T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-08-05T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-24-jenkins-user-experience-hackfest-documentation-results/" /><meta property="article:published_time" content="2020-06-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-06-24T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="在大型企业里维护多分支流水线">
-<meta itemprop="description" content="如果没有适当的解决方案，在大型企业可能难以创建和维护多分支流水线">
-
-
-<meta itemprop="datePublished" content="2019-08-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-08-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="59">
+<meta itemprop="name" content="Jenkins Hackfest 用户体验文档报告">
+<meta itemprop="description" content="通过 Hackfest，我们得到了很多的进步，我们会进一步丰富技术文档，来提高 Jenkins 用户体验">
 
 
+<meta itemprop="datePublished" content="2020-06-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="170">
 
-<meta itemprop="keywords" content="Jenkins,multi-branch,Pipeline,remote-file," />
+
+
+<meta itemprop="keywords" content="ux,documentation,community," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="在大型企业里维护多分支流水线"/>
-<meta name="twitter:description" content="如果没有适当的解决方案，在大型企业可能难以创建和维护多分支流水线"/>
+<meta name="twitter:title" content="Jenkins Hackfest 用户体验文档报告"/>
+<meta name="twitter:description" content="通过 Hackfest，我们得到了很多的进步，我们会进一步丰富技术文档，来提高 Jenkins 用户体验"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -210,12 +210,17 @@ var trackOutboundLink = function(id, url) {
     
     
       
+        <h3 class="f4 dib author">
+            wenjunzhangp
+        </h3>
+
+      
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          From SDET/Build/Release to DevOps.
+          一身清贫岂敢入芳华，两袖清风怎敢误佳人
         </p>
       
-      <a href="https://github.com/shenxianpeng" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/wenjunzhangp" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -224,9 +229,9 @@ var trackOutboundLink = function(id, url) {
 
   
   <div>
-    作者：<span class="originalAuthor">Aytunc BEKEN</span>
+    作者：<span class="originalAuthor">Mark Waite, Tracy Miranda</span>
     <div>
-      <a class="originalLink" href="https://dzone.com/articles/maintaining-multi-branch-pipelines-in-large-scale" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://www.jenkins.io/blog/2020/06/08/hackfest-docs-results/" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -234,18 +239,6 @@ var trackOutboundLink = function(id, url) {
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">内容目录</p>
-  	<nav id="TableOfContents">
-<ul>
-<li><a href="#动态配置流水线">动态配置流水线</a></li>
-<li><a href="#流水线即代码">流水线即代码</a></li>
-<li><a href="#集中式库">集中式库</a></li>
-<li><a href="#治理与稳定">治理与稳定</a></li>
-<li><a href="#远程文件插件">远程文件插件</a></li>
-<li><a href="#结论">结论</a></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -258,17 +251,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-07-hackathon-startup/" class="dib f6 pl1 hover-bg-light-gray br-100" title="开源持续交付黑客松--号角声起 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 流水线配置历史插件介绍">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/" class="dib f6 pr1 hover-bg-light-gray br-100" title="GitHub App 身份验证支持已发布">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -288,13 +273,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">在大型企业里维护多分支流水线</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins Hackfest 用户体验文档报告</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      如果没有适当的解决方案，在大型企业可能难以创建和维护多分支流水线
+      通过 Hackfest，我们得到了很多的进步，我们会进一步丰富技术文档，来提高 Jenkins 用户体验
     </div>
   
 
@@ -307,47 +292,72 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="cover.jpeg" alt="jenkins-multi-branch-pipeline" /></p>
+<p><img src="cover.jpg" alt="cover" /></p>
 
-<p>Jenkins 是 DevOps 领域里非常好的 CI/CD 工具，它凭借其独特的功能，几乎可以满足你一切的的业务要求。其中一个独特的功能是多分支流水线(Multi-branch 流水线)，可以动态配置流水线。但是，随着公司的发展，单独的多分支流水线并不能完全满足你的所有需求，特别是在涉及大型企业时，你需要考虑流水线的集中管理，治理，稳定性，限制和安全性等其他事项。因此对于具有 Jenkins 流水线的大规模 CI/CD 环境，你需要添加之前没有想到的更多功能。</p>
+<p>Jenkins 技术文档是我们项目的重要组成部分，因为它是正确使用 Jenkins 的关键。好的文档可以指导用户，并鼓励选择好的实现方式。这是用户体验的关键部分。</p>
 
-<h1 id="动态配置流水线">动态配置流水线</h1>
+<p>在最近的 Jenkins UI/UX hackfest 中，文档是改善 Jenkins 用户体验的特定途径。我们从经验丰富的 Jenkins 贡献者和新人那里获得了许多进步。来自世界各地的贡献者提交了有关安装，管理和操作 Jenkins 文档的 PR。</p>
 
-<p>当一个开发人员创建一个新分支并将其推送到远程代码仓库时，Jenkins 会为这个新分支动态创建流水线。根据代码仓库，甚至也可以作为动态创建 Pull Request 流水线。这个动态功能在使用 Feature 分支或其他类似功能的团队中非常有用，由于本文的主题不是多分支流水线，你可以在<a href="https://jenkins.io/doc/tutorials/build-a-multibranch-pipeline-project/">端到端多分支流水线项目创建</a>中找到详细信息和一些示例。</p>
+<p><img src="contributions-by-country.png" alt="contributions-by-country" /></p>
 
-<h1 id="流水线即代码">流水线即代码</h1>
+<h2 id="从-wiki-迁移文档">从 Wiki 迁移文档</h2>
 
-<p>在多分支流水线中，脚本存储在项目代码仓库中，这就是“流水线即代码”的概念。此外，当你拥有小型开发人员团队或项目没有大量分支时，它非常有用。这样，开发人员可以根据需要更改流水线，将更改推送到分支，并立即看到更改生效，但对于拥有数百或数千名拥有大量项目的开发人员的大型企业而言，这种方案就完成不可行了。</p>
+<p>Jenkins Wiki 页面为 Jenkins 用户收集了 15 年的经验和智慧。但是，这种经验和智慧与不准确，不完整和过时的信息混杂在一起。</p>
 
-<h1 id="集中式库">集中式库</h1>
+<p>Jenkins Wiki 迁移项目确定了 Jenkins Wiki 上访问量最大的 50 个页面，并创建了 GitHub 问题来跟踪这些页面到 www.jenkins.io 的迁移。这是我们第一次使用 GitHub 问题作为文档的大规模实验。结果是压倒性的正面。Hackfest 贡献者在许多文档章节中添加了新的章节，包括：</p>
 
-<p>当你的团队或项目增加时，是时候考虑一种方法，比如通过共享的的方式应该在所有项目中。从长远来看，这种“集中式库”变得非常关键，因为随着规模的扩大，流水线中出现了新的要求或变化，在这种情况下，手动更改每个流水线或脚本对管理员来说将是一场噩梦。因此，如果你在一个地方进行更改并且每个流水线都得到更新，那么拥有该集中式库将更加实用。这是 Jenkins <a href="https://jenkins.io/doc/book/pipeline/shared-libraries/">共享库</a>概念的用武之地。有关详细信息，你可以访问<a href="https://jenkins.io/doc/book/pipeline/shared-libraries/">该站点</a>。</p>
+<ul>
+<li><a href="https://www.jenkins.io/doc/book/using/">Jenkins 使用</a></li>
+<li><a href="https://www.jenkins.io/doc/book/pipeline/">流水线</a></li>
+<li><a href="https://www.jenkins.io/doc/book/managing/">Jenkins 管理</a></li>
+<li><a href="https://www.jenkins.io/doc/book/system-administration/">系统管理</a></li>
+</ul>
 
-<p>即使你只有一个流水线，仍然可以使用集中式库。</p>
+<p>Hackfest 解决了 Wiki 迁移问题中的 19 个问题。有关其他 25 个 Wiki 迁移问题的工作正在进行中。我们已经取得了长足的进步，并期待将来取得更好的成绩。新的贡献者非常有效地使用了“good first issues”标签。我们以未分配的 25 个“good first issues”中的大多数未分配开始了 Hackfest，并以 14 个已关闭的项目和另外 10 个正在进行的项目完成了 Hackfest。 当我们使用 Jenkins Wiki 迁移来欢迎新的文档撰稿人时，我们将提供更多的“good first issues”。</p>
 
-<h1 id="治理与稳定">治理与稳定</h1>
+<p><img src="sample-pages.png" alt="sample-pages" /></p>
 
-<p>如果你的团队有对 CI/CD 一定了解的开发人员，并且你确信他们不会做出重大更改或编写脚本错误导致影响环境的稳定性，那么将流水线脚本放在代码中是很好的。但是，你真的确定吗？</p>
+<h2 id="迁移插件文档">迁移插件文档</h2>
 
-<p>有人很可能会意外删除流水线文件或者可能出现小错误，这些小错误都会影响 CI/CD 的稳定性。如果你在早期发现这些错误时很容易解决这些错误，如果没有，这些微小的变化或错误将可能比你想象的更严重的影响 CI/CD，它将被传播到不同项目中的所有分支或 tag，这会变得很难解决。</p>
+<p>插件文档也在过渡中。自 2019 年 11 月以来，插件一直将其文档移至托管插件源代码的 GitHub 存储库中。这种<a href="https://www.jenkins.io/blog/2019/10/21/plugin-docs-on-github/">“文档即代码”</a>的方法使插件维护人员可以在实现新功能的相同 PR 中包括文档改进。它确保文档更改由审查和批准新功能的相同维护者审查。</p>
 
-<p>你需要将正确的流水线脚本推送到所有分支和/或代码仓库，或是要求每个开发人员提取最新的脚本，这种类型的问题集中式库这种更高级的方式来解决，除此之外，你的环境会因为有人可能会删除 Jenkins 文件或输入一些拼写错误带来风险。</p>
+<p>Hackfest 参与者提交了 PR，以将插件文档迁移到 GitHub。Hackfest 正在进行 10 个插件 PR。来自 Hackfest 的 5 个插件 PR 已被合并，正在等待插件的发布。</p>
 
-<h1 id="远程文件插件">远程文件插件</h1>
+<h2 id="chuck-norris-文档即代码">Chuck Norris 文档即代码</h2>
 
-<p>为了消除不必要的更改的风险并降低使用的库的复杂性，我们需要以某种方式将流水线脚本与项目/代码代码仓库分开，同时仍继续使用多分支流水线功能。为此，我们有<a href="https://plugins.jenkins.io/remote-file">远程文件插件</a>。</p>
+<p>出于娱乐和冒险的精神，Oleg Nenashev <a href="https://www.youtube.com/watch?v=BaEJ8v7INNQ">在 2020 年 5 月 26 日的 Hackfest 现场演示</a>中将 “Chuck Norris 插件” 迁移为 GitHub 文档中的代码。可以从以下链接获取录音，插件迁移指南和导出工具的链接：<a href="https://github.com/jenkinsci/ui-ux-hackfest-2020/tree/master/presentations/04-migrating-plugin-docs">将插件迁移为代码文档</a>”。</p>
 
-<p>这个插件使多分支流水线能够从其他代码仓库运行/加载流水线脚本，而不是将它们放在项目/代码代码仓库中，通过这个功能，你可以拥有一个单独的代码仓库，你可以在其中放置所有流水线脚本，并且只能为你自己提供访问权限。这样，你将拥有与集中式库相同的集中式流水线脚本代码仓库。此外，你可以将流水线脚本存储在集中式库本身中。</p>
+<p><img src="chuck-norris-docs-as-code.png" alt="chuck-norris-docs-as-code" /></p>
 
-<p>这个功能的好处是除了有访问权限的人之外，没有人能够在流水线脚本中进行更改。你在集中流水线脚本中所做的任何更改都将影响使用该脚本文件的所有多分支流水线。这样，你无需等待所有开发人员获取更新版本或将脚本推送到所有代码仓库上的所有分支。</p>
+<h2 id="文档更新">文档更新</h2>
 
-<p>另一个好处是，如果你将集中式流水线脚本放入 BitBucket 或 GitHub 等代码仓库中，你还将拥有代码审查功能。这样，你可以与其他人共享代码仓库，同时仍可限制或查看其他人所做的更改。</p>
+<p>Jenkins 与其他技术合作，解决了许多不同环境中的自动化挑战。我们在“<a href="https://www.jenkins.io/solutions/">解决方案页面</a>”中描述了这些环境。作为 Hackfest 的一部分，我们已经对解决方案页面进行了一系列改进。</p>
 
-<h1 id="结论">结论</h1>
+<p><a href="https://www.jenkins.io/solutions/">Docker 解决方案</a>页面现在包括更新的视频和更好的页面布局，以便于阅读和导航。其他解决方案页面将来也会得到类似的改进。</p>
 
-<p>在大型企业中创建 CI/CD 流水线并不容易，你需要考虑治理，限制，稳定性和安全性等概念。在此上下文中，借助 Jenkins 的其他功能，<a href="https://plugins.jenkins.io/remote-file">Remote File Plugin</a> 提供了一个独特的功能，用于集中，维护和共享流水线脚本。</p>
+<p><img src="jenkins-and-docker.png" alt="jenkins-and-docker" /></p>
 
-<p>有关插件的详细信息，你可以访问插件的 Wiki 页面。</p>
+<h2 id="系统属性">系统属性</h2>
+
+<p>可以在启动时通过定义 Java 属性来修改 Jenkins 的全局配置。当新的默认配置可能与现有安装不兼容时，系统属性可以更改系统默认值，并可以提供兼容性“转义阴影线”。</p>
+
+<p>Daniel Beck 作为 Hackfest 的一部分，改进了系统属性页面的导航和用户体验。现在，通过将鼠标悬停在每个属性的右侧以及对每个属性进行分类和分类的标签，可以使用可嵌入的链接来轻松阅读和引用。</p>
+
+<p><img src="system-properties.png" alt="system-properties" /></p>
+
+<h2 id="插件站点改进">插件站点改进</h2>
+
+<p>在 Hackfest 期间，Gavin Mogan 继续致力于改善 Jenkins 插件站点，以便用户可以轻松访问插件更改日志和报告的问题。合并此 PR 后，它将极大地改善那些想要更新插件并查找有关其变化和可能遇到的问题的文档的 Jenkins 用户的体验。</p>
+
+<p>Jira 插件的传入 UI 示例：</p>
+
+<p><img src="plugins-site.png" alt="plugins-site" /></p>
+
+<h2 id="下一步是什么">下一步是什么？</h2>
+
+<p>Jenkins 文档中仍有很多工作要做，我们需要您的帮助。<a href="https://www.jenkins.io/participate/">参与</a> Jenkins 项目的方式有很多，包括<a href="https://www.jenkins.io/participate/document">文档</a>。请参阅<a href="https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc">贡献指南</a>以获取详细说明。加入文档聊天室，获得个性化的帮助和鼓励。</p>
+
+<p>Jenkins 项目也已于今年加入 <a href="https://developers.google.com/season-of-docs">Google Docs</a>。这项开源指导计划使开源社区和技术作家社区聚集在一起，从而使双方受益。我们正在寻找有兴趣为 2020 年 9 月至 12 月对该项目做出贡献的技术撰稿人。这是学习作为文档编码的工具并了解有关为开源项目做出贡献的更多信息的绝佳机会。您可以在<a href="https://www.jenkins.io/sigs/docs/gsod/">此处</a>找到 Jenkins 项目构想和更多信息。</p>
 
 </div>
 
@@ -370,21 +380,6 @@ var trackOutboundLink = function(id, url) {
 
           
 
-<h2>参考</h2>
-<ul>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/">多分支流水线任务对 GitLab SCM 的支持</a></li>
-	
-	<li><a href="/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/">Jenkins 2019 年 Board 和 Officer positions 选举更新</a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/">在 Kubernetes 上使用 Jenkins </a></li>
-	
-	<li><a href="/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/">Jenkins 插件的微基准测试框架</a></li>
-	
-	<li><a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/">Jenkins 文档特别兴趣小组</a></li>
-	
-</ul>
-
         </div>
       </div>
       
@@ -395,14 +390,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-24-jenkins-user-experience-hackfest-documentation-results/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “在大型企业里维护多分支流水线”
-  </a> 更新于：August 5, 2019
+    “Jenkins Hackfest 用户体验文档报告”
+  </a> 更新于：June 24, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/06/2020-06-24-jenkins-user-experience-hackfest-documentation-results.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -420,30 +415,40 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/Jenkins">
-              Jenkins
+            <a class="tag" href="/tags/ux">
+              ux
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/multi-branch">
-              multi-branch
+            <a class="tag" href="/tags/documentation">
+              documentation
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/Pipeline">
-              Pipeline
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/remote-file">
-              remote-file
+            <a class="tag" href="/tags/community">
+              community
             </a>
           </li>
         
               
+      
+        
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-01-hands-on-beautify-the-user-interface-of-jenkins-reporter-plugins/" class="link">
+              动手实践：美化 Jenkins 报告插件的用户界面
+            </a>
+          </li>
+        
       
     </ul>
   </div>
@@ -469,7 +474,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/08\/2019-08-05-jenkins-multi-branch-pipeline\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/06\/2020-06-24-jenkins-user-experience-hackfest-documentation-results\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
