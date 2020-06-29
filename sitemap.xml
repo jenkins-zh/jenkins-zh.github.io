@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-24-jenkins-user-experience-hackfest-documentation-results/</loc>
     <lastmod>2020-06-24T00:00:00+00:00</lastmod>
   </url>
@@ -1436,7 +1441,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1912,7 +1917,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-06-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1941,6 +1946,12 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/wordcloud/</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

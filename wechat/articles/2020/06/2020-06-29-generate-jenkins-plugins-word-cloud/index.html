@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>简析 Jenkins 专有用户数据库加密算法 - Jenkins 中文社区</title>
+  <title>使用 Python 制作酷炫多彩的 Jenkins 插件词云图 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析">
+  <meta name="description" content="Jenkins 插件名称高频关键词有哪些？一切尽在酷炫多彩的词云图">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="简析 Jenkins 专有用户数据库加密算法" />
-<meta property="og:description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析" />
+<meta property="og:title" content="使用 Python 制作酷炫多彩的 Jenkins 插件词云图" />
+<meta property="og:description" content="Jenkins 插件名称高频关键词有哪些？一切尽在酷炫多彩的词云图" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" /><meta property="article:published_time" content="2019-04-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/" /><meta property="article:published_time" content="2020-06-29T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-06-29T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="简析 Jenkins 专有用户数据库加密算法">
-<meta itemprop="description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析">
-
-
-<meta itemprop="datePublished" content="2019-04-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="291">
+<meta itemprop="name" content="使用 Python 制作酷炫多彩的 Jenkins 插件词云图">
+<meta itemprop="description" content="Jenkins 插件名称高频关键词有哪些？一切尽在酷炫多彩的词云图">
 
 
+<meta itemprop="datePublished" content="2020-06-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="202">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="jenkins,wordcloud," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="简析 Jenkins 专有用户数据库加密算法"/>
-<meta name="twitter:description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析"/>
+<meta name="twitter:title" content="使用 Python 制作酷炫多彩的 Jenkins 插件词云图"/>
+<meta name="twitter:description" content="Jenkins 插件名称高频关键词有哪些？一切尽在酷炫多彩的词云图"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -242,17 +242,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" class="dib f6 pl1 hover-bg-light-gray br-100" title="使用 Zabbix 监控 Jenkins ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-24-jenkins-user-experience-hackfest-documentation-results/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins Hackfest 用户体验文档报告">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -272,13 +264,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">简析 Jenkins 专有用户数据库加密算法</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用 Python 制作酷炫多彩的 Jenkins 插件词云图</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      本文对 Jenkins 专有用户数据库加密算法进行简要分析
+      Jenkins 插件名称高频关键词有哪些？一切尽在酷炫多彩的词云图
     </div>
   
 
@@ -291,102 +283,116 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<h3 id="认识jenkins专有用户数据库">认识Jenkins专有用户数据库</h3>
+<p><img src="jenkins-logo-word-cloud.png" alt="jenkins-logo-word-cloud" /></p>
 
-<p>Jenkins 访问控制分为：安全域（即认证）与授权策略。</p>
+<p>作为最流行的 CI/CD 工具，Jenkins 的优势之一是其生态强大，而这与其插件体系分不开的。
+目前 Jenkins 插件 1500+ （截止2020年06月17日，插件数量为1749）。</p>
 
-<p>其中，安全域可以采用三种形式，分别为：Jenkins 专有用户数据库、LDAP、Servlet 容器代理。
-<img src="jenkins-security-realm.png" alt="jenkins-security-realm.png" /></p>
+<p>近日发现词云比较好玩，于是想着以 Jenkins 插件名称为数据源，形成的词云会是什么样的呢，什么关键字会比较突出呢？
+想到就去做，带着问题，带着好奇心，开始了实践之旅～</p>
 
-<h3 id="在哪里看到加密后的用户密码信息">在哪里看到加密后的用户密码信息？</h3>
+<h2 id="插件基本字段说明">插件基本字段说明</h2>
 
-<p>Jenkins 专有用户的数据信息存放位置：$JENKINS_HOME/users/</p>
+<p>以 Jenkins 中文本地化插件为例，在 Jenkins 官网插件详情页面可以看出：
+其 ID 为 localization-zh-cn，Name 为 Localization: Chinese (Simplified)。</p>
 
-<p>每个用户的相关信息存放在各自的 config.xml 文件中： $JENKINS_HOME/users/$user/config.xml</p>
+<p><img src="localization-zh-cn.png" alt="localization-zh-cn" /></p>
 
-<p>在 config.xml 文件中的 passwordHash 节点可以看到用户密码加密后的密文哈希值：
-<img src="jenkins-user-config.png" alt="jenkins-user-config.png" /></p>
+<h2 id="获取所有-jenkins-插件的名称">获取所有 Jenkins 插件的名称</h2>
 
-<h3 id="用户密码是用什么算法加密的呢">用户密码是用什么算法加密的呢？</h3>
+<p>如何获取所有 Jenkins 插件的名称呢？这里我想到3种方式，或许还有更多方式：</p>
 
-<p>那么问题来了，用户密码是用何种加密方式加密的呢？可否通过解密密文得到明文呢？</p>
+<ul>
+<li><p><a href="https://plugins.jenkins.io/">插件官网</a>爬虫抓取</p></li>
 
-<p>在 <a href="https://github.com/jenkinsci/jenkins">GitHub</a> 上查看其源码，通过关键字 #jbcrypt 搜索定位到 HudsonPrivateSecurityRealm.java 这个文件。
-HudsonPrivateSecurityRealm.java 具体路径是：jenkins/core/src/main/java/hudson/security/HudsonPrivateSecurityRealm.java</p>
+<li><p><a href="https://github.com/jenkins-infra/repository-permissions-updater">插件权限文件</a>获取</p></li>
 
-<p>源码片段如下：</p>
+<li><p><a href="http://updates.jenkins-ci.org/update-center.json">插件更新中心配置文件</a>获取</p></li>
+</ul>
 
-<pre><code class="language-java">    /**
-     * {@link PasswordEncoder} that uses jBCrypt.
-     */
-    private static final PasswordEncoder JBCRYPT_ENCODER = new PasswordEncoder() {
-        public String encodePassword(String rawPass, Object _) throws DataAccessException {
-            return BCrypt.hashpw(rawPass,BCrypt.gensalt());
-        }
+<p>对比上面的三种方式，插件权限文件中并没有 Name 字段，插件更新中心配置文件相对从插件官网抓取比较简单。
+所以计划从 update-center.json 进行解析，其中插件名称在 json 中对应字段为 title。</p>
 
-        public boolean isPasswordValid(String encPass, String rawPass, Object _) throws DataAccessException {
-            return BCrypt.checkpw(rawPass,encPass);
-        }
-    };
-    /**
-     * Combines {@link #JBCRYPT_ENCODER} and {@link #CLASSIC} into one so that we can continue
-     * to accept {@link #CLASSIC} format but new encoding will always done via {@link #JBCRYPT_ENCODER}.
-     */
-    public static final PasswordEncoder PASSWORD_ENCODER = new PasswordEncoder() {
-        /*
-            CLASSIC encoder outputs &quot;salt:hash&quot; where salt is [a-z]+, so we use unique prefix '#jbcyrpt&quot;
-            to designate JBCRYPT-format hash.
-            '#' is neither in base64 nor hex, which makes it a good choice.
-         */
-        public String encodePassword(String rawPass, Object salt) throws DataAccessException {
-            return JBCRYPT_HEADER+JBCRYPT_ENCODER.encodePassword(rawPass,salt);
-        }
+<p><img src="update-center-json.png" alt="update-center-json" /></p>
 
-        public boolean isPasswordValid(String encPass, String rawPass, Object salt) throws DataAccessException {
-            if (encPass.startsWith(JBCRYPT_HEADER))
-                return JBCRYPT_ENCODER.isPasswordValid(encPass.substring(JBCRYPT_HEADER.length()),rawPass,salt);
-            else
-                return CLASSIC.isPasswordValid(encPass,rawPass,salt);
-        }
+<h2 id="生成-jenkins-插件名称文件">生成 Jenkins 插件名称文件</h2>
 
-        private static final String JBCRYPT_HEADER = &quot;#jbcrypt:&quot;;
-    };
+<p>读取 update-center.json 中 plugin 的 title 字段，按行写入到 jenkins-plugins.txt 文件，代码如下：</p>
+
+<pre><code class="language-python"># -*- coding: UTF-8 -*-
+import json
+
+
+if __name__ == &quot;__main__&quot;:
+    json_obj = json.load(open(&quot;update-center.json&quot;, &quot;r&quot;))
+    plugins_obj = json_obj[&quot;plugins&quot;]
+    with open(&quot;jenkins-plugins.txt&quot;, &quot;w&quot;) as fw:
+        for plugin_name in plugins_obj:
+            plugin_obj = plugins_obj[plugin_name]
+            print plugin_obj[&quot;title&quot;]
+            fw.write(plugin_obj[&quot;title&quot;].encode('utf-8') + &quot;\n&quot;)
 </code></pre>
 
-<p>通过分析该源码得知：
-1. 明文通过 jbcrypt 算法得到密文 encPass
-2. 密文的格式为：salt: encPass，其中以 #jbcrypt 表示 salt 作为数据头</p>
+<p>jenkins-plugins.txt 文件共有 1749 行（与 Jenkins 1749个插件对应），其内容截图如下：</p>
 
-<h3 id="jbcrypt-是什么">jbcrypt 是什么？</h3>
+<p><img src="jenkins-plugins-txt.png" alt="jenkins-plugins-txt" /></p>
 
-<p><a href="http://www.mindrot.org/projects/jBCrypt/">jbcrypt</a> 是 bcrypt 加密工具的 java 实现。
-它的 API 非常简单，DEMO 如下，在 HudsonPrivateSecurityRealm.java 中可以看到加密和校验时使用了如下 API：</p>
+<h2 id="生成词云图">生成词云图</h2>
 
-<pre><code class="language-java">// Hash a password for the first time 
-String hashed = BCrypt.hashpw(password, BCrypt.gensalt()); 
+<p>这里使用 Python 代码生成词云图，词的来源为 jenkins-plugins.txt，代码如下：</p>
 
-// gensalt's log_rounds parameter determines the complexity the work factor is 2**log_rounds, and the default is 10 
-String hashed = BCrypt.hashpw(password, BCrypt.gensalt(12)); 
+<pre><code class="language-python"># -*- coding: UTF-8 -*-
 
-// Check that an unencrypted password matches one that has previously been hashed 
-if (BCrypt.checkpw(candidate, hashed)) 
-  System.out.println(&quot;It matches&quot;); 
-else 
-  System.out.println(&quot;It does not match&quot;);
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+import numpy as np
+from PIL import Image
+
+
+def generate_word_cloud_image(background_image):
+    # mask
+    mask = np.array(Image.open(background_image))
+
+    # generate word cloud
+    wc = WordCloud(mask=mask, scale=1.5, mode='RGBA', background_color=&quot;white&quot;, max_words=2000).generate(text=text)
+
+    # show word cloud
+    plt.imshow(wc, interpolation='bilinear')
+    plt.axis('off')
+    plt.show()
+
+    # save to file
+    background_image = str(background_image).split(&quot;/&quot;)[-1].replace(&quot;.png&quot;, &quot;&quot;)
+    wc.to_file(&quot;word-cloud-img/&quot; + background_image + '-word-cloud.png')
+
+
+if __name__ == &quot;__main__&quot;:
+    with open('jenkins-plugins.txt') as f:
+        text = f.read()
+
+        for image_name in [&quot;background-img/kongfu.png&quot;, &quot;background-img/jenkins-logo.png&quot;]:
+            generate_word_cloud_image(background_image=image_name)
 </code></pre>
 
-<p>经验证，用 jbcrypt 对同一个明文加密后因为 salt 一般不同，加密后的密文一般不同。</p>
+<p>生成的词云图各个关键字以不同大小和比例，绘制出一幅多彩的画卷，感觉很美观、很酷炫！</p>
 
-<h3 id="bcrypt-精要概况">bcrypt 精要概况</h3>
+<p>以 Jenkins logo 为背景图片，生成的词云图如下：</p>
 
-<ol>
-<li>bcrypt 是不可逆的加密算法，无法通过解密密文得到明文。</li>
-<li>bcrypt 和其他对称或非对称加密方式不同的是，不是直接解密得到明文，也不是二次加密比较密文，而是把明文和存储的密文一块运算得到另一个密文，如果这两个密文相同则验证成功。</li>
-</ol>
+<p><img src="jenkins-logo-word-cloud.png" alt="jenkins-logo-word-cloud" /></p>
 
-<h3 id="总结">总结</h3>
+<p>以 Jenkins 中文社区的 kongfu 为背景图片，生成的词云图如下：</p>
 
-<p>综上， Jenkins 专有用户数据库使用了 jbcrypt 加密， jbcrypt 加密是不可逆的，而且对于同一个明文的加密结果一般不同。</p>
+<p><img src="kongfu-word-cloud.png" alt="kongfu-word-cloud" /></p>
+
+<p>从词云图中可以看出，Pipeline 词频最高，Build、API、Job 次之，紧接着还有 Publisher、Notifier、Trigger、Step、GitHub 等等。</p>
+
+<h2 id="资源说明">资源说明</h2>
+
+<p>所有代码及文件可以在 GitHub 仓库找到，如果你也觉得好玩有趣，顺便点个 star 吧，谢谢～</p>
+
+<ul>
+<li><a href="https://github.com/donhui/jenkins-plugins-word-cloud">https://github.com/donhui/jenkins-plugins-word-cloud</a></li>
+</ul>
 
 </div>
 
@@ -419,14 +425,14 @@ else
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “简析 Jenkins 专有用户数据库加密算法”
-  </a> 更新于：April 12, 2019
+    “使用 Python 制作酷炫多彩的 Jenkins 插件词云图”
+  </a> 更新于：June 29, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -449,15 +455,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
             </a>
           </li>
         
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/wordcloud">
+              wordcloud
+            </a>
+          </li>
+        
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/" class="link">
-              使用 Python 制作酷炫多彩的 Jenkins 插件词云图
-            </a>
-          </li>
         
       
         
@@ -862,6 +868,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" class="link">
+              简析 Jenkins 专有用户数据库加密算法
+            </a>
+          </li>
+        
       
         
         
@@ -959,7 +971,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/04\/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/06\/2020-06-29-generate-jenkins-plugins-word-cloud\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

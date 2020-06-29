@@ -37,6 +37,24 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>使用 Python 制作酷炫多彩的 Jenkins 插件词云图</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/</guid>
+      <description>作为最流行的 CI/CD 工具，Jenkins 的优势之一是其生态强大，而这与其插件体系分不开的。 目前 Jenkins 插件 1500+ （截止2020年06月17日，插件数量为1749）。
+近日发现词云比较好玩，于是想着以 Jenkins 插件名称为数据源，形成的词云会是什么样的呢，什么关键字会比较突出呢？ 想到就去做，带着问题，带着好奇心，开始了实践之旅～
+插件基本字段说明 以 Jenkins 中文本地化插件为例，在 Jenkins 官网插件详情页面可以看出： 其 ID 为 localization-zh-cn，Name 为 Localization: Chinese (Simplified)。
+获取所有 Jenkins 插件的名称 如何获取所有 Jenkins 插件的名称呢？这里我想到3种方式，或许还有更多方式：
+ 插件官网爬虫抓取
+ 插件权限文件获取
+ 插件更新中心配置文件获取
+  对比上面的三种方式，插件权限文件中并没有 Name 字段，插件更新中心配置文件相对从插件官网抓取比较简单。 所以计划从 update-center.json 进行解析，其中插件名称在 json 中对应字段为 title。
+生成 Jenkins 插件名称文件 读取 update-center.json 中 plugin 的 title 字段，按行写入到 jenkins-plugins.txt 文件，代码如下：
+# -*- coding: UTF-8 -*- import json if __name__ == &amp;quot;__main__&amp;quot;: json_obj = json.</description>
+    </item>
+    
+    <item>
       <title>Jenkins Hackfest 用户体验文档报告</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-24-jenkins-user-experience-hackfest-documentation-results/</link>
       <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>

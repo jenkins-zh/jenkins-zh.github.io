@@ -653,7 +653,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -1304,6 +1304,15 @@
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wordcloud</title>
+      <link>https://jenkins-zh.cn/tags/wordcloud/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/wordcloud/</guid>
       <description></description>
     </item>
     
