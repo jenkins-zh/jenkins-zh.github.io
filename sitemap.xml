@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/</loc>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url>
@@ -1241,7 +1246,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2020-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1441,7 +1446,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1571,7 +1576,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubesphere/</loc>
-    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1637,7 +1642,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/open-source/</loc>
-    <lastmod>2020-05-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1917,7 +1922,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

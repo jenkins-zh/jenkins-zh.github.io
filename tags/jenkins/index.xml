@@ -6,10 +6,22 @@
     <description>Recent content in Jenkins on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 29 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>KubeSphere DevOps 初体验，内置 Jenkins 引擎</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/</guid>
+      <description>初识 KubeSphere KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。KubeSphere 支持部署在任何基础设施环境，提供在线与离线安装，支持一键升级与扩容集群，并且各功能组件支持模块化和可插拔的安装。
+解读 KubeSphere DevOps KubeSphere DevOps 作为 KubeSphere 容器平台的一个可插拔功能组件，内置了 Jenkins 作为在 Kubernetes 之上的 CI/CD 引擎。借助 Jenkins 丰富的插件体系和易于进行扩展开发的特性，帮助 DevOps 团队在一个统一的平台中，打通开发、测试、构建、部署、监控、日志与通知等流程。KubeSphere 为 DevOps 团队打造了以容器为载体的端到端的应用交付平台，实现从应用开发、持续集成、单元测试、制品构建到应用的生产交付，所有的流程都是一个完整的闭环。
+KubeSphere DevOps 充分利用和释放 Kubernetes 动态扩展的能力。例如，KubeSphere 在内置的 DevOps 系统使用了 Jenkins Kubernetes 的动态 Agent，这样的方案相较于传统虚拟机上的 Jenkins 要更加灵活敏捷。同时，在 KubeSphere DevOps 中内置了常用的 Agent 类型，例如 Maven、Node.js、Go 等，并且还支持自定义与扩展的 Agent 类型。
+除了基于 Jenkins 引擎打造的 CI/CD 流水线，KubeSphere 还为业务开发者提供了自动化打包部署的工具集。业务开发者即使还没有深入了解 Docker 与 Kubernetes 的机制，也可以借助 KubeSphere 内置的自动化 CD 工具，如 Binary to Image 和 Source to Image。用户只需要提交一个仓库地址，或上传 JAR/WAR/Binary 等二进制文件，即可快速将制品打包成 Docker 镜像并发布到镜像仓库，最终将服务自动发布至 Kubernetes 中，无需编写一行 Dockerfile。</description>
+    </item>
     
     <item>
       <title>使用 Python 制作酷炫多彩的 Jenkins 插件词云图</title>

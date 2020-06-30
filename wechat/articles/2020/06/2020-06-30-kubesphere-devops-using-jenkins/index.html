@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Jenkins 插件开发之旅：两天内从 idea 到发布(上篇) - Jenkins 中文社区</title>
+  <title>KubeSphere DevOps 初体验，内置 Jenkins 引擎 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心">
+  <meta name="description" content="基于 Kubernetes 安装 KubeSphere 并开启 DevOps 系统">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)" />
-<meta property="og:description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心" />
+<meta property="og:title" content="KubeSphere DevOps 初体验，内置 Jenkins 引擎" />
+<meta property="og:description" content="基于 Kubernetes 安装 KubeSphere 并开启 DevOps 系统" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" /><meta property="article:published_time" content="2019-05-06T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-06T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/" /><meta property="article:published_time" content="2020-06-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-06-30T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)">
-<meta itemprop="description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心">
-
-
-<meta itemprop="datePublished" content="2019-05-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="547">
+<meta itemprop="name" content="KubeSphere DevOps 初体验，内置 Jenkins 引擎">
+<meta itemprop="description" content="基于 Kubernetes 安装 KubeSphere 并开启 DevOps 系统">
 
 
+<meta itemprop="datePublished" content="2020-06-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="569">
 
-<meta itemprop="keywords" content="jenkins,maven,jira," />
+
+
+<meta itemprop="keywords" content="jenkins,kubesphere,devops,open source," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)"/>
-<meta name="twitter:description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心"/>
+<meta name="twitter:title" content="KubeSphere DevOps 初体验，内置 Jenkins 引擎"/>
+<meta name="twitter:description" content="基于 Kubernetes 安装 KubeSphere 并开启 DevOps 系统"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -209,16 +209,16 @@ var trackOutboundLink = function(id, url) {
     
       
         <h3 class="f4 dib author">
-            Wang Donghui
+            pengfei
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          a long-time Jenkins user and contributor
+          CNCF Ambassador, Technical Writer, Community Manager
         </p>
       
-      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/FeynmanZhou" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -231,33 +231,6 @@ var trackOutboundLink = function(id, url) {
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
 	
-		<p class="b">内容目录</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#从一个-idea-说起">从一个 idea 说起</a></li>
-<li><a href="#插件开发过程">插件开发过程</a>
-<ul>
-<li><a href="#插件开发准备">插件开发准备</a></li>
-<li><a href="#创建一个插件">创建一个插件</a></li>
-<li><a href="#构建及运行插件">构建及运行插件</a></li>
-<li><a href="#定制开发插件">定制开发插件</a>
-<ul>
-<li><a href="#扩展点-extensitonpoint">扩展点（ ExtensitonPoint ）</a></li>
-<li><a href="#descriptor-静态内部类">Descriptor 静态内部类</a></li>
-<li><a href="#数据绑定">数据绑定</a></li>
-<li><a href="#核心逻辑">核心逻辑</a></li>
-</ul></li>
-<li><a href="#分发插件">分发插件</a></li>
-</ul></li>
-<li><a href="#插件使用说明">插件使用说明</a></li>
-<li><a href="#总结">总结</a></li>
-<li><a href="#参考">参考</a></li>
-</ul></li>
-</ul>
-</nav>
-	
 
 	<div date-pref>
 		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
@@ -269,17 +242,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 自动化安装插件 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/" class="dib f6 pr1 hover-bg-light-gray br-100" title="应该使用什么 CI/CD 工具？">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/" class="dib f6 pr1 hover-bg-light-gray br-100" title="使用 Python 制作酷炫多彩的 Jenkins 插件词云图">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -299,13 +264,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">KubeSphere DevOps 初体验，内置 Jenkins 引擎</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心
+      基于 Kubernetes 安装 KubeSphere 并开启 DevOps 系统
     </div>
   
 
@@ -318,245 +283,282 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="huashan.png" alt="huashan" /></p>
+<h2 id="初识-kubesphere">初识 KubeSphere</h2>
 
-<p>本文介绍了笔者首个 Jenkins 插件开发的旅程，
-包括从产生 idea 开始，然后经过插件定制开发，
-接着申请将代码托管到 jenkinsci GitHub  组织，
-最后将插件发布到 Jenkins 插件更新中心的过程。</p>
+<p>KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。KubeSphere 支持部署在任何基础设施环境，提供在线与离线安装，支持一键升级与扩容集群，并且各功能组件支持模块化和可插拔的安装。</p>
 
-<p>鉴于文章篇幅过长，将分为上下两篇进行介绍。</p>
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233746.png" alt="" /></p>
 
-<h2 id="从一个-idea-说起">从一个 idea 说起</h2>
+<h2 id="解读-kubesphere-devops">解读 KubeSphere DevOps</h2>
 
-<p>前几天和朋友聊天时，聊到了 Maven 版本管理领域的 SNAPSHOT 版本依赖问题，
-这给他带来了一些困扰，消灭掉历史遗留应用的 SNAPSHOT 版本依赖并非易事。</p>
+<p>KubeSphere DevOps 作为 KubeSphere 容器平台的一个可插拔功能组件，内置了 Jenkins 作为在 Kubernetes 之上的 CI/CD 引擎。借助 Jenkins 丰富的插件体系和易于进行扩展开发的特性，帮助 DevOps 团队在一个统一的平台中，打通开发、测试、构建、部署、监控、日志与通知等流程。KubeSphere 为 DevOps 团队打造了以容器为载体的端到端的应用交付平台，实现从应用开发、持续集成、单元测试、制品构建到应用的生产交付，所有的流程都是一个完整的闭环。</p>
 
-<p>类似问题也曾经给笔者带来过困扰，在最初没能去规避问题，
-等到再想去解决问题时却发现困难重重，牵一发而动全身，
-导致这个问题一直被搁置，而这也给笔者留下深刻的印象。</p>
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628225840.png" alt="" /></p>
 
-<p>等到再次制定 Maven 规范时，从一开始就考虑
-强制禁止 SNAPSHOT 版本依赖发到生产环境。</p>
+<p>KubeSphere DevOps 充分利用和释放 Kubernetes 动态扩展的能力。例如，KubeSphere 在内置的 DevOps 系统使用了 Jenkins Kubernetes 的动态 Agent，这样的方案相较于传统虚拟机上的 Jenkins 要更加灵活敏捷。同时，在 KubeSphere DevOps 中内置了常用的 Agent 类型，例如 Maven、Node.js、Go 等，并且还支持自定义与扩展的 Agent 类型。</p>
 
-<p>这里是通过在 Jenkins 构建时做校验实现的。
-因为没有找到提供类似功能的 Jenkins 插件，
-目前这个校验通过 shell 脚本来实现的，
-具体的做法是在 Jenkins 任务中 Maven 构建之前增加一个 Execute shell 的步骤，
-来判断 pom.xml 中是否包含 SNAPSHOT 关键字，如果包含，该次构建状态将被标记为失败。
-脚本内容如下：</p>
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628172418.png" alt="" /></p>
 
-<pre><code class="language-bash">#!/bin/bash
-if [[ ` grep -R --include=&quot;pom.xml&quot; SNAPSHOT .` =~ &quot;SNAPSHOT&quot; ]]; 
-then echo &quot;SNAPSHOT check failed&quot; &amp;&amp; grep -R --include=&quot;pom.xml&quot; SNAPSHOT . &amp;&amp; exit 1; 
-else echo &quot;SNAPSHOT check success&quot;; 
-fi
-</code></pre>
+<p>除了基于 Jenkins 引擎打造的 CI/CD 流水线，KubeSphere 还为业务开发者提供了自动化打包部署的工具集。业务开发者即使还没有深入了解 Docker 与 Kubernetes 的机制，也可以借助 KubeSphere 内置的自动化 CD 工具，如 Binary to Image 和 Source to Image。用户只需要提交一个仓库地址，或上传 JAR/WAR/Binary 等二进制文件，即可快速将制品打包成 Docker 镜像并发布到镜像仓库，最终将服务自动发布至 Kubernetes 中，无需编写一行 Dockerfile。</p>
 
-<p>恰好前不久在看 Jenkins 插件开发文档，
-那何不通过 Jenkins 插件的方式实现它呢？</p>
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628225803.png" alt="" /></p>
 
-<p>于是笔者开始了首个 Jenkins 插件开发之旅。</p>
+<p>关于 KubeSphere DevOps 更多的介绍，可以参考 KubeSphere 官网（<code>https://kubesphere.io/devops/</code>）获得更进一步的了解。</p>
 
-<h2 id="插件开发过程">插件开发过程</h2>
+<h2 id="在-kubernetes-安装-kubesphere-开启-devops-组件">在 Kubernetes 安装 KubeSphere 开启 DevOps 组件</h2>
 
-<p>Jenkins 是由 Java 语言开发的最流行的 CI/CD 引擎。</p>
+<p>以下步骤将基于 Kubernetes 集群演示如何安装 KubeSphere v2.1.1，并开启 KubeSphere DevOps 组件。</p>
 
-<p>说起 Jenkins 强大的开源生态，自然就会说到 Jenkins 插件。
-Jenkins 插件主要用来对 Jenkins 的功能进行扩展。
-目前 Jenkins 社区有<a href="https://plugins.jenkins.io/">上千个插件</a>，
-用户可以根据自己的需求选择合适的插件来定制 Jenkins 。</p>
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233230.png" alt="" /></p>
 
-<h3 id="插件开发准备">插件开发准备</h3>
+<h2 id="前提条件">前提条件</h2>
 
-<p>插件开发需要首先安装 JDK 和 Maven，这里不做进一步说明。</p>
-
-<h3 id="创建一个插件">创建一个插件</h3>
-
-<p>Jenkins 为插件开发提供了 Maven 原型。
-打开一个命令行终端，切换到你想存放 Jenins 插件源代码的目录，运行如下命令：</p>
-
-<pre><code>mvn -U archetype:generate -Dfilter=io.jenkins.archetypes:
-</code></pre>
-
-<p>这个命令允许你使用其中一个与 Jenkins 相关的原型生成项目。</p>
-
-<pre><code>$ mvn -U archetype:generate -Dfilter=io.jenkins.archetypes:
-......
-Choose archetype:
-1: remote -&gt; io.jenkins.archetypes:empty-plugin (Skeleton of a Jenkins plugin with a POM and an empty source tree.)
-2: remote -&gt; io.jenkins.archetypes:global-configuration-plugin (Skeleton of a Jenkins plugin with a POM and an example piece of global configuration.)
-3: remote -&gt; io.jenkins.archetypes:hello-world-plugin (Skeleton of a Jenkins plugin with a POM and an example build step.)
-Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): : 3
-Choose io.jenkins.archetypes:hello-world-plugin version:
-1: 1.1
-2: 1.2
-3: 1.3
-4: 1.4
-Choose a number: 4: 4
-......
-[INFO] Using property: groupId = unused
-Define value for property 'artifactId': maven-snapshot-check
-Define value for property 'version' 1.0-SNAPSHOT: :
-[INFO] Using property: package = io.jenkins.plugins.sample
-Confirm properties configuration:
-groupId: unused
-artifactId: maven-snapshot-check
-version: 1.0-SNAPSHOT
-package: io.jenkins.plugins.sample
- Y: : Y
-</code></pre>
-
-<p>笔者选择了 <code>hello-world-plugin</code> 这个原型，
-并在填写了一些参数，如artifactId、version 后生成了项目。<br />
-可以使用 <code>mvn verify</code> 命令验证是否可以构建成功。</p>
-
-<h3 id="构建及运行插件">构建及运行插件</h3>
-
-<p><code>Maven HPI Plugin</code> 用于构建和打包 Jenkins 插件。
-它提供了一种便利的方式来运行一个已经包含了当前插件的 Jenkins 实例：</p>
-
-<pre><code>mvn hpi:run
-</code></pre>
-
-<p>这将安装一个 Jenkins 实例，可以通过 <code>http://localhost:8080/jenkins/</code> 来访问。
-等待控制台输出如下内容，然后打开 Web 浏览器并查看插件的功能。</p>
-
-<pre><code>INFO: Jenkins is fully up and running
-</code></pre>
-
-<p>在 Jenkins 中创建一个自由风格的任务，然后给它取个名字。
-然后添加 &ldquo;Say hello world&rdquo; 构建步骤，如下图所示：<br />
-<img src="say-hello-world.png" alt="say hello world" /></p>
-
-<p>输入一个名字，如：Jenkins ，然后保存该任务，
-点击构建，查看构建日志，输出如下所示：</p>
-
-<pre><code>Started by user anonymous
-Building in workspace /Users/mrjenkins/demo/work/workspace/testjob
-Hello, Jenkins! 
-Finished: SUCCESS
-</code></pre>
-
-<h3 id="定制开发插件">定制开发插件</h3>
-
-<p>Jenkins 插件开发归功于有一系列扩展点。
-开发人员可以对其进行扩展自定义实现一些功能。</p>
-
-<p>这里有几个重要的概念需要做下说明：</p>
-
-<h4 id="扩展点-extensitonpoint">扩展点（ ExtensitonPoint ）</h4>
-
-<p>扩展点是 Jenkins 系统某个方面的接口或抽象类。
-这些接口定义了需要实现的方法，而 Jenkins 插件需要实现这些方法。</p>
-
-<p>笔者所写的插件需要实现 Builder 这个扩展点。
-代码片段如下：</p>
-
-<pre><code class="language-java">public class MavenCheck extends Builder {}
-</code></pre>
-
-<h4 id="descriptor-静态内部类">Descriptor 静态内部类</h4>
-
-<p>Descriptor 静态内部类是一个类的描述者，用于指明这是一个扩展点的实现，
-Jenkins 通过这个描述者才能知道我们写的插件。
-每一个描述者静态类都需要被 @Extension 注解，
-Jenkins 内部会扫描 @Extenstion 注解来获取注册了哪些插件。<br />
-代码片段如下：</p>
-
-<pre><code class="language-java">@Extension
-public static final class DescriptorImpl extends BuildStepDescriptor&lt;Builder&gt; {
-    public DescriptorImpl() {
-        load();
-    }
-
-    @Override
-    public boolean isApplicable(Class&lt;? extends AbstractProject&gt; aClass) {
-        return true;
-    }
-
-    @Override
-    public String getDisplayName() {
-        return &quot;Maven SNAPSHOT Check&quot;;
-    }
-}
-</code></pre>
-
-<p>在 DesciptorImpl 实现类中有两个方法需要我们必须要进行重写：
-isApplicable() 和 getDisplayName() 。
-isApplicable() 这个方法的返回值代表这个 Builder 在 Jenkins Project 中是否可用，
-我们可以将我们的逻辑写在其中，例如做一些参数校验，
-最后返回 true 或 false 来决定这个 Builder 是否可用。</p>
-
-<p>getDisplayName() 这个方法返回的是一个 String 类型的值，
-这个名称被用来在 web 界面上显示。</p>
-
-<h4 id="数据绑定">数据绑定</h4>
-
-<p>前端页面的数据要和后台服务端进行交互，需要进行数据绑定。
-前端 <code>config.jelly</code> 页面代码片段如下：</p>
-
-<pre><code class="language-xml">&lt;?jelly escape-by-default='true'?&gt;
-&lt;j:jelly xmlns:j=&quot;jelly:core&quot; xmlns:st=&quot;jelly:stapler&quot; xmlns:d=&quot;jelly:define&quot; xmlns:l=&quot;/lib/layout&quot; xmlns:t=&quot;/lib/hudson&quot; xmlns:f=&quot;/lib/form&quot;&gt;
-  &lt;f:entry title=&quot;check&quot; field=&quot;check&quot;&gt;
-    &lt;f:checkbox /&gt;
-  &lt;/f:entry&gt;
-&lt;/j:jelly&gt;
-</code></pre>
-
-<p>如上所示，需要在 config.jelly 中包含需要传入的参数配置信息的选择框，field 为 check ，这样可以在 Jenkins 进行配置，然后通过 DataBoundConstructor 数据绑定的方式，将参数传递到 Java 代码中。
-服务端 Java 代码片段如下：</p>
-
-<pre><code>@DataBoundConstructor
-public MavenCheck(boolean check) {
-    this.check = check;
-}
-</code></pre>
-
-<h4 id="核心逻辑">核心逻辑</h4>
-
-<p>笔者所写的插件的核心逻辑是检查 Maven pom.xml 文件是否包含 SNAPSHOT 版本依赖。</p>
-
-<p>Jenkins 是 Master/Agent 架构，
-这就需要读取 Agent 节点的 workspace 的文件，
-这是笔者在写插件时遇到的一个难点。</p>
-
-<p>Jenkins 强大之处在于它的生态，目前有上千个插件，
-笔者参考了 <a href="https://plugins.jenkins.io/text-finder">Text-finder Plugin</a> 的源码，
-并在参考处添加了相关注释，最终实现了插件要实现的功能。</p>
-
-<p>详细代码可以查看 <a href="https://github.com/jenkinsci/maven-snapshot-check-plugin">jenkinsci/maven-snapshot-check-plugin</a> 代码仓库。</p>
-
-<h3 id="分发插件">分发插件</h3>
-
-<p>使用 <code>mvn package</code> 命令可以打包出后缀为 hpi 的二进制包，
-这样就可以分发插件，将其安装到 Jenkins 实例。</p>
-
-<h2 id="插件使用说明">插件使用说明</h2>
-
-<p>以下是对插件的使用简要描述。</p>
-
-<p>如果勾选了下面截图中的选择框，
-Jenkins 任务在构建时将会检查 pom.xml 中是否包含 SNAPSHOT 。
-<img src="maven-snapshot-check-plugin-usage.png" alt="maven-snapshot-check-plugin-usage" /></p>
-
-<p>如果检查到的话，则会将该次构建状态标记为失败。
-<img src="job-build-console-output.png" alt="job-build-console-output" /></p>
-
-<h2 id="总结">总结</h2>
-
-<p>文章上篇主要介绍了从产生 idea 到插件开发完成的过程。<br />
-那么插件在开发完成后是如何将它托管到 Jenkins 插件更新中心让所有用户都可以看到的呢？<br />
-两天后的文章下篇将对这个过程进行介绍，敬请期待！</p>
-
-<h2 id="参考">参考</h2>
-
+<blockquote>
 <ul>
-<li><a href="https://wiki.jenkins.io/display/JENKINS/Plugin+tutorial">Plugin tutorial</a></li>
-<li><a href="https://jenkins.io/doc/developer/tutorial/prepare/">Preparing for Plugin Development</a></li>
-<li><a href="https://jenkins.io/doc/developer/tutorial/create/">Create a Plugin</a></li>
-<li><a href="https://jenkins.io/doc/developer/tutorial/run/">Build and Run the Plugin</a></li>
+<li>已有 Kubernetes 集群，并且 <code>Kubernetes</code> 版本： <code>1.15.x ≤ K8s version ≤ 1.17.x</code>。若没有 K8s 环境可参考文档（<code>https://kubesphere.com.cn/docs/zh-CN/installation/all-in-one/</code>）在 Linux 环境安装；</li>
+<li>集群能够访问外网，若无外网请参考 <strong>在 Kubernetes 离线安装 KubeSphere</strong>，地址 <code>https://kubesphere.com.cn/docs/installation/install-on-k8s-airgapped/</code></li>
 </ul>
+</blockquote>
+
+<h2 id="安装-helm-和-tiller">安装 Helm 和 Tiller</h2>
+
+<blockquote>
+<p>提示：若集群已有 Helm 和 Tiller，可跳过本节操作。</p>
+</blockquote>
+
+<ol>
+<li><p>从 Helm 的 GitHub <code>https://github.com/helm/helm/releases/tag/v2.16.3</code> 下载 <code>helm-v2.16.3-linux-amd64.tar.gz</code>。</p></li>
+
+<li><p>上传到服务器，解压移动 Helm、Tiller 到 <code>/usr/local/bin/</code>：</p></li>
+</ol>
+
+<pre><code>[root@k8s-node1 linux-amd64]# cp helm /usr/local/bin/
+[root@k8s-node1 linux-amd64]# cp tiller /usr/local/bin/
+</code></pre>
+
+<ol>
+<li>验证 Helm 的安装：</li>
+</ol>
+
+<pre><code>helm help
+</code></pre>
+
+<ol>
+<li>创建权限：</li>
+</ol>
+
+<p>创建一个新的文件 <code>helm_rbac.yaml</code>，内容如下：</p>
+
+<pre><code>apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system
+</code></pre>
+
+<ol>
+<li>然后使用 kubectl 使其创建生效。</li>
+</ol>
+
+<pre><code>[root@k8s-node1 k8s]# kubectl apply -f helm_rbac.yaml
+serviceaccount/tiller created
+clusterrolebinding.rbac.authorization.k8s.io/tiller created
+</code></pre>
+
+<ol>
+<li>初始化 Helm，这里用的国内的镜像源。</li>
+</ol>
+
+<pre><code>helm init --service-account=tiller --tiller-image=registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.16.3 --history-max 300
+</code></pre>
+
+<ol>
+<li>验证 Helm Tiller。如果状态是 <code>ImagePullBackOff</code>，表示镜像未拉取成功，需要手动拉取。</li>
+</ol>
+
+<pre><code>kubectl -n kube-system get pods|grep tiller
+</code></pre>
+
+<ol>
+<li>检查 Tiller 是否部署到 Kubernetes：</li>
+</ol>
+
+<pre><code>[root@k8s-node1 local]# kubectl get pod -n kube-system -l app=helm
+NAME                             READY   STATUS    RESTARTS   AGE
+tiller-deploy-7b76b656b5-m4k2x   1/1     Running   0          94s
+</code></pre>
+
+<h2 id="安装持久化存储与-storageclass">安装持久化存储与 StorageClass</h2>
+
+<blockquote>
+<p>提示：
+- 若您的集群已有持久化存储与 StorageClass，可跳过本小节
+- OpenEBS 将使用 LocalPV 作为存储卷，仅建议用作开发测试环境，生产环境建议使用如 Ceph、GlusterFS 等独立的分布式存储服务
+- 安装之前，请确保 master 节点没有 Taints (待安装完 KubeSphere 之后再添加 Taints)</p>
+</blockquote>
+
+<ol>
+<li>确认 master 节点是否有 Taint，如下看到 master 节点有 Taint。</li>
+</ol>
+
+<pre><code>$ kubectl describe node master | grep Taint
+Taints:             node-role.kubernetes.io/master:NoSchedule
+</code></pre>
+
+<ol>
+<li>去掉 master 节点的 Taint：</li>
+</ol>
+
+<pre><code>$ kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-
+</code></pre>
+
+<ol>
+<li>创建 OpenEBS 的 namespace，OpenEBS 相关资源将创建在这个 namespace 下：</li>
+</ol>
+
+<pre><code>$ kubectl create ns openebs
+</code></pre>
+
+<ol>
+<li>安装 OpenEBS</li>
+</ol>
+
+<pre><code>helm init
+
+helm install --namespace openebs --name openebs stable/openebs --version 1.5.0
+</code></pre>
+
+<ol>
+<li>安装 OpenEBS 后将自动创建 4 个 StorageClass，查看创建的 StorageClass：</li>
+</ol>
+
+<pre><code>$ kubectl get sc
+NAME                        PROVISIONER                                                AGE
+openebs-device              openebs.io/local                                           10h
+openebs-hostpath            openebs.io/local                                           10h
+openebs-jiva-default        openebs.io/provisioner-iscsi                               10h
+openebs-snapshot-promoter   volumesnapshot.external-storage.k8s.io/snapshot-promoter   10h
+</code></pre>
+
+<ol>
+<li>如下将 <code>openebs-hostpath</code> 设置为 <strong>默认的 StorageClass</strong>：</li>
+</ol>
+
+<pre><code>$ kubectl patch storageclass openebs-hostpath -p '{&quot;metadata&quot;: {&quot;annotations&quot;:{&quot;storageclass.kubernetes.io/is-default-class&quot;:&quot;true&quot;}}}'
+storageclass.storage.k8s.io/openebs-hostpath patched
+</code></pre>
+
+<ol>
+<li>至此，OpenEBS 的 LocalPV 已作为默认的存储类型创建成功。可以通过命令 <code>kubectl get pod -n openebs</code> 来查看 OpenEBS 相关 Pod 的状态，若 Pod 的状态都是 running，则说明存储安装成功。</li>
+</ol>
+
+<h2 id="kubectl-安装-kubesphere">kubectl 安装 KubeSphere</h2>
+
+<p>当 Kubernetes 集群满足前提条件，实际上安装 KubeSphere 的步骤非常简单，仅一条命令。根据集群资源情况，使用 kubectl 安装 KubeSphere。</p>
+
+<h2 id="最小化安装-kubesphere">最小化安装 KubeSphere</h2>
+
+<p>若集群可用 CPU &gt; 1 Core 且可用内存 &gt; 2 G，可以使用以下命令最小化安装 KubeSphere：</p>
+
+<pre><code class="language-yaml">kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/kubesphere-minimal.yaml
+</code></pre>
+
+<blockquote>
+<p>提示：若您的服务器提示无法访问 GitHub，可将 <code>kubesphere-minimal.yaml</code> 从 GitHub 地址 <code>https://github.com/kubesphere/ks-installer/</code> 拷贝文件保存到本地作为本地的静态文件，再参考上述命令进行安装。</p>
+</blockquote>
+
+<h2 id="验证与访问">验证与访问</h2>
+
+<ol>
+<li>查看滚动刷新的安装日志，请耐心等待安装成功。</li>
+</ol>
+
+<pre><code class="language-bash">$ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+</code></pre>
+
+<blockquote>
+<p>说明：安装过程中若遇到问题，也可以通过以上日志命令来排查问题。</p>
+</blockquote>
+
+<ol>
+<li>通过 <code>kubectl get pod --all-namespaces</code> 查看 KubeSphere 相关 namespace 下所有 Pod 状态是否为 Running。确认 Pod 都正常运行后，可使用 <code>IP:30880</code> 访问 KubeSphere UI 界面，默认的集群管理员账号为 <code>admin/P@88w0rd</code>。</li>
+</ol>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191020153911.png" alt="" /></p>
+
+<ol>
+<li>登录控制台首页，查看集群状态。</li>
+</ol>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233341.png" alt="" /></p>
+
+<h2 id="开启-kubesphere-devops-的安装">开启 KubeSphere DevOps 的安装</h2>
+
+<ol>
+<li>通过修改 ks-installer 的 ConfigMap 可以选装可插拔的功能组件，执行以下命令开启 KubeSphere DevOps 系统：</li>
+</ol>
+
+<pre><code class="language-bash">$ kubectl edit cm -n kubesphere-system ks-installer
+</code></pre>
+
+<p><strong>参考如下修改 ConfigMap</strong></p>
+
+<pre><code class="language-yaml">devops:
+      enabled: True
+      jenkinsMemoryLim: 2Gi
+      jenkinsMemoryReq: 1500Mi
+      jenkinsVolumeSize: 8Gi
+      jenkinsJavaOpts_Xms: 512m
+      jenkinsJavaOpts_Xmx: 512m
+      jenkinsJavaOpts_MaxRAM: 2g
+      sonarqube:
+        enabled: True
+</code></pre>
+
+<ol>
+<li>保存退出，安装任务将自动在后台执行。等待几分钟，若看到 ks-installer 日志返回安装成功的日志，即可通过以下命令来验证 KubeSphere DevOps 系统下相关 Pod 与 Job 的状态：</li>
+</ol>
+
+<pre><code>kubectl get pod -n kubesphere-devops-system
+</code></pre>
+
+<ol>
+<li>若 Pod 状态都是 Running，并且在 KubeSphere 控制台的服务组件看到 DevOps 相关服务都是 <strong>健康</strong> 状态，说明 KubeSphere DevOps 系统已成功开启安装。</li>
+</ol>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628232202.png" alt="" /></p>
+
+<p>可参考如下文档进一步上手 KubeSphere DevOps 系统的功能：</p>
+
+<blockquote>
+<ul>
+<li><code>Binary-to-Image：</code> 将 WAR、JAR、Binary 这一类的制品快速打包成 Docker 镜像，并发布到镜像仓库中，最终将服务自动发布至 Kubernetes，参考文档 <strong><a href="https://kubesphere.com.cn/docs/zh-CN/quick-start/b2i-war">https://kubesphere.com.cn/docs/zh-CN/quick-start/b2i-war</a></strong>；</li>
+<li><code>Source-to-Image：</code> 无需写 Dockerfile，仅输入源代码地址即可自动打包成可运行程序到 Docker 镜像的工具，方便构建镜像发布至镜像仓库和 Kubernetes，参考文档 <strong><a href="https://kubesphere.com.cn/docs/zh-CN/quick-start/source-to-image">https://kubesphere.com.cn/docs/zh-CN/quick-start/source-to-image</a></strong></li>
+<li><code>图形化构建流水线：</code> 通过图形化编辑的界面构建流水线，无需写 Jenkinsfile，交互友好，参考文档 <strong><a href="https://kubesphere.com.cn/docs/zh-CN/quick-start/jenkinsfile-out-of-scm">https://kubesphere.com.cn/docs/zh-CN/quick-start/jenkinsfile-out-of-scm</a></strong></li>
+<li><code>基于 Jenkinsfile 构建流水线：</code> 基于项目仓库中已有的 Jenkinsfile 快速构建流水线，参考文档 <strong><a href="https://kubesphere.com.cn/docs/zh-CN/quick-start/devops-online">https://kubesphere.com.cn/docs/zh-CN/quick-start/devops-online</a></strong></li>
+</ul>
+</blockquote>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628235151.png" alt="" /></p>
+
+<h2 id="活动预告">活动预告</h2>
+
+<p>KubeSphere 将在七月份重磅发布 v3.0！欢迎大家关注和报名参加 <strong>6 月 30 日 （本周二下午 14:00）</strong> 的 KubeSphere 线上发布会的直播，提前知晓 v3.0 的重大更新。</p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628075312.png" alt="" /></p>
 
 </div>
 
@@ -589,14 +591,14 @@ Jenkins 任务在构建时将会检查 pom.xml 中是否包含 SNAPSHOT 。
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)”
-  </a> 更新于：May 6, 2019
+    “KubeSphere DevOps 初体验，内置 Jenkins 引擎”
+  </a> 更新于：June 30, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -620,26 +622,26 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/maven">
-              maven
+            <a class="tag" href="/tags/kubesphere">
+              kubesphere
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jira">
-              jira
+            <a class="tag" href="/tags/devops">
+              devops
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/open-source">
+              open source
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/" class="link">
-              KubeSphere DevOps 初体验，内置 Jenkins 引擎
-            </a>
-          </li>
         
       
         
@@ -990,6 +992,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="link">
+              Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)
+            </a>
+          </li>
+        
       
         
         
@@ -1150,7 +1158,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/05\/2019-05-06-jenkins-plugin-develop-within-two-days-part01\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/06\/2020-06-30-kubesphere-devops-using-jenkins\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
