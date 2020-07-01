@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-01-monitoring-linux-logs-with-kibana-and-rsyslog/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/</loc>
     <lastmod>2020-06-30T00:00:00+00:00</lastmod>
   </url>
@@ -1581,6 +1586,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/linux/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/maven/</loc>
     <lastmod>2019-05-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1588,7 +1599,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/monitoring/</loc>
-    <lastmod>2020-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1719,7 +1730,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/programming/</loc>
-    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1801,13 +1812,13 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/software-development/</loc>
-    <lastmod>2020-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/software-engineering/</loc>
-    <lastmod>2020-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1922,7 +1933,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

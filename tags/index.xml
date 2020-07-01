@@ -795,6 +795,15 @@
     </item>
     
     <item>
+      <title>Linux</title>
+      <link>https://jenkins-zh.cn/tags/linux/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Maven</title>
       <link>https://jenkins-zh.cn/tags/maven/</link>
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
@@ -806,7 +815,7 @@
     <item>
       <title>Monitoring</title>
       <link>https://jenkins-zh.cn/tags/monitoring/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/monitoring/</guid>
       <description></description>
@@ -995,7 +1004,7 @@
     <item>
       <title>Programming</title>
       <link>https://jenkins-zh.cn/tags/programming/</link>
-      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/programming/</guid>
       <description></description>
@@ -1121,7 +1130,7 @@
     <item>
       <title>Software Development</title>
       <link>https://jenkins-zh.cn/tags/software-development/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/software-development/</guid>
       <description></description>
@@ -1130,7 +1139,7 @@
     <item>
       <title>Software Engineering</title>
       <link>https://jenkins-zh.cn/tags/software-engineering/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/software-engineering/</guid>
       <description></description>
