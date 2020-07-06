@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machinelearning on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/machinelearning/</link>
+    <description>Recent content in Machinelearning on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/machinelearning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>社区推送博客-机器学习插件项目</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-06-machine-learning-plugin-project-community-bonding-blog-post/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-06-machine-learning-plugin-project-community-bonding-blog-post/</guid>
+      <description>大家好！
+这是 GSoC 2020 中的 Jenkins 项目之一。我们正在为此 GSoC 2020 使用此新的机器学习插件。这是我在社区关于 GSoC 2020 的故事。我很高兴与您分享我的旅程。
+自我介绍和神奇的 4 位导师 我是 Moratuwa 大学的 Loghi Perinpanayagam。我被选为 Jenkins 的 GSoC 2020 机器学习插件的负责人。我很高兴向我的导师介绍这个项目。我分配了四位导师，他们非常热心地帮助我在今年夏天开发代码。
+学生
+ Loghi Perinpanayagam  导师
+ Bruno P. Kinoshita Ioannis Moutsatsos Marky Jackson Shivay Lamba  去年我的准备情况如何？ 我在第二年就了解了 GSoC 开源项目。但是我至少在去年尝试了另一个组织的项目，该项目与《数据科学的数据可视化建议》有关。但是问题是我的贡献不如今年那么大，在申请过程中为时已晚。像往常一样，与其他项目相比，与机器学习相关的项目有很多竞争。我准备学习机器学习中的数据可视化以及推荐系统的现有模型。最后，我当时用 SeqToSeq 模型编写了一个提案，当时对神经网络知识不多。而且我没有通过专用的闲暇渠道进行太多交流。这可能是失败的原因之一。但是主要原因是我对 GSoC 2019 的了解不多。
+我如何跨过 GSoC 2020？ 自从我意识到开源的必要性和对社区的帮助以来，我一直热衷于为开源项目做出贡献。实际上，我于 2019 年在印度班加罗尔完成了实习，我立即专注于参与 GSoC。这是我作为计算机科学理学学士学位课程的学生的最后一年（2020年），我希望今年能被选为学生。
+我们部门举办了一次指导研讨会，我知道 Jenkins 已经打开了他们的项目构想。这是我的 GSoC 2020 旅程的一个非常令人印象深刻的开始。我在 jenkins.io 页面上浏览了所有草案并接受了项目。因为我已经对机器学习感兴趣，并且对 Java 很熟悉，所以我选择了最令人印象深刻的想法，因为它没有初始回购协议。这意味着我想利用我的知识对该项目进行很多思考和研究。但是我必须做出贡献，并且想了解 Jenkins 代码库的基础结构。因为这样可以使选择面板易于接洽该项目的学生。然后，我反复搜索为 Jenkins 做贡献。我发现从 git 插件和 git 客户端插件可以轻松解决的问题。我开始在 git 插件和 git 客户端插件上贡献一些测试问题。在清楚了解插件在 Jenkins 中的工作原理后，我开始使用项目构想页面中提供的提示来进行 POC 的工作。实际上，编写代码很有趣。</description>
+    </item>
+    
+  </channel>
+</rss>
