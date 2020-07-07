@@ -795,7 +795,7 @@ CD Foundation 为项目提供广泛的服务，第一步是从孵化项目开始
       <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tutorial/management/agent/docker-jnlp/</guid>
-      <description>Jenkins 支持多种类型的代理节点，本篇教程介绍的是基于 JNLP 协议的 Docker 代理节点。
+      <description>Docker JNLP Jenkins 支持多种类型的代理节点，本篇教程介绍的是基于 JNLP 协议的 Docker 代理节点。
 步骤如下：
  在节点管理界面，新增一个代理节点；启动方式为：通过 Java Web 启动代理 点击保存后，进入到该节点的状态页面 参考下面的启动命令来启动 Docker 容器  注意替换 IP 为你的服务器地址，不能使用127.0.0.1或者 localhost secret 可以从节点状态页面找到   docker run -u root -d --rm jenkins/slave:4.0.1-1-alpine java -jar /usr/share/jenkins/agent.jar -jnlpUrl http://192.168.31.239:8080/computer/jnlp/slave-agent.jnlp -secret ad36ea3aff1fea65a803f32e7020bd6c6b5866db9f587fb2079d308661691911 -workDir &amp;quot;/tmp&amp;quot;  如果希望了解更多这种代理节点的话，可以参考官方源码。</description>
     </item>
@@ -2877,6 +2877,15 @@ Jenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器
     
     <item>
       <title></title>
+      <link>https://jenkins-zh.cn/tutorial/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/summary/</guid>
+      <description> Table of contents  介绍 管理  节点 Docker JNLP 认证 找回密码 OIC 配置即代码  通知  邮件通知  Jenkins CLI Jenkins 论坛  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://jenkins-zh.cn/weibo/weibo-operating-charter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -3141,11 +3150,11 @@ sudo rpm — import https://pkg.jenkins.io/debian/jenkins.io.key sudo wget -O /e
     
     <item>
       <title>在 Jenkins 中配置邮件服务器</title>
-      <link>https://jenkins-zh.cn/tutorial/notify/email/email/</link>
+      <link>https://jenkins-zh.cn/tutorial/notify/email/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tutorial/notify/email/email/</guid>
-      <description>我们需要在系统管理》系统设置中配置邮件服务器的信息。
+      <guid>https://jenkins-zh.cn/tutorial/notify/email/</guid>
+      <description>邮件通知 我们需要在系统管理》系统设置中配置邮件服务器的信息。
 在邮件通知区域，给出类似如下的配置：
    配置项 样例值 说明     SMTP服务器 smtp.exmail.qq.com    用户默认邮件后缀 @jenkins-zh.cn    SMTP服务器 smtp.exmail.qq.com    用户名 demo@jenkins-zh.cn    密码 demo    使用SSL协议     SMTP端口 465    Reply-To Address demo@jenkins-zh.cn    字符集 UTF-8     腾讯企业邮箱 上面给出的例子就是腾讯企业邮箱的配置，对于密码部分，我们需要生成客户端密码。
 流水线 当我们通过上面的步骤，将邮件服务器配置成功后，就可以使用类似如下的流水线步骤来发送邮件了。
@@ -3209,7 +3218,7 @@ GitHub 或 BitBucket 可能会报告一个新的提交或 PR，DockerHub 报告�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tutorial/management/auth/lost-password/</guid>
-      <description>如果忘记了 Jenkins 的管理员密码的话，也不用担心，只要你有权限访问 Jenkins 的根目录，就可以轻松地重置密码。
+      <description>找回密码 如果忘记了 Jenkins 的管理员密码的话，也不用担心，只要你有权限访问 Jenkins 的根目录，就可以轻松地重置密码。
 通常情况 Jenkins 的根目录，默认是在当前用户（启动 Jenkins 的操作系统用户）目录的 .jenkins 中。对于 unix 系统而言，也就是 ~/.jenkins。
 我们打开配置文件 vim ~/.jenkins/config.xml 后，把字段 useSecurity 的值设置为 false，然后重新启动 Jenkins。你就会发现不需要登陆也能进入管理页面。
 进入页面系统管理-&amp;gt;全局安全配置中，选择启用安全，然后在授权策略中勾选任何用户可以做任何事(没有任何限制)。保存后，找到你希望重置密码的用户，输入新的密码即可。
@@ -3309,7 +3318,7 @@ Jenkins Evergreen 发行版通过确保最新的功能更新，bug 修复以及�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tutorial/management/auth/oic-auth/</guid>
-      <description>如果忘记了 Jenkins 的管理员密码的话，也不用担心，只要你有权限访问 Jenkins 的根目录，就可以轻松地重置密码。
+      <description>OIC 如果忘记了 Jenkins 的管理员密码的话，也不用担心，只要你有权限访问 Jenkins 的根目录，就可以轻松地重置密码。
 通常情况 Jenkins 的根目录，默认是在当前用户（启动 Jenkins 的操作系统用户）目录的 .jenkins 中。对于 unix 系统而言，也就是 ~/.jenkins。
 我们打开配置文件 vim ~/.jenkins/config.xml 后，把字段 useSecurity 的值设置为 false，然后重新启动 Jenkins。你就会发现不需要登陆也能进入管理页面。
 进入页面系统管理-&amp;gt;全局安全配置中，选择启用安全，然后在授权策略中勾选任何用户可以做任何事(没有任何限制)。保存后，找到你希望重置密码的用户，输入新的密码即可。
@@ -3324,7 +3333,7 @@ JENKINS_HOME 如果你的环境变量里设置了 JENKINS_HOME 的话，那么�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tutorial/management/plugin/configuration-as-code/</guid>
-      <description>Jenkins Configuration as Code Plugin  允许用户将系统配置等 Jenkins 的配置信息写入到一个 YAML 文件中。这样，可以将 Jenkins 的配置标准化，便于在团队内部复用，易于传播、便于快速搭建开箱即用的 Jenkins 服务。
+      <description>配置即代码 Jenkins Configuration as Code Plugin  允许用户将系统配置等 Jenkins 的配置信息写入到一个 YAML 文件中。这样，可以将 Jenkins 的配置标准化，便于在团队内部复用，易于传播、便于快速搭建开箱即用的 Jenkins 服务。
 借助这个插件，我们几乎不再需要通过人工在 UI 界面上点击的方式来配置 Jenkins 服务。而且，绝大部分其他插件几乎（甚至）不需要做任何调整，就可以与该插件兼容。
 配置文件加载流程    类型  描述     文件 $JENKINS_HOME/war/WEB-INF/jenkins.yaml 单一文件   目录 $JENKINS_HOME/war/WEB-INF/jenkins.yaml.d 加载该目录下所有以 yml,yaml,YAML,YML 为后缀的文件   系统属性 casc.jenkins.config    环境变量 CASC_JENKINS_CONFIG    系统配置 无 UI 配置    文件 $JENKINS_HOME/jenkins.yaml 查找顺序为：系统属性-&amp;gt;环境变量-&amp;gt;系统配置-&amp;gt;该文件，这个配置文件，只加载先找到的    资源加载协议 支持的 URI 协议包括：https, http, file</description>
     </item>

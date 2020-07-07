@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>email - Jenkins 中文社区</title>
+  <title>在 Jenkins 中配置邮件服务器 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
@@ -27,7 +27,6 @@
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
   
 
-  <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/tutorial/notify/email/index.xml">
   <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
@@ -40,17 +39,36 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="email" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
+<meta property="og:title" content="在 Jenkins 中配置邮件服务器" />
+<meta property="og:description" content="邮件通知 我们需要在系统管理》系统设置中配置邮件服务器的信息。
+在邮件通知区域，给出类似如下的配置：
+   配置项 样例值 说明     SMTP服务器 smtp.exmail.qq.com    用户默认邮件后缀 @jenkins-zh.cn    SMTP服务器 smtp.exmail.qq.com    用户名 demo@jenkins-zh.cn    密码 demo    使用SSL协议     SMTP端口 465    Reply-To Address demo@jenkins-zh.cn    字符集 UTF-8     腾讯企业邮箱 上面给出的例子就是腾讯企业邮箱的配置，对于密码部分，我们需要生成客户端密码。
+流水线 当我们通过上面的步骤，将邮件服务器配置成功后，就可以使用类似如下的流水线步骤来发送邮件了。
+mail bcc: &#39;&#39;, body: &#39;Here is the content." />
+<meta property="og:type" content="article" />
 <meta property="og:url" content="https://jenkins-zh.cn/tutorial/notify/email/" />
 
-<meta itemprop="name" content="email">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="在 Jenkins 中配置邮件服务器">
+<meta itemprop="description" content="邮件通知 我们需要在系统管理》系统设置中配置邮件服务器的信息。
+在邮件通知区域，给出类似如下的配置：
+   配置项 样例值 说明     SMTP服务器 smtp.exmail.qq.com    用户默认邮件后缀 @jenkins-zh.cn    SMTP服务器 smtp.exmail.qq.com    用户名 demo@jenkins-zh.cn    密码 demo    使用SSL协议     SMTP端口 465    Reply-To Address demo@jenkins-zh.cn    字符集 UTF-8     腾讯企业邮箱 上面给出的例子就是腾讯企业邮箱的配置，对于密码部分，我们需要生成客户端密码。
+流水线 当我们通过上面的步骤，将邮件服务器配置成功后，就可以使用类似如下的流水线步骤来发送邮件了。
+mail bcc: &#39;&#39;, body: &#39;Here is the content.">
 
+
+
+<meta itemprop="wordCount" content="46">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="email"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="在 Jenkins 中配置邮件服务器"/>
+<meta name="twitter:description" content="邮件通知 我们需要在系统管理》系统设置中配置邮件服务器的信息。
+在邮件通知区域，给出类似如下的配置：
+   配置项 样例值 说明     SMTP服务器 smtp.exmail.qq.com    用户默认邮件后缀 @jenkins-zh.cn    SMTP服务器 smtp.exmail.qq.com    用户名 demo@jenkins-zh.cn    密码 demo    使用SSL协议     SMTP端口 465    Reply-To Address demo@jenkins-zh.cn    字符集 UTF-8     腾讯企业邮箱 上面给出的例子就是腾讯企业邮箱的配置，对于密码部分，我们需要生成客户端密码。
+流水线 当我们通过上面的步骤，将邮件服务器配置成功后，就可以使用类似如下的流水线步骤来发送邮件了。
+mail bcc: &#39;&#39;, body: &#39;Here is the content."/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -187,196 +205,148 @@ var trackOutboundLink = function(id, url) {
   
   <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
     
-<div class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
-    <div class="flex">
-        <div class="dn db-l w-20">
-            <aside>
-                <ul>
+
+<main>
+    <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+        <div class="flex-l">
+            <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-80">
+                <div class="prose">
+                    <h1>在 Jenkins 中配置邮件服务器</h1>
                     
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/api">
-                            
-                            <span>API</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/api/plugin/">插件相关</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/api/core/">核心</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/best-practice">
-                            
-                            <span>最佳实践</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/best-practice/Android/">Android 应用构建</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/management">
-                            
-                            <span>管理</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/management/cli/">Jenkins CLI</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/backup-restore/">备份与恢复</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/plugin/">插件管理</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/agent/">计算节点</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/auth/">认证</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/mirror/">镜像源</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="active">
-                        <a href="https://jenkins-zh.cn/tutorial/notify">
-                            
-                            <span>消息通知</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/notify/email/">电子邮件</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/pipeline">
-                            
-                            <span>流水线</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/pipeline/shared-library/">共享库</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/pipeline/multi-branch/">多分支流水线</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/pipeline/pipeline/">流水线</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/plugin-dev">
-                            
-                            <span>插件开发</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/plugin-dev/pipeline/">流水线插件</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/scm">
-                            
-                            <span>代码管理</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/scm/git/">有关 Git 的教程</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/scm/svn/">有关 svn 的教程</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/use-cases">
-                            
-                            <span>use-cases</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/use-cases/continue-test/">持续测试</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                </ul>
+
+<h1 id="邮件通知">邮件通知</h1>
+
+<p>我们需要在<code>系统管理》系统设置</code>中配置邮件服务器的信息。</p>
+
+<p>在<code>邮件通知</code>区域，给出类似如下的配置：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">配置项</th>
+<th align="left">样例值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">SMTP服务器</td>
+<td align="left">smtp.exmail.qq.com</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">用户默认邮件后缀</td>
+<td align="left">@jenkins-zh.cn</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">SMTP服务器</td>
+<td align="left">smtp.exmail.qq.com</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">用户名</td>
+<td align="left">demo@jenkins-zh.cn</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">密码</td>
+<td align="left">demo</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">使用SSL协议</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">SMTP端口</td>
+<td align="left">465</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">Reply-To Address</td>
+<td align="left">demo@jenkins-zh.cn</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">字符集</td>
+<td align="left">UTF-8</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="腾讯企业邮箱">腾讯企业邮箱</h2>
+
+<p>上面给出的例子就是腾讯企业邮箱的配置，对于密码部分，我们需要生成客户端密码。</p>
+
+<h2 id="流水线">流水线</h2>
+
+<p>当我们通过上面的步骤，将邮件服务器配置成功后，就可以使用类似如下的流水线步骤来发送邮件了。</p>
+
+<p><code>mail bcc: '', body: 'Here is the content.', cc: 'demo@jenkins-zh.cn', from: '', replyTo: '', subject: 'subject', to: 'demo@jenkins-zh.cn'</code></p>
+
+                </div>
+
+                
             </aside>
-        </div>
 
-        <div class="prose">
-            <p>我们可以通过发送电子邮件的方式来通知流水线的构建状态。</p>
+            <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky pt3 mt2">
+                <aside
+                    class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+                    作者：<a href="https://github.com/linuxsuren" target="_blank">linuxsuren</a>
 
+                    
+                    <hr>
+                    <p class="b">内容目录</p>
+                    <nav id="TableOfContents">
+<ul>
+<li><a href="#邮件通知">邮件通知</a>
+<ul>
+<li><a href="#腾讯企业邮箱">腾讯企业邮箱</a></li>
+<li><a href="#流水线">流水线</a></li>
+</ul></li>
+</ul>
+</nav>
+                    
 
-            
-            
-            <div>
-                <a href="/tutorial/notify/email/email/">在 Jenkins 中配置邮件服务器</a>
+                    
+                    贡献者列表：
+                    
+                    <a href="https://github.com/linuxsuren" target="_blank">linuxsuren</a>
+                    
+                    
+
+                    
+
+                    <hr>
+                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                        <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/tutorial/notify/email.md"
+                            target="_blank">完善此页</a>
+                    </div>
+                </aside>
             </div>
-            
-            
         </div>
+    </article><div style="padding-left: 2rem;">
+        参考资料：
+        
+        <div style="padding-left: 4rem;"><a href="https://plugins.jenkins.io/mailer">mailer 插件</a></div>
+        
+        <div style="padding-left: 4rem;"><a href="https://plugins.jenkins.io/email-ext">Email 扩展插件</a></div>
+        
     </div>
-</div>
+    
+</main>
 
 
 
@@ -392,6 +362,7 @@ var trackOutboundLink = function(id, url) {
     issue-term="pathname" theme="github-light" label="tutorial"
     crossorigin="linuxsuren" async>
     </script>
+
 
 
 

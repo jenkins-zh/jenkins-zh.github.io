@@ -1009,6 +1009,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/summary/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/weibo/weibo-operating-charter/</loc>
   </url>
   
@@ -1626,6 +1630,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/management/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/maven/</loc>
     <lastmod>2019-05-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -2023,10 +2032,6 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tutorial/notify/email/</loc>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tutorial/notify/</loc>
   </url>
   
@@ -2082,7 +2087,7 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tutorial/notify/email/email/</loc>
+    <loc>https://jenkins-zh.cn/tutorial/notify/email/</loc>
   </url>
   
   <url>
@@ -2243,10 +2248,6 @@
     <loc>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tutorial/management/</loc>
   </url>
   
   <url>

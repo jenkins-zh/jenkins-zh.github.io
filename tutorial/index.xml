@@ -10,5 +10,14 @@
 	<atom:link href="https://jenkins-zh.cn/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/tutorial/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/summary/</guid>
+      <description> Table of contents  介绍 管理  节点 Docker JNLP 认证 找回密码 OIC 配置即代码  通知  邮件通知  Jenkins CLI Jenkins 论坛  </description>
+    </item>
+    
   </channel>
 </rss>
