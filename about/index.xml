@@ -84,7 +84,7 @@ jenkins-infra/wechat: master fork/wechat: master dev-01 local: master dev-01  �
       
       <guid>https://jenkins-zh.cn/about/plugins/</guid>
       <description>下面的列表是由 Jenkins 中文社区的成员维护的插件：
-   插件 GitHub 仓库 版本 安装量 主要维护者     Simplified Chinese Plugin jenkinsci/localization-zh-cn-plugin    LinuxSuRen    Hugo Plugin jenkinsci/hugo-plugin    LinuxSuRen    Maven SNAPSHOT Check Plugin jenkinsci/maven-snapshot-check-plugin    donhui    Code Coverage API Plugin jenkinsci/code-coverage-api-plugin    cizezsy    WeiBo Plugin jenkinsci/weibo-plugin    LinuxSuRen    Job priorty sorter for Multi-branch Job jenkinsci/multi-branch-priority-sorter-plugin    LinuxSuRen     同时也期待有更多的贡献者增砖添瓦。</description>
+   插件 GitHub 仓库 版本 安装量 主要维护者     Simplified Chinese Plugin jenkinsci/localization-zh-cn-plugin    LinuxSuRen    Hugo Plugin jenkinsci/hugo-plugin    LinuxSuRen    Maven SNAPSHOT Check Plugin jenkinsci/maven-snapshot-check-plugin    donhui    Code Coverage API Plugin jenkinsci/code-coverage-api-plugin    cizezsy    WeiBo Plugin jenkinsci/weibo-plugin    LinuxSuRen    Job priorty sorter for Multi-branch Job jenkinsci/multi-branch-priority-sorter-plugin    LinuxSuRen    Pipeline Keep Running Step jenkinsci/pipeline-keep-running-step-plugin    hummerstudio     同时也期待有更多的贡献者增砖添瓦。</description>
     </item>
     
     <item>
