@@ -6,10 +6,37 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 每周版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/</guid>
+      <description>2.249 (2020-07-24)  为某些构建步骤构建环境时，不再抛出异常（由 2.248 引入的缺陷的回归）。 特别是，对 Powershell 插件中的 Powershell 步骤有影响。 (issue 63168) 对齐插件管理器表标题。 (pull 4858) 修复了某些元素的标题（例如授权矩阵）的样式错误的问题。 (pull 4861)  2.248 (2020-07-21)  由于发布基础设施的问题导致的意外，Windows MSI 软件包尚未发布。 解决方法是，手动下载并替换 JENKINS_HOME 中的 jenkins.war。
+  停止支持 .NET Framework 2.0 将 Jenkins 服务和代理作为 Windows 服务启动。 现在需要 .NET Framework 4.0 或更高版本。 (公告, 升级指南, issue 60005, issue 61862, Windows 支持策略) 将 Windows Service Wrapper（WinSW）从基于 .NET Framework 2.0 的 2.3.0 可执行文件更新为基于 .NET Framework 4.0 的 2.9.0。 包括多项改进和问题修复。 最值得注意的是，如果需要，服务安装程序现在将要求权限提升。 (变更摘要, WinSW 完整的变更日志, Windows Agent Installer 2.</description>
+    </item>
+    
+    <item>
+      <title>Jenkins CLI 命令行 v0.0.30</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-24-jcli-v0.0.30/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-24-jcli-v0.0.30/</guid>
+      <description> 截止到编辑本文时，GitHub 上统计到的下载量为：7,101(+453)次。GitHub 上的 Star 数为187(+7)，码云上的 Star 数为172(+21)。
+如果要把 Jenkins 和现有的系统进行对接的话，很多人可能会遇到一个问题，当调用 API 触发流水线构建后，如何能拿到构建的 ID 呢？
+要回答这个问题的话，我们首先需要对 Jenkins 的相关机制有一些了解。每当触发一个任务时，Jenkins 会先把这个请求放到一个队列中，当有了可以运行该任务的计算节点（agent）之后，Jenkins 的 master 会把任务调度到对应的节点上去，此时就开始真正地运行了。
+换句话说，任务的调度是异步进行的。因此，触发构建后，是无法拿到一个构建 ID 的，因为此时还没有开始构建。
+我在这里给出的方案是：在 Jenkins 上安装插件 Pipeline restFul API v0.9 的后，可以通过 Jenkins CLI v0.0.30 来解决这个问题，具体使用方法如下：
+jcli job build job/devops/ -b --wait --columns Number --no-headers
+输出结果为：36
+下面是本次版本发布中所包含的内容：
+🚀 功能  增加自我升级的功能，支持升级到任意版本 (#431) @LinuxSuRen 支持更新流水线后立即执行 (#429) @LinuxSuRen 通过 homebrew 安装的话集成 man 帮助手册 (#391) @LinuxSuRen 支持触发流水线并获取构建 ID (#434) @LinuxSuRen 为插件上传命令增加超时时间 (#428) @LinuxSuRen 为插件检查更新命令增加超时时间 (#422) @LinuxSuRen  🐛 缺陷修复  修复无法在需要有 HTTP 代理的情况下连接 JNLP 节点 (#420) @LinuxSuRen  📝 文档完善  将 jcli 的文档部署到了 gitbook (#426) @LinuxSuRen  👻 维护  多个依赖的版本更新 @dependabot-preview  </description>
+    </item>
     
     <item>
       <title>Jenkins 基础设施：统计、更新、AWS 赞助</title>

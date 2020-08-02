@@ -10,14 +10,14 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Jenkins 自动化安装插件 - Jenkins 中文社区</title>
+  <title>Jenkins 每周版更新 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="Jenkins 批量安装指定版本插件">
+  <meta name="description" content="本次更新的版本包括：2.238~2.249">
   
   
-  <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+  <meta name="keywords" content="Jenkins 版本发布,Jenkins 2.238发布,Jenkins 2.239发布,Jenkins 2.240发布,Jenkins 2.241发布,Jenkins 2.242发布,Jenkins 2.243发布,Jenkins 2.244发布,Jenkins 2.245发布,Jenkins 2.246发布,Jenkins 2.247发布,Jenkins 2.248发布,Jenkins 2.249发布">
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 自动化安装插件" />
-<meta property="og:description" content="Jenkins 批量安装指定版本插件" />
+<meta property="og:title" content="Jenkins 每周版更新" />
+<meta property="og:description" content="本次更新的版本包括：2.238~2.249" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" /><meta property="article:published_time" content="2019-05-07T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-07T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/" /><meta property="article:published_time" content="2020-07-31T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-07-31T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 自动化安装插件">
-<meta itemprop="description" content="Jenkins 批量安装指定版本插件">
-
-
-<meta itemprop="datePublished" content="2019-05-07T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="128">
+<meta itemprop="name" content="Jenkins 每周版更新">
+<meta itemprop="description" content="本次更新的版本包括：2.238~2.249">
 
 
+<meta itemprop="datePublished" content="2020-07-31T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-31T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="651">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="jenkins,release," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 自动化安装插件"/>
-<meta name="twitter:description" content="Jenkins 批量安装指定版本插件"/>
+<meta name="twitter:title" content="Jenkins 每周版更新"/>
+<meta name="twitter:description" content="本次更新的版本包括：2.238~2.249"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -204,28 +204,36 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            翟志军
+            zhaoying
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          《Jenkins 2.x实践指南》作者，购买地址：https://item.jd.com/12512889.html?dist=jd
-
+          devops jenkins
         </p>
       
-      <a href="https://github.com/zacker330" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/zhaoying818" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
 
       </a>
 
+  
+  <div>
+    作者：<span class="originalAuthor">jenkinsci</span>
+    <div>
+      <a class="originalLink" href="" target="_blank">原文链接</a>
+    </div>
+  </div>
   
   </aside>
 
@@ -243,17 +251,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 插件开发之旅：两天内从 idea 到发布(下篇) ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-24-jcli-v0.0.30/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins CLI 命令行 v0.0.30">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -273,13 +273,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 自动化安装插件</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 每周版更新</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 批量安装指定版本插件
+      本次更新的版本包括：2.238~2.249
     </div>
   
 
@@ -292,76 +292,163 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<h3 id="手工安装-jenkins-插件的方法">手工安装 Jenkins 插件的方法</h3>
+<p><img src="great-wall.jpeg" alt="great-wall" /></p>
 
-<p>通常，我们有两种方法安装 Jenkins 插件。第一种方法是到 Jenkins 插件管理页面搜索插件，然后安装。第二种方法是上传 Jenkins 插件的 hpi 文件安装。这两种方法能满足大多数人的需求。</p>
-
-<p>第一种方法，如下图所示：
-<img src="pc1.png" alt="搜索安装" /></p>
-
-<p>第二种方法，如下图所示：
-<img src="pc2.png" alt="上传插件" /></p>
-
-<p>但是对于需要保证 Jenkins 稳定或在 Jenkins 上进行二次开发的同学来说，以上方法是无法满足需求的。</p>
-
-<p>第一种方法是无法指定插件的版本。第二种方式必须自己找到该插件的依赖树，然后根据依赖关系一个个地安装。是的，手工上传插件的这种方法，Jenkins 是不会自动下载依赖的。</p>
-
-<p>还有，就是这两种方式都无法实现批量安装。</p>
-
-<h3 id="自动安装插件的方法">自动安装插件的方法</h3>
-
-<p>那么，有什么方法能指定插件的版本，又能自动下载它的依赖，还能批量下载呢？</p>
-
-<p>幸运的是，Jenkins 的 Docker 镜像的代码仓库里的 install-plugins.sh 脚本已经实现。只不过需要我们拿过来小小修改才能使用。笔者修改后创建了相应的代码仓库：<a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">jenkins-install-plugins-shell</a> 。链接在文章末尾。</p>
-
-<p>以下是 jenkins-install-plugins-shell 的使用方法：
-1. 将代码 clone 到 JENKINS_HOME 目录中。</p>
-
-<pre><code>cd $JENKINS_HOME
-git clone https://github.com/zacker330/jenkins-install-plugins-shell.git
-cd jenkins-install-plugins-shell
-</code></pre>
-
-<ol>
-<li>在 plugins.txt 中加入希望安装的插件
-在 <code>jenkins-install-plugins-shell</code> 目录中，有一个 plugins.txt 文件，在文件中写入希望安装的插件及版本号。例如：
-<code>
-ansible:1.0
-powershell:1.3
-</code></li>
-
-<li><p>执行安装</p>
-
-<pre><code class="language-bash"># Jenkins War 的路径，用于分析
-export JENKINS_WAR_PATH=&lt;Jenkins war文件的路径&gt;
-chmod +x install-plugins.sh jenkins-support
-./install-plugins.sh &lt; plugins.txt
-</code></pre></li>
-
-<li><p>重启 Jenkins
-install-plugins 本质上做的事情就只是将插件从云端下载到 JENKINS_HOME 下的 plugins 目录中。要使安装的插件生效，还需要重启 Jenkins。</p></li>
-</ol>
-
-<h3 id="关于-jenkins-插件的名称">关于 Jenkins 插件的名称</h3>
-
-<p>Jenkins 插件有两个名称。一个叫 display name，一个叫 short name。比如 Ansible 插件的 disply name 为 Ansible plugin，short  name 为 ansible。</p>
-
-<p>如何知道一个插件的 short name 呢？可以在 Jenkins 插件官网上找到，比如 Ansible 的：</p>
-
-<p><img src="pc3.png" alt="image.png" /></p>
-
-<p>在 <code>plugins.txt</code> 中使用的是 short name。</p>
-
-<h3 id="总结">总结</h3>
-
-<p>笔者为什么一定要确定 Jenkins 插件的版本？是因为插件的版本会影响 Jenkins 流水线的可靠性。所以，笔者才会这么在意 Jenkins 插件的版本。</p>
-
-<h3 id="附录">附录</h3>
+<h2 id="2-249-2020-07-24">2.249 (2020-07-24)</h2>
 
 <ul>
-<li>Jenkins 官方 Docker 镜像中的自动化插件安装脚本：<a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">https://github.com/jenkinsci/docker/blob/master/install-plugins.sh</a></li>
-<li>笔者修改后的自动化插件安装脚本：
-<a href="https://github.com/zacker330/jenkins-install-plugins-shell">https://github.com/zacker330/jenkins-install-plugins-shell</a></li>
+<li>为某些构建步骤构建环境时，不再抛出异常（由 2.248 引入的缺陷的回归）。 特别是，对 Powershell 插件中的 Powershell 步骤有影响。 (issue 63168)</li>
+<li>对齐插件管理器表标题。 (pull 4858)</li>
+<li>修复了某些元素的标题（例如授权矩阵）的样式错误的问题。 (pull 4861)</li>
+</ul>
+
+<h2 id="2-248-2020-07-21">2.248 (2020-07-21)</h2>
+
+<blockquote>
+<p>由于发布基础设施的问题导致的意外，Windows MSI 软件包尚未发布。 解决方法是，手动下载并替换 JENKINS_HOME 中的 jenkins.war。</p>
+</blockquote>
+
+<ul>
+<li>停止支持 .NET Framework 2.0 将 Jenkins 服务和代理作为 Windows 服务启动。 现在需要 .NET Framework 4.0 或更高版本。 (公告, 升级指南, issue 60005, issue 61862, Windows 支持策略)</li>
+<li>将 Windows Service Wrapper（WinSW）从基于 .NET Framework 2.0 的 2.3.0 可执行文件更新为基于 .NET Framework 4.0 的 2.9.0。 包括多项改进和问题修复。 最值得注意的是，如果需要，服务安装程序现在将要求权限提升。 (变更摘要, WinSW 完整的变更日志, Windows Agent Installer 2.0 变更日志)</li>
+<li>重新排列左侧面板中的配置和删除按钮。 (pull 4852)</li>
+<li>为 Shell 和 Windows 批处理构建步骤添加了过滤掉环境变量的功能。 (issue 62014)</li>
+<li>使用更好的间距和一致的调色板来修改选项卡和表格。 (issue 63002)</li>
+<li>从页脚中删除页面生成时间戳。 (issue 61806)</li>
+<li>“旧数据”管理表添加排序功能。 (issue 25259)</li>
+<li>允许从配置页面中选择指纹存储引擎。 (issue 63022, JEP-226)</li>
+<li>在更新管理器和管理监视器中显示有关已弃用插件的告警。 (issue 59136)</li>
+<li>更新 Jenkins 表单样式，为更改表单布局做准备。 (issue 56109, Configuration UI Accessibility: Tables to Divs migration)</li>
+<li>在配置用户定义的时区时，在服务器时区上显示有关当前时间的提示。 (issue 61806)</li>
+<li>修复由于 Util.isOverridden() 中的行为异常导致的 IllegalArgumentException: Method not found(由 2.241 引入的缺陷回归)。 (issue 62723)</li>
+<li>当代理使用旧版本的 glibc 时，避免堆栈跟踪。 (pull 4830)</li>
+<li>从 JNLP 启动文件中删除 Jenkins URL回调，以便可以通过 Java Web Start 连接 WebSocket 代理。 (issue 63014)</li>
+<li>修复 Windows 服务 serviceaccount 配置中的默认域名。 (issue 12660, Windows Service Wrapper 2.7.0 变更日志)</li>
+<li>开发者: 添加新的扩展点以定义构建步骤环境过滤器(当前处于 beta 阶段)。 (issue 62014)</li>
+<li>开发者: 添加对于 alert-* 类的主题支持。 (暗黑主题仓库)</li>
+<li>开发者: 添加 alert-success 横幅。 (issue 62747)</li>
+<li>开发者: 允许主题化文本区域句柄。 (暗黑主题仓库)</li>
+<li>开发者: 需要 FingerprintStorage 描述符，以便可以从配置页面进行配置。 (issue 63022)</li>
+<li>开发者: 移除 BeanBuilder.loadBeans(String) 方法。 (pull 4838)</li>
+<li>内部: 允许在 Jenkins 核心单元测试中使用 JUnit 5。 基于 Jenkins Test Harness 的集成测试仍然需要 JUnit 4。 (pull 4699)</li>
+<li>内部: 使用内置的 WinSW 功能进行权限提升和强加密。 (pull 4823, Windows Agent Installer 2.0 变更日志)</li>
+<li>内部: 升级到 Remoting 4.5。 这会将 agent.jar 和 remoting.jar 切换到 CDF 拥有的代码签名证书。 (pull 4832, Remoting 4.4 变更日志, Remoting 4.5 变更日志)</li>
+<li>内部: 从布局中删除内联资源。 (issue 60866)</li>
+<li>内部: 记录 Jenkins 核心问题分类指南。 (文档)</li>
+</ul>
+
+<h2 id="2-247-2020-07-21">2.247 (2020-07-21)</h2>
+
+<blockquote>
+<p>此发行版本未在发行基础设施上正确签名。 jenkins.war 的发行已被暂停，不建议使用。 安装程序和本地软件包未发布。
+在这次发布中没有显著的变更。</p>
+</blockquote>
+
+<h2 id="2-246-2020-07-21">2.246 (2020-07-21)</h2>
+
+<blockquote>
+<p>此发行版本未在发行基础设施上正确签名。 jenkins.war 的发行已被暂停，不建议使用。 安装程序和本地软件包未发布。
+在这次发布中没有显著的变更。</p>
+</blockquote>
+
+<h2 id="2-245-2020-07-15">2.245 (2020-07-15)</h2>
+
+<blockquote>
+<p>由于发布基础设施的问题导致的意外，Windows MSI 软件包尚未发布。 解决方法是，手动下载并替换 JENKINS_HOME 中的 jenkins.war。
+* 重要的安全修复 (安全公告)</p>
+</blockquote>
+
+<h2 id="2-244-2020-07-07">2.244 (2020-07-07)</h2>
+
+<ul>
+<li>清理更多与工作空间相关的目录，例如 Pipeline 库中的 @libs。 (issue 41805)</li>
+<li>更新意大利语本地化。 (pull 4810)</li>
+<li>内部: JavaScript 重构，为表单布局的现代化做准备。 (issue 56109)</li>
+<li>开发者: 扩展 DownloadService.Downloadable API，使其更易于使用默认 ID。 (issue 62572)</li>
+<li>开发者: 引入 API 来检查 ParameterDefinition 的有效性。 (issue 62889)</li>
+<li>开发者: 使插件可以访问 WorkspaceList.COMBINATOR。 (issue 41805)</li>
+</ul>
+
+<h2 id="2-243-2020-06-30">2.243 (2020-06-30)</h2>
+
+<ul>
+<li>更新管理页面上链接的样式。 (pull 4782)</li>
+<li>重新设计样式并改善 RSS 提要栏的可访问性。 (issue 62750)</li>
+<li>Winstone 5.10: 添加 &ndash;httpsRedirectHttp 选项可激活 HTTP 请求自动重定向到 HTTPs。 (pull 4811)</li>
+<li>Winstone 5.10: 将 Jetty 从 9.4.27.v20200227 更新到 9.4.30.v20200611。 (pull 4811, 9.4.28.v20200408 变更日志, 9.4.29.v20200521 变更日志, 9.4.30.v20200611 变更日志)</li>
+<li>Winstone 5.10: 修复 &ndash;httpKeepAliveTimeout 选项无效的问题(由 2.224 引入的缺陷回归)。 (issue 61823)</li>
+<li>配置 SCM 触发器后可以优雅地关闭。 (issue 62695)</li>
+<li>开发者: 允许 f:repeatableHeteroProperty 从封闭的 f:entry 获取 field 属性。 (pull 4807)</li>
+<li>开发者: 从 User.toString() 中的 fullName 切换到 id。 (issue 62688)</li>
+<li>开发者: 现在可以通过 LabelExpression.autoComplete() 获得标签的自动完成功能。 弃用 hudson.model.AbstractProject.LabelValidator，推荐使用 jenkins.model.labels.LabelValidator。 但是旧版本还具有新的 checkItem() 方法，以允许其验证“非 Project” 项目。 弃用 hudson.model.AbstractProject.DescriptorImpl.validateLabelExpression()，推荐使用 LabelExpression.validate() (该方法可以接受任何种类的 Item 对象，而不仅仅是 AbstractProjects)。 汇总 LabelValidator 报告的所有告警与错误（包括旧的和新的）。 (issue 26097)</li>
+</ul>
+
+<h2 id="2-242-2020-06-23">2.242 (2020-06-23)</h2>
+
+<ul>
+<li>在安装了私有源插件的情况下浏览至插件管理时，不会记录异常(由 2.240 引入的缺陷回归)。 (issue 62622)</li>
+<li>使用暗黑主题时，删除“永久保留这次构建”的白色背景。 (pull 4814, 暗黑主题插件)</li>
+<li>重新设置超链接的样式，使其看起来更现代、更易读。 (issue 62698)</li>
+<li>在设置页面上更新计划程序的日语消息。 (pull 4783)</li>
+<li>保存任务配置时，修复选择参数的 IllegalArgumentException。 (issue 61438, Stapler 1.260 changelog)</li>
+<li>将数据导出为 JSON 时保证编码控件和替代字符的正确性。 (pull 4813, Stapler 1.260 变更日志)</li>
+<li>法语文档中的 esclave 替换为 agent。 (issue 62714)</li>
+<li>开发者: 添加实验性的外部指纹存储（External Fingerprint Storage） API。 (issue 62345, pull 4731, JEP-226, 参考实施)</li>
+<li>开发者: 引入新的指纹API方法： Fingerprint#getPersistedFacets()、Fingerprint#delete(String) 和与文件无关的 CRUD 方法。 弃用 Fingerprint#save(File)。 (issue 62345, pull 4731, Fingerprint API Javadoc)</li>
+</ul>
+
+<h2 id="2-241-2020-06-16">2.241 (2020-06-16)</h2>
+
+<ul>
+<li>还原在“任务配置”页面、“帮助”页面和其他控件上的颜色(由 2.239 引入的缺陷回归)。 (pull 4781)</li>
+<li>将箭头图标从图片转换为 CSS。 (issue 62496)</li>
+<li>重新设置侧边栏小部件的样式，以具有更现代的外观。 (issue 62175)</li>
+<li>开发者: 插件现在可以更轻松地添加对在流水线中使用构建步骤的支持，并且可以访问相应的环境变量（例如，来自工具/环境块或 withEnv 之类的步骤）。 fingerprint 和 archiveArtifacts 流水线步骤将不再应用任何环境替代。 (issue 29144)</li>
+</ul>
+
+<h2 id="2-240-2020-06-08">2.240 (2020-06-08)</h2>
+
+<ul>
+<li>使 RSS 字段和与代理断开连接的图片对于暗黑主题透明展示。 (pull 4772)</li>
+<li>当存在较新版本的插件，但由于不满足要求而不能提供时，也在插件管理器中显示。 (issue 62332)</li>
+<li>在登录界面添加对暗黑主题的支持。 (issue 62515, pull 4673, 暗黑主题仓库)</li>
+<li>将捆绑的 Script Security Plugin 从 1.71 更新到 1.73。 (pull 4769)</li>
+<li>恢复新项目和任务配置页面上的背景颜色。 (pull 4771)</li>
+<li>修复模式关闭后按钮逗留一段时间的问题 (由 2.233 引入的缺陷回归)。 (pull 4770)</li>
+<li>用户在配置文件中设置自定义时区后，在“构建历史记录”小部件中显示正确的时间。 (issue 61972)</li>
+<li>内部: 删除非标准的 showDetails 内联资源。 (issue 60866)</li>
+</ul>
+
+<h2 id="2-239-2020-06-03">2.239 (2020-06-03)</h2>
+
+<ul>
+<li>发布 &lsquo;alpha&rsquo; 版的暗黑主题。 (issue 60924, pull 4752, 暗黑主题仓库)</li>
+<li>修复显示给具有扩展读取权限的用户的禁用文本区域的标记预览问题。 (issue 62433)</li>
+<li>使“管理 Jenkins” 中的 CLI 链接对具有“全局/系统读取”权限的用户可见。 (pull 4739)</li>
+<li>通过在登录表单中为用户名和密码字段添加 aria 标签来提高可访问性。 (issue 62421)</li>
+<li>在“可扩展文本框”配置表单元素中实现只读模式。 (issue 62434)</li>
+<li>性能: 显示列表视图时，通过任务列表减少调用和迭代次数。 (issue 20052)</li>
+<li>从“安装向导”的建议插件中删除 Subversion Plugin。 (issue 62477)</li>
+<li>指纹浏览器: 将指纹链接移至现有的指纹制品文本中。 (issue 62470)</li>
+<li>允许具有“全局/管理”权限的用户配置节点监视。 (issue 62264)</li>
+<li>开发者: 添加对 CSS 变量的支持，在主题中很有用。 (issue 60924, pull 4752, 暗黑主题仓库)</li>
+<li>内部: 如果 SlaveComputer#_connect 失败，则从原始线程中打印堆栈跟踪。 (pull 4754)</li>
+<li>开发者: 添加 CSS 和 JavaScript 的源映射。 (issue 62473)</li>
+</ul>
+
+<h2 id="2-238-2020-05-25">2.238 (2020-05-25)</h2>
+
+<ul>
+<li>修复代理启动期间涉及自定义记录器的死锁(由 2.231 引入的缺陷回归)。 (issue 62181)</li>
+<li>在 Jenkins-CLI -auth 参数中支持 Bearer token。 (pull 4673)</li>
+<li>添加对&rsquo;节点监视配置&rsquo;和配置云的系统读取支持。 (issue 61206)</li>
+<li>添加“代理/扩展读取”支持以查看代理配置、系统信息和日志。 (issue 61206)</li>
+<li>解决 Computer#getLogDir 中的线程安全问题。 (pull 4730)</li>
+<li>改进侧边栏任务列表，以提高美观性和可访问性。 (issue 61973)</li>
+<li>允许具有“全局/管理”权限的用户从磁盘重新加载配置。 (issue 61458)</li>
+<li>开发者: 将对 permissions 属性的支持添加到 task.jelly。 (issue 61206)</li>
+<li>开发者: 将 hasAnyPermissions API 添加到 Functions 中，以允许视图调用它。 (issue 61206)</li>
+<li>开发者: 将不建议使用的 Jenkins 核心库依赖项添加到 BOM。 (pull 4702)</li>
 </ul>
 
 </div>
@@ -385,6 +472,21 @@ install-plugins 本质上做的事情就只是将插件从云端下载到 JENKIN
 
           
 
+<h2>参考</h2>
+<ul>
+	
+	<li><a href="/wechat/articles/2020/05/2020-05-25-weekly-release/">Jenkins 每周版更新</a></li>
+	
+	<li><a href="/wechat/articles/2020/04/2020-04-20-weekly-release/">Jenkins 每周版更新</a></li>
+	
+	<li><a href="/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/">Jenkins 每周版更新</a></li>
+	
+	<li><a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/">Jenkins 长期支持版更新</a></li>
+	
+	<li><a href="/wechat/articles/2019/05/2019-05-29-jenkins-release/">Jenkins 2.176~2.178版本更新</a></li>
+	
+</ul>
+
         </div>
       </div>
       
@@ -395,14 +497,14 @@ install-plugins 本质上做的事情就只是将插件从云端下载到 JENKIN
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 自动化安装插件”
-  </a> 更新于：May 7, 2019
+    “Jenkins 每周版更新”
+  </a> 更新于：July 31, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/07/2020-07-31-weekly-release.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -425,15 +527,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
             </a>
           </li>
         
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/release">
+              release
+            </a>
+          </li>
+        
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/07/2020-07-31-weekly-release/" class="link">
-              Jenkins 每周版更新
-            </a>
-          </li>
         
       
         
@@ -784,6 +886,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="link">
+              Jenkins 自动化安装插件
+            </a>
+          </li>
+        
       
         
         
@@ -953,7 +1061,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/05\/2019-05-07-jenkins-install-plugins-shell\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/07\/2020-07-31-weekly-release\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

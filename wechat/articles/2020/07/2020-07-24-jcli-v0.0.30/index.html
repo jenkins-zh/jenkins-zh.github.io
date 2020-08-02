@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Jenkins CLI 命令行 - Jenkins 中文社区</title>
+  <title>Jenkins CLI 命令行 v0.0.30 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="jcli-v0.0.21 发布">
+  <meta name="description" content="jcli-v0.0.30 发布">
   
   
   <meta name="keywords" content="jcli 版本发布">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins CLI 命令行" />
-<meta property="og:description" content="jcli-v0.0.21 发布" />
+<meta property="og:title" content="Jenkins CLI 命令行 v0.0.30" />
+<meta property="og:description" content="jcli-v0.0.30 发布" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-17-jcli-v0.0.21/" /><meta property="article:published_time" content="2019-10-17T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-10-17T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-24-jcli-v0.0.30/" /><meta property="article:published_time" content="2020-07-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-07-24T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins CLI 命令行">
-<meta itemprop="description" content="jcli-v0.0.21 发布">
+<meta itemprop="name" content="Jenkins CLI 命令行 v0.0.30">
+<meta itemprop="description" content="jcli-v0.0.30 发布">
 
 
-<meta itemprop="datePublished" content="2019-10-17T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-10-17T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="74">
+<meta itemprop="datePublished" content="2020-07-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="93">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins CLI 命令行"/>
-<meta name="twitter:description" content="jcli-v0.0.21 发布"/>
+<meta name="twitter:title" content="Jenkins CLI 命令行 v0.0.30"/>
+<meta name="twitter:description" content="jcli-v0.0.30 发布"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -242,7 +242,7 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-20-online-activity/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 线上技术交流 ">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 每周版更新 ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -252,7 +252,7 @@ var trackOutboundLink = function(id, url) {
 		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-27-jenkins-in-hacktoberfest/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 喊你参加 Hacktoberfest">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-15-jenkins-infrastructure-stats-updates-and-aws-sponsorship/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 基础设施：统计、更新、AWS 赞助">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -272,13 +272,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins CLI 命令行</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins CLI 命令行 v0.0.30</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      jcli-v0.0.21 发布
+      jcli-v0.0.30 发布
     </div>
   
 
@@ -291,48 +291,51 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="great-wall.jpeg" alt="great-wall" /></p>
+<p><img src="jenkins-cli.png" alt="jenkins-cli" /></p>
 
-<p>Jenkins CLI 可以帮忙你轻松地管理 Jenkins。不管你是一名插件开发者、管理员或者只是一个普通的 Jenkins 用户，它都是为你而生的！</p>
+<p>截止到编辑本文时，GitHub 上统计到的<a href="jcli-download">下载量</a>为：7,101(+453)次。GitHub 上的 <a href="github-star">Star</a> 数为187(+7)，码云上的 <a href="gitee-star">Star</a> 数为172(+21)。</p>
 
-<p>项目地址：<a href="https://github.com/jenkins-zh/jenkins-cli">https://github.com/jenkins-zh/jenkins-cli</a></p>
+<p>如果要把 Jenkins 和现有的系统进行对接的话，很多人可能会遇到一个问题，当调用 API 触发流水线构建后，如何能拿到构建的 ID 呢？</p>
 
-<h2 id="本次发布的更新">本次发布的更新</h2>
+<p>要回答这个问题的话，我们首先需要对 Jenkins 的相关机制有一些了解。每当触发一个任务时，Jenkins 会先把这个请求放到一个队列中，当有了可以运行该任务的计算节点（agent）之后，Jenkins 的 master 会把任务调度到对应的节点上去，此时就开始真正地运行了。</p>
 
-<p>本次发布，主要增加了下载归档文件以及命令行补全的功能。</p>
+<p>换句话说，任务的调度是异步进行的。因此，触发构建后，是无法拿到一个构建 ID 的，因为此时还没有开始构建。</p>
+
+<p>我在这里给出的方案是：在 Jenkins 上安装插件 <a href="https://plugins.jenkins.io/pipeline-restful-api/">Pipeline restFul API v0.9</a> 的后，可以通过 <a href="https://github.com/jenkins-zh/jenkins-cli/releases/tag/v0.0.30">Jenkins CLI v0.0.30</a> 来解决这个问题，具体使用方法如下：</p>
+
+<p><code>jcli job build job/devops/ -b --wait --columns Number --no-headers</code></p>
+
+<p>输出结果为：<code>36</code></p>
+
+<p>下面是本次版本发布中所包含的内容：</p>
 
 <h2 id="功能">🚀 功能</h2>
 
 <ul>
-<li>增加为 jcli 生成完整文档的子命令 (#174) @LinuxSuRen</li>
-<li>支持流水线 input 的输入 (#164) @LinuxSuRen</li>
-<li>增加下载归档文件的子命令 (#185) @LinuxSuRen</li>
+<li>增加自我升级的功能，支持升级到任意版本 (#431) @LinuxSuRen</li>
+<li>支持更新流水线后立即执行 (#429) @LinuxSuRen</li>
+<li>通过 homebrew 安装的话集成 man 帮助手册 (#391) @LinuxSuRen</li>
+<li>支持触发流水线并获取构建 ID (#434) @LinuxSuRen</li>
+<li>为插件上传命令增加超时时间 (#428) @LinuxSuRen</li>
+<li>为插件检查更新命令增加超时时间 (#422) @LinuxSuRen</li>
 </ul>
 
 <h2 id="缺陷修复">🐛 缺陷修复</h2>
 
 <ul>
-<li>为每个请求增加权限信息 (#187) @yJunS</li>
-<li>修复了首次安装后无法打印版本信息的问题 (#186) @zirmax</li>
+<li>修复无法在需要有 HTTP 代理的情况下连接 JNLP 节点 (#420) @LinuxSuRen</li>
 </ul>
 
 <h2 id="文档完善">📝 文档完善</h2>
 
 <ul>
-<li>增加中、英文项目自述文件的链接 (#194) @LinuxSuRen</li>
+<li>将 jcli 的文档部署到了 gitbook (#426) @LinuxSuRen</li>
 </ul>
 
 <h2 id="维护">👻 维护</h2>
 
 <ul>
-<li>移除无用的代码行 (#178) @LinuxSuRen</li>
-<li>为 job 客户端增加测试代码 (#190) @LinuxSuRen</li>
-<li>为idea 增加 git 提交时忽略的文件配置 (#199) @LinuxSuRen</li>
-<li>增加 jcli completion 的命令描述 (#188) @LinuxSuRen</li>
-<li>绑定代码质量和构建状态 (#184) @LinuxSuRen</li>
-<li>为 user client 增加测试代码 (#180) @LinuxSuRen</li>
-<li>增加代码仓库自动备份的流水线 (#173) @LinuxSuRen</li>
-<li>增加下载数量以及代码仓库大小的徽标 (#168) @LinuxSuRen</li>
+<li>多个依赖的版本更新 @dependabot-preview</li>
 </ul>
 
 </div>
@@ -359,15 +362,15 @@ var trackOutboundLink = function(id, url) {
 <h2>参考</h2>
 <ul>
 	
-	<li><a href="/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/">Jenkins CLI 命令行 v0.0.24</a></li>
-	
-	<li><a href="/wechat/articles/2019/11/2019-11-28-jcli-v0.0.23/">Jenkins CLI 命令行 v0.0.23</a></li>
-	
-	<li><a href="/wechat/articles/2019/11/2019-11-04-jcli-v0.0.22/">Jenkins CLI 命令行 v0.0.22</a></li>
-	
-	<li><a href="/wechat/articles/2020/07/2020-07-24-jcli-v0.0.30/">Jenkins CLI 命令行 v0.0.30</a></li>
-	
 	<li><a href="/wechat/articles/2020/07/2020-07-02-jcli-v0.0.29/">Jenkins CLI 命令行 v0.0.29</a></li>
+	
+	<li><a href="/wechat/articles/2020/05/2020-05-07-jcli-v0.0.28/">Jenkins CLI 命令行 v0.0.28</a></li>
+	
+	<li><a href="/wechat/articles/2020/04/2020-04-10-jcli-v0.0.27/">Jenkins CLI 命令行 v0.0.27</a></li>
+	
+	<li><a href="/wechat/articles/2020/02/2020-02-24-jcli-v0.0.26/">Jenkins CLI 命令行 v0.0.26</a></li>
+	
+	<li><a href="/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/">Jenkins CLI 命令行 v0.0.24</a></li>
 	
 </ul>
 
@@ -381,14 +384,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-17-jcli-v0.0.21/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-24-jcli-v0.0.30/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins CLI 命令行”
-  </a> 更新于：October 17, 2019
+    “Jenkins CLI 命令行 v0.0.30”
+  </a> 更新于：July 24, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/10/2019-10-17-jcli-v0.0.21.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/07/2020-07-24-jcli-v0.0.30.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -415,7 +418,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/10\/2019-10-17-jcli-v0.0.21\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/07\/2020-07-24-jcli-v0.0.30\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

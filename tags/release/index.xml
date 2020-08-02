@@ -6,10 +6,20 @@
     <description>Recent content in Release on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/release/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins 每周版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/</guid>
+      <description>2.249 (2020-07-24)  为某些构建步骤构建环境时，不再抛出异常（由 2.248 引入的缺陷的回归）。 特别是，对 Powershell 插件中的 Powershell 步骤有影响。 (issue 63168) 对齐插件管理器表标题。 (pull 4858) 修复了某些元素的标题（例如授权矩阵）的样式错误的问题。 (pull 4861)  2.248 (2020-07-21)  由于发布基础设施的问题导致的意外，Windows MSI 软件包尚未发布。 解决方法是，手动下载并替换 JENKINS_HOME 中的 jenkins.war。
+  停止支持 .NET Framework 2.0 将 Jenkins 服务和代理作为 Windows 服务启动。 现在需要 .NET Framework 4.0 或更高版本。 (公告, 升级指南, issue 60005, issue 61862, Windows 支持策略) 将 Windows Service Wrapper（WinSW）从基于 .NET Framework 2.0 的 2.3.0 可执行文件更新为基于 .NET Framework 4.0 的 2.9.0。 包括多项改进和问题修复。 最值得注意的是，如果需要，服务安装程序现在将要求权限提升。 (变更摘要, WinSW 完整的变更日志, Windows Agent Installer 2.</description>
+    </item>
     
     <item>
       <title>Jenkins 每周版更新</title>
