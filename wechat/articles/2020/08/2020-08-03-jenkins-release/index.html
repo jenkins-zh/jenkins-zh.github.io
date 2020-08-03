@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Jenkins 插件开发之旅：两天内从 idea 到发布(下篇) - Jenkins 中文社区</title>
+  <title>Jenkins 长期支持版更新 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心">
+  <meta name="description" content="本次更新的版本包括：2.222.2~2.235.2">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)" />
-<meta property="og:description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心" />
+<meta property="og:title" content="Jenkins 长期支持版更新" />
+<meta property="og:description" content="本次更新的版本包括：2.222.2~2.235.2" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" /><meta property="article:published_time" content="2019-05-08T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-08T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-03-jenkins-release/" /><meta property="article:published_time" content="2020-08-03T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-03T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)">
-<meta itemprop="description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心">
-
-
-<meta itemprop="datePublished" content="2019-05-08T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="485">
+<meta itemprop="name" content="Jenkins 长期支持版更新">
+<meta itemprop="description" content="本次更新的版本包括：2.222.2~2.235.2">
 
 
+<meta itemprop="datePublished" content="2020-08-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-08-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="286">
 
-<meta itemprop="keywords" content="jenkins,maven,jira," />
+
+
+<meta itemprop="keywords" content="jenkins,release," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)"/>
-<meta name="twitter:description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心"/>
+<meta name="twitter:title" content="Jenkins 长期支持版更新"/>
+<meta name="twitter:description" content="本次更新的版本包括：2.222.2~2.235.2"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -204,21 +204,23 @@ var trackOutboundLink = function(id, url) {
 
 
 
+
+
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            Wang Donghui
+            zhaoying
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          a long-time Jenkins user and contributor
+          devops jenkins
         </p>
       
-      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/zhaoying818" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -226,50 +228,17 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
+  <div>
+    作者：<span class="originalAuthor">jenkinsci</span>
+    <div>
+      <a class="originalLink" href="" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">内容目录</p>
-  	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#托管插件">托管插件</a>
-<ul>
-<li><a href="#准备工作">准备工作</a>
-<ul>
-<li><a href="#查找类似的插件">查找类似的插件</a></li>
-<li><a href="#命名规约">命名规约</a>
-<ul>
-<li><a href="#artifactid">artifactId</a></li>
-<li><a href="#插件名称">插件名称</a></li>
-<li><a href="#groupid">groupId</a></li>
-<li><a href="#java-源代码">Java 源代码</a></li>
-<li><a href="#提交消息">提交消息</a></li>
-</ul></li>
-<li><a href="#license">License</a></li>
-<li><a href="#要求注册的账号">要求注册的账号</a></li>
-</ul></li>
-<li><a href="#发起托管请求">发起托管请求</a></li>
-<li><a href="#创建-wiki-页面">创建 wiki 页面</a></li>
-<li><a href="#开启-ci-构建">开启 CI 构建</a></li>
-<li><a href="#申请上传权限">申请上传权限</a></li>
-<li><a href="#发布插件">发布插件</a>
-<ul>
-<li><a href="#前提">前提</a></li>
-<li><a href="#maven-要使用的-artifactory-凭据">Maven 要使用的 Artifactory 凭据</a></li>
-<li><a href="#配置-github-以接受你的-ssh-key">配置 GitHub 以接受你的 SSH key</a></li>
-<li><a href="#执行发布">执行发布</a></li>
-</ul></li>
-<li><a href="#为插件分类">为插件分类</a></li>
-</ul></li>
-<li><a href="#总结">总结</a></li>
-<li><a href="#参考">参考</a></li>
-</ul></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -282,17 +251,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-09-jenkins-release/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Jenkins 版本发布 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 自动化安装插件">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 每周版更新">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -312,13 +273,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 长期支持版更新</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心
+      本次更新的版本包括：2.222.2~2.235.2
     </div>
   
 
@@ -331,250 +292,76 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="sunset.png" alt="江边落日" /></p>
+<p><img src="great-wall.jpeg" alt="great-wall" /></p>
 
-<p>本文分上下两篇，上篇介绍了从产生 idea 到插件开发完成的过程；
-下篇将介绍将插件托管到 Jenkins 插件更新中心的一系列过程。</p>
-
-<h2 id="托管插件">托管插件</h2>
-
-<p>托管插件包括一系列流程步骤。
-笔者完成了它所有步骤（包括非必须的步骤），其中主要有两个具有标志性的任务：
-- 插件代码被托管在 jenkinsci GitHub 组织的一个仓库，然后作者拥有它的管理权限。<br />
-  笔者插件的代码仓库为：<a href="https://github.com/jenkinsci/maven-snapshot-check-plugin">jenkinsci/maven-snapshot-check-plugin</a> 。
-- 你可以将插件发布到 Jenkins 项目的 Maven 仓库，它是 Jenkins 项目所使用的更新站点的数据来源。</p>
-
-<h3 id="准备工作">准备工作</h3>
-
-<p>在请求插件托管之前，需要完成以下几个步骤。</p>
-
-<h4 id="查找类似的插件">查找类似的插件</h4>
-
-<p>Jenkins 社区欢迎任何人的贡献，但为了让 Jenkins 用户受益，
-它要求查找解决相同或类似问题的插件，看看是否可以与现有的维护人员联手。
-可以在 <a href="https://plugins.jenkins.io">https://plugins.jenkins.io</a> 查看所有的插件，
-以确认是否已有类似的插件实现了你计划实现的功能。
-笔者在之前已进行过查找，并没有找到可以实现笔者计划实现的功能的类似插件。</p>
-
-<h4 id="命名规约">命名规约</h4>
-
-<p>Jenkins 制定了一些与插件相关的命名规约。
-插件开发者要确保遵循这些命名规约。</p>
-
-<h5 id="artifactid">artifactId</h5>
-
-<p>插件的 artifactId 被用于文件基本名称，是 Jenkins 插件和更新站点的唯一标识。<br />
-它需要遵循一些发布规约：
-- 使用小写 ID ，并根据需要使用连字符分隔术语。
-- 除非名称有任何意义，否则不要在 ID 中包含 jenkins 或 plugin 。</p>
-
-<h5 id="插件名称">插件名称</h5>
-
-<p>插件的名称在 Jenkins UI 和其它地方（如：插件站点）展示给用户。<br />
-如果可以，建议使用简短的描述性名称，如 <em>Subversion</em> 。<br />
-笔者所写的插件的名称为：<em>Maven SNAPSHOT Check</em> 。</p>
-
-<h5 id="groupid">groupId</h5>
-
-<p>推荐使用 <code>io.jenkins.plugins</code> 或 <code>org.jenkins-ci.plugins</code> 作为 groupId 。
-但是不禁止其他组织 ID ，除非它们是恶意的（例如引用与你没有关系的组织）。
-笔者所写的插件使用的 groupId 为: <code>org.jenkins-ci.plugins</code> 。</p>
-
-<h5 id="java-源代码">Java 源代码</h5>
-
-<p>Jenkins 项目一般遵循 <a href="https://jenkins.io/doc/developer/publishing/style-guides/www.oracle.com/technetwork/java/codeconvtoc-136057.html">Oracle Java 代码规约</a>，
-但是并没有很好的强制甚至在核心组件中。
-个别的插件维护者有时会选择使用不同的风格指南作为插件。
-笔者日常使用 IDEA 进行开发，之前安装了「阿里 Java 规约插件」，
-因而使用它作为编码规约。</p>
-
-<h5 id="提交消息">提交消息</h5>
-
-<p>Git 提交消息应该从引用与之相关的 JIRA 问题开始（如果适用），
-然后在第一行进行简短的总结，并在随后的行中提供更多详细信息。例如：</p>
-
-<pre><code>[JENKINS-00000] Frobnicate the widget
-</code></pre>
-
-<p>如果给定的提交修复了指定的问题，
-那么使用以下前缀中的任何一个将会自动化解决相关的 JIRA 问题。</p>
-
-<pre><code>[FIX JENKINS-00000] Frobnicate the widget
-[FIXED JENKINS-00000] Frobnicate the widget
-[FIXES JENKINS-00000] Frobnicate the widget
-</code></pre>
-
-<p>由于还没过将插件托管，笔者并没有遵循该规约，
-等插件发布后，笔者将考虑遵循该规约。</p>
-
-<h4 id="license">License</h4>
-
-<p>Jenkins 项目分发的所有插件都需要是免费的开源软件。
-这适用于插件源代码及其所有依赖项。
-要确保在 <code>pom.xml</code> 文件和仓库中的 <code>LICENSE</code> 文件指定协议。
-官方建议使用 MIT license ，它用于 Jenkins 核心和大多数插件和库，
-但是任何 OSI 批准的开源 license 都可以。
-笔者这里使用了 MIT license 。</p>
-
-<h4 id="要求注册的账号">要求注册的账号</h4>
-
-<p>通过 Jenkins 项目更新站点分发的插件需要托管在 <a href="https://github.com/jenkinsci">jenkinsci GitHub 组织</a>中，
-因此需要在 GitHub 上有一个账号，并且需要有一个公共仓库来存放插件源代码。</p>
-
-<p>为了完整地发布你的插件，需要注册一个 <a href="https://accounts.jenkins.io/">Jenkins 社区帐号</a>，
-它可以让你访问 <a href="https://issues.jenkins-ci.org/">JIRA</a>，<a href="https://wiki.jenkins-ci.org/">wiki</a> 和 <a href="https://repo.jenkins-ci.org/">Maven 仓库</a> 。</p>
-
-<h3 id="发起托管请求">发起托管请求</h3>
-
-<blockquote>
-<p>注意：Jenkins 官方自动化流程使用更容易实现的 fork + 删除的方式（见下文），而不是转移仓库所有者。</p>
-</blockquote>
-
-<p>登录到 <a href="https://issues.jenkins-ci.org/">JIRA</a> 然后在 <a href="https://issues.jenkins-ci.org/browse/HOSTING">HOSTING</a> 项目创建一个问题。
-请确保按照描述填写所有字段。
-Jenkins 项目成员将在几天内审查你的请求。
-如果审查人员要求你更改，那么请按照要求进行更改。</p>
-
-<p>笔者提交的申请为：<a href="https://issues.jenkins-ci.org/browse/HOSTING-750">HOSTING-750</a>，
-比较幸运的是当天凌晨（北京时间）笔者的请求就被审查，
-正巧那时笔者未眠，于是随后按要求进行了更改并在不久后该申请被审批通过。</p>
-
-<p>一旦满足了所有的需求，你的仓库将被 fork 到 jenkinsci 组织中，
-并且你将被邀请加入该组织，并且将为你在 JENKINS 项目中创建 JIRA 组件。</p>
-
-<p>此时，将要求你删除 Jenkins 从中 fork 的仓库。
-之后你可以通过再次从 <code>jenkinsci</code> 那里 fork 来重新创建它。
-这将确保 <code>jenkinsci</code> 仓库是 Github 上网络图的根。
-这意味着：
-- 不会混淆哪个仓库是权威仓库。
-- 即使在 GitHub 上没有大量的关注者，<a href="https://help.github.com/articles/searching-in-forks/">源代码搜索</a>也会成功。
-- 其他人更可能在 <code>jenkinsci</code> 仓库中提交 pull request（这是协作的理想选择）。</p>
-
-<h3 id="创建-wiki-页面">创建 wiki 页面</h3>
-
-<p>尽管这对发布插件来说这不是严格要求的，但最好为插件创建一个 wiki 页面来存储文档。关于如何执行此操作的详细信息，请参阅<a href="https://jenkins.io/doc/developer/publishing/wiki-page">插件 wiki 页面指南</a>。</p>
-
-<p>笔者所写的插件的 wiki 页面为：<a href="https://wiki.jenkins.io/display/JENKINS/Maven+SNAPSHOT+Check+Plugin">Maven SNAPSHOT Check Plugin</a> 。
-其间除了官方文档，笔者还参考了其它插件 wiki 页面的排版。</p>
-
-<h3 id="开启-ci-构建">开启 CI 构建</h3>
-
-<p>Jenkins 项目托管了一个 Jenkins 实例来执行插件的持续集成构建。
-官方推荐通过在插件的 Github 仓库根目录创建一个 Jenkinsfile，
-为在 Jenkinsci Github 组织中的插件设置 CI 构建。
-典型的插件构建（ Maven 或 Gradle ）只需在 Jenkinsfile 中包含以下语句即可运行：</p>
-
-<pre><code>buildPlugin()
-</code></pre>
-
-<h3 id="申请上传权限">申请上传权限</h3>
-
-<p>在源代码被 fork 到 <code>jenkinsci</code> 组织后，需要提交一个上传权限请求。
-按照 <a href="https://github.com/jenkins-infra/repository-permissions-updater/">jenkins-infra/repository-permissions-updater/</a> 仓库的 README 文件中所说的来做就可以。</p>
-
-<p>Jenkins 项目在 <a href="https://repo.jenkins-ci.org/">Artifactory</a> 上托管 Maven 制品，例如核心和插件发布。
-它的权限系统与 Github 是独立的，
-限制了那些用户（由 Jenkins LDAP 帐户标识，与 wiki 和 JIRA 一样）可以上传。
-这个仓库包含 YAML 格式的 Artifactory 上传权限定义，
-以及将它们同步到 Artifactory 的工具。
-&gt; 先决条件：在申请权限之前，需要先用 Jenkins 社区帐号登录一次  <a href="https://repo.jenkins-ci.org/">Artifactory</a> 。</p>
-
-<p>要请求对制品（通常是插件）的上传权限，需要提交一个 PR ，
-该 PR 需要创建与申请上传权限相关的 YAML 文件。
-笔者所提交的 PR 为：<a href="https://github.com/jenkins-infra/repository-permissions-updater/pull/1107">Plugin: Permission for maven-snapshot-check-plugin</a> 。</p>
-
-<p>通过查看它可以看出该 PR 增加了一个文件：permissions/plugin-maven-snapshot-check.yml ，其内容如下：</p>
-
-<pre><code class="language-yaml">name: &quot;maven-snapshot-check&quot;
-github: &quot;jenkinsci/maven-snapshot-check-plugin&quot;
-paths:
-- &quot;org/jenkins-ci/plugins/maven-snapshot-check&quot;
-developers:
-- &quot;donhui&quot;
-</code></pre>
-
-<p>在创建 PR 后，会有帮助说明以及 checklist 让提交人对该 PR 进行检查确认。<br />
-等这个 PR 被审批后，插件开发者就会拥有该插件的发布权限。</p>
-
-<h3 id="发布插件">发布插件</h3>
-
-<h4 id="前提">前提</h4>
-
-<p>要先确认拥有发布该插件的权限。</p>
-
-<h4 id="maven-要使用的-artifactory-凭据">Maven 要使用的 Artifactory 凭据</h4>
-
-<p>需要告诉 Maven 访问 Artifactory 的凭据。
-登录 Artifactory ，从用户 profile 中获取<code>加密的密码</code>。
-在 <code>~/.m2/settings.xml</code> 文件配置 server 认证信息，如下所示：</p>
-
-<pre><code class="language-xml">&lt;settings xmlns=&quot;https://maven.apache.org/SETTINGS/1.0.0&quot;
-  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-  xsi:schemaLocation=&quot;https://maven.apache.org/SETTINGS/1.0.0
-                      https://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
-
-  &lt;servers&gt;
-    &lt;server&gt;
-      &lt;id&gt;maven.jenkins-ci.org&lt;/id&gt; 
-      &lt;username&gt;your_user_name_here&lt;/username&gt;
-      &lt;password&gt;your_encrypted_password_here&lt;/password&gt;
-    &lt;/server&gt;
-  &lt;/servers&gt;
-
-&lt;/settings&gt;
-</code></pre>
-
-<h4 id="配置-github-以接受你的-ssh-key">配置 GitHub 以接受你的 SSH key</h4>
-
-<p>当执行 release 时，Maven Release Plugin 会自动往仓库推送代码，
-所以需要<a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">配置 GitHub 以接受你的 SSH key</a> 。</p>
-
-<p>更多信息可以参考：<a href="https://help.github.com/articles/connecting-to-github-with-ssh/">GitHub help on SSH</a> 。</p>
-
-<h4 id="执行发布">执行发布</h4>
-
-<p>当 GitHub 和 Maven 凭据配置好后，
-执行一次发布应该很简单，只需要运行下面的命令：</p>
-
-<pre><code>mvn release:prepare release:perform
-</code></pre>
-
-<p>可能在执行发布时会遇到 &ldquo;401 Unauthorized&rdquo; 或 &ldquo;403 Forbidden&rdquo; 之类问题，
-这一般是 settings.xml 配置问题或是没有上传权限。
-一些公共的问题处理方案可以查看：<a href="https://wiki.jenkins.io/display/JENKINS/Hosting+Plugins#HostingPlugins-Workingaroundcommonissues">HostingPlugins-Workingaroundcommonissues</a>。</p>
-
-<p>插件发布后，8 小时内，将可以在插件更新中心看到它。</p>
-
-<p>笔者所写的 maven-snapshot-check 插件，
-在插件列表页的地址为：<a href="https://plugins.jenkins.io/maven-snapshot-check">https://plugins.jenkins.io/maven-snapshot-check</a> 。</p>
-
-<p>Jenkins 实例的插件管理页面的「可选插件」选项截图如下：
-<img src="maven-snapshot-check-available.png" alt="maven-snapshot-check-available" /></p>
-
-<h3 id="为插件分类">为插件分类</h3>
-
-<p>在 Jenkins <a href="https://plugins.jenkins.io/">插件列表页面</a>，可以对插件进行分类显示。</p>
-
-<p>要为插件添加一个分类，需要向 <a href="https://github.com/jenkins-infra/update-center2">jenkins-infra/update-center2</a> 仓库提交一个 PR 。
-笔者所提交的 PR 为：<a href="https://github.com/jenkins-infra/update-center2/pull/271">add maven-snapshot-check category</a> 。</p>
-
-<p>通过查看它可以看出该 PR 在 <code>src/main/resources/label-definitions.properties</code> 文件增加了一行，如下所示：</p>
-
-<pre><code>maven-snapshot-check=builder
-</code></pre>
-
-<h2 id="总结">总结</h2>
-
-<p>两天的 Jenkins 插件开发之旅（尤其是 04.24 晚上花了很多时间），
-让笔者了解了插件开发的基本知识，并在托管插件的过程中学到一些知识。
-然后在周末花了几个小时总结回顾，并将它写成文档。
-同时也希望此文能给 Jenkins 插件开发者入门带来一点帮助！</p>
-
-<h2 id="参考">参考</h2>
+<h2 id="2-235-2-2020-07-15">2.235.2 (2020-07-15)</h2>
 
 <ul>
-<li><a href="https://jenkins.io/doc/developer/publishing/requesting-hosting/">Guide to Plugin Hosting</a></li>
-<li><a href="https://jenkins.io/doc/developer/publishing/releasing/">Performing a Plugin Release</a></li>
+<li>重要的安全修复。 (安全公告)</li>
+<li>修复 &ndash;httpKeepAliveTimeout 选项无效的问题(由 2.235.1 引入的缺陷回顾)。 (issue 61823, pull 4812, Winstone 5.9.1 变更日志)</li>
+<li>修复模式关闭后按钮等待时间太久的问题(由 2.233 和 2.235.1 引入的缺陷回归)。 (issue 62560)</li>
+</ul>
+
+<h2 id="2-235-1-2020-06-17">2.235.1 (2020-06-17)</h2>
+
+<h3 id="自-2-235-以来的变更">自 2.235 以来的变更：</h3>
+
+<ul>
+<li>使插件管理可以再次支持 Internet Explorer 11 (由 2.231 引入的缺陷回归)。 (issue 62163)</li>
+<li>防止以 Java 11 运行时缺少 javax.annotation 类的导致的遥测告警(由 2.231 引入的缺陷回归)。 (issue 61920)</li>
+<li>修复代理启动期间涉及自定义记录器的死锁(由 2.231 引入的缺陷回归)。 (issue 62181)</li>
+<li>在类字段解组问题的情况下，防止 Old Data Monitor 插件加载失败。 (issue 62231)</li>
+</ul>
+
+<h3 id="自-2-222-4-以来的重大变更">自 2.222.4 以来的重大变更:</h3>
+
+<ul>
+<li>插件管理的各种改进，包括： 默认情况下，它不再显示所有可用的插件；使用搜索字段查找插件。 现在，默认情况下按人气对它们进行排序。 此外，类别不再用于对插件进行分组，而是将其显示为标签。 (issue 61166, pull 4580, pull 4513, pull 4588, pull 4534, pull 4591, pull 4535, pull 4589, pull 4584)</li>
+<li>将管理 Jenkins 页面上的条目进行分类，并以网格化显示。 (pull 4546)</li>
+<li>删除“自动刷新”功能，包括现在已过时的自动刷新遥测功能。 (pull 4503)</li>
+<li>具有扩展读取权限的用户现在将获得外观更具只读性的 UI。 (issue 61202, pull 4479, Read-only Jenkins Configuration blog post)</li>
+<li>允许具有“全局/系统读取”权限的用户查看关于 Jenkins 、插件管理、全局安全配置和系统日志。 (issue 61205, issue 61201, issue 61203, issue 61207, issue 61455, issue 61208, issue 61208)</li>
+<li>在具有全局/系统读取或项目/扩展读取权限的用户的只读配置表单上，区分已定义（*****）和未定义（N/A）密码。 (issue 61812)</li>
+<li>允许具有“全局/管理”权限的用户访问系统信息、准备关机和关于 Jenkins 的管理链接。 现在，具有该权限的用户也可以配置全局配置中的使用情况统计信息。 (issue 61456, issue 61453, issue 61457, issue 61455)</li>
+<li>尽可能使用浏览器提供的当前系统字体。 更改正文和标题的字体大小，以提高一致性和可读性。 (issue 60921)</li>
+<li>重新设置了按钮样式。 增加了对于大按钮、超链接样式按钮和图标样式按钮的支持。 (issue 61840)</li>
+<li>重新设置帮助图标的样式。 (pull 4663)</li>
+<li>改进告警横幅的样式，使其更具视觉吸引力并更好地匹配现有的用户界面组件。 现在，警报在显示时完全覆盖了导航栏，而不是仅覆盖导航栏的一部分。 (issue 61478)</li>
+<li>禁止将非管理员用户的错误堆栈跟踪作为核心功能。 (issue 60410)</li>
+</ul>
+
+<h2 id="2-222-4-2020-05-24">2.222.4 (2020-05-24)</h2>
+
+<ul>
+<li>当根目录 URL 配置指向先前配置的根目录 URL 时，防止表单验证出现 “404 Not Found” 错误（由 2.222.1 引入的缺陷回归）。 (issue 62133)</li>
+<li>升级到 Remoting 4.2.1，以解决 WebSockets 上的大量有效负载的问题。 需要具有 Remoting 4.2.1 或更高版本的配套 agent.jar。 (issue 61409, pull 4601, pull 4596, Remoting 4.2.1 变更日志, WebSockets 博客文章, JEP-222)</li>
+<li>更新 Groovy Init hooks，使其在任务配置修改后运行。 (issue 61694)</li>
+<li>修复安装向导中错误消息之间的间隔（由 2.222.1 引入的缺陷回归）。 (issue 61660)</li>
+<li>修复 git 插件之类的工具（这些工具会在 PATH 中搜索其可执行文件）的输入字段提示 (由 2.222.1 引入的缺陷回归)。 (issue 61711)</li>
+<li>删除只读用户在 textarea 表单元素下方的灰色条。 (issue 61284)</li>
+<li>在具有“全局/系统读取”或“项目/扩展读取”权限的用户的只读配置表单上，区分已定义（*****）和未定义（N/A）密码。 (issue 61812)</li>
+<li>具有扩展读取权限的用户现在将获得外观更具只读性的 UI。 (issue 61202, pull 4479, issue 61321, pull 4541)</li>
+</ul>
+
+<h2 id="2-222-3-2020-04-22">2.222.3 (2020-04-22)</h2>
+
+<ul>
+<li>重新启动时使用保存的全局构建丢弃配置。 (issue 61688)</li>
+<li>修复设置密码后代理表单验证的问题(由 2.222.1 引入的缺陷回归)。 (issue 61692)</li>
+<li>防止在没有工具安装程序元数据的情况下单击自定义更新中心的立即检查时的 NullPointerException。 (issue 60788)</li>
+<li>防止出现 &ldquo;Jenkins.instance is missing&rdquo; 的情况。 (pull 4525, issue 60454, issue 55070, issue 59992, issue 61192)</li>
+<li>开发者: 使 h.checkAnyPermission 和 <l:layout permissions="..."> 可以在非 AccessControlled 的对象上工作。 (issue 61465)</li>
+<li>开发者: 通过删除不推荐使用的 findbugs 注解来防止虚假的不推荐使用消息。 (issue 61279)</li>
+</ul>
+
+<h2 id="2-222-2-2020-04-22">2.222.2 (2020-04-22)</h2>
+
+<blockquote>
+<p>Jenkins 2.222.2 未打包或发布。 计划在 2.222.2 中进行的所有更改都包含在 2.222.3 中。</p>
+</blockquote>
+
+<ul>
+<li>Jenkins 2.222.2 未放置在制品仓库中或下载站点上。</li>
 </ul>
 
 </div>
@@ -608,14 +395,14 @@ developers:
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)”
-  </a> 更新于：May 8, 2019
+    “Jenkins 长期支持版更新”
+  </a> 更新于：August 3, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/08/2020-08-03-jenkins-release.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -639,26 +426,14 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/maven">
-              maven
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/jira">
-              jira
+            <a class="tag" href="/tags/release">
+              release
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
-              Jenkins 长期支持版更新
-            </a>
-          </li>
         
       
         
@@ -1009,6 +784,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/" class="link">
+              Jenkins 插件开发之旅：两天内从 idea 到发布(下篇)
+            </a>
+          </li>
+        
       
         
         
@@ -1187,7 +968,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/05\/2019-05-08-jenkins-plugin-develop-within-two-days-part02\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/08\/2020-08-03-jenkins-release\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
