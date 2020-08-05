@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Wechats - Jenkins 中文社区</title>
+  <title>Continuout Delivery - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
@@ -27,7 +27,7 @@
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
   
 
-  <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/wechat/index.xml">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/tags/continuout-delivery/index.xml">
   <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
@@ -40,16 +40,17 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Wechats" />
+<meta property="og:title" content="Continuout Delivery" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/" />
+<meta property="og:url" content="https://jenkins-zh.cn/tags/continuout-delivery/" />
+<meta property="og:updated_time" content="2020-08-05T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Wechats">
+<meta itemprop="name" content="Continuout Delivery">
 <meta itemprop="description" content="">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Wechats"/>
+<meta name="twitter:title" content="Continuout Delivery"/>
 <meta name="twitter:description" content=""/>
 
   
@@ -94,7 +95,7 @@ var trackOutboundLink = function(id, url) {
         <li class="f5 dib mr4" role="menuitem">
             
             
-          <a href="/wechat/" class="dim link gray "
+          <a href="/wechat/" class="dim link light-silver"
             >
             博客
               
@@ -197,7 +198,7 @@ var trackOutboundLink = function(id, url) {
     <div class="w-100 w-80-l ph0 ph4-l">
       <article class="w-100 nested-copy-line-height nested-links nested-img">
         <h1 class="primary-color-dark f2">
-          Wechats
+          Tag: Continuout Delivery
         </h1>
         <div class=" mid-gray f5 f4-l">
           
@@ -217,96 +218,18 @@ var trackOutboundLink = function(id, url) {
     
 
     <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="link primary-color dim">在安全防火墙内通过 WebHook 触发构建</a>
+      <a href="/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="link primary-color dim">在 Kubernetes 上使用 Argo 实现 CI/CD</a>
     </h1>
 
     <div class="lh-copy links">
       
-          谁说局域网里就不能带 GitHub 的 WebHook 玩？
-        
-
-        <a href="/wechat/articles/2019/01/2019-01-16-webhook-firewalls/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link primary-color dim">成为一名 Jenkins 贡献者：对新手友好的工单</a>
-    </h1>
-
-    <div class="lh-copy links">
+          持续集成和持续交付是一些人为之努力的目标。它让一切事物变得更简单。当然，市面上有许多 CI/CD 工具，但是随着 Kubernetes 的日渐盛行，所有这些工具都需要做相应的调整。比如说，Jenkins，这款非常成熟的 CI/CD 工具在全球范围内被广泛使用，但是这款工具缺乏创新并且感觉有点笨重。同样的话也适用于 Spinnaker。一款出色的企业解决方案拥有让工作深入开展下去的资源，但是让 CI/CD 工具以一种快速、整洁的方式升级不是一个理想的选择。还有其他的一些工具可以为更简单的工作流提供更多的支持。其中一个就是我们本文中将要介绍的 Argo。
+Argo 与众不同的地方在于它管理实际 CI/CD 的方式。它是专门为了 Kubernetes 开发的并且通过 CRD（Custom Resource Definitions）集成到 Kubernetes 中。它定义了一个新的名为‘工作流’的 CRD 。在这个工作流中你可以通过一个 yaml 格式的文件定义你需要执行的操作。每一步均运行在位于 Kubernetes 集群内它自己的 Docker 容器里面。
+argoproj/argo
+Argo/Argo CD/Argo CI Argo 项目有几个正在开发的项目仓库。Argo 是主项目，聚焦于 Kubernetes 工作流以一种更通用的方式来被使用。Argo CD 是一种处理部署的 GitOps 方法，也就意味着 Kubernetes 集群从版本仓库镜像到任意位置时 git 仓库是事实上的唯一来源。Argo CI 看起来已经不再维护了，但是它曾经是作为 CI 工具用来基于 git 变更触发工作流的。为了安装 CI/CD 工具，你需要 Argo 以及它的工作流，同样也一个需要触发它们的 CI 工具。因为 Argo CI 已经没有开发活动了，我自己写了一个 Argo CI，可以通过 Bitbucket webhooks 触发 Argo 工作流。使用自己开发的 CI 工具，我开始试着使用 Argo 构建了一个功能全面的 CI/CD 工具。
       
-          修复 Jenkins 核心中的一个缺陷——从工单到 PR，再到发布
-        
 
-        <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/" class="link primary-color dim">春季安全清查</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Jenkins 管理员们应该关注的安全问题
-        
-
-        <a href="/wechat/articles/2019/04/2019-04-15-security-spring-cleaning/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/" class="link primary-color dim">自动更新、易于使用的 Jenkins</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          借助 Evergreen 持续提供易于使用的 Jenkins
-        
-
-        <a href="/wechat/articles/2019/01/2019-01-09-jenkins-evergreen/" class="f6 mt2 db link primary-color dim">
+        <a href="/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="f6 mt2 db link primary-color dim">
           查看更多 &raquo;
         </a>
 
@@ -322,201 +245,6 @@ var trackOutboundLink = function(id, url) {
       </div>
 
       
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/wechat/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/wechat/page/17/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/page/17/">17</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/wechat/page/18/">18</a></li>
-    
-    
-    <li class="page-item disabled">
-    <a href="" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/wechat/page/18/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
 
 
     </div>

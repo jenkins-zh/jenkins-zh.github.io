@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Argo</title>
+      <link>https://jenkins-zh.cn/tags/argo/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/argo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Asktheexperts</title>
       <link>https://jenkins-zh.cn/tags/asktheexperts/</link>
       <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
@@ -266,9 +275,18 @@
     <item>
       <title>Continuous Integration</title>
       <link>https://jenkins-zh.cn/tags/continuous-integration/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/continuous-integration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Continuout Delivery</title>
+      <link>https://jenkins-zh.cn/tags/continuout-delivery/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/continuout-delivery/</guid>
       <description></description>
     </item>
     
@@ -428,7 +446,7 @@
     <item>
       <title>Docker</title>
       <link>https://jenkins-zh.cn/tags/docker/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/docker/</guid>
       <description></description>
@@ -815,7 +833,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://jenkins-zh.cn/tags/kubernetes/</link>
-      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/kubernetes/</guid>
       <description></description>

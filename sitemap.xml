@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-03-jenkins-release/</loc>
     <lastmod>2020-08-03T00:00:00+00:00</lastmod>
   </url>
@@ -1082,6 +1087,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/argo/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/asktheexperts/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1230,7 +1241,13 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/continuous-integration/</loc>
-    <lastmod>2019-04-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/continuout-delivery/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1342,7 +1359,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/docker/</loc>
-    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1642,7 +1659,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2011,7 +2028,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-08-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
