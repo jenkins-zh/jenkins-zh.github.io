@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Api</title>
+      <link>https://jenkins-zh.cn/tags/api/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Argo</title>
       <link>https://jenkins-zh.cn/tags/argo/</link>
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
@@ -383,7 +392,7 @@
     <item>
       <title>Developer</title>
       <link>https://jenkins-zh.cn/tags/developer/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/developer/</guid>
       <description></description>
@@ -545,7 +554,7 @@
     <item>
       <title>Github</title>
       <link>https://jenkins-zh.cn/tags/github/</link>
-      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/github/</guid>
       <description></description>
@@ -590,7 +599,7 @@
     <item>
       <title>Gsoc</title>
       <link>https://jenkins-zh.cn/tags/gsoc/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/gsoc/</guid>
       <description></description>
@@ -608,7 +617,7 @@
     <item>
       <title>Gsoc2020</title>
       <link>https://jenkins-zh.cn/tags/gsoc2020/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/gsoc2020/</guid>
       <description></description>
@@ -1058,7 +1067,7 @@
     <item>
       <title>Plugins</title>
       <link>https://jenkins-zh.cn/tags/plugins/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/plugins/</guid>
       <description></description>

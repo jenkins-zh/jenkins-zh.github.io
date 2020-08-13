@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Jenkins 已经被 Google Summer Of Code 2019 接受！ - Jenkins 中文社区</title>
+  <title>GSoC: GitHub Checks API 项目第一阶段总结 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="19年的 Google Summer Of Code 正式起航">
+  <meta name="description" content="GitHub Checks API 插件项目 - 编码阶段 1">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 已经被 Google Summer Of Code 2019 接受！" />
-<meta property="og:description" content="19年的 Google Summer Of Code 正式起航" />
+<meta property="og:title" content="GSoC: GitHub Checks API 项目第一阶段总结" />
+<meta property="og:description" content="GitHub Checks API 插件项目 - 编码阶段 1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" /><meta property="article:published_time" content="2019-03-13T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-03-13T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/" /><meta property="article:published_time" content="2020-08-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-07T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 已经被 Google Summer Of Code 2019 接受！">
-<meta itemprop="description" content="19年的 Google Summer Of Code 正式起航">
-
-
-<meta itemprop="datePublished" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="103">
+<meta itemprop="name" content="GSoC: GitHub Checks API 项目第一阶段总结">
+<meta itemprop="description" content="GitHub Checks API 插件项目 - 编码阶段 1">
 
 
+<meta itemprop="datePublished" content="2020-08-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-08-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="205">
 
-<meta itemprop="keywords" content="gsoc,gsoc2019,events,community," />
+
+
+<meta itemprop="keywords" content="github,api,plugins,developer,gsoc,gsoc2020," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 已经被 Google Summer Of Code 2019 接受！"/>
-<meta name="twitter:description" content="19年的 Google Summer Of Code 正式起航"/>
+<meta name="twitter:title" content="GSoC: GitHub Checks API 项目第一阶段总结"/>
+<meta name="twitter:description" content="GitHub Checks API 插件项目 - 编码阶段 1"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -204,23 +204,21 @@ var trackOutboundLink = function(id, url) {
 
 
 
-
-
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            Zhao Xiaojie
+            Kezhi Xiong
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          Contributor of @jenkinsci . Jenkins press contact in China. Jenkins Chinese community leader.
+          Code for open source and explore computer science for fun!
         </p>
       
-      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/XiongKezhi" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -228,27 +226,10 @@ var trackOutboundLink = function(id, url) {
       </a>
 
   
-  <div>
-    作者：<span class="originalAuthor">oleg_nenashev</span>
-    <div>
-      <a class="originalLink" href="" target="_blank">原文链接</a>
-    </div>
-  </div>
-  
   </aside>
 
 
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-	
-		<p class="b">内容目录</p>
-  	<nav id="TableOfContents">
-<ul>
-<li><a href="#下一步">下一步？</a></li>
-<li><a href="#我是一个学生-如何申请">我是一个学生。如何申请？</a></li>
-<li><a href="#我想要成为一名导师-会不会太晚了">我想要成为一名导师。会不会太晚了？</a></li>
-<li><a href="#重要的日期">重要的日期</a></li>
-</ul>
-</nav>
 	
 
 	<div date-pref>
@@ -261,17 +242,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Electron 应用的流水线设计 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="dib f6 pr1 hover-bg-light-gray br-100" title="为 Continuous Delivery Foundation 的成立感到兴奋">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="dib f6 pr1 hover-bg-light-gray br-100" title="在 Kubernetes 上使用 Argo 实现 CI/CD">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -291,13 +264,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 已经被 Google Summer Of Code 2019 接受！</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">GSoC: GitHub Checks API 项目第一阶段总结</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      19年的 Google Summer Of Code 正式起航
+      GitHub Checks API 插件项目 - 编码阶段 1
     </div>
   
 
@@ -310,62 +283,106 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="../../../images/gsoc/jenkins-gsoc-logo_small.png" alt="Jenkins GSoC" /></p>
+<p><img src="jenkins-gsoc-logo_small.png" alt="jenkins-gsoc-logo_small" /></p>
 
-<p>作为 Jenkins GSoC 管理员团队的代表，我很高兴地宣布 Jenkins 在<a href="https://summerofcode.withgoogle.com/">2019年的 Google Summer of Code</a>上 <strong>已经被接受</strong>。
-今年，我们邀请了学生和导师加入 Jenkins 社区，并一起努力增强 Jenkins 生态圈。</p>
+<p>这篇博客将介绍 GSoC 项目 <a href="https://www.jenkins.io/projects/gsoc/2020/projects/github-checks/">GitHub Checks API Plugin</a> 在一阶段的相关进展。</p>
 
-<p>这里提供一些数字，这是有史以来最大的一次 GSoC，今年共有206个组织参与。并且，希望对 Jenkins 而言也是最大的一年。
-我们有25个<a href="https://jenkins.io/projects/gsoc/2019/project-ideas/">项目想法</a>，而且有超过30个准导师（不断增多！）。
-这已经超过了2016年以及2018年的总和。
-有很多的插件，特别兴趣小组以及子项目已经加入了今年的 GSoC.而且，我们已经收到了十几个学生的消息以及第一次贡献，耶！</p>
+<p>简单来说，GitHub Checks API 就是一套可高度定制化接受 CI 报告的接口。
+CI 工具可以通过该接口反馈信息给特定的 Pull Request，随后，用户便可以直接在 GitHub 的 UI 界面上直观的浏览 CI 报告。</p>
 
-<h1 id="下一步">下一步？</h1>
+<p><img src="github-check-run.png" alt="GitHub Check Run Screenshot from GitHub Docs" /></p>
 
-<p>GSoC 已经正式启动，请期待更多的学生在我们的<a href="https://jenkins.io/zh/projects/gsoc/#contacts">Gitter 频道和邮件列表</a>中联系项目。
-在特别兴趣小组和子项目频道中已经有了很多沟通。
-我们会努力帮助学生找到他们感兴趣的项目，在这个领域探索，并帮助他们在4月9日的截止日前准备好他们的项目提议。
-然后，我们将会继续这个申请，选择项目并分配导师团队。</p>
+<p>更激动人心的是，它可以针对指定的代码行进行注释，这类似于开发者平时在代码审查时留下的评论。</p>
 
-<p>所有关于 Jenkins GSoC 的信息都可以在<a href="https://jenkins.io/zh/projects/gsoc/">子项目页面</a>上找到。</p>
+<p><img src="github-check-annotations.png" alt="Check Run Annotation Screenshot from GitHub Docs" /></p>
 
-<h1 id="我是一个学生-如何申请">我是一个学生。如何申请？</h1>
+<p>同时，在 Jenkins 这边，<a href="https://plugins.jenkins.io/warnings-ng/">Warnings Next Generation Plugin</a> 能通过源代码视图实现类似的功能。</p>
 
-<p>在/projects/gsoc/students[学生的信息]页面中有完整的申请指导。</p>
+<p><img src="source-view.png" alt="Source Code View from Warnings Next Generation Plugin" /></p>
 
-<p>我们鼓励感兴趣的学生尽早联系 Jenkins 社区并开始探索项目。所有的项目在对应的页面上都有聊天室与邮件列表。
-我们也会为学生组织工作日的会议，在这些会议上你可以见到管理员和导师，并向他们提问。
-另外，加入我们的<a href="https://gitter.im/jenkinsci/gsoc-sig">Gitter 频道</a>和<a href="https://groups.google.com/forum/#!forum/jenkinsci-gsoc-all-public">邮件列表</a>，以便收到项目中即将到来的事情。</p>
+<p>因此，通过使用 GitHub Checks API 将这些信息直接反馈给 GitHub 能使 Jenkins 对 GitHub 用户更加友好。</p>
 
-<p>3月25日开放申请，但你现在就可以准备了！利用这段申请前的时间来讨论并改进你的项目提议。
-我们也建议你着手熟悉 Jenkins 并开始探索你的提议的领域。项目的想法包括快速开始的指导，以及有助于初期研究时对新手友好的问题。
-如果没有看到任何感兴趣的，你可以<a href="https://jenkins.io/zh/projects/gsoc/proposing-project-ideas/">提出你自己的项目想法</a>或者
-查看由其他参与 GSoC 的<a href="https://summerofcode.withgoogle.com/organizations/">组织</a>提出的想法。</p>
+<h1 id="阶段一实现的相关特性">阶段一实现的相关特性</h1>
 
-<h1 id="我想要成为一名导师-会不会太晚了">我想要成为一名导师。会不会太晚了？</h1>
+<p>在过去的一个月里，我们团队的工作主要集中在 General Checks API 和 GitHub Checks API 的实现上。</p>
 
-<p>不晚！我们正在寻找更多的项目想法，以及 Jenkins 的贡献者或用户中对 Jenkins 富有热情并想要指导学生的人。
-无须底层经验，导师可以和学生一起研究项目并给出技术指导。
-我们尤其对 Java 技术栈方向感兴趣，以及一些新的技术和领域（例如：Kubernetes, IoT, Python, Go 或者其他的）。</p>
+<h2 id="general-checks-api">General Checks API</h2>
 
-<p>你可以提议一个新项目或者加入已有的。查看博客<a href="https://jenkins.io/blog/2018/12/26/gsoc-2019-call-for-mentors/">寻找导师</a>以及<a href="https://jenkins.io/projects/gsoc/mentors">导师的信息</a>中的细节。
-如果你想要提议一个新项目，那么请在3月11日之前完成，以便学生有时间探索并准备他们的提议。</p>
+<p>尽管 General Checks API 是基于 GitHub Checks API 的语义实现的，我们仍然希望能提供这样的泛化接口为其他平台的相关概念做好准备，例如：GitLab 上的 <a href="https://docs.gitlab.com/ee/api/commits.html#commit-status">Commit Status API</a>。
+在今后，我们欢迎所有人贡献针对这些平台的相关实现。</p>
 
-<p>今年，导师<strong>并不</strong>必须要有 Jenkins 开发上的很强的专业知识。目标是指导学生参与到 Jenkins 社区。
-如果需要特殊的专业知识，GSoC 组织管理员会帮助寻找顾问。</p>
+<h2 id="github-checks-api-实现">GitHub Checks API 实现</h2>
 
-<h1 id="重要的日期">重要的日期</h1>
+<p>目前，我们对 GitHub Checks API 的支持工作已基本完成。
+除此以外，我们还实现了一个用于表明当前 Jenkins 构建状况的功能。
+在发布之后，通过调用我们的 API，Jenkins 的开发者们（特别是插件开发者们）能够为 GitHub Branch SCM 项目创建属于他们自己的 GitHub Checks。</p>
+
+<h3 id="例子-要创建一个如下图所示的-check-run">例子：要创建一个如下图所示的 check run：</h3>
+
+<p><img src="created-check-run.png" alt="Created Check Run" /></p>
+
+<p>用户需要如下地调用我们的接口：</p>
+
+<pre><code>ChecksDetails details = new ChecksDetailsBuilder()
+        .withName(&quot;Jenkins&quot;)
+        .withStatus(ChecksStatus.COMPLETED)
+        .withDetailsURL(&quot;https://ci.jenkins.io&quot;)
+        .withStartedAt(LocalDateTime.now(ZoneOffset.UTC))
+        .withCompletedAt(LocalDateTime.now(ZoneOffset.UTC))
+        .withConclusion(ChecksConclusion.SUCCESS)
+        .withOutput(new ChecksOutputBuilder()
+                .withTitle(&quot;Jenkins Check&quot;)
+                .withSummary(&quot;# A Successful Build&quot;)
+                .withText(&quot;## 0 Failures&quot;)
+                .withAnnotations(Arrays.asList(
+                        new ChecksAnnotationBuilder()
+                                .withPath(&quot;Jenkinsfile&quot;)
+                                .withLine(1)
+                                .withAnnotationLevel(ChecksAnnotationLevel.NOTICE)
+                                .withMessage(&quot;say hello to Jenkins&quot;)
+                                .withStartColumn(0)
+                                .withEndColumn(20)
+                                .withTitle(&quot;Hello Jenkins&quot;)
+                                .withRawDetails(&quot;a simple echo command&quot;)
+                                .build(),
+                        new ChecksAnnotationBuilder()
+                                .withPath(&quot;Jenkinsfile&quot;)
+                                .withLine(2)
+                                .withAnnotationLevel(ChecksAnnotationLevel.WARNING)
+                                .withMessage(&quot;say hello to GitHub Checks API&quot;)
+                                .withStartColumn(0)
+                                .withEndColumn(30)
+                                .withTitle(&quot;Hello GitHub Checks API&quot;)
+                                .withRawDetails(&quot;a simple echo command&quot;)
+                                .build()))
+                .build())
+        .withActions(Collections.singletonList(
+                new ChecksAction(&quot;formatting&quot;, &quot;format code&quot;, &quot;#0&quot;)))
+        .build();
+
+ChecksPublisher publisher = ChecksPublisherFactory.fromRun(run);
+publisher.publish(details);
+</code></pre>
+
+<h2 id="未来的工作">未来的工作</h2>
+
+<p>我们的下一步计划是将该接口集成到 <a href="https://plugins.jenkins.io/warnings-ng/">Warnings Next General Plugin</a> 和 <a href="https://plugins.jenkins.io/code-coverage-api/">Code Coverage API Plugin</a> 当中。
+在此之后，我们还会添加对流水线的支持：在创建 check run 时，用户可以直接在流水线中调用我们的接口而无需依赖其他插件的实现.</p>
+
+<h2 id="相关资源">相关资源</h2>
 
 <ul>
-<li>3月11日 - 停止新的 GSoC 项目提议</li>
-<li>4月9日 - 停止接受学生的申请</li>
-<li>5月6日 - 宣布接受了的项目，团队开始社区合作以及编码</li>
-<li>8月26日 - 结束编码</li>
-<li>9月3日 - 宣布结果</li>
+<li><a href="https://github.com/jenkinsci/checks-api-plugin">GitHub 仓库</a></li>
+<li><a href="https://www.jenkins.io/projects/gsoc/2020/projects/github-checks/">项目主页</a></li>
+<li><a href="https://gitter.im/jenkinsci/github-checks-api">Gitter 聊天室</a></li>
 </ul>
 
-<p>查看 <a href="https://summerofcode.withgoogle.com/how-it-works/#timeline">GSoC 时间线</a>了解更多信息。
-在 GSoC 期间和之后，我们也会组织 Jenkins 相关的特别活动（例如：在 Jenkins World 上）。</p>
+<h2 id="引用">引用</h2>
+
+<ul>
+<li><a href="https://docs.github.com/en/developers/apps/creating-ci-tests-with-the-checks-api">GitHub 文档：使用 Checks API 创建 CI 测试</a></li>
+<li><a href="https://github.com/jenkinsci/warnings-ng-plugin/blob/master/doc/Documentation.md#source-code-view">Warnings Next Generation Plugin：源代码视图</a></li>
+</ul>
 
 </div>
 
@@ -398,14 +415,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 已经被 Google Summer Of Code 2019 接受！”
-  </a> 更新于：March 13, 2019
+    “GSoC: GitHub Checks API 项目第一阶段总结”
+  </a> 更新于：August 7, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -423,38 +440,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
+            <a class="tag" href="/tags/github">
+              github
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/api">
+              api
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/plugins">
+              plugins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/developer">
+              developer
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
             <a class="tag" href="/tags/gsoc">
               gsoc
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/gsoc2019">
-              gsoc2019
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/events">
-              events
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/community">
-              community
+            <a class="tag" href="/tags/gsoc2020">
+              gsoc2020
             </a>
           </li>
         
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/" class="link">
-              GSoC: GitHub Checks API 项目第一阶段总结
-            </a>
-          </li>
         
       
         
@@ -464,8 +487,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/07/2020-07-06-machine-learning-plugin-project-community-bonding-blog-post/" class="link">
-              社区推送博客-机器学习插件项目
+            <a href="/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/" class="link">
+              GitHub App 身份验证支持已发布
             </a>
           </li>
         
@@ -473,58 +496,10 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
+            <a href="/wechat/articles/2020/03/2020-03-27-jenkins-tutorial-configure-scm-github-triggers-and-git-polling-using-ngrok/" class="link">
+              Jenkins 教程：使用 Ngrok 配置（SCM）Github 触发器和 Git 轮询
             </a>
           </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/" class="link">
-              Alpha 版本的插件管理库和 CLI 工具
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-19-introduce-react-plugin-template/" class="link">
-              React Plugin Template，让你可以使用 React 来编写 Jenkins 插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/" class="link">
-              介绍新的 GitLab 分支源插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/" class="link">
-              Jenkins 插件的微基准测试框架
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/" class="link">
-              多分支流水线任务对 GitLab SCM 的支持
-            </a>
-          </li>
-        
-      
-        
         
       
     </ul>
@@ -551,7 +526,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/03\/2019-03-13-gsoc2019-announcement\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/08\/2020-08-07-github-checks-api-plugin-project-coding-phase-1\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

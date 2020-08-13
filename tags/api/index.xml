@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/api/</link>
+    <description>Recent content in Api on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSoC: GitHub Checks API 项目第一阶段总结</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/</guid>
+      <description>这篇博客将介绍 GSoC 项目 GitHub Checks API Plugin 在一阶段的相关进展。
+简单来说，GitHub Checks API 就是一套可高度定制化接受 CI 报告的接口。 CI 工具可以通过该接口反馈信息给特定的 Pull Request，随后，用户便可以直接在 GitHub 的 UI 界面上直观的浏览 CI 报告。
+更激动人心的是，它可以针对指定的代码行进行注释，这类似于开发者平时在代码审查时留下的评论。
+同时，在 Jenkins 这边，Warnings Next Generation Plugin 能通过源代码视图实现类似的功能。
+因此，通过使用 GitHub Checks API 将这些信息直接反馈给 GitHub 能使 Jenkins 对 GitHub 用户更加友好。
+阶段一实现的相关特性 在过去的一个月里，我们团队的工作主要集中在 General Checks API 和 GitHub Checks API 的实现上。
+General Checks API 尽管 General Checks API 是基于 GitHub Checks API 的语义实现的，我们仍然希望能提供这样的泛化接口为其他平台的相关概念做好准备，例如：GitLab 上的 Commit Status API。 在今后，我们欢迎所有人贡献针对这些平台的相关实现。</description>
+    </item>
+    
+  </channel>
+</rss>
