@@ -222,11 +222,8 @@ var trackOutboundLink = function(id, url) {
 
     <div class="lh-copy links">
       
-          持续集成和持续交付是一些人为之努力的目标。它让一切事物变得更简单。当然，市面上有许多 CI/CD 工具，但是随着 Kubernetes 的日渐盛行，所有这些工具都需要做相应的调整。比如说，Jenkins，这款非常成熟的 CI/CD 工具在全球范围内被广泛使用，但是这款工具缺乏创新并且感觉有点笨重。同样的话也适用于 Spinnaker。一款出色的企业解决方案拥有让工作深入开展下去的资源，但是让 CI/CD 工具以一种快速、整洁的方式升级不是一个理想的选择。还有其他的一些工具可以为更简单的工作流提供更多的支持。其中一个就是我们本文中将要介绍的 Argo。
-Argo 与众不同的地方在于它管理实际 CI/CD 的方式。它是专门为了 Kubernetes 开发的并且通过 CRD（Custom Resource Definitions）集成到 Kubernetes 中。它定义了一个新的名为‘工作流’的 CRD 。在这个工作流中你可以通过一个 yaml 格式的文件定义你需要执行的操作。每一步均运行在位于 Kubernetes 集群内它自己的 Docker 容器里面。
-argoproj/argo
-Argo/Argo CD/Argo CI Argo 项目有几个正在开发的项目仓库。Argo 是主项目，聚焦于 Kubernetes 工作流以一种更通用的方式来被使用。Argo CD 是一种处理部署的 GitOps 方法，也就意味着 Kubernetes 集群从版本仓库镜像到任意位置时 git 仓库是事实上的唯一来源。Argo CI 看起来已经不再维护了，但是它曾经是作为 CI 工具用来基于 git 变更触发工作流的。为了安装 CI/CD 工具，你需要 Argo 以及它的工作流，同样也一个需要触发它们的 CI 工具。因为 Argo CI 已经没有开发活动了，我自己写了一个 Argo CI，可以通过 Bitbucket webhooks 触发 Argo 工作流。使用自己开发的 CI 工具，我开始试着使用 Argo 构建了一个功能全面的 CI/CD 工具。
-      
+          讲解了Argo 的组成部分，展示了具体的配置文件说明了 Argo 是如何在 Kubernetes 实现 CI/CD 的
+        
 
         <a href="/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="f6 mt2 db link primary-color dim">
           查看更多 &raquo;
