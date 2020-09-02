@@ -192,6 +192,15 @@
     </item>
     
     <item>
+      <title>Ci Cd Pipeline</title>
+      <link>https://jenkins-zh.cn/tags/ci-cd-pipeline/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/ci-cd-pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ci/Cd</title>
       <link>https://jenkins-zh.cn/tags/ci-cd/</link>
       <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
@@ -284,7 +293,7 @@
     <item>
       <title>Continuous Integration</title>
       <link>https://jenkins-zh.cn/tags/continuous-integration/</link>
-      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/continuous-integration/</guid>
       <description></description>
@@ -716,7 +725,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -734,7 +743,7 @@
     <item>
       <title>Jenkins X</title>
       <link>https://jenkins-zh.cn/tags/jenkins-x/</link>
-      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins-x/</guid>
       <description></description>
@@ -842,7 +851,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://jenkins-zh.cn/tags/kubernetes/</link>
-      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/kubernetes/</guid>
       <description></description>

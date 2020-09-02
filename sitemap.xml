@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/</loc>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/</loc>
     <lastmod>2020-08-07T00:00:00+00:00</lastmod>
   </url>
@@ -1192,6 +1197,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/ci-cd-pipeline/</loc>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/ci-cd/</loc>
     <lastmod>2020-05-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1252,7 +1263,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/continuous-integration/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1546,7 +1557,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-08-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1574,7 +1585,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins-x/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1670,7 +1681,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2039,7 +2050,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-08-07T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

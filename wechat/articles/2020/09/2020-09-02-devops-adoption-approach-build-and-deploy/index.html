@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://jenkins-zh.cn/files/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>DevOps 的打开方式: 构建和部署 - Jenkins 中文社区</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  
+  <meta name="description" content="介绍了一下 Jenkins X 的组成部分通过具体的实践告诉读者正确打开在 Kubernetes 上实现 CI/CD 的方式">
+  
+  
+  <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
+  
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff"><style>
+  img.avatar {
+    width: 32px;
+    display: inline;
+  }
+</style>
+<meta property="og:title" content="DevOps 的打开方式: 构建和部署" />
+<meta property="og:description" content="介绍了一下 Jenkins X 的组成部分通过具体的实践告诉读者正确打开在 Kubernetes 上实现 CI/CD 的方式" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" /><meta property="article:published_time" content="2020-09-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-09-02T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="DevOps 的打开方式: 构建和部署">
+<meta itemprop="description" content="介绍了一下 Jenkins X 的组成部分通过具体的实践告诉读者正确打开在 Kubernetes 上实现 CI/CD 的方式">
+
+
+<meta itemprop="datePublished" content="2020-09-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="588">
+
+
+
+<meta itemprop="keywords" content="Jenkins,Jenkins X,Continuous Integration,Ci Cd Pipeline,Kubernetes," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DevOps 的打开方式: 构建和部署"/>
+<meta name="twitter:description" content="介绍了一下 Jenkins X 的组成部分通过具体的实践告诉读者正确打开在 Kubernetes 上实现 CI/CD 的方式"/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4216293-5');
+
+
+
+var trackOutboundLink = function(id, url) {
+  console.log("track:", id, url)
+  gtag('event', 'click', {
+    'event_category': 'outbound',
+    'event_label': id,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+
+</script>
+
+  
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://jenkins-zh.cn" class="link white">
+         Jenkins 中文社区
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/wechat/" class="dim link light-silver"
+            >
+            博客
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/tutorial/" class="dim link light-silver"
+            >
+            教程
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/event/" class="dim link light-silver"
+            >
+            活动
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/partner/" class="dim link light-silver"
+            >
+            合作伙伴
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="/about/" class="dim link light-silver"
+            >
+            关于我们
+              
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+            
+          <a href="http://jenkins.io/zh" class="dim link light-silver"
+            target="_blank">
+            Jenkins 官网
+              
+            
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="email-address">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white"
+      placeholder="搜索文档" type="text"
+      name="email-address" value="" style="background-image:url('/images/icon-search.png');background-size:16px 16px;">
+  </fieldset>
+</form>
+</div>
+
+    <div class="list ma0 pa0 dn dib-l"></div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/jenkins-zh/jenkins-zh/" data-size="large" data-show-count="false" aria-label="Star Jenkins WeChat GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+  
+  <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+    
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+
+  <aside class="mw5 br3 mv3 nested-links">
+    
+    
+      
+        <h3 class="f4 dib author">
+            s1mple_zj
+        </h3>
+
+      
+      
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
+          You only got one shot,do not miss your chance to blow.
+        </p>
+      
+      <a href="https://github.com/0N0thing" target="_blank" class="link dim v-mid dib">
+        <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
+<path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
+</svg>
+
+      </a>
+
+  
+  <div>
+    作者：<span class="originalAuthor">Ernese Norelus</span>
+    <div>
+      <a class="originalLink" href="https://medium.com/ibm-garage/devops-adoption-approach-build-and-deploy-edc2a52c075" target="_blank">原文链接</a>
+    </div>
+  </div>
+  
+  </aside>
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+
+		
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/" class="dib f6 pr1 hover-bg-light-gray br-100" title="GSoC: GitHub Checks API 项目第一阶段总结">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">DevOps 的打开方式: 构建和部署</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      介绍了一下 Jenkins X 的组成部分通过具体的实践告诉读者正确打开在 Kubernetes 上实现 CI/CD 的方式
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+
+
+<p><img src="cover.jpg" alt="cover" /></p>
+
+<p>通过使用 Serverless Jenkins（Jenkins X）为企业在一个实时的云原生项目上通过使用 Kubernetes CI/CD 方法进行构建&amp;部署。</p>
+
+<p><img src="architecture.png" alt="architecture" /></p>
+
+<p>新时期 DevOps 的变革是在专注于作为敏捷协议的一个扩展并且同敏捷协同合作的过程中让开发者、IT 运维、质量保障和业务一道朝着共同的目标让项目更快更好的进行。受竞争日益激烈的市场驱动着，企业需要通过软件传递价值，造就了速度成为了如今软件开发的新规范。拥有正确的企业文化、工具、流程以及 DevOps 最佳实践对加快和提升软件产出的速度至关重要。如今，我们需要为在云、容器、服务网格、微服务、不变的基础架构以及声明性 API 上运行的 Kubernetes 上重新构想 CI/CD。嗯，<a href="https://jenkins-x.io/docs/overview/">Jenkins X</a> 就是那款产品；它提供了一种在 Kubernetes 上运行 CI/CD 流水线的方法。Jenkins X 作为一个平台在开发者那里隐藏了 Kubernetes 的复杂性。开发者可以专注于编出高质量的代码和优秀的用户体验而不需要为 Kubernetes 的复杂性大费脑筋。</p>
+
+<p>这是正确打开 DevOps 的博客的系列第二部分。在<a href="https://medium.com/ibm-garage/devops-adoption-approach-plan-and-design-be3d1ba67c8">之前</a>的那篇博客中，主要讨论了文化、计划和设计。我当时指出“<strong>DevOps 是一个结果为导向支持敏捷的实践。</strong>”现在依然是这样的。</p>
+
+<p>这篇博客中，我将会通过在 Kubernetes 上为云原生应用程序使用最新的 CI/CD 工具也就是 Jenkins X 专注于从运行层面讲解 DevOps。我将会解释基本的概念然后通过构建一条流水线来将理论与实践关联，然后带你学习第一次接触 Jenkins X 需要学习的步骤有哪些。对你来说重要的是理解构建的模块以及为什么它是云原生应用的完美选择。操作说明将会一步步引导你学习 Jenkins X 并会为你提供入门指南。</p>
+
+<p>Jenkins X 是革命性的具有改变现代应用程序与客户交互的潜力。它或许会影响下一代的开发以及部署，类似于 Docker 对不可变容器镜像和 Kubernetes 对容器服务编排的影响那样。</p>
+
+<h2 id="serverless-ci-cd-流水线">Serverless CI/CD 流水线</h2>
+
+<p><a href="https://www.cloudbees.com/blog/all-you-need-know-about-jenkins-x">Jenkins X</a> 是一款在 Kubernetes 上运行的 CI/CD 流水线，一种部署临时流水线的新方法也被叫做无服务器的流水线。它是 Tekton Pipelines 项目的一部分旨在为声明 CI/CD 类型的流水线提供 Kubernetes 形式的资源。</p>
+
+<h2 id="使用-jenkins-x-的现代应用程序部署方式">使用 Jenkins X 的现代应用程序部署方式</h2>
+
+<p>Jenkins X *“一个云原生版本的 Jenkins，可以叫做 Jenkins 的酷表亲”*，是一款开源项目为在 Kubernetes 上的云原生应用程序提供了自动化的 CI/CD。Jenkins X 提供了自动化流水线，内置 GitOps，预览环境可以帮助团队合作以及加快以任何规模交付他们软件的速度。它会让所有事物更直接，通过使用开源工具比如 Helm、Skaffold、Monocular、ChartMuseum、Nexus、KSync 以及 Docker Registry 快速构建云原生应用程序可以让你使用 Jenkins 2.0 的强大功能进行操作。</p>
+
+<p><img src="logo.png" alt="logo" /></p>
+
+<h3 id="jenkins-x-的主要功能">Jenkins X 的主要功能</h3>
+
+<ul>
+<li><p>维护带有 CI/CD 的各种组件的特定服务器</p></li>
+
+<li><p>自动化持续集成（CI）与持续交付（CD）工具</p></li>
+
+<li><p>自动化环境管理</p></li>
+
+<li><p>自动化预览环境</p></li>
+
+<li><p>与微服务开发和发布流程天然集成</p></li>
+
+<li><p>问题与拉取请求反馈</p></li>
+
+<li><p>管理环境间的升级（测试-过度-升级）</p></li>
+</ul>
+
+<p><img src="diagram.png" alt="diagram" /></p>
+
+<h3 id="jenkins-x-构建模块">Jenkins X-构建模块</h3>
+
+<ul>
+<li><p>Jenkins: CI/CD 自动化服务器</p></li>
+
+<li><p>Helm: Chart 形式的包管理器</p></li>
+
+<li><p>Skaffold: 在流水线中执行构建以及推送镜像动作</p></li>
+
+<li><p>Nexus: 为 Node Js &amp; Java 应用程序提供独立缓存以及产物存储</p></li>
+
+<li><p>Docker Registry: 容器镜像仓库（Docker 镜像存储）</p></li>
+
+<li><p>ChartMuseum: 用于发布 Helm Chart 的仓库（开源的 Helm Chart 仓库）</p></li>
+
+<li><p>Monocular: 提供发现与运行 Helm Charts 的 UI</p></li>
+
+<li><p>Prow: 通过 webhooks 接收的 GitHub 事件的事件处理器</p></li>
+
+<li><p>Tekton: Kubernetes 内流水线管理器</p></li>
+
+<li><p>GitOps: 管理环境间的升级</p></li>
+</ul>
+
+<h2 id="kubernetes">Kubernetes</h2>
+
+<p><a href="https://www.ibm.com/cloud/learn/kubernetes">Kubernetes</a> 正在发展中，但事实上，它已经成为了安装、升级、操作和管理容器化应用程序的方式的标准。它是一个容器编排平台用于在任何公有云和混合云上调度和自动化容器化应用程序的部署、管理和扩展。它得到了众多云服务提供商（CSP）的支持，比如 IBM、Google、Microsoft 以及 AWS。每一个 CSP 均提供了其对应的名称:</p>
+
+<ul>
+<li><p>IBM Kubernetes Service（IKS）</p></li>
+
+<li><p>Google Kubernetes Engine（GKE）</p></li>
+
+<li><p>Azure Kubernetes Service（AKS）</p></li>
+
+<li><p>Amazon Elastic Container Service for Kubernetes（Amazon EKS）</p></li>
+</ul>
+
+<p><img src="kubernetes-logo.png" alt="kubernetes-logo" /></p>
+
+<p>Kubernetes 拥有 Cloud Native Computing Foundation（CNCF）的支持，并且在云原生计算基础架构平台的市场中占有相当的份额；它同样是 CI/CD 流水线的一部分。可以在一个平台上运行云原生或者传统应用程序。以下是一些开箱即用（OOTB）的功能:</p>
+
+<ul>
+<li><p>网络</p></li>
+
+<li><p>持续性</p></li>
+
+<li><p>服务发现</p></li>
+
+<li><p>滚动升级</p></li>
+
+<li><p>弹性集群</p></li>
+
+<li><p>资源请求/限制</p></li>
+
+<li><p>容器调度</p></li>
+
+<li><p>容器编排</p></li>
+
+<li><p>扩展</p></li>
+
+<li><p>容器探针</p></li>
+
+<li><p>使用命令、控制台或者自动扩缩容</p></li>
+
+<li><p>独立的凭据配置管理</p></li>
+
+<li><p>自我恢复</p></li>
+
+<li><p>管理负载以及批处理执行情况</p></li>
+
+<li><p>渐进式应用程序部署</p></li>
+</ul>
+
+<h2 id="什么是-helm">什么是  Helm？</h2>
+
+<p>Helm 是一个类似 Linux 发行版（操作系统）的 <a href="https://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified">yum</a> 和 <a href="https://en.wikipedia.org/wiki/Advanced_Packaging_Tool">apt-get</a> 那种的包管理器。简单来讲，Helm 可以帮助你管理在 Kubernetes 上部署的应用程序。它是一个 Kubernetes 组件的模板工具，也就意味着这些都只是 Kubernetes 的 <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>s 然后使用一些工具帮助安装、组织、发现、共享、管理应用程序。Helm 打包应用程序使用的格式称为 Chart。一个 Helm Chart 是多个文件的组合用来描述一组相关的 Kubernetes 资源。Helm 有两部分，命令行工具（CLI）“客户端”和一个称为 “Tiller”的服务端，它会接收请求从而在 Kubernetes  集群上使用一条命令安装对应的安装包。</p>
+
+<p><img src="helm-logo.png" alt="helm-logo" /></p>
+
+<h2 id="什么是-tekton">什么是 Tekton？</h2>
+
+<p>Tekton 是一组共享的开源组件用来构建 CI/CD 系统可以让你在 Kubernetes 上构建、测试、部署应用。它的目标是通过一个无关供应商的开源基金会为 CI/CD 流水线、工作流以及其他构建模块提供行业规范，通过持续交付控制面板现代化将软件部署的大脑迁移到 Kubernetes 上。</p>
+
+<p>Tekton 起源于 Knative Build 组件，2018 年 8 月份迁移至一个独立的仓库（这是相对较新的）。它只专注在 Kubernetes 上由扩展的 Kubernetes APIs 即 Kubernetes Custom Resource Definition（CRDs）定义。</p>
+
+<p><img src="tekton-logo.png" alt="tekton-logo" /></p>
+
+<p>安装 Tekton 到你的集群中会引入 4 种自定义的资源，它们将会被添加到你的 Kubernetes 集群中: Tasks、Pipelines、TaskRuns、PipelineRuns 以及 PipelineResources。</p>
+
+<p><img src="four-resources-of-tekton.png" alt="four-resources-of-tekton" /></p>
+
+<ul>
+<li><p>Task: 定义一组构建步骤，比如编译、运行测试、构建部署镜像。</p></li>
+
+<li><p>Pipeline: 定义组成一个流水线的任务集。</p></li>
+
+<li><p>PipelineResource: 定义一个对象作为流水线的输入（比如 Git 仓库）输出（比如 Docker 镜像）。</p></li>
+
+<li><p>PipelineRun: 定义流水线的运行。该资源引用要运行的流水线以及使用哪一个 PipelineResource（s） 作为输入输出。</p></li>
+</ul>
+
+<h2 id="什么是-prow">什么是 Prow？</h2>
+
+<p>Prow 是一个应用程序集用来与 Git 事件进行交互以及计划构建引擎。组件包括一个可伸缩的 webhook 事件处理器、自动拉取请求合并以及许多提升研发体验的插件。Prow 以强制策略、通过 <code>/hook</code> 类型命令进行交互以及自动 PR（Pull Request）合并的方式实现 GitHub 自动化。</p>
+
+<p><img src="prow-logo.png" alt="prow-logo" /></p>
+
+<h2 id="什么是-gitops">什么是 GitOps？</h2>
+
+<p>GitOps 是源码控制管理（SCM）与起源自 <strong>Git</strong> 的 IT 运营两者的组合，“一个分布式版本控制系统用来跟踪软件开发过程中的代码变更。” <strong>Ops</strong> 表示 IT 运营，它与基础设施即代码（<strong>Iac</strong>）相关解决的是基础架构、存储、开发流水线、安全以及其他。凭借 Git 的成功，Git *实际上*成为了众多公司运营的自动化工具。GitOps 建立在 DevOps 之上而 Git  是整个系统<strong>单一的事实来源</strong>，它也是一种操作模型，通过版本控制系统的提交管理基础架构的变更包括应用程序部署。</p>
+
+<p><img src="gitops-logo.png" alt="gitops-logo" /></p>
+
+<p>GitOps 意味着开发到部署的整个阶段使用 Git；它同样可以作为使用 Kubernetes 进行云原生实施、管理、监控等操作模型的最佳实践。</p>
+
+<p>IaC 可以认为是通过编写代码以描述基础架构，类似于用高级语言编写程序；它带来了很多好处，最重要的一个就是动态基础架构，资源可以很容易的被创建、销毁、替换、调整大小、移动。GitOps 是自动化与基础设施即代码之间一个很聪明的结合。</p>
+
+<p><img src="example-of-gitops-pipeline.png" alt="example-of-gitops-pipeline" /></p>
+
+<p><strong>GitOps 提供了如下好处：</strong></p>
+
+<ul>
+<li><p>提高生产力</p></li>
+
+<li><p>提升了开发者体验</p></li>
+
+<li><p>提高稳定性</p></li>
+
+<li><p>更高的可靠性</p></li>
+
+<li><p>一致性与标准化</p></li>
+
+<li><p>更强的安全保障</p></li>
+</ul>
+
+<h2 id="把它们组合到一起">把它们组合到一起</h2>
+
+<p>Jenkins X 通过移除 Kubernetes 应用程序中设计 CI/CD 的复杂性从而将这些创建一个高效 CI/CD 流水线所需的部分组合到一起。通过大量的自动化、工具、DevOps 最佳实践、开源项目比如 GitOps、Jenkins、Helm、Tekton、Skaffold、Monocular、CHartMuseum、Nexus、Ksync 和 Pow，将这些组合成一个易于使用的 Kubernetes CD 平台。</p>
+
+<h3 id="该-demo-你需要使用到这些工具">该 demo 你需要使用到这些工具:</h3>
+
+<ul>
+<li><p>Kubernetes 1.8+ 允许基于角色的访问控制（RBAC）</p></li>
+
+<li><p>在你的本机上安装 <code>kubectl</code> 命令行配置连接到你的集群。你可以通过<a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">官方文档</a>了解更多安装 <code>kubectl</code> 的细节。</p></li>
+
+<li><p>在本机上使用 <code>helm</code> 命令行，在 K8s 上使用的包管理器。在 Jenkins X 2.xx 版本上<a href="https://helm.sh/docs/intro/install/">安装 Helm</a> 目前在 3.xx 上并不支持。</p></li>
+
+<li><p><code>git</code> <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">安装 Git</a></p></li>
+
+<li><p><code>jx</code> <a href="https://jenkins-x.io/docs/getting-started/setup/install/">Jenkins X CLI</a></p></li>
+</ul>
+
+<h3 id="将它们组合到一起">将它们组合到一起:</h3>
+
+<ol>
+<li><p>行程的第一步基于你的操作系统<a href="https://jenkins-x.io/getting-started/install/">下载安装 jx 命令行工具</a></p></li>
+
+<li><p>创建一个访问(<a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repoGitHub">https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repoGitHub</a>) 的 GitHub Access Token，设置一个名字将其存放在一个安全的地方。在安装过程中会使用它。</p></li>
+
+<li><p>Jenkins X 前提是存在 Kubernetes 集群，创建一个集群相对直接一些，在<a href="https://jenkins-x.io/getting-started/create-cluster/">它们的网站上也很好的文档化了</a>。</p></li>
+</ol>
+
+<p>在<a href="https://jenkins-x.io/getting-started/install-on-cluster/">已存在的 Kubernetes 集群上安装 Jenkins X</a> 之后，你会有下图这样的结构:</p>
+
+<p><img src="jenkins-x-deployment.png" alt="jenkins-x-deployment" /></p>
+
+<h3 id="在-jenkins-x-上创建一个应用程序">在 Jenkins X 上创建一个应用程序</h3>
+
+<p>1- 创建一个 demo 应用程序</p>
+
+<p><em>a) 从 <code>https://github.com/ernesen/apiconnectthreeofthree</code> 或其他仓库中 fork 一份到本地</em></p>
+
+<p><em>b) 克隆该仓库 <code>git clone https://github.com/$USERNAME/apiconnectthreeofthree</code> 或者其他你喜欢的仓库。</em></p>
+
+<p><em>c) 变更目录 <code>cd apiconnectthreeofthree</code></em></p>
+
+<p><em>d) 使用命令 <code>jx import apiconnectthreeofthree</code> 将存在的项目导入到 Jenkins:</em></p>
+
+<p>2- Jenkins X 会为该应用程序创建一个 0.0.1 的版本号然后将其升级到准生产环境；每次拉取请求都会创建它的临时预览环境。</p>
+
+<p><img src="create-a-pull-request.png" alt="create-a-pull-request" /></p>
+
+<p>3- 应用程序创建一次变更（编辑引导页面）创建一个 PR 到主干分支；现在我们的应用就部署到一个预览环境中了。</p>
+
+<p>4- Jenkins X 将会创建一个预览环境将会在你的云提供商中触发一个扩展事件为你要部署的应用程序添加另一个 K8s 节点；使用这个环境在将应用程序推出到生产环境之前预览你的应用程序。</p>
+
+<p>5- 批准的 PR 将带有 “approved” 标签-Prow 会自动合并该 PR 并将其变更到准生产环境。它将自动触发升级到准生产环境的动作，从而生成新版本的应用程序:</p>
+
+<p><img src="update-to-staging-environment.png" alt="update-to-staging-environment" /></p>
+
+<p>6- 最后，我们为生产环境做准备！</p>
+
+<p><em>a) 手动使用 <code>jx promote prod</code> 命令。</em></p>
+
+<p><img src="promote-to-production.png" alt="promote-to-production" /></p>
+
+<p>假如你已经掌握了从准生产升级到生产环境的拉取请求步骤，这里就只快速过一遍，没有任何具体细节。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>市场上涌现出众多的 CI/CD 工具这是一个令人激动的时代。近年来选择一款合适的工具成为了团队一项头疼的事情。DevOps 和微服务架构能够让团队更高效，交付项目时也能作为替代传统研发架构的方案。以其更快的应用程序交付速度使得微服务被更多的采用。</p>
+
+<p>希望这篇文章能够引起你的注意并能传递出我想表达的观点。目的是至少能让你了解  Serverless Jenkins 与 Kubernetes 的持续集成和交付是如何解决如今基于微服务架构以及底层云基础设施构建发布流程云应用程序问题的。Jenkins X 可以帮助自动为你的拉取请求创建预览环境，所以你可以在变更合并到主干分支以及将变更从一个环境迁移到另一个环境之前更快的得到反馈。</p>
+
+<p>遵循这些原则，希望能增加你对 Serverless Jenkins 的基本知识以及开发速度的兴趣，通过消除持续交付的障碍在变更管理时更有信心从而改善你的 CI/CD 流水线，“自我提升更近一步”。</p>
+
+<h2 id="致谢">致谢</h2>
+
+<p>特别感谢来自 <strong>IBM Garage 市场和交流部</strong>的 <strong>Amy Xin</strong> 对发布前初稿做的审校。同样感谢 <strong>IBM Garage 新加坡开发团队: <a href="relucio@ph.ibm.com">Enrique（Ike）Relucio</a>、<a href="jcalalang@ph.ibm.com">Ernest Jason C Calalang</a>、<a href="Jaren.Lim@ibm.com">Jaren Lim</a> 和 <a href="chengbin.yan@sg.ibm.com">Richard Chengbin Yan</a></strong> 他们帮助我对这些实践进行了验证。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<p>这里提供了关于使用 Serverless Jenkins（Jenkins X）、GitOps、Tekton、DevOps 以及 CI/CD 更多的细节。请参考下面的链接你可以从中学习到一些可以快速掌握的核心概念而不需要花费数月去搞清楚“做某件事的正确方法”:</p>
+
+<ul>
+<li><p><a href="https://www.weave.works/technologies/gitops/">GitOps 指导</a></p></li>
+
+<li><p><a href="https://www.praqma.com/stories/get-started-with-serverless-jenkinsx/">开始使用 Serverless Jenkins X</a></p></li>
+
+<li><p><a href="https://www.cloudbees.com/blog/all-you-need-know-about-jenkins-x">关于 Jenkins X 你想知道的</a></p></li>
+
+<li><p><a href="https://www.previous.cloudbees.com/blog/opinionated-kubernetes-and-jenkins-x">Opinionated Kubernetes 和 Jenkins X</a></p></li>
+
+<li><p><a href="https://medium.com/jfrogplatform/jenkins-x-code-to-production-in-high-speed-528931144e5d">Jenkins X: 从代码到产品快速转化</a></p></li>
+
+<li><p><a href="https://medium.com/@tsahiduek/serverless-ci-cd-using-jenkins-x-and-spotinsts-ocean-2735264845a0">使用 Jenkins X 和 Spotinst&rsquo;s Ocean 实现 Serverless CI/CD</a></p></li>
+
+<li><p><a href="https://jenkins-x.io/docs/getting-started/">Jenkins X: 在 Kubernetes 上加快持续交付</a></p></li>
+
+<li><p><a href="https://medium.com/@m.k.joerg/gitops-weave-flux-in-detail-77ce36945646">使用 GitOps 持续部署到 Kubernetes（Weave Flux）</a></p></li>
+
+<li><p><a href="https://medium.com/edureka/ci-cd-pipeline-5508227b19ca">CI CD 流水线: 怎样从 Scratch 安装 CI CD 流水线</a></p></li>
+
+<li><p><a href="https://medium.com/velotio-perspectives/know-everything-about-spinnaker-how-to-deploy-using-kubernetes-engine-57090881c78f">Spinnaker 全知道 &amp; 怎样使用 Kubernetes 引擎进行部署</a></p></li>
+
+<li><p><a href="https://jenkins.io/blog/2018/03/19/introducing-jenkins-x/">介绍 Jenkins X: 一款在 Kubernetes 上为现代云安装程序使用的 CI/CD 解决方案</a></p></li>
+
+<li><p><a href="https://www.digitalocean.com/community/tutorials/webinar-series-kubernetes-package-management-with-helm-and-ci-cd-with-jenkins-x">Webiner 系列: 使用 Helm 的 Kubernetes 包管理工具以及使用 Jenkins X 实现 CI/CD</a></p></li>
+</ul>
+
+</div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “DevOps 的打开方式: 构建和部署”
+  </a> 更新于：September 2, 2020
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">完善此页</a>
+
+      
+
+  
+  
+  
+
+  <div class="nested-lh-copy">
+    <ul class="list dib nested-links ml0 pl0">
+      
+        <li class="db mb2 b">
+          Tags:
+        </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Jenkins">
+              Jenkins
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Jenkins-X">
+              Jenkins X
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Continuous-Integration">
+              Continuous Integration
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Ci-Cd-Pipeline">
+              Ci Cd Pipeline
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Kubernetes">
+              Kubernetes
+            </a>
+          </li>
+        
+              
+      
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/09\/2020-09-02-devops-adoption-approach-build-and-deploy\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
+
+  </main>
+
+  <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+  <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+    <div class="pb3 pt4 w-100 w-50-ns">
+
+      <div class="b f3  light-gray mb3 nested-links tc">
+        由 <a href="https://github.com/jenkins-zh/jenkins-zh/graphs/contributors" target="_blank"
+          class="link">Jenkins 社区贡献者</a> 维护<br />
+      </div>
+
+      <ul class="center f6 list ma0 mv3 pa0 tc" style="display:none"><li class="dib mr3"><a href="https://github.com/jenkins-zh/jenkins-zh/issues/new" class="dim link light-gray pv2">File an Issue</a></li></ul>
+
+      <ul class="center f6 list ma0 mv4 pa0 tc">
+        <li class="dib mr3">
+          <a href="https://twitter.com/jenkinsci" target="_blank" class="dim link light-gray pv2">Twitter</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://www.youtube.com/channel/UC63xz3pq26BBgwB3cnwCoqQ" target="_blank"
+            class="dim link light-gray pv2">YouTube</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://space.bilibili.com/433584098" target="_blank" class="dim link light-gray pv2">哔哩哔哩</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://jcli.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">Jenkins
+            CLI</a>
+        </li>
+        <li class="dib mr3">
+          <a href="https://community.jenkins-zh.cn/" target="_blank" class="dim link light-gray pv2">社区论坛</a>
+        </li>
+      </ul>
+
+      
+    </div>
+
+    <div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">优酷视频
+        <div>
+          <a href="https://i.youku.com/jenkinszh" target="_blank">
+            <img src="/images/youku-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微信公众号
+        <div>
+          <a href="https://mp.weixin.qq.com/s/vifdduC3kRGSIMpyL03yVA" target="_blank">
+            <img src="https://jenkins.io/images/jenkins-wechat.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+      <div style="color: #ffffff; display: inline-block; text-align: center; margin-right: 5px; margin-left: 5px;">微博
+        <div>
+          <a href="https://www.weibo.com/jenkinszh" target="_blank">
+            <img src="/images/weibo-qrcode.png" with="100" height="100">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="f7 gray mb5 mb0-ns ph3 w-100"> 
+    <p class="dib mr4"><a href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow" class="dim link light-gray pv2"><u>晋ICP备15000444号-2</u></a></p>
+  </div>
+
+
+  <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 w-100"><div  class="globalmenu mobilemenu pb3 dn">
+    
+
+<ul class="list hidden dib ph0 ma0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/wechat/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          博客
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/tutorial/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          教程
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/event/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          活动
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/partner/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          合作伙伴
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/about/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          关于我们
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="http://jenkins.io/zh" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Jenkins 官网
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db mt4-ns ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">菜单</button>
+
+  
+</div>
+<script src="/dist/app.bundle.js" type="text/javascript"></script>
+</div>
+
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'jenkinsci/chinese'
+    };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</footer>
+  
+<link href="/dist/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/jenkins-zh.cn";
+    
+</script>
+<script src="/dist/lunr.js"></script>
+<script src="/dist/autocomplete.js"></script>
+<script src="/dist/jquery-3.2.1.min.js"></script>
+<script src="/dist/search.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6db234f713318730f0e5f6a95bdd8d47";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?6276dcef5c15f276644151772390c1f9":"https://jspassport.ssl.qhimg.com/11.0.1.js?6276dcef5c15f276644151772390c1f9";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ci Cd Pipeline on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/ci-cd-pipeline/</link>
+    <description>Recent content in Ci Cd Pipeline on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/ci-cd-pipeline/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DevOps 的打开方式: 构建和部署</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/</guid>
+      <description>通过使用 Serverless Jenkins（Jenkins X）为企业在一个实时的云原生项目上通过使用 Kubernetes CI/CD 方法进行构建&amp;amp;部署。
+新时期 DevOps 的变革是在专注于作为敏捷协议的一个扩展并且同敏捷协同合作的过程中让开发者、IT 运维、质量保障和业务一道朝着共同的目标让项目更快更好的进行。受竞争日益激烈的市场驱动着，企业需要通过软件传递价值，造就了速度成为了如今软件开发的新规范。拥有正确的企业文化、工具、流程以及 DevOps 最佳实践对加快和提升软件产出的速度至关重要。如今，我们需要为在云、容器、服务网格、微服务、不变的基础架构以及声明性 API 上运行的 Kubernetes 上重新构想 CI/CD。嗯，Jenkins X 就是那款产品；它提供了一种在 Kubernetes 上运行 CI/CD 流水线的方法。Jenkins X 作为一个平台在开发者那里隐藏了 Kubernetes 的复杂性。开发者可以专注于编出高质量的代码和优秀的用户体验而不需要为 Kubernetes 的复杂性大费脑筋。
+这是正确打开 DevOps 的博客的系列第二部分。在之前的那篇博客中，主要讨论了文化、计划和设计。我当时指出“DevOps 是一个结果为导向支持敏捷的实践。”现在依然是这样的。
+这篇博客中，我将会通过在 Kubernetes 上为云原生应用程序使用最新的 CI/CD 工具也就是 Jenkins X 专注于从运行层面讲解 DevOps。我将会解释基本的概念然后通过构建一条流水线来将理论与实践关联，然后带你学习第一次接触 Jenkins X 需要学习的步骤有哪些。对你来说重要的是理解构建的模块以及为什么它是云原生应用的完美选择。操作说明将会一步步引导你学习 Jenkins X 并会为你提供入门指南。
+Jenkins X 是革命性的具有改变现代应用程序与客户交互的潜力。它或许会影响下一代的开发以及部署，类似于 Docker 对不可变容器镜像和 Kubernetes 对容器服务编排的影响那样。
+Serverless CI/CD 流水线 Jenkins X 是一款在 Kubernetes 上运行的 CI/CD 流水线，一种部署临时流水线的新方法也被叫做无服务器的流水线。它是 Tekton Pipelines 项目的一部分旨在为声明 CI/CD 类型的流水线提供 Kubernetes 形式的资源。</description>
+    </item>
+    
+  </channel>
+</rss>
