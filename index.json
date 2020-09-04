@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/meeting/2020-09-02/",
+        "title": "",
+        "type": "meeting",
+        "date": "2020-09-02 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": " 媒体账号状态分享  微信公众号 开源中国 B站  开源项目  update-center-mirror  社区职位 暂时没有计划推进\n",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/",
         "title": "DevOps 的打开方式: 构建和部署",
         "type": "wechat",
@@ -2564,7 +2577,7 @@
         "uri": "https://jenkins-zh.cn/meeting/",
         "title": "",
         "type": "meeting",
-        "date": "2020-06-10 00:00:00 +0000 UTC",
+        "date": "2020-09-02 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": " Jenkins 中文社区例会，每个双周周三（遇到法定节假日时延后）的 21:00 进行。准备参加的小伙伴，需要提前安装好 zoom 软件， 然后点击 https://zoom.us/j/691718976 即可进入会议。\n注意事项⚠️  要发言的小伙伴要提前找好一个相对比较安静的环境 不发言的时候，及时关闭麦克风🎤 例会是讨论社区的事情，而不是技术分享  如何接入？ 可以下载桌面客户端，或者移动客户端来接入会议。\n如果不想下载软件，或者由于某种原因无法访问国外网站的，可以点击此处打开国内的 Web 客户端， 直接在浏览器中参加会议。\n会议 ID 为：691718976\n",
