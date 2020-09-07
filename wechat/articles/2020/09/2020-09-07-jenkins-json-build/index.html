@@ -10,14 +10,14 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Jenkins 2019 年 Board 和 Officer positions 选举更新 - Jenkins 中文社区</title>
+  <title>对Jenkinsfile语法说不，开源项目Jenkins Json Build挺你 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。">
+  <meta name="description" content="使用JSON配置文件驱动Jenkins构建">
   
   
-  <meta name="keywords" content="2019,Jenkins,Board,Officer Elections">
+  <meta name="keywords" content="Jenkins,Jenkins Shared Libraries">
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Jenkins 2019 年 Board 和 Officer positions 选举更新" />
-<meta property="og:description" content="Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。" />
+<meta property="og:title" content="对Jenkinsfile语法说不，开源项目Jenkins Json Build挺你" />
+<meta property="og:description" content="使用JSON配置文件驱动Jenkins构建" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/" /><meta property="article:published_time" content="2019-11-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-11-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-07-jenkins-json-build/" /><meta property="article:published_time" content="2020-09-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-09-07T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="Jenkins 2019 年 Board 和 Officer positions 选举更新">
-<meta itemprop="description" content="Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。">
-
-
-<meta itemprop="datePublished" content="2019-11-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-11-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="220">
+<meta itemprop="name" content="对Jenkinsfile语法说不，开源项目Jenkins Json Build挺你">
+<meta itemprop="description" content="使用JSON配置文件驱动Jenkins构建">
 
 
+<meta itemprop="datePublished" content="2020-09-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="373">
 
-<meta itemprop="keywords" content="community,governance,elections," />
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jenkins 2019 年 Board 和 Officer positions 选举更新"/>
-<meta name="twitter:description" content="Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。"/>
+<meta name="twitter:title" content="对Jenkinsfile语法说不，开源项目Jenkins Json Build挺你"/>
+<meta name="twitter:description" content="使用JSON配置文件驱动Jenkins构建"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -204,36 +204,27 @@ var trackOutboundLink = function(id, url) {
 
 
 
-
-
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            wenjunzhangp
+            sunweisheng
         </h3>
 
       
       
         <p class="lh-copy measure center mt0 f6 black-60 bio">
-          一身清贫岂敢入芳华，两袖清风怎敢误佳人
+          Scrum OKR JAVA .NET 
         </p>
       
-      <a href="https://github.com/wenjunzhangp" target="_blank" class="link dim v-mid dib">
+      <a href="https://github.com/sunweisheng" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
 
       </a>
 
-  
-  <div>
-    作者：<span class="originalAuthor">Tracy Miranda</span>
-    <div>
-      <a class="originalLink" href="https://jenkins.io/blog/2019/11/08/board-elections/" target="_blank">原文链接</a>
-    </div>
-  </div>
   
   </aside>
 
@@ -251,17 +242,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-13-a-thanks-letter/" class="dib f6 pl1 hover-bg-light-gray br-100" title="致霍格沃兹测试学院的一封感谢信 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-11-update-center-mirror-announcement/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 插件中心国内镜像源发布">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="dib f6 pr1 hover-bg-light-gray br-100" title="DevOps 的打开方式: 构建和部署">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -281,13 +264,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Jenkins 2019 年 Board 和 Officer positions 选举更新</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">对Jenkinsfile语法说不，开源项目Jenkins Json Build挺你</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举活动，我们诚恳的邀请您参加并且投出您宝贵的一票。
+      使用JSON配置文件驱动Jenkins构建
     </div>
   
 
@@ -300,150 +283,280 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p><img src="cover.png" alt="cover" /></p>
+<p><img src="jenkins-json-build-logo.png" alt="logo-image" /></p>
 
-<p>Jenkins 社区正在进行 2019 年 Board 和 Officer positions 的选举。提名征集已经结束。我们征集到了很多提名。根据愿意接受提名的人和无可争议的 Officer Positions，我们将有 3 票：</p>
+<h2 id="项目背景">项目背景</h2>
 
-<ol>
-<li>投票选举 3 名<a href="https://jenkins.io/project/governance/#governance-board">board members</a></li>
-<li>投票选举 Jenkins <a href="https://jenkins.io/project/board/#security">security officer</a></li>
-<li>投票选举 Jenkins <a href="https://jenkins.io/project/board/#events">events officer</a></li>
-</ol>
+<p>我所在的组织项目数量众多，使用的语言和框架也很多，比如Java、ReactNative、C# .NET、Android、iOS等，部署环境也是多种多样比如Tomcat、K8S、IIS、客户端应用是局域网内企业证书安装等，我们没有专门的配置管理员或构建部署专员，都是开发人员自己在Jenkins中写构建脚本，每个项目都有自己的构建脚本（Scripted Pipelines），但类型相同的项目比如都是Java或都是.NET项目之间，构建脚本其实都很类似，都是靠几个已存在的构建脚本改写出来的，其实开发人员对编写Jenkins构建脚本了解也不多，另外因为没有规则和约束，更没有代码复用的机制，构建部署工作很混乱和难以管理。</p>
 
-<h2 id="候选人">候选人</h2>
+<h2 id="项目解决的问题">项目解决的问题</h2>
 
-<p>每位候选人都提供了一份声明，以帮助指导选民为什么要为候选人投票。有关更多详细信息，请参阅<a href="https://docs.google.com/document/d/15rJYkBjWLGZTL87xeJ4P2Y1LNn7C0EBb0wkDVUSfLmQ/edit#">候选人宣言</a>。竞选 board members 的候选人为：</p>
+<p>在上述情况下我们开发了<a href="https://github.com/gyyx/jenkins-json-build">Jenkins-Json-Build</a>项目,该项目适合于有一些编程经验的人员在不需要了解Jenkins构建脚本如何编写的情况下，通过简单的配置Json文件，就可以轻松完成一个项目的获取源码、单元测试、代码检查、编译构建、部署等步骤，实现一个典型的CI过程，又因为此项目使用了Jenkins共享类库（Shared Libraries）机制，构建脚本复用率得到了大幅度提高，并且开发人员可以方便的扩展更多的功能，满足不同构建部署场景的需要，此项目非常适合那些开发人员自己管理构建部署的团队，通过Jenkins-Json-Build项目组织对构建部署过程进行了统一的管理和监督，又让每个项目有足够的灵活性和自主权满足各自项目构建部署的特殊性。</p>
 
-<ul>
-<li>Alex Earl</li>
-<li>Oliver Gondza</li>
-<li>Ullrich Hafner</li>
-<li>Oleg Nenashev</li>
-<li>Mark Waite</li>
-<li>赵晓杰（Rick）</li>
-</ul>
+<h2 id="一个java项目构建示例">一个Java项目构建示例</h2>
 
-<p>竞选 security officer 的候选人是：</p>
+<h3 id="构建服务器上需要安装的软件">构建服务器上需要安装的软件</h3>
+
+<p>构建服务器上需要安装Java、Maven和Sonar-Scanner（此项可选）。</p>
 
 <ul>
-<li>Daniel Beck</li>
-<li>Wadeck Follonier</li>
+<li><a href="https://github.com/sunweisheng/Kvm/blob/master/Install-Java-18.md">JAVA安装</a></li>
+<li><a href="https://github.com/sunweisheng/Jenkins/blob/master/Install-Maven.md">Maven安装</a></li>
+<li><a href="https://github.com/sunweisheng/Jenkins/blob/master/Install-SonarQube-8.3.md">Sonar-Scanner</a></li>
 </ul>
 
-<p>竞选 events officer 的候选人是：</p>
+<h3 id="构建需要依赖的jenkins插件">构建需要依赖的Jenkins插件</h3>
 
 <ul>
-<li>Alyssa Tong</li>
-<li>赵晓杰（Rick）</li>
+<li>JUnit</li>
+<li>JaCoCo</li>
 </ul>
 
-<h2 id="选民登记">选民登记</h2>
+<h3 id="jenkinsfile文件内容">Jenkinsfile文件内容</h3>
 
-<p>这是近一段时间以来我们第一次进行 Jenkins 选举。我们正在学习。Jenkins 选举旨在实现包容性。我们不仅将选举限于代码提交者。在 2019 年 9 月 1 日之前注册了 Jenkins 帐户的任何人都有资格投票。Jenkins 是一个成功的项目，大约有 10 万个符合该标准的帐户。我们正在与符合条件的选民联系，并要求他们明确 <code>选择性加入</code> 以参加投票。</p>
+<p>因为采用pipeline script from SCM构建方式，所以用Declarative Pipeline方式在Jenkinsfile中编写构建脚本：</p>
 
-<p>如果符合条件，您将在注册的 jenkins.io 电子邮件地址中收到一封电子邮件。该邮件来自 elections@jenkins.io，标题为 <code>2019 Jenkins Election - Invitation to Participate</code>。该电子邮件将提供选举详细信息，并包含一个 <code>I want to participate</code> 按钮。</p>
+<pre><code class="language-groovy">@Library('shared-library') _
 
-<p><img src="election-invitation.png" alt="election-invitation" /></p>
+pipeline {
+  agent any
+  parameters { //定义构建参数
+    choice choices: ['-'], description: '请选择部署方式', name: 'deploy-choice'
+  }
+  stages {
+    stage('初始化') {
+      steps {
+        script{
+          //加载源码仓库根目录下的jenkins-project.json构建配置文件
+          runWrapper.loadJSON('/jenkins-project.json')
+          runWrapper.runSteps('初始化')
+        }
+      }
+    }
+    stage('单元测试') {
+      steps {
+        script{
+          //执行单元测试步骤
+          runWrapper.runSteps('单元测试')
+        }
+      }
+    }
+    stage('代码检查') {
+      steps {
+        script{
+          //执行代码检查步骤，比如SonarQube
+          runWrapper.runSteps('代码检查')
+        }
+      }
+    }
+    stage('编译构建') {
+      steps {
+        script{
+          //执行编译步骤
+          runWrapper.runSteps('编译构建')
+        }
+      }
+    }
+    stage('部署') {
+      steps {
+        script{
+          //根据选择的部署方式执行部署步骤
+          runWrapper.runStepForEnv('部署','deploy-choice')
+        }
+      }
+    }
+  }
+}
+</code></pre>
 
-<h2 id="投票确认">投票确认</h2>
-
-<p>点击链接后，您将看到一个确认屏幕，如下所示：</p>
-
-<p><img src="election-acknowledged.png" alt="election-acknowledged" /></p>
-
-<p>如果您在 2019 年 11 月 14 日之前仍未收到电子邮件，或者在投票时遇到任何问题，请对 <a href="https://issues.jenkins-ci.org/browse/INFRA-2319">Jenkins Election 2019 Jira issue</a> 问题发表评论。</p>
-
-<h2 id="表决">表决</h2>
-
-<p>投票将于 2019 年 11 月 11 日正式开始。候选人将收到 Kohsuke Kawaguchi 发送的 Condorcet 互联网投票电子邮件。每次投票将发送一封电子邮件（因此，总共 3 票：board 1 票，events officer 1 票，security officer 1 票）。投票将要求使用以下截图对候选人进行排名：</p>
-
-<p><img src="election-ballot.png" alt="election-ballot" /></p>
-
-<h2 id="选举日期">选举日期</h2>
-
-<p>以下是关键选举日期的摘要：</p>
-
-<table>
-<thead>
-<tr>
-<th>Date</th>
-<th>Event</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Now</td>
-<td>Voter registration ongoing</td>
-</tr>
-
-<tr>
-<td>Nov 11, 2019</td>
-<td>Voting begins</td>
-</tr>
-
-<tr>
-<td>Nov 17, 2019</td>
-<td>Voter registration closes</td>
-</tr>
-
-<tr>
-<td>Nov 24, 2019</td>
-<td>Voting closes a 5:00 PM Pacific Time</td>
-</tr>
-
-<tr>
-<td>Dec 3, 2019</td>
-<td>New representatives announced</td>
-</tr>
-</tbody>
-</table>
-
-<p>选举结果将发布到 <a href="https://groups.google.com/forum/#!forum/jenkinsci-dev">Jenkins 开发人员的邮件列表中</a>，然后在 <a href="https://jenkins.io/node/">jenkins.io</a> 上发布公告博客。</p>
-
-<p>如果对建议的日期有任何延迟，我们将尽快通知您。非常感谢所有向我们的社区展示 Jenkins 服务精神的候选人。我们鼓励所有人注册投票并参与 Jenkins 社区。</p>
-
-<h2 id="无可争议的职位">无可争议的职位</h2>
-
-<p>当一个 officer position 只有一个愿意接受提名的候选人时，没有理由对该职位进行投票。该人将成为该职位的唯一候选人。</p>
-
-<p>毫无争议的 Officer Positions 包括：</p>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Role</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Olivier Vernin</td>
-<td>Infrastructure Officer</td>
-</tr>
-
-<tr>
-<td>Oliver Gondza</td>
-<td>Release Officer</td>
-</tr>
-
-<tr>
-<td>Mark Waite</td>
-<td>Documentation Officer</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="参考文献">参考文献</h2>
+<p>上述Jenkinsfile文件可用于所有类型的项目构建，实际使用的时候一般还会用到以下三个Jenkins插件：</p>
 
 <ul>
-<li><a href="https://jenkins.io/project/board">Jenkins Governance Board</a></li>
-<li><a href="https://jenkins.io/project/board-election-process/">Jenkins Board Election Process</a></li>
-<li><a href="https://jenkins.io/project/team-leads/">Jenkins Officers</a></li>
-<li><a href="https://groups.google.com/forum/#!msg/jenkinsci-dev/v8kmEQMT0ts/l8yQ43WNAwAJ">Announcement in the developer mailing list</a></li>
-<li><a href="https://groups.google.com/forum/#!msg/jenkinsci-dev/vKi9JpxTQxY/4O4lmqfdAgAJ">2019 elections proposal in the developer mailing list</a></li>
+<li><a href="https://github.com/jenkinsci/agent-server-parameter-plugin">Agent Server Parameter Plugin 用于选择构建的Agent服务器</a></li>
+<li><a href="https://github.com/jenkinsci/custom-checkbox-parameter-plugin">Custom Checkbox Parameter Plugin 用于选择子项目进行构建,多用于微服务项目</a></li>
+<li><a href="https://github.com/jenkinsci/git-parameter-plugin">Git Parameter 用于选择分支构建</a></li>
 </ul>
+
+<h3 id="json配置文件内容">JSON配置文件内容</h3>
+
+<pre><code class="language-json">{
+  &quot;初始化&quot;: {
+    &quot;检查Java环境&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STDOUT&quot;,
+      &quot;Success-IndexOf&quot;: &quot;java version \&quot;1.8.0_211\&quot;&quot;,
+      &quot;Script&quot;: {
+        &quot;输出Java版本&quot;: &quot;java -version 2&gt;&amp;1&quot;
+      }
+    },
+    &quot;检查Maven环境&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STDOUT&quot;,
+      &quot;Success-IndexOf&quot;: &quot;Apache Maven 3.6.3&quot;,
+      &quot;Script&quot;: {
+        &quot;输出Maven版本&quot;: &quot;mvn -v&quot;
+      }
+    },
+    &quot;检查SonarScanner环境&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STDOUT&quot;,
+      &quot;Success-IndexOf&quot;: &quot;SonarScanner 4.4.0.2170&quot;,
+      &quot;Script&quot;: {
+        &quot;输出SonarScanner版本&quot;: &quot;sonar-scanner -v&quot;
+      }
+    },
+    &quot;绑定构建参数&quot;: {
+      &quot;Type&quot;: &quot;BUILD_PARAMETER_DROP_DOWN_MENU&quot;,
+      &quot;StepsName&quot;: &quot;部署&quot;,
+      &quot;ParamName&quot;: &quot;deploy-choice&quot;
+    }
+  },
+  &quot;单元测试&quot;: {
+    &quot;执行Maven单元测试脚本&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STATUS&quot;,
+      &quot;Script&quot;: {
+        &quot;Maven单元测试&quot;: &quot;cd ${PROJECT_PATH};mvn clean test&quot;
+      }
+    },
+    &quot;执行JUnit插件&quot;: {
+      &quot;Type&quot;: &quot;JUNIT_PLUG_IN&quot;,
+      &quot;JunitReportPath&quot;: &quot;**/${PROJECT_DIR}/**/target/**/TEST-*.xml&quot;
+    },
+    &quot;执行Jacoco插件&quot;: {
+      &quot;Type&quot;: &quot;JACOCO_PLUG_IN&quot;,
+      &quot;classPattern&quot;:&quot;${PROJECT_PATH}/target/classes&quot;,
+      &quot;InclusionPattern&quot;:&quot;${PROJECT_PATH}/**&quot;,
+      &quot;LineCoverage&quot;:&quot;95&quot;,
+      &quot;InstructionCoverage&quot;:&quot;0&quot;,
+      &quot;MethodCoverage&quot;:&quot;100&quot;,
+      &quot;BranchCoverage&quot;:&quot;95&quot;,
+      &quot;ClassCoverage&quot;:&quot;100&quot;,
+      &quot;ComplexityCoverage&quot;:&quot;0&quot;
+    }
+  },
+  &quot;代码检查&quot;: {
+    &quot;执行SQ代码扫描&quot;: {
+      &quot;Type&quot;: &quot;SONAR_QUBE&quot;
+    }
+  },
+  &quot;编译构建&quot;: {
+    &quot;执行Maven构建&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STATUS&quot;,
+      &quot;Script&quot;: {
+        &quot;Maven构建&quot;: &quot;cd ${PROJECT_PATH};mvn clean package -U -DskipTests&quot;
+      }
+    }
+  },
+  &quot;部署&quot;: {
+    &quot;模拟部署脚本-1&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STATUS&quot;,
+      &quot;Script&quot;: {
+        &quot;拷贝文件&quot;: &quot;echo 模拟拷贝文件&quot;
+      }
+    },
+    &quot;模拟部署脚本-2&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STATUS&quot;,
+      &quot;Script&quot;: {
+        &quot;HTTP传输文件&quot;: &quot;echo HTTP传输文件&quot;
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>配置说明：</p>
+
+<pre><code class="language-json">&quot;检查Java环境&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STDOUT&quot;,
+      &quot;Success-IndexOf&quot;: &quot;java version \&quot;1.8.0_211\&quot;&quot;,
+      &quot;Script&quot;: {
+        &quot;输出Java版本&quot;: &quot;java -version 2&gt;&amp;1&quot;
+      }
+</code></pre>
+
+<p>该类型的节点不是必须的（但看几年前写的配置文件时很有用，对需要的构建环境一目了然），目的是检查构建服务器是否具备需要的构建环境，在命令的标准输出内未含有Success-IndexOf节点定义的字符串则执行失败，对应的另一个节点名称是Fail-IndexOf，标准输出如果含有Fail-IndexOf定义的字符串则执行失败，两者选择其一使用。</p>
+
+<pre><code class="language-json">&quot;绑定构建参数&quot;: {
+      &quot;Type&quot;: &quot;BUILD_PARAMETER_DROP_DOWN_MENU&quot;,
+      &quot;StepsName&quot;: &quot;部署&quot;,
+      &quot;ParamName&quot;: &quot;deploy-choice&quot;
+    }
+</code></pre>
+
+<p>将部署节点（Steps）内的具体构建步骤（Step）列表，绑定到名为deploy-choice的下拉菜单构建参数上。</p>
+
+<pre><code class="language-json">&quot;执行JUnit插件&quot;: {
+      &quot;Type&quot;: &quot;JUNIT_PLUG_IN&quot;,
+      &quot;JunitReportPath&quot;: &quot;**/${PROJECT_DIR}/**/target/**/TEST-*.xml&quot;
+    }
+</code></pre>
+
+<p>使用Jenkins的JUnit插件生成Junit和TestNG的测试报告。</p>
+
+<pre><code class="language-json">&quot;执行Jacoco插件&quot;: {
+      &quot;Type&quot;: &quot;JACOCO_PLUG_IN&quot;,
+      &quot;classPattern&quot;:&quot;${PROJECT_PATH}/target/classes&quot;,
+      &quot;InclusionPattern&quot;:&quot;${PROJECT_PATH}/**&quot;,
+      &quot;LineCoverage&quot;:&quot;95&quot;,
+      &quot;InstructionCoverage&quot;:&quot;0&quot;,
+      &quot;MethodCoverage&quot;:&quot;100&quot;,
+      &quot;BranchCoverage&quot;:&quot;95&quot;,
+      &quot;ClassCoverage&quot;:&quot;100&quot;,
+      &quot;ComplexityCoverage&quot;:&quot;0&quot;
+    }
+</code></pre>
+
+<p>使用Jenkins的Jacoco插件检查单元测试覆盖度。</p>
+
+<pre><code class="language-json">&quot;代码检查&quot;: {
+    &quot;执行SQ代码扫描&quot;: {
+      &quot;Type&quot;: &quot;SONAR_QUBE&quot;
+    }
+  }
+</code></pre>
+
+<p>执行SonarQube代码检查，需要在项目根目录下要创建sonar-project.properties配置文件，以Java项目的配置文件为例：</p>
+
+<pre><code class="language-conf"># must be unique in a given SonarQube instance
+sonar.projectKey=Jenkins:Test-Java-Build
+
+sonar.projectVersion=1.0
+
+# Path is relative to the sonar-project.properties file. Defaults to .
+sonar.sources=src
+sonar.sourceEncoding=UTF-8
+sonar.java.binaries=./target/classes
+</code></pre>
+
+<pre><code class="language-json">&quot;执行Maven构建&quot;: {
+      &quot;Type&quot;: &quot;COMMAND_STATUS&quot;,
+      &quot;Script&quot;: {
+        &quot;Maven构建&quot;: &quot;cd ${PROJECT_PATH};mvn clean package -U -DskipTests&quot;
+      }
+    }
+</code></pre>
+
+<p>该节点就是执行命令，这里具体构建命令是用mvn clean package -U -DskipTests命令完成的。</p>
+
+<p>经过上述配置文件的执行，我们可以很简单的完成所有的构建步骤：</p>
+
+<p><img src="docs/images/jenkins-json-build-04.png" alt="project doc image" /></p>
+
+<p>这里篇幅有限，更多内容请到项目仓库查看比如：</p>
+
+<ul>
+<li>构建JS项目</li>
+<li>构建ReactNative项目</li>
+<li>构建Android项目</li>
+<li>构建iOS项目</li>
+<li>构建.NET项目</li>
+<li>构建多个子项目</li>
+<li>构建成功和失败处理</li>
+<li>在K8S内创建Pod进行构建</li>
+</ul>
+
+<h2 id="欢迎大家去关注-交流更多的关于jenkins构建的问题和经验">欢迎大家去关注、交流更多的关于Jenkins构建的问题和经验</h2>
+
+<p>项目地址：<a href="https://github.com/gyyx/jenkins-json-build">Jenkins Json Build</a></p>
+
+<p>个人邮箱：sunweisheng@live.cn</p>
 
 </div>
 
@@ -469,15 +582,15 @@ var trackOutboundLink = function(id, url) {
 <h2>参考</h2>
 <ul>
 	
+	<li><a href="/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/">Jenkins 2019 年 Board 和 Officer positions 选举更新</a></li>
+	
 	<li><a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/">在大型企业里维护多分支流水线</a></li>
 	
 	<li><a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/">在 Kubernetes 上使用 Jenkins </a></li>
 	
-	<li><a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/">多分支流水线任务对 GitLab SCM 的支持</a></li>
-	
 	<li><a href="/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/">Jenkins 插件的微基准测试框架</a></li>
 	
-	<li><a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/">Jenkins 文档特别兴趣小组</a></li>
+	<li><a href="/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/">多分支流水线任务对 GitLab SCM 的支持</a></li>
 	
 </ul>
 
@@ -491,203 +604,18 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-07-jenkins-json-build/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “Jenkins 2019 年 Board 和 Officer positions 选举更新”
-  </a> 更新于：November 12, 2019
+    “对Jenkinsfile语法说不，开源项目Jenkins Json Build挺你”
+  </a> 更新于：September 7, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/09/2020-09-07-jenkins-json-build.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
       
-
-  
-  
-  
-
-  <div class="nested-lh-copy">
-    <ul class="list dib nested-links ml0 pl0">
-      
-        <li class="db mb2 b">
-          Tags:
-        </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/community">
-              community
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/governance">
-              governance
-            </a>
-          </li>
-        
-          <li class="db dib-l mr3">
-            <a class="tag" href="/tags/elections">
-              elections
-            </a>
-          </li>
-        
-              
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/07/2020-07-15-jenkins-infrastructure-stats-updates-and-aws-sponsorship/" class="link">
-              Jenkins 基础设施：统计、更新、AWS 赞助
-            </a>
-          </li>
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/07/2020-07-10-on-jenkins-terminology-updates/" class="link">
-              关于 Jenkins 术语更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/06/2020-06-24-jenkins-user-experience-hackfest-documentation-results/" class="link">
-              Jenkins Hackfest 用户体验文档报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/03/2020-03-16-pipeline-authoring-sig-update/" class="link">
-              流水线编撰 SIG 公告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/" class="link">
-              使用 Visual Studio Code 验证 JCasC 配置文件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/09/2019-09-16-jenkins-world-contributor-summit-and-ask-the-experts-booth/" class="link">
-              Jenkins World 贡献者峰会及专家答疑展位
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/" class="link">
-              让我们庆祝 Jenkins 对 Java 11的支持
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/" class="link">
-              Jenkins 文档特别兴趣小组
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/" class="link">
-              介绍：成为一名 Jenkins 贡献者的旅程
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-20-cdf-launch/" class="link">
-              Jenkins 正在加入持续交付基金会
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-gsoc2019-announcement/" class="link">
-              Jenkins 已经被 Google Summer Of Code 2019 接受！
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-20-java11-preview-availability/" class="link">
-              Java 11 预览支持已在 Jenkins 2.155&#43; 中可用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-13-outreachy-audit-log-plugin/" class="link">
-              Jenkins 对审计日志的支持
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2018/12/2018-12-25-year-in-review/" class="link">
-              回顾 2018: 革新的一年
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/" class="link">
-              成为一名 Jenkins 贡献者：对新手友好的工单
-            </a>
-          </li>
-        
-      
-    </ul>
-  </div>
 
 
     </div>
@@ -710,7 +638,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/11\/2019-11-12-2019-jenkins-board-and-officer-elections-update\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/09\/2020-09-07-jenkins-json-build\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
