@@ -6,10 +6,30 @@
     <description>Recent content in Ansible on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Jenkins 和 Ansible 实现 CI/CD</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-09-ci-cd-with-jenkins-and-ansible/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-09-ci-cd-with-jenkins-and-ansible/</guid>
+      <description>现在是 2018 年。Kubernetes 在容器编排大战中取得了胜利。我们中的一些人怀着羡慕的心情阅读着硅谷创业公司的那些文章（是的，或许你所在的城市已经有了这些创业公司了！），然而读完之后还是回到自己手上运行得还可以的遗留的老系统上工作。
+基于主干开发，容器部署至云上，这些虽然都在 DevOps 未来的规划中，但是短期内这些还基本无法落地。
+向 DevOps 方向迈出的一步是要消除孤岛（dev，QA，ops），因此我们必须以一种每个角色都能轻松协作的方式来构建我们的代码。
+我阅读了很多非常不错的文章，介绍如何使用一些单页面 Javascript 和 Spring Boot 后端构建应用，其中还涉及了配置管理、基础框架、持续集成和持续交付。现在我将结合以上所有内容，为你开展自己的工作提供一些支持和帮助。
+准备 我准备了一个 Jenkins 实例，部署了 ssh， 以及一个可运行的 Spring Boot jar，还有一台 RedHat7 的虚拟机，和 Nexus 的制品仓库。所以我想我很高兴不用再部署 EARs 了。
+现在我将使用以上的工具构建一个部署流水线，并对所有内容做版本控制，以便团队中的每个人都可以访问所有内容，并了解他们的代码从提交到部署的每个环节（本例中只是到测试环境）。
+代码结构如下：
+parent +- backend +- frontend +- deployment Jenkinsfile  简单起见，backend——一个简单的 Spring Boot 应用——包含了前端 ReactJS 应用，deployment 中是持续交付相关工具，根目录下的 Jenkinsfile 是这个流水线的声明式描述。
+下面我们看一下每个模块！
+后端 它继承自 Spring Boot parent：
+&amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0.3.RELEASE&amp;lt;/version&amp;gt; &amp;lt;relativePath/&amp;gt; &amp;lt;/parent&amp;gt;  我们将 frontend 应用放在 dependencies：
+&amp;lt;dependencies&amp;gt; .</description>
+    </item>
     
     <item>
       <title>使用 Jenkins &#43; Ansible 实现 Spring Boot 自动化部署101</title>
