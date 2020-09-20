@@ -1415,6 +1415,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/install/docker/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/docs/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1711,6 +1715,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/install/k8s/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/kubesphere/</loc>
     <lastmod>2020-06-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1803,6 +1811,10 @@
     <loc>https://jenkins-zh.cn/tags/opensource/</loc>
     <lastmod>2020-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/advanced/operator/</loc>
   </url>
   
   <url>
@@ -2011,6 +2023,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/install/tomcat/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/toolchains/</loc>
     <lastmod>2020-03-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -2169,6 +2185,18 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/global-variable/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/global-variable/user/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/</loc>
     <lastmod>2020-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -2221,6 +2249,10 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/pipeline/multi-branch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/install/</loc>
   </url>
   
   <url>
@@ -2350,6 +2382,10 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/install/war/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -2406,6 +2442,10 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/management/mirror/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/advanced/</loc>
   </url>
   
   <url>

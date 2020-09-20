@@ -3120,6 +3120,16 @@ Jenkins 培训 大纲  Jenkins 项目介绍 安装、部署  传统环境 容器
     </item>
     
     <item>
+      <title>Docker 容器中使用 Jenkins</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/install/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/install/docker/</guid>
+      <description>docker run -p 9090:8080 --rm jenkinszh/jenkins-zh:2.238
+docker run -p 9090:8080 --rm jenkins/jenkins:2.238</description>
+    </item>
+    
+    <item>
       <title>Jenkins Area Meetup</title>
       <link>https://jenkins-zh.cn/about/meetups/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -3224,6 +3234,31 @@ Jenkins 社区贡献者们秉承传播 Jenkins 技术、加强互动交流、推
     </item>
     
     <item>
+      <title>Kubernetes 中使用 Jenkins</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/install/k8s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/install/k8s/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>Tomcat 中使用 Jenkins</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/install/tomcat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/install/tomcat/</guid>
+      <description>Tomcat 是 Apache 旗下的开源应用服务器，Java 的 Web 应用经常会选择它作为应用 服务器来提供 Web 服务。
+Tomcat 和 Jenkins 都是用 Java 语言开发的，因此，我们首先需要安装 Java 的运行环境（JRE，Java Runtime Environment）。
+安装 首先，我们需要下载 Tomcat 和 Jenkins： 首先，我们需要有 Java 的运行环境，JRE 或者 JDK 都可以。下面提供几种安装的方式：
+ macOS 下安装 brew cask install adoptopenjdk8  注意，本文的实验环境是 Java8
+然后，我们需要下载 Tomcat 和 Jenkins：
+wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz tar xzvf apache-tomcat-7.0.105.tar.gz wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war mv jenkins.war apache-tomcat-7.0.105/webapps  另外，我们可以通过 Jenkins CLI 来下载和启动 Jenkins
+jcli center download --war-version 2.256
+启动 Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。</description>
+    </item>
+    
+    <item>
       <title>Windows 安装程序更新</title>
       <link>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -3299,6 +3334,18 @@ CI 的目标是将集成简化成一个简单、易于重复的日常开发任�
  支持 Docker 构建。我们的项目依赖的一个或多个 Docker 镜像的执行（应用，数据库，Redis 等） 如有必要，易于配置和复制 易于增加新项目 易于修改构建步骤。工作在项目上的所有人都应该能修改它，如果他们希望执行 npm install 或 yarn install  安装Jenkins和Docker 安装 Jenkins 非常简单，直接从 官方教程 选择一种方式安装。
 以下是我们在 AWS 上的安装步骤：
 sudo rpm — import https://pkg.jenkins.io/debian/jenkins.io.key sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo sudo yum install java-1.</description>
+    </item>
+    
+    <item>
+      <title>全局变量中获取用户信息</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/global-variable/user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/global-variable/user/</guid>
+      <description>Jenkins 的流水线可以是自动触发，也可以有某个用户手动触发。如果我们希望能够或者触发某条流水线的用户信息时，可以参考下面给出的例子：
+pipeline { agent any stages { stage(&#39;clone&#39;) { steps { script { echo currentBuild.getBuildCauses().toString() } } } } }  参考的输出内容如下：
+[{&amp;quot;_class&amp;quot;:&amp;quot;hudson.model.Cause$UserIdCause&amp;quot;,&amp;quot;shortDescription&amp;quot;:&amp;quot;Started by user escape-hatch-admin&amp;quot;,&amp;quot;userId&amp;quot;:&amp;quot;escape-hatch-admin&amp;quot;,&amp;quot;userName&amp;quot;:&amp;quot;escape-hatch-admin&amp;quot;}]  如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 _class 为 hudson.model.Cause$UserIdCause 的元素，就能拿到用户名和用户ID了。
+原理 Jenkins 流水线（包括其他类型的任务）在触发时，会将被触发的原因记录到 Cause 中，而且，这个 Cause 可能会有多个。如果我们想要记录更多个性化的触发原因的话，可以使用 Jenkins 提供的扩展点。</description>
     </item>
     
     <item>
@@ -3464,6 +3511,15 @@ Jenkins 安全团队将 漏洞反馈分类发布在 Jira 和我们的非公开�
       
       <guid>https://jenkins-zh.cn/tutorial/scm/svn/svn/</guid>
       <description>待完善</description>
+    </item>
+    
+    <item>
+      <title>直接使用 Jenkins war 包</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/install/war/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/install/war/</guid>
+      <description>TODO</description>
     </item>
     
     <item>

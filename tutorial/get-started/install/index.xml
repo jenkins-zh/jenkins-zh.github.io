@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>安装 on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tutorial/get-started/install/</link>
+    <description>Recent content in 安装 on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://jenkins-zh.cn/tutorial/get-started/install/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker 容器中使用 Jenkins</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/install/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/install/docker/</guid>
+      <description>docker run -p 9090:8080 --rm jenkinszh/jenkins-zh:2.238
+docker run -p 9090:8080 --rm jenkins/jenkins:2.238</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes 中使用 Jenkins</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/install/k8s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/install/k8s/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>Tomcat 中使用 Jenkins</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/install/tomcat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/install/tomcat/</guid>
+      <description>Tomcat 是 Apache 旗下的开源应用服务器，Java 的 Web 应用经常会选择它作为应用 服务器来提供 Web 服务。
+Tomcat 和 Jenkins 都是用 Java 语言开发的，因此，我们首先需要安装 Java 的运行环境（JRE，Java Runtime Environment）。
+安装 首先，我们需要下载 Tomcat 和 Jenkins： 首先，我们需要有 Java 的运行环境，JRE 或者 JDK 都可以。下面提供几种安装的方式：
+ macOS 下安装 brew cask install adoptopenjdk8  注意，本文的实验环境是 Java8
+然后，我们需要下载 Tomcat 和 Jenkins：
+wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz tar xzvf apache-tomcat-7.0.105.tar.gz wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war mv jenkins.war apache-tomcat-7.0.105/webapps  另外，我们可以通过 Jenkins CLI 来下载和启动 Jenkins
+jcli center download --war-version 2.256
+启动 Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。</description>
+    </item>
+    
+    <item>
+      <title>直接使用 Jenkins war 包</title>
+      <link>https://jenkins-zh.cn/tutorial/get-started/install/war/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tutorial/get-started/install/war/</guid>
+      <description>TODO</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>API - Jenkins 中文社区</title>
+  <title>Tomcat 中使用 Jenkins - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
@@ -27,7 +27,6 @@
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
   
 
-  <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/tutorial/api/index.xml">
   <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
@@ -40,17 +39,45 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="API" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jenkins-zh.cn/tutorial/api/" />
+<meta property="og:title" content="Tomcat 中使用 Jenkins" />
+<meta property="og:description" content="Tomcat 是 Apache 旗下的开源应用服务器，Java 的 Web 应用经常会选择它作为应用 服务器来提供 Web 服务。
+Tomcat 和 Jenkins 都是用 Java 语言开发的，因此，我们首先需要安装 Java 的运行环境（JRE，Java Runtime Environment）。
+安装 首先，我们需要下载 Tomcat 和 Jenkins： 首先，我们需要有 Java 的运行环境，JRE 或者 JDK 都可以。下面提供几种安装的方式：
+ macOS 下安装 brew cask install adoptopenjdk8  注意，本文的实验环境是 Java8
+然后，我们需要下载 Tomcat 和 Jenkins：
+wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz tar xzvf apache-tomcat-7.0.105.tar.gz wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war mv jenkins.war apache-tomcat-7.0.105/webapps  另外，我们可以通过 Jenkins CLI 来下载和启动 Jenkins
+jcli center download --war-version 2.256
+启动 Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/tutorial/get-started/install/tomcat/" />
 
-<meta itemprop="name" content="API">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Tomcat 中使用 Jenkins">
+<meta itemprop="description" content="Tomcat 是 Apache 旗下的开源应用服务器，Java 的 Web 应用经常会选择它作为应用 服务器来提供 Web 服务。
+Tomcat 和 Jenkins 都是用 Java 语言开发的，因此，我们首先需要安装 Java 的运行环境（JRE，Java Runtime Environment）。
+安装 首先，我们需要下载 Tomcat 和 Jenkins： 首先，我们需要有 Java 的运行环境，JRE 或者 JDK 都可以。下面提供几种安装的方式：
+ macOS 下安装 brew cask install adoptopenjdk8  注意，本文的实验环境是 Java8
+然后，我们需要下载 Tomcat 和 Jenkins：
+wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz tar xzvf apache-tomcat-7.0.105.tar.gz wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war mv jenkins.war apache-tomcat-7.0.105/webapps  另外，我们可以通过 Jenkins CLI 来下载和启动 Jenkins
+jcli center download --war-version 2.256
+启动 Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。">
 
+
+
+<meta itemprop="wordCount" content="161">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="API"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Tomcat 中使用 Jenkins"/>
+<meta name="twitter:description" content="Tomcat 是 Apache 旗下的开源应用服务器，Java 的 Web 应用经常会选择它作为应用 服务器来提供 Web 服务。
+Tomcat 和 Jenkins 都是用 Java 语言开发的，因此，我们首先需要安装 Java 的运行环境（JRE，Java Runtime Environment）。
+安装 首先，我们需要下载 Tomcat 和 Jenkins： 首先，我们需要有 Java 的运行环境，JRE 或者 JDK 都可以。下面提供几种安装的方式：
+ macOS 下安装 brew cask install adoptopenjdk8  注意，本文的实验环境是 Java8
+然后，我们需要下载 Tomcat 和 Jenkins：
+wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz tar xzvf apache-tomcat-7.0.105.tar.gz wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war mv jenkins.war apache-tomcat-7.0.105/webapps  另外，我们可以通过 Jenkins CLI 来下载和启动 Jenkins
+jcli center download --war-version 2.256
+启动 Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -187,228 +214,141 @@ var trackOutboundLink = function(id, url) {
   
   <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
     
-<div class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
-    <div class="flex">
-        <div class="dn db-l w-20">
-            <aside>
-                <ul>
+
+<main>
+    <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+        <div class="flex-l">
+            <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-80">
+                <div class="prose">
+                    <h1>Tomcat 中使用 Jenkins</h1>
                     
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/advanced">
-                            
-                            <span>advanced</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/advanced/operator/">Operator</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/api">
-                            
-                            <span>API</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/api/plugin/">插件相关</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/api/core/">核心</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/best-practice">
-                            
-                            <span>最佳实践</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/best-practice/Android/">Android 应用构建</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/get-started">
-                            
-                            <span>get-started</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/get-started/global-variable/">全局变量</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/get-started/install/">安装</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/management">
-                            
-                            <span>管理</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/management/cli/">Jenkins CLI</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/backup-restore/">备份与恢复</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/plugin/">插件管理</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/agent/">计算节点</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/auth/">认证</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/management/mirror/">镜像源</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/notify">
-                            
-                            <span>消息通知</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/notify/">电子邮件</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/pipeline">
-                            
-                            <span>流水线</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/pipeline/shared-library/">共享库</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/pipeline/multi-branch/">多分支流水线</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/pipeline/pipeline/">流水线</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/plugin-dev">
-                            
-                            <span>插件开发</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/plugin-dev/pipeline/">流水线插件</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/scm">
-                            
-                            <span>代码管理</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/scm/git/">有关 Git 的教程</a>
-                        </li>
-                        
-                        <li class="">
-                            <a href="/tutorial/scm/svn/">有关 svn 的教程</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                    
-                    <li class="">
-                        <a href="https://jenkins-zh.cn/tutorial/use-cases">
-                            
-                            <span>use-cases</span>
-                        </a>
-                    </li>
-                    <ul class="sub-menu">
-                        
-                        <li class="">
-                            <a href="/tutorial/use-cases/continue-test/">持续测试</a>
-                        </li>
-                        
-                    </ul>
-                    
-                    
-                </ul>
+
+<p><a href="http://tomcat.apache.org/">Tomcat</a> 是 <a href="http://apache.org/">Apache</a> 旗下的开源应用服务器，Java 的 Web 应用经常会选择它作为应用
+服务器来提供 Web 服务。</p>
+
+<p>Tomcat 和 <a href="http://jenkins.io/">Jenkins</a> 都是用 Java 语言开发的，因此，我们首先需要安装 Java 的运行环境（JRE，Java Runtime Environment）。</p>
+
+<h2 id="安装">安装</h2>
+
+<p>首先，我们需要下载 Tomcat 和 Jenkins：
+首先，我们需要有 Java 的运行环境，JRE 或者 JDK 都可以。下面提供几种安装的方式：</p>
+
+<ul>
+<li>macOS 下安装 <code>brew cask install adoptopenjdk8</code></li>
+</ul>
+
+<p>注意，本文的实验环境是 Java8</p>
+
+<p>然后，我们需要下载 Tomcat 和 Jenkins：</p>
+
+<pre><code>wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz
+tar xzvf apache-tomcat-7.0.105.tar.gz
+
+wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war
+mv jenkins.war apache-tomcat-7.0.105/webapps
+</code></pre>
+
+<p>另外，我们可以通过 <a href="https://github.com/jenkins-zh/jenkins-cli">Jenkins CLI</a> 来下载和启动 Jenkins</p>
+
+<p><code>jcli center download --war-version 2.256</code></p>
+
+<h2 id="启动">启动</h2>
+
+<p>Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。</p>
+
+<ul>
+<li>交互式；执行的命令会阻塞当前窗口，直到程序退出后才会结束。</li>
+<li>守护进程；命令执行完成后，立刻结束，但是程序不会退出，会在后台一直运行。</li>
+</ul>
+
+<p>当我们学习、调试时，可以采用交互式的方式来启动，这样的话，会比较方便。</p>
+
+<p>当我们要在服务器上运行时，多半情况下是要以守护进程的方式来运行。</p>
+
+<p>下面，我会 Unix（Linux、macOS）为环境来给出相关的命令。</p>
+
+<h3 id="交互式">交互式</h3>
+
+<p><code>./bin/catalina.sh run</code></p>
+
+<h3 id="守护进程">守护进程</h3>
+
+<p><code>./bin/catalina.sh start</code></p>
+
+<p><code>./bin/catalina.sh stop</code>
+进入 Tomcat 的根目录下，执行命令 <code>./bin/catalina.sh run</code></p>
+
+<h3 id="守护进程-1">守护进程</h3>
+
+<p>进入 Tomcat 的根目录下，执行命令 <code>./bin/catalina.sh start</code> 就可以启动 Tomcat</p>
+
+<p>停止 Tomcat 的命令为 <code>./bin/catalina.sh stop</code></p>
+
+<h2 id="目录结构">目录结构</h2>
+
+<pre><code>webapps/jenkins
+├── ColorFormatter.class
+├── JNLPMain.class
+├── LogFileOutputStream$1.class
+├── LogFileOutputStream$2.class
+├── LogFileOutputStream.class
+├── META-INF
+├── Main$FileAndDescription.class
+├── Main.class
+├── MainDialog$1$1.class
+├── MainDialog$1.class
+├── MainDialog.class
+├── WEB-INF
+├── bootstrap
+├── css
+├── dc-license.txt
+├── executable
+├── favicon.ico
+├── help
+├── images
+├── jsbundles
+├── robots.txt
+├── scripts
+└── winstone.jar
+</code></pre>
+
+<h2 id="访问">访问</h2>
+
+<p>Tomcat 默认的端口是 <code>8080</code>，如果你安装在本地的话，可以通过下面的方式来访问：</p>
+
+<p><a href="http://localhost:8080/jenkins/">http://localhost:8080/jenkins/</a></p>
+
+<p>如果你的 Jenkins 是首次启动后访问的话，根据不同的网络情况，所等待的时间长短是不相同的。因此，此时 Jenkins 需要从更新中心下载插件信息。
+当插件信息下载成功后，你需要输入初始 Token 才可以进入到配置初始化界面。</p>
+
+<p>Token 的值会保存在该文件中：<code>~/.jenkins/secrets/initialAdminPassword</code></p>
+
+                </div>
+
+                
             </aside>
+
+            <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky pt3 mt2">
+                <aside
+                    class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+                    作者：<a href="https://github.com/linuxsuren" target="_blank">linuxsuren</a>
+
+                    
+
+                    
+
+                    
+
+                    <hr>
+                    <div style="margin-top: 20px; margin-bottom: 20px;">
+                        <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/tutorial/get-started/install/tomcat.md"
+                            target="_blank">完善此页</a>
+                    </div>
+                </aside>
+            </div>
         </div>
-
-        <div class="prose">
-            <p>API</p>
-
-
-            
-            
-            
-        </div>
-    </div>
-</div>
+    </article>
+</main>
 
 
 
@@ -424,6 +364,7 @@ var trackOutboundLink = function(id, url) {
     issue-term="pathname" theme="github-light" label="tutorial"
     crossorigin="linuxsuren" async>
     </script>
+
 
 
 

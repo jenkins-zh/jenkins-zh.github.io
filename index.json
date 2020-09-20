@@ -3627,6 +3627,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tutorial/get-started/install/docker/",
+        "title": "Docker 容器中使用 Jenkins",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "docker run -p 9090:8080 --rm jenkinszh/jenkins-zh:2.238\ndocker run -p 9090:8080 --rm jenkins/jenkins:2.238\n",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tags/docs/",
         "title": "Docs",
         "type": "tags",
@@ -4316,6 +4329,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tutorial/get-started/install/k8s/",
+        "title": "Kubernetes 中使用 Jenkins",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "TODO\n",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tags/kubesphere/",
         "title": "Kubesphere",
         "type": "tags",
@@ -4518,6 +4544,19 @@
         "tags": [],
         "description": "",
         "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tutorial/advanced/operator/",
+        "title": "Operator",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "Jenkins Operator 是 Kubernetes 原生的 Operator， 可以管理 Jenkins 在 Kubernetes 上的操作。它是基于不变性以及申明式的配置即代码。\n",
         "auhtor": "",
         "translator": "",
         "original": "",
@@ -4979,6 +5018,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tutorial/get-started/install/tomcat/",
+        "title": "Tomcat 中使用 Jenkins",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": " Tomcat 是 Apache 旗下的开源应用服务器，Java 的 Web 应用经常会选择它作为应用 服务器来提供 Web 服务。\nTomcat 和 Jenkins 都是用 Java 语言开发的，因此，我们首先需要安装 Java 的运行环境（JRE，Java Runtime Environment）。\n安装 首先，我们需要下载 Tomcat 和 Jenkins： 首先，我们需要有 Java 的运行环境，JRE 或者 JDK 都可以。下面提供几种安装的方式：\n macOS 下安装 brew cask install adoptopenjdk8  注意，本文的实验环境是 Java8\n然后，我们需要下载 Tomcat 和 Jenkins：\nwget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz tar xzvf apache-tomcat-7.0.105.tar.gz wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war mv jenkins.war apache-tomcat-7.0.105/webapps  另外，我们可以通过 Jenkins CLI 来下载和启动 Jenkins\njcli center download --war-version 2.256\n启动 Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。\n 交互式；执行的命令会阻塞当前窗口，直到程序退出后才会结束。 守护进程；命令执行完成后，立刻结束，但是程序不会退出，会在后台一直运行。  当我们学习、调试时，可以采用交互式的方式来启动，这样的话，会比较方便。\n当我们要在服务器上运行时，多半情况下是要以守护进程的方式来运行。\n下面，我会 Unix（Linux、macOS）为环境来给出相关的命令。\n交互式 ./bin/catalina.sh run\n守护进程 ./bin/catalina.sh start\n./bin/catalina.sh stop 进入 Tomcat 的根目录下，执行命令 ./bin/catalina.sh run\n守护进程 进入 Tomcat 的根目录下，执行命令 ./bin/catalina.sh start 就可以启动 Tomcat\n停止 Tomcat 的命令为 ./bin/catalina.sh stop\n目录结构 webapps/jenkins ├── ColorFormatter.class ├── JNLPMain.class ├── LogFileOutputStream$1.class ├── LogFileOutputStream$2.class ├── LogFileOutputStream.class ├── META-INF ├── Main$FileAndDescription.class ├── Main.class ├── MainDialog$1$1.class ├── MainDialog$1.class ├── MainDialog.class ├── WEB-INF ├── bootstrap ├── css ├── dc-license.txt ├── executable ├── favicon.ico ├── help ├── images ├── jsbundles ├── robots.txt ├── scripts └── winstone.jar  访问 Tomcat 默认的端口是 8080，如果你安装在本地的话，可以通过下面的方式来访问：\nhttp://localhost:8080/jenkins/\n如果你的 Jenkins 是首次启动后访问的话，根据不同的网络情况，所等待的时间长短是不相同的。因此，此时 Jenkins 需要从更新中心下载插件信息。 当插件信息下载成功后，你需要输入初始 Token 才可以进入到配置初始化界面。\nToken 的值会保存在该文件中：~/.jenkins/secrets/initialAdminPassword\n",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tags/toolchains/",
         "title": "Toolchains",
         "type": "tags",
@@ -5369,6 +5421,45 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tutorial/get-started/",
+        "title": "入门",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "入门\n",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tutorial/get-started/global-variable/",
+        "title": "全局变量",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "Jenkins 提供了很多有用的全局变量，例如：SCM、当前构建、用户等相关的上下文，我们可以基于这个上下文拿到需要使用的信息。\n",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tutorial/get-started/global-variable/user/",
+        "title": "全局变量中获取用户信息",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": " Jenkins 的流水线可以是自动触发，也可以有某个用户手动触发。如果我们希望能够或者触发某条流水线的用户信息时，可以参考下面给出的例子：\npipeline { agent any stages { stage('clone') { steps { script { echo currentBuild.getBuildCauses().toString() } } } } }  参考的输出内容如下：\n[{\u0026quot;_class\u0026quot;:\u0026quot;hudson.model.Cause$UserIdCause\u0026quot;,\u0026quot;shortDescription\u0026quot;:\u0026quot;Started by user escape-hatch-admin\u0026quot;,\u0026quot;userId\u0026quot;:\u0026quot;escape-hatch-admin\u0026quot;,\u0026quot;userName\u0026quot;:\u0026quot;escape-hatch-admin\u0026quot;}]  如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 _class 为 hudson.model.Cause$UserIdCause 的元素，就能拿到用户名和用户ID了。\n原理 Jenkins 流水线（包括其他类型的任务）在触发时，会将被触发的原因记录到 Cause 中，而且，这个 Cause 可能会有多个。如果我们想要记录更多个性化的触发原因的话，可以使用 Jenkins 提供的扩展点。\n",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/",
         "title": "公告",
         "type": "tags",
@@ -5519,6 +5610,19 @@
         "tags": [],
         "description": "",
         "content": "待补充\n",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tutorial/get-started/install/",
+        "title": "安装",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "Jenkins 的安装方式、方法有很多中，本章会详细讲解每一种具体的实践。\n",
         "auhtor": "",
         "translator": "",
         "original": "",
@@ -5876,6 +5980,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tutorial/get-started/install/war/",
+        "title": "直接使用 Jenkins war 包",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "TODO\n",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/",
         "title": "社区",
         "type": "tags",
@@ -6026,6 +6143,19 @@
         "tags": [],
         "description": "",
         "content": "下面是部署在中国的和 Jenkins 相关的镜像源。这里只是收录，无法保证源的可信度， 如果大家在使用的过程中，发现有任何问题后，可以在下面留言。\n   维护方 描述     清华大学 不同操作系统下的安装包，以及通用的 War 包，插件等   华为开源镜像站 不同操作系统下的安装包，以及通用的 War 包，插件等   腾讯云    北京理工大学    USTC     Jenkins 官方也给出了其他镜像源列表。\n下面是一些国外的镜像源\n   维护方 描述     XMisson     对于插件镜像源的配置，请参考这里的说明。\n",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/tutorial/advanced/",
+        "title": "高级",
+        "type": "tutorial",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "高级\n",
         "auhtor": "",
         "translator": "",
         "original": "",
