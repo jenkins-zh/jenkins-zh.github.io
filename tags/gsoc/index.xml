@@ -6,10 +6,24 @@
     <description>Recent content in Gsoc on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GSoC: GitHub Checks API 项目第三阶段总结</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/</guid>
+      <description>这篇文章将介绍 GitHub Checks API 项目在谷歌编程之夏第三阶段的相关工作。
+在这个夏天的尾声，GitHub Checks API 项目迎来了它在 GSoC 的最后一段旅程。在这篇文章当中，我将向你们展示我们在这最后一个阶段中的相关工作： - 流水线支持 - Rerun 请求支持 - Git SCM 支持 - 文档的完善
+以上的特性已经合并在了最新发布的 Checks API 插件 与 GitHub Checks 插件 的 1.0.0 版本中。
+流水线支持 对流水线的支持让用户无需依赖任何 Checks API 的实现就可以直接在他们编写的流水线当中轻松发布 checks。
+上图中的 check 可以通过如下脚本实现：
+publishChecks name: &#39;pipeline check&#39;, title: &#39;pipeline &#39;, summary: &#39;# A pipeline check example&#39;, text: &amp;quot;## This check is published through the pipeline script&amp;quot;, detailsURL: &#39;https://ci.jenkins.io&#39;  如果你想要发布 checks 到 GitHub，请安装 GitHub 的实现 并查阅 GitHub API 文档 了解各个参数的相关用途。其中，detailsURL 会拥有一个链接到此次 Jenkins 构建页面的默认值。</description>
+    </item>
     
     <item>
       <title>GSoC: GitHub Checks API 项目第一阶段总结</title>
