@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>使用 Jenkins X 渐进式交付：自动化金丝雀部署 - Jenkins 中文社区</title>
+  <title>2020年10月 Hacktoberfest 纪念版T恤还是种树 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。">
+  <meta name="description" content="Jenkins 中文社区邀请你参加 Hacktoberfest">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -39,26 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="使用 Jenkins X 渐进式交付：自动化金丝雀部署" />
-<meta property="og:description" content="为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。" />
+<meta property="og:title" content="2020年10月 Hacktoberfest 纪念版T恤还是种树" />
+<meta property="og:description" content="Jenkins 中文社区邀请你参加 Hacktoberfest" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" /><meta property="article:published_time" content="2019-04-29T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-29T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-27-hacktoberfest/" /><meta property="article:published_time" content="2020-09-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-09-27T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="使用 Jenkins X 渐进式交付：自动化金丝雀部署">
-<meta itemprop="description" content="为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。">
-
-
-<meta itemprop="datePublished" content="2019-04-29T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="323">
+<meta itemprop="name" content="2020年10月 Hacktoberfest 纪念版T恤还是种树">
+<meta itemprop="description" content="Jenkins 中文社区邀请你参加 Hacktoberfest">
 
 
+<meta itemprop="datePublished" content="2020-09-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="108">
 
-<meta itemprop="keywords" content="jenkins," />
+
+
+<meta itemprop="keywords" content="jenkins,hacktoberfest," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="使用 Jenkins X 渐进式交付：自动化金丝雀部署"/>
-<meta name="twitter:description" content="为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。"/>
+<meta name="twitter:title" content="2020年10月 Hacktoberfest 纪念版T恤还是种树"/>
+<meta name="twitter:description" content="Jenkins 中文社区邀请你参加 Hacktoberfest"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -204,32 +204,27 @@ var trackOutboundLink = function(id, url) {
 
 
 
-
-
   <aside class="mw5 br3 mv3 nested-links">
     
     
       
         <h3 class="f4 dib author">
-            Wang Donghui
+            Zhao Xiaojie
         </h3>
 
       
       
-      <a href="https://github.com/donhui" target="_blank" class="link dim v-mid dib">
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
+          Contributor of @jenkinsci . Jenkins press contact in China. Jenkins Chinese community leader.
+        </p>
+      
+      <a href="https://github.com/LinuxSuRen" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
 
       </a>
 
-  
-  <div>
-    作者：<span class="originalAuthor">Carlos Sanchez</span>
-    <div>
-      <a class="originalLink" href="https://dzone.com/articles/progressive-delivery-with-jenkins-x-automatic-cana" target="_blank">原文链接</a>
-    </div>
-  </div>
   
   </aside>
 
@@ -247,17 +242,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/" class="dib f6 pl1 hover-bg-light-gray br-100" title="应该使用什么 CI/CD 工具？ ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-28-devsecops/" class="dib f6 pr1 hover-bg-light-gray br-100" title="我们为什么需要 DevSecOps 和制品仓库？">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/" class="dib f6 pr1 hover-bg-light-gray br-100" title="GSoC: GitHub Checks API 项目第三阶段总结">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -277,13 +264,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用 Jenkins X 渐进式交付：自动化金丝雀部署</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">2020年10月 Hacktoberfest 纪念版T恤还是种树</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。
+      Jenkins 中文社区邀请你参加 Hacktoberfest
     </div>
   
 
@@ -296,108 +283,89 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p>这是渐进式交付系列的第三篇文章，前两篇请参见：
-- <a href="https://blog.csanchez.org/2019/01/22/progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/">Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署</a>
-- <a href="https://blog.csanchez.org/2019/01/24/progressive-delivery-with-jenkins-x/">使用 Jenkins X 渐进式交付</a></p>
+<p><img src="hacktoberfest.svg" alt="Hacktoberfest" /></p>
 
-<p>渐进式交付被 Netflix， Facebook 以及其它公司使用用来减轻部署的风险。
-但是现在你可以在使用Jenkins X时采用它。</p>
+<p>Hacktoberfest 是由知名云服务商 DigitalOcean 发起的一个推广、支持开源的年度在线活动，任何一个开源爱好者都可以参与到其中。只要在10月份内
+向 GitHub 上的任意开源项目提交若干 Pull Request，就算完成活动任务，并将得到由 DigitalOcean、GitHub 等活动赞助商提供的纪念品。纪念品，
+通常是限量版T恤、贴纸若干。</p>
 
-<hr />
+<p>那么，Hacktoberfest 这个奇怪的名字是什么意思呢？这不是一个原生的英文单词，是由几个代表着这个活动的核心精神的单词缩写组合而成。其中的 Hacktober 是由 Hackathon（黑客马拉松） 和 October（十月） fest 则是 Festival（节日）的前几个字幕。看到这里，大家应该就明白了吧，
+Hacktoberfest 就是开源爱好者在每年的十月份通过做开源贡献的方式来传播、庆祝开源。</p>
 
-<p><a href="https://redmonk.com/jgovernor/2018/08/06/towards-progressive-delivery/">渐进式交付</a>是持续交付的下一步，它将新版本部署到用户的一个子集，并在将其滚动到全部用户之前对其正确性和性能进行评估，如果不匹配某些关键指标，则进行回滚。</p>
+<p>我本人，今年已经是第三次参与 Hacktoberfest 这个全球规模的在线活动。作为一名开源的忠实拥护者和布道者，在此呼吁每一位开发者、每一位认同平等、
+开放、协作观念的人，大家一起来参与 Hacktoberfest、参与开源。</p>
 
-<hr />
+<p>不懂代码？完全没关系，有很多项目或者社区需要您其他方面的技能，包括当不仅限于：文档编写、文档翻译、图片设计、字幕等等。</p>
 
-<p>尤其是，我们聚焦金丝雀发布，并让它在你的 Jenkins X 应用中变得易于采用。
-金丝雀发布包括向应用程序的新版本发送一小部分流量，并在向其他用户发布之前验证这里没有错误。
-Facebook 就是这样做的，首先向内部员工提供新版本，然后是一小部分用户，然后是其他所有用户，但是你要采用它并不需要成为 Facebook ！</p>
+<p>对 GitHub 不熟悉？没关系，你可以看看我自己录制的一个有关如何使用 GitHub 的视频。<a href="https://www.bilibili.com/video/BV14t411M7zv">https://www.bilibili.com/video/BV14t411M7zv</a></p>
 
-<p><img src="facebook_canary_chart_1.jpeg" alt="facebook_canary_chart_1.jpeg" /></p>
+<p>好了，心动不如行动，赶快点击下面的链接注册报名吧：</p>
 
-<p>你可以<a href="https://martinfowler.com/bliki/CanaryRelease.html">在 Martin Fowler 的网站阅读更多与金丝雀发布相关信息</a>。</p>
+<p><a href="https://pages.news.digitalocean.com/n/E0V0E2BnIcp0X06D300F60o">活动注册地址 http://dwz.win/RhZ</a></p>
 
-<h2 id="jenkins-x">Jenkins X</h2>
+<p>注册过程中，你大致需要做下面的三件事：</p>
 
-<p>如果在 Jenkins X 中你已经有一个应用，那么你知道的你可以 通过 <code>jx promote myapp --version 1.0 --env production</code> 命令 promote 它到&rdquo;生产&rdquo;环境。
-但是，在检查新版本是否失败的同时，它也可以自动并逐步地向一定比例的用户推出。
-如果发生失败，应用程序将自动回滚。
-整个过程中完全没有人为干预。</p>
+<ul>
+<li>通过 GitHub 登录</li>
+<li>选择邮箱、角色（活动组织者、贡献者、项目维护者）</li>
+<li>是否接收相关资讯邮件</li>
+</ul>
 
-<p>注意：这个新功能是非常新的，在将来这些步骤将不再需要，因为它们也将由 Jenkins X 自动化了。</p>
+<p>如果你看到了类似下面的画面，那么，贡献你，已经完成活动注册。万事俱备，只等十月 PR：</p>
 
-<p>作为第一步，三个 Jenkins X 插件需要被安装：
-- <a href="https://istio.io/">Istio</a> : <a href="https://istio.io/docs/concepts/what-is-istio/">一种服务网格</a>容许我们管理我们服务的流量。
-- <a href="https://prometheus.io/">Prometheus</a> ：Kubernetes 中最流行的监控系统。
-- <a href="https://github.com/stefanprodan/flagger">Flagger</a> ：一个使用 Istio 的项目，该项目使用 Prometheus 的指标自动化进行金丝雀发布和回滚。</p>
+<p><img src="hacktoberfest-get-ready.png" alt="hacktoberfest-get-ready" /></p>
 
-<p>插件可以使用如下命令安装（使用一个最近版本的 jx CLI ）：
-1. jx create addon istio
-2. jx create addon prometheus
-3. jx create addon flagger</p>
+<p>开源的方舟你已经登上，接下来再看看到底有哪些项目可以参与，以及了解下今年的活动情况。</p>
 
-<p>这将在 jx-production 命名空间启动 Istio 来进行指标收集。</p>
+<ul>
+<li>2020年，Hacktoberfest 是由三家公司联合组织，包括：DigitalOcean、intel、DEV。其中，intel 是今年新加入的</li>
+<li>从需要完成的 PR 数量来看，相比去年少了一个，只需要完成4个即可</li>
+<li>从活动奖励上来看，多了一个选项，可以在限量版T恤或者种树之间选择一个（难道他们是向蚂蚁森林学的新技能？）</li>
+<li>今年T恤的颜色可以是白色或者蓝色</li>
+<li>如何种树？请看这里 <a href="https://tree-nation.com/profile/digitalocean">https://tree-nation.com/profile/digitalocean</a></li>
+</ul>
 
-<p>现在获取  Istio ingress 的 IP ，并将一个通配符域名（如： *.example.com ）指向它，以便我们可以使用它根据主机名路由多个服务。
-Istio ingress 提供了金丝雀发布需要的路由能力（流量转移），传统的 Kubernetes ingress 对象不支持该功能。</p>
+<h1 id="推荐项目-https-github-com-jenkins-zh">推荐项目（<a href="https://github.com/jenkins-zh）">https://github.com/jenkins-zh）</a></h1>
 
-<p>集群被配置后，是时候配置我们的应用了。
-在 <code>charts/myapp/templates</code> 目录下向你的 helm chart 添加一个 <a href="https://github.com/carlossg/croc-hunter-jenkinsx-serverless/blob/9eea262/charts/croc-hunter-jenkinsx/templates/canary.yaml">canary.yaml</a>。</p>
+<ul>
+<li><a href="https://github.com/jenkinsci/localization-zh-cn-plugin">Jenkins 简体中文插件</a> 用于41k+的安装量
 
-<p><img src="canary_yaml2.png" alt="canary_yaml2.png" /></p>
+<ul>
+<li>完善中文本地化词条</li>
+</ul></li>
+<li><a href="https://github.com/jenkins-zh/jenkins-cli">Jenkins CLI</a> 是由 Go 语言编写的 Jenkins 命令行客户端
 
-<p>然后往 <code>charts/myapp/values.yaml</code> 追加如下内容，将 <code>myapp.example.com</code> 修改为你的主机名或域名：</p>
+<ul>
+<li>功能完善、文档完善、缺陷修复、Logo 设计等</li>
+</ul></li>
+<li><a href="https://github.com/jenkins-zh/jenkins-open-tutorial">Jenkins 系列教程</a> 需要擅长设计的同学来帮忙设计封面等
 
-<p><img src="values_yaml_0.png" alt="values_yaml_0.png" /></p>
+<ul>
+<li>征集社区合作、讲师、志愿者</li>
+</ul></li>
+<li><a href="https://github.com/jenkins-zh/update-center-mirror">Jenkins 插件更新中心国内源</a> 需要你来把版本更新自动化
 
-<p>不久，当你从 Jenkins X 快速开始创建你的应用，将不再需要修改 <code>canary.yaml</code> 和 <code>values.yaml</code> 这两个文件，因为它们默认启用金丝雀部署。</p>
+<ul>
+<li>欢迎使用 Go、Java 或者 Python 等语言实现版本自动化更新（目前还是人肉在更新）</li>
+</ul></li>
+<li><a href="https://github.com/jenkins-zh/jenkins-formulas">Jenkins 特定领域发型版定制</a></li>
+</ul>
 
-<p>就这样！现在当使用 <code>jx promote myapp --version 1.0 --env production</code> 将你的应用 promote 到生产环境，它将执行一次金丝雀部署。
-请注意，第一次被 promote 时，它不会执行金丝雀部署，因为它需要与以前的版本数据进行比较，但从第二次 promotion 开始，它将起作用。</p>
+<h1 id="faq">FAQ</h1>
 
-<p>根据上面 <code>values.yaml</code> 文件中的配置，它看起来像：
-- 第 1 分钟：将 10% 的流量发送到新版本
-- 第 2 分钟：将 20% 的流量发送到新版本
-- 第 3 分钟：将 30% 的流量发送到新版本
-- 第 4 分钟：将 40% 的流量发送到新版本
-- 第 5 分钟：将 100% 的流量发送到新版本</p>
+<ul>
+<li>我可以向自己的仓库提交 PR 吗？答：可以！</li>
+<li>我提交的 PR 必须要合并后才算吗？答：只要提交 PR 即可，除非被标记为无效的。</li>
+<li>issues 算数吗？答：不算！</li>
+<li>我可以向 GitHub 以外的平台提交 PR 吗？答：不可以！</li>
+</ul>
 
-<p>如果我们配置的指标（请求持续时间超过 500 毫秒或超过 1% 的响应返回 500 错误）失败，Flagger 将注意到失败，并且如果重复 5 次，它将回滚这次发布，将 100% 的流量发送到旧版本。</p>
+<p>即使我已经努力向各位介绍活动细节了，但如果还有不清楚的地方的话，可以访问下面的官方 FAQ 链接，或者添加社区的微信小助手进群资讯
+<a href="https://hacktoberfest.digitalocean.com/faq">https://hacktoberfest.digitalocean.com/faq</a></p>
 
-<p>获得金丝雀事件输出，执行如下命令：
-1. $ kubectl -n jx-production get events &ndash;watch<br />
-2. &ndash;field-selector involvedObject.kind=Canary
-3. 23m &hellip; New revision detected! Scaling up jx-production-myapp.jx-production
-4. 22m &hellip; Starting canary analysis forjx-production-myapp.jx-production
-5. 22m &hellip; Advance jx-production-myapp.jx-production canary weight 10
-6. 21m &hellip; Advance jx-production-myapp.jx-production canary weight 20
-7. 20m &hellip; Advance jx-production-myapp.jx-production canary weight 30
-8. 19m &hellip; Advance jx-production-myapp.jx-production canary weight 40
-9. 18m &hellip; Advance jx-production-myapp.jx-production canary weight 50
-10. 18m &hellip; Copying jx-production-myapp.jx-production template spec to jx-production-myapp-primary.jx-production
-11. 17m &hellip; Promotion completed! Scaling down jx-production-myapp.jx-production</p>
+<h1 id="鸣谢">鸣谢</h1>
 
-<h2 id="仪表盘">仪表盘</h2>
-
-<p>为了可视化的目的，Flagger 包含一个 Grafana 面板，尽管它在金丝雀发布中不需要。
-可以在本地通过 Kubernetes 端口转发访问它。</p>
-
-<p>然后使用 <code>admin/admin</code> 访问 <a href="http://localhost:3000/">http://localhost:3000/</a>，选择 <code>canary-analysis</code> 面板以及
-- namespace 选择 <code>jx-production</code>
-- primary 选择 <code>jx-production-myapp-primary</code>
-- canary 选择 <code>jx-production-myapp</code></p>
-
-<p>它将为我们提供当前版本和新版本的对比视图，视图中包含不同指标（CPU，内存，请求持续时间，响应错误……）。</p>
-
-<p><img src="canary_analysis.png" alt="canary_analysis.png" /></p>
-
-<h2 id="附加说明">附加说明</h2>
-
-<p>请注意 Istio 默认地将阻止从你的 Pod 访问外部集群（一种预计将在 Istio 1.1 中发生变化的行为）。
-<a href="https://istio.io/docs/tasks/traffic-management/egress/">学习如何控制 Istio ingress 流量</a>。</p>
-
-<p>如果因为指标失败出现自动回滚，生产环境的 Jenkins X GitOps 仓库会过时，仍然使用新版本而不是旧版本。
-这是计划在即将发布的版本中修复的内容。</p>
+<p>感谢新浪提供的短地址服务 <a href="https://www.sina.lt/">https://www.sina.lt/</a></p>
 
 </div>
 
@@ -430,14 +398,14 @@ Istio ingress 提供了金丝雀发布需要的路由能力（流量转移），
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-27-hacktoberfest/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “使用 Jenkins X 渐进式交付：自动化金丝雀部署”
-  </a> 更新于：April 29, 2019
+    “2020年10月 Hacktoberfest 纪念版T恤还是种树”
+  </a> 更新于：September 27, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/09/2020-09-27-hacktoberfest.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -460,15 +428,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
             </a>
           </li>
         
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/hacktoberfest">
+              hacktoberfest
+            </a>
+          </li>
+        
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-27-hacktoberfest/" class="link">
-              2020年10月 Hacktoberfest 纪念版T恤还是种树
-            </a>
-          </li>
         
       
         
@@ -873,6 +841,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" class="link">
+              使用 Jenkins X 渐进式交付：自动化金丝雀部署
+            </a>
+          </li>
+        
       
         
         
@@ -1024,7 +998,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/04\/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/09\/2020-09-27-hacktoberfest\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

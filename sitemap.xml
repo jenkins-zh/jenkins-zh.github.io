@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-27-hacktoberfest/</loc>
+    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
@@ -1532,7 +1537,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/hacktoberfest/</loc>
-    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1591,7 +1596,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-09-18T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2102,7 +2107,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
