@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="为你的 GitLab 项目使用 k3s Kubernetes 集群" />
 <meta property="og:description" content="通过介绍以及实际操作展示了使用轻量的经过 Kubernetes 认证的 k3s 是如何集成到 GitLab 项目上的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-06-using-a-k3s-kubernetes-cluster-for-your-gitlab-project/" />
-<meta property="article:published_time" content="2020-05-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-06T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-06-using-a-k3s-kubernetes-cluster-for-your-gitlab-project/" /><meta property="article:published_time" content="2020-05-06T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-05-06T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="为你的 GitLab 项目使用 k3s Kubernetes 集群">
 <meta itemprop="description" content="通过介绍以及实际操作展示了使用轻量的经过 Kubernetes 认证的 k3s 是如何集成到 GitLab 项目上的">
+
+
 <meta itemprop="datePublished" content="2020-05-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-06T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="404">
 
 
 
-<meta itemprop="keywords" content="Kubernetes,Programming,DevOps,Data Science,Software Development," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Kubernetes,Programming,DevOps,Data Science,Software Development," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="为你的 GitLab 项目使用 k3s Kubernetes 集群"/>
 <meta name="twitter:description" content="通过介绍以及实际操作展示了使用轻量的经过 Kubernetes 认证的 k3s 是如何集成到 GitLab 项目上的"/>
 
@@ -295,12 +298,20 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="cover.jpg" alt="cover"></p>
-<h2 id="tldr">TL;DR</h2>
+
+
+<p><img src="cover.jpg" alt="cover" /></p>
+
+<h2 id="tl-dr">TL;DR</h2>
+
 <p>k3s 是一个轻量级的 Kubernetes 发行版（小于 40 MB），它非常容易安装，仅需要 512 MB 的 RAM。对 IoT 设备、边缘计算以及运行 CI 任务来说均是一个完美的选择。这篇文章中，我将创建一个 k3s 集群然后向你们展示怎样将它集成到一个 GitLab 项目中。</p>
+
 <h2 id="关于-k3s">关于 k3s</h2>
+
 <p><a href="https://k3s.io/">k3s</a> 是一款由 <a href="https://rancher.com/">Rancher Labs</a> 开发的轻量级的 Kubernetes 发行版。</p>
+
 <p>它作为 Kubernetes 认证的发行版使用最低的系统要求:</p>
+
 <ul>
 <li>Linux 3.10+</li>
 <li>每个服务器 521 MB ram</li>
@@ -308,28 +319,49 @@ var trackOutboundLink = function(id, url) {
 <li>200 MB 磁盘空间</li>
 <li>x86_64，ARMv7，ARM64</li>
 </ul>
+
 <p>这使得 k3s 非常适合 IoT 相关的事物。</p>
+
 <h2 id="在-gitlab-创建一个项目">在 GitLab 创建一个项目</h2>
+
 <p>在安装 k3s 之前，我们先在 GitLab 上创建一个名为 <em>api</em> 的新项目。</p>
-<p><img src="create-gitlab-project.png" alt="create-gitlab-project"></p>
+
+<p><img src="create-gitlab-project.png" alt="create-gitlab-project" /></p>
+
 <p>创建完成后，我们进入到 <em>Operation</em> &gt; <em>Kubernetes</em> 菜单。</p>
-<p><img src="kubernetes-menu.png" alt="kubernetes-menu"></p>
+
+<p><img src="kubernetes-menu.png" alt="kubernetes-menu" /></p>
+
 <p>这里我们有两种选择:</p>
+
 <ul>
 <li>我们可以在 GKE（Google Kubernetes Engine）上创建一个 Kubernetes 集群。</li>
 <li>我们可以导入一个已存在的 Kubernetes 集群的配置（不管在哪里创建的）。</li>
 </ul>
+
 <p><strong>注意:</strong> 最新版本的 GitLab，新集群只能在 GKE 中创建。<a href="https://medium.com/u/68f5136d3254?source=post_page-----b0b035c291a9----------------------">GitLab</a>，有没有允许在其他 Kubernetes 提供商（AKS、EKS、DOKS&hellip;）创建集群的计划呢？:)</p>
-<p><img src="create-cluster-on-GKE.png" alt="create-cluster-on-GKE"></p>
-<p>我们选择<em>添加现有集群</em>标签栏。</p>
-<p><img src="add-existing-cluster.png" alt="add-existing-cluster"></p>
+
+<p><img src="create-cluster-on-GKE.png" alt="create-cluster-on-GKE" /></p>
+
+<p>我们选择*添加现有集群*标签栏。</p>
+
+<p><img src="add-existing-cluster.png" alt="add-existing-cluster" /></p>
+
 <p>从这里我们能看到，我们需要填写几个栏位的配置信息提供给需要集成的集群。让我们保持这个页面为打开状态然后先创建一个  Kubernetes 集群。</p>
+
 <h2 id="创建-k3s-集群">创建 k3s 集群</h2>
+
 <p>我们将要基于 k3s 初始化一个 Kubernetes。为什么是 k3s 呢？因为我想展示一下设置它有多简单。:)简单起见，我们只设置一个单节点集群。</p>
+
 <p>我已经配置了一个名为 <em>node1</em> 的 Ubuntu 18.04 的服务器。当我们在主机上启动一个 shell 程序后，我们仅需要运行如下命令安装 k3s，一个 Kubernetes 认证的集群。真的！</p>
+
 <pre><code>root@node1:~ $ curl -sfL [https://get.k3s.io](https://get.k3s.io/) | sh -
-</code></pre><p>上面的命令跟快速安装 Docker 有些相似: <code>curl [https://get.docker.com](https://get.docker.com/) | sh</code></p>
+</code></pre>
+
+<p>上面的命令跟快速安装 Docker 有些相似: <code>curl [https://get.docker.com](https://get.docker.com/) | sh</code></p>
+
 <p>安装完成后（真的非常快），用来连接集群的配置文件会在 /etc/rancher/k3s/k3s.yaml 中获取到。</p>
+
 <pre><code>**root@node1:~ $ cat /etc/rancher/k3s/k3s.yaml  
 **apiVersion: v1  
 clusters:  
@@ -350,33 +382,53 @@ users:
 user:  
 password: 48f4b...4b4e7  
 username: admin
-</code></pre><p>本地的 kubectl 自动配置为试用该配置。</p>
+</code></pre>
+
+<p>本地的 kubectl 自动配置为试用该配置。</p>
+
 <pre><code>$ kubectl get nodes  
 NAME STATUS ROLES AGE VERSION  
 node1 Ready master 3m v1.14.5-k3s.1
-</code></pre><p>注意: 当我们参照文章最后的<a href="https://k3s.io/">快速入门</a>添加额外的节点将会非常容易。它仅仅是从主节点 <em>/var/lib/rancher/k3s/server/node-token</em> 获取一个令牌然后使用下面的命令加入到其他的节点:</p>
+</code></pre>
+
+<p>注意: 当我们参照文章最后的<a href="https://k3s.io/">快速入门</a>添加额外的节点将会非常容易。它仅仅是从主节点 <em>/var/lib/rancher/k3s/server/node-token</em> 获取一个令牌然后使用下面的命令加入到其他的节点:</p>
+
 <pre><code>$ curl -sfL [https://get.k3s.io](https://get.k3s.io/) | K3S_URL=https://myserver:6443 K3S_TOKEN=XXX sh -
-</code></pre><h2 id="集成到-gitlab">集成到 GitLab</h2>
+</code></pre>
+
+<h2 id="集成到-gitlab">集成到 GitLab</h2>
+
 <p>现在我们要收集将 k3s 集群集成到我们的 GitLab 项目中的所有信息。</p>
+
 <ul>
 <li>集群名称</li>
 </ul>
-<p>我们给它命名为 <em>k3s</em>。</p>
+
+<p>我们给它命名为 *k3s*。</p>
+
 <ul>
 <li>API Server 的 URL</li>
 </ul>
-<p>在配置文件中，API Server 指定 https://localhost:6443。为了从外部获取，我们需要提供 <em>node1</em> 的外部 IP 地址。</p>
+
+<p>在配置文件中，API Server 指定 <a href="https://localhost:6443。为了从外部获取，我们需要提供">https://localhost:6443。为了从外部获取，我们需要提供</a> <em>node1</em> 的外部 IP 地址。</p>
+
 <ul>
 <li>集群的 CA 认证</li>
 </ul>
+
 <p>为了提供集群到 GitLab 的 CA 认证，我们需要对配置中指定的证书进行解码（它以 base 64编码的）。</p>
+
 <pre><code>$ kubectl config view --raw \  
 -o=jsonpath='{.clusters[0].cluster.certificate-authority-data}' \  
 | base64 --decode
-</code></pre><ul>
+</code></pre>
+
+<ul>
 <li>Service 令牌</li>
 </ul>
+
 <p>获取标识令牌的过程包含了几步。首先需要创建一个 <code>ServiceAccount</code> 并为其提供 <code>cluster-admin</code> 角色。可以通过下面的命令实现这个操作:</p>
+
 <pre><code>$ cat &lt;&lt;EOF | kubectl apply -f -  
 apiVersion: v1  
 kind: ServiceAccount  
@@ -397,57 +449,70 @@ subjects:
 name: gitlab-admin  
 namespace: kube-system  
 EOF
-</code></pre><p>服务账号创建好之后，我们将检索 <code>secret</code> 类型关联的资源:</p>
+</code></pre>
+
+<p>服务账号创建好之后，我们将检索 <code>secret</code> 类型关联的资源:</p>
+
 <pre><code>$ SECRET=$(kubectl -n kube-system get secret | grep gitlab-admin | awk '{print $1}')
-</code></pre><p>下一步就是提取与密码相关联的的 JWT 令牌:</p>
+</code></pre>
+
+<p>下一步就是提取与密码相关联的的 JWT 令牌:</p>
+
 <pre><code>$ TOKEN=$(kubectl -n kube-system get secret $SECRET -o jsonpath='{.data.token}' | base64 --decode)  
 $ echo $TOKEN
-</code></pre><p>全部配置好之后，我们将收集起来的所有信息填入到 GitLab <em>添加已有集群</em> 表格中:</p>
-<p><img src="add-existing-cluster-with-all-information.png" alt="add-existing-cluster-with-all-information"></p>
+</code></pre>
+
+<p>全部配置好之后，我们将收集起来的所有信息填入到 GitLab <em>添加已有集群</em> 表格中:</p>
+
+<p><img src="add-existing-cluster-with-all-information.png" alt="add-existing-cluster-with-all-information" /></p>
+
 <p>集群集成进来之后，我们可以直接从 web 页面安装 helm（Kubernetes 包管理工具）。</p>
-<p><img src="install-helm.png" alt="install-helm"></p>
-<p><img src="install-helm-2.png" alt="install-helm-2"></p>
+
+<p><img src="install-helm.png" alt="install-helm" /></p>
+
+<p><img src="install-helm-2.png" alt="install-helm-2" /></p>
+
 <p>现在我们可以通过命令行检查一下 <code>tiller</code> 守护进程（helm 的服务器端组件）是否运行。</p>
+
 <pre><code>$ kubectl get deploy --all-namespaces | grep tiller
 NAMESPACE NAME READY UP-TO-DATE AVAILABLE AGE  
 gitlab-managed-apps tiller-deploy 1/1 1 1 67s
-</code></pre><p>集群准备就绪，最重要的是，GitLab 的 web 页面允许一键安装其他组件:</p>
+</code></pre>
+
+<p>集群准备就绪，最重要的是，GitLab 的 web 页面允许一键安装其他组件:</p>
+
 <ul>
-<li>
-<p>Ingress Controller 用来公开集群中运行的服务</p>
-</li>
-<li>
-<p>Cert-Manager 用来同 Let&rsquo;s Encrypt 配合管理 TLS 证书</p>
-</li>
-<li>
-<p>Prometheus 用来监控集群中运行的应用程序</p>
-</li>
-<li>
-<p>Knative 用来部署 Serveless 工作负载</p>
-</li>
-<li>
-<p>等等。</p>
-</li>
+<li><p>Ingress Controller 用来公开集群中运行的服务</p></li>
+
+<li><p>Cert-Manager 用来同 Let&rsquo;s Encrypt 配合管理 TLS 证书</p></li>
+
+<li><p>Prometheus 用来监控集群中运行的应用程序</p></li>
+
+<li><p>Knative 用来部署 Serveless 工作负载</p></li>
+
+<li><p>等等。</p></li>
 </ul>
-<p><img src="additional-components.png" alt="additional-components"></p>
+
+<p><img src="additional-components.png" alt="additional-components" /></p>
+
 <h2 id="总结">总结</h2>
+
 <p>这篇文章中，我们看到了怎样创建 k3s 集群以及将它集成到 GitLab 项目。当然，该步骤同样适用于其他任何 Kubernetes 集群。</p>
+
 <p>我们可以添加资源到项目中:</p>
+
 <ul>
-<li>
-<p>源码</p>
-</li>
-<li>
-<p>Dockerfile 指定了怎样通过代码创建一个 Docker 镜像</p>
-</li>
-<li>
-<p>Kubernetes 资源例如 Deployment，Service，&hellip;</p>
-</li>
-<li>
-<p>一个 <em>gitlab-ci.yaml</em> 文件定义了 CI 流水线以及应用程序是怎样被部署和测试相关的 Kubernetes 集群</p>
-</li>
+<li><p>源码</p></li>
+
+<li><p>Dockerfile 指定了怎样通过代码创建一个 Docker 镜像</p></li>
+
+<li><p>Kubernetes 资源例如 Deployment，Service，&hellip;</p></li>
+
+<li><p>一个 <em>gitlab-ci.yaml</em> 文件定义了 CI 流水线以及应用程序是怎样被部署和测试相关的 Kubernetes 集群</p></li>
 </ul>
+
 <p>你或许会发现<a href="https://medium.com/better-programming/even-the-smallest-side-project-deserves-its-k8s-cluster-3fc6f8a65e13">上一篇文章</a>很有用。它提供了另外的内容就是关于怎样创建 CI/CD 流水线。</p>
+
 <p>你会为你的 GitLab 项目集成 Kubernetes 吗？</p>
 
 </div>
@@ -536,85 +601,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="link">
-              在 Kubernetes 上使用 Argo 实现 CI/CD
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/" class="link">
-              使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps
-            </a>
-          </li>
-        
-      
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/" class="link">
-              使用 kind 和 Docker 启动本地的 Kubernetes
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/" class="link">
-              使用 Vault 与 Kubernetes 为密码提供强有力的保障
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/" class="link">
-              使用 Kubernetes 和 Jenkins 创建一个 CI/CD 流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/" class="link">
-              在 Kubernetes 上使用 Jenkins 
-            </a>
-          </li>
-        
       
     </ul>
   </div>

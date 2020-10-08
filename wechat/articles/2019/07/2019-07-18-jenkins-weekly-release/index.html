@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="Jenkins 每周版更新" />
 <meta property="og:description" content="本次更新的版本包括：2.180~2.184" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/" />
-<meta property="article:published_time" content="2019-07-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-07-18T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/" /><meta property="article:published_time" content="2019-07-18T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-18T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="Jenkins 每周版更新">
 <meta itemprop="description" content="本次更新的版本包括：2.180~2.184">
+
+
 <meta itemprop="datePublished" content="2019-07-18T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-18T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="145">
 
 
 
-<meta itemprop="keywords" content="jenkins,release," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,release," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins 每周版更新"/>
 <meta name="twitter:description" content="本次更新的版本包括：2.180~2.184"/>
 
@@ -286,15 +289,21 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="great-wall.jpeg" alt="great-wall"></p>
-<h2 id="2184-2019-07-07">2.184 (2019-07-07)</h2>
+
+
+<p><img src="great-wall.jpeg" alt="great-wall" /></p>
+
+<h2 id="2-184-2019-07-07">2.184 (2019-07-07)</h2>
+
 <ul>
 <li>注销时，移除过期的会话 cookies ，阻止头信息中的相关错误太大。 (issue 25046)</li>
 <li>当运行在 Java 11 上时，增加缺失类相关的 telemetry 实验。 (issue 57223)</li>
 <li>修复使用“记住我”时的性能问题（于 2.160 中退化） (issue 56243)</li>
 <li>开发者：清理 AbstractCloudSlave 的构造器 (pull 4086)</li>
 </ul>
-<h2 id="2183-2019-06-30">2.183 (2019-06-30)</h2>
+
+<h2 id="2-183-2019-06-30">2.183 (2019-06-30)</h2>
+
 <ul>
 <li>在 Jenkins 的 URL 配置增加对 IPv6 地址的支持。 (issue 58041)</li>
 <li>更新 args4j 2.0.31 到 2.33。 (issue 57959)</li>
@@ -302,12 +311,16 @@ var trackOutboundLink = function(id, url) {
 <li>开发者：使得 WindowsUtil 可以让插件使用。 (pull 4038)</li>
 <li>内部：更新 maven-war-plugin 3.0.0 到 3.2.3 (issue 47127)</li>
 </ul>
-<h2 id="2182-2019-06-23">2.182 (2019-06-23)</h2>
+
+<h2 id="2-182-2019-06-23">2.182 (2019-06-23)</h2>
+
 <ul>
 <li>当删除目录时，移除 Windows 下的只读标记。 (issue 57855)</li>
 <li>更新 Remoting 3.29 到 3.33。 (issue 57959, issue 50095, issue 57713, 完整变更日志)</li>
 </ul>
-<h2 id="2181-2019-06-16">2.181 (2019-06-16)</h2>
+
+<h2 id="2-181-2019-06-16">2.181 (2019-06-16)</h2>
+
 <ul>
 <li>插件管理界面中，允许对有可选依赖的插件禁用。 (issue 33843)</li>
 <li>用于等待外部进程结束的线程池可能导致类加载溢出。 (issue 57725)</li>
@@ -318,7 +331,9 @@ var trackOutboundLink = function(id, url) {
 <li>内部：使用 SpotBugs 代替 FindBugs 用于静态分析。 (pull 4062)</li>
 <li>内部：为 hudson.model.UpdateSite#isDue 添加 synchronized 标记。 (issue 57466)</li>
 </ul>
-<h2 id="2180-2019-06-09">2.180 (2019-06-09)</h2>
+
+<h2 id="2-180-2019-06-09">2.180 (2019-06-09)</h2>
+
 <ul>
 <li>由于 JNLP 节点在特定情况下无法连接云节点，Remoting 回退到 3.29（在版本 2.176 中退化） (issue 57759, issue 57713)</li>
 <li>改善配置即代码对 ListView 的兼容性。 (issue 57121)</li>
@@ -433,6 +448,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -496,8 +520,35 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -514,8 +565,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
             </a>
           </li>
         
@@ -532,8 +619,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -564,6 +687,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -778,6 +910,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -789,6 +930,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

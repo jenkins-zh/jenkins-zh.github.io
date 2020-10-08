@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins CLI on Jenkins 中文社区</title>
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tutorial/management/cli/jcli/</guid>
-      <description>Jenkins CLI 可以帮忙你轻松地管理 Jenkins。不管你是一名插件开发者、管理员或者只是一个普通的 Jenkins 用户，它都是为你而生的！
+      <description> Jenkins CLI 可以帮忙你轻松地管理 Jenkins。不管你是一名插件开发者、管理员或者只是一个普通的 Jenkins 用户，它都是为你而生的！
 特性  支持多 Jenkins 实例管理 插件管理（查看列表、搜索、安装、上传） 任务管理（搜索、构建触发、日志查看） 支持配置即管理 在浏览器中打开你的 Jenkins 重启你的 Jenkins 支持通过代理连接  </description>
     </item>
     

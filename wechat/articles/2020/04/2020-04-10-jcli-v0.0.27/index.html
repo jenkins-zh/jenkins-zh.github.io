@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="Jenkins CLI 命令行 v0.0.27" />
 <meta property="og:description" content="jcli-v0.0.27 发布" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-10-jcli-v0.0.27/" />
-<meta property="article:published_time" content="2020-04-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-10T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-10-jcli-v0.0.27/" /><meta property="article:published_time" content="2020-04-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-04-10T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="Jenkins CLI 命令行 v0.0.27">
 <meta itemprop="description" content="jcli-v0.0.27 发布">
+
+
 <meta itemprop="datePublished" content="2020-04-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-04-10T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="135">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins CLI 命令行 v0.0.27"/>
 <meta name="twitter:description" content="jcli-v0.0.27 发布"/>
 
@@ -286,12 +289,20 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="jenkins-cli.png" alt="jenkins-cli"></p>
+
+
+<p><img src="jenkins-cli.png" alt="jenkins-cli" /></p>
+
 <p>在本次更新中，利用 <a href="github-actions">GitHub Actions</a> 和 <a href="goreleaser">GoReleaser</a> 实现了自动化版本发布。为了满足更多用户的使用场景，给出了包括：<code>.deb</code>、<code>.rpm</code> 以及 <code>arm</code> 架构等20种不同的包格式。</p>
+
 <p>截止到编辑本文时，GitHub 上统计到的<a href="jcli-download">下载量</a>为：4,985次。GitHub 上的 <a href="github-star">Star</a> 数为146，码云上的 <a href="gitee-star">Star</a> 数为87。</p>
+
 <p>另外，为了让更多的 Jenkins 用户尽快地熟悉 Jenkins CLI 的功能，并上手改进日常的工作。大家可以访问下面的交互式教程：</p>
+
 <p><a href="https://www.katacoda.com/jenkins-zh">https://www.katacoda.com/jenkins-zh</a></p>
-<h2 id="-功能">🚀 功能</h2>
+
+<h2 id="功能">🚀 功能</h2>
+
 <ul>
 <li>支持构建插件工程 (#355) @LinuxSuRen</li>
 <li>增加用于清空 Jenkinsfile 中的空白字符的参数 (#363) @LinuxSuRen</li>
@@ -302,12 +313,16 @@ var trackOutboundLink = function(id, url) {
 <li>支持编辑空的流水线时，提供一份样本 (#361) @LinuxSuRen</li>
 <li>增加 goreleaser 配置文件 (#347) @LinuxSuRen</li>
 </ul>
-<h2 id="-文档完善">📝 文档完善</h2>
+
+<h2 id="文档完善">📝 文档完善</h2>
+
 <ul>
 <li>为 jcli 增加一个交互式教程 (#362) @LinuxSuRen</li>
 <li>增加如何通过 yum 安装 jcli 的说明 (#348) @LinuxSuRen</li>
 </ul>
-<h2 id="-维护">👻 维护</h2>
+
+<h2 id="维护">👻 维护</h2>
+
 <ul>
 <li>不再推送开发中的 Docker 镜像 (#371) @LinuxSuRen</li>
 <li>利用 GitHub Actions 来发布版本 (#370) @LinuxSuRen</li>

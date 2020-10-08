@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="Jenkins 插件文档即代码：将文档迁移到 GitHub" />
 <meta property="og:description" content="Jenkins 插件开发者，将你的插件文档迁移到 GitHub 吧！" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/" />
-<meta property="article:published_time" content="2019-11-22T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-22T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/" /><meta property="article:published_time" content="2019-11-22T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-11-22T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="Jenkins 插件文档即代码：将文档迁移到 GitHub">
 <meta itemprop="description" content="Jenkins 插件开发者，将你的插件文档迁移到 GitHub 吧！">
+
+
 <meta itemprop="datePublished" content="2019-11-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-11-22T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="217">
 
 
 
-<meta itemprop="keywords" content="hacktoberfest,developer,documentation,wiki,contributors," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="hacktoberfest,developer,documentation,wiki,contributors," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins 插件文档即代码：将文档迁移到 GitHub"/>
 <meta name="twitter:description" content="Jenkins 插件开发者，将你的插件文档迁移到 GitHub 吧！"/>
 
@@ -291,96 +294,125 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="jenkins-plugin-docs-to-github.png" alt="jenkins-plugin-docs-to-github"></p>
+
+
+<p><img src="jenkins-plugin-docs-to-github.png" alt="jenkins-plugin-docs-to-github" /></p>
+
 <p>在2019年9月，我们<a href="https://groups.google.com/forum/#!msg/jenkinsci-dev/VSdfVMDIW-A/vqXxJiI7AQAJ">宣布了</a>对
 GitHub 作为 <a href="https://plugins.jenkins.io">Jenkins 插件站点</a>文档来源的支持。
 感谢 <a href="https://github.com/zbynek">Zbynek Konecny</a> 和 <a href="https://github.com/olblak">Olivier Vernin</a> 以及其他贡献者，
 现在可以将插件文档直接存储在插件储存库中，而不是 <a href="https://wiki.jenkins.io">Jenkins Wiki</a> 中，对于插件维护者和 Jenkins 基础设施团队来说，这在过去是很难维护的。</p>
+
 <p>这篇博文可能对插件维护者和那些想为 Jenkins 文档做贡献的人来说很有趣。
 我将描述如何将插件文档迁移到 GitHub 并获得如下页面:</p>
-<p><img src="thumbnail.png" alt="GitHub Documentation example: thumbnail"></p>
+
+<p><img src="thumbnail.png" alt="GitHub Documentation example: thumbnail" /></p>
+
 <h2 id="为什么">为什么？</h2>
+
 <p>通过使用插件的 GitHub 仓库存储文档，
 插件维护者可以遵循 <em>文档即代码</em> 的方法，将文档更改作为 pull request 的一部分，这样就不会忘记文档的后续工作。
 它还提供了一个 review 文档更改以及增加文档贡献者的认可度的机会，尤其是如果 story 与 <a href="https://github.com/jenkinsci/.github/blob/master/.github/release-drafter.adoc">Release Drafter</a> 结合。</p>
+
 <p>不幸的是，在2019年9月之前，GitHub 文档的使用引起了一些问题。
 首先，许多插件维护者已经将他们的文档迁移到 GitHub，这导致了文档的碎片化（Wiki、GitHub、jenkins.io）。
 为了解决这个问题，插件维护者仍然需要使用重定向来维护存根 Wiki 页面，
 用户不得不花一些时间来找出真正的文档在哪里。
 通过支持 GitHub 作为文档来源，我们允许维护者逐步淘汰插件 Wiki 页面，同时改善用户体验。</p>
+
 <p>现在进行迁移还有更紧迫的原因……
 如果你订阅了<a href="https://groups.google.com/d/forum/jenkinsci-dev">开发者邮件列表</a>，
 你可能还看到了 <a href="https://github.com/rtyler">R. Tyler Croy</a> 关于 Jenkins Wiki 稳定性问题的声明，
 并将其设置为只读，作为稳定实例的临时措施<a href="https://groups.google.com/forum/#!topic/jenkinsci-dev/lNmas8aBRrI">邮件列表主题</a>。
 虽然功能后来部分恢复了，
 基础架构团队一致认为，我们应该逐渐转向替代解决方案。</p>
+
 <h2 id="例子">例子</h2>
+
 <p>自从9月份宣布以来，超过50个插件已经从 Wiki 迁移到 GitHub。
 几个例子：</p>
+
 <ul>
 <li><a href="https://plugins.jenkins.io/configuration-as-code">配置即代码插件</a></li>
 <li><a href="https://plugins.jenkins.io/mailer">Mailer 插件</a></li>
 <li><a href="https://plugins.jenkins.io/gradle">Gradle 插件</a></li>
 <li><a href="https://plugins.jenkins.io/role-strategy">角色策略插件</a></li>
 </ul>
-<p><img src="role-strategy-screenshot.png" alt="Role Strategy example, role=center"></p>
+
+<p><img src="role-strategy-screenshot.png" alt="Role Strategy example, role=center" /></p>
+
 <h2 id="如何为你的插件启用-github-文档">如何为你的插件启用 GitHub 文档？</h2>
+
 <ul>
 <li>将文档从 Wiki 转换到 GitHub Asciidoc 或 Markdown 格式，如果你还没有做。
+
 <ul>
 <li>它可以用半自动的方式完成，请看<a href="https://jenkins.io/doc/developer/publishing/wiki-page/#migrating-from-wiki-to-github">这里</a>的指南。</li>
-</ul>
-</li>
+</ul></li>
 <li>更改 pom.xml 中的 <code>&lt;url&gt;</code> 字段，使其指向 GitHub(<a href="https://jenkins.io/doc/developer/publishing/documentation/#referencing-the-documentation-page-from-the-project-file">指南</a>)。
 有效链接的例子：
+
 <ul>
 <li><code>https://github.com/jenkinsci/mailer-plugin</code> - 插件站点将使用 GitHub REST API 来提取 README</li>
 <li><code>https://github.com/jenkinsci/ssh-credentials-plugin/blob/master/doc/README.md</code> - 从自定义位置提取插件页面</li>
-</ul>
-</li>
+</ul></li>
 <li>可选：添加徽章到页面，以改善外观和感觉，并为用户提供快速链接。
 变更日志、聊天室、插件站点和安装量都有标准的徽章。
+
 <ul>
 <li><a href="https://raw.githubusercontent.com/jenkinsci/role-strategy-plugin/master/README.md">Markdown 例子</a></li>
 <li><a href="https://raw.githubusercontent.com/jenkinsci/mailer-plugin/master/README.adoc">Asciidoc 例子</a></li>
-</ul>
-</li>
+</ul></li>
 <li>发布新的插件版本</li>
 <li>等待几个小时，直到更改传播。
 之后，<a href="https://plugins.jenkins.io">Jenkins 插件站点</a>将会展示来自 GitHub 的新文档。</li>
 </ul>
+
 <h2 id="下一步">下一步？</h2>
+
 <p>这个 story 被跟踪为 <a href="https://issues.jenkins-ci.org/browse/WEBSITE-406">WEBSITE-406</a>，它是使用 GitHub 作为 Jenkins 插件站点和更新管理器（<a href="https://issues.jenkins-ci.org/browse/WEBSITE-637">WEBSITE-637</a>）数据源的更广泛子项目的一部分。
 后面的步骤包括支持显示来自 GitHub release 的变更日志，从 GitHub 中提取插件标签，显示插件 logo，
 以及使用 <a href="https://github.com/jenkins-infra/repository-permissions-updater">Repository Permission Updater</a> 作为维护者信息的来源。</p>
+
 <h2 id="如何贡献">如何贡献？</h2>
+
 <p>10月是一个贡献的好机会！
 插件文档是 <a href="https://jenkins.io/events/hacktoberfest">Hacktoberfest</a> 活动中的一个特色项目，
 我们欢迎所有对文档和代码库的贡献。</p>
+
 <h3 id="为文档做贡献">为文档做贡献</h3>
+
 <p>我们正在寻找有兴趣改进插件文档并帮助我们从 Wiki 迁移到 GitHub 的贡献者。
 对于几十个插件来说，文档已经在 GitHub 中，欢迎你针对任何仓库提交 pull request。</p>
+
 <p>迁移文档：</p>
+
 <ul>
 <li><a href="https://jenkins.io/doc/developer/publishing/wiki-page/#migrating-from-wiki-to-github">迁移插件文档从 Wiki 到 GitHub</a></li>
 <li><a href="https://github.com/jenkins-infra/jenkins.io/blob/master/CONTRIBUTING.adoc#moving-documentation-from-jenkins-wiki">迁移文档从 Jenkins Wiki 到 jenkins.io</a></li>
 <li><a href="https://issues.jenkins-ci.org/browse/JENKINS-59467">用于插件文档迁移的 issue 模板</a></li>
-<li><a href="">新手友好的文档任务</a></li>
+<li>[新手友好的文档任务]()</li>
 </ul>
+
 <p>如果你有任何关于贡献文档的问题，
 请查看<a href="https://jenkins.io/participate/#document">这个页面</a>或者在 <a href="https://gitter.im/jenkinsci/docs">Docs SIG Gitter 聊天室</a>联系我们。</p>
+
 <h3 id="贡献代码">贡献代码</h3>
+
 <p>您想用 Java 或 JavaScript 编写一些代码吗？
 或者你愿意致力于 CSS 样式并改进 Jenkins 的设计吗?
 在这种情况下，欢迎向 <a href="https://plugins.jenkins.io">Jenkins 插件站点</a>做贡献。
 这是我们自己的插件市场实现，我们邀请对这个领域的贡献。
 这个插件站点很容易开发。</p>
+
 <ul>
 <li><a href="https://issues.jenkins-ci.org/browse/WEBSITE-637">WEBSITE-637</a> - 用于插件站点以及 GitHub 集成的 Epic</li>
 <li><a href="https://github.com/jenkins-infra/plugin-site">jenkins-infra/plugin-site</a> - 前端 （JavaScript、React、XSS、YARN）</li>
 <li><a href="https://github.com/jenkins-infra/plugin-site-api">jenkins-infra/plugin-site-api</a> - 插件站点 API 和 Docker 包（Java、Maven、Docker）</li>
 </ul>
+
 <h3 id="有用的链接">有用的链接</h3>
+
 <ul>
 <li><a href="https://jenkins.io/doc/developer/publishing/documentation/">插件文档</a></li>
 <li><a href="https://plugins.jenkins.io">Jenkins 插件站点</a></li>

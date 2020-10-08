@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="手把手教会你 Jenkins 备份与恢复" />
 <meta property="og:description" content="手把手教你如何完成 Jenkins 备份和恢复" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" />
-<meta property="article:published_time" content="2020-05-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-12T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" /><meta property="article:published_time" content="2020-05-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-05-12T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="手把手教会你 Jenkins 备份与恢复">
 <meta itemprop="description" content="手把手教你如何完成 Jenkins 备份和恢复">
+
+
 <meta itemprop="datePublished" content="2020-05-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-12T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="204">
 
 
 
-<meta itemprop="keywords" content="Jenkins,CI/CD," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Jenkins,CI/CD," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="手把手教会你 Jenkins 备份与恢复"/>
 <meta name="twitter:description" content="手把手教你如何完成 Jenkins 备份和恢复"/>
 
@@ -286,25 +289,46 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="jenkins.png" alt="cover"></p>
+
+
+<p><img src="jenkins.png" alt="cover" /></p>
+
 <h2 id="前言">前言</h2>
+
 <p>Jenkins 是一个 Java 语言编写的开源工具，结合持续集成与持续交付相关技术的运用可提升软件开发过程的自动化水平。</p>
+
 <p>Jenkins 从最开始安装到权限设置，插件安装，任务维护等是一个费力的工程，因此定期备份数据的重要性不言而喻。</p>
+
 <p>在本文中，我们将手把手演示如何备份并恢复 Jenkins。</p>
+
 <h2 id="备份操作指引">备份操作指引</h2>
-<h5 id="step1创建一个新的任务">Step1：创建一个新的任务</h5>
+
+<h5 id="step1-创建一个新的任务">Step1：创建一个新的任务</h5>
+
 <p>这里推荐自由风格任务类型，即 Freestyle project</p>
-<p><img src="create-backup-job.png" alt="create-backup-job"></p>
-<h5 id="step2源码管理选择-none">Step2：源码管理选择 None</h5>
-<p><img src="source-code-management.png" alt="source-code-management"></p>
-<h5 id="step3设置任务执行时间">Step3：设置任务执行时间</h5>
+
+<p><img src="create-backup-job.png" alt="create-backup-job" /></p>
+
+<h5 id="step2-源码管理选择-none">Step2：源码管理选择 None</h5>
+
+<p><img src="source-code-management.png" alt="source-code-management" /></p>
+
+<h5 id="step3-设置任务执行时间">Step3：设置任务执行时间</h5>
+
 <p>选择 “Build Periodically”，然后可以根据需要设置备份时间和频率</p>
-<p><img src="build-triggers.png" alt="build-triggers"></p>
+
+<p><img src="build-triggers.png" alt="build-triggers" /></p>
+
 <p>例如，25 12 * * * 会在每天白天 12:25 运行任务</p>
-<h5 id="step4build-模块添加-execute-shell">Step4：Build 模块添加 “Execute Shell”</h5>
+
+<h5 id="step4-build-模块添加-execute-shell">Step4：Build 模块添加 “Execute Shell”</h5>
+
 <p>在 Build 模块选择 Execute Shell，添加以下脚本内容</p>
-<p><img src="backup-shell.png" alt="backup-shell"></p>
+
+<p><img src="backup-shell.png" alt="backup-shell" /></p>
+
 <p>为方便读者直接使用，脚本内容如下：</p>
+
 <pre><code>  #!/bin/bash  
   #  Jenkins Configuraitons Directory  
   cd $JENKINS_HOME  
@@ -331,30 +355,56 @@ var trackOutboundLink = function(id, url) {
   git commit -m &quot;Automated Jenkins commit&quot;  
   
   git push -q -u origin master  
-</code></pre><h5 id="step5保存以上设置">Step5：保存以上设置</h5>
-<p><img src="save.png" alt="save"></p>
-<h5 id="step6初始化本地-git-仓库">Step6：初始化本地 git 仓库</h5>
+</code></pre>
+
+<h5 id="step5-保存以上设置">Step5：保存以上设置</h5>
+
+<p><img src="save.png" alt="save" /></p>
+
+<h5 id="step6-初始化本地-git-仓库">Step6：初始化本地 git 仓库</h5>
+
 <p>我们现在已经添加了一个备份所有 Jenkins 数据的任务，所有的备份数据将会存储到服务端的 /var/lib/jenkins 目录。</p>
+
 <p>假如目前有一个用户名为 jenkins，进入此目录，执行以下命令</p>
+
 <p><code>cd /var/lib/jenkins &amp;&amp; git init</code></p>
-<h5 id="step7本地仓库关联-github">Step7：本地仓库关联 GitHub</h5>
+
+<h5 id="step7-本地仓库关联-github">Step7：本地仓库关联 GitHub</h5>
+
 <p><code>git remote add origin git@github.com:username/new_repo</code></p>
-<h5 id="step8测试备份任务是否生效">Step8：测试备份任务是否生效</h5>
+
+<h5 id="step8-测试备份任务是否生效">Step8：测试备份任务是否生效</h5>
+
 <p>Jenkins 任务主页，点击 Build now 按键。如果看到以下输出，说明备份任务已成功创建并生效。</p>
-<p><img src="console-output.png" alt="console-output"></p>
+
+<p><img src="console-output.png" alt="console-output" /></p>
+
 <h2 id="数据恢复操作指引">数据恢复操作指引</h2>
-<h5 id="step1清空-jenkins-主目录">Step1：清空 Jenkins 主目录</h5>
-<p><code>cd /var/lib/jenkins &amp;&amp; rm -rf * </code></p>
-<h5 id="step2jenkins-主目录初始化成-git-仓库">Step2：Jenkins 主目录初始化成 git 仓库</h5>
+
+<h5 id="step1-清空-jenkins-主目录">Step1：清空 Jenkins 主目录</h5>
+
+<p><code>cd /var/lib/jenkins &amp;&amp; rm -rf *</code></p>
+
+<h5 id="step2-jenkins-主目录初始化成-git-仓库">Step2：Jenkins 主目录初始化成 git 仓库</h5>
+
 <p><code>cd /var/lib/jenkins &amp;&amp; git init</code></p>
-<h5 id="step3递归清除未纳入版本控制的文件">Step3：递归清除未纳入版本控制的文件</h5>
+
+<h5 id="step3-递归清除未纳入版本控制的文件">Step3：递归清除未纳入版本控制的文件</h5>
+
 <p><code>git clean -df</code></p>
-<h5 id="step4添加新的远程仓库地址">Step4：添加新的远程仓库地址</h5>
+
+<h5 id="step4-添加新的远程仓库地址">Step4：添加新的远程仓库地址</h5>
+
 <p><code>git remote add origin git@github.com:username/new_repo</code></p>
-<h5 id="step5从-github-pull-备份数据">Step5：从 GitHub pull 备份数据</h5>
+
+<h5 id="step5-从-github-pull-备份数据">Step5：从 GitHub pull 备份数据</h5>
+
 <p><code>git pull origin master</code></p>
+
 <h5 id="step6-以-root-账户重启-jenkins">Step6. 以 root 账户重启 Jenkins</h5>
+
 <p><code>service jenkins restart</code></p>
+
 <p>至此，数据已完全恢复。</p>
 
 </div>
@@ -425,139 +475,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
-            </a>
-          </li>
-        
       
     </ul>
   </div>

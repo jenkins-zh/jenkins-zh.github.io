@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>developer on Jenkins 中文社区</title>
+    <title>Developer on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/developer/</link>
-    <description>Recent content in developer on Jenkins 中文社区</description>
+    <description>Recent content in Developer on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
@@ -18,11 +18,11 @@
       
       <guid>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/</guid>
       <description>这篇文章将介绍 GitHub Checks API 项目在谷歌编程之夏第三阶段的相关工作。
-在这个夏天的尾声，GitHub Checks API 项目迎来了它在 GSoC 的最后一段旅程。在这篇文章当中，我将向你们展示我们在这最后一个阶段中的相关工作：
- 流水线支持 Rerun 请求支持 Git SCM 支持 文档的完善  以上的特性已经合并在了最新发布的 Checks API 插件 与 GitHub Checks 插件 的 1.0.0 版本中。
+在这个夏天的尾声，GitHub Checks API 项目迎来了它在 GSoC 的最后一段旅程。在这篇文章当中，我将向你们展示我们在这最后一个阶段中的相关工作： - 流水线支持 - Rerun 请求支持 - Git SCM 支持 - 文档的完善
+以上的特性已经合并在了最新发布的 Checks API 插件 与 GitHub Checks 插件 的 1.0.0 版本中。
 流水线支持 对流水线的支持让用户无需依赖任何 Checks API 的实现就可以直接在他们编写的流水线当中轻松发布 checks。
 上图中的 check 可以通过如下脚本实现：
-publishChecks name: &amp;#39;pipeline check&amp;#39;, title: &amp;#39;pipeline &amp;#39;, summary: &amp;#39;# A pipeline check example&amp;#39;, text: &amp;#34;## This check is published through the pipeline script&amp;#34;, detailsURL: &amp;#39;https://ci.jenkins.io&amp;#39; 如果你想要发布 checks 到 GitHub，请安装 GitHub 的实现 并查阅 GitHub API 文档 了解各个参数的相关用途。其中，detailsURL 会拥有一个链接到此次 Jenkins 构建页面的默认值。</description>
+publishChecks name: &#39;pipeline check&#39;, title: &#39;pipeline &#39;, summary: &#39;# A pipeline check example&#39;, text: &amp;quot;## This check is published through the pipeline script&amp;quot;, detailsURL: &#39;https://ci.jenkins.io&#39;  如果你想要发布 checks 到 GitHub，请安装 GitHub 的实现 并查阅 GitHub API 文档 了解各个参数的相关用途。其中，detailsURL 会拥有一个链接到此次 Jenkins 构建页面的默认值。</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@ General Checks API 尽管 General Checks API 是基于 GitHub Checks API 的语�
 本指南介绍了一些 UI 组件，以后所有插件作者都可以使用这些 UI 组件，从而为 Jenkins 中的报告提供丰富的用户界面。为了简化这些库在 Jenkins 作为基于 Java 的 Web 应用程序的上下文中的使用，这些 Java Script 库和组件已打包为普通的 Jenkins 插件。
 在以下各小节中，将逐步介绍这些新组件。为了了解如何使用这些组件的插件，我将演示新功能，同时使用新的用户界面增强现有的 Forensics Plugin。由于 Warnings Next Generation 插件也使用这些新组件，因此您可以在 warnings 插件的文档中或在我们的公共 ci.jenkins.io 实例中看到其他示例，这些示例已经在 warnings 插件的详细信息视图中使用了这些组件。
 新的用户界面插件 新的 Jenkins 插件提供了以下 UI 组件:
- jquery3-api-plugin:为 Jenkins 插件提供 jQuery 3。如其首页所述，jQuery 是一个快速、小型且功能丰富的 JavaScript 库。借助易于使用的 API（可在多种浏览器中使用），使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等事情变得更加简单。兼具多功能性和可扩展性，jQuery 改变了数百万人编写 JavaScript 的方式。 bootstrap4-api-plugin:为 Jenkins 插件提供 Bootstrap 4。Bootstrap 自称是世界上最流行的前端组件库，用于在 Web 上构建响应式，移动优先的项目。它是一个用于使用 HTML、CSS 和 JS 开发的开源工具包。开发人员可以使用他们的 Sass 变量和 mixins、响应式栅格系统、大量的预构建组件以及基于 jQuery 构建的强大插件，快速构建其思想原型或整个应用程序。 data-tables-api-plugin:提供 Jenkins 插件的数据表格。DataTables 是 jQuery Javascript 库的插件。这是一个高度灵活的工具，建立在逐步增强的基础上，可将所有这些高级功能添加到任何 HTML 表中:  上一页，下一页和页面导航 通过文本搜索过滤结果 一次按多列对数据排序 DOM、Javascript、Ajax、服务器端处理 简单主题化 手机端兼容友好   echarts-api-plugin:为 Jenkins 插件提供 ECharts。ECharts 是一种开放源代码的 JavaScript 可视化工具，用于创建直观、交互式和高度可定制的图表。它可以在 PC 和移动设备上流畅运行，并且与大多数现代 Web 浏览器兼容。 font-awesome-api-plugin:为 Jenkins 插件提供 Font Awesome。Font Awesome 具有矢量图标和社交徽标，号称是网络上最受欢迎的图标集和工具包。目前，它包含 1,500 多个免费图标。 popper-api-plugin:为 Jenkins 插件提供 Popper.</description>
+ jquery3-api-plugin:为 Jenkins 插件提供 jQuery 3。如其首页所述，jQuery 是一个快速、小型且功能丰富的 JavaScript 库。借助易于使用的 API（可在多种浏览器中使用），使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等事情变得更加简单。兼具多功能性和可扩展性，jQuery 改变了数百万人编写 JavaScript 的方式。 bootstrap4-api-plugin:为 Jenkins 插件提供 Bootstrap 4。Bootstrap 自称是世界上最流行的前端组件库，用于在 Web 上构建响应式，移动优先的项目。它是一个用于使用 HTML、CSS 和 JS 开发的开源工具包。开发人员可以使用他们的 Sass 变量和 mixins、响应式栅格系统、大量的预构建组件以及基于 jQuery 构建的强大插件，快速构建其思想原型或整个应用程序。 data-tables-api-plugin:提供 Jenkins 插件的数据表格。DataTables 是 jQuery Javascript 库的插件。这是一个高度灵活的工具，建立在逐步增强的基础上，可将所有这些高级功能添加到任何 HTML 表中:  上一页，下一页和页面导航 通过文本搜索过滤结果 一次按多列对数据排序 DOM、Javascript、Ajax、服务器端处理 简单主题化 手机端兼容友好  echarts-api-plugin:为 Jenkins 插件提供 ECharts。ECharts 是一种开放源代码的 JavaScript 可视化工具，用于创建直观、交互式和高度可定制的图表。它可以在 PC 和移动设备上流畅运行，并且与大多数现代 Web 浏览器兼容。 font-awesome-api-plugin:为 Jenkins 插件提供 Font Awesome。Font Awesome 具有矢量图标和社交徽标，号称是网络上最受欢迎的图标集和工具包。目前，它包含 1,500 多个免费图标。 popper-api-plugin:为 Jenkins 插件提供 Popper.</description>
     </item>
     
     <item>
@@ -75,7 +75,7 @@ General Checks API 尽管 General Checks API 是基于 GitHub Checks API 的语�
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
       <description>NOTE：这是由 Java 11支持团队准备的联合博客文章：Adrien Lecharpentier、Ashton Treadway、Baptiste Mathus、Jenn Briden、Kevin Earls、MaríaIsabelVilacides、Mark Waite、RamónLeón 和 Oleg Nenashev。
- 我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
+  我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
 从2018年6月开始，组织了许多活动来改进 Jenkins 代码库并添加 Java 11支持。除了这些事件之外，Core/Plugins 维护者和许多其他贡献者都在努力工作，确保他们发现并解决与 Java 11支持相关的尽可能多的问题。
 支持 Java 11的努力导致在 Jenkins 中创建了 JEP-211: Java 10+ support in Jenkins。它还促使平台特别兴趣小组的成立，以协调 Java 11工作和其他平台支持工作。
 庆祝活动 我们想花点时间感谢参与这些任务的每个人：代码贡献者、问题记者、测试人员、活动策划者和与会者以及社区中所有慷慨地为这项工作提供时间和支持的人。谢谢你们！
@@ -102,8 +102,8 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
-      <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件：
- GitLab API 插件 - 包装 GitLab Java APIs。 GitLab 分支源插件 - 包括两个包：  io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。    现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
+      <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件： * GitLab API 插件 - 包装 GitLab Java APIs。 * GitLab 分支源插件 - 包括两个包： * io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 * io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。
+现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
 自从我向 Jenkins 提交第一个简单又滑稽的 commit 已经过去六个月（2018 年 9 月）了， 我也尝试过作出更多贡献。然而总的来说，向开源项目贡献代码是具有挑战的， 特别是像 Jenkins 这样有着很长生命周期的项目，项目中不乏遗留代码和系统知识。 它通常难以入手，也很难想到一个计划来持续贡献使你的付出从长远看来是有意义的。
 对于 Jenkins 社区来说，我在尝试加入社区时所遇到的困难是其它人也有可能会面临的， 因此我决定分享我成为 Jenkins 活跃贡献者的心路历程。
 我计划大概每月发布一篇博文来描述我的这段旅程，我将从简单容易入手的项目开始， 随着时间推移再介绍更加复杂的项目。
-从哪开始 jenkins.io 要成为 Jenkins 的贡献者，首先会看到的就是 jenkins.io, 在顶部导航中&amp;quot;社区&amp;quot;下拉列表里第一个&amp;quot;参与&amp;quot;的链接就能将我们带到&amp;quot;参与和贡献&amp;quot;这个页面。
+从哪开始 jenkins.io 要成为 Jenkins 的贡献者，首先会看到的就是 jenkins.io, 在顶部导航中&amp;rdquo;社区&amp;rdquo;下拉列表里第一个&amp;rdquo;参与&amp;rdquo;的链接就能将我们带到&amp;rdquo;参与和贡献&amp;rdquo;这个页面。
 在这个页面中列举了我们能够参与 Jenkins 项目和社区的许多方式。尽管它展示了所有可能的选项供读者选择，但一下子看上去令人有些无所适从。
 这个页面被分成了左右两个部分，左边提供了参与社区的方法，右边是向社区贡献的方法。
 参与社区的建议 在“参与和贡献”页面的左侧是有关参与社区的建议，其中包括结交他人、审阅修改或者提供反馈信息。
@@ -155,10 +155,10 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
 一旦我们对之前描述的有了一般性的了解，并想要真正地开始编码，我们可能会对该做些什么感到困惑。
 似乎浏览Jenkins 问题跟踪系统是顺其自然 的下一步，因为那里充满了已经由社区报告了的潜在的缺陷和待改进的部分。然而，你很容易被无数的可能性列表所淹没。 请记住一点，对于一个像这样有十年历史之久的项目，很多是为新手准备的。因此，通过newbie-friendly tickets来过滤可能是最好的主意。
 选择一个工单 在我案例中，我花了一些时间来浏览带 newbie-friendly 标签的工单，直到发现了一个我似乎感兴趣并看起来有能力修复的：
-过程 在这个阶段，当我们准备接手这个工单时，最好让社区中的其他人知道我们正在开始解决它。我们可以很容易做到这一点， 只要把工单分配给我们自己即可（查看工单概览下的 “Assign” 按钮）。
+过程 在这个阶段，当我们准备接手这个工单时，最好让社区中的其他人知道我们正在开始解决它。我们可以很容易做到这一点， 只要把工单分配给我们自己即可（查看工单概览下的 “_Assign_” 按钮）。
 在 Jenkins 的 Jira 中把工单分配给我们自己的话，可以让其他的贡献者知道我们正在处理；另外，为了保证其他人有兴趣对此一起做贡献时，可以知道 该去联系谁或者如何询问状态。也就是说，把工单分配给你自己，并不意味着其他贡献者就无法继续推进。Jenkins 是一个开源项目，欢迎任何人创建他们自己 的 PR，因此，任何人都可以在工单中提出自己的方案。但是，你也能想到，如果工单分配给某个人的话，大多数人在开始工作前也可能会去联系承接人。
 与之相关的是，请牢记当我们把工单分配给自己时，不应该在这个工作上拖延太久。其他的贡献者，可能会由于工单已被分配而忽略。
-当我们马上就要开始工作时，推荐的做法是先点击&amp;rdquo;Start Progress&amp;ldquo;按钮。这个动作，会把状态修改为“In progress”，对社区而言， 意味着我们正在处理这个工单。
+当我们马上就要开始工作时，推荐的做法是先点击&amp;rdquo;Start Progress&amp;ldquo;按钮。这个动作，会把状态修改为“_In progress_”，对社区而言， 意味着我们正在处理这个工单。
 在我们的电脑设置必要的工具 配置，安装和测试 正如在该旅程的第一篇文章中描述的，开始为某个仓库做贡献的第一步 是首先派生到我们自己的 GitHub 账号下，然后，克隆到你的电脑上。
 正如，在 Jenkins Core 仓库中的CONTRIBUTING 文件里 所描述的，让仓库在本地运行的必要步骤。它包括，安装必要的开发工具：Java Development Kit (https://adoptopenjdk.net/[OpenJDK] 为推荐的选择)，Maven 以及任意支持 Maven 项目的 IDE。注意，安装 JDK 和 Maven 的步骤在贡献指南中有链接。</description>
     </item>

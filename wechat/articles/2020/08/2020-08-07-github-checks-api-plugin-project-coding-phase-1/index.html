@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="GSoC: GitHub Checks API 项目第一阶段总结" />
 <meta property="og:description" content="GitHub Checks API 插件项目 - 编码阶段 1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/" />
-<meta property="article:published_time" content="2020-08-07T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-08-07T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/" /><meta property="article:published_time" content="2020-08-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-07T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="GSoC: GitHub Checks API 项目第一阶段总结">
 <meta itemprop="description" content="GitHub Checks API 插件项目 - 编码阶段 1">
+
+
 <meta itemprop="datePublished" content="2020-08-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-08-07T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="205">
 
 
 
-<meta itemprop="keywords" content="github,api,plugins,developer,gsoc,gsoc2020," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="github,api,plugins,developer,gsoc,gsoc2020," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GSoC: GitHub Checks API 项目第一阶段总结"/>
 <meta name="twitter:description" content="GitHub Checks API 插件项目 - 编码阶段 1"/>
 
@@ -286,28 +289,48 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="jenkins-gsoc-logo_small.png" alt="jenkins-gsoc-logo_small"></p>
+
+
+<p><img src="jenkins-gsoc-logo_small.png" alt="jenkins-gsoc-logo_small" /></p>
+
 <p>这篇博客将介绍 GSoC 项目 <a href="https://www.jenkins.io/projects/gsoc/2020/projects/github-checks/">GitHub Checks API Plugin</a> 在一阶段的相关进展。</p>
+
 <p>简单来说，GitHub Checks API 就是一套可高度定制化接受 CI 报告的接口。
 CI 工具可以通过该接口反馈信息给特定的 Pull Request，随后，用户便可以直接在 GitHub 的 UI 界面上直观的浏览 CI 报告。</p>
-<p><img src="github-check-run.png" alt="GitHub Check Run Screenshot from GitHub Docs"></p>
+
+<p><img src="github-check-run.png" alt="GitHub Check Run Screenshot from GitHub Docs" /></p>
+
 <p>更激动人心的是，它可以针对指定的代码行进行注释，这类似于开发者平时在代码审查时留下的评论。</p>
-<p><img src="github-check-annotations.png" alt="Check Run Annotation Screenshot from GitHub Docs"></p>
+
+<p><img src="github-check-annotations.png" alt="Check Run Annotation Screenshot from GitHub Docs" /></p>
+
 <p>同时，在 Jenkins 这边，<a href="https://plugins.jenkins.io/warnings-ng/">Warnings Next Generation Plugin</a> 能通过源代码视图实现类似的功能。</p>
-<p><img src="source-view.png" alt="Source Code View from Warnings Next Generation Plugin"></p>
+
+<p><img src="source-view.png" alt="Source Code View from Warnings Next Generation Plugin" /></p>
+
 <p>因此，通过使用 GitHub Checks API 将这些信息直接反馈给 GitHub 能使 Jenkins 对 GitHub 用户更加友好。</p>
+
 <h1 id="阶段一实现的相关特性">阶段一实现的相关特性</h1>
+
 <p>在过去的一个月里，我们团队的工作主要集中在 General Checks API 和 GitHub Checks API 的实现上。</p>
+
 <h2 id="general-checks-api">General Checks API</h2>
+
 <p>尽管 General Checks API 是基于 GitHub Checks API 的语义实现的，我们仍然希望能提供这样的泛化接口为其他平台的相关概念做好准备，例如：GitLab 上的 <a href="https://docs.gitlab.com/ee/api/commits.html#commit-status">Commit Status API</a>。
 在今后，我们欢迎所有人贡献针对这些平台的相关实现。</p>
+
 <h2 id="github-checks-api-实现">GitHub Checks API 实现</h2>
+
 <p>目前，我们对 GitHub Checks API 的支持工作已基本完成。
 除此以外，我们还实现了一个用于表明当前 Jenkins 构建状况的功能。
 在发布之后，通过调用我们的 API，Jenkins 的开发者们（特别是插件开发者们）能够为 GitHub Branch SCM 项目创建属于他们自己的 GitHub Checks。</p>
-<h3 id="例子要创建一个如下图所示的-check-run">例子：要创建一个如下图所示的 check run：</h3>
-<p><img src="created-check-run.png" alt="Created Check Run"></p>
+
+<h3 id="例子-要创建一个如下图所示的-check-run">例子：要创建一个如下图所示的 check run：</h3>
+
+<p><img src="created-check-run.png" alt="Created Check Run" /></p>
+
 <p>用户需要如下地调用我们的接口：</p>
+
 <pre><code>ChecksDetails details = new ChecksDetailsBuilder()
         .withName(&quot;Jenkins&quot;)
         .withStatus(ChecksStatus.COMPLETED)
@@ -347,16 +370,23 @@ CI 工具可以通过该接口反馈信息给特定的 Pull Request，随后，�
 
 ChecksPublisher publisher = ChecksPublisherFactory.fromRun(run);
 publisher.publish(details);
-</code></pre><h2 id="未来的工作">未来的工作</h2>
+</code></pre>
+
+<h2 id="未来的工作">未来的工作</h2>
+
 <p>我们的下一步计划是将该接口集成到 <a href="https://plugins.jenkins.io/warnings-ng/">Warnings Next General Plugin</a> 和 <a href="https://plugins.jenkins.io/code-coverage-api/">Code Coverage API Plugin</a> 当中。
 在此之后，我们还会添加对流水线的支持：在创建 check run 时，用户可以直接在流水线中调用我们的接口而无需依赖其他插件的实现.</p>
+
 <h2 id="相关资源">相关资源</h2>
+
 <ul>
 <li><a href="https://github.com/jenkinsci/checks-api-plugin">GitHub 仓库</a></li>
 <li><a href="https://www.jenkins.io/projects/gsoc/2020/projects/github-checks/">项目主页</a></li>
 <li><a href="https://gitter.im/jenkinsci/github-checks-api">Gitter 聊天室</a></li>
 </ul>
+
 <h2 id="引用">引用</h2>
+
 <ul>
 <li><a href="https://docs.github.com/en/developers/apps/creating-ci-tests-with-the-checks-api">GitHub 文档：使用 Checks API 创建 CI 测试</a></li>
 <li><a href="https://github.com/jenkinsci/warnings-ng-plugin/blob/master/doc/Documentation.md#source-code-view">Warnings Next Generation Plugin：源代码视图</a></li>
@@ -476,6 +506,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/" class="link">
               GitHub App 身份验证支持已发布
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/03/2020-03-27-jenkins-tutorial-configure-scm-github-triggers-and-git-polling-using-ngrok/" class="link">
+              Jenkins 教程：使用 Ngrok 配置（SCM）Github 触发器和 Git 轮询
             </a>
           </li>
         

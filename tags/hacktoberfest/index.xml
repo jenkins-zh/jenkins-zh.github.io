@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hacktoberfest on Jenkins 中文社区</title>
+    <title>Hacktoberfest on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/hacktoberfest/</link>
-    <description>Recent content in hacktoberfest on Jenkins 中文社区</description>
+    <description>Recent content in Hacktoberfest on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate>
@@ -27,7 +27,7 @@
 注册过程中，你大致需要做下面的三件事：
  通过 GitHub 登录 选择邮箱、角色（活动组织者、贡献者、项目维护者） 是否接收相关资讯邮件  如果你看到了类似下面的画面，那么，贡献你，已经完成活动注册。万事俱备，只等十月 PR：
 开源的方舟你已经登上，接下来再看看到底有哪些项目可以参与，以及了解下今年的活动情况。
- 2020年，Hacktoberfest 是由三家公司联合组织，包括：DigitalOcean、intel、DEV。其中，intel 是今年新加入的 从需要完成的 PR 数量来看，相比去年少了一个，只需要完成4个即可 从活动奖励上来看，多了一个选项，可以在限量版T恤或者种树之间选择一个（难道他们是向蚂蚁森林学的新技能？） 今年T恤的颜色可以是白色或者蓝色 如何种树？请看这里 https://tree-nation.com/profile/digitalocean  推荐项目（https://github.com/jenkins-zh）  Jenkins 简体中文插件 用于41k+的安装量  完善中文本地化词条   Jenkins CLI 是由 Go 语言编写的 Jenkins 命令行客户端  功能完善、文档完善、缺陷修复、Logo 设计等   Jenkins 系列教程 需要擅长设计的同学来帮忙设计封面等  征集社区合作、讲师、志愿者   Jenkins 插件更新中心国内源 需要你来把版本更新自动化  欢迎使用 Go、Java 或者 Python 等语言实现版本自动化更新（目前还是人肉在更新）   Jenkins 特定领域发型版定制  FAQ  我可以向自己的仓库提交 PR 吗？答：可以！ 我提交的 PR 必须要合并后才算吗？答：只要提交 PR 即可，除非被标记为无效的。 issues 算数吗？答：不算！ 我可以向 GitHub 以外的平台提交 PR 吗？答：不可以！  即使我已经努力向各位介绍活动细节了，但如果还有不清楚的地方的话，可以访问下面的官方 FAQ 链接，或者添加社区的微信小助手进群资讯 https://hacktoberfest.</description>
+ 2020年，Hacktoberfest 是由三家公司联合组织，包括：DigitalOcean、intel、DEV。其中，intel 是今年新加入的 从需要完成的 PR 数量来看，相比去年少了一个，只需要完成4个即可 从活动奖励上来看，多了一个选项，可以在限量版T恤或者种树之间选择一个（难道他们是向蚂蚁森林学的新技能？） 今年T恤的颜色可以是白色或者蓝色 如何种树？请看这里 https://tree-nation.com/profile/digitalocean  推荐项目（https://github.com/jenkins-zh）  Jenkins 简体中文插件 用于41k+的安装量  完善中文本地化词条  Jenkins CLI 是由 Go 语言编写的 Jenkins 命令行客户端  功能完善、文档完善、缺陷修复、Logo 设计等  Jenkins 系列教程 需要擅长设计的同学来帮忙设计封面等  征集社区合作、讲师、志愿者  Jenkins 插件更新中心国内源 需要你来把版本更新自动化  欢迎使用 Go、Java 或者 Python 等语言实现版本自动化更新（目前还是人肉在更新）  Jenkins 特定领域发型版定制  FAQ  我可以向自己的仓库提交 PR 吗？答：可以！ 我提交的 PR 必须要合并后才算吗？答：只要提交 PR 即可，除非被标记为无效的。 issues 算数吗？答：不算！ 我可以向 GitHub 以外的平台提交 PR 吗？答：不可以！  即使我已经努力向各位介绍活动细节了，但如果还有不清楚的地方的话，可以访问下面的官方 FAQ 链接，或者添加社区的微信小助手进群资讯 https://hacktoberfest.</description>
     </item>
     
     <item>

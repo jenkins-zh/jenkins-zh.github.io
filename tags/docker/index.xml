@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on Jenkins 中文社区</title>
+    <title>Docker on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/docker/</link>
-    <description>Recent content in docker on Jenkins 中文社区</description>
+    <description>Recent content in Docker on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 05 Aug 2020 00:00:00 +0000</lastBuildDate>
@@ -31,9 +31,9 @@ Argo/Argo CD/Argo CI Argo 项目有几个正在开发的项目仓库。Argo 是�
       <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-28-docker-windows-agents/</guid>
       <description>我们想宣布可以使用官方 Windows agent Docker 镜像，这些镜像允许在 Docker 和 Kubernetes 上使用 Windows 操作系统配置 Jenkins agent。
 新镜像 现在，所有 agent 的正式 Docker 镜像都提供 nanoserver-1809 和 windowsservercore-1809 标签，其中包括 Windows 镜像以及当前的 Java 8（类似于 latest 标签）。 我们还提供了明确的 Java 选择，例如 jdk8-windowsservercore-1809 或 jdk11-nanoserver-1809。 版本标记也可用，例如 jenkins/agent:4.3-4-jdk8-nanoserver-1809。
-  jenkins/agent 是一个基础的 agent，它捆绑 agent.jar 来进行 agent&amp;lt;= =&amp;gt; master之间的通讯，最有用的是可以作为其他镜像的基础镜像。Windows 镜像从版本 4.3-4 开始可用。
-  jenkins/inbound-agent 是一个基于上面 jenkins/agent 镜像的 agent，它提供了用 PowerShell 编写的包装类脚本，以帮助指定 agent.jar 的参数。Windows 镜像从版本 4.3-4 开始可用。
-  jenkins/ssh-agent 是一个安装了 OpenSSH 的镜像， 应该与 SSH Build Agents Plugin 一起使用。Windows 镜像从版本 2.</description>
+ jenkins/agent 是一个基础的 agent，它捆绑 agent.jar 来进行 agent&amp;lt;= =&amp;gt; master之间的通讯，最有用的是可以作为其他镜像的基础镜像。Windows 镜像从版本 4.3-4 开始可用。
+ jenkins/inbound-agent 是一个基于上面 jenkins/agent 镜像的 agent，它提供了用 PowerShell 编写的包装类脚本，以帮助指定 agent.jar 的参数。Windows 镜像从版本 4.3-4 开始可用。
+ jenkins/ssh-agent 是一个安装了 OpenSSH 的镜像， 应该与 SSH Build Agents Plugin 一起使用。Windows 镜像从版本 2.</description>
     </item>
     
     <item>
@@ -45,17 +45,17 @@ Argo/Argo CD/Argo CI Argo 项目有几个正在开发的项目仓库。Argo 是�
       <description>这篇文章，我们将会分解关于你想了解的 DevOps 的所有知识，因而你可以着手构建自己的 CI/CD 流水线。
 这篇文章，我们将注意力集中于 DevOps 上。
 什么是 DevOps？它跟 Agile 有什么不同？有哪些受欢迎的 DevOps 工具？在 DevOps 中，Docker、Kubernetes 和 Azure DevOps 又是充当了什么样的角色。让我们从一个简单的使用场景开始这次的内容。
-你将会学习   什么是 DevOps？
-  为什么我们需要 DevOps？
-  DevOps 和 Agile 有什么区别？
-  有哪些重要的 DevOps 工具？
-  Docker 怎样能够帮助到 DevOps？
-  Kubernetes 怎样能够帮助到 DevOps？
-  Azure DevOps 怎样能够帮助到 DevOps？
-  什么是持续集成，持续交付？
-  什么是基础设施即代码？
-  Terraform 和 Ansible 怎样能够帮助 DevOps？
-  免费课程 - 10 步速成   10 步学习 Docker</description>
+你将会学习  什么是 DevOps？
+ 为什么我们需要 DevOps？
+ DevOps 和 Agile 有什么区别？
+ 有哪些重要的 DevOps 工具？
+ Docker 怎样能够帮助到 DevOps？
+ Kubernetes 怎样能够帮助到 DevOps？
+ Azure DevOps 怎样能够帮助到 DevOps？
+ 什么是持续集成，持续交付？
+ 什么是基础设施即代码？
+ Terraform 和 Ansible 怎样能够帮助 DevOps？
+  免费课程 - 10 步速成  10 步学习 Docker</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@ Argo/Argo CD/Argo CI Argo 项目有几个正在开发的项目仓库。Argo 是�
       <description>我们正式宣布对 Jenkins agent 官方 Docker 镜像重新命名。 它不会对 Jenkins 用户产生任何直接影响，但是希望他们逐渐升级其实例。 本文提供了新的镜像名称、升级过程以及旧镜像支持策略等相关信息。 我们还将讨论在 Jenkins 中 Docker 包的下一步计划。
 新镜像名称  jenkins/agent 是旧的 jenkins/slave 镜像从 4.3-2 开始的新名称 jenkins/inbound-agent 是旧的 jenkins/jnlp-slave 镜像从 4.3-2 开始的新名称 jenkins/ssh-agent 是旧的 jenkins/ssh-slave 镜像从 2.0.0 开始的新名称  请参阅下面的升级指南。
 为什么要重新命名？ &amp;ldquo;slave&amp;rdquo; 一词在开源社区中被广泛认为是不合适的。它已于2016年在 Jenkins 2.0中正式弃用，但在某些 Jenkins 组件中仍有遗留用法。 这个 Epic —— JENKINS-42816：Slave 到 Agent 的重命名遗留问题 用于跟踪此类问题的清理。 官方 Docker agent 镜像是一个显而易见的案例，要修改在 DockerHub 上的旧版本镜像并非易事。很高兴这次更新终于解决了镜像命名问题。
-另一个值得注意的变化是使用 inbound agent 代替 JNLP agent 术语。 历史上，&amp;ldquo;JNLP&amp;rdquo; 已被用作远程协议的名称。 JNLP 代表 Java Network Launch Protocol，它是 Java Web Start 的一部分。 在 Java 1.</description>
+另一个值得注意的变化是使用 inbound agent 代替 JNLP agent 术语。 历史上，&amp;rdquo;JNLP&amp;rdquo; 已被用作远程协议的名称。 JNLP 代表 Java Network Launch Protocol，它是 Java Web Start 的一部分。 在 Java 1.</description>
     </item>
     
     <item>
@@ -83,8 +83,8 @@ Argo/Argo CD/Argo CI Argo 项目有几个正在开发的项目仓库。Argo 是�
 幸运的是，目前市面上有好几个可以作为代理或者‘拉入式缓存’的 Docker Registries，这正是我们所需要的。用来作为代理或者缓存的主机需要互联网的权限，而且只有这一台机器需要。其他所有需要获取 Docker 镜像的主机通过这台机器访问互联网，该机器同样很方便的缓存了数据这样只需要检索一次就可以更快的分发到内部局域网的主机上。
 诸如 Sonatype Nexus、JFrog Artifactory、甚至 Docker Registry 都提供这些确切的功能，以及一些功能。这里我将会使用 Sonatype Nexus 完成所有的设置，主要的功能在 OSS 版本中可以使用（Artifactory 功能则是 Pro 版本的一部分功能）。
 这篇文章将会向你展示怎样配置 Nexus OSS 来实现类似 Docker Hub ，私有仓库或者两者的结合那样的拉入式缓存功能。同样会向你展示怎样配置 Docker 客户端从而在检索镜像的时候能够使用到你的缓存。
-需要的软件   Sonatype Nexus OSS 3.15.0（或更高版本）
-  Docker 17.09（或更高版本）
+需要的软件  Sonatype Nexus OSS 3.15.0（或更高版本）
+ Docker 17.09（或更高版本）
   我设置了两个基于 Ubuntu LTS 版本的虚拟机，一个运行了 Sonatype Nexus 3.14.0 的 Docker 容器（这个机器称作 docker-host），另一个只运行 Docker（称作 docker-client）。
 请注意一些网络配置或许跟你的配置不一样（例如 IP）但是方法是相同的。同样，请注意那台运行 Nexus OSS 的机器（docker-host）需要有访问互联网的权限。
 [更新，2018年10月] 请使用 Nexus 3.</description>
@@ -101,10 +101,9 @@ Argo/Argo CD/Argo CI Argo 项目有几个正在开发的项目仓库。Argo 是�
 什么是 kind？  kind 是一款使用 Docker 容器 “nodes” 运行 Kubernetes 集群的工具。 https://kind.sigs.k8s.io/
  介绍看起来没有描述信息，但是很明显能知道是源于 “Kubernetes IN Docker”。该工具具备了跨平台友好的优势即便你使用的是 Windows 版本的 Docker。当然了，缺点就是它的可追溯性比较差。
 安装 kind 因为 kind 是 go 语言实现的，请确保安装了最新版本的 golang。根据开发者文档，推荐使用 go1.11.5 及以上版本。为了安装 kind，请运行这些命令（可能需要运行一段时间）
-go get -u sigs.k8s.io/kind kind create cluster 然后确认 “kind” 集群是可用的。
-kind get clusters 设置 kubectl 同样的，使用 Homebrew 或者 Chocolatey 安装最新版本的 kubernetes-cli。最新版本的 Docker 包含了 Kubernetes 的功能，但使用的是老版本的 kubectl。
-运行该命令检查它的版本号。
-kubectl version 请确保显示 GitVersion: &amp;quot;v1.</description>
+go get -u sigs.k8s.io/kind kind create cluster  然后确认 “kind” 集群是可用的。
+kind get clusters  设置 kubectl 同样的，使用 Homebrew 或者 Chocolatey 安装最新版本的 kubernetes-cli。最新版本的 Docker 包含了 Kubernetes 的功能，但使用的是老版本的 kubectl。
+运行该命令检查它的版本号。</description>
     </item>
     
     <item>
@@ -138,10 +137,9 @@ Dockerfile 可以在工作人员之间快速传输和测试。 Docker 还简化�
 我们会在 Docker 容器里运行 Jenkins，再使用 Jenkins 启动一个 Maven 容器，用来编译我们的代码，接着在另一个 Maven 容器中运行测试用例并生成制品（例如 jar 包），然后再在 Jenkins 容器中制作 Docker 镜像，最后将镜像推送到 Docker Hub。
 我们会用到两个 Github 仓库。
  Jenkins-complete：这是主仓库，包含了启动 Jenkins 容器所需的配置文件。 Simple-java-maven-app：使用 Maven 创建的 简单的 Java 应用。  在搭建之前，我们先来了解一下这两个仓库。
- 了解 Jenkins-complete 这是我们构建 Jenkins 镜像的核心仓库，它包含了所需的配置文件。我们通过 Jenkins 官方提供的 Docker 镜像启动 Jenkins 容器，然后完成一些动作，例如安装插件、创建用户等。
+了解 Jenkins-complete 这是我们构建 Jenkins 镜像的核心仓库，它包含了所需的配置文件。我们通过 Jenkins 官方提供的 Docker 镜像启动 Jenkins 容器，然后完成一些动作，例如安装插件、创建用户等。
 安装好之后，我们会创建用来获取 Java 应用的 Github 凭据，还有推送镜像到 Dockerhub 的 Docker 凭据。最后，开始创建我们应用的流水线 job。
-这个过程很长，我们的目标是让所有这些事都自动化。主仓库包含的文件和详细配置会用来创建镜像。当创建好的镜像启动运行以后，我们就有了：
- 新创建的 admin/admin 用户 已经装好的一些插件 Docker 和 Github 凭据 新创建的名为 sample-maven-job 的流水线。  如果把源码列成树状，就看到下面的结构：</description>
+这个过程很长，我们的目标是让所有这些事都自动化。主仓库包含的文件和详细配置会用来创建镜像。当创建好的镜像启动运行以后，我们就有了： 1. 新创建的 admin/admin 用户 2. 已经装好的一些插件 3. Docker 和 Github 凭据 4.</description>
     </item>
     
     <item>
@@ -169,7 +167,7 @@ Devops 最重要的优势，它可以帮助你更好地发布软件并且利用�
 为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。
 步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。
 这里是可用于以上步骤的 Jenkins 流水线代码：
-node { stage &amp;#39;checkout&amp;#39; git &amp;#39;https://gitlab.com/RavisankarCts/hello-world.git&amp;#39; stage &amp;#39;build&amp;#39; sh &amp;#39;mvn clean install&amp;#39; stage(&amp;#39;Results - 1&amp;#39;) { junit &amp;#39;**/target/surefire-reports/TEST-*.xml&amp;#39; archive &amp;#39;target/*.jar&amp;#39; } stage &amp;#39;bake image&amp;#39; docker.withRegistry(&amp;#39;https://registry.hub.docker.com&amp;#39;,&amp;#39;docker-hub-credentials&amp;#39;) { def image = docker.build(&amp;#34;ravisankar/ravisankardevops:${env.BUILD_TAG}&amp;#34;,&amp;#39;.&amp;#39;) stage &amp;#39;test image&amp;#39; image.withRun(&amp;#39;-p 8888:8888&amp;#39;) {springboot -&amp;gt; sh &amp;#39;while !</description>
+node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-world.git&#39; stage &#39;build&#39; sh &#39;mvn clean install&#39; stage(&#39;Results - 1&#39;) { junit &#39;**/target/surefire-reports/TEST-*.xml&#39; archive &#39;target/*.jar&#39; } stage &#39;bake image&#39; docker.withRegistry(&#39;https://registry.hub.docker.com&#39;,&#39;docker-hub-credentials&#39;) { def image = docker.build(&amp;quot;ravisankar/ravisankardevops:${env.BUILD_TAG}&amp;quot;,&#39;.&#39;) stage &#39;test image&#39; image.withRun(&#39;-p 8888:8888&#39;) {springboot -&amp;gt; sh &#39;while !</description>
     </item>
     
     <item>

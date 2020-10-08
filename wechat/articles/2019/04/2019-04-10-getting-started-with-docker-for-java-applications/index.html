@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线" />
 <meta property="og:description" content="本文是容器化现有 Java 应用以及使用 Jenkins 建立一个端到端部署流水线的指南" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" />
-<meta property="article:published_time" content="2019-04-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-04-10T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" /><meta property="article:published_time" content="2019-04-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-10T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线">
 <meta itemprop="description" content="本文是容器化现有 Java 应用以及使用 Jenkins 建立一个端到端部署流水线的指南">
+
+
 <meta itemprop="datePublished" content="2019-04-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-10T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="189">
 
 
 
-<meta itemprop="keywords" content="cd,ci,docker,jenkins,pipeline," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="cd,ci,docker,jenkins,pipeline," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线"/>
 <meta name="twitter:description" content="本文是容器化现有 Java 应用以及使用 Jenkins 建立一个端到端部署流水线的指南"/>
 
@@ -291,9 +294,14 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
+
+
 <p>Docker 已经非常出名并且更多的组织正在转向基于 Docker 的应用开发和部署。这里有一个关于如何容器化现有 Java Web 应用以及使用 Jenkins 为它建立一个端到端部署流水线的快速指南。</p>
+
 <p>为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。</p>
+
 <h2 id="步骤">步骤</h2>
+
 <ol>
 <li>构建宠物商店应用。</li>
 <li>运行一次 Sonar 质量检查。</li>
@@ -301,62 +309,85 @@ var trackOutboundLink = function(id, url) {
 <li>运行容器以及执行集成测试。</li>
 <li>如果所有测试成功，推送该镜像到一个 dockerhub 账户。</li>
 </ol>
+
 <p>所有的代码都在<a href="https://github.com/RavisankarCts/spring-framework-petclinic.git">这里</a>。</p>
+
 <p>这里是可用于以上步骤的 Jenkins 流水线代码：</p>
-<p><img src="pipeline.png" alt="pipeline.png"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">node {
-    stage <span style="color:#e6db74">&#39;checkout&#39;</span>
-    git <span style="color:#e6db74">&#39;https://gitlab.com/RavisankarCts/hello-world.git&#39;</span>
-    stage <span style="color:#e6db74">&#39;build&#39;</span>
-    sh <span style="color:#e6db74">&#39;mvn clean install&#39;</span>
-    stage(<span style="color:#e6db74">&#39;Results - 1&#39;</span>) {
-         junit <span style="color:#e6db74">&#39;**/target/surefire-reports/TEST-*.xml&#39;</span>
-         archive <span style="color:#e6db74">&#39;target/*.jar&#39;</span>
+
+<p><img src="pipeline.png" alt="pipeline.png" /></p>
+
+<pre><code class="language-yaml">node {
+    stage 'checkout'
+    git 'https://gitlab.com/RavisankarCts/hello-world.git'
+    stage 'build'
+    sh 'mvn clean install'
+    stage('Results - 1') {
+         junit '**/target/surefire-reports/TEST-*.xml'
+         archive 'target/*.jar'
         }
-    stage <span style="color:#e6db74">&#39;bake image&#39;</span>
-    docker.withRegistry(<span style="color:#e6db74">&#39;https://registry.hub.docker.com&#39;</span>,<span style="color:#e6db74">&#39;docker-hub-credentials&#39;</span>) {
-        def image = docker.build(<span style="color:#e6db74">&#34;ravisankar/ravisankardevops:${env.BUILD_TAG}&#34;</span>,<span style="color:#e6db74">&#39;.&#39;</span>)
-        stage <span style="color:#e6db74">&#39;test image&#39;</span>
-        image.withRun(<span style="color:#e6db74">&#39;-p 8888:8888&#39;</span>) {springboot -<span style="color:#e6db74">&gt;
-</span><span style="color:#e6db74">        sh &#39;while ! httping -qc1 http://localhost:8888/info; do sleep 1; done&#39;</span>
-        git <span style="color:#e6db74">&#39;https://github.com/RavisankarCts/petclinicacceptance.git&#39;</span>
-        sh <span style="color:#e6db74">&#39;mvn clean verify&#39;</span>
+    stage 'bake image'
+    docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials') {
+        def image = docker.build(&quot;ravisankar/ravisankardevops:${env.BUILD_TAG}&quot;,'.')
+        stage 'test image'
+        image.withRun('-p 8888:8888') {springboot -&gt;
+        sh 'while ! httping -qc1 http://localhost:8888/info; do sleep 1; done'
+        git 'https://github.com/RavisankarCts/petclinicacceptance.git'
+        sh 'mvn clean verify'
         }
-        stage(<span style="color:#e6db74">&#39;Results&#39;</span>) {
-         junit <span style="color:#e6db74">&#39;**/target/surefire-reports/TEST-*.xml&#39;</span>
-         archive <span style="color:#e6db74">&#39;target/*.jar&#39;</span>
+        stage('Results') {
+         junit '**/target/surefire-reports/TEST-*.xml'
+         archive 'target/*.jar'
         }
-        stage <span style="color:#e6db74">&#39;push image&#39;</span>
+        stage 'push image'
         image.push()
     }
 }
-</code></pre></div><p>最初的步骤只是检出代码并运行构建。有趣的部分从这个步骤开始，它使用 dockerhub 凭证在 Docker 上下文中运行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">step <span style="color:#ae81ff">3</span> <span style="color:#e6db74">&#39;bake image&#39;</span>
-docker.withRegistry(<span style="color:#e6db74">&#39;https://registry.hub.docker.com&#39;</span>,<span style="color:#e6db74">&#39;docker-hub-credentials&#39;</span>)
-</code></pre></div><p><img src="docker-hub-credentials.png" alt="docker-hub-credentials.png"></p>
+</code></pre>
+
+<p>最初的步骤只是检出代码并运行构建。有趣的部分从这个步骤开始，它使用 dockerhub 凭证在 Docker 上下文中运行。</p>
+
+<pre><code class="language-yaml">step 3 'bake image'
+docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials')
+</code></pre>
+
+<p><img src="docker-hub-credentials.png" alt="docker-hub-credentials.png" /></p>
+
 <p>这个步骤构建 Docker 镜像。Docker build 命令将 dockerhub 仓库名称和 tag 名称作为一个参数，而构建位置作为另一个参数。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">def image = docker.build(<span style="color:#e6db74">&#34;dockerhub registry name&#34;</span>:<span style="color:#e6db74">&#34;tag name&#34;</span>,<span style="color:#e6db74">&#39;location of docker file&#39;</span>)
-def image = docker.build(<span style="color:#e6db74">&#34;ravisankar/ravisankardevops:${env.BUILD_TAG}&#34;</span>,<span style="color:#e6db74">&#39;.&#39;</span>)
-</code></pre></div><p>这里使用 Dockerfile 来构建 Docker 镜像。 Dockerfile 的内容如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">FROM tomcat:<span style="color:#ae81ff">8</span>
-ADD target/<span style="color:#75715e">*.war</span> /usr/local/tomcat/webapps
-</code></pre></div><p>下一步是运行镜像并执行测试：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">stage <span style="color:#e6db74">&#39;test image&#39;</span>
-        image.withRun(<span style="color:#e6db74">&#39;-p 8888:8888&#39;</span>) { springboot -<span style="color:#e6db74">&gt;
-</span><span style="color:#e6db74">        sh &#39;while ! httping -qc1 http://localhost:8888/info; do sleep 1; done&#39;</span>
-        git <span style="color:#e6db74">&#39;https://github.com/RavisankarCts/petclinicacceptance.git&#39;</span>
-        sh <span style="color:#e6db74">&#39;mvn clean verify&#39;</span>
+
+<pre><code class="language-yaml">def image = docker.build(&quot;dockerhub registry name&quot;:&quot;tag name&quot;,'location of docker file')
+def image = docker.build(&quot;ravisankar/ravisankardevops:${env.BUILD_TAG}&quot;,'.')
+</code></pre>
+
+<p>这里使用 Dockerfile 来构建 Docker 镜像。 Dockerfile 的内容如下：</p>
+
+<pre><code class="language-yaml">FROM tomcat:8
+ADD target/*.war /usr/local/tomcat/webapps
+</code></pre>
+
+<p>下一步是运行镜像并执行测试：</p>
+
+<pre><code class="language-yaml">stage 'test image'
+        image.withRun('-p 8888:8888') { springboot -&gt;
+        sh 'while ! httping -qc1 http://localhost:8888/info; do sleep 1; done'
+        git 'https://github.com/RavisankarCts/petclinicacceptance.git'
+        sh 'mvn clean verify'
 }
-</code></pre></div><p>withRun 步骤用来帮你运行你刚才构建的 Docker 镜像并暴露应用可以暴露的端口。我有另一个测试代码库，它被构建和执行，将对正在运行的镜像运行测试。</p>
+</code></pre>
+
+<p>withRun 步骤用来帮你运行你刚才构建的 Docker 镜像并暴露应用可以暴露的端口。我有另一个测试代码库，它被构建和执行，将对正在运行的镜像运行测试。</p>
+
 <p>最后一步是推送该镜像到一个 dockerhub registry 或者你的组织建立的任何内部 registry 。</p>
-<p><img src="docker-hub.png" alt="docker-hub.png"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">stage(<span style="color:#e6db74">&#39;Results&#39;</span>) {
-         junit <span style="color:#e6db74">&#39;**/target/surefire-reports/TEST-*.xml&#39;</span>
-         archive <span style="color:#e6db74">&#39;target/*.jar&#39;</span>
+
+<p><img src="docker-hub.png" alt="docker-hub.png" /></p>
+
+<pre><code class="language-yaml">stage('Results') {
+         junit '**/target/surefire-reports/TEST-*.xml'
+         archive 'target/*.jar'
         }
-        stage <span style="color:#e6db74">&#39;push image&#39;</span>
+        stage 'push image'
         image.push()
-</code></pre></div>
+</code></pre>
+
 </div>
 
 

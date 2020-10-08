@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="KubeSphere DevOps 初体验，内置 Jenkins 引擎" />
 <meta property="og:description" content="基于 Kubernetes 安装 KubeSphere 并开启 DevOps 系统" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/" />
-<meta property="article:published_time" content="2020-06-30T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-30T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/" /><meta property="article:published_time" content="2020-06-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-06-30T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="KubeSphere DevOps 初体验，内置 Jenkins 引擎">
 <meta itemprop="description" content="基于 Kubernetes 安装 KubeSphere 并开启 DevOps 系统">
+
+
 <meta itemprop="datePublished" content="2020-06-30T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-30T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="566">
+<meta itemprop="wordCount" content="569">
 
 
 
-<meta itemprop="keywords" content="jenkins,kubesphere,devops,open source," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,kubesphere,devops,open source," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="KubeSphere DevOps 初体验，内置 Jenkins 引擎"/>
 <meta name="twitter:description" content="基于 Kubernetes 安装 KubeSphere 并开启 DevOps 系统"/>
 
@@ -286,49 +289,74 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
+
+
 <h2 id="初识-kubesphere">初识 KubeSphere</h2>
+
 <p>KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。KubeSphere 支持部署在任何基础设施环境，提供在线与离线安装，支持一键升级与扩容集群，并且各功能组件支持模块化和可插拔的安装。</p>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233746.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233746.png" alt="" /></p>
+
 <h2 id="解读-kubesphere-devops">解读 KubeSphere DevOps</h2>
+
 <p>KubeSphere DevOps 作为 KubeSphere 容器平台的一个可插拔功能组件，内置了 Jenkins 作为在 Kubernetes 之上的 CI/CD 引擎。借助 Jenkins 丰富的插件体系和易于进行扩展开发的特性，帮助 DevOps 团队在一个统一的平台中，打通开发、测试、构建、部署、监控、日志与通知等流程。KubeSphere 为 DevOps 团队打造了以容器为载体的端到端的应用交付平台，实现从应用开发、持续集成、单元测试、制品构建到应用的生产交付，所有的流程都是一个完整的闭环。</p>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628225840.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628225840.png" alt="" /></p>
+
 <p>KubeSphere DevOps 充分利用和释放 Kubernetes 动态扩展的能力。例如，KubeSphere 在内置的 DevOps 系统使用了 Jenkins Kubernetes 的动态 Agent，这样的方案相较于传统虚拟机上的 Jenkins 要更加灵活敏捷。同时，在 KubeSphere DevOps 中内置了常用的 Agent 类型，例如 Maven、Node.js、Go 等，并且还支持自定义与扩展的 Agent 类型。</p>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628172418.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628172418.png" alt="" /></p>
+
 <p>除了基于 Jenkins 引擎打造的 CI/CD 流水线，KubeSphere 还为业务开发者提供了自动化打包部署的工具集。业务开发者即使还没有深入了解 Docker 与 Kubernetes 的机制，也可以借助 KubeSphere 内置的自动化 CD 工具，如 Binary to Image 和 Source to Image。用户只需要提交一个仓库地址，或上传 JAR/WAR/Binary 等二进制文件，即可快速将制品打包成 Docker 镜像并发布到镜像仓库，最终将服务自动发布至 Kubernetes 中，无需编写一行 Dockerfile。</p>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628225803.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628225803.png" alt="" /></p>
+
 <p>关于 KubeSphere DevOps 更多的介绍，可以参考 KubeSphere 官网（<code>https://kubesphere.io/devops/</code>）获得更进一步的了解。</p>
+
 <h2 id="在-kubernetes-安装-kubesphere-开启-devops-组件">在 Kubernetes 安装 KubeSphere 开启 DevOps 组件</h2>
+
 <p>以下步骤将基于 Kubernetes 集群演示如何安装 KubeSphere v2.1.1，并开启 KubeSphere DevOps 组件。</p>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233230.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233230.png" alt="" /></p>
+
 <h2 id="前提条件">前提条件</h2>
+
 <blockquote>
 <ul>
 <li>已有 Kubernetes 集群，并且 <code>Kubernetes</code> 版本： <code>1.15.x ≤ K8s version ≤ 1.17.x</code>。若没有 K8s 环境可参考文档（<code>https://kubesphere.com.cn/docs/zh-CN/installation/all-in-one/</code>）在 Linux 环境安装；</li>
 <li>集群能够访问外网，若无外网请参考 <strong>在 Kubernetes 离线安装 KubeSphere</strong>，地址 <code>https://kubesphere.com.cn/docs/installation/install-on-k8s-airgapped/</code></li>
 </ul>
 </blockquote>
+
 <h2 id="安装-helm-和-tiller">安装 Helm 和 Tiller</h2>
+
 <blockquote>
 <p>提示：若集群已有 Helm 和 Tiller，可跳过本节操作。</p>
 </blockquote>
+
 <ol>
-<li>
-<p>从 Helm 的 GitHub <code>https://github.com/helm/helm/releases/tag/v2.16.3</code> 下载 <code>helm-v2.16.3-linux-amd64.tar.gz</code>。</p>
-</li>
-<li>
-<p>上传到服务器，解压移动 Helm、Tiller 到 <code>/usr/local/bin/</code>：</p>
-</li>
+<li><p>从 Helm 的 GitHub <code>https://github.com/helm/helm/releases/tag/v2.16.3</code> 下载 <code>helm-v2.16.3-linux-amd64.tar.gz</code>。</p></li>
+
+<li><p>上传到服务器，解压移动 Helm、Tiller 到 <code>/usr/local/bin/</code>：</p></li>
 </ol>
+
 <pre><code>[root@k8s-node1 linux-amd64]# cp helm /usr/local/bin/
 [root@k8s-node1 linux-amd64]# cp tiller /usr/local/bin/
-</code></pre><ol start="3">
+</code></pre>
+
+<ol>
 <li>验证 Helm 的安装：</li>
 </ol>
+
 <pre><code>helm help
-</code></pre><ol start="4">
+</code></pre>
+
+<ol>
 <li>创建权限：</li>
 </ol>
+
 <p>创建一个新的文件 <code>helm_rbac.yaml</code>，内容如下：</p>
+
 <pre><code>apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -347,120 +375,182 @@ subjects:
   - kind: ServiceAccount
     name: tiller
     namespace: kube-system
-</code></pre><ol start="5">
+</code></pre>
+
+<ol>
 <li>然后使用 kubectl 使其创建生效。</li>
 </ol>
+
 <pre><code>[root@k8s-node1 k8s]# kubectl apply -f helm_rbac.yaml
 serviceaccount/tiller created
 clusterrolebinding.rbac.authorization.k8s.io/tiller created
-</code></pre><ol start="6">
+</code></pre>
+
+<ol>
 <li>初始化 Helm，这里用的国内的镜像源。</li>
 </ol>
+
 <pre><code>helm init --service-account=tiller --tiller-image=registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.16.3 --history-max 300
-</code></pre><ol start="7">
+</code></pre>
+
+<ol>
 <li>验证 Helm Tiller。如果状态是 <code>ImagePullBackOff</code>，表示镜像未拉取成功，需要手动拉取。</li>
 </ol>
+
 <pre><code>kubectl -n kube-system get pods|grep tiller
-</code></pre><ol start="8">
+</code></pre>
+
+<ol>
 <li>检查 Tiller 是否部署到 Kubernetes：</li>
 </ol>
+
 <pre><code>[root@k8s-node1 local]# kubectl get pod -n kube-system -l app=helm
 NAME                             READY   STATUS    RESTARTS   AGE
 tiller-deploy-7b76b656b5-m4k2x   1/1     Running   0          94s
-</code></pre><h2 id="安装持久化存储与-storageclass">安装持久化存储与 StorageClass</h2>
+</code></pre>
+
+<h2 id="安装持久化存储与-storageclass">安装持久化存储与 StorageClass</h2>
+
 <blockquote>
-<p>提示：</p>
-<ul>
-<li>若您的集群已有持久化存储与 StorageClass，可跳过本小节</li>
-<li>OpenEBS 将使用 LocalPV 作为存储卷，仅建议用作开发测试环境，生产环境建议使用如 Ceph、GlusterFS 等独立的分布式存储服务</li>
-<li>安装之前，请确保 master 节点没有 Taints (待安装完 KubeSphere 之后再添加 Taints)</li>
-</ul>
+<p>提示：
+- 若您的集群已有持久化存储与 StorageClass，可跳过本小节
+- OpenEBS 将使用 LocalPV 作为存储卷，仅建议用作开发测试环境，生产环境建议使用如 Ceph、GlusterFS 等独立的分布式存储服务
+- 安装之前，请确保 master 节点没有 Taints (待安装完 KubeSphere 之后再添加 Taints)</p>
 </blockquote>
+
 <ol>
 <li>确认 master 节点是否有 Taint，如下看到 master 节点有 Taint。</li>
 </ol>
+
 <pre><code>$ kubectl describe node master | grep Taint
 Taints:             node-role.kubernetes.io/master:NoSchedule
-</code></pre><ol start="2">
+</code></pre>
+
+<ol>
 <li>去掉 master 节点的 Taint：</li>
 </ol>
+
 <pre><code>$ kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-
-</code></pre><ol start="3">
+</code></pre>
+
+<ol>
 <li>创建 OpenEBS 的 namespace，OpenEBS 相关资源将创建在这个 namespace 下：</li>
 </ol>
+
 <pre><code>$ kubectl create ns openebs
-</code></pre><ol start="4">
+</code></pre>
+
+<ol>
 <li>安装 OpenEBS</li>
 </ol>
+
 <pre><code>helm init
 
 helm install --namespace openebs --name openebs stable/openebs --version 1.5.0
-</code></pre><ol start="5">
+</code></pre>
+
+<ol>
 <li>安装 OpenEBS 后将自动创建 4 个 StorageClass，查看创建的 StorageClass：</li>
 </ol>
+
 <pre><code>$ kubectl get sc
 NAME                        PROVISIONER                                                AGE
 openebs-device              openebs.io/local                                           10h
 openebs-hostpath            openebs.io/local                                           10h
 openebs-jiva-default        openebs.io/provisioner-iscsi                               10h
 openebs-snapshot-promoter   volumesnapshot.external-storage.k8s.io/snapshot-promoter   10h
-</code></pre><ol start="6">
+</code></pre>
+
+<ol>
 <li>如下将 <code>openebs-hostpath</code> 设置为 <strong>默认的 StorageClass</strong>：</li>
 </ol>
+
 <pre><code>$ kubectl patch storageclass openebs-hostpath -p '{&quot;metadata&quot;: {&quot;annotations&quot;:{&quot;storageclass.kubernetes.io/is-default-class&quot;:&quot;true&quot;}}}'
 storageclass.storage.k8s.io/openebs-hostpath patched
-</code></pre><ol start="7">
+</code></pre>
+
+<ol>
 <li>至此，OpenEBS 的 LocalPV 已作为默认的存储类型创建成功。可以通过命令 <code>kubectl get pod -n openebs</code> 来查看 OpenEBS 相关 Pod 的状态，若 Pod 的状态都是 running，则说明存储安装成功。</li>
 </ol>
+
 <h2 id="kubectl-安装-kubesphere">kubectl 安装 KubeSphere</h2>
+
 <p>当 Kubernetes 集群满足前提条件，实际上安装 KubeSphere 的步骤非常简单，仅一条命令。根据集群资源情况，使用 kubectl 安装 KubeSphere。</p>
+
 <h2 id="最小化安装-kubesphere">最小化安装 KubeSphere</h2>
+
 <p>若集群可用 CPU &gt; 1 Core 且可用内存 &gt; 2 G，可以使用以下命令最小化安装 KubeSphere：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/kubesphere-minimal.yaml
-</code></pre></div><blockquote>
+
+<pre><code class="language-yaml">kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/kubesphere-minimal.yaml
+</code></pre>
+
+<blockquote>
 <p>提示：若您的服务器提示无法访问 GitHub，可将 <code>kubesphere-minimal.yaml</code> 从 GitHub 地址 <code>https://github.com/kubesphere/ks-installer/</code> 拷贝文件保存到本地作为本地的静态文件，再参考上述命令进行安装。</p>
 </blockquote>
+
 <h2 id="验证与访问">验证与访问</h2>
+
 <ol>
 <li>查看滚动刷新的安装日志，请耐心等待安装成功。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl logs -n kubesphere-system <span style="color:#66d9ef">$(</span>kubectl get pod -n kubesphere-system -l app<span style="color:#f92672">=</span>ks-install -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.items[0].metadata.name}&#39;</span><span style="color:#66d9ef">)</span> -f
-</code></pre></div><blockquote>
+
+<pre><code class="language-bash">$ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+</code></pre>
+
+<blockquote>
 <p>说明：安装过程中若遇到问题，也可以通过以上日志命令来排查问题。</p>
 </blockquote>
-<ol start="2">
+
+<ol>
 <li>通过 <code>kubectl get pod --all-namespaces</code> 查看 KubeSphere 相关 namespace 下所有 Pod 状态是否为 Running。确认 Pod 都正常运行后，可使用 <code>IP:30880</code> 访问 KubeSphere UI 界面，默认的集群管理员账号为 <code>admin/P@88w0rd</code>。</li>
 </ol>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191020153911.png" alt=""></p>
-<ol start="3">
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191020153911.png" alt="" /></p>
+
+<ol>
 <li>登录控制台首页，查看集群状态。</li>
 </ol>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233341.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628233341.png" alt="" /></p>
+
 <h2 id="开启-kubesphere-devops-的安装">开启 KubeSphere DevOps 的安装</h2>
+
 <ol>
 <li>通过修改 ks-installer 的 ConfigMap 可以选装可插拔的功能组件，执行以下命令开启 KubeSphere DevOps 系统：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl edit cm -n kubesphere-system ks-installer
-</code></pre></div><p><strong>参考如下修改 ConfigMap</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">devops</span>:
-      <span style="color:#66d9ef">enabled</span>: True
-      <span style="color:#66d9ef">jenkinsMemoryLim</span>: 2Gi
-      <span style="color:#66d9ef">jenkinsMemoryReq</span>: 1500Mi
-      <span style="color:#66d9ef">jenkinsVolumeSize</span>: 8Gi
-      <span style="color:#66d9ef">jenkinsJavaOpts_Xms</span>: 512m
-      <span style="color:#66d9ef">jenkinsJavaOpts_Xmx</span>: 512m
-      <span style="color:#66d9ef">jenkinsJavaOpts_MaxRAM</span>: 2g
-      <span style="color:#66d9ef">sonarqube</span>:
-        <span style="color:#66d9ef">enabled</span>: True
-</code></pre></div><ol start="2">
+
+<pre><code class="language-bash">$ kubectl edit cm -n kubesphere-system ks-installer
+</code></pre>
+
+<p><strong>参考如下修改 ConfigMap</strong></p>
+
+<pre><code class="language-yaml">devops:
+      enabled: True
+      jenkinsMemoryLim: 2Gi
+      jenkinsMemoryReq: 1500Mi
+      jenkinsVolumeSize: 8Gi
+      jenkinsJavaOpts_Xms: 512m
+      jenkinsJavaOpts_Xmx: 512m
+      jenkinsJavaOpts_MaxRAM: 2g
+      sonarqube:
+        enabled: True
+</code></pre>
+
+<ol>
 <li>保存退出，安装任务将自动在后台执行。等待几分钟，若看到 ks-installer 日志返回安装成功的日志，即可通过以下命令来验证 KubeSphere DevOps 系统下相关 Pod 与 Job 的状态：</li>
 </ol>
+
 <pre><code>kubectl get pod -n kubesphere-devops-system
-</code></pre><ol start="3">
+</code></pre>
+
+<ol>
 <li>若 Pod 状态都是 Running，并且在 KubeSphere 控制台的服务组件看到 DevOps 相关服务都是 <strong>健康</strong> 状态，说明 KubeSphere DevOps 系统已成功开启安装。</li>
 </ol>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628232202.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628232202.png" alt="" /></p>
+
 <p>可参考如下文档进一步上手 KubeSphere DevOps 系统的功能：</p>
+
 <blockquote>
 <ul>
 <li><code>Binary-to-Image：</code> 将 WAR、JAR、Binary 这一类的制品快速打包成 Docker 镜像，并发布到镜像仓库中，最终将服务自动发布至 Kubernetes，参考文档 <strong><a href="https://kubesphere.com.cn/docs/zh-CN/quick-start/b2i-war">https://kubesphere.com.cn/docs/zh-CN/quick-start/b2i-war</a></strong>；</li>
@@ -469,10 +559,14 @@ storageclass.storage.k8s.io/openebs-hostpath patched
 <li><code>基于 Jenkinsfile 构建流水线：</code> 基于项目仓库中已有的 Jenkinsfile 快速构建流水线，参考文档 <strong><a href="https://kubesphere.com.cn/docs/zh-CN/quick-start/devops-online">https://kubesphere.com.cn/docs/zh-CN/quick-start/devops-online</a></strong></li>
 </ul>
 </blockquote>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628235151.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628235151.png" alt="" /></p>
+
 <h2 id="活动预告">活动预告</h2>
+
 <p>KubeSphere 将在七月份重磅发布 v3.0！欢迎大家关注和报名参加 <strong>6 月 30 日 （本周二下午 14:00）</strong> 的 KubeSphere 线上发布会的直播，提前知晓 v3.0 的重大更新。</p>
-<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628075312.png" alt=""></p>
+
+<p><img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200628075312.png" alt="" /></p>
 
 </div>
 
@@ -580,6 +674,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -637,8 +740,35 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -655,8 +785,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
             </a>
           </li>
         
@@ -673,8 +839,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -711,6 +913,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -925,6 +1136,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -936,6 +1156,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

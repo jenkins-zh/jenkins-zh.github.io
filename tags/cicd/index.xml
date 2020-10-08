@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cicd on Jenkins 中文社区</title>
+    <title>Cicd on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/cicd/</link>
-    <description>Recent content in cicd on Jenkins 中文社区</description>
+    <description>Recent content in Cicd on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
@@ -18,11 +18,11 @@
       
       <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/</guid>
       <description>在我们公司，我们尝试使用‘一切事物即代码’的模式，该模式涉及到可复制的基础架构，监控，任务等方面。但是，在这篇文章当中，我将向你展示怎样将这种模式运用到 Jenkins 上。是的，我的意思是对于 Jenkins 完全可复制的配置，以及基础架构、插件、凭据、任务以及代码中的其他东西。另外，这篇文章你将解惑下面的疑问:
-  我们的 Jenkins 已经变得更加稳定了吗？
-  我们可以频繁地改变 Jenkins 和任务配置吗？
-  升级 Jenkins 及其插件对我们来说是否不再是一种痛苦了呢？
-  我们是否已经管理了 Jenkins 上所有的变更？
-  故障发生后，是否我们可以快速的恢复 Jenkins？
+ 我们的 Jenkins 已经变得更加稳定了吗？
+ 我们可以频繁地改变 Jenkins 和任务配置吗？
+ 升级 Jenkins 及其插件对我们来说是否不再是一种痛苦了呢？
+ 我们是否已经管理了 Jenkins 上所有的变更？
+ 故障发生后，是否我们可以快速的恢复 Jenkins？
   我的名字叫 Amet Umerov 是一名 Preply.com 的DevOps 工程师。让我们开始吧！
 前期介绍 当我们谈论 DevOps 工具，脑海中首先出现的是一个 CI/CD 系统。我们在 Preply 使用 Jenkins 因为我们每天有数以百计的任务，我们使用的许多特性在其他系统里面是没法提供的，即使提供了这些功能，也会是一些简化的功能。
 我们想要让 Jenkins 以及基础架构、配置、任务和插件完全代码化。并且，我们之前有过在 Kubernetes 运行的经验，但是因为 Jenkins 架构以及我们自身的目的发现它并不适合我们。
@@ -37,9 +37,9 @@
       <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-13-ready-for-CDF/</guid>
-      <description>大概十一年前，我就开始为现在被称为 Jenkins 的项目做贡献，自己当时其实也并不知道在做什么。但是接下来发生的事情令人感觉难以置信，数以百计的贡献者加入，成千上万的新用户开始使用 Jenkins，每天都会运行数以百万条的流水线。这样的增长是充满挑战性的，用户的增长意味着问题的增长，问题的增长就意味着需要新的解决方式。 在大约两年半之前，我在2017年的 Jenkins World Contributor Summit 大会上面对一大群 Jenkins 的贡献者们，为我的所谓的 &amp;lsquo;Jenkins软件基金会&amp;rsquo; 做了宣传，那就是，不要羞于从 Python 社区汲取思想，在我的朋友 Chris Aniszczyk 和 Linux 基金会的帮助下，这个基金会变成了一个更加全面的 持续交付基金会（CDF），我的同事 Tracy Miranda 一直在领导这项工作，帮助推动 CDF 的成立。
+      <description>大概十一年前，我就开始为现在被称为 Jenkins 的项目做贡献，自己当时其实也并不知道在做什么。但是接下来发生的事情令人感觉难以置信，数以百计的贡献者加入，成千上万的新用户开始使用 Jenkins，每天都会运行数以百万条的流水线。这样的增长是充满挑战性的，用户的增长意味着问题的增长，问题的增长就意味着需要新的解决方式。 在大约两年半之前，我在2017年的 Jenkins World Contributor Summit 大会上面对一大群 Jenkins 的贡献者们，为我的所谓的 &amp;lsquo;Jenkins软件基金会&amp;rsquo; 做了宣传，那就是，不要羞于从 Python 社区汲取思想，在我的朋友 Chris Aniszczyk 和 Linux 基金会的帮助下，这个基金会变成了一个更加全面的 *持续交付基金会*（CDF），我的同事 Tracy Miranda 一直在领导这项工作，帮助推动 CDF 的成立。
 Kohsuke 为 jenkinsci-dev@ mailing list 撰写了一篇很好的概述文章，其中列举了如果 Jenkins 项目一旦建立后就应该加入 Continuous Delivery Foundation 的原因。如果你对 Jenkins 项目感兴趣，但是还没有阅读过这边文章的话，那我认为你应该花些时间来阅读 Kohsuke 的这份邮件。但是在 这篇文章 中，我 想分享我愿意帮助建立持续交付基金会（CDF）的原因。
-持续交付（CD）已经成为我职业生涯中不可或缺的一部分，甚至在 Jez Humble 将此概念清晰地表述之前，我就开始学习 CD 并且对它一直充满热情。我认为它对软件的开发实践至关重要，当有人说他们没有练习使用 CI 或 CD 时，我感觉这就像回到了原始社会。想象一下，如果有人说 &amp;ldquo;呃，我们在这里有一个采用 Source Control 的项目，但领导们觉得这个东西不太靠谱&amp;rdquo;，我想你肯定会惊掉下巴。&amp;ldquo;在这个时代竟然还有开发团队都不使用源代码管理？&amp;quot;。总体来说，我认为CD已经是现代软件开发的基础了。
+持续交付（CD）已经成为我职业生涯中不可或缺的一部分，甚至在 Jez Humble 将此概念清晰地表述之前，我就开始学习 CD 并且对它一直充满热情。我认为它对软件的开发实践至关重要，当有人说他们没有练习使用 CI 或 CD 时，我感觉这就像回到了原始社会。想象一下，如果有人说 &amp;ldquo;呃，我们在这里有一个采用 Source Control 的项目，但领导们觉得这个东西不太靠谱&amp;rdquo;，我想你肯定会惊掉下巴。&amp;rdquo;在这个时代竟然还有开发团队都不使用源代码管理？&amp;rdquo;。总体来说，我认为CD已经是现代软件开发的基础了。
 持续交付也 不是 说只依赖于 Jenkins 这样的单一工具，它也是依赖于其他的用于协同工作的许多工具。虽然我可能觉得 Jenkins 是所有工具中占最中心位置的工具，但也不是说 Jenkins 是这些工具中唯一优秀的一款工具。但是不幸的是，像 Jenkins 这样的许多开源社区往往对他们的世界有着一定的狭隘观点。他们只专注于他们的事情，虽然这是有道理的，但这及可能导致错失交叉合作产生新价值的机会。</description>
     </item>
     

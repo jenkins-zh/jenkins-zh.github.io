@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="使用 Jenkins X 渐进式交付：自动化金丝雀部署" />
 <meta property="og:description" content="为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" />
-<meta property="article:published_time" content="2019-04-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-04-29T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-29-progressive-delivery-with-jenkins-x-automatic-cana/" /><meta property="article:published_time" content="2019-04-29T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-29T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="使用 Jenkins X 渐进式交付：自动化金丝雀部署">
 <meta itemprop="description" content="为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。">
+
+
 <meta itemprop="datePublished" content="2019-04-29T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="296">
+<meta itemprop="wordCount" content="323">
 
 
 
-<meta itemprop="keywords" content="jenkins," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Jenkins X 渐进式交付：自动化金丝雀部署"/>
 <meta name="twitter:description" content="为了避免渐进式交付可能带来的麻烦，学习使用 Jenkins X 为金丝雀发布自动部署。"/>
 
@@ -291,87 +294,108 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p>这是渐进式交付系列的第三篇文章，前两篇请参见：</p>
-<ul>
-<li><a href="https://blog.csanchez.org/2019/01/22/progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/">Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署</a></li>
-<li><a href="https://blog.csanchez.org/2019/01/24/progressive-delivery-with-jenkins-x/">使用 Jenkins X 渐进式交付</a></li>
-</ul>
+
+
+<p>这是渐进式交付系列的第三篇文章，前两篇请参见：
+- <a href="https://blog.csanchez.org/2019/01/22/progressive-delivery-in-kubernetes-blue-green-and-canary-deployments/">Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署</a>
+- <a href="https://blog.csanchez.org/2019/01/24/progressive-delivery-with-jenkins-x/">使用 Jenkins X 渐进式交付</a></p>
+
 <p>渐进式交付被 Netflix， Facebook 以及其它公司使用用来减轻部署的风险。
 但是现在你可以在使用Jenkins X时采用它。</p>
-<hr>
+
+<hr />
+
 <p><a href="https://redmonk.com/jgovernor/2018/08/06/towards-progressive-delivery/">渐进式交付</a>是持续交付的下一步，它将新版本部署到用户的一个子集，并在将其滚动到全部用户之前对其正确性和性能进行评估，如果不匹配某些关键指标，则进行回滚。</p>
-<hr>
+
+<hr />
+
 <p>尤其是，我们聚焦金丝雀发布，并让它在你的 Jenkins X 应用中变得易于采用。
 金丝雀发布包括向应用程序的新版本发送一小部分流量，并在向其他用户发布之前验证这里没有错误。
 Facebook 就是这样做的，首先向内部员工提供新版本，然后是一小部分用户，然后是其他所有用户，但是你要采用它并不需要成为 Facebook ！</p>
-<p><img src="facebook_canary_chart_1.jpeg" alt="facebook_canary_chart_1.jpeg"></p>
+
+<p><img src="facebook_canary_chart_1.jpeg" alt="facebook_canary_chart_1.jpeg" /></p>
+
 <p>你可以<a href="https://martinfowler.com/bliki/CanaryRelease.html">在 Martin Fowler 的网站阅读更多与金丝雀发布相关信息</a>。</p>
+
 <h2 id="jenkins-x">Jenkins X</h2>
-<p>如果在 Jenkins X 中你已经有一个应用，那么你知道的你可以 通过 <code>jx promote myapp --version 1.0 --env production</code> 命令 promote 它到&quot;生产&quot;环境。
+
+<p>如果在 Jenkins X 中你已经有一个应用，那么你知道的你可以 通过 <code>jx promote myapp --version 1.0 --env production</code> 命令 promote 它到&rdquo;生产&rdquo;环境。
 但是，在检查新版本是否失败的同时，它也可以自动并逐步地向一定比例的用户推出。
 如果发生失败，应用程序将自动回滚。
 整个过程中完全没有人为干预。</p>
+
 <p>注意：这个新功能是非常新的，在将来这些步骤将不再需要，因为它们也将由 Jenkins X 自动化了。</p>
-<p>作为第一步，三个 Jenkins X 插件需要被安装：</p>
-<ul>
-<li><a href="https://istio.io/">Istio</a> : <a href="https://istio.io/docs/concepts/what-is-istio/">一种服务网格</a>容许我们管理我们服务的流量。</li>
-<li><a href="https://prometheus.io/">Prometheus</a> ：Kubernetes 中最流行的监控系统。</li>
-<li><a href="https://github.com/stefanprodan/flagger">Flagger</a> ：一个使用 Istio 的项目，该项目使用 Prometheus 的指标自动化进行金丝雀发布和回滚。</li>
-</ul>
-<p>插件可以使用如下命令安装（使用一个最近版本的 jx CLI ）：</p>
-<ol>
-<li>jx create addon istio</li>
-<li>jx create addon prometheus</li>
-<li>jx create addon flagger</li>
-</ol>
+
+<p>作为第一步，三个 Jenkins X 插件需要被安装：
+- <a href="https://istio.io/">Istio</a> : <a href="https://istio.io/docs/concepts/what-is-istio/">一种服务网格</a>容许我们管理我们服务的流量。
+- <a href="https://prometheus.io/">Prometheus</a> ：Kubernetes 中最流行的监控系统。
+- <a href="https://github.com/stefanprodan/flagger">Flagger</a> ：一个使用 Istio 的项目，该项目使用 Prometheus 的指标自动化进行金丝雀发布和回滚。</p>
+
+<p>插件可以使用如下命令安装（使用一个最近版本的 jx CLI ）：
+1. jx create addon istio
+2. jx create addon prometheus
+3. jx create addon flagger</p>
+
 <p>这将在 jx-production 命名空间启动 Istio 来进行指标收集。</p>
+
 <p>现在获取  Istio ingress 的 IP ，并将一个通配符域名（如： *.example.com ）指向它，以便我们可以使用它根据主机名路由多个服务。
 Istio ingress 提供了金丝雀发布需要的路由能力（流量转移），传统的 Kubernetes ingress 对象不支持该功能。</p>
+
 <p>集群被配置后，是时候配置我们的应用了。
 在 <code>charts/myapp/templates</code> 目录下向你的 helm chart 添加一个 <a href="https://github.com/carlossg/croc-hunter-jenkinsx-serverless/blob/9eea262/charts/croc-hunter-jenkinsx/templates/canary.yaml">canary.yaml</a>。</p>
-<p><img src="canary_yaml2.png" alt="canary_yaml2.png"></p>
+
+<p><img src="canary_yaml2.png" alt="canary_yaml2.png" /></p>
+
 <p>然后往 <code>charts/myapp/values.yaml</code> 追加如下内容，将 <code>myapp.example.com</code> 修改为你的主机名或域名：</p>
-<p><img src="values_yaml_0.png" alt="values_yaml_0.png"></p>
+
+<p><img src="values_yaml_0.png" alt="values_yaml_0.png" /></p>
+
 <p>不久，当你从 Jenkins X 快速开始创建你的应用，将不再需要修改 <code>canary.yaml</code> 和 <code>values.yaml</code> 这两个文件，因为它们默认启用金丝雀部署。</p>
+
 <p>就这样！现在当使用 <code>jx promote myapp --version 1.0 --env production</code> 将你的应用 promote 到生产环境，它将执行一次金丝雀部署。
 请注意，第一次被 promote 时，它不会执行金丝雀部署，因为它需要与以前的版本数据进行比较，但从第二次 promotion 开始，它将起作用。</p>
-<p>根据上面 <code>values.yaml</code> 文件中的配置，它看起来像：</p>
-<ul>
-<li>第 1 分钟：将 10% 的流量发送到新版本</li>
-<li>第 2 分钟：将 20% 的流量发送到新版本</li>
-<li>第 3 分钟：将 30% 的流量发送到新版本</li>
-<li>第 4 分钟：将 40% 的流量发送到新版本</li>
-<li>第 5 分钟：将 100% 的流量发送到新版本</li>
-</ul>
+
+<p>根据上面 <code>values.yaml</code> 文件中的配置，它看起来像：
+- 第 1 分钟：将 10% 的流量发送到新版本
+- 第 2 分钟：将 20% 的流量发送到新版本
+- 第 3 分钟：将 30% 的流量发送到新版本
+- 第 4 分钟：将 40% 的流量发送到新版本
+- 第 5 分钟：将 100% 的流量发送到新版本</p>
+
 <p>如果我们配置的指标（请求持续时间超过 500 毫秒或超过 1% 的响应返回 500 错误）失败，Flagger 将注意到失败，并且如果重复 5 次，它将回滚这次发布，将 100% 的流量发送到旧版本。</p>
-<p>获得金丝雀事件输出，执行如下命令：</p>
-<ol>
-<li>$ kubectl -n jx-production get events &ndash;watch\</li>
-<li>&ndash;field-selector involvedObject.kind=Canary</li>
-<li>23m &hellip; New revision detected! Scaling up jx-production-myapp.jx-production</li>
-<li>22m &hellip; Starting canary analysis forjx-production-myapp.jx-production</li>
-<li>22m &hellip; Advance jx-production-myapp.jx-production canary weight 10</li>
-<li>21m &hellip; Advance jx-production-myapp.jx-production canary weight 20</li>
-<li>20m &hellip; Advance jx-production-myapp.jx-production canary weight 30</li>
-<li>19m &hellip; Advance jx-production-myapp.jx-production canary weight 40</li>
-<li>18m &hellip; Advance jx-production-myapp.jx-production canary weight 50</li>
-<li>18m &hellip; Copying jx-production-myapp.jx-production template spec to jx-production-myapp-primary.jx-production</li>
-<li>17m &hellip; Promotion completed! Scaling down jx-production-myapp.jx-production</li>
-</ol>
+
+<p>获得金丝雀事件输出，执行如下命令：
+1. $ kubectl -n jx-production get events &ndash;watch<br />
+2. &ndash;field-selector involvedObject.kind=Canary
+3. 23m &hellip; New revision detected! Scaling up jx-production-myapp.jx-production
+4. 22m &hellip; Starting canary analysis forjx-production-myapp.jx-production
+5. 22m &hellip; Advance jx-production-myapp.jx-production canary weight 10
+6. 21m &hellip; Advance jx-production-myapp.jx-production canary weight 20
+7. 20m &hellip; Advance jx-production-myapp.jx-production canary weight 30
+8. 19m &hellip; Advance jx-production-myapp.jx-production canary weight 40
+9. 18m &hellip; Advance jx-production-myapp.jx-production canary weight 50
+10. 18m &hellip; Copying jx-production-myapp.jx-production template spec to jx-production-myapp-primary.jx-production
+11. 17m &hellip; Promotion completed! Scaling down jx-production-myapp.jx-production</p>
+
 <h2 id="仪表盘">仪表盘</h2>
+
 <p>为了可视化的目的，Flagger 包含一个 Grafana 面板，尽管它在金丝雀发布中不需要。
 可以在本地通过 Kubernetes 端口转发访问它。</p>
-<p>然后使用 <code>admin/admin</code> 访问 <a href="http://localhost:3000/">http://localhost:3000/</a>，选择 <code>canary-analysis</code> 面板以及</p>
-<ul>
-<li>namespace 选择 <code>jx-production</code></li>
-<li>primary 选择 <code>jx-production-myapp-primary</code></li>
-<li>canary 选择 <code>jx-production-myapp</code></li>
-</ul>
+
+<p>然后使用 <code>admin/admin</code> 访问 <a href="http://localhost:3000/">http://localhost:3000/</a>，选择 <code>canary-analysis</code> 面板以及
+- namespace 选择 <code>jx-production</code>
+- primary 选择 <code>jx-production-myapp-primary</code>
+- canary 选择 <code>jx-production-myapp</code></p>
+
 <p>它将为我们提供当前版本和新版本的对比视图，视图中包含不同指标（CPU，内存，请求持续时间，响应错误……）。</p>
-<p><img src="canary_analysis.png" alt="canary_analysis.png"></p>
+
+<p><img src="canary_analysis.png" alt="canary_analysis.png" /></p>
+
 <h2 id="附加说明">附加说明</h2>
+
 <p>请注意 Istio 默认地将阻止从你的 Pod 访问外部集群（一种预计将在 Istio 1.1 中发生变化的行为）。
 <a href="https://istio.io/docs/tasks/traffic-management/egress/">学习如何控制 Istio ingress 流量</a>。</p>
+
 <p>如果因为指标失败出现自动回滚，生产环境的 Jenkins X GitOps 仓库会过时，仍然使用新版本而不是旧版本。
 这是计划在即将发布的版本中修复的内容。</p>
 
@@ -463,6 +487,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -526,8 +559,35 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -544,8 +604,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
             </a>
           </li>
         
@@ -562,8 +658,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -600,6 +732,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -808,6 +949,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -819,6 +969,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cloud-native on Jenkins 中文社区</title>
+    <title>Cloud Native on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/cloud-native/</link>
-    <description>Recent content in cloud-native on Jenkins 中文社区</description>
+    <description>Recent content in Cloud Native on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
@@ -22,10 +22,10 @@
 这篇实践的文章中，我会向你展示如何使用一些 Go 助手工具实现诸如认证更新令牌这些相同的工作，并且还会进一步实现-从 Vault 到 Kubernetes 同步预定义的密码子集。
 等级: 高级
 准备工作 简单起见我有一些选项:
-  用多种不同的方法启动一个 Kubernetes 集群。通常来说，minikube 用来测试或者开发。我会使用 kubeadm 因为它非常简单的就可以启动一个真正的集群。
-  在 Kubernetes 中，会使用 default 命名空间。
-  Vault 会在开发模式下运行。不要像在生产环境下那样使用它！ 确保在环境变量中设置了 VAULT_ADDR。
-  代码示例中会使用 Ubuntu。这些已经在 GCE 上配置为 2 vCPU 和 7.</description>
+ 用多种不同的方法启动一个 Kubernetes 集群。通常来说，minikube 用来测试或者开发。我会使用 kubeadm 因为它非常简单的就可以启动一个*真正的*集群。
+ 在 Kubernetes 中，会使用 default 命名空间。
+ Vault 会在*开发*模式下运行。不要像在生产环境下那样使用它！ 确保在环境变量中设置了 VAULT_ADDR。
+ 代码示例中会使用 Ubuntu。这些已经在 GCE 上配置为 2 vCPU 和 7.</description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@ Jenkins 中文社区邀您参与社区共同成长 在开源盛会开展的同�
 如果你是做微服务的话，那让我们在开始之前先花些时间想一想。如果你只在 Jenkins 上构建单体式应用程序，那你肯定每天都会运行很多 Jenkins job, 而且还要不厌其烦地运行很多次。所以，我们应该好好想清楚怎么样来做出一些改变来适应这种事情。其实只需要付出一些努力，Jenkins 就可以帮我们很好地解决这种事情。
 我的 Jenkins 的进阶之路 作为一个 Devops 从业者，我遇到的最大问题是如何管理并优化自己的 Jenkins agent 结构。如果只是用 Jenkins 玩玩，实验性地跑一些流水线，那根本不用考虑 agent 的事情。如果你每天要跑成百上千条流水线的话，那考虑怎么去做优化就是一件非常非常重要的事情了。在 Jenkins 进阶之路中，我也尝试了各种不同的方式来寻找最好的 Jenkins agent 的使用方式。相信如果你也和我一样经历过，那下面这些事情你一定会很熟悉喽。
 下面是我在这些年中使用 Jenkins 的各个阶段.
- 所有的构建都在 master 节点上跑，在这个节点上运行所有的组件. (我给这个阶段起了个可爱的名字， Hello Jenkins) 创建一个 Jenkins EC2 代理，并且在这个代理上运行所有的构建，怎么说呢， 就是大而全，这个节点什么都能做。如果需要同时做多条任务，那就把这个大而全的节点克隆一份。 (这个阶段我起的名字是 Monster Agent.) 为每种服务创建不同的 Jenkins EC2 的节点 (这个阶段我起的名字叫做 Snowflake Agent.) 在容器中运行流水线的所有步骤。 打个比方，在 Jenkins 中使用 Docker Plugin 这个插件将代理挂载到容器中，或者使用 multi-stage Dockerfiles 把所有构建，测试打包的流程都封装起来。这两种方法都是很好的容器抽象化的开端，并且允许您轻松地将制品从一个容器复制到另一个容器。当然了，每一种方法都是需要访问 Docker engine 的。为了让我的 Jenkins 代理能够正常工作，现在我用以下几种方式来管理 docker host   在我的 Jenkins 主容器中运行一个Docker engine - Docker in Docker (DinD) 把主机上的 Docker socket 挂载到我的容器中来，让我的容器能够以 sidecar 的方式运行。 为 Jenkins 主服务器配置单个外部 EC2 Docker 主机，以用于在容器中启动构建 使用 EC2 插件和包含 Docker Engine 的 AMI 动态启动代理，然后运行多阶段 Dockerfile 中的所有步骤  以上这些阶段各有利弊，但都是为了让我们从管理 Jenkins 节点中解放出来。不过，最近我又进阶到了另外一个阶段：Jenkins on Kubernetes.</description>
+ 所有的构建都在 master 节点上跑，在这个节点上运行所有的组件. (我给这个阶段起了个可爱的名字， Hello Jenkins) 创建一个 Jenkins EC2 代理，并且在这个代理上运行所有的构建，怎么说呢， 就是大而全，这个节点什么都能做。如果需要同时做多条任务，那就把这个大而全的节点克隆一份。 (这个阶段我起的名字是 Monster Agent.) 为每种服务创建不同的 Jenkins EC2 的节点 (这个阶段我起的名字叫做 Snowflake Agent.) 在容器中运行流水线的所有步骤。 打个比方，在 Jenkins 中使用 Docker Plugin 这个插件将代理挂载到容器中，或者使用 multi-stage Dockerfiles 把所有构建，测试打包的流程都封装起来。这两种方法都是很好的容器抽象化的开端，并且允许您轻松地将制品从一个容器复制到另一个容器。当然了，每一种方法都是需要访问 Docker engine 的。为了让我的 Jenkins 代理能够正常工作，现在我用以下几种方式来管理 docker host 在我的 Jenkins 主容器中运行一个Docker engine - Docker in Docker (DinD) 把主机上的 Docker socket 挂载到我的容器中来，让我的容器能够以 sidecar 的方式运行。 为 Jenkins 主服务器配置单个外部 EC2 Docker 主机，以用于在容器中启动构建 使用 EC2 插件和包含 Docker Engine 的 AMI 动态启动代理，然后运行多阶段 Dockerfile 中的所有步骤  以上这些阶段各有利弊，但都是为了让我们从管理 Jenkins 节点中解放出来。不过，最近我又进阶到了另外一个阶段：Jenkins on Kubernetes.</description>
     </item>
     
     <item>

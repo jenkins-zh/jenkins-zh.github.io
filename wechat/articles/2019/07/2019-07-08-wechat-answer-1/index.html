@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="Jenkins 中文社区技术交流微信群问题集之一" />
 <meta property="og:description" content="群里讨论过的问题（使用方法、缺陷）太多，无法全部包含在一篇文章中" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-08-wechat-answer-1/" />
-<meta property="article:published_time" content="2019-07-08T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-07-08T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-08-wechat-answer-1/" /><meta property="article:published_time" content="2019-07-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-08T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="Jenkins 中文社区技术交流微信群问题集之一">
 <meta itemprop="description" content="群里讨论过的问题（使用方法、缺陷）太多，无法全部包含在一篇文章中">
+
+
 <meta itemprop="datePublished" content="2019-07-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-08T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="251">
 
 
 
-<meta itemprop="keywords" content="pipeline," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="pipeline," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins 中文社区技术交流微信群问题集之一"/>
 <meta name="twitter:description" content="群里讨论过的问题（使用方法、缺陷）太多，无法全部包含在一篇文章中"/>
 
@@ -231,57 +234,51 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-同一流水线如何做某个阶段定时执行代码扫描">1. 同一流水线，如何做某个阶段定时执行代码扫描</a>
-      <ul>
-        <li><a href="#回答一">回答一</a></li>
-        <li><a href="#回答二">回答二</a></li>
-        <li><a href="#回答三">回答三</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-有人做过增量包构建么">2. 有人做过增量包构建么？</a>
-      <ul>
-        <li><a href="#回答一-1">回答一</a></li>
-        <li><a href="#回答二-1">回答二</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-post-里如何指定-agent">3. post 里如何指定 agent</a>
-      <ul>
-        <li><a href="#回答">回答</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-windows-上-无法使用-curl">4. windows 上 无法使用 curl</a>
-      <ul>
-        <li><a href="#回答-1">回答</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-怎么把-slave-的内容-copy-到-master-机器上">4. 怎么把 slave 的内容 copy 到 master 机器上？</a>
-      <ul>
-        <li><a href="#回答-2">回答</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-httprequest-如何发-post-请求">5. httpRequest 如何发 POST 请求</a>
-      <ul>
-        <li><a href="#回答-3">回答</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-我仓库特多怎么设计流水线">6. 我仓库特多，怎么设计流水线</a>
-      <ul>
-        <li><a href="#回答-4">回答</a></li>
-      </ul>
-    </li>
-    <li><a href="#7-流水线中如何指定工作目录">7. 流水线中如何指定工作目录</a>
-      <ul>
-        <li><a href="#回答-5">回答</a></li>
-      </ul>
-    </li>
-    <li><a href="#8-如何在-pipeline-中使用第三方-jar-包">8. 如何在 pipeline 中使用第三方 jar 包</a>
-      <ul>
-        <li><a href="#回答-6">回答</a></li>
-      </ul>
-    </li>
-    <li><a href="#后记">后记</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#1-同一流水线-如何做某个阶段定时执行代码扫描">1. 同一流水线，如何做某个阶段定时执行代码扫描</a>
+<ul>
+<li><a href="#回答一">回答一</a></li>
+<li><a href="#回答二">回答二</a></li>
+<li><a href="#回答三">回答三</a></li>
+</ul></li>
+<li><a href="#2-有人做过增量包构建么">2. 有人做过增量包构建么？</a>
+<ul>
+<li><a href="#回答一-1">回答一</a></li>
+<li><a href="#回答二-1">回答二</a></li>
+</ul></li>
+<li><a href="#3-post-里如何指定-agent">3. post 里如何指定 agent</a>
+<ul>
+<li><a href="#回答">回答</a></li>
+</ul></li>
+<li><a href="#4-windows-上-无法使用-curl">4. windows 上 无法使用 curl</a>
+<ul>
+<li><a href="#回答-1">回答</a></li>
+</ul></li>
+<li><a href="#4-怎么把-slave-的内容-copy-到-master-机器上">4. 怎么把 slave 的内容 copy 到 master 机器上？</a>
+<ul>
+<li><a href="#回答-2">回答</a></li>
+</ul></li>
+<li><a href="#5-httprequest-如何发-post-请求">5. httpRequest 如何发 POST 请求</a>
+<ul>
+<li><a href="#回答-3">回答</a></li>
+</ul></li>
+<li><a href="#6-我仓库特多-怎么设计流水线">6. 我仓库特多，怎么设计流水线</a>
+<ul>
+<li><a href="#回答-4">回答</a></li>
+</ul></li>
+<li><a href="#7-流水线中如何指定工作目录">7. 流水线中如何指定工作目录</a>
+<ul>
+<li><a href="#回答-5">回答</a></li>
+</ul></li>
+<li><a href="#8-如何在-pipeline-中使用第三方-jar-包">8. 如何在 pipeline 中使用第三方 jar 包</a>
+<ul>
+<li><a href="#回答-6">回答</a></li>
+</ul></li>
+<li><a href="#后记">后记</a></li>
+</ul></li>
+</ul>
 </nav>
 	
 
@@ -342,102 +339,154 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="wechat.png" alt="wechat"></p>
+
+
+<p><img src="wechat.png" alt="wechat" /></p>
+
 <p><strong>申明</strong>：下文中的问题是群友发起的，回答则是由笔者收集整理的。</p>
-<h2 id="1-同一流水线如何做某个阶段定时执行代码扫描">1. 同一流水线，如何做某个阶段定时执行代码扫描</h2>
+
+<h2 id="1-同一流水线-如何做某个阶段定时执行代码扫描">1. 同一流水线，如何做某个阶段定时执行代码扫描</h2>
+
 <p>这个需求的意思是存在一条流水线，流水线中的阶段为：构建阶段 &ndash;&gt; 代码扫描阶段 &ndash;&gt; 发布测试环境阶段 &ndash;&gt; &hellip; 而提问者希望当有代码提交时，就执行整条流水线。当到某个时间点时，就只执行扫描阶段。</p>
+
 <h3 id="回答一">回答一</h3>
+
 <p>当代码没有变化，我们为什么要重复执行扫描呢？</p>
+
 <h3 id="回答二">回答二</h3>
+
 <p>换成两个流水线，一个提交触发，一个定时触发</p>
+
 <h3 id="回答三">回答三</h3>
+
 <p>一条流水线加个开关设置是否跳过扫描。</p>
+
 <h2 id="2-有人做过增量包构建么">2. 有人做过增量包构建么？</h2>
+
 <blockquote>
 <p>有人做过增量包构建么？问下要用哪些插件，怎么做？
 经确认，提问人的需求是有一个代码仓库 x，然后 x 里有 a,b,c 三个模块，开发提交了 a 模块的代码，这时，只打包 a 模块的制品。</p>
 </blockquote>
+
 <h3 id="回答一-1">回答一</h3>
+
 <p>要做的是在流水线里判断提交代码中修改了哪个模块，然后执行你的 ant 命令指定构建某个模块就好了。代码 demo 如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">pipeline<span style="color:#f92672">{</span>
+
+<pre><code class="language-groovy">pipeline{
     agent any
-    stages<span style="color:#f92672">{</span>
-        stage<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;build a&#39;</span><span style="color:#f92672">){</span>
-            when<span style="color:#f92672">{</span>
-                changeset <span style="color:#e6db74">&#34;a/**&#34;</span>
-            <span style="color:#f92672">}</span>
-            steps<span style="color:#f92672">{</span>
-                echo <span style="color:#e6db74">&#34;build a&#34;</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-        stage<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;build b&#39;</span><span style="color:#f92672">){</span>
-            when<span style="color:#f92672">{</span>
-                changeset <span style="color:#e6db74">&#34;b/**&#34;</span>
-            <span style="color:#f92672">}</span>
-            steps<span style="color:#f92672">{</span>
-                echo <span style="color:#e6db74">&#34;build b&#34;</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h3 id="回答二-1">回答二</h3>
+    stages{
+        stage('build a'){
+            when{
+                changeset &quot;a/**&quot;
+            }
+            steps{
+                echo &quot;build a&quot;
+            }
+        }
+        stage('build b'){
+            when{
+                changeset &quot;b/**&quot;
+            }
+            steps{
+                echo &quot;build b&quot;
+            }
+        }
+    }
+}
+</code></pre>
+
+<h3 id="回答二-1">回答二</h3>
+
 <p>增量包，四五年前我有过相关实践，构建工具也是 ant。记得当初是根据修改的文件路径，解析出 ant target 列表，然后根据事先声明好的依赖关系对它排序，然后执行 ant 构建命令，最后将生成的二进制包挑出来生成增量包，大致这么个思路。</p>
+
 <h2 id="3-post-里如何指定-agent">3. post 里如何指定 agent</h2>
+
 <blockquote>
 <p>请教一下，jenkinsfile中 post里面可以指定agent吗？</p>
 </blockquote>
+
 <h3 id="回答">回答</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">post <span style="color:#f92672">{</span>
- always <span style="color:#f92672">{</span>
-  node<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;master&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-   cleanWs<span style="color:#f92672">()</span>
-   <span style="color:#f92672">}</span>
-   <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>笔者注：<code>node('&lt;node&gt;')</code> 中的 <code>&lt;node&gt;</code> 可以是 agent 节点名称，也可以是 agent 的标签。</p>
+
+<pre><code class="language-groovy">post {
+ always {
+  node('master') {
+   cleanWs()
+   }
+   }
+}
+</code></pre>
+
+<p>笔者注：<code>node('&lt;node&gt;')</code> 中的 <code>&lt;node&gt;</code> 可以是 agent 节点名称，也可以是 agent 的标签。</p>
+
 <h2 id="4-windows-上-无法使用-curl">4. windows 上 无法使用 curl</h2>
+
 <blockquote>
 <p>有些步骤是跑在 Windows 节点上，在 Windows 上又希望能发 http 请求。</p>
 </blockquote>
+
 <h3 id="回答-1">回答</h3>
+
 <p>这时，应该使用 <a href="https://wiki.jenkins.io/display/JENKINS/HTTP+Request+Plugin">HTTPRequest</a> 插件，它是平台无关的。</p>
+
 <h2 id="4-怎么把-slave-的内容-copy-到-master-机器上">4. 怎么把 slave 的内容 copy 到 master 机器上？</h2>
+
 <blockquote>
 <p>因为比如我用有一个 windows 节点，然后我代码拉取后，需要进行一些测试，测试完成后生成数据和 HTML 报告，这部分测试全都在节点上完成，我想把测试完成后到数据发到 master 上，然后由 master 生成 html 报告</p>
 </blockquote>
+
 <h3 id="回答-2">回答</h3>
+
 <p>不确定，我是否理解正确。可以考虑这样做，把你现在的事情分成两个阶段，阶段一在 windows 上测试，然后将数据和 html 报告上传到某个地方，阶段二，将数据和报告下载回来，比如下载到 master 上。接着，想干嘛就干嘛了。</p>
+
 <h2 id="5-httprequest-如何发-post-请求">5. httpRequest 如何发 POST 请求</h2>
+
 <blockquote>
 <p>httprequest这个插件
 请求body这块一行一个参数？
-<img src="./httprequest.png" alt="httpRequest"></p>
+<img src="./httprequest.png" alt="httpRequest" /></p>
 </blockquote>
-<h3 id="回答-3">回答</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">httpRequest authentication: credentialName<span style="color:#f92672">,</span> contentType: <span style="color:#e6db74">&#39;APPLICATION_JSON_UTF8&#39;</span><span style="color:#f92672">,</span> httpMode: <span style="color:#e6db74">&#39;POST&#39;</span><span style="color:#f92672">,</span> requestBody: <span style="color:#e6db74">&#34;&#34;&#34;{&#34;reportJson&#34;: &#34;111&#34;,&#34;id&#34;: &#34;111&#34;,&#34;executeNum&#34;: 111}&#34;&#34;&#34;</span><span style="color:#f92672">,</span> responseHandle: <span style="color:#e6db74">&#39;LEAVE_OPEN&#39;</span><span style="color:#f92672">,</span> url: <span style="color:#e6db74">&#34;http://127.0.0.1/echo&#34;</span>
 
-</code></pre></div><h2 id="6-我仓库特多怎么设计流水线">6. 我仓库特多，怎么设计流水线</h2>
+<h3 id="回答-3">回答</h3>
+
+<pre><code class="language-groovy">httpRequest authentication: credentialName, contentType: 'APPLICATION_JSON_UTF8', httpMode: 'POST', requestBody: &quot;&quot;&quot;{&quot;reportJson&quot;: &quot;111&quot;,&quot;id&quot;: &quot;111&quot;,&quot;executeNum&quot;: 111}&quot;&quot;&quot;, responseHandle: 'LEAVE_OPEN', url: &quot;http://127.0.0.1/echo&quot;
+
+</code></pre>
+
+<h2 id="6-我仓库特多-怎么设计流水线">6. 我仓库特多，怎么设计流水线</h2>
+
 <blockquote>
 <p>我的仓库一共有4个 分别存放 代码 战斗脚本 资源 协议。4个代码仓库各有3个分支  名字都是对应的，比如1号仓库分支 master develop production.  2号仓库 也是这几个分支 以此类推  我拉取代码进行打包的时候 会拉取 4个仓库名字都叫 master 的分支 或者名字都叫 develop 的分支进行打包
 现在问题就出在 我拉取4分仓库都叫 master 的分支的时候 拉取完代码后 最后一个仓库的代码会把前个仓库的代码覆盖掉，后来有老哥给了建议  用 dir 分别存到 workspace 下的好几个目录
 现在遇到的问题是  我多分支流水线第一次启动时，会把1号仓库的代码直接拉到 workspace 下
 我的问题就是可以不可在多分支流水线第一次启动时，不要拉取代码</p>
 </blockquote>
+
 <h3 id="回答-4">回答</h3>
+
 <p>建立一条流水线，接受 gitlab 触发，然后根据触发请求中的数据，决定拉取哪个代码仓库。参考 <a href="https://wiki.jenkins.io/display/JENKINS/Generic+Webhook+Trigger+Plugin">Generic Webhook Trigger 插件</a>。</p>
+
 <h2 id="7-流水线中如何指定工作目录">7. 流水线中如何指定工作目录</h2>
+
 <blockquote>
 <p>pipeline 中怎么指定这个流水线的工作目录，我在开头定义 WORKSPACE 但是没用</p>
 </blockquote>
+
 <h3 id="回答-5">回答</h3>
-<p><img src="custom-workspace.png" alt="自定义工作空间"></p>
+
+<p><img src="custom-workspace.png" alt="自定义工作空间" /></p>
+
 <h2 id="8-如何在-pipeline-中使用第三方-jar-包">8. 如何在 pipeline 中使用第三方 jar 包</h2>
+
 <blockquote>
 <p>请教下 pipeline 需要引用第三方 jar 包时，要放在哪里才能被 import 进来啊，我放到 classpath 下还是不行，总是提示找不到包。在本地执行 groovy，impor t进来没有问题</p>
 </blockquote>
+
 <h3 id="回答-6">回答</h3>
+
 <p>把 jar 包放到 tomcat 安装 jenkins 的目录下的 lib 里貌似能解决。</p>
+
 <h2 id="后记">后记</h2>
+
 <p>如果读者朋友在使用 Jenkins 过程中也遇到各种问题，可关注<strong>Jenkins</strong>微信公众号。后台回复“微信群”入群。群里会有热心朋友回复。</p>
 
 </div>
@@ -521,8 +570,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
             </a>
           </li>
         
@@ -531,6 +580,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db b mt4 mb2 mr2">
             Related entries:
           </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
         
         
           <li class="db dib-l mb2 mr3">
@@ -554,6 +612,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/08/2019-08-15-jenkins-pipeline-stage-result-visualization-improvements/" class="link">
               Jenkins 可视化阶段视图的改进
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -629,6 +696,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="link">
               Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
             </a>
           </li>
         

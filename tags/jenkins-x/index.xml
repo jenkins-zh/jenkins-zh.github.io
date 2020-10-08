@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jenkins-x on Jenkins 中文社区</title>
+    <title>Jenkins X on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/jenkins-x/</link>
-    <description>Recent content in jenkins-x on Jenkins 中文社区</description>
+    <description>Recent content in Jenkins X on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate>
@@ -48,7 +48,7 @@ Jenkins X 本身是功能专一的，但是却极易拓展。Jenkins X 是为实
 在 Jenkins-X platform 中，UpdateBot 由 Jenkinsfile 中的 UpdateBot 命令自动显示和调用。但是 UpdateBot 也可以在 Jenkins-X 之外使用，并且单独运行它可以帮助了解它可以做什么并测试版本替换。因此，让我们用一个简单的测试项目来尝试一下。
 配置演示 UpdateBot 可以为各种不同的文件类型设置版本-我们不会在这里对它们进行全部测试，但是我们希望一个项目具有多个功能。因此，我们可以使用 JHipster sample app 示例应用程序，因为它具有 Maven pom.xml，npm package.json 和 Dockerfile。我们将对其运行 UpdateBot，以查看 UpdateBot 可以替换这些资源文件中哪些内容。
 我们可以下载 UpdateBot jar file（v1.1.31），并为要更新的项目设置指向 GitHub 存储库的简单 UpdateBot 配置文件：
-github: organisations: - name: ryandawsonuk repositories: - name: jhipster-sample-app useSinglePullRequest: true useSinglePullRequest 标记意味着将创建一个包含我们所做的所有更改的 PR。但是我们实际上并不会进行任何更改-我们将在本地运行它，这样我们就不需要 GitHub 对存储库的写权限。通过设置环境变量，我们可以在不推送到 GitHub 的情况下运行：</description>
+github: organisations: - name: ryandawsonuk repositories: - name: jhipster-sample-app useSinglePullRequest: true  useSinglePullRequest 标记意味着将创建一个包含我们所做的所有更改的 PR。但是我们实际上并不会进行任何更改-我们将在本地运行它，这样我们就不需要 GitHub 对存储库的写权限。通过设置环境变量，我们可以在不推送到 GitHub 的情况下运行：</description>
     </item>
     
     <item>
@@ -73,8 +73,8 @@ github: organisations: - name: ryandawsonuk repositories: - name: jhipster-sampl
 以 Kubernetes 为例。Google 于2014年开源，现在所有主流的公有云供应商都支持它&amp;mdash;它为开发人员提供了一种很好的方式，可以将应用程序打包到 Docker 容器中，并部署到任意 Kubernetes 集群中。
 使用 CI/CD、Kubernetes 和 Jenkins X 进行高性能开发 在技术上，高性能团队几乎总是成功的必要条件，而持续集成、持续部署(CI/CD)、小迭代以及快速反馈是构建模块。为你的云原生应用程序设置 CI/CD 可能比较困难。通过自动化所有内容，开发人员可以花费宝贵的时间来交付实际的业务。
 如何使用容器、持续交付和 Kubernetes 成为高效团队？这就是 Jenkins X 的切入点。
- “Jenkins X 的理念是为所有开发人员提供他们自己的海军航海管家，可以帮助你航行持续交付的海洋。” - James Strachan
- Jenkins X 帮助你自动化你在 Kubernetes 中的 CI/CD - 你甚至不需要学习 Docker 或 Kubernetes！
+“Jenkins X 的理念是为所有开发人员提供他们自己的海军航海管家，可以帮助你航行持续交付的海洋。” - James Strachan
+Jenkins X 帮助你自动化你在 Kubernetes 中的 CI/CD - 你甚至不需要学习 Docker 或 Kubernetes！
 Jenkins X 能做什么？ Jenkins X 在 Kubernetes 上自动安装，配置和升级 Jenkins 和其他应用程序（Helm，Skaffold，Nexus 等）。它使用 Docker 镜像、Helm 图表和流水线来自动化应用程序的 CI/CD。它使用 GitOps 来管理环境之间的升级，并通过在拉取请求和生产时对其进行评论来提供大量反馈。
 Jenkins X 入门 要安装 Jenkins X，首先需要在你的机器或云供应商上安装 jx 二进制文件。从 Google Cloud 可以获得300美元的积分，所以我决定从那里开始。</description>
     </item>
@@ -87,9 +87,9 @@ Jenkins X 入门 要安装 Jenkins X，首先需要在你的机器或云供应�
       <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/</guid>
       <description>这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事。
 我们的上下文 在 dailymotion ，我们坚信 devops 最佳实践，并且在 Kubernetes 投入了大量投资。 我们的部分产品已经部署在 Kubernetes 上，但并不是全部。 因此，当迁移我们的广告技术平台的时候，我们想要完全采用“ Kubernetes 式”——或者云原生，以追随技术趋势！ 这意味着要重新定义整个 CI/CD 流水线，从静态/永久环境迁移，转向动态按需分配环境。 我们的目标是授权给我们的开发人员，缩短我们的上线时间以及降低我们的运营成本。
-对于新的 CI/CD 平台我们的初始需求是:
- 尽可能避免从零开始：我们的开发人员已经习惯使用 Jenkins 和声明式流水线，并且它们可以很好地满足我们当前的需求。 以公有云基础设施为目标——Google 云平台和 Kubernetes 集群 与 gitops 方法论兼容——因为我们喜欢版本控制、同行评审和自动化  在 CI/CD 生态系统中有相当多的参与者，但是只有一个符合我们的需求，Jenkins X ，它基于 Jenkins 和 Kubernetes ，原生支持预览环境和 gitops
-Kubernetes 之上的 Jenkins Jenkins X 的设置相当简单，并且在他们的官方网站上已经有很好的文档（译注：译者曾对 Jenkins X 文档中文本地化做了一些贡献，同时也期待更多的人参与以完善中文文档）。 由于我们已经使用了 Google Kubernetes Engine (GKE)，所以 jx 命令行工具自己创建了所有东西，包括 Kubernetes 集群。 这里有一个小小的哇哦效果，在几分钟内获得一个完整的工作系统是非常令人印象深刻的。</description>
+对于新的 CI/CD 平台我们的初始需求是: - 尽可能避免从零开始：我们的开发人员已经习惯使用 Jenkins 和声明式流水线，并且它们可以很好地满足我们当前的需求。 - 以公有云基础设施为目标——Google 云平台和 Kubernetes 集群 - 与 gitops 方法论兼容——因为我们喜欢版本控制、同行评审和自动化
+在 CI/CD 生态系统中有相当多的参与者，但是只有一个符合我们的需求，Jenkins X ，它基于 Jenkins 和 Kubernetes ，原生支持预览环境和 gitops
+Kubernetes 之上的 Jenkins Jenkins X 的设置相当简单，并且在他们的官方网站上已经有很好的文档（译注：译者曾对 Jenkins X 文档中文本地化做了一些贡献，同时也期待更多的人参与以完善中文文档）。 由于我们已经使用了 Google Kubernetes Engine (GKE)，所以 jx 命令行工具自己创建了所有东西，包括 Kubernetes 集群。 这里有一个小小的*哇哦效果*，在几分钟内获得一个完整的工作系统是非常令人印象深刻的。</description>
     </item>
     
     <item>
@@ -99,10 +99,10 @@ Kubernetes 之上的 Jenkins Jenkins X 的设置相当简单，并且在他们�
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/</guid>
       <description>这是渐进式交付系列的第二篇文章，第一篇请看：Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署。
-我使用的我的 Croc Hunter 示例项目评估了 Jenkins X 中金丝雀部署和蓝绿色部署的三种渐进式交付方案。
- Shipper 为 Jenkins X 构建的 Helm 图表启用了蓝绿部署和多集群部署，但是对图表的内容有限制。 你可以在 staging 和生产环境之间做蓝绿部署。 Istio 允许通过创建一个虚拟服务将一定比例的流量发送到 staging 或预览环境。 Flagger 构建在 Istio 之上，并添加了金丝雀部署，可以根据指标自动进行滚动部署和回滚。 Jenkins X 可以通过创建一个 Canary 对象自动启用金丝雀功能，从而实现优雅的滚动部署，以升级到生产环境。  这里可以查看 Shipper、Isito 和 Flager 的示例代码。
+我使用的我的 Croc Hunter 示例项目评估了 Jenkins X 中金丝雀部署和蓝绿色部署的三种渐进式交付方案。 - Shipper 为 Jenkins X 构建的 Helm 图表启用了蓝绿部署和多集群部署，但是对图表的内容有限制。 你可以在 staging 和生产环境之间做蓝绿部署。 - Istio 允许通过创建一个虚拟服务将一定比例的流量发送到 staging 或预览环境。 - Flagger 构建在 Istio 之上，并添加了金丝雀部署，可以根据指标自动进行滚动部署和回滚。 Jenkins X 可以通过创建一个 Canary 对象自动启用金丝雀功能，从而实现优雅的滚动部署，以升级到生产环境。
+这里可以查看 Shipper、Isito 和 Flager 的示例代码。
 Shipper 由于 Shipper 对创建的 Helm 图表有多个限制，因此我必须对应用做一些更改。 而且 Jenkins X 只从 master 分支构建 Helm 包，所以我们不能做 PRs 的滚动部署，只能对 master 分支做滚动部署。
-应用标签不能包含发布名称，例如： app: {{ template “fullname” . }}  不起作用， 需要一些类似这样的标签： app: {{ .Values.appLabel }}。</description>
+应用标签不能包含发布名称，例如： app: {{ template “fullname” . }} 不起作用， 需要一些类似这样的标签： app: {{ .</description>
     </item>
     
     <item>

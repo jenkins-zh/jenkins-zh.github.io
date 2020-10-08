@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="在 Kubernetes 中通过 Apache Kafka 插件远程处理 Kafka 启动程序" />
 <meta property="og:description" content="在 Kubernetes 中通过 Apache Kafka 插件远程处理 Kafka 启动程序" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/" />
-<meta property="article:published_time" content="2019-11-08T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-08T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/" /><meta property="article:published_time" content="2019-11-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-11-08T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="在 Kubernetes 中通过 Apache Kafka 插件远程处理 Kafka 启动程序">
 <meta itemprop="description" content="在 Kubernetes 中通过 Apache Kafka 插件远程处理 Kafka 启动程序">
+
+
 <meta itemprop="datePublished" content="2019-11-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-11-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="299">
+<meta itemprop="wordCount" content="298">
 
 
 
-<meta itemprop="keywords" content="kafka kubernetes helm," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="kafka kubernetes helm," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 Kubernetes 中通过 Apache Kafka 插件远程处理 Kafka 启动程序"/>
 <meta name="twitter:description" content="在 Kubernetes 中通过 Apache Kafka 插件远程处理 Kafka 启动程序"/>
 
@@ -295,39 +298,56 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="cover.jpg" alt="cover"></p>
+
+
+<p><img src="cover.jpg" alt="cover" /></p>
+
 <p>我是越南 FPT 大学的 Long Nguyen ，我的 Google Summer of Code 2019 项目是 <a href="https://jenkins.io/projects/gsoc/2019/remoting-over-apache-kafka-docker-k8s-features/">Remoting over Apache Kafka with Kubernetes features</a> 。这是我第一次为 Jenkins 做贡献，我非常兴奋地宣布在第一阶段已经完成的功能。</p>
+
 <h2 id="项目介绍">项目介绍</h2>
-<p>当前版本的 <a href="https://github.com/jenkinsci/remoting-kafka-plugin">Remoting over Apache Kafka plugin</a> 远程处理需要用户手动配置整个系统，包括 zookeeper 、 kafka 和远程处理代理。它也不支持动态代理配置，因此很难实现具有伸缩性的扩展。我的项目旨在解决两个问题：</p>
-<ol>
-<li>提供 Apache-Kafka 集群的现成解决方案。</li>
-<li>Kubernetes 集群中的动态代理配置。</li>
-</ol>
+
+<p>当前版本的 <a href="https://github.com/jenkinsci/remoting-kafka-plugin">Remoting over Apache Kafka plugin</a> 远程处理需要用户手动配置整个系统，包括 zookeeper 、 kafka 和远程处理代理。它也不支持动态代理配置，因此很难实现具有伸缩性的扩展。我的项目旨在解决两个问题：
+1. 提供 Apache-Kafka 集群的现成解决方案。
+2.  Kubernetes 集群中的动态代理配置。</p>
+
 <h2 id="当前状态">当前状态</h2>
+
 <ul>
 <li>支持凭据的 Kubernetes 连接器。</li>
 <li>Kubernetes 功能中的 ApacheKafka 预配功能已完全实现。</li>
 <li>Helm chart 部分实现。</li>
 </ul>
+
 <h2 id="kubernetes-中的-apache-kafka-配置">Kubernetes 中的 Apache-Kafka 配置</h2>
+
 <p>此功能是 2.0 版本的一部分，因此尚未正式发布。您可以通过使用 <a href="https://jenkins.io/doc/developer/publishing/releasing-experimental-updates/">Experimental Update Center</a> 更新到 2.0.0-alpha 版本或直接从 master 分支构建来尝试该功能：</p>
+
 <pre><code>git clone https://github.com/jenkinsci/remoting-kafka-plugin.git
 cd remoting-kafka-plugin/plugin
 mvn hpi:run
-</code></pre><p>在全局配置页面上，用户可以输入 Kubernetes 服务器信息和凭据。然后他们只需点击一个按钮就可以启动 ApacheKafka 。</p>
-<p><img src="kafka-provisioning-kubernetes-ui.png" alt="kafka-provisioning-kubernetes-ui"></p>
+</code></pre>
+
+<p>在全局配置页面上，用户可以输入 Kubernetes 服务器信息和凭据。然后他们只需点击一个按钮就可以启动 ApacheKafka 。</p>
+
+<p><img src="kafka-provisioning-kubernetes-ui.png" alt="kafka-provisioning-kubernetes-ui" /></p>
+
 <p>当用户点击 <code>Start Kafka on Kubernetes</code> 按钮时， Jenkins 将根据信息创建一个 Kubernetes 客户机，然后从 <code>resources</code> 中应用 zookeeper 和 kafka yaml 规范文件。</p>
-<p><img src="kafka-provisioning-kubernetes-architecture.png" alt="kafka-provisioning-kubernetes-architecture"></p>
+
+<p><img src="kafka-provisioning-kubernetes-architecture.png" alt="kafka-provisioning-kubernetes-architecture" /></p>
+
 <h2 id="helm-chart">Helm Chart</h2>
+
 <p>Apache-Kafka 插件上远程处理的 Helm 图表基于 <a href="https://github.com/helm/charts/tree/master/stable/jenkins">stable/jenkins</a> 图表和 <a href="https://github.com/helm/charts/tree/master/incubator/kafka">incubator/kafka</a> 图表。截至目前，该图表仍在<a href="https://github.com/jenkinsci/remoting-kafka-plugin/pull/62">开发中</a>，因为它仍在等待第 2 阶段的 Cloud API 实现。但是，您可以使用一个独立的远程 Kafka 代理查看演示图表：</p>
+
 <pre><code>git clone -b demo-helm-phase-1 https://github.com/longngn/remoting-kafka-plugin.git
 cd remoting-kafka-plugin
 K8S_NODE=&lt;your Kubernetes node IP&gt; ./helm/jenkins-remoting-kafka/do.sh start
-</code></pre><p>命令 <code>do.sh start</code> 将执行以下步骤：</p>
-<ul>
-<li>安装图表（与 Jenkins 和 Kafka 一起使用）。</li>
-<li>通过应用下面的 JCasC 在 Jenkins master 上启动一台 Kafka 计算机。</li>
-</ul>
+</code></pre>
+
+<p>命令 <code>do.sh start</code> 将执行以下步骤：
+* 安装图表（与 Jenkins 和 Kafka 一起使用）。
+* 通过应用下面的 JCasC 在 Jenkins master 上启动一台 Kafka 计算机。</p>
+
 <pre><code>jenkins:
   nodes:
     - permanent:
@@ -335,43 +355,51 @@ K8S_NODE=&lt;your Kubernetes node IP&gt; ./helm/jenkins-remoting-kafka/do.sh sta
         remoteFS: &quot;/home/jenkins&quot;
         launcher:
           kafka: {}
-</code></pre><ul>
+</code></pre>
+
+<ul>
 <li>启动单个 Remoting Kafka Agent pod 。
-您可以通过运行 <code>kubectl</code> 来检查图表状态，例如:</li>
-</ul>
-<pre><code>$ kubectl get all -n demo-helm
+您可以通过运行 <code>kubectl</code> 来检查图表状态，例如:
+```
+$ kubectl get all -n demo-helm
 NAME                                    READY   STATUS    RESTARTS   AGE
-pod/demo-jenkins-998bcdfd4-tjmjs        2/2     Running   0          6m30s
-pod/demo-jenkins-remoting-kafka-agent   1/1     Running   0          4m10s
-pod/demo-kafka-0                        1/1     Running   0          6m30s
-pod/demo-zookeeper-0                    1/1     Running   0          6m30s
+pod/demo-jenkins-998bcdfd4-tjmjs        <sup>2</sup>&frasl;<sub>2</sub>     Running   0          6m30s
+pod/demo-jenkins-remoting-kafka-agent   <sup>1</sup>&frasl;<sub>1</sub>     Running   0          4m10s
+pod/demo-kafka-0                        <sup>1</sup>&frasl;<sub>1</sub>     Running   0          6m30s
+pod/demo-zookeeper-0                    <sup>1</sup>&frasl;<sub>1</sub>     Running   0          6m30s</li>
+</ul>
 
-NAME                              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
-service/demo-0-external           NodePort    10.106.254.187   &lt;none&gt;        19092:31090/TCP              6m30s
-service/demo-jenkins              NodePort    10.101.84.33     &lt;none&gt;        8080:31465/TCP               6m31s
-service/demo-jenkins-agent        ClusterIP   10.97.169.65     &lt;none&gt;        50000/TCP                    6m31s
-service/demo-kafka                ClusterIP   10.106.248.10    &lt;none&gt;        9092/TCP                     6m30s
-service/demo-kafka-headless       ClusterIP   None             &lt;none&gt;        9092/TCP                     6m30s
-service/demo-zookeeper            ClusterIP   10.109.222.63    &lt;none&gt;        2181/TCP                     6m30s
-service/demo-zookeeper-headless   ClusterIP   None             &lt;none&gt;        2181/TCP,3888/TCP,2888/TCP   6m31s
+<p>NAME                              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+service/demo-0-external           NodePort    10.106.254.187   <none>        19092:31090/TCP              6m30s
+service/demo-jenkins              NodePort    10.101.84.33     <none>        8080:31465/TCP               6m31s
+service/demo-jenkins-agent        ClusterIP   10.97.169.65     <none>        50000/TCP                    6m31s
+service/demo-kafka                ClusterIP   10.106.248.10    <none>        9092/TCP                     6m30s
+service/demo-kafka-headless       ClusterIP   None             <none>        9092/TCP                     6m30s
+service/demo-zookeeper            ClusterIP   10.109.222.63    <none>        2181/TCP                     6m30s
+service/demo-zookeeper-headless   ClusterIP   None             <none>        2181/TCP,3888/TCP,2888/TCP   6m31s</p>
 
-NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/demo-jenkins   1/1     1            1           6m30s
+<p>NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/demo-jenkins   <sup>1</sup>&frasl;<sub>1</sub>     1            1           6m30s</p>
 
-NAME                                     DESIRED   CURRENT   READY   AGE
-replicaset.apps/demo-jenkins-998bcdfd4   1         1         1       6m30s
+<p>NAME                                     DESIRED   CURRENT   READY   AGE
+replicaset.apps/demo-jenkins-998bcdfd4   1         1         1       6m30s</p>
 
-NAME                              READY   AGE
-statefulset.apps/demo-kafka       1/1     6m30s
-statefulset.apps/demo-zookeeper   1/1     6m30s
-</code></pre><h2 id="下一阶段计划">下一阶段计划</h2>
+<p>NAME                              READY   AGE
+statefulset.apps/demo-kafka       <sup>1</sup>&frasl;<sub>1</sub>     6m30s
+statefulset.apps/demo-zookeeper   <sup>1</sup>&frasl;<sub>1</sub>     6m30s
+```</p>
+
+<h2 id="下一阶段计划">下一阶段计划</h2>
+
 <ul>
 <li>实施 Cloud API 来配置 Remoting Kafka Agent 。（<a href="https://issues.jenkins-ci.org/browse/JENKINS-57668">JENKINS-57668</a>）</li>
 <li>将 Cloud API 实施与 Helm 图表集成。（<a href="https://issues.jenkins-ci.org/browse/JENKINS-58288">JENKINS-58288</a>）</li>
 <li>单元测试和集成测试。</li>
 <li>发布版本 2.0 和地址反馈。（<a href="https://issues.jenkins-ci.org/browse/JENKINS-58289">JENKINS-58289</a>）</li>
 </ul>
+
 <h2 id="链接">链接</h2>
+
 <ul>
 <li><a href="https://youtu.be/MDs0Vr7gnnA?t=2601">第一阶段演示视频</a></li>
 <li><a href="https://docs.google.com/presentation/d/1yIPwwL7P051XaSE2EOJYAtbVsd6YvGvvKp9QcJE4J1Y/edit?usp=sharing">第一阶段演示幻灯片</a></li>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ansible on Jenkins 中文社区</title>
+    <title>Ansible on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/ansible/</link>
-    <description>Recent content in ansible on Jenkins 中文社区</description>
+    <description>Recent content in Ansible on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
@@ -24,11 +24,11 @@
 准备 我准备了一个 Jenkins 实例，部署了 ssh， 以及一个可运行的 Spring Boot jar，还有一台 RedHat7 的虚拟机，和 Nexus 的制品仓库。所以我想我很高兴不用再部署 EARs 了。
 现在我将使用以上的工具构建一个部署流水线，并对所有内容做版本控制，以便团队中的每个人都可以访问所有内容，并了解他们的代码从提交到部署的每个环节（本例中只是到测试环境）。
 代码结构如下：
-parent +- backend +- frontend +- deployment Jenkinsfile 简单起见，backend——一个简单的 Spring Boot 应用——包含了前端 ReactJS 应用，deployment 中是持续交付相关工具，根目录下的 Jenkinsfile 是这个流水线的声明式描述。
+parent +- backend +- frontend +- deployment Jenkinsfile  简单起见，backend——一个简单的 Spring Boot 应用——包含了前端 ReactJS 应用，deployment 中是持续交付相关工具，根目录下的 Jenkinsfile 是这个流水线的声明式描述。
 下面我们看一下每个模块！
 后端 它继承自 Spring Boot parent：
-&amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0.3.RELEASE&amp;lt;/version&amp;gt; &amp;lt;relativePath/&amp;gt; &amp;lt;/parent&amp;gt; 我们将 frontend 应用放在 dependencies：
-&amp;lt;dependencies&amp;gt; ... &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.company.skeleton&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;frontend&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.</description>
+&amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0.3.RELEASE&amp;lt;/version&amp;gt; &amp;lt;relativePath/&amp;gt; &amp;lt;/parent&amp;gt;  我们将 frontend 应用放在 dependencies：
+&amp;lt;dependencies&amp;gt; .</description>
     </item>
     
     <item>
@@ -37,11 +37,11 @@ parent +- backend +- frontend +- deployment Jenkinsfile 简单起见，backend�
       <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-20-jenkins-ansible-springboot/</guid>
-      <description>本文要点：
- 设计一条 Spring Boot 最基本的流水线：包括构建、制品上传、部署。 使用 Docker 容器运行构建逻辑。 自动化整个实验环境：包括 Jenkins 的配置，Jenkins agent 的配置等。  1. 代码仓库安排 本次实验涉及以下多个代码仓库：
-% tree -L 1 ├── 1-cd-platform # 实验环境相关代码 ├── 1-env-conf # 环境配置代码-实现配置独立 └── 1-springboot # Spring Boot 应用的代码及其部署代码 1-springboot 的目录结构如下：
-% cd 1-springboot % tree -L 1 ├── Jenkinsfile # 流水线代码 ├── README.md ├── deploy # 部署代码 ├── pom.xml └── src # 业务代码 所有代码，均放在 GitHub：https://github.com/cd-in-practice
-2. 实验环境准备 笔者使用 Docker Compose + Vagrant 进行实验。环境包括以下几个系统：</description>
+      <description>本文要点： 1. 设计一条 Spring Boot 最基本的流水线：包括构建、制品上传、部署。 1. 使用 Docker 容器运行构建逻辑。 1. 自动化整个实验环境：包括 Jenkins 的配置，Jenkins agent 的配置等。
+1. 代码仓库安排 本次实验涉及以下多个代码仓库：
+% tree -L 1 ├── 1-cd-platform # 实验环境相关代码 ├── 1-env-conf # 环境配置代码-实现配置独立 └── 1-springboot # Spring Boot 应用的代码及其部署代码  1-springboot 的目录结构如下：
+% cd 1-springboot % tree -L 1 ├── Jenkinsfile # 流水线代码 ├── README.md ├── deploy # 部署代码 ├── pom.xml └── src # 业务代码  所有代码，均放在 GitHub：https://github.com/cd-in-practice
+2. 实验环境准备 笔者使用 Docker Compose + Vagrant 进行实验。环境包括以下几个系统： * Jenkins * 1 Jenkins master，全自动安装插件、默认用户名密码：admin/admin。 * Jenkins agent * 2 Jenkins agent 运行在 Docker 容器中，共启动两个。 * Artifactory * 1 一个商业版的制品库。笔者申请了一个 30 天的商业版。</description>
     </item>
     
     <item>
@@ -50,11 +50,10 @@ parent +- backend +- frontend +- deployment Jenkinsfile 简单起见，backend�
       <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/</guid>
-      <description>本文介绍如何使用 Jenkins + Ansible 实现对 Nginx 的自动化部署。最终达到的效果有如下几点：
- 只要你将 Nginx 的配置推送到 GitHub 中，Jenkins 就会自动执行部署，然后目标服务器的 Nginx 配置自动生效。这个过程是幂等（idempotent）的，只要代码不变，执行多少遍，最终效果不变。 如果目标机器没有安装 Nginx，则会自动安装 Nginx。 自动设置服务器防火墙规则。  1. 实验环境介绍 本次实验使用 Docker Compose 搭建 Jenkins 及 Jenkins agent。使用 Vagrant 启动一台虚拟机，用于部署 Nginx。使用 Vagrant 是可选的，读者可以使用 VirtualBox 启动一个虚拟机。使用 Vagrant 完全是为了自动化搭建实验环境。
+      <description>本文介绍如何使用 Jenkins + Ansible 实现对 Nginx 的自动化部署。最终达到的效果有如下几点： 1. 只要你将 Nginx 的配置推送到 GitHub 中，Jenkins 就会自动执行部署，然后目标服务器的 Nginx 配置自动生效。这个过程是幂等（idempotent）的，只要代码不变，执行多少遍，最终效果不变。 2. 如果目标机器没有安装 Nginx，则会自动安装 Nginx。 3. 自动设置服务器防火墙规则。
+1. 实验环境介绍 本次实验使用 Docker Compose 搭建 Jenkins 及 Jenkins agent。使用 Vagrant 启动一台虚拟机，用于部署 Nginx。使用 Vagrant 是可选的，读者可以使用 VirtualBox 启动一个虚拟机。使用 Vagrant 完全是为了自动化搭建实验环境。
 以下是整个实验环境的架构图： 注意，图中的 5123 &amp;lt;-&amp;gt; 80 代表将宿主机的 5123 端口请求转发到虚拟机中的 80 端口。
- Vagrant：虚拟机管理工具，通过它，我们可以使用文本来定义、管理虚拟机。 Ansible：自动化运维工具 Docker Compose：它是一个用于定义和运行多容器 Docker 应用程序的工具。可以使用 YAML 文件来配置应用程序的服务。  2. 启动实验环境   克隆代码并进入文件夹
-git clone https://github.com/zacker330/jenkins-ansible-nginx.git cd jenkins-ansible-nginx   构建 Jenkins agent 的镜像 需要自定义 Jenkins agent 镜像有两个原因：</description>
+ Vagrant：虚拟机管理工具，通过它，我们可以使用文本来定义、管理虚拟机。 Ansible：自动化运维工具 Docker Compose：它是一个用于定义和运行多容器 Docker 应用程序的工具。可以使用 YAML 文件来配置应用程序的服务。  2. 启动实验环境  克隆代码并进入文件夹 bash git clone https://github.com/zacker330/jenkins-ansible-nginx.git cd jenkins-ansible-nginx  构建 Jenkins agent 的镜像 需要自定义 Jenkins agent 镜像有两个原因：  本次实验，使用 Swarm 插件实现 Jenkins master 与 agent 之间的通信，所以 Jenkins agent 需要启动 swarm 客户端。 Jenkins agent 必须支持 Ansible。 bash docker build -f JenkinsSlaveAnsibleDockerfile -t jenkins-swarm-ansible .</description>
     </item>
     
   </channel>

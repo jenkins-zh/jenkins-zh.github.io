@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="使用 Zabbix 监控 Jenkins" />
 <meta property="og:description" content="介绍了如何使用 Zabbix 监控 Jenkins" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" />
-<meta property="article:published_time" content="2019-04-15T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-04-15T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-15-zabbix-monitor-jenkins/" /><meta property="article:published_time" content="2019-04-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-15T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="使用 Zabbix 监控 Jenkins">
 <meta itemprop="description" content="介绍了如何使用 Zabbix 监控 Jenkins">
+
+
 <meta itemprop="datePublished" content="2019-04-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="414">
+<meta itemprop="wordCount" content="423">
 
 
 
-<meta itemprop="keywords" content="jenkins,zabbix," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,zabbix," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Zabbix 监控 Jenkins"/>
 <meta name="twitter:description" content="介绍了如何使用 Zabbix 监控 Jenkins"/>
 
@@ -287,103 +290,136 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
+
+
 <blockquote>
 <p>本文假设读者已经了解 Jenkins 基本概念及插件安装，Zabbix 基础概念。基于 Zabbix 3.4，Jenkins 2.8 做实验</p>
 </blockquote>
+
 <p>笔者最近的工作涉及到使用 Zabbix 监控 Jenkins。在谷歌上搜索到的文章非常少，能操作的就更少了。所以决定写一篇文章介绍如何使用 Zabbix 监控 Jenkins。</p>
+
 <p>下图为整体架构图：</p>
-<p><img src="292372-ecc7d290dd4d0f0f.png" alt=""></p>
+
+<p><img src="292372-ecc7d290dd4d0f0f.png" alt="" /></p>
+
 <p>整体并不复杂，大体步骤如下：</p>
+
 <ol>
 <li>在 Jenkins 上安装 Metrics 插件，使 Jenkins 暴露 metrics api。</li>
 <li>配置 Zabbix server 及 agent 以实现监控及告警</li>
 </ol>
+
 <p>为方便读者实验，笔者将自己做实验的代码上传到了 GitHub，链接在文章末尾。使用的是 Docker Compose 技术（方便一次性启动所有的系统）。</p>
+
 <p>接下来，我们详细介绍 Metrics插件及如何实现 Zabbix 监控 Jenkins。</p>
+
 <h2 id="1-使-jenkins-暴露-metrics-api">1. 使 Jenkins 暴露 metrics api</h2>
+
 <p>安装 Metrics 插件，在系统配置中，会多出“Metrics”的配置，如下图：
-<img src="292372-ba867bb2509c6fc4.png" alt=""></p>
+<img src="292372-ba867bb2509c6fc4.png" alt="" /></p>
+
 <p>配置项不复杂。我们需要点击“Generate&hellip;”生成一个 Access Key（生成后，记得要保存）。这个 Key 用于身份校验，后面我们会用到。</p>
+
 <p>保存后，我们在浏览器中输入URL：<code>http://localhost:8080/metrics/&lt;刚生成的 Access Key&gt;</code> 验证 Jenkins 是否已经暴露 metrics。如果看到如下图，就说明可以进行下一步了。</p>
-<p><img src="292372-011d7fc64d176d63.png" alt=""></p>
-<h3 id="11-metrics-插件介绍">1.1 Metrics 插件介绍</h3>
+
+<p><img src="292372-011d7fc64d176d63.png" alt="" /></p>
+
+<h3 id="1-1-metrics-插件介绍">1.1 Metrics 插件介绍</h3>
+
 <p>Metrics 插件是基于 dropwizard/metrics 实现。它通过4个接口暴露指标数据：/metrics，/ping，/threads，/healthcheck。</p>
-<h3 id="12-metrics-插件metrics-接口介绍">1.2 Metrics 插件：/metrics 接口介绍</h3>
+
+<h3 id="1-2-metrics-插件-metrics-接口介绍">1.2 Metrics 插件：/metrics 接口介绍</h3>
+
 <p>点击上图中的<code>metric</code>链接（<code>http://localhost:8080/metrics/&lt;Access Key&gt;/metrics</code>），它暴露了以下指标数据：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#960050;background-color:#1e0010">version:</span> <span style="color:#f92672">&#34;3.0.0&#34;</span>,
-  <span style="color:#960050;background-color:#1e0010">gauges:</span> <span style="color:#960050;background-color:#1e0010">{...</span>}<span style="color:#960050;background-color:#1e0010">,</span>
-  <span style="color:#960050;background-color:#1e0010">counters:</span> {<span style="color:#960050;background-color:#1e0010">...</span>}<span style="color:#960050;background-color:#1e0010">,</span>
-  <span style="color:#960050;background-color:#1e0010">histograms:</span> {<span style="color:#960050;background-color:#1e0010">...</span>}<span style="color:#960050;background-color:#1e0010">,</span>
-  <span style="color:#960050;background-color:#1e0010">meters:</span> {<span style="color:#960050;background-color:#1e0010">...</span>}<span style="color:#960050;background-color:#1e0010">,</span>
-  <span style="color:#960050;background-color:#1e0010">timers:</span> {<span style="color:#960050;background-color:#1e0010">...</span>}
-<span style="color:#960050;background-color:#1e0010">}</span>
-</code></pre></div><p>从数据结构中可以看出它将指标分成 5 种数据类型：</p>
-<ul>
-<li>Gauges：某项指标的瞬时值，例如：当前 Jenkins executor 的总个数（jenkins.executor.count.value）</li>
-<li>Counters：某项指标的总数值，例如：http 请求活动连接数（http.activeRequests）</li>
-<li>Meters：一段时间内，某事件的发生概率，例如：Jenkins成功执行的任务每分钟的执行次数（jenkins.runs.success.m1_rate）</li>
-<li>Histogram：统计指标的分布情况。例如：Jenkins executor 数量的分布（jenkins.executor.count.history）</li>
-<li>Timer：某项指标的持续时间。例如：Jenkins 任务等待时间（jenkins.job.waiting.duration）</li>
-</ul>
+
+<pre><code class="language-json">{
+  version: &quot;3.0.0&quot;,
+  gauges: {...},
+  counters: {...},
+  histograms: {...},
+  meters: {...},
+  timers: {...}
+}
+</code></pre>
+
+<p>从数据结构中可以看出它将指标分成 5 种数据类型：
+* Gauges：某项指标的瞬时值，例如：当前 Jenkins executor 的总个数（jenkins.executor.count.value）
+* Counters：某项指标的总数值，例如：http 请求活动连接数（http.activeRequests）
+* Meters：一段时间内，某事件的发生概率，例如：Jenkins成功执行的任务每分钟的执行次数（jenkins.runs.success.m1_rate）
+* Histogram：统计指标的分布情况。例如：Jenkins executor 数量的分布（jenkins.executor.count.history）
+* Timer：某项指标的持续时间。例如：Jenkins 任务等待时间（jenkins.job.waiting.duration）</p>
+
 <p>由于指标非常之多，我们就不分别介绍了。具体有哪些指标，读者朋友可以从代码仓库中的 metrics.json 文件了解。</p>
-<h3 id="12-metrics-插件其它接口介绍">1.2 Metrics 插件其它接口介绍</h3>
+
+<h3 id="1-2-metrics-插件其它接口介绍">1.2 Metrics 插件其它接口介绍</h3>
+
 <ul>
-<li>
-<p>/ping：接口返回 <code>pong</code> 代表 Jenkins 存活，如下图：
-<img src="292372-15e36249b868625a.png" alt=""></p>
-</li>
-<li>
-<p>/threads：返回 Jenkins 的线程信息</p>
-</li>
-<li>
-<p>/healthcheck：返回以下指标：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#960050;background-color:#1e0010">disk-space:</span> <span style="color:#960050;background-color:#1e0010">{</span>
-   <span style="color:#960050;background-color:#1e0010">healthy:</span> <span style="color:#960050;background-color:#1e0010">true</span>
-  }<span style="color:#960050;background-color:#1e0010">,</span>
-  <span style="color:#960050;background-color:#1e0010">plugins:</span> {
-    <span style="color:#960050;background-color:#1e0010">healthy:</span> <span style="color:#960050;background-color:#1e0010">true,</span>
-    <span style="color:#960050;background-color:#1e0010">message:</span> <span style="color:#f92672">&#34;No failed plugins&#34;</span>
-  }<span style="color:#960050;background-color:#1e0010">,</span>
-  <span style="color:#960050;background-color:#1e0010">temporary-space:</span> {
-    <span style="color:#960050;background-color:#1e0010">healthy:</span> <span style="color:#960050;background-color:#1e0010">true</span>
-  }<span style="color:#960050;background-color:#1e0010">,</span>
-  <span style="color:#960050;background-color:#1e0010">thread-deadlock:</span> {
-    <span style="color:#960050;background-color:#1e0010">healthy:</span> <span style="color:#960050;background-color:#1e0010">true</span>
+<li>/ping：接口返回 <code>pong</code> 代表 Jenkins 存活，如下图：
+<img src="292372-15e36249b868625a.png" alt="" /></li>
+<li>/threads：返回 Jenkins 的线程信息</li>
+<li>/healthcheck：返回以下指标：</li>
+</ul>
+
+<pre><code class="language-json">  {
+    disk-space: {
+     healthy: true
+    },
+    plugins: {
+      healthy: true,
+      message: &quot;No failed plugins&quot;
+    },
+    temporary-space: {
+      healthy: true
+    },
+    thread-deadlock: {
+      healthy: true
+    }
   }
-<span style="color:#960050;background-color:#1e0010">}</span>
-</code></pre></div></li>
-</ul>
+</code></pre>
+
 <h2 id="2-配置-zabbix-server-与-agent-实现监控及告警">2. 配置 Zabbix server 与 agent 实现监控及告警</h2>
+
 <p>Zabbix server 通过与 Zabbix agent 进行通信实现数据的采集。而 Zabbix agent 又分为被动和主动两种模式。我们使用的是被动模式，也就是Zabbix server 向 agent 索要数据。</p>
+
 <p>所以，我们需要在 Zabbix agent 所在机器放一个获取 Jenkins 指标数据的脚本。再配置 Zabbix server 定时从该 agent 获取数据，最后配置触发器（trigger）实现告警。</p>
+
 <p>接下来的关于 Zabbix 的配置，基于我的 jenkins-zabbix 实验环境，读者朋友需要根据自己的实际情况变更。</p>
-<h3 id="21-配置-zabbix-server-如何从-agent-获取指标数据">2.1 配置 Zabbix server 如何从 agent 获取指标数据</h3>
+
+<h3 id="2-1-配置-zabbix-server-如何从-agent-获取指标数据">2.1 配置 Zabbix server 如何从 agent 获取指标数据</h3>
+
 <p>首先，我们需要告诉 Zabbix server 要与哪些 Zabbix agent 通信。所以，第一步是创建主机，如下图：
-<img src="292372-82ae4d1864e7abc7.png" alt="">
+  <img src="292372-82ae4d1864e7abc7.png" alt="" />
 第二步，在主机列表中点击“Iterms”进行该主机的监控项设置：
-<img src="292372-6903c525459cb7a6.png" alt="">
+  <img src="292372-6903c525459cb7a6.png" alt="" />
 第三步，进入创建监控项页面：
-<img src="292372-a6ab0ea028cbadb0.png" alt="">
+  <img src="292372-a6ab0ea028cbadb0.png" alt="" />
 第四步，创建监控项：
-<img src="292372-47570ec3796d857a.png" alt=""></p>
-<p>这里需要解释其中几个选项为什么要那样填：</p>
-<ul>
-<li><strong>Type</strong>：是 Zabbix server 采集指标的类型，我们选择的是 Zabbix agent，如上文所说。</li>
-<li><strong>Key</strong>：由于我们要监控的指标并不是 Zabbix 预定义的。所以，需要使用用户自定义参数来实现监控 Jenkins 指标。Key 填的值为：jenkins.metrics[gauges.jenkins.node.count.value.value]。<code>jenkins.metrics</code>是需要执行的真正的 Key 名称。而 <code>[]</code> 内是传给该 Key 对应的命令的参数。对于初学者，Zabbix 这部分概念非常不好理解。也许这样会更好理解：在使用用户自定义参数来实现监控的情况下，Zabbix server 会将这个 Key 发送给 agent，然后 agent 根据这个 Key 执行指定的 <strong>逻辑</strong> 以获取指标数据。这个 <strong>逻辑</strong> 通常是一段脚本（shell命令或Python脚本等）。而脚本也是可以传参的，<code>[]</code>中的值就是传给脚本的参数。具体更多细节，下文会继续介绍。</li>
-<li><strong>Type of information</strong>：监控数据的数据类型，由于我们监控的是 Jenkins node 节点的个数，所以，使用数字整型。</li>
-<li><strong>Update interval</strong>：指 Zabbix server 多长时间向 agent 获取一次数据，为方便实验，我们设置为 2s。</li>
-</ul>
+  <img src="292372-47570ec3796d857a.png" alt="" /></p>
+
+<p>这里需要解释其中几个选项为什么要那样填：
+* <strong>Type</strong>：是 Zabbix server 采集指标的类型，我们选择的是 Zabbix agent，如上文所说。
+* <strong>Key</strong>：由于我们要监控的指标并不是 Zabbix 预定义的。所以，需要使用用户自定义参数来实现监控 Jenkins 指标。Key 填的值为：jenkins.metrics[gauges.jenkins.node.count.value.value]。<code>jenkins.metrics</code>是需要执行的真正的 Key 名称。而 <code>[]</code> 内是传给该 Key 对应的命令的参数。对于初学者，Zabbix 这部分概念非常不好理解。也许这样会更好理解：在使用用户自定义参数来实现监控的情况下，Zabbix server 会将这个 Key 发送给 agent，然后 agent 根据这个 Key 执行指定的 <strong>逻辑</strong> 以获取指标数据。这个 <strong>逻辑</strong> 通常是一段脚本（shell命令或Python脚本等）。而脚本也是可以传参的，<code>[]</code>中的值就是传给脚本的参数。具体更多细节，下文会继续介绍。
+* <strong>Type of information</strong>：监控数据的数据类型，由于我们监控的是 Jenkins node 节点的个数，所以，使用数字整型。
+* <strong>Update interval</strong>：指 Zabbix server 多长时间向 agent 获取一次数据，为方便实验，我们设置为 2s。</p>
+
 <p>到此，Zabbix server 端已经配置完成。</p>
-<h3 id="22-配置-zabbix-agent-使其有能力从-jenkins-获取指标数据">2.2 配置 Zabbix agent 使其有能力从 Jenkins 获取指标数据</h3>
+
+<h3 id="2-2-配置-zabbix-agent-使其有能力从-jenkins-获取指标数据">2.2 配置 Zabbix agent 使其有能力从 Jenkins 获取指标数据</h3>
+
 <p>当 Zabbix agent 接收到 server 端的请求，如 <code>jenkins.metrics[gauges.jenkins.node.count.value.value]</code>。Zabbix agent 会读取自己的配置（agent 启动时会配置），配置内容如下：</p>
+
 <pre><code>## Zabbix Agent Configuration File for Jenkins Master
 UserParameter=jenkins.metrics[*], python /usr/lib/zabbix/externalscripts/jenkins.metrics.py $1
-</code></pre><p>根据 Key 名称（jenkins.metrics）找到相应的命令，即：<code>python /usr/lib/zabbix/externalscripts/jenkins.metrics.py $1</code>。并执行它，同时将参数 <code>gauges.jenkins.node.count.value.value</code> 传入到脚本 jenkins.metrics.py 中。jenkins.metrics.py 需要我们在 Jenkins agent 启动前放到 /usr/lib/zabbix/externalscripts/ 目录下。</p>
+</code></pre>
+
+<p>根据 Key 名称（jenkins.metrics）找到相应的命令，即：<code>python /usr/lib/zabbix/externalscripts/jenkins.metrics.py $1</code>。并执行它，同时将参数 <code>gauges.jenkins.node.count.value.value</code> 传入到脚本 jenkins.metrics.py 中。jenkins.metrics.py 需要我们在 Jenkins agent 启动前放到 /usr/lib/zabbix/externalscripts/ 目录下。</p>
+
 <p>jenkins.metrics.py 的源码在 jenkins-zabbix 实验环境中可以找到，篇幅有限，这里就简单介绍一下其中的逻辑。</p>
+
 <p>jenkins.metrics.py 所做的事情，无非就是从 Jenkins master 的 metrics api 获取指标数据。但是由于 api 返回的是 JSON 结构，并不是 Zabbix server 所需要的格式。所以，jenkins.metrics.py 还做了一件事情，就是将 JSON 数据进行扁平化，比如原来的数据为：<code>{&quot;gauges&quot;:{&quot;jenkins.node.count.value&quot;: { &quot;value&quot;: 1 }}}</code> 扁平化后变成： <code>gauges.jenkins.node.count.value.value=1</code>。</p>
+
 <p>如果 jenkins.metrics.py 脚本没有接收参数的执行，它将一次性返回所有的指标如：</p>
+
 <pre><code>......
 histograms.vm.memory.pools.Metaspace.used.window.15m.stddev=0.0
 histograms.vm.file.descriptor.ratio.x100.window.5m.p75=0.0
@@ -395,21 +431,37 @@ gauges.vm.memory.pools.PS-Eden-Space.used.value=19010928
 gauges.jenkins.node.count.value.value=1
 histograms.vm.memory.pools.Code-Cache.used.window.15m.mean=44375961.6
 ......
-</code></pre><p>但是，如果接收到具体参数，如 <code>gauges.jenkins.node.count.value.value</code> ，脚本只返回该参数的值。本例中，它将只返回 <code>1</code>。</p>
+</code></pre>
+
+<p>但是，如果接收到具体参数，如 <code>gauges.jenkins.node.count.value.value</code> ，脚本只返回该参数的值。本例中，它将只返回 <code>1</code>。</p>
+
 <p>jenkins.metrics.py 脚本之所以对 JSON 数据进行扁平化，是因为 Zabbix server 一次只拿一个指标的值（这点需要向熟悉 Zabbix 的人求证，笔者从文档中没有找到明确的说明）。</p>
+
 <p>注意：在 2.1 节中，如果 Key 值设置为：jenkins.metrics，Zabbix server 不会拿 jenkins.metrics.py 返回的所有的指标值自动创建对应的监控项。所以，Key 值必须设置为类似于 jenkins.metrics[gauges.jenkins.node.count.value.value] 这样的值。</p>
-<h2 id="3-配置-zabbix-server-监控指标并告警">3. 配置 Zabbix server 监控指标，并告警</h2>
+
+<h2 id="3-配置-zabbix-server-监控指标-并告警">3. 配置 Zabbix server 监控指标，并告警</h2>
+
 <p>在经过 2.2 节的配置后，如果 Zabbix server 采集到数据，可通过_Monitoring -&gt; Latest data -&gt; Graph_菜单（如下图），看到图形化的报表：</p>
-<p><img src="292372-e46c6e7f12c1716a.png" alt=""></p>
+
+<p><img src="292372-e46c6e7f12c1716a.png" alt="" /></p>
+
 <p>图形化的报表：
-<img src="292372-7ad0297b73be9bbb.png" alt=""></p>
+<img src="292372-7ad0297b73be9bbb.png" alt="" /></p>
+
 <p>有了指标数据就可以根据它进行告警了。告警在 Zabbix 中称为触发器（trigger）。如下图，我们创建了一个当 Jenkins node 小于 2 时，就触发告警的触发器：</p>
-<p><img src="292372-dcb88e44931b70fa.png" alt=""></p>
+
+<p><img src="292372-dcb88e44931b70fa.png" alt="" /></p>
+
 <p>至于最终触发器的后续行为是发邮件，还是发短信，属于细节部分，读者朋友可根据自己的情况进行设置。</p>
+
 <h2 id="小结">小结</h2>
+
 <p>在理解了 Zabbix server 与 agent 之间的通信原理的前提下，使用 Zabbix 监控 Jenkins 是不难的。笔者认为难点在于自动化整个过程。上文中，我们创建主机和添加监控项的过程，是手工操作的。虽然 Zabbix 能通过自动发现主机，自动关联模板来自动化上述过程，但是创建”自动化发现主机“和”自动关联动作“依然是手工操作。这不符合”自动化一切“的”追求“。</p>
+
 <p>最后，如果读者朋友不是历史包袱原因而选择 Zabbix，笔者在这里推荐 Prometheus，一款《Google 运维解密》推荐的开源监控系统。</p>
+
 <h2 id="附录">附录</h2>
+
 <ul>
 <li>Metrics 插件：<a href="https://wiki.jenkins.io/display/JENKINS/Metrics+Plugin">https://wiki.jenkins.io/display/JENKINS/Metrics+Plugin</a></li>
 <li>dropwizard/metrics：<a href="https://metrics.dropwizard.io/4.0.0/">https://metrics.dropwizard.io/4.0.0/</a></li>
@@ -513,6 +565,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -576,8 +637,35 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -594,8 +682,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
             </a>
           </li>
         
@@ -612,8 +736,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -650,6 +810,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -858,6 +1027,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -869,6 +1047,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

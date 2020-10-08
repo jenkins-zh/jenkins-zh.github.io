@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ai on Jenkins 中文社区</title>
+    <title>Ai on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/ai/</link>
-    <description>Recent content in ai on Jenkins 中文社区</description>
+    <description>Recent content in Ai on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 22 Apr 2019 00:00:00 +0000</lastBuildDate>
@@ -39,8 +39,9 @@
 应付这无数的挑战已经超出了人类的能力范围。
 幸好，AIOps 正在成为一种解决方案。
 AIOps 一词是由 Gartner 创造的， 他将其解释为：
- AIOps 结合了大数据，机器学习和可视化技术，通过更强的洞察力来优化 IT 运维。 IT 的领导者应该开始部署 AIOps，以优化当前的性能分析， 并在未来两到五年内将使用范围扩展到 IT 服务管理和自动化。 虽然 Gartner 创造了这个术语，但以我拙见，这还没达到标准。 他的定义以循环中的人为中心，以他的描述 AIOps 基本上是一种高级的大数据分析。 要解决 DevOps 困境，我们要定一个更高的目标。
-那么，AIOps 应该是什么？ 我们先从它不应该是什么开始：一个对现有的运维系统的修饰，软件供应商将&amp;quot;以 AI 驱动&amp;quot;作为卖点。 这种情况已经发生了，当新的技术威胁到现有利益时，往往会发生这种情况。 仅仅向已有工具添加一个 API 是不够的，如果决策需要人为干预，那就不能算是 AIOps。</description>
+AIOps 结合了大数据，机器学习和可视化技术，通过更强的洞察力来优化 IT 运维。 IT 的领导者应该开始部署 AIOps，以优化当前的性能分析，
+并在未来两到五年内将使用范围扩展到 IT 服务管理和自动化。 虽然 Gartner 创造了这个术语，但以我拙见，这还没达到标准。 他的定义以循环中的人为中心，以他的描述 AIOps 基本上是一种高级的大数据分析。 要解决 DevOps 困境，我们要定一个更高的目标。
+那么，AIOps 应该是什么？ 我们先从它不应该是什么开始：一个对现有的运维系统的修饰，软件供应商将&amp;rdquo;以 AI 驱动&amp;rdquo;作为卖点。 这种情况已经发生了，当新的技术威胁到现有利益时，往往会发生这种情况。 仅仅向已有工具添加一个 API 是不够的，如果决策需要人为干预，那就不能算是 AIOps。</description>
     </item>
     
   </channel>

@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -45,7 +45,7 @@
 我们打开配置文件 vim ~/.jenkins/config.xml 后，把字段 useSecurity 的值设置为 false，然后重新启动 Jenkins。你就会发现不需要登陆也能进入管理页面。
 进入页面系统管理-&gt;全局安全配置中，选择启用安全，然后在授权策略中勾选任何用户可以做任何事(没有任何限制)。保存后，找到你希望重置密码的用户，输入新的密码即可。
 其他情况 如果 Jenkins 的根目录在当前用户目录下话，可以通过查找对应进程的方式来确认，下面以 Linux 系统为例说明：
-~# ps -ef | grep jenkins root 26386 26359 0 Jul23 pts/0 00:24:04 java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -jar /usr/share/jenkins/jenkins.war 分析上面的输出，可以得出，该 Jenkins 的根目录为：/var/jenkins_home。
+~# ps -ef | grep jenkins root 26386 26359 0 Jul23 pts/0 00:24:04 java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -jar /usr/share/jenkins/jenkins.war  分析上面的输出，可以得出，该 Jenkins 的根目录为：/var/jenkins_home。
 JENKINS_HOME 如果你的环境变量里设置了 JENKINS_HOME 的话，那么， Jenkins 的根目录就可能是 JENKINS_HOME 指向的目录。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jenkins-zh.cn/tutorial/management/auth/oic-auth/" />
@@ -56,21 +56,24 @@ JENKINS_HOME 如果你的环境变量里设置了 JENKINS_HOME 的话，那么�
 我们打开配置文件 vim ~/.jenkins/config.xml 后，把字段 useSecurity 的值设置为 false，然后重新启动 Jenkins。你就会发现不需要登陆也能进入管理页面。
 进入页面系统管理-&gt;全局安全配置中，选择启用安全，然后在授权策略中勾选任何用户可以做任何事(没有任何限制)。保存后，找到你希望重置密码的用户，输入新的密码即可。
 其他情况 如果 Jenkins 的根目录在当前用户目录下话，可以通过查找对应进程的方式来确认，下面以 Linux 系统为例说明：
-~# ps -ef | grep jenkins root 26386 26359 0 Jul23 pts/0 00:24:04 java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -jar /usr/share/jenkins/jenkins.war 分析上面的输出，可以得出，该 Jenkins 的根目录为：/var/jenkins_home。
+~# ps -ef | grep jenkins root 26386 26359 0 Jul23 pts/0 00:24:04 java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -jar /usr/share/jenkins/jenkins.war  分析上面的输出，可以得出，该 Jenkins 的根目录为：/var/jenkins_home。
 JENKINS_HOME 如果你的环境变量里设置了 JENKINS_HOME 的话，那么， Jenkins 的根目录就可能是 JENKINS_HOME 指向的目录。">
+
+
 
 <meta itemprop="wordCount" content="60">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="通过 OpenID 认证"/>
 <meta name="twitter:description" content="OIC 如果忘记了 Jenkins 的管理员密码的话，也不用担心，只要你有权限访问 Jenkins 的根目录，就可以轻松地重置密码。
 通常情况 Jenkins 的根目录，默认是在当前用户（启动 Jenkins 的操作系统用户）目录的 .jenkins 中。对于 unix 系统而言，也就是 ~/.jenkins。
 我们打开配置文件 vim ~/.jenkins/config.xml 后，把字段 useSecurity 的值设置为 false，然后重新启动 Jenkins。你就会发现不需要登陆也能进入管理页面。
 进入页面系统管理-&gt;全局安全配置中，选择启用安全，然后在授权策略中勾选任何用户可以做任何事(没有任何限制)。保存后，找到你希望重置密码的用户，输入新的密码即可。
 其他情况 如果 Jenkins 的根目录在当前用户目录下话，可以通过查找对应进程的方式来确认，下面以 Linux 系统为例说明：
-~# ps -ef | grep jenkins root 26386 26359 0 Jul23 pts/0 00:24:04 java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -jar /usr/share/jenkins/jenkins.war 分析上面的输出，可以得出，该 Jenkins 的根目录为：/var/jenkins_home。
+~# ps -ef | grep jenkins root 26386 26359 0 Jul23 pts/0 00:24:04 java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -jar /usr/share/jenkins/jenkins.war  分析上面的输出，可以得出，该 Jenkins 的根目录为：/var/jenkins_home。
 JENKINS_HOME 如果你的环境变量里设置了 JENKINS_HOME 的话，那么， Jenkins 的根目录就可能是 JENKINS_HOME 指向的目录。"/>
 
   
@@ -215,18 +218,32 @@ var trackOutboundLink = function(id, url) {
             <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-80">
                 <div class="prose">
                     <h1>通过 OpenID 认证</h1>
-                    <h1 id="oic">OIC</h1>
+                    
+
+<h1 id="oic">OIC</h1>
+
 <p>如果忘记了 Jenkins 的管理员密码的话，也不用担心，只要你有权限访问 Jenkins 的根目录，就可以轻松地重置密码。</p>
+
 <h2 id="通常情况">通常情况</h2>
+
 <p>Jenkins 的根目录，默认是在当前用户（启动 Jenkins 的操作系统用户）目录的 <code>.jenkins</code> 中。对于 unix 系统而言，也就是 <code>~/.jenkins</code>。</p>
+
 <p>我们打开配置文件 <code>vim ~/.jenkins/config.xml</code> 后，把字段 <code>useSecurity</code> 的值设置为 <code>false</code>，然后重新启动 Jenkins。你就会发现不需要登陆也能进入管理页面。</p>
+
 <p>进入页面<strong>系统管理-&gt;全局安全配置</strong>中，选择<strong>启用安全</strong>，然后在<strong>授权策略</strong>中勾选<strong>任何用户可以做任何事(没有任何限制)</strong>。保存后，找到你希望重置密码的用户，输入新的密码即可。</p>
+
 <h2 id="其他情况">其他情况</h2>
+
 <p>如果 Jenkins 的根目录在当前用户目录下话，可以通过查找对应进程的方式来确认，下面以 Linux 系统为例说明：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">~# ps -ef | grep jenkins
+
+<pre><code class="language-text">~# ps -ef | grep jenkins
 root     26386 26359  0 Jul23 pts/0    00:24:04 java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -jar /usr/share/jenkins/jenkins.war
-</code></pre></div><p>分析上面的输出，可以得出，该 Jenkins 的根目录为：<code>/var/jenkins_home</code>。</p>
-<h2 id="jenkins_home">JENKINS_HOME</h2>
+</code></pre>
+
+<p>分析上面的输出，可以得出，该 Jenkins 的根目录为：<code>/var/jenkins_home</code>。</p>
+
+<h2 id="jenkins-home">JENKINS_HOME</h2>
+
 <p>如果你的环境变量里设置了 <code>JENKINS_HOME</code> 的话，那么， Jenkins 的根目录就可能是 <code>JENKINS_HOME</code> 指向的目录。</p>
 
                 </div>
@@ -243,11 +260,14 @@ root     26386 26359  0 Jul23 pts/0    00:24:04 java -Duser.home=/var/jenkins_ho
                     <hr>
                     <p class="b">内容目录</p>
                     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#通常情况">通常情况</a></li>
-    <li><a href="#其他情况">其他情况</a></li>
-    <li><a href="#jenkins_home">JENKINS_HOME</a></li>
-  </ul>
+<ul>
+<li><a href="#oic">OIC</a>
+<ul>
+<li><a href="#通常情况">通常情况</a></li>
+<li><a href="#其他情况">其他情况</a></li>
+<li><a href="#jenkins-home">JENKINS_HOME</a></li>
+</ul></li>
+</ul>
 </nav>
                     
 

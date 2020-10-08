@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>community on Jenkins 中文社区</title>
+    <title>Community on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/community/</link>
-    <description>Recent content in community on Jenkins 中文社区</description>
+    <description>Recent content in Community on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
@@ -73,8 +73,8 @@ Jenkins Wiki 迁移项目确定了 Jenkins Wiki 上访问量最大的 50 个页�
       <description>配置即代码插件 问题陈述：将现有的模式验证工作流程脚本语言 Jenkins 配置即代码插件转换为基于 Java 的重写，从而增强其可读性和可测试性，并由该测试框架提供支持。通过开发 VSCode 插件来促进自动完成和验证，从而增强开发人员的经验，这将有助于开发人员在应用到 Jenkins 实例之前编写正确的 yaml 文件。
 配置即代码插件已被设计为 Jenkins 基于声明式配置文件配置的基本方式，无需成为 Jenkins 专家亦可编写这样的文件，只需将配置过程中转换成用于在 web UI 中执行的代码即可。该插件使用此类模式来验证要应用于 Jenkins 实例的文件。
 启用了新的 JSON 模式后，开发人员现在可以针对其测试 yaml 文件。该模式检查 descriptors，即可以应用于插件或 Jenkins 核心的配置，使用正确的类型并在某些情况下提供帮助文本。 VSCode 允许我们通过一些修改立即测试架构。该项目是 Community Bridge 计划的一部分，Community Bridge 计划是 Linux 基金会创建的一个平台，旨在使开发人员以及支持他们的个人和公司提高开源技术的可持续性、安全性和多样性。您可以看一下Jenkins Community Bridge 项目。
-启用架构验证的步骤   第一步安装 Visual Studio Code 的 JCasC 插件，并通过扩展列表打开扩展。使用 Ctrl + Shift + X 在 VSCode 编辑器中打开扩展列表的快捷方式。
-  为了启用验证，我们需要将其包括在工作空间设置中。依次导航到 File，Preference 和 Settings。内部设置中搜索 json，内部 settings.json 中包含以下配置。
+启用架构验证的步骤  第一步安装 Visual Studio Code 的 JCasC 插件，并通过扩展列表打开扩展。使用 Ctrl + Shift + X 在 VSCode 编辑器中打开扩展列表的快捷方式。
+ 为了启用验证，我们需要将其包括在工作空间设置中。依次导航到 File，Preference 和 Settings。内部设置中搜索 json，内部 settings.json 中包含以下配置。
   { &amp;quot;yaml.</description>
     </item>
     
@@ -89,7 +89,7 @@ Jenkins Wiki 迁移项目确定了 Jenkins Wiki 上访问量最大的 50 个页�
 成果 今年成功完成了 5 个 GSoC 课题：角色策略插件性能优化，插件安装管理 CLI 工具/库，working-hours 插件 - UI 优化，具有 Kubernetes 功能的 Apache Kafka 远程处理，GitLab SCM 多分支流水线支持。我们会在后面的内容中讨论一下上面提到的这几个课题。
 项目细节 我们在 8 月底举行了最后一次 Jenkins 线上例会的演讲然后 Google 在 9 月 3 日发布了这些成果。最后的这些演讲内容可以从这里找到：第一部分，第二部分，第三部分。我们也在 DevOps World | Jenkins World 旧金山以及 DevOps World | Jenkins World 2019 里斯本会议中发布了2019 Jenkins GSoC 报告。
 在下面的章节中，我们对每一个项目做一个简单的总结，第三阶段编码演示文稿的链接以及最后的成品。
-角色策略插件性能优化 角色策略插件是 Jenkins 中最广泛被使用的认证插件之一，但因为其架构问题以及对项目角色的正则表达式检查使其没有因性能著称。Abhyudaya Sharma 与他的几位导师：Oleg Nenashev，Runze Xia，Supun Wanniarachchi 一起进行该项目。他为 Jenkins 插件创建了一个基于 JMH 的微基准测试框架，创建微基准测试然后在一些真实场景中得到了 3501% 的提升。然后他继续深入研究创建了一个基于目录的认证策略插件，当权限范围为目录时该插件为 Jenkins 实例提供了更佳的性能。在他的项目中 Abhyudaya 还修复了对 Jenkins 组策略的配置即代码的支持并为 JCasC 插件贡献了一些优化与修复的代码。</description>
+角色策略插件性能优化 角色策略插件是 Jenkins 中最广泛被使用的认证插件之一，但因为其架构问题以及对项目角色的正则表达式检查使其没有因性能著称。Abhyudaya Sharma 与他的几位导师：Oleg Nenashev，Runze Xia，Supun Wanniarachchi 一起进行该项目。他为 Jenkins 插件创建了一个基于 JMH 的微基准测试框架，创建微基准测试然后在一些真实场景中得到了 3501% 的提升。然后他继续深入研究创建了一个基于目录的认证策略插件，当权限范围为目录时该插件为 Jenkins 实例提供了更佳的性能。在他的项目中 Abhyudaya 还修复了对 Jenkins 组策略的配置即代码的支持并为 JCasC 插件贡献了一些优化与修复的代码。 - 项目页面 - 发布的博客：Jenkins 微基准测试框架， 引入一个新的目录认证插件，角色策略插件性能优化 - 最终评估：幻灯片，视频 - 源码：角色策略插件，目录认证插件</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@ Jenkins Wiki 迁移项目确定了 Jenkins Wiki 上访问量最大的 50 个页�
 我非常荣幸能成为其中一员。 第一天 第一天以贡献者峰会开场。这让大家有机会聚在一起讨论对社区的贡献，把脑海中熟悉的名字和本人对上号。大多数人我只通过视频聊天和在 gitter 上见过，所以当时我特别激动。我们聚在一起了解 Jenkins 开源画卷的起点。
 接下来是同好讨论/非正式会议。我主导这些讨论会，个人认为进展十分顺利。成员组织管理员 Martin d’Anjou 和 Jeff Pearce 为我们带来一场有关 Google 编程夏令营（Google Summer of Code，以下简称 GSoC）项目的演讲。
 GSoC 学生 Natasha Stopa 介绍了她的项目——Plugin Installation Manager Library/CLI Tool。这是一个超酷的项目，在社区受到广泛欢迎。
-讨论会结尾是博思艾伦咨询公司（Booz Allen Hamilton）的 Steven Terrana 的展示和精彩的 Jenkins 模板引擎。如果你还没有试过这个，请一定不要错过[https://github.com/boozallen/jenkins-templating-engine] (https://github.com/boozallen/jenkins-templating-engine)。
+讨论会结尾是博思艾伦咨询公司（Booz Allen Hamilton）的 Steven Terrana 的展示和精彩的 Jenkins 模板引擎。如果你还没有试过这个，请一定不要错过https://github.com/boozallen/jenkins-templating-engine。
 主展厅 从第二天起，我和其他几位 Jenkins 组织管理者将在 Jenkins 社区的专家答疑（Ask the Expert）展位。
 这真的是一场非常有意思的体验，让我有机会了解社区正在做什么，帮助他们解决面对的问题。问题涉及的范围很广，从 Jenkins X 到我负责维护的种种插件，如 Jenkins Prometheus 和 Sysdig Secure Scanning 插件。也有很多关于 Kubernetes 的问题。有很多关于 Kubernetes 使用情况提高的市场营销方面的数据，但对 Kubernetes 上 Jenkins 的超高兴趣度真的让我大吃一惊。当然，也有机会拍点儿自拍。</description>
     </item>
@@ -128,7 +128,7 @@ GSoC 学生 Natasha Stopa 介绍了她的项目——Plugin Installation Manager
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-15-let-s-celebrate-java-11-support/</guid>
       <description>NOTE：这是由 Java 11支持团队准备的联合博客文章：Adrien Lecharpentier、Ashton Treadway、Baptiste Mathus、Jenn Briden、Kevin Earls、MaríaIsabelVilacides、Mark Waite、RamónLeón 和 Oleg Nenashev。
- 我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
+  我们为此努力工作，现在就在这里。我们非常激动地宣布，从 Jenkins 2.164（2019年2月10日发布）和 LTS 2.164.1（ETA：3月14日）开始，在 Jenkins 中全面支持 Java 11。这意味着您现在可以使用 Java 11 JVM 运行 Jenkins master 和代理程序。
 从2018年6月开始，组织了许多活动来改进 Jenkins 代码库并添加 Java 11支持。除了这些事件之外，Core/Plugins 维护者和许多其他贡献者都在努力工作，确保他们发现并解决与 Java 11支持相关的尽可能多的问题。
 支持 Java 11的努力导致在 Jenkins 中创建了 JEP-211: Java 10+ support in Jenkins。它还促使平台特别兴趣小组的成立，以协调 Java 11工作和其他平台支持工作。
 庆祝活动 我们想花点时间感谢参与这些任务的每个人：代码贡献者、问题记者、测试人员、活动策划者和与会者以及社区中所有慷慨地为这项工作提供时间和支持的人。谢谢你们！
@@ -160,7 +160,7 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
 自从我向 Jenkins 提交第一个简单又滑稽的 commit 已经过去六个月（2018 年 9 月）了， 我也尝试过作出更多贡献。然而总的来说，向开源项目贡献代码是具有挑战的， 特别是像 Jenkins 这样有着很长生命周期的项目，项目中不乏遗留代码和系统知识。 它通常难以入手，也很难想到一个计划来持续贡献使你的付出从长远看来是有意义的。
 对于 Jenkins 社区来说，我在尝试加入社区时所遇到的困难是其它人也有可能会面临的， 因此我决定分享我成为 Jenkins 活跃贡献者的心路历程。
 我计划大概每月发布一篇博文来描述我的这段旅程，我将从简单容易入手的项目开始， 随着时间推移再介绍更加复杂的项目。
-从哪开始 jenkins.io 要成为 Jenkins 的贡献者，首先会看到的就是 jenkins.io, 在顶部导航中&amp;quot;社区&amp;quot;下拉列表里第一个&amp;quot;参与&amp;quot;的链接就能将我们带到&amp;quot;参与和贡献&amp;quot;这个页面。
+从哪开始 jenkins.io 要成为 Jenkins 的贡献者，首先会看到的就是 jenkins.io, 在顶部导航中&amp;rdquo;社区&amp;rdquo;下拉列表里第一个&amp;rdquo;参与&amp;rdquo;的链接就能将我们带到&amp;rdquo;参与和贡献&amp;rdquo;这个页面。
 在这个页面中列举了我们能够参与 Jenkins 项目和社区的许多方式。尽管它展示了所有可能的选项供读者选择，但一下子看上去令人有些无所适从。
 这个页面被分成了左右两个部分，左边提供了参与社区的方法，右边是向社区贡献的方法。
 参与社区的建议 在“参与和贡献”页面的左侧是有关参与社区的建议，其中包括结交他人、审阅修改或者提供反馈信息。
@@ -182,11 +182,11 @@ Alex Earl, Alyssa Tong, Ashton Treadway, Baptiste Mathus, Carlos Sanchez, Daniel
       <description>今天Linux 基金会与 CloudBees、Google 和一些其他公司启动了一个新的开源软件基金会，也就是持续交付基金会(CDF). CDF 相信持续交付的力量，它旨在培养与支持开源生态，以及厂商中立的项目。
 Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基金会。 实际上，这样的讨论持续了多年，大致的动机简洁摘要在这里。
 此时，作为一名用户，又意味着什么呢？
-  首先，不会有大的中断。还是同样的人，URL 地址不会变，也会有正常的发布。决策方式也会延续，pull request 也不会发生变化。改变会逐步的进行。
-  这是 Jenkins 项目在这个领域的成熟和重要性的又一证明。在全球有25万个 Jenkins 在运行着，这着实从 IoT 到游戏、从云原生应用到机器学习项目撼动着整个软件研发的世界。对于任何寻求开放异构 DevOps 策略的人来说， Jenkins 是一个显然、安全的选择。
-  CDF 创建了一个公平竞争的环境，这被组织中的贡献者所熟知，同时也会带来更多的贡献者，让 Jenkins 发展的更好、更快。在过去的几年里， Jenkins 项目正在稳步地增长，更多的结构使之变得清晰起来，CDF 是这一轨迹中的最新一步。
-  任何认真的研发团队都会把多种工具和服务结合起来，以覆盖整个软件研发领域。这些团队为了把这些工具集成起来投入了大量的工作。 Jenkins 将会在 CDF 旗下与其他项目紧密合作，使得这些软件之间减少重复。
-  我们的用户作为从业者尝试在他们的组织中改善软件研发流程。他们认为 CI/CD 和自动化可以释放组织所需要的生产力，但对他们的组织而言，并不总是那么显著。因此，我们的用户往往无法得到必要的支持。CDF 将会倡导持续交付的实践，因为这并不是来自某个厂商或项目，它将会联系可以提供帮助的人。
+ 首先，不会有大的中断。还是同样的人，URL 地址不会变，也会有正常的发布。决策方式也会延续，pull request 也不会发生变化。改变会逐步的进行。
+ 这是 Jenkins 项目在这个领域的成熟和重要性的又一证明。在全球有25万个 Jenkins 在运行着，这着实从 IoT 到游戏、从云原生应用到机器学习项目撼动着整个软件研发的世界。对于任何寻求开放异构 DevOps 策略的人来说， Jenkins 是一个显然、安全的选择。
+ CDF 创建了一个公平竞争的环境，这被组织中的贡献者所熟知，同时也会带来更多的贡献者，让 Jenkins 发展的更好、更快。在过去的几年里， Jenkins 项目正在稳步地增长，更多的结构使之变得清晰起来，CDF 是这一轨迹中的最新一步。
+ 任何认真的研发团队都会把多种工具和服务结合起来，以覆盖整个软件研发领域。这些团队为了把这些工具集成起来投入了大量的工作。 Jenkins 将会在 CDF 旗下与其他项目紧密合作，使得这些软件之间减少重复。
+ 我们的用户作为从业者尝试在他们的组织中改善软件研发流程。他们认为 CI/CD 和自动化可以释放组织所需要的生产力，但对他们的组织而言，并不总是那么显著。因此，我们的用户往往无法得到必要的支持。CDF 将会倡导持续交付的实践，因为这并不是来自某个厂商或项目，它将会联系可以提供帮助的人。
   因此，我希望你能明白为什么我们会对此感到如此兴奋！
 实际上，对我们来说，已经为这个想法努力了将近两年。毫不夸张地说，整个 CDF 的想法 源自 Jenkins 项目。
 为此，已经有很多人在幕后做了大量的工作。但有些人扮演了举足轻重的角色，我须亲自感谢他们。为 Chris Aniszczyk 的耐心、坚持，R. Tyler Croy 酝酿并推动着这个想法，Tracy Miranda 将这些想法变成事实。</description>
@@ -245,7 +245,7 @@ Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基
       <description>临近年终，是一个思考总结、展望全局的好时机。那就让我们暂时从日常繁复的工作中停下脚步，一起来盘点 Jenkins 在 2018 这一年的得失与喜乐。
 在整个行业中，对进一步自动化的不懈追求仍在继续。我们正以前所未有的速度编写软件，与此同时，对于软件的需求似乎越来越高，我觉得越来越多的企业和高管都敏锐地意识到软件和开发者已登基为王。在底层的角度，我遇到的每个团队都认为软件交付自动化是他们的“软件工厂”的关键部分，对这些团队而言，创建、管理具有不可思议的灵活性和可视性的自动化十分重要。
 自诞生14年以来，Jenkins 将继续在实现这一目标上发挥重要作用，总之，增长的步伐似乎正在加速。在这个发展飞快的行业里，成为这一成就的一份子着实让我感到自豪。
-把 Jenkins 打造为每个人都会使用的工具，这具有很大的责任感。所以在 Jenkins 社区，我们一直都十分努力。事实上，在各个领域和层面上来说，2018年是整个项目历史上最具有创新性的一年。
+把 Jenkins 打造为每个人都会使用的工具，这具有很大的责任感。所以在 Jenkins 社区，我们一直都十分努力。事实上，在各个领域和层面上来说，*2018年是整个项目历史上最具有创新性的一年*。
  随着不断发展壮大，我们亟需探索出能使更多人更好地参与其中的方法。JEPs 和 SIGs 便应运而生。2018年，我们看到了这些形式得到了巨大的吸引力。经过一年的运营，我认为我们已经学到了很多东西，希望我们会在此基础上继续改进。 这些新的形式带来了新的协作方式。例如：中文本地化 SIG运营的 微信公众号和本地化网站。平台 SIG 在 Java 11 support 中也给予了不少帮助。 我也很高兴看到新一批领导者。由于害怕遗漏一些人，所以我不打算在此一一列出，我们在今年秋天祝贺他们中的许多人作为 Jenkins 大使（请在明年提名更多人!）。那些领导关键工作的人往往是那些不熟悉这些角色的人。 一些领导者也努力发掘新的贡献者。我们正在有意识地思考，我们哪一部分的潜在贡献者没有被发掘出来，为什么没有被发掘出来。这也是任一个企业都在做的事情。同时我们也是 Google Summer of Code 和 Outreachy 参与者。 今年我们的安全流程和修复速度再次大幅提升，反映出用户对我们的信任也随之增强。例如，我们今年推出了遥测系统，通知我们更快地开发出更好的修复方案。  现在，社区改进的最重要的地方是我们为您使用的软件带来的影响。在这一方面，我认为我们在2018年做得不错，产生了我所谓的“五个超级武器”
  Jenkins X 可能是今年最明显的创新，使得在 Kubernetes 上创建现代云应用程序变得更加容易。这也标志着 Jenkins 社区及其使命的重大扩展。 Jenkins Configuration as Code 在今年达到了一重要的里程碑 &amp;ldquo;1.0&amp;rdquo; ，并且他继续获得更大的动力。 &amp;ldquo;Cloud Native Jenkins&amp;rdquo; 是我为新努力作的术语，把 Jenkins 转换为 Kubernetes 上大规模运行的通用 CI/CD 引擎。这里还有许多东西需要定义，但你已经可以看到如 Serverless Jenkins 这样的好东西了。 Evergreen 是另一个需要推出的新项目，它有着雄心勃勃的主题——大量地简化了 Jenkins 的使用和操作。 流水线方面的努力形成了一个新的 SIG，我期待它在2019年带来的新影响。  Jenkins 社区能够将用户可见的改变与社区的改进结合在一起，这不仅是不算秘密的秘密，也是社区不断发展的能力。 展望2019年，毫无疑问，随着我们不断地学习和实践，上述提到的事情将不断地发展、变化、融合和分裂。</description>
     </item>
@@ -262,10 +262,10 @@ Jenkins 的贡献者们已经决定，我们的项目应该加入这个新的基
 一旦我们对之前描述的有了一般性的了解，并想要真正地开始编码，我们可能会对该做些什么感到困惑。
 似乎浏览Jenkins 问题跟踪系统是顺其自然 的下一步，因为那里充满了已经由社区报告了的潜在的缺陷和待改进的部分。然而，你很容易被无数的可能性列表所淹没。 请记住一点，对于一个像这样有十年历史之久的项目，很多是为新手准备的。因此，通过newbie-friendly tickets来过滤可能是最好的主意。
 选择一个工单 在我案例中，我花了一些时间来浏览带 newbie-friendly 标签的工单，直到发现了一个我似乎感兴趣并看起来有能力修复的：
-过程 在这个阶段，当我们准备接手这个工单时，最好让社区中的其他人知道我们正在开始解决它。我们可以很容易做到这一点， 只要把工单分配给我们自己即可（查看工单概览下的 “Assign” 按钮）。
+过程 在这个阶段，当我们准备接手这个工单时，最好让社区中的其他人知道我们正在开始解决它。我们可以很容易做到这一点， 只要把工单分配给我们自己即可（查看工单概览下的 “_Assign_” 按钮）。
 在 Jenkins 的 Jira 中把工单分配给我们自己的话，可以让其他的贡献者知道我们正在处理；另外，为了保证其他人有兴趣对此一起做贡献时，可以知道 该去联系谁或者如何询问状态。也就是说，把工单分配给你自己，并不意味着其他贡献者就无法继续推进。Jenkins 是一个开源项目，欢迎任何人创建他们自己 的 PR，因此，任何人都可以在工单中提出自己的方案。但是，你也能想到，如果工单分配给某个人的话，大多数人在开始工作前也可能会去联系承接人。
 与之相关的是，请牢记当我们把工单分配给自己时，不应该在这个工作上拖延太久。其他的贡献者，可能会由于工单已被分配而忽略。
-当我们马上就要开始工作时，推荐的做法是先点击&amp;rdquo;Start Progress&amp;ldquo;按钮。这个动作，会把状态修改为“In progress”，对社区而言， 意味着我们正在处理这个工单。
+当我们马上就要开始工作时，推荐的做法是先点击&amp;rdquo;Start Progress&amp;ldquo;按钮。这个动作，会把状态修改为“_In progress_”，对社区而言， 意味着我们正在处理这个工单。
 在我们的电脑设置必要的工具 配置，安装和测试 正如在该旅程的第一篇文章中描述的，开始为某个仓库做贡献的第一步 是首先派生到我们自己的 GitHub 账号下，然后，克隆到你的电脑上。
 正如，在 Jenkins Core 仓库中的CONTRIBUTING 文件里 所描述的，让仓库在本地运行的必要步骤。它包括，安装必要的开发工具：Java Development Kit (https://adoptopenjdk.net/[OpenJDK] 为推荐的选择)，Maven 以及任意支持 Maven 项目的 IDE。注意，安装 JDK 和 Maven 的步骤在贡献指南中有链接。</description>
     </item>

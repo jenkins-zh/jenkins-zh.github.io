@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="Working Hours 插件的第一阶段更新" />
 <meta property="og:description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/" />
-<meta property="article:published_time" content="2019-11-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-14T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-14-gsoc-phase-1-updates-on-working-hours-plugin/" /><meta property="article:published_time" content="2019-11-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-11-14T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="Working Hours 插件的第一阶段更新">
 <meta itemprop="description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器">
+
+
 <meta itemprop="datePublished" content="2019-11-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-11-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="170">
+<meta itemprop="wordCount" content="186">
 
 
 
-<meta itemprop="keywords" content="react plugins gsoc gsoc2019," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="react plugins gsoc gsoc2019," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Working Hours 插件的第一阶段更新"/>
 <meta name="twitter:description" content="实现了 Working Hours Plugin 和 React 集成，提供更加好用的排除日期和时间范围选择器"/>
 
@@ -295,77 +298,100 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="cover.jpg" alt="cover"></p>
+
+
+<p><img src="cover.jpg" alt="cover" /></p>
+
 <p>Working Hour Plugin 提供了一个界面，用于设置允许的构建日期和时间。在配置 Working Hour 之外运行的作业将保留到下一个允许的构建时间为止。</p>
+
 <p>在 Google Summer of Code 的第一个代码阶段，我一直在从事 <a href="https://jenkins.io/projects/gsoc/2019/working-hours-improvements/">Working Hours Project</a> 项目，该项目还有待于改善可用性。</p>
+
 <p>当我们想设计一个具有大量可以使用自定义库的 UI 时，React 似乎比经典的 Jelly 页面更受青睐，尤其是日期选择器之类的开源组件。</p>
+
 <p>但是，我们目前正致力于将 React 和 Jenkins 集成在一起，这是一个挑战。</p>
+
 <h2 id="第一阶段的成就">第一阶段的成就</h2>
-<p>在第一个代码阶段，我们专注于 UI 改进，我们取得了以下主要改进：</p>
-<ul>
-<li>一个独立的 Web 应用程序，可以将其集成。</li>
-<li>滑块，用于选择时间范围。</li>
-<li>设置排除日期时间的更多字段。</li>
-<li>用于选择排除日期的预设。</li>
-<li>Jenkins 样式界面</li>
-</ul>
+
+<p>在第一个代码阶段，我们专注于 UI 改进，我们取得了以下主要改进：
+* 一个独立的 Web 应用程序，可以将其集成。
+* 滑块，用于选择时间范围。
+* 设置排除日期时间的更多字段。
+* 用于选择排除日期的预设。
+* Jenkins 样式界面</p>
+
 <h2 id="我们如何将-react-集成到-jenkins-中">我们如何将 React 集成到 Jenkins 中</h2>
+
 <p>可以在<a href="https://drive.google.com/open?id=1JLRCDg9JNBWR0Dfq8w3pTI9mrl6i9JU29pBoH6bO0J8">这里</a>找到集成的解决方案文档</p>
+
 <p>最初，我们发现 BlueOcean 是在 Jenkins 中使用 React 的一个很好的例子，但是对于使用插件进行通用开发来说，它并不是一个好的选择。因此，我们需要找到另一种集成方式。</p>
-<p>这是进行集成的步骤：</p>
-<ul>
-<li>在你 jelly 文件中的挂载点，通常是具有唯一 <code>ID</code> 的元素。</li>
-<li>编写您的 React Application，但需要将安装点设置为您在上面设置的 ID。</li>
-<li>将构建后的插件复制到 webapp 目录。</li>
-<li>在你的 jelly 文件中，使用 script 标签引入</li>
-</ul>
+
+<p>这是进行集成的步骤：
+* 在你 jelly 文件中的挂载点，通常是具有唯一 <code>ID</code> 的元素。
+* 编写您的 React Application，但需要将安装点设置为您在上面设置的 ID。
+* 将构建后的插件复制到 webapp 目录。
+* 在你的 jelly 文件中，使用 script 标签引入</p>
+
 <pre><code>&lt;script type=&quot;text/javascript&quot;
         src=&quot;${resURL}/plugin/working-hours/js/main.js&quot;&gt;&lt;/script&gt;
-</code></pre><ul>
-<li>使用 React 之后，传统的请求将不再可用，处理请求的另一种方法是使用 stapler。您可以定义如下的过程函数[source, java]</li>
-</ul>
-<pre><code>public HttpResponse doDynamic(StaplerRequest request) {
-        if (config == null) {
-            config = ExtensionList.lookup(WorkingHoursPlugin.class).get(0);
-        }
-        String restOfPath = request.getRestOfPath();
-        String[] pathTokens = restOfPath.split(&quot;/&quot;);
-        List&lt;String&gt; params = new ArrayList&lt;&gt;();
-        switch (params.get(0)) {
-            case &quot;list-excluded-dates&quot;:
-                return listExcludedDate(request);
-            case &quot;set-excluded-dates&quot;:
-                return setExcludedDates(request);
-            case &quot;list-time-ranges&quot;:
-                return listTimeRanges(request);
-            case &quot;set-time-ranges&quot;:
-                return setTimeRanges(request);
-        }
+</code></pre>
+
+<ul>
+<li>使用 React 之后，传统的请求将不再可用，处理请求的另一种方法是使用 stapler。您可以定义如下的过程函数[source, java]
+<code>
+public HttpResponse doDynamic(StaplerRequest request) {
+    if (config == null) {
+        config = ExtensionList.lookup(WorkingHoursPlugin.class).get(0);
     }
-</code></pre><h2 id="运行我们的应用程序">运行我们的应用程序</h2>
+    String restOfPath = request.getRestOfPath();
+    String[] pathTokens = restOfPath.split(&quot;/&quot;);
+    List&lt;String&gt; params = new ArrayList&lt;&gt;();
+    switch (params.get(0)) {
+        case &quot;list-excluded-dates&quot;:
+            return listExcludedDate(request);
+        case &quot;set-excluded-dates&quot;:
+            return setExcludedDates(request);
+        case &quot;list-time-ranges&quot;:
+            return listTimeRanges(request);
+        case &quot;set-time-ranges&quot;:
+            return setTimeRanges(request);
+    }
+}
+</code></li>
+</ul>
+
+<h2 id="运行我们的应用程序">运行我们的应用程序</h2>
+
 <p>如果您想看一下我们的插件，可以查看 <a href="https://github.com/jenkinsci/working-hours-plugin/tree/dev">working-hours-plugin</a> 的仓库。
 只需阅读 README 文件，即可运行 working-hours-plugin 的副本。</p>
+
 <h2 id="截图">截图</h2>
+
 <p>当前的插件外观有点简单，插件使用起来有些不便。
 比如说如果我们要输入排除的日期，它将是一个恒定格式的字符串，例如 15/9/2019，但是新的用户界面选择了 React，因此我们可以使用日期选择器进行改进。</p>
+
 <h2 id="当前插件">当前插件</h2>
-<p><img src="working-hours-config.png" alt="working-hours-config"></p>
+
+<p><img src="working-hours-config.png" alt="working-hours-config" /></p>
+
 <h2 id="新版时间范围选择器">新版时间范围选择器</h2>
-<p><img src="working-hours-example-time-range.png" alt="working-hours-example-time-range"></p>
+
+<p><img src="working-hours-example-time-range.png" alt="working-hours-example-time-range" /></p>
+
 <h2 id="新版排除日期">新版排除日期</h2>
-<p><img src="working-hours-exmaple-excluded-date.png" alt="working-hours-exmaple-excluded-date"></p>
+
+<p><img src="working-hours-exmaple-excluded-date.png" alt="working-hours-exmaple-excluded-date" /></p>
+
 <h2 id="帮助链接">帮助链接</h2>
+
 <p>如果您有任何疑问或建议，我们很高兴收到您的来信。
-下面列出了几个有用的链接：</p>
-<ul>
-<li><a href="https://github.com/jenkinsci/working-hours-plugin/tree/dev">Develop Repo</a></li>
-<li><a href="https://github.com/jenkinsci/working-hours-plugin">Main Repo</a></li>
-<li><a href="https://docs.google.com/document/d/1SezLtQejur2ji-KUur3dC3TXK8ivxrttiwHYbTkA8Yk/edit#">Design Doc</a></li>
-<li><a href="https://drive.google.com/open?id=1JLRCDg9JNBWR0Dfq8w3pTI9mrl6i9JU29pBoH6bO0J8">Doc for React Integration Solution</a></li>
-<li><a href="https://gitter.im/jenkinsci/working-hours-plugin">Gitter Chat</a></li>
-<li><a href="https://docs.google.com/presentation/d/1Psz6MrYvw81D_7d8pfW04FDoBtexlSVdgrbqp99Wjm0/edit?usp=sharing">Slides for Phase 1 Demo</a></li>
-<li><a href="https://www.youtube.com/watch?v=MDs0Vr7gnnA">Video Recording for Phase 1</a></li>
-</ul>
+下面列出了几个有用的链接：
+* <a href="https://github.com/jenkinsci/working-hours-plugin/tree/dev">Develop Repo</a>
+* <a href="https://github.com/jenkinsci/working-hours-plugin">Main Repo</a>
+* <a href="https://docs.google.com/document/d/1SezLtQejur2ji-KUur3dC3TXK8ivxrttiwHYbTkA8Yk/edit#">Design Doc</a>
+* <a href="https://drive.google.com/open?id=1JLRCDg9JNBWR0Dfq8w3pTI9mrl6i9JU29pBoH6bO0J8">Doc for React Integration Solution</a>
+* <a href="https://gitter.im/jenkinsci/working-hours-plugin">Gitter Chat</a>
+* <a href="https://docs.google.com/presentation/d/1Psz6MrYvw81D_7d8pfW04FDoBtexlSVdgrbqp99Wjm0/edit?usp=sharing">Slides for Phase 1 Demo</a>
+* <a href="https://www.youtube.com/watch?v=MDs0Vr7gnnA">Video Recording for Phase 1</a></p>
 
 </div>
 

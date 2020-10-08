@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -47,11 +47,14 @@
 <meta itemprop="name" content="Docker Hub 上的官方 Jenkins 镜像">
 <meta itemprop="description" content="正确地使用 Jenkins 镜像">
 
+
+
 <meta itemprop="wordCount" content="34">
 
 
 
-<meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="docker," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker Hub 上的官方 Jenkins 镜像"/>
 <meta name="twitter:description" content="正确地使用 Jenkins 镜像"/>
 
@@ -293,21 +296,30 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
+
+
 <p>目前，在 Docker Hub 上有三个不同的仓库正（或曾经）被当作“官方” Jenkins 镜像。
 本文是为了申明哪个是当前的官方镜像(截至2018年12月).</p>
+
 <h2 id="官方的">官方的</h2>
+
 <p><code>docker pull jenkins/jenkins</code></p>
+
 <p>例如：<a href="https://hub.docker.com/r/jenkins/jenkins/">https://hub.docker.com/r/jenkins/jenkins/</a> 是正确的仓库。</p>
+
 <p>在我的博客
 <a href="https://batmat.net/2018/09/07/how-to-run-and-upgrade-jenkins-using-the-official-docker-image/">对于使用 Jenkins 官方 Docker 镜像推荐的方法</a>
 上也有一些记录。</p>
+
 <h2 id="废弃的">废弃的</h2>
+
 <p><a href="https://hub.docker.com/_/jenkins/"><code>jenkins</code></a>
 已经废弃了很久。
 我们停止使用和更新该镜像的简短原因是，我们每次发版时都需要人工参与。
 <a href="https://hub.docker.com/r/jenkinsci/jenkins"><code>jenkinsci/jenkins</code></a>
 同样已经废弃了很久，但为了过渡，我们会同时更新 <code>jenkins/jenkins</code>（正确的那个） 和 <code>jenkinsci/jenkins</code>。
 2018年12月初，我们停止更新 <code>jenkinsci/jenkins</code>（如果您感兴趣的话，查看 <a href="https://issues.jenkins-ci.org/browse/INFRA-1934">INFRA-1934</a> 可以获取更多详情）。</p>
+
 <p>感谢您的阅读！</p>
 
 </div>
@@ -376,8 +388,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-28-docker-windows-agents/" class="link">
-              Windows Docker Agent 镜像可以常规使用了
+            <a href="/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="link">
+              在 Kubernetes 上使用 Argo 实现 CI/CD
             </a>
           </li>
         
@@ -389,8 +401,53 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-28-docker-windows-agents/" class="link">
+              Windows Docker Agent 镜像可以常规使用了
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/" class="link">
+              使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/05/2020-05-18-docker-agent-image-renaming/" class="link">
               Jenkins agent Docker 镜像重新命名了，你知道吗？
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-13-using-nexus-oss-as-a-proxy-cache-for-docker-images/" class="link">
+              使用 Nexus OSS 为 Docker 镜像提供代理/缓存功能
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/" class="link">
+              使用 kind 和 Docker 启动本地的 Kubernetes
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-21-the-abc-of-devops-implementation-with-containerization-and-docker/" class="link">
+              使用容器化和 Docker 实现 DevOps 的基础知识
             </a>
           </li>
         

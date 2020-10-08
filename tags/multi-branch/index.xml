@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>multi-branch on Jenkins 中文社区</title>
+    <title>Multi Branch on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/multi-branch/</link>
-    <description>Recent content in multi-branch on Jenkins 中文社区</description>
+    <description>Recent content in Multi Branch on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
@@ -21,10 +21,10 @@
 多分支流水线是 Jenkins 中的一种流水线类型，它允许您在 Jenkinsfile 的帮助下为源码管理（SCM）库中的每个分支自动地创建一支流水线。
 什么是 Jenkinsfile Jenkinsfile 是一个文本文件，被用来定义一个 Jenkins 流水线。在 Jenkinsfile 中可以使用领域特定语言（DSL）编写运行 Jenkins 流水线所需要的步骤，从而将流水线实现为代码。
 来自 Jenkins 的定义 使用多分支流水线，您可以为同一项目的不同分支实现不同的 Jenkinsfile，Jenkins 将会自动发现、管理和执行那些分支中包含 Jenkinsfile 的流水线。
-创建一个简单多分支流水线任务的步骤  点击 Jenkins 工作台左上角的 New Item 选项：  在 Enter an item name 中填入任务名，向下滚动，然后选择 Multibranch Pipeline，最后点击 OK 按钮：   填写任务描述（可选）。
-  添加一个分支源（例如：GitHub）并且填写代码仓库的位置。
-  选择 Add 按钮添加凭证并点击 Jenkins。
-  键入 GitHub 用户名、密码、ID 和描述。</description>
+创建一个简单多分支流水线任务的步骤  点击 Jenkins 工作台左上角的 New Item 选项：   在 Enter an item name 中填入任务名，向下滚动，然后选择 Multibranch Pipeline，最后点击 OK 按钮：   填写任务描述（可选）。
+ 添加一个分支源（例如：GitHub）并且填写代码仓库的位置。
+ 选择 Add 按钮添加凭证并点击 Jenkins。
+ 键入 GitHub 用户名、密码、ID 和描述。</description>
     </item>
     
     <item>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>plugins on Jenkins 中文社区</title>
+    <title>Plugins on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/plugins/</link>
-    <description>Recent content in plugins on Jenkins 中文社区</description>
+    <description>Recent content in Plugins on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
@@ -18,11 +18,11 @@
       
       <guid>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/</guid>
       <description>这篇文章将介绍 GitHub Checks API 项目在谷歌编程之夏第三阶段的相关工作。
-在这个夏天的尾声，GitHub Checks API 项目迎来了它在 GSoC 的最后一段旅程。在这篇文章当中，我将向你们展示我们在这最后一个阶段中的相关工作：
- 流水线支持 Rerun 请求支持 Git SCM 支持 文档的完善  以上的特性已经合并在了最新发布的 Checks API 插件 与 GitHub Checks 插件 的 1.0.0 版本中。
+在这个夏天的尾声，GitHub Checks API 项目迎来了它在 GSoC 的最后一段旅程。在这篇文章当中，我将向你们展示我们在这最后一个阶段中的相关工作： - 流水线支持 - Rerun 请求支持 - Git SCM 支持 - 文档的完善
+以上的特性已经合并在了最新发布的 Checks API 插件 与 GitHub Checks 插件 的 1.0.0 版本中。
 流水线支持 对流水线的支持让用户无需依赖任何 Checks API 的实现就可以直接在他们编写的流水线当中轻松发布 checks。
 上图中的 check 可以通过如下脚本实现：
-publishChecks name: &amp;#39;pipeline check&amp;#39;, title: &amp;#39;pipeline &amp;#39;, summary: &amp;#39;# A pipeline check example&amp;#39;, text: &amp;#34;## This check is published through the pipeline script&amp;#34;, detailsURL: &amp;#39;https://ci.jenkins.io&amp;#39; 如果你想要发布 checks 到 GitHub，请安装 GitHub 的实现 并查阅 GitHub API 文档 了解各个参数的相关用途。其中，detailsURL 会拥有一个链接到此次 Jenkins 构建页面的默认值。</description>
+publishChecks name: &#39;pipeline check&#39;, title: &#39;pipeline &#39;, summary: &#39;# A pipeline check example&#39;, text: &amp;quot;## This check is published through the pipeline script&amp;quot;, detailsURL: &#39;https://ci.jenkins.io&#39;  如果你想要发布 checks 到 GitHub，请安装 GitHub 的实现 并查阅 GitHub API 文档 了解各个参数的相关用途。其中，detailsURL 会拥有一个链接到此次 Jenkins 构建页面的默认值。</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@ General Checks API 尽管 General Checks API 是基于 GitHub Checks API 的语�
 本指南介绍了一些 UI 组件，以后所有插件作者都可以使用这些 UI 组件，从而为 Jenkins 中的报告提供丰富的用户界面。为了简化这些库在 Jenkins 作为基于 Java 的 Web 应用程序的上下文中的使用，这些 Java Script 库和组件已打包为普通的 Jenkins 插件。
 在以下各小节中，将逐步介绍这些新组件。为了了解如何使用这些组件的插件，我将演示新功能，同时使用新的用户界面增强现有的 Forensics Plugin。由于 Warnings Next Generation 插件也使用这些新组件，因此您可以在 warnings 插件的文档中或在我们的公共 ci.jenkins.io 实例中看到其他示例，这些示例已经在 warnings 插件的详细信息视图中使用了这些组件。
 新的用户界面插件 新的 Jenkins 插件提供了以下 UI 组件:
- jquery3-api-plugin:为 Jenkins 插件提供 jQuery 3。如其首页所述，jQuery 是一个快速、小型且功能丰富的 JavaScript 库。借助易于使用的 API（可在多种浏览器中使用），使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等事情变得更加简单。兼具多功能性和可扩展性，jQuery 改变了数百万人编写 JavaScript 的方式。 bootstrap4-api-plugin:为 Jenkins 插件提供 Bootstrap 4。Bootstrap 自称是世界上最流行的前端组件库，用于在 Web 上构建响应式，移动优先的项目。它是一个用于使用 HTML、CSS 和 JS 开发的开源工具包。开发人员可以使用他们的 Sass 变量和 mixins、响应式栅格系统、大量的预构建组件以及基于 jQuery 构建的强大插件，快速构建其思想原型或整个应用程序。 data-tables-api-plugin:提供 Jenkins 插件的数据表格。DataTables 是 jQuery Javascript 库的插件。这是一个高度灵活的工具，建立在逐步增强的基础上，可将所有这些高级功能添加到任何 HTML 表中:  上一页，下一页和页面导航 通过文本搜索过滤结果 一次按多列对数据排序 DOM、Javascript、Ajax、服务器端处理 简单主题化 手机端兼容友好   echarts-api-plugin:为 Jenkins 插件提供 ECharts。ECharts 是一种开放源代码的 JavaScript 可视化工具，用于创建直观、交互式和高度可定制的图表。它可以在 PC 和移动设备上流畅运行，并且与大多数现代 Web 浏览器兼容。 font-awesome-api-plugin:为 Jenkins 插件提供 Font Awesome。Font Awesome 具有矢量图标和社交徽标，号称是网络上最受欢迎的图标集和工具包。目前，它包含 1,500 多个免费图标。 popper-api-plugin:为 Jenkins 插件提供 Popper.</description>
+ jquery3-api-plugin:为 Jenkins 插件提供 jQuery 3。如其首页所述，jQuery 是一个快速、小型且功能丰富的 JavaScript 库。借助易于使用的 API（可在多种浏览器中使用），使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等事情变得更加简单。兼具多功能性和可扩展性，jQuery 改变了数百万人编写 JavaScript 的方式。 bootstrap4-api-plugin:为 Jenkins 插件提供 Bootstrap 4。Bootstrap 自称是世界上最流行的前端组件库，用于在 Web 上构建响应式，移动优先的项目。它是一个用于使用 HTML、CSS 和 JS 开发的开源工具包。开发人员可以使用他们的 Sass 变量和 mixins、响应式栅格系统、大量的预构建组件以及基于 jQuery 构建的强大插件，快速构建其思想原型或整个应用程序。 data-tables-api-plugin:提供 Jenkins 插件的数据表格。DataTables 是 jQuery Javascript 库的插件。这是一个高度灵活的工具，建立在逐步增强的基础上，可将所有这些高级功能添加到任何 HTML 表中:  上一页，下一页和页面导航 通过文本搜索过滤结果 一次按多列对数据排序 DOM、Javascript、Ajax、服务器端处理 简单主题化 手机端兼容友好  echarts-api-plugin:为 Jenkins 插件提供 ECharts。ECharts 是一种开放源代码的 JavaScript 可视化工具，用于创建直观、交互式和高度可定制的图表。它可以在 PC 和移动设备上流畅运行，并且与大多数现代 Web 浏览器兼容。 font-awesome-api-plugin:为 Jenkins 插件提供 Font Awesome。Font Awesome 具有矢量图标和社交徽标，号称是网络上最受欢迎的图标集和工具包。目前，它包含 1,500 多个免费图标。 popper-api-plugin:为 Jenkins 插件提供 Popper.</description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@ General Checks API 尽管 General Checks API 是基于 GitHub Checks API 的语�
       <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</guid>
-      <description>&amp;ldquo;人人都在重复造轮子，部分像实现插件管理的&amp;quot;细节&amp;rdquo;（签名元数据，制品校验和，从核心独立出来的插件&amp;hellip;）。 很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&amp;quot; JENKINS-53767
+      <description>&amp;ldquo;人人都在重复造轮子，部分像实现插件管理的&amp;rdquo;细节&amp;rdquo;（签名元数据，制品校验和，从核心独立出来的插件&amp;hellip;）。 很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&amp;rdquo; JENKINS-53767
 我的 Google Summer of Code project 项目试图解决这个问题，方法是创建一个库，该库将在 Jenkins 的不同实现中统一插件管理逻辑，并提供一个可以使用户轻松下载插件并在 Jenkins 启动之前查看插件信息的 CLI 工具。 我很高兴分享我们刚刚发布的 Alpha 版本，您可以在此处查看！
 GSoC 阶段 1 更新 当我考虑将插件管理器从 Jenkins 核心中移出时，由于依赖项的复杂性和数量，这最终成为了最具挑战性的第一步。相反，我们决定首先将 Jenkins Docker 中的 install-plugins.sh bash 脚本转换为 Java。 install-plugins.sh 脚本存在多个问题，即它是 bash 脚本并且扩展性有限，此外，它不会检索所有最新的更新中心的元数据。
 Alpha 版本详情 模仿官方 Jenkins Docker 镜像中 install-plugins.sh 脚本中的操作，新的插件管理库接收插件列表、它们的版本和（或） URL，从中可以下载插件，并下载所需的插件及其依赖。插件从更新中心下载到指定目录，然后可以加载到 Jenkins 中。当前，可以通过 plugins.txt 文件和（或） -plugins 的 cli 选项指定要下载的插件，我们计划进一步扩展可以接收的输入格式。 还支持用于不同更新中心的自定义版本说明符。
@@ -92,8 +92,8 @@ Alpha 版本详情 模仿官方 Jenkins Docker 镜像中 install-plugins.sh 脚�
       <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</guid>
       <description>GitLab 分支源插件已经走出 beta 阶段，并已发布到 Jenkins 更新中心。 它允许您基于 GitLab 用户 或 组 或 子组 项目创建任务。 您可以:
  从 GitLab 用户/组/子组导入单个项目的分支作为任务（多分支流水线任务） 从 GitLab 用户/组/子组导入所有或部分项目的分支作为任务（GitLab 组任务或 GitLab 文件夹组织）  GitLab 组项目对项目进行扫描， 根据设置的规则导入流水线任务。 导入项目之后， Jenkins 立即基于 Jenkinsfile 流水线脚本运行任务并且将状态通知到 GitLab 流水线状态。 这个插件与其他分支源插件不同，它提供了 GitLab 服务器配置，可以在系统配置中配置。 Jenkins 配置即代码 (JCasC) 也可以用于配置服务器。 要想了解更多关于服务器配置的信息，请参考我之前的博客。
-要求   Jenkins - 2.176.2 (LTS)
-  GitLab - v11.0+
+要求  Jenkins - 2.176.2 (LTS)
+ GitLab - v11.0+
   创建任务 要创建多分支流水线任务（使用 GitLab 分支源）或 GitLab 组任务，您必须将 GitLab 个人访问令牌添加到服务端配置。 凭据用于获取项目的元数据，并在 GitLab 服务器上设置 hook。 如果令牌具有管理访问权限，您还可以设置 系统 Hook，而 Web Hook 可以从任何用户令牌设置。</description>
     </item>
     
@@ -104,7 +104,7 @@ Alpha 版本详情 模仿官方 Jenkins Docker 镜像中 install-plugins.sh 脚�
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</guid>
       <description>流水线是在 Jenkins 中创建任务的有效的和现代的方式。 为了快速、简单地识别流水线变更，我们开发了流水线配置历史插件。 这个插件检测流水线的变更，并为用户提供一个选项，以明显地、可追溯地查看流水线配置两次构建（差异）之间的变更。
-一切是如何开始的 这一切开始于十年之前 —— 经典的任务类型 (例如：自由风格、Maven 等等)。 每隔一段时间，用户就会联系我们，因为他们的任务无法在一夜之间完成。 为什么这个任务失败了呢？ 这次失败和任务配置变更有关系吗？ 用户典型的回答是：&amp;ldquo;我们没有改任何东西&amp;rdquo;，但这是真的吗？ 我们思考了这个问题，并决定开发一个插件来帮助我们解决这个问题。 这就是plugin:jobConfigHistory[任务配置历史]的想法和开始。
+一切是如何开始的 这一切开始于十年之前 —— 经典的任务类型 (例如：自由风格、Maven 等等)。 每隔一段时间，用户就会联系我们，因为他们的任务无法在一夜之间完成。 为什么这个任务失败了呢？ 这次失败和任务配置变更有关系吗？ 用户典型的回答是：&amp;rdquo;我们没有改任何东西&amp;rdquo;，但这是真的吗？ 我们思考了这个问题，并决定开发一个插件来帮助我们解决这个问题。 这就是plugin:jobConfigHistory[任务配置历史]的想法和开始。
 现在可以查看任务配置的变更(例如其他分支、JDK版本等)，而且更常见的情况是，破坏构建的原因是任务配置的变更。
 多年来，该插件得到了开发，目前仍在开发中。 添加了新的功能，不仅可以查看任务配置，还可以查看全局和代理配置的变更。 还可以恢复旧的配置版本。 如今，这个插件已经有超过30,000次安装量。 多年来，JobConfigHistory 减轻了我们的日常工作 —— 我们有超过3000个 Jenkins 任务！ 然后出现了一种新的任务类型：流水线。
 流水线 —— 需要一些新的东西 流水线任务和经典的任务类型有根本地区别。 经典的任务类型是通过 Jenkins GUI 配置的，而流水线任务是配置即代码。 实际上，每个流水线任务都是通过 Jenkins GUI 创建的，然而这并不一定是流水线配置的位置。 流水线可以被配置：
@@ -144,8 +144,8 @@ CI/CD 流水线 Jenkins 是 CI/CD 的同义词，它是自动化开发、部署�
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
-      <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件：
- GitLab API 插件 - 包装 GitLab Java APIs。 GitLab 分支源插件 - 包括两个包：  io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。    现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
+      <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件： * GitLab API 插件 - 包装 GitLab Java APIs。 * GitLab 分支源插件 - 包括两个包： * io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 * io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。
+现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
     </item>
     
     <item>

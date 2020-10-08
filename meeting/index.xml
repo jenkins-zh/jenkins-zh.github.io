@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins 中文社区</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-09-16/</guid>
-      <description>Jenkins 系列教程  教程文字部分  https://github.com/jenkins-zh/jenkins-zh/pull/335/files   联系了部分有合作意愿的社区（会有一个单独的微信群）  在片头、片尾添加logo 讲师合作录制视频   录制周期  情况比较好的话，一周一个视频 时间、人员紧张的话，尽量两周一个视频   视频剪辑  工具，喵影工厂 片头，主题、讲师等 片尾，后期制作的人员以及合作社区等 画面的切换，部分内容的剪辑    媒体账号状态分享  微信公众号 开源中国 B站 论坛  </description>
+      <description> Jenkins 系列教程  教程文字部分  https://github.com/jenkins-zh/jenkins-zh/pull/335/files  联系了部分有合作意愿的社区（会有一个单独的微信群）  在片头、片尾添加logo 讲师合作录制视频  录制周期  情况比较好的话，一周一个视频 时间、人员紧张的话，尽量两周一个视频  视频剪辑  工具，喵影工厂 片头，主题、讲师等 片尾，后期制作的人员以及合作社区等 画面的切换，部分内容的剪辑   媒体账号状态分享  微信公众号 开源中国 B站 论坛  </description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-06-10/</guid>
-      <description>UCloud 服务器管理  Nexus 上线了  https 有问题    企业合作  中信  技术活动没有确定   句子互动  作为赞助商 提供了一年的套餐 https://github.com/jenkins-zh/jenkins-zh/pull/271   kubesphere  https://github.com/kubesphere/kubesphere/issues/2182    著作权 * 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创） * 在社区提供的翻译稿，在我们的公众号上首次发布 * 应该说明作者、翻译者等的具体版权说明  </description>
+      <description> UCloud 服务器管理  Nexus 上线了  https 有问题   企业合作  中信  技术活动没有确定  句子互动  作为赞助商 提供了一年的套餐 https://github.com/jenkins-zh/jenkins-zh/pull/271  kubesphere  https://github.com/kubesphere/kubesphere/issues/2182   著作权 * 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创） * 在社区提供的翻译稿，在我们的公众号上首次发布 * 应该说明作者、翻译者等的具体版权说明  </description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-05-13/</guid>
-      <description>UCloud 服务器管理  Nexus 上线了  http://repo.jenkins-zh.cn/ https 有问题    企业合作  KubeSphere  5月19日 官宣 https://github.com/jenkins-zh/jenkins-zh/pull/252   中信  招聘信息的发布（论坛） 技术活动没有确定   句子互动  作为赞助商 提供了一年的套餐 https://github.com/jenkins-zh/jenkins-zh/pull/271   禅道  技术分享 5月20日 有礼品赞助 文章的贡献（原创、翻译）   杰蛙  5月23日下午（周六），沙龙   F5  Nginx 中文社区成立的官宣    著作权 * 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创） * 在社区提供的翻译稿，在我们的公众号上首次发布 * 应该说明作者、翻译者等的具体版权说明  社区激励  推文 https://github.com/jenkins-zh/jenkins-zh/issues/237  社区媒体账号运营情况  简书 @yJunS 开源中国 微博 公众号  </description>
+      <description> UCloud 服务器管理  Nexus 上线了  http://repo.jenkins-zh.cn/ https 有问题   企业合作  KubeSphere  5月19日 官宣 https://github.com/jenkins-zh/jenkins-zh/pull/252  中信  招聘信息的发布（论坛） 技术活动没有确定  句子互动  作为赞助商 提供了一年的套餐 https://github.com/jenkins-zh/jenkins-zh/pull/271  禅道  技术分享 5月20日 有礼品赞助 文章的贡献（原创、翻译）  杰蛙  5月23日下午（周六），沙龙  F5  Nginx 中文社区成立的官宣   著作权 * 翻译文章不能算是原创（个例，来自 jenkins.io 可以在公众号里申明为原创） * 在社区提供的翻译稿，在我们的公众号上首次发布 * 应该说明作者、翻译者等的具体版权说明  社区激励  推文 https://github.com/jenkins-zh/jenkins-zh/issues/237  社区媒体账号运营情况  简书 @yJunS 开源中国 微博 公众号  </description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-04-15/</guid>
-      <description>UCloud 服务器管理  开始部署 Jenkins  运行的位置保持不变（阿里云）    与 KubeSphaere 社区合（青云）作  技术方向  https://github.com/jenkins-zh/jenkins-formulas   内容  互相推送一些文章、投稿等等    社区激励 记录第三次社区激励的记录 @yJunS
+      <description> UCloud 服务器管理  开始部署 Jenkins  运行的位置保持不变（阿里云）   与 KubeSphaere 社区合（青云）作  技术方向  https://github.com/jenkins-zh/jenkins-formulas  内容  互相推送一些文章、投稿等等   社区激励 记录第三次社区激励的记录 @yJunS
 社区媒体账号运营情况  简书 @yJunS changelog 有定时更新 @zhaoying818 讲师征集 @linan607  </description>
     </item>
     
@@ -63,8 +63,10 @@
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-04-01/</guid>
-      <description>中文教程  在jenkins中配置钉钉通知  https://github.com/jenkins-infra/wechat/pull/333/files   helm chart 的应用  https://github.com/jenkins-zh/jenkins-zh-courses/pull/5/files   会议记录页面改善  https://github.com/jenkins-zh/jenkins-zh/pull/204    UCloud 服务器管理  容器中运行 nginx 在测试 流水线更新 nginx 配置文件的在测试  https://github.com/jenkins-zh/shared-library   ssh 端口的修改 ✅ ssh 证书过期的程序正在进行  python(crontab)   用户审计 ✅  用户远程登录的操作记录都能记录下来   Jenkins 节点的挂载 需要在私有 git 仓库中记录服务区文件以及其他的配置信息 @linuxsuren  每个服务器 ssh 端口 列出一个清单，要记录哪些私有信息 @anxk    社区媒体账号运营情况   活跃的成员
- wenjunzhangp 0N0thing zhaoying818    微信公众号的文章发布以及效果都比之前要好</description>
+      <description>中文教程  在jenkins中配置钉钉通知  https://github.com/jenkins-infra/wechat/pull/333/files  helm chart 的应用  https://github.com/jenkins-zh/jenkins-zh-courses/pull/5/files  会议记录页面改善  https://github.com/jenkins-zh/jenkins-zh/pull/204   UCloud 服务器管理  容器中运行 nginx 在测试 流水线更新 nginx 配置文件的在测试  https://github.com/jenkins-zh/shared-library  ssh 端口的修改 ✅ ssh 证书过期的程序正在进行  python(crontab)  用户审计 ✅  用户远程登录的操作记录都能记录下来  Jenkins 节点的挂载 需要在私有 git 仓库中记录服务区文件以及其他的配置信息 @linuxsuren  每个服务器 ssh 端口 列出一个清单，要记录哪些私有信息 @anxk   社区媒体账号运营情况  活跃的成员
+ wenjunzhangp 0N0thing zhaoying818  微信公众号的文章发布以及效果都比之前要好
+ 定期激励 @yJunS
+ 文章 review 或者修改的不及时 @yJunS</description>
     </item>
     
     <item>
@@ -73,7 +75,7 @@
       <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-03-18/</guid>
-      <description>案例  构建 maven 项目，推送镜像 @donhui  https://github.com/jenkins-zh/jenkins-zh-courses/pull/3/files   构建 gradle 项目，推送镜像 @donhui 构建 golang 项目，推送镜像 @zhaoying818 构建 nodejs 项目，推送镜像 @yJunS 构建 helm chart 项目 @linuxsuren  自定义发行版 </description>
+      <description> 案例  构建 maven 项目，推送镜像 @donhui  https://github.com/jenkins-zh/jenkins-zh-courses/pull/3/files  构建 gradle 项目，推送镜像 @donhui 构建 golang 项目，推送镜像 @zhaoying818 构建 nodejs 项目，推送镜像 @yJunS 构建 helm chart 项目 @linuxsuren  自定义发行版 </description>
     </item>
     
     <item>
@@ -94,10 +96,10 @@
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-03-13/</guid>
-      <description>Jenkins 中文社区基础设施运维
+      <description> Jenkins 中文社区基础设施运维
 项目  https://github.com/jenkins-zh/jenkins-cli/ https://github.com/jenkins-zh/wechat-backend https://github.com/jenkins-zh/docker-zh https://github.com/jenkins-zh/mirror-proxy https://github.com/jenkins-zh/jenkins-zh  https://updates.jenkins.io/update-center.json https://updates.jenkins-zh.cn/update-center.json
-服务器  阿里云2台  其中一台有外网   UCloud 规划中  告警 安全 优化 考虑 HA
-自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）   长期  自动化运维以及运维团队的培养    </description>
+服务器  阿里云2台  其中一台有外网  UCloud 规划中  告警 安全 优化 考虑 HA
+自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）  长期  自动化运维以及运维团队的培养   </description>
     </item>
     
     <item>
@@ -111,8 +113,8 @@
 下次会议时间：下周一
 宣传 志愿者征集
 文档 https://jenkins-zh.cn/tutorial/ 作为基础，继续完善
- 结构  针对不同层次的用户 下次讨论具体内容的会议   内容  比较少   格式  生成来一个 PDF 文件（流水线自动完成），需要调研工作 @lisong    教程结构  最佳实践  流水线+共享库 @cuidan    视频 https://space.bilibili.com/433584098
- 剪辑  需求  初学者  环境搭建 jenkins+kubernetes jenkins 运行机制  master、agent 之间是如何通讯的 插件扩展机制   devops 的思路、流程、案例   自由风格转流水线  流水线+共享库 测试环境 生产环境发布   如何与现有系统集成  API http://surenpi.</description>
+ 结构  针对不同层次的用户 下次讨论具体内容的会议  内容  比较少  格式  生成来一个 PDF 文件（流水线自动完成），需要调研工作 @lisong   教程结构  最佳实践  流水线+共享库 @cuidan   视频 https://space.bilibili.com/433584098
+ 剪辑  需求  初学者  环境搭建 jenkins+kubernetes jenkins 运行机制  master、agent 之间是如何通讯的 插件扩展机制  devops 的思路、流程、案例  自由风格转流水线  流水线+共享库 测试环境 生产环境发布  如何与现有系统集成  API http://surenpi.com/blog/devops/jenkins/api/  参考的项目（k8s）  演练场（playground）@yJunS  https://kubernetes.</description>
     </item>
     
     <item>
@@ -121,9 +123,9 @@
       <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-03-04/</guid>
-      <description>  GSoC
- Jenkins 发行版（https://community.jenkins-zh.cn/t/jenkins/241） 有两个印度的学生有兴趣 每个人的配置保存到哪里？  官方 用户   https://github.com/jenkins-zh/jenkins-cli/pull/340/files    下次在线研讨会
- 时间，提前到八点半  修改社区的日历为：每周八点半，持续一个半小时   直播  对带宽+电脑资源要求比较高      </description>
+      <description> GSoC
+ Jenkins 发行版（https://community.jenkins-zh.cn/t/jenkins/241） 有两个印度的学生有兴趣 每个人的配置保存到哪里？  官方 用户  https://github.com/jenkins-zh/jenkins-cli/pull/340/files  下次在线研讨会
+ 时间，提前到八点半  修改社区的日历为：每周八点半，持续一个半小时  直播  对带宽+电脑资源要求比较高    </description>
     </item>
     
     <item>
@@ -132,10 +134,10 @@
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2020-01-08/</guid>
-      <description>  线下活动
- 北京 其他城市    GSoC
- Jenkins 发行版（https://community.jenkins-zh.cn/t/jenkins/241）    论坛
- 自动同步博客文章    </description>
+      <description> 线下活动
+ 北京 其他城市  GSoC
+ Jenkins 发行版（https://community.jenkins-zh.cn/t/jenkins/241）  论坛
+ 自动同步博客文章   </description>
     </item>
     
     <item>
@@ -144,13 +146,13 @@
       <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-12-25/</guid>
-      <description>  论坛
- 邮箱没有配置好（网络超时，怀疑是由于网络代理设置的有问题） 给管理更多的管理权限  依赖邮箱的配置   把论坛的版本调整为正式版 @yJunS    介绍 Jenkins 容器发行版
- 尝试提一个 proposal 到 GSOC（https://jenkins.io/sigs/gsoc/） Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn      增加文章作者（译者）的统计
-  增加例会参加成员的统计
-  定期的网络研讨会（https://community.jenkins-zh.cn/t/jenkins/149）
-  媒体情况统计
- 论坛 公众号    文章翻译 https://github.com/jenkins-infra/wechat/pull/282
+      <description> 论坛
+ 邮箱没有配置好（网络超时，怀疑是由于网络代理设置的有问题） 给管理更多的管理权限  依赖邮箱的配置  把论坛的版本调整为正式版 @yJunS  介绍 Jenkins 容器发行版
+ 尝试提一个 proposal 到 GSOC（https://jenkins.io/sigs/gsoc/） Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn   增加文章作者（译者）的统计
+ 增加例会参加成员的统计
+ 定期的网络研讨会（https://community.jenkins-zh.cn/t/jenkins/149）
+ 媒体情况统计
+ 论坛 公众号  文章翻译 https://github.com/jenkins-infra/wechat/pull/282
   </description>
     </item>
     
@@ -160,9 +162,9 @@
       <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-12-11/</guid>
-      <description>  论坛
- 邮箱没有配置好 更换域名（ok）@yJunS  还有一些链接没有更换，不紧急   给管理更多的管理权限  依赖邮箱的配置   把阿里云域名的权限给到管理员 (ok) @linuxsuren 管理员招募 https://discourse.jenkins-zh.cn/t/topic/103 把论坛的版本调整为正式版 @yJunS    介绍 Jenkins 容器发行版
- https://github.com/LinuxSuRen/docker-zh (ok) Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn      及时把公共信息放在很明显的位置，还是有人不去仔细看
+      <description> 论坛
+ 邮箱没有配置好 更换域名（ok）@yJunS  还有一些链接没有更换，不紧急  给管理更多的管理权限  依赖邮箱的配置  把阿里云域名的权限给到管理员 (ok) @linuxsuren 管理员招募 https://discourse.jenkins-zh.cn/t/topic/103 把论坛的版本调整为正式版 @yJunS  介绍 Jenkins 容器发行版
+ https://github.com/LinuxSuRen/docker-zh (ok) Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn   及时把公共信息放在很明显的位置，还是有人不去仔细看
   </description>
     </item>
     
@@ -172,9 +174,9 @@
       <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-11-27/</guid>
-      <description>  论坛
- 邮箱没有配置好 更换域名（https://discourse.jenkins-zh.cn/t/topic/86/7）@yJunS 给管理更多的管理权限 把阿里云域名的权限给到管理员@linuxsuren 管理员招募 https://discourse.jenkins-zh.cn/t/topic/103    介绍 Jenkins 容器发行版
- https://github.com/LinuxSuRen/docker-zh Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn      </description>
+      <description> 论坛
+ 邮箱没有配置好 更换域名（https://discourse.jenkins-zh.cn/t/topic/86/7）@yJunS 给管理更多的管理权限 把阿里云域名的权限给到管理员@linuxsuren 管理员招募 https://discourse.jenkins-zh.cn/t/topic/103  介绍 Jenkins 容器发行版
+ https://github.com/LinuxSuRen/docker-zh Jenkins 发行版的定制  jenkins+2.190.3+localization-zh-cn+++ http://custom.jenkins-zh.cn?version=2.190.3&amp;amp;plugin=localization-zh-cn    </description>
     </item>
     
     <item>
@@ -183,9 +185,9 @@
       <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-11-13/</guid>
-      <description>  论坛
- 管理员招募？ 如何管理 国内实名验证的问题（如何保证每个人都有手机号信息）    Jenkins 相关资源下载很慢，包括：容器镜像、deb 镜像源、插件等
- https://github.com/jenkins-zh/mirror-adapter    </description>
+      <description> 论坛
+ 管理员招募？ 如何管理 国内实名验证的问题（如何保证每个人都有手机号信息）  Jenkins 相关资源下载很慢，包括：容器镜像、deb 镜像源、插件等
+ https://github.com/jenkins-zh/mirror-adapter   </description>
     </item>
     
     <item>
@@ -194,14 +196,14 @@
       <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-10-30/</guid>
-      <description>例会时间
- 双周，指的是以年为单位的，第一周为单周，第二周为双周，以此类推    论坛
- 管理员招募？    捐助
- 充值到阿里云账号 一周之内，发出一份公开的感谢信（测试吧）@linuxsuren    清理不活跃的账号权限
- github 百度统计 @yJunS 公众号(zhaizhijun0) 统一下其他媒体平台的关联手机号 @yJunS    Jenkins 相关资源下载很慢，包括：容器镜像、deb 镜像源、插件等
- 思考如何能把这块接起来    视频，在微信公众号上发布
- 技术交流 例会    微信群
- 坏处  缺少管理员 不希望有人同时在多个群里发同样的问题   好处  希望交流的人肯定是大于500人的 方便通知（技术相关的，不会有活动类的）   能够解决管理问题的前提下，可以开群2。管理员必须参加例会，可以不做其他的 管理员需要做的事情 @zhaoying818  能够认同并严格执行群管理规则 时间上，机器人会负责拉人，管理员审批通过；或者，警告违规的人；不听警告的踢出      流量的导向?</description>
+      <description> 例会时间  双周，指的是以年为单位的，第一周为单周，第二周为双周，以此类推  论坛  管理员招募？  捐助
+ 充值到阿里云账号 一周之内，发出一份公开的感谢信（测试吧）@linuxsuren  清理不活跃的账号权限
+ github 百度统计 @yJunS 公众号(zhaizhijun0) 统一下其他媒体平台的关联手机号 @yJunS  Jenkins 相关资源下载很慢，包括：容器镜像、deb 镜像源、插件等
+ 思考如何能把这块接起来  视频，在微信公众号上发布
+ 技术交流 例会  微信群
+ 坏处  缺少管理员 不希望有人同时在多个群里发同样的问题  好处  希望交流的人肯定是大于500人的 方便通知（技术相关的，不会有活动类的）  能够解决管理问题的前提下，可以开群2。管理员必须参加例会，可以不做其他的 管理员需要做的事情 @zhaoying818  能够认同并严格执行群管理规则 时间上，机器人会负责拉人，管理员审批通过；或者，警告违规的人；不听警告的踢出   流量的导向?
+ 新人介绍
+ zhaoying818   </description>
     </item>
     
     <item>
@@ -210,7 +212,7 @@
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-10-16/</guid>
-      <description> 例会时间  双周，指的是以年为单位的，第一周为单周，第二周为双周，以此类推   论坛  http://discourse.surenpi.com/ 邮箱服务器，不支持腾讯企业邮箱（可以自己搭建一个） 管理员   捐助  充值到阿里云账号    </description>
+      <description> 例会时间  双周，指的是以年为单位的，第一周为单周，第二周为双周，以此类推  论坛  http://discourse.surenpi.com/ 邮箱服务器，不支持腾讯企业邮箱（可以自己搭建一个） 管理员  捐助  充值到阿里云账号   </description>
     </item>
     
     <item>
@@ -220,15 +222,12 @@
       
       <guid>https://jenkins-zh.cn/meeting/2019-09-22/</guid>
       <description>今天主要讨论社区对于接收外部资金捐助的事情
-  有捐助意向的企业是：测吧（北京）科技有限公司
-  金额
- 我的理解是至少能给到2500（是基于在阿里云上购买一年的服务器的费用） 本次希望能得到2500～10000元的捐助    捐助方的权益
- 在官网首页以及合作伙伴中加logo以及链接    是否专款专用？
-  公开社区基金的用途
- 基础设施（域名、服务器） 技术类活动组织（茶歇、礼品、场地） 成员激励：季度、年度    社区基金问题
- 没有对公账户 缺少了解财务的人才  考虑从在校学生里的相关专业来招募   需要在一个地方明确地列出来资金的使用情况（进账、出账） 对资金的（进账、出账）做分类    需要确定一个流程
- 确定意向 确定捐助细节  捐助类型（资金、实物、虚拟物品等） 接收款项的账户 资金用途 时间 双方的联系人   公开捐助记录（历次）  https://jenkins-zh.cn/about/sponsors-list/（增加类型以及明细）   撰写并发布感谢捐助方的文章    论坛
- 选型（开源）  https://github.com/discourse/discourse https://github.com/satellity/satellity https://github.</description>
+ 有捐助意向的企业是：测吧（北京）科技有限公司 金额  我的理解是至少能给到2500（是基于在阿里云上购买一年的服务器的费用） 本次希望能得到2500～10000元的捐助  捐助方的权益  在官网首页以及合作伙伴中加logo以及链接  是否专款专用？
+ 公开社区基金的用途
+ 基础设施（域名、服务器） 技术类活动组织（茶歇、礼品、场地） 成员激励：季度、年度  社区基金问题
+ 没有对公账户 缺少了解财务的人才  考虑从在校学生里的相关专业来招募  需要在一个地方明确地列出来资金的使用情况（进账、出账） 对资金的（进账、出账）做分类  需要确定一个流程
+ 确定意向 确定捐助细节  捐助类型（资金、实物、虚拟物品等） 接收款项的账户 资金用途 时间 双方的联系人  公开捐助记录（历次）  https://jenkins-zh.cn/about/sponsors-list/（增加类型以及明细）  撰写并发布感谢捐助方的文章  论坛
+ 选型（开源）  https://github.com/discourse/discourse https://github.com/satellity/satellity https://github.com/search?q=forum https://github.com/b3log/symphony  管理员（征集？严格的挑选）  考虑分短期和长期的管理员  调试完成后再使用基金   </description>
     </item>
     
     <item>
@@ -237,9 +236,9 @@
       <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-09-18/</guid>
-      <description>线上活动  hacktoberfest 定期的线上活动，由于 zoom 出了问题，暂时没有推进  线下活动  上海  10月20日，人民广场 https://github.com/jenkins-zh/jenkins-zh/pull/95 人数（120），门票50 议题  Testerhome 接口测试（与 Jenkins 无关） UWA 自动化测试（与 Jenkins 无关） daocloud（待定）      社区合作   开源年会
- 给社区贡献的同学一张免费的门票（早鸟票99），以及其他的权益 没有在当地活跃的成员，无法开展我们社区的展台 工作坊（暂时无人组织）    开源基础设施
- 工作坊（暂时无人组织）    社区管理  是否容易获取到社区的动态 微信群  难以做到用户增长 其他问题    </description>
+      <description> 线上活动  hacktoberfest 定期的线上活动，由于 zoom 出了问题，暂时没有推进  线下活动  上海  10月20日，人民广场 https://github.com/jenkins-zh/jenkins-zh/pull/95 人数（120），门票50 议题  Testerhome 接口测试（与 Jenkins 无关） UWA 自动化测试（与 Jenkins 无关） daocloud（待定）    社区合作  开源年会
+ 给社区贡献的同学一张免费的门票（早鸟票99），以及其他的权益 没有在当地活跃的成员，无法开展我们社区的展台 工作坊（暂时无人组织）  开源基础设施
+ 工作坊（暂时无人组织）   社区管理  是否容易获取到社区的动态 微信群  难以做到用户增长 其他问题   </description>
     </item>
     
     <item>
@@ -248,7 +247,7 @@
       <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-09-05/</guid>
-      <description>社区治理  公众号数据分享  线下活动 上海  地点：人民广场 费用：35 时间：需要进一步确定 日程：十月底  线上活动  形式：定期 时长：一小时 时间：周日晚上七点：grhahaha、yJunS 工作日（八点、九点）：donhui、linan607、linuxsuren 费用：1～2 回顾：不作为标配，但有人愿意做的话，可以有  </description>
+      <description> 社区治理  公众号数据分享  线下活动 上海  地点：人民广场 费用：35 时间：需要进一步确定 日程：十月底  线上活动  形式：定期 时长：一小时 时间：周日晚上七点：grhahaha、yJunS 工作日（八点、九点）：donhui、linan607、linuxsuren 费用：1～2 回顾：不作为标配，但有人愿意做的话，可以有  </description>
     </item>
     
     <item>
@@ -257,9 +256,9 @@
       <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-08-21/</guid>
-      <description>社区治理  对于微信群里设置一个投诉机制，对于符合一定条件的，把被投诉的人移出 @linuxsuren  在公众号后台或者邮件（admin at jenkins-zh.cn）发送投诉，写明被投诉人和理由 @linuxsuren 可以先和被投诉人进行私下沟通，如果不改正的话，就执行移除 @Shunw19   在公众号里发起一个投票，调研大家对公众号文章类型，质量的看法以及建议 @linuxsuren  文章类型：技术类、志愿者等活动类   考虑定期发起志愿者招募，例如在寒暑假之前 @linuxsuren  需要的人数 @Shunw19  分布在多个城市   如何组织 @linuxsuren  尽量明确任务 区分社区志愿、活动志愿者 @baobeizuoshoubuli   把完成志愿任务的人，在官网展示出来 @linuxsuren   给公众号加个目录分类，检索 @Shunw19  可以通过关键字检索   贡献者采访 @linuxsuren  口语比较好的来协作采访国外的贡献者 需要出一些稿子（中文、英文）    线下活动 北京   黑客松
- 活动报名已经启动 需要把活动宣传工作做好    开源人线下见面会 8月24日
-  教程 https://jenkins-zh.</description>
+      <description>社区治理  对于微信群里设置一个投诉机制，对于符合一定条件的，把被投诉的人移出 @linuxsuren  在公众号后台或者邮件（admin at jenkins-zh.cn）发送投诉，写明被投诉人和理由 @linuxsuren 可以先和被投诉人进行私下沟通，如果不改正的话，就执行移除 @Shunw19  在公众号里发起一个投票，调研大家对公众号文章类型，质量的看法以及建议 @linuxsuren  文章类型：技术类、志愿者等活动类  考虑定期发起志愿者招募，例如在寒暑假之前 @linuxsuren  需要的人数 @Shunw19  分布在多个城市  如何组织 @linuxsuren  尽量明确任务 区分社区志愿、活动志愿者 @baobeizuoshoubuli  把完成志愿任务的人，在官网展示出来 @linuxsuren  给公众号加个目录分类，检索 @Shunw19  可以通过关键字检索  贡献者采访 @linuxsuren  口语比较好的来协作采访国外的贡献者 需要出一些稿子（中文、英文）   线下活动 北京  黑客松
+ 活动报名已经启动 需要把活动宣传工作做好  开源人线下见面会 8月24日
+  教程 https://jenkins-zh.cn/tutorial/</description>
     </item>
     
     <item>
@@ -268,7 +267,7 @@
       <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/meeting/2019-08-08/</guid>
-      <description>线下活动 上海  开源基础设施峰会2019 11月4-6日  https://www.openstack.cn/   开源年会 11月2-3日  https://www.bagevent.com/event/5518928?bag_track=bagevent   meetup 9月21/22日  场地（赵晓杰） 讲师，三名（需要征集一名） 活动宣传稿（高嵘） 礼品（空缺）    北京  黑客松  门票价格，早鸟票，标准票，晚鸟票  100，120，150   志愿者（彦军） 设备，摄像等 视频剪辑（王顺） vs-code  服务器的配置要求？     开源人线下见面会 8月24日  成员招募 明天拉个群
+      <description>线下活动 上海  开源基础设施峰会2019 11月4-6日  https://www.openstack.cn/  开源年会 11月2-3日  https://www.bagevent.com/event/5518928?bag_track=bagevent  meetup 9月21/22日  场地（赵晓杰） 讲师，三名（需要征集一名） 活动宣传稿（高嵘） 礼品（空缺）   北京  黑客松  门票价格，早鸟票，标准票，晚鸟票  100，120，150  志愿者（彦军） 设备，摄像等 视频剪辑（王顺） vs-code  服务器的配置要求？   开源人线下见面会 8月24日  成员招募 明天拉个群
 教程 https://jenkins-zh.cn/tutorial/</description>
     </item>
     

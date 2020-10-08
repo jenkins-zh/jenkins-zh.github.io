@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="使用 Jenkins 和 Ansible 实现 CI/CD" />
 <meta property="og:description" content="以一个 Spring Boot &#43; JS 的项目为例，讲解了如何通过 Jenkins 以及 Ansible 实现 CI/CD" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-09-ci-cd-with-jenkins-and-ansible/" />
-<meta property="article:published_time" content="2020-09-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-09-09T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-09-ci-cd-with-jenkins-and-ansible/" /><meta property="article:published_time" content="2020-09-09T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-09-09T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="使用 Jenkins 和 Ansible 实现 CI/CD">
 <meta itemprop="description" content="以一个 Spring Boot &#43; JS 的项目为例，讲解了如何通过 Jenkins 以及 Ansible 实现 CI/CD">
+
+
 <meta itemprop="datePublished" content="2020-09-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-09-09T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="652">
 
 
 
-<meta itemprop="keywords" content="Ansible,Continuout Delivery," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Ansible,Continuout Delivery," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Jenkins 和 Ansible 实现 CI/CD"/>
 <meta name="twitter:description" content="以一个 Spring Boot &#43; JS 的项目为例，讲解了如何通过 Jenkins 以及 Ansible 实现 CI/CD"/>
 
@@ -286,33 +289,55 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="cover.png" alt="cover"></p>
+
+
+<p><img src="cover.png" alt="cover" /></p>
+
 <p>现在是 2018 年。Kubernetes 在容器编排大战中取得了胜利。我们中的一些人怀着羡慕的心情阅读着硅谷创业公司的那些文章（是的，或许你所在的城市已经有了这些创业公司了！），然而读完之后还是回到自己手上运行得还可以的遗留的老系统上工作。</p>
+
 <p>基于主干开发，容器部署至云上，这些虽然都在 DevOps 未来的规划中，但是短期内这些还基本无法落地。</p>
+
 <p>向 DevOps 方向迈出的一步是要消除孤岛（dev，QA，ops），因此我们必须以一种每个角色都能轻松协作的方式来构建我们的代码。</p>
+
 <p>我阅读了很多非常不错的文章，介绍如何使用一些单页面 Javascript 和 Spring Boot 后端构建应用，其中还涉及了配置管理、基础框架、持续集成和持续交付。现在我将结合以上所有内容，为你开展自己的工作提供一些支持和帮助。</p>
+
 <h2 id="准备">准备</h2>
+
 <p>我准备了一个 <a href="https://www.jenkins.io/">Jenkins</a> 实例，部署了 ssh， 以及一个可运行的 <a href="https://spring.io/projects/spring-boot">Spring Boot</a> jar，还有一台 <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">RedHat7</a> 的虚拟机，和 <a href="https://www.sonatype.com/product-nexus-repository">Nexus</a> 的制品仓库。所以我想我很高兴不用再部署 EARs 了。</p>
-<p><img src="2020-09-09-jenkins-with-ansible-a-simple-but-powerful-combination.png" alt="jenkins-with-ansible-a-simple-but-powerful-combination"></p>
+
+<p><img src="2020-09-09-jenkins-with-ansible-a-simple-but-powerful-combination.png" alt="jenkins-with-ansible-a-simple-but-powerful-combination" /></p>
+
 <p>现在我将使用以上的工具构建一个<a href="https://martinfowler.com/bliki/DeploymentPipeline.html">部署流水线</a>，并对所有内容做版本控制，以便团队中的每个人都可以访问所有内容，并了解他们的代码从提交到部署的每个环节（本例中只是到测试环境）。</p>
+
 <p>代码结构如下：</p>
+
 <pre><code>parent
 +- backend
 +- frontend
 +- deployment
 Jenkinsfile
-</code></pre><p>简单起见，backend——一个简单的 Spring Boot 应用——包含了前端 <a href="https://reactjs.org/">ReactJS</a> 应用，deployment 中是持续交付相关工具，根目录下的 <a href="https://www.jenkins.io/doc/book/pipeline/jenkinsfile/">Jenkinsfile</a> 是这个流水线的声明式描述。</p>
-<p><img src="2020-09-09-spring-boot-with-react-a-common-choice-for-web-applications.png" alt="spring-boot-with-react-a-common-choice-for-web-applications"></p>
+</code></pre>
+
+<p>简单起见，backend——一个简单的 Spring Boot 应用——包含了前端 <a href="https://reactjs.org/">ReactJS</a> 应用，deployment 中是持续交付相关工具，根目录下的 <a href="https://www.jenkins.io/doc/book/pipeline/jenkinsfile/">Jenkinsfile</a> 是这个流水线的声明式描述。</p>
+
+<p><img src="2020-09-09-spring-boot-with-react-a-common-choice-for-web-applications.png" alt="spring-boot-with-react-a-common-choice-for-web-applications" /></p>
+
 <p>下面我们看一下每个模块！</p>
+
 <h2 id="后端">后端</h2>
+
 <p>它继承自 Spring Boot parent：</p>
+
 <pre><code>&lt;parent&gt;
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
     &lt;version&gt;2.0.3.RELEASE&lt;/version&gt;
     &lt;relativePath/&gt;
 &lt;/parent&gt;
-</code></pre><p>我们将 frontend 应用放在 dependencies：</p>
+</code></pre>
+
+<p>我们将 frontend 应用放在 dependencies：</p>
+
 <pre><code>&lt;dependencies&gt;
 ... 
   &lt;dependency&gt;
@@ -322,7 +347,10 @@ Jenkinsfile
     &lt;/dependency&gt;
 ...
 &lt;/dependencies&gt;
-</code></pre><p>我还使用了 <a href="https://github.com/spotbugs/spotbugs">Spotbugs</a>，<a href="https://checkstyle.sourceforge.io/">Checkstyle</a> 和 <a href="https://www.eclemma.org/jacoco/">Jacoco</a> 来做静态代码检查和代码覆盖率检查，所以我们也将这些插件添加进来。需要注意的是安全插件 <a href="https://find-sec-bugs.github.io/">Spotbugs</a> 是一个小的<a href="https://www.paloaltonetworks.com/cyberpedia/what-is-devsecops">安全防护左移</a>。</p>
+</code></pre>
+
+<p>我还使用了 <a href="https://github.com/spotbugs/spotbugs">Spotbugs</a>，<a href="https://checkstyle.sourceforge.io/">Checkstyle</a> 和 <a href="https://www.eclemma.org/jacoco/">Jacoco</a> 来做静态代码检查和代码覆盖率检查，所以我们也将这些插件添加进来。需要注意的是安全插件 <a href="https://find-sec-bugs.github.io/">Spotbugs</a> 是一个小的<a href="https://www.paloaltonetworks.com/cyberpedia/what-is-devsecops">安全防护左移</a>。</p>
+
 <pre><code>&lt;build&gt;
     &lt;plugins&gt;
         &lt;plugin&gt;
@@ -410,10 +438,16 @@ Jenkinsfile
         &lt;/plugin&gt;
     &lt;/plugins&gt;
 &lt;/build&gt;
-</code></pre><p>下面我们来看前端部分。</p>
+</code></pre>
+
+<p>下面我们来看前端部分。</p>
+
 <h2 id="前端">前端</h2>
+
 <p>由于需要一个可以作为 Maven 依赖项的库，我们将构建资源复制到 jar 的 public 目录，作为 maven-resources-plugin。</p>
+
 <p>但是首先我们需要构建和测试这个模块。我们会使用 frontend-maven-plugin 完成这两步。如果不喜欢 maven 方式，也可以使用脚本，或者直接使用 Jenkinsfile 完成构建和测试。</p>
+
 <pre><code>&lt;build&gt;
     &lt;plugins&gt;
         &lt;plugin&gt;
@@ -488,13 +522,22 @@ Jenkinsfile
         &lt;/plugin&gt;
     &lt;/plugins&gt;
 &lt;/build&gt;
-</code></pre><p>现在我们使用 Jenkins 来完成所有构建步骤！</p>
+</code></pre>
+
+<p>现在我们使用 Jenkins 来完成所有构建步骤！</p>
+
 <h2 id="jenkinsfile">Jenkinsfile</h2>
+
 <p>我们将创建如下流水线：</p>
-<p><img src="2020-09-09-pipeline.png" alt="pipeline"></p>
+
+<p><img src="2020-09-09-pipeline.png" alt="pipeline" /></p>
+
 <p>我们使用声明式流水线。</p>
+
 <p>在 Build stage，我们并行构建前端和后端。</p>
+
 <p>当然我们需要注意后端是依赖于前端模块产生的制品的，因此在以上两个并行的构建完成后，我们必须用另一个步骤来创建可运行的 jar，本次我们先跳过测试环节。</p>
+
 <pre><code>pipeline {
     agent { label 'RHEL' }
     tools {
@@ -537,9 +580,14 @@ Jenkinsfile
         }        
     }
 }
-</code></pre><p>你或许已经注意到了，我用的是 mvn deploy，而不是 mvn install，这是因为我们使用了 Nexus 制品仓库。</p>
+</code></pre>
+
+<p>你或许已经注意到了，我用的是 mvn deploy，而不是 mvn install，这是因为我们使用了 Nexus 制品仓库。</p>
+
 <p>Nexus 是我们唯一存储构建制品的仓库，也是我们所有环境拉取制品的地方。</p>
+
 <p>制品仓库需要定义在后端的 pom.xml 文件中。</p>
+
 <pre><code>&lt;distributionManagement&gt;
     &lt;repository&gt;
         &lt;uniqueVersion&gt;true&lt;/uniqueVersion&gt;
@@ -554,33 +602,41 @@ Jenkinsfile
         &lt;url&gt;http://nexus.edudoo.com/&lt;/url&gt;
     &lt;/snapshotRepository&gt;
 &lt;/distributionManagement&gt;
-</code></pre><h2 id="部署">部署</h2>
+</code></pre>
+
+<h2 id="部署">部署</h2>
+
 <p>前面提到过我们有一台 RedHat7 虚拟机且可以通过 ssh 连接。我们使用的 <a href="https://www.ansible.com/">Ansible</a> 工具需要 ssh 连接，所以需要安装到 Jenkins 节点上。</p>
-<p><img src="2020-09-09-for-simple-IT-automation.png" alt="for-simple-IT-automation"></p>
+
+<p><img src="2020-09-09-for-simple-IT-automation.png" alt="for-simple-IT-automation" /></p>
+
 <p>另一个需要决定的是如何运行我们的应用程序。我们可以通过编写 shell 脚本来启停 java jar，但更为优雅的一种方式是使用进程/服务管理器。</p>
+
 <p>我们可以选择使用 <a href="http://supervisord.org/index.html">Supervisor</a> 或者其它的一些工具，但是这些工具在 RedHat Linux 上不能开箱即用，所以我们选择使用 <a href="https://en.wikipedia.org/wiki/Systemd">systemd</a>。</p>
+
 <p>每次执行的步骤如下：</p>
+
 <ul>
-<li>
-<p>准备环境，安装所需要的包</p>
-</li>
-<li>
-<p>准备以及推送应用的配置</p>
-</li>
-<li>
-<p>从 Nexus 拉取 jar</p>
-</li>
-<li>
-<p>创建（或者更新）和启动（或者重启）systemd 服务</p>
-</li>
+<li><p>准备环境，安装所需要的包</p></li>
+
+<li><p>准备以及推送应用的配置</p></li>
+
+<li><p>从 Nexus 拉取 jar</p></li>
+
+<li><p>创建（或者更新）和启动（或者重启）systemd 服务</p></li>
 </ul>
+
 <p>我们所说的搭建环境是指包已更新，且安装了 java。这些定义在 common 角色中：</p>
+
 <pre><code>- name: Ensure kernel is at the latest version
   yum: name=kernel state=latest
 
 - name: Install latest Java 8
   yum: name=java-1.8.0-openjdk.x86_64 state=latest
-</code></pre><p>其它步骤定义在 deploy 角色中。首先，将 jar 下载到 /opt 下的目录中：</p>
+</code></pre>
+
+<p>其它步骤定义在 deploy 角色中。首先，将 jar 下载到 /opt 下的目录中：</p>
+
 <pre><code>- name: Create skeleton directory
   file: path=/opt/skeleton state=directory
 
@@ -590,7 +646,10 @@ Jenkinsfile
     dest: /opt/skeleton/skeleton.jar
     backup: yes
     force: yes
-</code></pre><p>配置管理部分如下所示：</p>
+</code></pre>
+
+<p>配置管理部分如下所示：</p>
+
 <pre><code>- name: Ensure app is configured
   template:
     src: application.properties.j2
@@ -600,20 +659,32 @@ Jenkinsfile
   template:
     src: logback-spring.xml.j2
     dest: /opt/skeleton/logback-spring.xml
-</code></pre><p>Spring boot 应用的配置在 application.properties 文件中，且和可执行 jar 放在同一目录中。修改上面 template 的内容，可以适用于不同的环境。</p>
+</code></pre>
+
+<p>Spring boot 应用的配置在 application.properties 文件中，且和可执行 jar 放在同一目录中。修改上面 template 的内容，可以适用于不同的环境。</p>
+
 <p>下面我们看一下 template 本身：</p>
+
 <pre><code>server.port={{skeleton_port}}
 logging.config=/opt/skeleton/logback-spring.xml
 logging.file=/opt/skeleton/skeleton.log
-</code></pre><p>当运行 ansible 脚本时，skeleton_port 将被替换成指定的值。我们稍后再讲这部分。</p>
+</code></pre>
+
+<p>当运行 ansible 脚本时，skeleton_port 将被替换成指定的值。我们稍后再讲这部分。</p>
+
 <p>（日志配置于此类似。）</p>
+
 <p>最后是 service 部分：</p>
+
 <pre><code>- name: Install skeleton systemd unit file
   template: src=skeleton.service.j2 dest=/etc/systemd/system/skeleton.service
 
 - name: Start skeleton
   systemd: state=restarted name=skeleton daemon_reload=yes
-</code></pre><p>Template 中现在还没有任何变量（但是可以使用例如 java 参数来动态控制内存消耗）：</p>
+</code></pre>
+
+<p>Template 中现在还没有任何变量（但是可以使用例如 java 参数来动态控制内存消耗）：</p>
+
 <pre><code>[Unit]
 Description=Skeleton Service
 
@@ -628,13 +699,19 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-</code></pre><p>最后用 inventory 文件（如 dev-servers）来定义环境：</p>
+</code></pre>
+
+<p>最后用 inventory 文件（如 dev-servers）来定义环境：</p>
+
 <pre><code>[test]
 11.22.33.44
 [prod]
 11.22.33.45
 11.22.33.46
-</code></pre><p>以及一个 playbook（site.yml）来定义所有的步骤：</p>
+</code></pre>
+
+<p>以及一个 playbook（site.yml）来定义所有的步骤：</p>
+
 <pre><code>---
 - hosts: test
   remote_user: clouduser
@@ -644,8 +721,12 @@ WantedBy=multi-user.target
 
   vars:
     - skeleton_port: 80
-</code></pre><p>我们在这里给变量 skeleton_port 指定了值，这个值将替换到 application.properties 文件的 template 中。</p>
+</code></pre>
+
+<p>我们在这里给变量 skeleton_port 指定了值，这个值将替换到 application.properties 文件的 template 中。</p>
+
 <p>现在我们将 Ansible 的相关步骤加到 Jenkinsfile 中：</p>
+
 <pre><code>...
 stage('Deploy to test'){
     steps {
@@ -656,11 +737,18 @@ stage('Deploy to test'){
     }
 }
 ...
-</code></pre><p>现在我们需要把所有东西提交到一个 git 仓库，以及让 Jenkins 知道从哪儿可以获取 Jenkinsfile。</p>
+</code></pre>
+
+<p>现在我们需要把所有东西提交到一个 git 仓库，以及让 Jenkins 知道从哪儿可以获取 Jenkinsfile。</p>
+
 <h2 id="配置-jenkins">配置 Jenkins</h2>
+
 <p>在 Jenkins 上创建一个新的 Multibranch 类型流水线。在配置页面唯一需要配置的就是 source：</p>
-<p><img src="2020-09-09-jenkins-configuration.png" alt="jenkins-configuration"></p>
+
+<p><img src="2020-09-09-jenkins-configuration.png" alt="jenkins-configuration" /></p>
+
 <p>保存配置、运行，并开始享受吧！</p>
+
 <p>相关代码位于  <a href="https://github.com/balazsmaria/skeleton">https://github.com/balazsmaria/skeleton</a></p>
 
 </div>
@@ -731,9 +819,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
-      
-        
-        
       
     </ul>
   </div>

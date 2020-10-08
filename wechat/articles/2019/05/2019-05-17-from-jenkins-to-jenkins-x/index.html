@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="从 Jenkins 到 Jenkins X" />
 <meta property="og:description" content="这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" />
-<meta property="article:published_time" content="2019-05-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-05-17T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" /><meta property="article:published_time" content="2019-05-17T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-17T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="从 Jenkins 到 Jenkins X">
 <meta itemprop="description" content="这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事">
+
+
 <meta itemprop="datePublished" content="2019-05-17T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-17T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="536">
+<meta itemprop="wordCount" content="541">
 
 
 
-<meta itemprop="keywords" content="jenkins,jenkins x,kubernetes,devops,ci,cd," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,jenkins x,kubernetes,devops,ci,cd," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="从 Jenkins 到 Jenkins X"/>
 <meta name="twitter:description" content="这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事"/>
 
@@ -291,65 +294,82 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="journey.jpeg" alt="journey"></p>
+
+
+<p><img src="journey.jpeg" alt="journey" /></p>
+
 <p>这是一个关于 dailymotion 从 Jenkins 到 Jenkins X 的旅程，我们遇到的问题，以及我们是如何解决它们的故事。</p>
+
 <h2 id="我们的上下文">我们的上下文</h2>
+
 <p>在 <a href="https://www.dailymotion.com/">dailymotion</a> ，我们坚信 devops 最佳实践，并且在 Kubernetes 投入了大量投资。
 我们的部分产品已经部署在 Kubernetes 上，但并不是全部。
 因此，当迁移我们的广告技术平台的时候，我们想要完全采用“ Kubernetes 式”——或者云原生，以追随技术趋势！
 这意味着要重新定义整个 CI/CD 流水线，从静态/永久环境迁移，转向动态按需分配环境。
 我们的目标是<strong>授权给我们的开发人员</strong>，<strong>缩短我们的上线时间</strong>以及<strong>降低我们的运营成本</strong>。</p>
-<p>对于新的 CI/CD 平台我们的初始需求是:</p>
-<ul>
-<li><strong>尽可能避免从零开始</strong>：我们的开发人员已经习惯使用 Jenkins 和声明式流水线，并且它们可以很好地满足我们当前的需求。</li>
-<li><strong>以公有云基础设施为目标</strong>——Google 云平台和 Kubernetes 集群</li>
-<li><strong>与 <a href="https://www.weave.works/technologies/gitops/">gitops</a> 方法论兼容</strong>——因为我们喜欢版本控制、同行评审和自动化</li>
-</ul>
+
+<p>对于新的 CI/CD 平台我们的初始需求是:
+- <strong>尽可能避免从零开始</strong>：我们的开发人员已经习惯使用 Jenkins 和声明式流水线，并且它们可以很好地满足我们当前的需求。
+- <strong>以公有云基础设施为目标</strong>——Google 云平台和 Kubernetes 集群
+- <strong>与 <a href="https://www.weave.works/technologies/gitops/">gitops</a> 方法论兼容</strong>——因为我们喜欢版本控制、同行评审和自动化</p>
+
 <p>在 CI/CD 生态系统中有相当多的参与者，但是只有一个符合我们的需求，Jenkins X ，它基于 Jenkins 和 Kubernetes ，原生支持预览环境和 gitops</p>
+
 <h2 id="kubernetes-之上的-jenkins">Kubernetes 之上的 Jenkins</h2>
+
 <p>Jenkins X 的设置相当简单，并且<a href="https://jenkins-x.io/zh/getting-started/create-cluster/">在他们的官方网站上已经有很好的文档</a>（译注：译者曾对 Jenkins X 文档中文本地化做了一些贡献，同时也期待更多的人参与以完善中文文档）。
 由于我们已经使用了 Google Kubernetes Engine (GKE)，所以 <code>jx</code> 命令行工具自己创建了所有东西，包括 Kubernetes 集群。
-这里有一个小小的<em>哇哦效果</em>，在几分钟内获得一个完整的工作系统是非常令人印象深刻的。</p>
-<p>Jenkins X 提供了很多<a href="https://github.com/jenkins-x-buildpacks">快速入门和模板</a>来增加<em>哇哦效果</em>，
+这里有一个小小的*哇哦效果*，在几分钟内获得一个完整的工作系统是非常令人印象深刻的。</p>
+
+<p>Jenkins X 提供了很多<a href="https://github.com/jenkins-x-buildpacks">快速入门和模板</a>来增加*哇哦效果*，
 然而，在 dailymotion ，我们已经有了带有 Jenkins 流水线的仓库，我们想要重用它们。
-我们决定以&quot;艰难的方式&quot;做事情，并重构我们的声明式流水线，使它们与 Jenkins X 兼容。</p>
+我们决定以&rdquo;艰难的方式&rdquo;做事情，并重构我们的声明式流水线，使它们与 Jenkins X 兼容。</p>
+
 <p>实际上，这一部分并不针对 Jenkins X ，而是基于 <a href="https://github.com/jenkinsci/kubernetes-plugin">Kubernetes 插件</a>在 Kubernetes 上运行 Jenkins 。
 如果您习惯使用“经典的” Jenkins ，即在裸金属或虚拟机上运行静态代理，那么这里的主要更改是，每次构建都将在自己的短暂的 pod 上执行。
 流水线的每个步骤都可以指定应该在 pod 的哪个容器上执行。
 <a href="https://github.com/jenkinsci/kubernetes-plugin/tree/master/examples">在插件的源代码中有一些流水线的例子</a>。
-在这里，我们的&quot;挑战&quot;是定义容器的粒度，以及它们将包含哪些工具：需要足够的容器，以便我们可以在不同流水线之间重用它们的镜像，但也不能太多，以控制维护量——我们不想花时间重新构建容器镜像。</p>
+在这里，我们的&rdquo;挑战&rdquo;是定义容器的粒度，以及它们将包含哪些工具：需要足够的容器，以便我们可以在不同流水线之间重用它们的镜像，但也不能太多，以控制维护量——我们不想花时间重新构建容器镜像。</p>
+
 <p>以前，我们通常在 Docker 容器中运行大多数流水线步骤，当我们需要自定义步骤时，我们在运行中的流水线中构建它，就在运行它之前。
 虽然它比较慢，但是易于维护，因为所有内容都是在源代码中定义的。
 例如，升级 Go 运行时的版本可以在一个 pull-request 中完成。
 因此，要预先构建容器镜像听起来像是给现有设置增加了更多的复杂性。
 它还有几个优点：仓库之间的重复更少，构建速度更快，并且不会因为某些第三方托管平台宕机而出现更多构建错误。</p>
+
 <h2 id="在-kubernetes-上构建镜像">在 Kubernetes 上构建镜像</h2>
+
 <p>这些天将给我们带来一个有趣的话题：在 Kubernetes 集群中构建容器镜像。</p>
-<p><img src="build-image.jpeg" alt="build-image"></p>
-<p>Jenkins X 附带了一组&quot;构建打包&rdquo;，使用 &ldquo;Docker in Docker&rdquo; 从容器内部构建镜像。
+
+<p><img src="build-image.jpeg" alt="build-image" /></p>
+
+<p>Jenkins X 附带了一组&rdquo;构建打包&rdquo;，使用 &ldquo;Docker in Docker&rdquo; 从容器内部构建镜像。
 但是随着新的容器运行时的到来，Kubernetes 推出了它的<a href="https://kubernetes.io/docs/setup/cri/">容器运行时接口( CRI )</a>，我们想要探索其他的选择。
 <a href="https://github.com/GoogleContainerTools/kaniko">Kaniko</a> 是最成熟的解决方案，符合我们的需求/技术栈。
 我们很兴奋……</p>
-<p>……直到我们遇到两个问题：</p>
-<ul>
-<li>第一个问题对我们来说是一个阻塞问题:<a href="https://docs.docker.com/develop/develop-images/multistage-build/">多阶段构建</a>不起作用。
+
+<p>……直到我们遇到两个问题：
+- 第一个问题对我们来说是一个阻塞问题:<a href="https://docs.docker.com/develop/develop-images/multistage-build/">多阶段构建</a>不起作用。
 多亏了谷歌，我们很快发现我们不是唯一受到影响的人，而且目前还没有解决办法。
 然而，Kaniko 是用 Go 开发的，而我们是 Go 开发人员，所以……为什么不看看源代码呢?
 事实证明，一旦我们理解了问题的根本原因，<a href="https://github.com/GoogleContainerTools/kaniko/pull/369">修复就很容易了</a>。
-Kaniko 维护者是很愿意帮忙的，并且快速地合并了修复，所以一天之后一个被修复的 Kaniko 镜像就已经可用了。</li>
-<li>第二个问题是，我们不能使用同一个 Kaniko 容器构建两个不同的镜像。
+Kaniko 维护者是很愿意帮忙的，并且快速地合并了修复，所以一天之后一个被修复的 Kaniko 镜像就已经可用了。
+- 第二个问题是，我们不能使用同一个 Kaniko 容器构建两个不同的镜像。
 这是因为 Jenkins 并没有按照预期的方式使用 Kaniko ——因为我们需要先启动容器，然后再运行构建。
 这一次，我们找到了一个针对谷歌的解决方案：声明我们所需要的尽可能多的 Kaniko 容器来构建镜像，但是我们不喜欢它。
-所以回到源代码，再一次，一旦我们理解了根本原因，<a href="https://github.com/GoogleContainerTools/kaniko/pull/370">修复就很容易了</a>。</li>
-</ul>
-<p>我们测试了一些解决方案来为 CI 流水线构建定制的&quot;工具&quot;镜像，
+所以回到源代码，再一次，一旦我们理解了根本原因，<a href="https://github.com/GoogleContainerTools/kaniko/pull/370">修复就很容易了</a>。</p>
+
+<p>我们测试了一些解决方案来为 CI 流水线构建定制的&rdquo;工具&rdquo;镜像，
 最后，我们选择使用一个单个仓库，每个分支对应一个 <code>Dockerfile</code> 和镜像。
 因为我们将源代码托管在 Github 上，并且使用 Jenkins Github 插件来构建我们的仓库，
 所以它可以构建我们所有的分支，并为 webhook 事件上的新分支创建新的任务，这使得管理起来很容易。
 每个分支都有自己的 Jenkinsfile 声明式流水线，使用 Kaniko 构建镜像，并将其推入我们的容器注册中心。
 这对于快速添加新镜像或编辑现有的镜像非常有用，因为我们知道 Jenkins 会处理好所有的事情。</p>
+
 <h2 id="声明所需资源的重要性">声明所需资源的重要性</h2>
-<p><img src="containers.jpeg" alt="containers"></p>
+
+<p><img src="containers.jpeg" alt="containers" /></p>
+
 <p>我们在之前的 Jenkins 平台中遇到的一个主要问题来自静态的代理/执行器，在高峰时间有时构建队列很长。
 Kubernetes 之上的 Jenkins 使这个问题很容易解决，主要是在 Kubernetes 集群上运行时，它能支持<a href="https://github.com/kubernetes/autoscaler">集群自动伸缩</a>。
 集群将根据当前负载简单地添加或删除节点。
@@ -363,24 +383,30 @@ Kubernetes 之上的 Jenkins 使这个问题很容易解决，主要是在 Kuber
 pod 的请求只是所有容器请求的相加。
 因此，我们只是将整个 pod 的资源请求写在第一个容器上——或者 jnlp 容器上——它是默认的容器。
 下面是我们使用的一个 Jenkinsfile 的例子， 也是我们如何声明请求的资源的例子:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">pipeline {
+
+<pre><code class="language-yaml">pipeline {
     agent {
         kubernetes {
-            label <span style="color:#e6db74">&#39;xxx-builder&#39;</span>
-            yaml <span style="color:#e6db74">&#34;&#34;</span>&#34;
-<span style="color:#66d9ef">kind</span>: Pod
-<span style="color:#66d9ef">metadata</span>:
-  <span style="color:#66d9ef">name</span>: xxx-builder
-<span style="color:#66d9ef">spec</span>:
-  <span style="color:#66d9ef">containers</span>:
-  - <span style="color:#66d9ef">name</span>: jnlp
-</code></pre></div><h2 id="jenkins-x-上的预览环境">Jenkins X 上的预览环境</h2>
+            label 'xxx-builder'
+            yaml &quot;&quot;&quot;
+kind: Pod
+metadata:
+  name: xxx-builder
+spec:
+  containers:
+  - name: jnlp
+</code></pre>
+
+<h2 id="jenkins-x-上的预览环境">Jenkins X 上的预览环境</h2>
+
 <p>现在我们已经拥有了所有的工具，并且能够为我们的应用程序构建一个镜像，
-我们准备下一步：将它部署到&quot;预览环境&rdquo;！</p>
-<p><img src="preview.jpeg" alt="preview"></p>
+我们准备下一步：将它部署到&rdquo;预览环境&rdquo;！</p>
+
+<p><img src="preview.jpeg" alt="preview" /></p>
+
 <p>Jenkins X 通过重用现有的工具——主要是 Helm ，使得部署预览环境变得很容易，
 只要你遵循一些约定，例如用于镜像标签的值的名称。
-最好是从&quot;包&quot;中提供的  Helm charts 复制/粘贴。
+最好是从&rdquo;包&rdquo;中提供的  Helm charts 复制/粘贴。
 如果你不熟悉 Helm ，它基本上是一个 Kubernetes 应用程序包管理器。
 每个应用程序都打包为一个 &ldquo;chart&rdquo; ，然后可以通过使用 helm 命令行工具作为一个 &ldquo;release&rdquo; 被部署。
 预览环境是通过使用 jx 命令行工具进行部署的，该工具负责部署 Helm chart ，并以评论的形式，将所公开服务的 URL 添加到 Github pull-request 中。
@@ -392,6 +418,7 @@ pod 的请求只是所有容器请求的相加。
 这给了我们一个机会来看看 Jenkins X 的源代码——它也是用 Go 开发的。
 <a href="https://github.com/jenkins-x/jx/pull/2129">稍作修复之后</a>都好了，
 现在我们可以使用 <a href="https://letsencrypt.org/">let&rsquo;s encrypt</a> 提供的自动化证书来享受安全的预览环境。</p>
+
 <p>我们在预览环境中遇到的另一个问题与上述环境的清理有关。
 每个打开一个 pull-request ，就创建一个预览环境，因此在 pull-request 被合并或关闭时应该删除预览环境。
 这由 Jenkins X 设置的 Kubernetes 任务来处理，它删除了预览环境所使用的名称空间。
@@ -399,8 +426,10 @@ pod 的请求只是所有容器请求的相加。
 对于这个问题，我们决定改变使用 Helm 部署预览环境的方式。
 Jenkins X 团队已经<a href="https://jenkins-x.io/news/helm-without-tiller/">写过关于 Helm 和 Tiller ( Helm 的服务器端组件)的这些问题</a>，
 因此，我们决定使用 <code>helmTemplate</code> 特性标志，只使用 Helm 作为模板渲染引擎，并使用 <code>kubectl</code> 处理生成的资源。
-这样，我们就不会用临时预览环境&quot;污染&rdquo; Helm releases 列表。</p>
+这样，我们就不会用临时预览环境&rdquo;污染&rdquo; Helm releases 列表。</p>
+
 <h2 id="gitops-应用到-jenkins-x">Gitops 应用到 Jenkins X</h2>
+
 <p>在初始化 POC 的某个阶段，我们对我们的设置和流水线感到满意，并希望将我们的 POC 平台转变为准生产的平台。
 第一步是安装 SAML 插件以设置 OKTA 集成——以允许内部用户登录。
 它运行得很好，几天后，我注意到我们的 OKTA 集成已经不再存在了。
@@ -411,20 +440,24 @@ Jenkins X 团队已经<a href="https://jenkins-x.io/news/helm-without-tiller/">�
 事实证明，<a href="https://github.com/jenkins-x/charts/tree/jenkins/stable/jenkins">用于安装 Jenkins 的 Helm chart</a> 有一个启动脚本，
 它从 Kubernetes <code>configmap</code> 重置了 Jenkins 配置。
 当然，我们不能像在虚拟机上管理 Jenkins 那样管理在 Kubernetes 中运行的 Jenkins ！</p>
+
 <p>因此，我们没有手动编辑 <code>configmap</code> ，而是后退一步，查看全局。
 这个 <code>configmap</code> 本身由 <a href="https://github.com/jenkins-x/jenkins-x-platform">jenkins-x-platform</a> 管理，
 因此升级平台将重置我们的自定义更改。
-我们需要将我们的&quot;定制&quot;存储在安全的地方并跟踪我们的更改。
+我们需要将我们的&rdquo;定制&rdquo;存储在安全的地方并跟踪我们的更改。
 我们可以用 Jenkins X 的方式，用一个 umbrella chart 来安装/配置一切，
 但是这种方法有一些缺点：它不支持 &ldquo;secret&rdquo; ——
 我们将一些敏感的值存储在我们的 Git 仓库中——
-它&quot;隐藏&quot;了所有的 sub-charts 。
+它&rdquo;隐藏&rdquo;了所有的 sub-charts 。
 所以，如果我们列出所有已安装的 Helm releases ，我们将只看到一个。
 但是还有其他基于 Helm 的工具，它们更对 Gitops 更友好。
 <a href="https://github.com/roboll/helmfile">Helmfile</a> 就是其中之一，它通过 <a href="https://github.com/futuresimple/helm-secrets">helm secrets 插件</a>和 <a href="https://github.com/mozilla/sops">sops</a>为 secrets 提供了原生支持。
 我现在不会详细介绍我们的设置，但别担心，这将是我下一篇博客文章的主题！</p>
+
 <h2 id="迁移">迁移</h2>
-<p><img src="sunset.jpeg" alt="sunset"></p>
+
+<p><img src="sunset.jpeg" alt="sunset" /></p>
+
 <p>我们故事的另一个有趣的部分是从 Jenkins 到 Jenkins X 的实际迁移。
 以及我们如何使用两个构建系统处理仓库。
 首先，我们设置新的 Jenkins 来只构建 &ldquo;jenkinsx&rdquo; 分支，
@@ -436,22 +469,28 @@ Jenkins X 团队已经<a href="https://jenkins-x.io/news/helm-without-tiller/">�
 但对于旧的 Jenkins 使用 <code>Jenkinsfile</code> 文件名，对于新的 Jenkins 使用 <code>Jenkinsxfile</code> 文件名。
 迁移之后，我们将更新此配置并重命名文件，但这是值得的，
 因为它使我们能够在两个系统之间进行平滑的转换，并且每个项目都可以自己迁移，而不会影响其他项目。</p>
+
 <h2 id="我们的目的地">我们的目的地</h2>
+
 <p>所以，Jenkins X 为大家准备好了吗？老实说，我不这么认为。
 并非所有功能和所支持的平台—— Git 托管平台或 Kubernetes 托管平台——都足够稳定。
 但是，如果您准备投入足够的时间来深入研究，并选择适合您的使用场景的稳定特性和平台，
 那么您将能够使用 CI/CD 等所需的一切来改进您的流水线。
 这将缩短您的上线时间，降低您的成本，如果您对测试也很认真，那么请对您的软件质量充满信心。</p>
+
 <p>一开始，我们说这是我们从 Jenkins 到 Jenkins X 的旅程。但我们的旅程并未结束，我们还在旅行中。
 部分原因是我们的目标仍在移动：Jenkins X 仍处于大的发展阶段，而且它本身正在朝着 Serverless 的方向前进，
 目前正在使用 <a href="https://github.com/knative/build">Knative 构建</a> 的路上。
 它的目的地是<a href="https://jenkins.io/blog/2018/08/31/shifting-gears/">云原生 Jenkins </a>。
 它还没有准备好，但是您已经可以预览它的外观了。</p>
+
 <p>我们的旅程还将继续，因为我们不希望它结束。
 我们现在的目的地并不是我们的最终目的地，而是我们不断进化的一个步骤。
 这就是我们喜欢 Jenkins X 的原因：因为它遵循相同的模式。
 那么，你在等待什么来开始你自己的旅程呢？</p>
-<p><img src="sea-and-canoe.jpeg" alt="sea-and-canoe"></p>
+
+<p><img src="sea-and-canoe.jpeg" alt="sea-and-canoe" /></p>
+
 <blockquote>
 <p>译注：译者曾对 Jenkins X 文档中文本地化做了一些贡献，同时也期待更多的人在 Jenkins X 旅程中，
 能够参与到 <a href="https://jenkins-zh.cn/about/">Jenkins 中文社区</a>以完善 Jenkins X 的中文文档。</p>
@@ -575,6 +614,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -638,8 +686,35 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -656,8 +731,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
             </a>
           </li>
         
@@ -674,8 +785,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -712,6 +859,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -920,6 +1076,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -931,6 +1096,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

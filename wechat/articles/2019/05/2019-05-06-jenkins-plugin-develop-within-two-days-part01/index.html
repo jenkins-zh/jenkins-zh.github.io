@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)" />
 <meta property="og:description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" />
-<meta property="article:published_time" content="2019-05-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-05-06T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-06-jenkins-plugin-develop-within-two-days-part01/" /><meta property="article:published_time" content="2019-05-06T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-06T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)">
 <meta itemprop="description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心">
+
+
 <meta itemprop="datePublished" content="2019-05-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="547">
 
 
 
-<meta itemprop="keywords" content="jenkins,maven,jira," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,maven,jira," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins 插件开发之旅：两天内从 idea 到发布(上篇)"/>
 <meta name="twitter:description" content="两天内，从产生 idea 到编写插件，最后发布到 Jenkins 插件更新中心"/>
 
@@ -226,21 +229,29 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-  <ul>
-    <li><a href="#从一个-idea-说起">从一个 idea 说起</a></li>
-    <li><a href="#插件开发过程">插件开发过程</a>
-      <ul>
-        <li><a href="#插件开发准备">插件开发准备</a></li>
-        <li><a href="#创建一个插件">创建一个插件</a></li>
-        <li><a href="#构建及运行插件">构建及运行插件</a></li>
-        <li><a href="#定制开发插件">定制开发插件</a></li>
-        <li><a href="#分发插件">分发插件</a></li>
-      </ul>
-    </li>
-    <li><a href="#插件使用说明">插件使用说明</a></li>
-    <li><a href="#总结">总结</a></li>
-    <li><a href="#参考">参考</a></li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li><a href="#从一个-idea-说起">从一个 idea 说起</a></li>
+<li><a href="#插件开发过程">插件开发过程</a>
+<ul>
+<li><a href="#插件开发准备">插件开发准备</a></li>
+<li><a href="#创建一个插件">创建一个插件</a></li>
+<li><a href="#构建及运行插件">构建及运行插件</a></li>
+<li><a href="#定制开发插件">定制开发插件</a>
+<ul>
+<li><a href="#扩展点-extensitonpoint">扩展点（ ExtensitonPoint ）</a></li>
+<li><a href="#descriptor-静态内部类">Descriptor 静态内部类</a></li>
+<li><a href="#数据绑定">数据绑定</a></li>
+<li><a href="#核心逻辑">核心逻辑</a></li>
+</ul></li>
+<li><a href="#分发插件">分发插件</a></li>
+</ul></li>
+<li><a href="#插件使用说明">插件使用说明</a></li>
+<li><a href="#总结">总结</a></li>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul>
 </nav>
 	
 
@@ -301,47 +312,71 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="huashan.png" alt="huashan"></p>
+
+
+<p><img src="huashan.png" alt="huashan" /></p>
+
 <p>本文介绍了笔者首个 Jenkins 插件开发的旅程，
 包括从产生 idea 开始，然后经过插件定制开发，
 接着申请将代码托管到 jenkinsci GitHub  组织，
 最后将插件发布到 Jenkins 插件更新中心的过程。</p>
+
 <p>鉴于文章篇幅过长，将分为上下两篇进行介绍。</p>
+
 <h2 id="从一个-idea-说起">从一个 idea 说起</h2>
+
 <p>前几天和朋友聊天时，聊到了 Maven 版本管理领域的 SNAPSHOT 版本依赖问题，
 这给他带来了一些困扰，消灭掉历史遗留应用的 SNAPSHOT 版本依赖并非易事。</p>
+
 <p>类似问题也曾经给笔者带来过困扰，在最初没能去规避问题，
 等到再想去解决问题时却发现困难重重，牵一发而动全身，
 导致这个问题一直被搁置，而这也给笔者留下深刻的印象。</p>
+
 <p>等到再次制定 Maven 规范时，从一开始就考虑
 强制禁止 SNAPSHOT 版本依赖发到生产环境。</p>
+
 <p>这里是通过在 Jenkins 构建时做校验实现的。
 因为没有找到提供类似功能的 Jenkins 插件，
 目前这个校验通过 shell 脚本来实现的，
 具体的做法是在 Jenkins 任务中 Maven 构建之前增加一个 Execute shell 的步骤，
 来判断 pom.xml 中是否包含 SNAPSHOT 关键字，如果包含，该次构建状态将被标记为失败。
 脚本内容如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">`</span> grep -R --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pom.xml&#34;</span> SNAPSHOT .<span style="color:#e6db74">`</span> <span style="color:#f92672">=</span>~ <span style="color:#e6db74">&#34;SNAPSHOT&#34;</span> <span style="color:#f92672">]]</span>; 
-<span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;SNAPSHOT check failed&#34;</span> <span style="color:#f92672">&amp;&amp;</span> grep -R --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pom.xml&#34;</span> SNAPSHOT . <span style="color:#f92672">&amp;&amp;</span> exit 1; 
-<span style="color:#66d9ef">else</span> echo <span style="color:#e6db74">&#34;SNAPSHOT check success&#34;</span>; 
-<span style="color:#66d9ef">fi</span>
-</code></pre></div><p>恰好前不久在看 Jenkins 插件开发文档，
+
+<pre><code class="language-bash">#!/bin/bash
+if [[ ` grep -R --include=&quot;pom.xml&quot; SNAPSHOT .` =~ &quot;SNAPSHOT&quot; ]]; 
+then echo &quot;SNAPSHOT check failed&quot; &amp;&amp; grep -R --include=&quot;pom.xml&quot; SNAPSHOT . &amp;&amp; exit 1; 
+else echo &quot;SNAPSHOT check success&quot;; 
+fi
+</code></pre>
+
+<p>恰好前不久在看 Jenkins 插件开发文档，
 那何不通过 Jenkins 插件的方式实现它呢？</p>
+
 <p>于是笔者开始了首个 Jenkins 插件开发之旅。</p>
+
 <h2 id="插件开发过程">插件开发过程</h2>
+
 <p>Jenkins 是由 Java 语言开发的最流行的 CI/CD 引擎。</p>
+
 <p>说起 Jenkins 强大的开源生态，自然就会说到 Jenkins 插件。
 Jenkins 插件主要用来对 Jenkins 的功能进行扩展。
 目前 Jenkins 社区有<a href="https://plugins.jenkins.io/">上千个插件</a>，
 用户可以根据自己的需求选择合适的插件来定制 Jenkins 。</p>
+
 <h3 id="插件开发准备">插件开发准备</h3>
+
 <p>插件开发需要首先安装 JDK 和 Maven，这里不做进一步说明。</p>
+
 <h3 id="创建一个插件">创建一个插件</h3>
+
 <p>Jenkins 为插件开发提供了 Maven 原型。
 打开一个命令行终端，切换到你想存放 Jenins 插件源代码的目录，运行如下命令：</p>
+
 <pre><code>mvn -U archetype:generate -Dfilter=io.jenkins.archetypes:
-</code></pre><p>这个命令允许你使用其中一个与 Jenkins 相关的原型生成项目。</p>
+</code></pre>
+
+<p>这个命令允许你使用其中一个与 Jenkins 相关的原型生成项目。</p>
+
 <pre><code>$ mvn -U archetype:generate -Dfilter=io.jenkins.archetypes:
 ......
 Choose archetype:
@@ -366,103 +401,152 @@ artifactId: maven-snapshot-check
 version: 1.0-SNAPSHOT
 package: io.jenkins.plugins.sample
  Y: : Y
-</code></pre><p>笔者选择了 <code>hello-world-plugin</code> 这个原型，
-并在填写了一些参数，如artifactId、version 后生成了项目。<br>
+</code></pre>
+
+<p>笔者选择了 <code>hello-world-plugin</code> 这个原型，
+并在填写了一些参数，如artifactId、version 后生成了项目。<br />
 可以使用 <code>mvn verify</code> 命令验证是否可以构建成功。</p>
+
 <h3 id="构建及运行插件">构建及运行插件</h3>
+
 <p><code>Maven HPI Plugin</code> 用于构建和打包 Jenkins 插件。
 它提供了一种便利的方式来运行一个已经包含了当前插件的 Jenkins 实例：</p>
+
 <pre><code>mvn hpi:run
-</code></pre><p>这将安装一个 Jenkins 实例，可以通过 <code>http://localhost:8080/jenkins/</code> 来访问。
+</code></pre>
+
+<p>这将安装一个 Jenkins 实例，可以通过 <code>http://localhost:8080/jenkins/</code> 来访问。
 等待控制台输出如下内容，然后打开 Web 浏览器并查看插件的功能。</p>
+
 <pre><code>INFO: Jenkins is fully up and running
-</code></pre><p>在 Jenkins 中创建一个自由风格的任务，然后给它取个名字。
-然后添加 &ldquo;Say hello world&rdquo; 构建步骤，如下图所示：<br>
-<img src="say-hello-world.png" alt="say hello world"></p>
+</code></pre>
+
+<p>在 Jenkins 中创建一个自由风格的任务，然后给它取个名字。
+然后添加 &ldquo;Say hello world&rdquo; 构建步骤，如下图所示：<br />
+<img src="say-hello-world.png" alt="say hello world" /></p>
+
 <p>输入一个名字，如：Jenkins ，然后保存该任务，
 点击构建，查看构建日志，输出如下所示：</p>
+
 <pre><code>Started by user anonymous
 Building in workspace /Users/mrjenkins/demo/work/workspace/testjob
 Hello, Jenkins! 
 Finished: SUCCESS
-</code></pre><h3 id="定制开发插件">定制开发插件</h3>
+</code></pre>
+
+<h3 id="定制开发插件">定制开发插件</h3>
+
 <p>Jenkins 插件开发归功于有一系列扩展点。
 开发人员可以对其进行扩展自定义实现一些功能。</p>
+
 <p>这里有几个重要的概念需要做下说明：</p>
-<h4 id="扩展点-extensitonpoint-">扩展点（ ExtensitonPoint ）</h4>
+
+<h4 id="扩展点-extensitonpoint">扩展点（ ExtensitonPoint ）</h4>
+
 <p>扩展点是 Jenkins 系统某个方面的接口或抽象类。
 这些接口定义了需要实现的方法，而 Jenkins 插件需要实现这些方法。</p>
+
 <p>笔者所写的插件需要实现 Builder 这个扩展点。
 代码片段如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MavenCheck</span> <span style="color:#66d9ef">extends</span> Builder <span style="color:#f92672">{}</span>
-</code></pre></div><h4 id="descriptor-静态内部类">Descriptor 静态内部类</h4>
+
+<pre><code class="language-java">public class MavenCheck extends Builder {}
+</code></pre>
+
+<h4 id="descriptor-静态内部类">Descriptor 静态内部类</h4>
+
 <p>Descriptor 静态内部类是一个类的描述者，用于指明这是一个扩展点的实现，
 Jenkins 通过这个描述者才能知道我们写的插件。
 每一个描述者静态类都需要被 @Extension 注解，
-Jenkins 内部会扫描 @Extenstion 注解来获取注册了哪些插件。<br>
+Jenkins 内部会扫描 @Extenstion 注解来获取注册了哪些插件。<br />
 代码片段如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Extension</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DescriptorImpl</span> <span style="color:#66d9ef">extends</span> BuildStepDescriptor<span style="color:#f92672">&lt;</span>Builder<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">DescriptorImpl</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-        load<span style="color:#f92672">();</span>
-    <span style="color:#f92672">}</span>
 
-    <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isApplicable</span><span style="color:#f92672">(</span>Class<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> AbstractProject<span style="color:#f92672">&gt;</span> aClass<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
+<pre><code class="language-java">@Extension
+public static final class DescriptorImpl extends BuildStepDescriptor&lt;Builder&gt; {
+    public DescriptorImpl() {
+        load();
+    }
 
-    <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getDisplayName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Maven SNAPSHOT Check&#34;</span><span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>在 DesciptorImpl 实现类中有两个方法需要我们必须要进行重写：
+    @Override
+    public boolean isApplicable(Class&lt;? extends AbstractProject&gt; aClass) {
+        return true;
+    }
+
+    @Override
+    public String getDisplayName() {
+        return &quot;Maven SNAPSHOT Check&quot;;
+    }
+}
+</code></pre>
+
+<p>在 DesciptorImpl 实现类中有两个方法需要我们必须要进行重写：
 isApplicable() 和 getDisplayName() 。
 isApplicable() 这个方法的返回值代表这个 Builder 在 Jenkins Project 中是否可用，
 我们可以将我们的逻辑写在其中，例如做一些参数校验，
 最后返回 true 或 false 来决定这个 Builder 是否可用。</p>
+
 <p>getDisplayName() 这个方法返回的是一个 String 类型的值，
 这个名称被用来在 web 界面上显示。</p>
+
 <h4 id="数据绑定">数据绑定</h4>
+
 <p>前端页面的数据要和后台服务端进行交互，需要进行数据绑定。
 前端 <code>config.jelly</code> 页面代码片段如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?jelly escape-by-default=&#39;true&#39;?&gt;</span>
-<span style="color:#f92672">&lt;j:jelly</span> <span style="color:#a6e22e">xmlns:j=</span><span style="color:#e6db74">&#34;jelly:core&#34;</span> <span style="color:#a6e22e">xmlns:st=</span><span style="color:#e6db74">&#34;jelly:stapler&#34;</span> <span style="color:#a6e22e">xmlns:d=</span><span style="color:#e6db74">&#34;jelly:define&#34;</span> <span style="color:#a6e22e">xmlns:l=</span><span style="color:#e6db74">&#34;/lib/layout&#34;</span> <span style="color:#a6e22e">xmlns:t=</span><span style="color:#e6db74">&#34;/lib/hudson&#34;</span> <span style="color:#a6e22e">xmlns:f=</span><span style="color:#e6db74">&#34;/lib/form&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;f:entry</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;check&#34;</span> <span style="color:#a6e22e">field=</span><span style="color:#e6db74">&#34;check&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;f:checkbox</span> <span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;/f:entry&gt;</span>
-<span style="color:#f92672">&lt;/j:jelly&gt;</span>
-</code></pre></div><p>如上所示，需要在 config.jelly 中包含需要传入的参数配置信息的选择框，field 为 check ，这样可以在 Jenkins 进行配置，然后通过 DataBoundConstructor 数据绑定的方式，将参数传递到 Java 代码中。
+
+<pre><code class="language-xml">&lt;?jelly escape-by-default='true'?&gt;
+&lt;j:jelly xmlns:j=&quot;jelly:core&quot; xmlns:st=&quot;jelly:stapler&quot; xmlns:d=&quot;jelly:define&quot; xmlns:l=&quot;/lib/layout&quot; xmlns:t=&quot;/lib/hudson&quot; xmlns:f=&quot;/lib/form&quot;&gt;
+  &lt;f:entry title=&quot;check&quot; field=&quot;check&quot;&gt;
+    &lt;f:checkbox /&gt;
+  &lt;/f:entry&gt;
+&lt;/j:jelly&gt;
+</code></pre>
+
+<p>如上所示，需要在 config.jelly 中包含需要传入的参数配置信息的选择框，field 为 check ，这样可以在 Jenkins 进行配置，然后通过 DataBoundConstructor 数据绑定的方式，将参数传递到 Java 代码中。
 服务端 Java 代码片段如下：</p>
+
 <pre><code>@DataBoundConstructor
 public MavenCheck(boolean check) {
     this.check = check;
 }
-</code></pre><h4 id="核心逻辑">核心逻辑</h4>
+</code></pre>
+
+<h4 id="核心逻辑">核心逻辑</h4>
+
 <p>笔者所写的插件的核心逻辑是检查 Maven pom.xml 文件是否包含 SNAPSHOT 版本依赖。</p>
+
 <p>Jenkins 是 Master/Agent 架构，
 这就需要读取 Agent 节点的 workspace 的文件，
 这是笔者在写插件时遇到的一个难点。</p>
+
 <p>Jenkins 强大之处在于它的生态，目前有上千个插件，
 笔者参考了 <a href="https://plugins.jenkins.io/text-finder">Text-finder Plugin</a> 的源码，
 并在参考处添加了相关注释，最终实现了插件要实现的功能。</p>
+
 <p>详细代码可以查看 <a href="https://github.com/jenkinsci/maven-snapshot-check-plugin">jenkinsci/maven-snapshot-check-plugin</a> 代码仓库。</p>
+
 <h3 id="分发插件">分发插件</h3>
+
 <p>使用 <code>mvn package</code> 命令可以打包出后缀为 hpi 的二进制包，
 这样就可以分发插件，将其安装到 Jenkins 实例。</p>
+
 <h2 id="插件使用说明">插件使用说明</h2>
+
 <p>以下是对插件的使用简要描述。</p>
+
 <p>如果勾选了下面截图中的选择框，
 Jenkins 任务在构建时将会检查 pom.xml 中是否包含 SNAPSHOT 。
-<img src="maven-snapshot-check-plugin-usage.png" alt="maven-snapshot-check-plugin-usage"></p>
+<img src="maven-snapshot-check-plugin-usage.png" alt="maven-snapshot-check-plugin-usage" /></p>
+
 <p>如果检查到的话，则会将该次构建状态标记为失败。
-<img src="job-build-console-output.png" alt="job-build-console-output"></p>
+<img src="job-build-console-output.png" alt="job-build-console-output" /></p>
+
 <h2 id="总结">总结</h2>
-<p>文章上篇主要介绍了从产生 idea 到插件开发完成的过程。<br>
-那么插件在开发完成后是如何将它托管到 Jenkins 插件更新中心让所有用户都可以看到的呢？<br>
+
+<p>文章上篇主要介绍了从产生 idea 到插件开发完成的过程。<br />
+那么插件在开发完成后是如何将它托管到 Jenkins 插件更新中心让所有用户都可以看到的呢？<br />
 两天后的文章下篇将对这个过程进行介绍，敬请期待！</p>
+
 <h2 id="参考">参考</h2>
+
 <ul>
 <li><a href="https://wiki.jenkins.io/display/JENKINS/Plugin+tutorial">Plugin tutorial</a></li>
 <li><a href="https://jenkins.io/doc/developer/tutorial/prepare/">Preparing for Plugin Development</a></li>
@@ -570,6 +654,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -633,8 +726,35 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -651,8 +771,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
             </a>
           </li>
         
@@ -669,8 +825,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -707,6 +899,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -915,6 +1116,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -926,6 +1136,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

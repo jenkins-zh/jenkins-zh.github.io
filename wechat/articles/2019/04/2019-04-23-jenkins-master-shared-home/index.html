@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验" />
 <meta property="og:description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" />
-<meta property="article:published_time" content="2019-04-23T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-04-23T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-23-jenkins-master-shared-home/" /><meta property="article:published_time" content="2019-04-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-23T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验">
 <meta itemprop="description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？">
+
+
 <meta itemprop="datePublished" content="2019-04-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-23T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="234">
 
 
 
-<meta itemprop="keywords" content="jenkins," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="关于 Jenkins master 共享 JENKINS_HOME 目录的实验"/>
 <meta name="twitter:description" content="你觉得能通过共享 JENKINS_HOME 目录实现 Jenkins master 的高可用吗？"/>
 
@@ -231,21 +234,23 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#jenkins_home-介绍">JENKINS_HOME 介绍</a></li>
-        <li><a href="#实验环境介绍">实验环境介绍</a></li>
-        <li><a href="#实验1创建任务">实验1：创建任务</a></li>
-        <li><a href="#实验2任务结果可见性">实验2：任务结果可见性</a></li>
-        <li><a href="#实验3两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</a></li>
-        <li><a href="#实验4编辑任务">实验4：编辑任务</a></li>
-        <li><a href="#实验5定时任务的结果是什么">实验5：定时任务的结果是什么？</a></li>
-        <li><a href="#小结">小结</a></li>
-        <li><a href="#附录">附录</a></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#jenkins-home-介绍">JENKINS_HOME 介绍</a></li>
+<li><a href="#实验环境介绍">实验环境介绍</a></li>
+<li><a href="#实验1-创建任务">实验1：创建任务</a></li>
+<li><a href="#实验2-任务结果可见性">实验2：任务结果可见性</a></li>
+<li><a href="#实验3-两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</a></li>
+<li><a href="#实验4-编辑任务">实验4：编辑任务</a></li>
+<li><a href="#实验5-定时任务的结果是什么">实验5：定时任务的结果是什么？</a></li>
+<li><a href="#小结">小结</a></li>
+<li><a href="#附录">附录</a></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
 	
 
@@ -306,49 +311,93 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
+
+
 <blockquote>
 <p>审校：<a href="https://github.com/donhui">王冬辉</a>，<a href="https://github.com/LinuxSuRen">linuxsuren</a></p>
 </blockquote>
+
 <p>Jenkins master 的高可用是个老大难的问题。和很多人一样，笔者也想过两个 Jenkins master 共享同一个 JENKINS_HOME 的方案。了解 Jenkins 原理的人，都会觉得这个方案不可行。但是真的不可行吗？</p>
+
 <p>由于工作原因，笔者需要亲自验证以上猜想。</p>
-<h3 id="jenkins_home-介绍">JENKINS_HOME 介绍</h3>
+
+<h3 id="jenkins-home-介绍">JENKINS_HOME 介绍</h3>
+
 <p>Jenkins 所有状态数据都存放文件系统的目录中，这个目录被称为 JENKINS_HOME 目录。</p>
+
 <h3 id="实验环境介绍">实验环境介绍</h3>
+
 <p>笔者通过 Docker compose 启动两个独立的 Jenkins master，分别为 jenkins-a 和 jenkins-b。它们共用同一个 JENKINS_HOME 目录。相应的代码仓库的链接放在文章底部。</p>
-<p>将代码克隆到本地后，进入仓库，执行 <code>docker-compose up -d</code> 即可启动实验环境。启动完成，在浏览器中输入 http://localhost:7088 可访问 jenkins-a，jenkins-b 的地址是 http://localhost:7089 。但是你会发现它们启动后的界面显示是不一样的。</p>
+
+<p>将代码克隆到本地后，进入仓库，执行 <code>docker-compose up -d</code> 即可启动实验环境。启动完成，在浏览器中输入 <a href="http://localhost:7088">http://localhost:7088</a> 可访问 jenkins-a，jenkins-b 的地址是 <a href="http://localhost:7089">http://localhost:7089</a> 。但是你会发现它们启动后的界面显示是不一样的。</p>
+
 <p>jenkins-b 的界面如下图所示：</p>
-<p><img src="292372-fd4b85d5b9c8bdf6.png" alt=""></p>
+
+<p><img src="292372-fd4b85d5b9c8bdf6.png" alt="" /></p>
+
 <p>而 jenkins-a 的界面如下图所示：</p>
-<p><img src="292372-1bfd4e033b6c25c8.png" alt=""></p>
+
+<p><img src="292372-1bfd4e033b6c25c8.png" alt="" /></p>
+
 <p>这时，将 jenkins-a 日志中的解锁密码（Unlock password）输入到 jenkins-b 的页面中，会得到报错信息：</p>
+
 <pre><code>ERROR: The password entered is incorrect, please check the file for the correct password
-</code></pre><p>这时，再次 jenkins-b 日志中的解锁密码（Unlock password）输入到表单中即可进入下一步。接下来就是按照提示一步步完成了。在 jenkins-b 安装步骤的最后一步，我们设置了管理员的用户名密码：admin/admin。然后就算完成任务了。</p>
+</code></pre>
+
+<p>这时，再次 jenkins-b 日志中的解锁密码（Unlock password）输入到表单中即可进入下一步。接下来就是按照提示一步步完成了。在 jenkins-b 安装步骤的最后一步，我们设置了管理员的用户名密码：admin/admin。然后就算完成任务了。</p>
+
 <p>然后我们再在 jenkins-a 使用 admin/admin 进行登录，登录是报错的：用户密码不正确。</p>
+
 <p>接下来，执行 <code>docker-compose restart jenkins-a</code> 命令重启 jenkins-a。再次使用 admin/admin 就可以登录成功了。</p>
+
 <p>当两个 Jenkins 启动完成后，接下来开始做实验。</p>
-<h3 id="实验1创建任务">实验1：创建任务</h3>
+
+<h3 id="实验1-创建任务">实验1：创建任务</h3>
+
 <p>在 jenkins-a 创建任务 x，刷新 jenkins-b 的页面，jenkins-b 上会不会显示出任务 x ？</p>
+
 <p>结果：jenkins-b 不会出现任务 x。重启 jenkins-b 后，任务 x 出现在任务列表中。</p>
-<h3 id="实验2任务结果可见性">实验2：任务结果可见性</h3>
+
+<h3 id="实验2-任务结果可见性">实验2：任务结果可见性</h3>
+
 <p>jenkins-a 上任务执行，jenkins-b 上能否看到任务执行结果？</p>
+
 <p>jenkins-a 执行任务 x，并且执行成功。刷新 jenkins-b 看不到任何执行记录。重启 jenkins-b 后，可看到执行记录。</p>
-<h3 id="实验3两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</h3>
+
+<h3 id="实验3-两-master-同时执行同一任务">实验3：两 master 同时执行同一任务</h3>
+
 <p>分别在两个 Jenkins master 上（几乎）开始同一个任务 x。其中一个任务的 build number 会更新，但是另一个不会。</p>
+
 <p>其中 jenkins-a 任务 x 的 build number 会升到 2，而 jenkins-b 保持的是 1。这时，单独执行 jenkins-b 的任务 x，日志会出现错误：</p>
+
 <pre><code>jenkins-b_1  | WARNING: A new build could not be created in job x
 jenkins-b_1  | java.lang.IllegalStateException: JENKINS-23152: /var/jenkins_home/jobs/x/builds/2 already existed; will not overwrite with x #2
-</code></pre><h3 id="实验4编辑任务">实验4：编辑任务</h3>
+</code></pre>
+
+<h3 id="实验4-编辑任务">实验4：编辑任务</h3>
+
 <p>jenkins-a 上设置任务 x 定时执行，刷新 jenkins-b 页面，任务 x 中并没有定时执行的设置。重启 jenkins-b 后，任务 x 更新。</p>
-<h3 id="实验5定时任务的结果是什么">实验5：定时任务的结果是什么？</h3>
+
+<h3 id="实验5-定时任务的结果是什么">实验5：定时任务的结果是什么？</h3>
+
 <p>如果 jenkins-a 和 jenkins-b 两个任务均为定时任务，而且都生效了。它们运行结果是什么的呢？</p>
+
 <p>看到的现象是，两个任务都会按时执行，但是只有一个任务能将运行结果写入到磁盘中。界面如下图：</p>
-<p><img src="292372-38c7a7f8aade0793.png" alt=""></p>
+
+<p><img src="292372-38c7a7f8aade0793.png" alt="" /></p>
+
 <p>另，从日志中，可以确认 jenkins-a 和 jenkins-b 确实按时执行了。如下图日志中，看出 jenkins-a 定时执行 #6 次构建时报错，因为 jenkins-b 已经执行过 #6 次构建了：</p>
-<p><img src="292372-55e80e61f0d36dfb.png" alt=""></p>
+
+<p><img src="292372-55e80e61f0d36dfb.png" alt="" /></p>
+
 <h3 id="小结">小结</h3>
+
 <p>可以确认的是，当两个 Jenkins 进程共用同一个 JENKINS_HOME 目录时，其中一个 Jenkins 进程更新了 JENKINS_HOME 的内容，另一个是不会实时更新的。所以，同时启动两个 Jenkins master 共用同一个 JENKINS_HOME 的方案是不可行的。我们不能在 jenkins-a 挂了后，直接将流量切到 jenkins-b。因为 jenkins-b 必须重启。</p>
+
 <p>最后结论：多个 Jenkins master 共享同一个 JENKINS_HOME 的方案是无法使用 Jenkins master 的高可用。</p>
+
 <h3 id="附录">附录</h3>
+
 <ul>
 <li>Jenkins standby 实验环境：<a href="https://github.com/zacker330/jenkins-standby-experiment">https://github.com/zacker330/jenkins-standby-experiment</a></li>
 </ul>
@@ -441,6 +490,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -504,8 +562,35 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -522,8 +607,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
             </a>
           </li>
         
@@ -540,8 +661,44 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -578,6 +735,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -786,6 +952,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -797,6 +972,15 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

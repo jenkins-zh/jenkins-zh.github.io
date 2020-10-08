@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="如何参与" />
 <meta property="og:description" content="参与 Jenkins 中文社区的具体步骤" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/about/how-to-involve/" />
-<meta property="article:published_time" content="2019-01-05T22:56:04+08:00" />
-<meta property="article:modified_time" content="2019-01-05T22:56:04+08:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/about/how-to-involve/" /><meta property="article:published_time" content="2019-01-05T22:56:04&#43;08:00"/>
+<meta property="article:modified_time" content="2019-01-05T22:56:04&#43;08:00"/>
+
 <meta itemprop="name" content="如何参与">
 <meta itemprop="description" content="参与 Jenkins 中文社区的具体步骤">
+
+
 <meta itemprop="datePublished" content="2019-01-05T22:56:04&#43;08:00" />
 <meta itemprop="dateModified" content="2019-01-05T22:56:04&#43;08:00" />
 <meta itemprop="wordCount" content="184">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何参与"/>
 <meta name="twitter:description" content="参与 Jenkins 中文社区的具体步骤"/>
 
@@ -230,20 +233,25 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-  <ul>
-    <li><a href="#翻译-jenkins-相关文章">翻译 Jenkins 相关文章</a></li>
-    <li><a href="#jenkins-中文本地化">Jenkins 中文本地化</a></li>
-    <li><a href="#发表-jenkins-原创文章">发表 Jenkins 原创文章</a>
-      <ul>
-        <li><a href="#发表原创文章的步骤">发表原创文章的步骤</a></li>
-        <li><a href="#关于排期">关于排期</a></li>
-        <li><a href="#提-pr-时的要求">提 PR 时的要求</a></li>
-      </ul>
-    </li>
-    <li><a href="#分享">分享</a></li>
-    <li><a href="#维护本站点">维护本站点</a></li>
-    <li><a href="#review-别人提交到-pull-request">Review 别人提交到 Pull Request</a></li>
-  </ul>
+<ul>
+<li><a href="#为什么要参与开源社区">为什么要参与开源社区</a></li>
+<li><a href="#如何参与-jenkins-中文社区">如何参与 Jenkins 中文社区</a></li>
+<li><a href="#jenkins-中文社区代码仓库列表">Jenkins 中文社区代码仓库列表</a></li>
+<li><a href="#贡献-jenkins-中文社区的具体工作">贡献 Jenkins 中文社区的具体工作</a>
+<ul>
+<li><a href="#翻译-jenkins-相关文章">翻译 Jenkins 相关文章</a></li>
+<li><a href="#jenkins-中文本地化">Jenkins 中文本地化</a></li>
+<li><a href="#发表-jenkins-原创文章">发表 Jenkins 原创文章</a>
+<ul>
+<li><a href="#发表原创文章的步骤">发表原创文章的步骤</a></li>
+<li><a href="#关于排期">关于排期</a></li>
+<li><a href="#提-pr-时的要求">提 PR 时的要求</a></li>
+</ul></li>
+<li><a href="#分享">分享</a></li>
+<li><a href="#维护本站点">维护本站点</a></li>
+<li><a href="#review-别人提交到-pull-request">Review 别人提交到 Pull Request</a></li>
+</ul></li>
+</ul>
 </nav>
 	
 
@@ -304,13 +312,19 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
+
+
 <h1 id="为什么要参与开源社区">为什么要参与开源社区</h1>
+
 <ul>
 <li><a href="https://github.com/zacker330">翟志军</a>：想亲身参与一个开源社区，了解其运行机制。而为什么选择 Jenkins 中文社区？是想更多人了解持续交付。</li>
 <li><a href="https://github.com/zhangc819">zhangc819</a>：日常工作里经常需要开源社区的力量来解决问题、学习经验，参与开源社区建设也是为了给社区提供更多的力量，相互左右才能壮大下去。</li>
 </ul>
+
 <h1 id="如何参与-jenkins-中文社区">如何参与 Jenkins 中文社区</h1>
+
 <p>参与 Jenkins 中文社区的方式不只有 Coding 一条路可选，还有很多方式，比如：</p>
+
 <ol>
 <li>发表或翻译 Jenkins 相关的文章，并发表到社区网站及微信公众号。</li>
 <li>Jenkins 本地化。</li>
@@ -318,13 +332,21 @@ var trackOutboundLink = function(id, url) {
 <li>Review 别人提交到 Pull Request。</li>
 <li>发现 Jenkins 社区哪里可以改善，然后提个 Issue 或 Pull Request。</li>
 </ol>
+
 <p>等等。所有你能想到的，促进 Jenkins 中文社区发展的事情都算是参与 Jenkins 中文社区。</p>
+
 <p>但是，具体怎么做呢？</p>
+
 <p>首先，我们都是基于 Git 工具进行协作的，所以，你需要会一些 Git 及 GitHub 的基础操作。</p>
+
 <p><a href="/about/branching-strategy">分支策略</a>主要是提供执行并行任务时的参考指引，方便社区贡献者借鉴使用。</p>
+
 <p>接下来，咱们分别介绍每一种参与方式。</p>
+
 <h1 id="jenkins-中文社区代码仓库列表">Jenkins 中文社区代码仓库列表</h1>
+
 <p>那么，我们可以向哪些源代码仓库进行贡献呢？以下是各仓库的链接及简单介绍：</p>
+
 <ul>
 <li><a href="https://github.com/jenkins-infra/wechat">wechat</a>：存放 jenkins-zh.cn 网站的文章。也就是发文章可在此仓库提 PR。</li>
 <li><a href="https://github.com/jenkins-zh/jenkins-zh/">jenkins-zh</a>：Jenkins 中文社区网站源码，由 <a href="https://github.com/gohugoio/hugo">Hugo</a> 实现。</li>
@@ -332,19 +354,29 @@ var trackOutboundLink = function(id, url) {
 <li><a href="https://github.com/jenkins-zh/hugo-jenkins-theme">hugo-jenkins-theme</a>：Jenkins 中文社区网站主题。</li>
 <li><a href="https://github.com/jenkins-zh/artwork">artwork</a>：Jenkins 中文社区的艺术作品，比如 Jenkins 中文社区 Logo。</li>
 </ul>
+
 <h1 id="贡献-jenkins-中文社区的具体工作">贡献 Jenkins 中文社区的具体工作</h1>
+
 <p>具体有哪些工作，可以让我们参与？</p>
+
 <h2 id="翻译-jenkins-相关文章">翻译 Jenkins 相关文章</h2>
+
 <p>所有的翻译任务都会列在 <a href="https://github.com/orgs/jenkins-zh/projects/2">GitHub的看板</a>上。可以在看板上找到自己感兴趣的文章，然后将其拖到“In progress”列。这样可以避免重复的翻译。</p>
-<p><img src="/images/kanban-jenkins.png" alt="kanban-jenkins.png"></p>
+
+<p><img src="/images/kanban-jenkins.png" alt="kanban-jenkins.png" /></p>
+
 <p>当然，为保证翻译质量，希望大家能做到：</p>
+
 <ol>
 <li>认真、负责第一位。</li>
 <li>翻译任务通常不建议超过两周。</li>
 <li>遵守<a href="https://github.com/jenkinsci/localization-zh-cn-plugin/blob/master/specification.md">翻译规范</a>。</li>
 </ol>
+
 <h2 id="jenkins-中文本地化">Jenkins 中文本地化</h2>
+
 <p>本地化的工作包括：</p>
+
 <ol>
 <li>对 Jenkins 官方网站及
 
@@ -361,9 +393,13 @@ Pull Request 提交到
 <a href="https://github.com/jenkinsci/localization-zh-cn-plugin/pulls" target="_blank">localization-zh-cn-plugin</a>
 。</li>
 </ol>
+
 <h2 id="发表-jenkins-原创文章">发表 Jenkins 原创文章</h2>
+
 <p>原创内容包括：Jenkins 相关、持续集成、持续交付、DevOps</p>
+
 <p>在 Jenkins 中文社区提交的 PR 通过后，会发布在多个不同的媒体平台上，目前包括：</p>
+
 <ol>
 <li><a href="https://jenkins-zh.cn/">Jenkins 中文社区网站</a></li>
 <li>Jenkins 微信公众号</li>
@@ -371,32 +407,47 @@ Pull Request 提交到
 <li><a href="https://www.jianshu.com/c/b34c41b2f68f">简书专栏</a></li>
 <li><a href="https://juejin.im/user/5caa989b5188254418337798/posts">掘金</a></li>
 </ol>
+
 <h3 id="发表原创文章的步骤">发表原创文章的步骤</h3>
+
 <ol>
 <li>Fork <a href="https://github.com/jenkins-infra/wechat">wechat</a> 仓库，如果你还没有 fork。</li>
 <li>在本地，参考 <a href="https://github.com/jenkins-infra/wechat/blob/master/articles/sample.md">范文</a> 写文章。动手前请仔细阅读请阅读<a href="https://github.com/jenkins-infra/wechat/blob/master/articles/README.md">规范</a>。如果实在不明白的话，你也可以参考其它仓库中 <a href="https://github.com/jenkins-infra/wechat/tree/master/articles">articles</a> 目录下的其它文章来写就好。</li>
 <li>将本地的提交，推到自己的仓库。</li>
 <li>在 GitHub 上提一个 PR。</li>
 </ol>
+
 <h3 id="关于排期">关于排期</h3>
+
 <p>为了尽可能满足你期望的发布日期，可以自行选择，但同时需要满足如下的条件：</p>
+
 <ul>
 <li>为保障大家有足够的时间进行 Review，建议排到一周以后</li>
 <li>工作日</li>
 <li>避免同一天有相同类型的文章</li>
 </ul>
+
 <h3 id="提-pr-时的要求">提 PR 时的要求</h3>
+
 <ol>
 <li>PR 的标题格式：[类型-文章排期] 标题</li>
 <li>在 PR 类型列表前的 <code>[]</code> 中加入一个 <code>x</code>，例如：<code>[x]</code></li>
 </ol>
+
 <p>更多内容请参考 <a href="https://github.com/jenkins-infra/wechat/blob/master/.github/PULL_REQUEST_TEMPLATE.md">PULL_REQUEST_TEMPLATE.md</a></p>
+
 <h2 id="分享">分享</h2>
+
 <p>你可以在本站或者 <a href="https://jenkins-zh.cn/about/meetups/">Meetup</a> 上分享你在使用 Jenkins 或者相关技术时总结的经验、教训、成果等。</p>
+
 <h2 id="维护本站点">维护本站点</h2>
+
 <p>你可以从了解<a href="https://jenkins-zh.cn/about/about-site/">本站的架构</a>开始。小到错别字修正，大到站点风格、架构完善都需要你的参与。</p>
+
 <h2 id="review-别人提交到-pull-request">Review 别人提交到 Pull Request</h2>
+
 <p>Review 代码也算贡献社区的一种方式。</p>
+
 <p>Linus 说过：“Given enough eyeballs, all bugs are shallow（足够多的眼睛，就可让所有问题浮现）”。所以，当有贡献者提 Pull Request 到 Jenkins 中文社区的任何一个代码仓库，原则上，我们都需要两人及以上的人对该 Pull Request 进行 review。</p>
 
 </div>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kubesphere on Jenkins 中文社区</title>
+    <title>Kubesphere on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/kubesphere/</link>
-    <description>Recent content in kubesphere on Jenkins 中文社区</description>
+    <description>Recent content in Kubesphere on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 30 Jun 2020 00:00:00 +0000</lastBuildDate>
@@ -33,8 +33,7 @@ KubeSphere DevOps 充分利用和释放 Kubernetes 动态扩展的能力。例�
 4 月 14 日，Jenkins 中文社区负责人 Rick 与 KubeSphere 社区多名成员，在技术层面、内容层面、开源社区建设等三个方向进行深入地探讨，最终对两个社区的合作不约而同地达成了一致。
 在此次交流会上，KubeSphere 社区 Maintainer @runze xia 先向 Jenkins 中文社区介绍了 KubeSphere DevOps 的技术实现方案，以及为什么采用 Jenkins 作为 KubeSphere DevOps 的引擎。同时，Rick 也向 KubeSphere 社区介绍了 Jenkins-formulas 项目，该项目将来可用来替换 KubeSphere 当前的 Nginx 作为下载插件的 Update Center 方案。
 并且，两个社区还将在开源协作与技术内容输出方向共同努力，为社区的开发者和用户带来 DevOps 相关的优质技术文章与实践案例。当然，有一些开发者和社区用户表示，两个社区都开始紧密合作了，两个社区的小伙伴们是不是要约时间面基了？这些要求我们都可以统统安排上！两大社区后续计划联合举办线上的技术直播分享活动、在线研讨会，以及线下 Meetup，欢迎社区小伙伴持续关注我们的动态。
-交流会后，Rick 表示自己非常希望加入 KubeSphere 社区，参与 KubeSphere 社区贡献。KubeSphere 社区非常欢迎 Jenkins 中文社区的所有对 KubeSphere 与云原生技术兴趣的同学参与社区开发和文档贡献，KubeSphere 所有的代码、文档、沟通均在 GitHub、Slack 和论坛可见，对于 Jenkins 爱好者我们还在社区设立了 SIG-DevOps 供开发者交流，欢迎大家加入 Slack Channel。
-关于 Jenkins 中文社区 Jenkins 中文社区是由 Jenkins 国内的爱好者、贡献者 组成，共同推广以及完善 CI/CD 技术的学习试用和落地。Jenkins 中文社区秉承开源的精神，在社区治理上高度开放，代码、文档以及设计等开源免费，致力于为 Jenkins 用户带来更好的体验。</description>
+交流会后，Rick 表示自己非常希望加入 KubeSphere 社区，参与 KubeSphere 社区贡献。KubeSphere 社区非常欢迎 Jenkins 中文社区的所有对 KubeSphere 与云原生技术兴趣的同学参与社区开发和文档贡献，KubeSphere 所有的代码、文档、沟通均在 GitHub、Slack 和论坛可见，对于 Jenkins 爱好者我们还在社区设立了 SIG-DevOps 供开发者交流，欢迎大家加入 Slack Channel。</description>
     </item>
     
   </channel>

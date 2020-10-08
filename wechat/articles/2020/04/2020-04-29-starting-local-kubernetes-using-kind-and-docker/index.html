@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.71.0" />
+  <meta name="generator" content="Hugo 0.53" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,18 +42,21 @@
 <meta property="og:title" content="使用 kind 和 Docker 启动本地的 Kubernetes" />
 <meta property="og:description" content="介绍了 kind 这款工具，并且通过例子讲解了怎样通过 kind 在你本地的机器上部署应用到 Kubernetes  集群" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/" />
-<meta property="article:published_time" content="2020-04-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-29T00:00:00+00:00" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/" /><meta property="article:published_time" content="2020-04-29T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-04-29T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="使用 kind 和 Docker 启动本地的 Kubernetes">
 <meta itemprop="description" content="介绍了 kind 这款工具，并且通过例子讲解了怎样通过 kind 在你本地的机器上部署应用到 Kubernetes  集群">
+
+
 <meta itemprop="datePublished" content="2020-04-29T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-04-29T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="188">
 
 
 
-<meta itemprop="keywords" content="Kubernetes,Kind,Docker,WordPress,MySQL," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Kubernetes,Kind,Docker,WordPress,MySQL," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 kind 和 Docker 启动本地的 Kubernetes"/>
 <meta name="twitter:description" content="介绍了 kind 这款工具，并且通过例子讲解了怎样通过 kind 在你本地的机器上部署应用到 Kubernetes  集群"/>
 
@@ -295,46 +298,85 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-<p><img src="cover.jpg" alt="cover"></p>
+
+
+<p><img src="cover.jpg" alt="cover" /></p>
+
 <h2 id="介绍">介绍</h2>
+
 <p>你曾经花过一整天时间尝试入门 Kubernetes 吗？多亏最近新出现的一些工具，你可以不用再为此大费周章了。</p>
+
 <p>这篇文章中，我将向你展示使用 kind 在单个 Docker 容器中启动一个集群的步骤。</p>
+
 <h2 id="什么是-kind">什么是 kind？</h2>
+
 <blockquote>
 <p><em>kind 是一款使用 Docker 容器  “nodes” 运行 Kubernetes 集群的工具。</em>
 <em><a href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a></em></p>
 </blockquote>
+
 <p>介绍看起来没有描述信息，但是很明显能知道是源于 “Kubernetes IN Docker”。该工具具备了跨平台友好的优势即便你使用的是 Windows 版本的 Docker。当然了，缺点就是它的可追溯性比较差。</p>
+
 <h2 id="安装-kind">安装 kind</h2>
+
 <p>因为 kind 是 <code>go</code> 语言实现的，请确保安装了最新版本的 <code>golang</code>。根据<a href="https://kind.sigs.k8s.io/docs/contributing/getting-started/">开发者文档</a>，推荐使用 <code>go1.11.5</code> 及以上版本。为了安装 kind，请运行这些命令（可能需要运行一段时间）</p>
+
 <pre><code>go get -u sigs.k8s.io/kind  
 kind create cluster
-</code></pre><p>然后确认 “kind” 集群是可用的。</p>
+</code></pre>
+
+<p>然后确认 “kind” 集群是可用的。</p>
+
 <pre><code>kind get clusters
-</code></pre><h2 id="设置-kubectl">设置 kubectl</h2>
+</code></pre>
+
+<h2 id="设置-kubectl">设置 kubectl</h2>
+
 <p>同样的，使用 <a href="https://brew.sh/">Homebrew</a> 或者 <a href="https://chocolatey.org/">Chocolatey</a> 安装最新版本的 <code>kubernetes-cli</code>。最新版本的 Docker 包含了 Kubernetes 的功能，但使用的是老版本的 <code>kubectl</code>。</p>
+
 <p>运行该命令检查它的版本号。</p>
+
 <pre><code>kubectl version
-</code></pre><p>请确保显示 <code>GitVersion: &quot;v1.14.1&quot;</code> 或更高版本。</p>
+</code></pre>
+
+<p>请确保显示 <code>GitVersion: &quot;v1.14.1&quot;</code> 或更高版本。</p>
+
 <p>如果你发现通过 Docker 运行的 <code>kubectl</code>，试着使用 <code>brew link</code> 或对环境变量重新排序。</p>
+
 <p>一旦 <code>kubectl</code> 和 kind 安装就绪，打开 bash 控制台运行这些命令。</p>
+
 <pre><code>export KUBECONFIG=”$(kind get kubeconfig-path)”  
 kubectl cluster-info
-</code></pre><p>如果 kind 正确的配置了，会显示一些信息出来。现在你就可以继续开始下面的工作了。耶！</p>
+</code></pre>
+
+<p>如果 kind 正确的配置了，会显示一些信息出来。现在你就可以继续开始下面的工作了。耶！</p>
+
 <h2 id="部署第一个应用程序">部署第一个应用程序</h2>
+
 <p>我们需要部署什么到集群上呢？一个很好的选择就是 Wordpress 因为它包括 MySQL 和 PHP 应用程序。</p>
+
 <p>幸运的是，有一个官方的入门介绍并且描述的非常棒。我们可以尝试使用刚才创建的 kind 集群来操作里面的大多数步骤。</p>
+
 <p><a href="https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/">https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/</a></p>
+
 <p>首先，从这个页面上下载 <code>mysql-deployment.yaml</code> 和 <code>wordpress-deployment.yaml</code>。</p>
+
 <p>运行两个 <code>cat</code> 命令创建 <code>kustomization.yaml</code>。一旦这些 <code>yaml</code> 文件准备好之后，将文件按照下面显示的那样放到相应的目录里面。</p>
+
 <pre><code>k8s-wp/  
 kustomization.yaml  
 mysql-deployment.yaml  
 wordpress-deployment.yaml
-</code></pre><p>然后应用到你的集群当中。</p>
+</code></pre>
+
+<p>然后应用到你的集群当中。</p>
+
 <pre><code>cd k8s-wp  
 kubectl apply -k ./
-</code></pre><p>如果命令成功执行你会看到如下的输出。</p>
+</code></pre>
+
+<p>如果命令成功执行你会看到如下的输出。</p>
+
 <pre><code>secret/mysql-pass-7tt4f27774 created  
 service/wordpress-mysql created  
 service/wordpress created  
@@ -342,21 +384,38 @@ deployment.apps/wordpress-mysql created
 deployment.apps/wordpress created  
 persistentvolumeclaim/mysql-pv-claim created  
 persistentvolumeclaim/wp-pv-claim created
-</code></pre><p>让我们输入这些命令检查下集群的状态:</p>
+</code></pre>
+
+<p>让我们输入这些命令检查下集群的状态:</p>
+
 <pre><code>kubectl get secrets  
 kubectl get pvc  
 kubectl get pods  
 kubectl get services wordpress
-</code></pre><p>等待所有的 pod 变成 <code>Running</code> 状态。</p>
+</code></pre>
+
+<p>等待所有的 pod 变成 <code>Running</code> 状态。</p>
+
 <p>然后，运行这个命令来获取服务。</p>
+
 <pre><code>kubectl port-forward svc/wordpress 8080:80
-</code></pre><p>然后打开http://localhost:8080/</p>
-<p><img src="wordpress-page.png" alt="wordpress-page"></p>
+</code></pre>
+
+<p>然后打开<a href="http://localhost:8080/">http://localhost:8080/</a></p>
+
+<p><img src="wordpress-page.png" alt="wordpress-page" /></p>
+
 <p>瞧！</p>
+
 <p>如果你想查看数据库，检查你的pod，像这样运行一个命令，然后打开你的客户端应用。</p>
+
 <pre><code>kubectl port-forward wordpress-mysql-bc9864c58-ffh4c 3306:3306
-</code></pre><h2 id="结论">结论</h2>
+</code></pre>
+
+<h2 id="结论">结论</h2>
+
 <p>kind 对 minikube 来说是一个好的选择因为它只使用单个 Docker 容器。</p>
+
 <p>通过跟集成到 Kubernetes 1.14 的 Kustomze 结合使用，在你本地的机器上尝试使用 Kubernetes 会更加简单。</p>
 
 </div>
@@ -445,85 +504,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="link">
-              在 Kubernetes 上使用 Argo 实现 CI/CD
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/" class="link">
-              使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-06-using-a-k3s-kubernetes-cluster-for-your-gitlab-project/" class="link">
-              为你的 GitLab 项目使用 k3s Kubernetes 集群
-            </a>
-          </li>
-        
-      
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/" class="link">
-              使用 Vault 与 Kubernetes 为密码提供强有力的保障
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/" class="link">
-              使用 Kubernetes 和 Jenkins 创建一个 CI/CD 流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/" class="link">
-              在 Kubernetes 上使用 Jenkins 
-            </a>
-          </li>
-        
       
     </ul>
   </div>
