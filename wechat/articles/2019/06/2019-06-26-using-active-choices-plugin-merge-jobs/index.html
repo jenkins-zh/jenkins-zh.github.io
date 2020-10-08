@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="使用Active-Choices-Plugin插件将十个Job合成一个" />
 <meta property="og:description" content="使用Active-Choices-Plugin插件将十个Job合成一个" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" /><meta property="article:published_time" content="2019-06-26T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-06-26T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" />
+<meta property="article:published_time" content="2019-06-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-06-26T00:00:00+00:00" />
 <meta itemprop="name" content="使用Active-Choices-Plugin插件将十个Job合成一个">
 <meta itemprop="description" content="使用Active-Choices-Plugin插件将十个Job合成一个">
-
-
 <meta itemprop="datePublished" content="2019-06-26T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-06-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="299">
+<meta itemprop="wordCount" content="298">
 
 
 
-<meta itemprop="keywords" content="Jenkins,plugin," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Jenkins,plugin," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用Active-Choices-Plugin插件将十个Job合成一个"/>
 <meta name="twitter:description" content="使用Active-Choices-Plugin插件将十个Job合成一个"/>
 
@@ -233,32 +230,31 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-环境说明">1，环境说明</a></li>
-<li><a href="#2-安装插件">2，安装插件。</a></li>
-<li><a href="#3-使用前介绍">3，使用前介绍。</a></li>
-<li><a href="#4-配置前分析">4，配置前分析。</a>
-<ul>
-<li><a href="#1-eureka">1，eureka</a></li>
-<li><a href="#2-user">2，user</a></li>
-</ul></li>
-<li><a href="#5-创建项目">5，创建项目。</a></li>
-<li><a href="#6-字符参数">6，字符参数。</a></li>
-<li><a href="#7-选项参数">7，选项参数。</a></li>
-<li><a href="#8-选择参数">8，选择参数。</a>
-<ul>
-<li><a href="#1-主动选择参数">1，主动选择参数</a></li>
-<li><a href="#2-主动选择反应参数">2，主动选择反应参数</a></li>
-<li><a href="#3-主动选择反应参数">3，主动选择反应参数</a></li>
-</ul></li>
-<li><a href="#9-git地址配置">9，Git地址配置。</a></li>
-<li><a href="#10-执行脚本">10，执行脚本。</a></li>
-<li><a href="#11-构建后操作">11，构建后操作。</a></li>
-<li><a href="#12-效果展示">12，效果展示。</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1环境说明">1，环境说明</a></li>
+    <li><a href="#2安装插件">2，安装插件。</a></li>
+    <li><a href="#3使用前介绍">3，使用前介绍。</a></li>
+    <li><a href="#4配置前分析">4，配置前分析。</a>
+      <ul>
+        <li><a href="#1eureka">1，eureka</a></li>
+        <li><a href="#2user">2，user</a></li>
+      </ul>
+    </li>
+    <li><a href="#5创建项目">5，创建项目。</a></li>
+    <li><a href="#6字符参数">6，字符参数。</a></li>
+    <li><a href="#7选项参数">7，选项参数。</a></li>
+    <li><a href="#8选择参数">8，选择参数。</a>
+      <ul>
+        <li><a href="#1主动选择参数">1，主动选择参数</a></li>
+        <li><a href="#2主动选择反应参数">2，主动选择反应参数</a></li>
+        <li><a href="#3主动选择反应参数">3，主动选择反应参数</a></li>
+      </ul>
+    </li>
+    <li><a href="#9git地址配置">9，Git地址配置。</a></li>
+    <li><a href="#10执行脚本">10，执行脚本。</a></li>
+    <li><a href="#11构建后操作">11，构建后操作。</a></li>
+    <li><a href="#12效果展示">12，效果展示。</a></li>
+  </ul>
 </nav>
 	
 
@@ -319,41 +315,27 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="the_one.jpg" alt="" /></p>
-
+<p><img src="the_one.jpg" alt=""></p>
 <p>现在Spring Cloud越来越火爆，许多公司也都在如火如荼投入使用中，而微服务最大的一个特点，就是多，同一大项目之下，可能会被拆分成十几二十几个子服务，对于运维而言，可能也需要一个对应一个地在Jenkins中创建十几二十几个Job。</p>
-
 <p>刚刚还在一个博主的自我介绍里看到这样一句话：<code>喜欢一切优雅的运维方式···</code></p>
-
 <p>于是，我一直在想着，通过一些合理的参数变幻，从而将刚刚提到的十几二十几个服务，汇集到一个Job当中就能完成。</p>
-
-<h2 id="1-环境说明">1，环境说明</h2>
-
+<h2 id="1环境说明">1，环境说明</h2>
 <ul>
 <li>主机：CentOS-7.5</li>
 <li>Jdk：jdk1.8.0_192</li>
 <li>Tomcat：8</li>
 <li>Jenkins：2.177</li>
 </ul>
-
 <p>如上环境的准备工作本文就不赘述了。</p>
-
-<h2 id="2-安装插件">2，安装插件。</h2>
-
+<h2 id="2安装插件">2，安装插件。</h2>
 <ul>
-<li>官方地址：<a href="https://wiki.jenkins.io/display/JENKINS/Active+Choices+Plugin">https://wiki.jenkins.io/display/JENKINS/Active+Choices+Plugin</a></li>
+<li>官方地址：https://wiki.jenkins.io/display/JENKINS/Active+Choices+Plugin</li>
 <li>安装方式：在Jenkins插件当中直接搜索即可安装。</li>
 <li>功能说明：根据所选参数，自动调出对应参数所依赖的后续参数。</li>
 </ul>
-
-<h2 id="3-使用前介绍">3，使用前介绍。</h2>
-
+<h2 id="3使用前介绍">3，使用前介绍。</h2>
 <p>插件安装之后，可以在项目配置中的参数化配置中看到一些新增了的选项。</p>
-
-<p><img src="Active-Choices-plugin1.png" alt="" /></p>
-
+<p><img src="Active-Choices-plugin1.png" alt=""></p>
 <ul>
 <li>1，Active Choices Parameter（主动选择参数）
 Active Choices参数使用Groovy脚本或Scriptler目录中的脚本动态生成构建参数的值选项列表。</li>
@@ -362,87 +344,58 @@ Active Choices参数使用Groovy脚本或Scriptler目录中的脚本动态生成
 <li>3，Active Choices Reactive Reference Parameter（主动选择反应参考参数）
 根据主动选择参数的选项而展示对应参数的一些说明，与第二项的区别在于本参数只作为说明信息，而不能够作为变量往下传递。</li>
 </ul>
-
 <p>可能刚刚这些说明都比较抽象，接下来容我通过项目实战，来对其进行一一解析。</p>
-
-<h2 id="4-配置前分析">4，配置前分析。</h2>
-
+<h2 id="4配置前分析">4，配置前分析。</h2>
 <p>优秀的插件，它的优秀之处，往往是需要我们结合生产实际，开动聪明的大脑，打破常规使用套路来成就的。</p>
-
 <p>因此，如何才能更好地应用插件的优秀功能，需要我们先对项目进行分析，从全局的眼光，判断项目前后该配置什么样的参数来进行联动。</p>
-
 <p>这里我说明一下我准备的实验项目情况，为了简便测试，我这里仅使用两个项目来进行举例，聪明的你也一定能够通过案例进行举一反三，将二合一推广为十合一的。</p>
-
 <p>两个项目的情况如下：</p>
-
-<h3 id="1-eureka">1，eureka</h3>
-
+<h3 id="1eureka">1，eureka</h3>
 <ul>
 <li>Gitlab地址：git@192.168.10.0:ishangjie/ishangjie-eureka-server.git</li>
 <li>port：8761</li>
 <li>包名：ishangjie-eureka-server-1.0.0.jar</li>
 </ul>
-
-<h3 id="2-user">2，user</h3>
-
+<h3 id="2user">2，user</h3>
 <ul>
 <li>Gitlab地址：git@192.168.10.0:ishangjie/ishangjie-user-service.git</li>
 <li>port：6666</li>
 <li>包名：ishangjie-user-service-1.0.0.jar</li>
 </ul>
-
 <p>从刚刚这些配置里边可以看出，有不少共同点，也有不少不同点，我们只需把眼光放在不同点上，通过一些统一的变量控制，就能达到二合一的目的。</p>
-
 <p>另外说明一点，这个项目已经部署在k8s环境当中，因此我的脚本内容也就展示成了k8s项目部署的流程了。</p>
-
-<h2 id="5-创建项目">5，创建项目。</h2>
-
+<h2 id="5创建项目">5，创建项目。</h2>
 <p>首先创建一个<code>自由风格</code>的Jenkins项目，然后配置一下项目构建保存历史。</p>
-
-<p><img src="Active-Choices-plugin2.png" alt="" /></p>
-
-<h2 id="6-字符参数">6，字符参数。</h2>
-
+<p><img src="Active-Choices-plugin2.png" alt=""></p>
+<h2 id="6字符参数">6，字符参数。</h2>
 <p>添加一个名为<code>branch</code>的字符参数以用于控制代码分支的变量。</p>
-
-<p><img src="Active-Choices-plugin3.png" alt="" /></p>
-
-<h2 id="7-选项参数">7，选项参数。</h2>
-
+<p><img src="Active-Choices-plugin3.png" alt=""></p>
+<h2 id="7选项参数">7，选项参数。</h2>
 <p>添加一个名为<code>mode</code>的选项参数以用于控制部署或者回滚的变量。</p>
-
-<p><img src="Active-Choices-plugin4.png" alt="" /></p>
-
-<h2 id="8-选择参数">8，选择参数。</h2>
-
-<h3 id="1-主动选择参数">1，主动选择参数</h3>
-
+<p><img src="Active-Choices-plugin4.png" alt=""></p>
+<h2 id="8选择参数">8，选择参数。</h2>
+<h3 id="1主动选择参数">1，主动选择参数</h3>
 <p>首先添加一个主动选择参数，用于控制项目名称这个变量。</p>
-
-<p><img src="Active-Choices-plugin5.png" alt="" /></p>
-
+<p><img src="Active-Choices-plugin5.png" alt=""></p>
 <ul>
 <li><code>Name</code>：project</li>
-<li><code>Groovy Script</code>:
-<code>
-return[
+<li><code>Groovy Script</code>:</li>
+</ul>
+<pre><code>return[
 &quot;eureka&quot;,
 &quot;user&quot;
 ]
-</code></li>
+</code></pre><ul>
 <li><code>Description</code>：选择对应的应用名称部署对应的应用。</li>
 <li><code>Choice Type</code>：Radio Buttons</li>
 </ul>
-
-<h3 id="2-主动选择反应参数">2，主动选择反应参数</h3>
-
+<h3 id="2主动选择反应参数">2，主动选择反应参数</h3>
 <p>接着添加一个主动选择反应参数，用于控制项目类型这个变量。</p>
-
-<p><img src="Active-Choices-plugin6.png" alt="" /></p>
-
-<p><code>Name</code>：type
-- <code>Groovy Script</code>:</p>
-
+<p><img src="Active-Choices-plugin6.png" alt=""></p>
+<p><code>Name</code>：type</p>
+<ul>
+<li><code>Groovy Script</code>:</li>
+</ul>
 <pre><code>A=[&quot;server&quot;]
 B=[&quot;service&quot;]
 if(project.equals(&quot;eureka&quot;)){
@@ -450,112 +403,94 @@ return A
 } else if(project.equals(&quot;user&quot;)){
 return B
 }
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><code>Description</code>：跟随项目的选择自动弹出对应类型</li>
 <li><code>Choice Type</code>：Single Select</li>
 <li><code>Referenced parameters</code>：project</li>
 </ul>
-
-<h3 id="3-主动选择反应参数">3，主动选择反应参数</h3>
-
+<h3 id="3主动选择反应参数">3，主动选择反应参数</h3>
 <p>然后再添加一个主动选择反应参数，用于控制项目端口这个变量。</p>
-
-<p><img src="Active-Choices-plugin7.png" alt="" /></p>
-
+<p><img src="Active-Choices-plugin7.png" alt=""></p>
 <ul>
 <li><code>Name</code>：port</li>
-<li><code>Groovy Script</code>:
-<code>
-if(project.equals(&quot;eureka&quot;)){
+<li><code>Groovy Script</code>:</li>
+</ul>
+<pre><code>if(project.equals(&quot;eureka&quot;)){
 return [&quot;8761&quot;]
 } else if (project.equals(&quot;user&quot;)){
 return [&quot;6666&quot;]
 }
-</code></li>
+</code></pre><ul>
 <li><code>Description</code>：跟随跟随项目的选择自动弹出对应端口</li>
 <li><code>Choice Type</code>：Single Select</li>
 <li><code>Referenced parameters</code>：project</li>
 </ul>
-
 <p>这样，对应的参数都创建完毕了，大概有以下几个小的注意点需要注意：</p>
-
 <ul>
 <li>1，参数的名称将是整个构建流程使用的一个变量，因此起名的时候需要注意。</li>
 <li>2，创建了一个主动选择参数，和两个主动选择反应参数，是因为我们的实际需求需要两个真实有效的参数，如果最后的port项选择了主动选择反应参考参数，那么到后边是无法显式使用的。</li>
 <li>3，注意后两个跟随参数中的<code>Referenced parameters</code>，都需要填写主动参数的名称，才能够前后贯通，实现联动。</li>
 </ul>
-
-<h2 id="9-git地址配置">9，Git地址配置。</h2>
-
+<h2 id="9git地址配置">9，Git地址配置。</h2>
 <p>接着就该添加Git地址了，同样，这个地方也应该合理利用项目标准化的优势，合理应用变量来进行配置。</p>
-
 <p>具体如下图所示：</p>
-
-<p><img src="Active-Choices-plugin8.png" alt="" /></p>
-
-<h2 id="10-执行脚本">10，执行脚本。</h2>
-
+<p><img src="Active-Choices-plugin8.png" alt=""></p>
+<h2 id="10执行脚本">10，执行脚本。</h2>
 <p>接下来就该通过脚本来完成构建的主要流程了。</p>
-
-<pre><code class="language-shell">#!/bin/bash
-source /etc/profile
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>source /etc/profile
 #
-##set color##
-echoRed() { echo $'\e[0;31m'&quot;$1&quot;$'\e[0m'; }
-echoGreen() { echo $'\e[0;32m'&quot;$1&quot;$'\e[0m'; }
-echoYellow() { echo $'\e[0;33m'&quot;$1&quot;$'\e[0m'; }
-##set color##
+<span style="color:#75715e">##set color##</span>
+echoRed<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> echo <span style="color:#e6db74">$&#39;\e[0;31m&#39;</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$&#39;\e[0m&#39;</span>; <span style="color:#f92672">}</span>
+echoGreen<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> echo <span style="color:#e6db74">$&#39;\e[0;32m&#39;</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$&#39;\e[0m&#39;</span>; <span style="color:#f92672">}</span>
+echoYellow<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> echo <span style="color:#e6db74">$&#39;\e[0;33m&#39;</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$&#39;\e[0m&#39;</span>; <span style="color:#f92672">}</span>
+<span style="color:#75715e">##set color##</span>
 #
-version=`date +%Y%m%d%H%M%S`
+version<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%Y%m%d%H%M%S<span style="color:#e6db74">`</span>
 echo -------------------------------------
 
-# 克隆项目并编译
-echoGreen &quot;开始进行mvn编译！&quot;
-cd  $WORKSPACE &amp;&amp; mvn clean install -DskipTests=true
-[ $? != 0 ] &amp;&amp; echoRed &quot;请注意，在执行mvn编译时出错，故而退出构建，需开发同学自检代码！&quot; &amp;&amp; exit 1
-cd  $WORKSPACE/target/ &amp;&amp; mv ishangjie-$project-$type-1.0.0.jar app.jar
+<span style="color:#75715e"># 克隆项目并编译</span>
+echoGreen <span style="color:#e6db74">&#34;开始进行mvn编译！&#34;</span>
+cd  $WORKSPACE <span style="color:#f92672">&amp;&amp;</span> mvn clean install -DskipTests<span style="color:#f92672">=</span>true
+<span style="color:#f92672">[</span> $? !<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> echoRed <span style="color:#e6db74">&#34;请注意，在执行mvn编译时出错，故而退出构建，需开发同学自检代码！&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exit <span style="color:#ae81ff">1</span>
+cd  $WORKSPACE/target/ <span style="color:#f92672">&amp;&amp;</span> mv ishangjie-$project-$type-1.0.0.jar app.jar
 
-# 创建docker镜像
-cat &gt; run.sh &lt;&lt; EOF
-#!/bin/bash
-source /etc/profile
-java -jar /opt/app.jar --spring.profiles.active=test1
-EOF
+<span style="color:#75715e"># 创建docker镜像</span>
+cat &gt; run.sh <span style="color:#e6db74">&lt;&lt; EOF
+</span><span style="color:#e6db74">#!/bin/bash
+</span><span style="color:#e6db74">source /etc/profile
+</span><span style="color:#e6db74">java -jar /opt/app.jar --spring.profiles.active=test1
+</span><span style="color:#e6db74">EOF</span>
 
 chmod +x run.sh
 
-cat &gt;Dockerfile &lt;&lt; EOF
-FROM 192.168.10.1/public/jdk:1.8
-MAINTAINER eryajf &lt;liqilong@edspay.com&gt;
-ENV LANG en_US.UTF-8
-ADD   app.jar /opt/app.jar
-ADD   run.sh  /
-EXPOSE $port
-ENTRYPOINT [ &quot;sh&quot;, &quot;-c&quot;, &quot;/run.sh&quot; ]
-EOF
+cat &gt;Dockerfile <span style="color:#e6db74">&lt;&lt; EOF
+</span><span style="color:#e6db74">FROM 192.168.10.1/public/jdk:1.8
+</span><span style="color:#e6db74">MAINTAINER eryajf &lt;liqilong@edspay.com&gt;
+</span><span style="color:#e6db74">ENV LANG en_US.UTF-8
+</span><span style="color:#e6db74">ADD   app.jar /opt/app.jar
+</span><span style="color:#e6db74">ADD   run.sh  /
+</span><span style="color:#e6db74">EXPOSE $port
+</span><span style="color:#e6db74">ENTRYPOINT [ &#34;sh&#34;, &#34;-c&#34;, &#34;/run.sh&#34; ]
+</span><span style="color:#e6db74">EOF</span>
 
-# 构建镜像
-echoGreen &quot;开始构建当次镜像！&quot;
+<span style="color:#75715e"># 构建镜像</span>
+echoGreen <span style="color:#e6db74">&#34;开始构建当次镜像！&#34;</span>
 docker build -t 192.168.10.1/isj/$project:$version .
-[ $? != 0 ] &amp;&amp; echoRed &quot;请注意，在执行镜像构建时出错，故而退出构建，请联系运维同学处理！&quot; &amp;&amp; exit 1
+<span style="color:#f92672">[</span> $? !<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> echoRed <span style="color:#e6db74">&#34;请注意，在执行镜像构建时出错，故而退出构建，请联系运维同学处理！&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exit <span style="color:#ae81ff">1</span>
 
-# 上传到docker私服
-echoGreen &quot;开始将镜像push到私服！&quot;
+<span style="color:#75715e"># 上传到docker私服</span>
+echoGreen <span style="color:#e6db74">&#34;开始将镜像push到私服！&#34;</span>
 docker push 192.168.10.1/isj/$project:$version
-[ $? != 0 ] &amp;&amp; echoRed &quot;请注意，在执行镜像上传时出错，故而退出构建，请联系运维同学处理！&quot; &amp;&amp; exit 1
+<span style="color:#f92672">[</span> $? !<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> echoRed <span style="color:#e6db74">&#34;请注意，在执行镜像上传时出错，故而退出构建，请联系运维同学处理！&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exit <span style="color:#ae81ff">1</span>
 docker rmi 192.168.10.1/isj/$project:$version
 
-#更新镜像
-echoGreen &quot;开始将最新镜像部署到远端！&quot;
-rancher kubectl set image deployment/isj-$project isj-$project=192.168.10.1/isj/$project:$version -n isj-wfw
-[ $? != 0 ] &amp;&amp; echoRed &quot;请注意，在执行镜像更新时出错，故而退出构建，请联系运维同学处理！&quot; &amp;&amp; exit 1
-echoGreen &quot;部署完成！&quot;
-</code></pre>
-
-<p>针对这个脚本有几点简单说明：</p>
-
+<span style="color:#75715e">#更新镜像</span>
+echoGreen <span style="color:#e6db74">&#34;开始将最新镜像部署到远端！&#34;</span>
+rancher kubectl set image deployment/isj-$project isj-$project<span style="color:#f92672">=</span>192.168.10.1/isj/$project:$version -n isj-wfw
+<span style="color:#f92672">[</span> $? !<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> echoRed <span style="color:#e6db74">&#34;请注意，在执行镜像更新时出错，故而退出构建，请联系运维同学处理！&#34;</span> <span style="color:#f92672">&amp;&amp;</span> exit <span style="color:#ae81ff">1</span>
+echoGreen <span style="color:#e6db74">&#34;部署完成！&#34;</span>
+</code></pre></div><p>针对这个脚本有几点简单说明：</p>
 <ul>
 <li>1，因为应用到了颜色输出，因此记得在构建环境当中开启color颜色输出。</li>
 <li>2，尽量在关键地方添加一下判断，然后输出明了的内容以提高生产效率，比如编译有问题，直接退出构建，输出开发自检，如果是后边构建问题，同样退出构建，输出联系运维解决。</li>
@@ -563,19 +498,12 @@ echoGreen &quot;部署完成！&quot;
 <li>4，尽量将所有构建过程的内容都写到Jenkins这里来，以便于后期问题排查与分析。</li>
 <li>5，因为这是实验，因此没有添加回滚功能，如果添加的话，就针对mode参数做一个判断即可。</li>
 </ul>
-
-<h2 id="11-构建后操作">11，构建后操作。</h2>
-
+<h2 id="11构建后操作">11，构建后操作。</h2>
 <p>因为是多个项目在同一个<code>WORKSPACE</code>下工作，因此，为了避免出现不可预知问题，这里添加了构建后清空<code>WORKSPACE</code>的选项。</p>
-
-<p><img src="Active-Choices-plugin9.png" alt="" /></p>
-
-<h2 id="12-效果展示">12，效果展示。</h2>
-
+<p><img src="Active-Choices-plugin9.png" alt=""></p>
+<h2 id="12效果展示">12，效果展示。</h2>
 <p>一切配置完成之后，就可以尝试一下点击构建了。</p>
-
-<p><img src="Active-Choices-plugin10.gif" alt="" /></p>
-
+<p><img src="Active-Choices-plugin10.gif" alt=""></p>
 <p>好了，这就是本期的分享，当然，关于这个插件，这里也只是介绍了其中一种一个思路，可能还有很多种其他的方案，期待各位发挥思维发掘更多妙用。</p>
 
 </div>
@@ -646,6 +574,139 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
+            </a>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
+            </a>
+          </li>
+        
       
     </ul>
   </div>

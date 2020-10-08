@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD" />
 <meta property="og:description" content="通过使用 Jenkins X 和 Kubernetes 来改进 Spring Boot 应用程序，使 Jenkins X 成为 CI/CD 过程的关键部分。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/" /><meta property="article:published_time" content="2019-05-24T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-24T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/" />
+<meta property="article:published_time" content="2019-05-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-24T00:00:00+00:00" />
 <meta itemprop="name" content="使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD">
 <meta itemprop="description" content="通过使用 Jenkins X 和 Kubernetes 来改进 Spring Boot 应用程序，使 Jenkins X 成为 CI/CD 过程的关键部分。">
-
-
 <meta itemprop="datePublished" content="2019-05-24T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-24T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1838">
 
 
 
-<meta itemprop="keywords" content="jenkins-x,k8s,kubernetes,ci,cd,spring boot," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins-x,k8s,kubernetes,ci,cd,spring boot," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD"/>
 <meta name="twitter:description" content="通过使用 Jenkins X 和 Kubernetes 来改进 Spring Boot 应用程序，使 Jenkins X 成为 CI/CD 过程的关键部分。"/>
 
@@ -298,79 +295,40 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
 <p>过去五年中的变化，如迁移到公有云以及从虚拟机向容器的转变，已经彻底改变了构建和部署软件的意义。</p>
-
 <p>以 Kubernetes 为例。Google 于2014年开源，现在所有主流的公有云供应商都支持它&mdash;它为开发人员提供了一种很好的方式，可以将应用程序打包到 Docker 容器中，并部署到任意 Kubernetes 集群中。</p>
-
-<h2 id="使用-ci-cd-kubernetes-和-jenkins-x-进行高性能开发">使用 CI/CD、Kubernetes 和 Jenkins X 进行高性能开发</h2>
-
+<h2 id="使用-cicdkubernetes-和-jenkins-x-进行高性能开发">使用 CI/CD、Kubernetes 和 Jenkins X 进行高性能开发</h2>
 <p>在技术上，高性能团队几乎总是成功的必要条件，而持续集成、持续部署(CI/CD)、小迭代以及快速反馈是构建模块。为你的云原生应用程序设置 CI/CD 可能比较困难。通过自动化所有内容，开发人员可以花费宝贵的时间来交付实际的业务。</p>
-
 <p>如何使用容器、持续交付和 Kubernetes 成为高效团队？这就是 Jenkins X 的切入点。</p>
-
-<hr />
-
+<hr>
 <p>“Jenkins X 的理念是为所有开发人员提供他们自己的海军航海管家，可以帮助你航行持续交付的海洋。” -  James Strachan</p>
-
-<hr />
-
+<hr>
 <p>Jenkins X 帮助你自动化你在 Kubernetes 中的 CI/CD - 你甚至不需要学习 Docker 或 Kubernetes！</p>
-
 <h2 id="jenkins-x-能做什么">Jenkins X 能做什么？</h2>
-
 <p>Jenkins X 在 Kubernetes 上自动安装，配置和升级 Jenkins 和其他应用程序（Helm，Skaffold，Nexus 等）。它使用 Docker 镜像、Helm 图表和流水线来自动化应用程序的 CI/CD。它使用 GitOps 来管理环境之间的升级，并通过在拉取请求和生产时对其进行评论来提供大量反馈。</p>
-
 <h2 id="jenkins-x-入门">Jenkins X 入门</h2>
-
 <p>要安装 Jenkins X，首先需要在你的机器或云供应商上安装 <code>jx</code> 二进制文件。从 Google Cloud 可以获得300美元的积分，所以我决定从那里开始。</p>
-
 <h2 id="在-google-cloud-上安装-jenkins-x-并创建群集">在 Google Cloud 上安装 Jenkins X 并创建群集</h2>
-
 <p>浏览到<a href="https://cloud.google.com">cloud.google.com</a>并登录。如果你还没有帐户，请注册免费试用。转到控制台（右上角有一个链接）并激活 Google Cloud shell。将以下命令复制并粘贴到 shell 中。</p>
-
 <pre><code>curl -L https://github.com/jenkins-x/jx/releases/download/v1.3.79/jx-linux-amd64.tar.gz | tar xzv
 sudo mv jx /usr/local/bin
-</code></pre>
-
-<p>注意：Google Cloud Shell 将在一小时后终止在你的主目录之外所做的任何更改，因此你可能必须重新运行这些命令。好消息是它们将在你的历史中，所以你只需要向上箭头并进入。你也可以删除上面的 <code>sudo mv</code> 命令，并将以下内容添加到 <code>.bashrc</code> 中。</p>
-
+</code></pre><p>注意：Google Cloud Shell 将在一小时后终止在你的主目录之外所做的任何更改，因此你可能必须重新运行这些命令。好消息是它们将在你的历史中，所以你只需要向上箭头并进入。你也可以删除上面的 <code>sudo mv</code> 命令，并将以下内容添加到 <code>.bashrc</code> 中。</p>
 <pre><code>export PATH=$PATH:.
-</code></pre>
-
-<p>使用以下命令在 GKE（Google Kubernetes Engine）上创建集群。你可能必须为你的帐户<a href="https://console.cloud.google.com/projectselector/kubernetes">启用 GKE</a>。</p>
-
+</code></pre><p>使用以下命令在 GKE（Google Kubernetes Engine）上创建集群。你可能必须为你的帐户<a href="https://console.cloud.google.com/projectselector/kubernetes">启用 GKE</a>。</p>
 <pre><code>jx create cluster gke --skip-login
-</code></pre>
-
-<p>如果系统提示你下载 <code>helm</code>，请确认你要安装。系统将提示你选择 Google Cloud Zone。我建议选择一个靠近你的位置。我选择 <code>us-west1-a</code>，因为我住在 <strong>Denver, Colorado</strong> 附近。对于 Google Cloud Machine 类型，我选择了 <code>n1-standard-2</code> 并使用了 min（3）和 max（5）个节点数的默认值。</p>
-
+</code></pre><p>如果系统提示你下载 <code>helm</code>，请确认你要安装。系统将提示你选择 Google Cloud Zone。我建议选择一个靠近你的位置。我选择 <code>us-west1-a</code>，因为我住在 <strong>Denver, Colorado</strong> 附近。对于 Google Cloud Machine 类型，我选择了 <code>n1-standard-2</code> 并使用了 min（3）和 max（5）个节点数的默认值。</p>
 <p>对于 GitHub 名称，键入你自己的（例如 <code>mraible</code>）和你在 GitHub 上注册的电子邮件（例如 <code>matt.raible@okta.com</code>）。我试图使用 <code>oktadeveloper</code>（一个 GitHub 组织），但我无法使其工作。</p>
-
 <p>注意：如果你的帐户启用了两步认证，则 GitHub 集成将失败。如果你希望成功完成该过程，则需要在 GitHub 上禁用它。</p>
-
 <p>当提示安装 ingress controller 时，按 <strong>Enter</strong> 键 <strong>确定</strong>。再次按 <strong>Enter</strong> 键选择默认 domain。</p>
-
 <p>系统将提示你创建 GitHub API Token。单击 <a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo">提供的 URL</a> 并将其命名为 “Jenkins X”。将 token 值复制并粘贴回控制台。</p>
-
 <p>在安装完成后喝杯咖啡、饮料或做一些俯卧撑。可能需要几分钟。</p>
-
 <p>下一步是将 API token 从 Jenkins 复制到你的控制台。按照控制台中提供的说明进行操作。</p>
-
 <p>完成后，运行 <code>jx console</code> 并单击链接以登录到 Jenkins 实例。单击 Administration 并升级 Jenkins 及其所有插件（插件管理器 &gt; 滚动到底部并选择全部）。如果未能执行此步骤，将无法从 GitHub pull request 到 Jenkins X CI 进程。</p>
-
 <h2 id="创建一个-spring-boot-应用程序">创建一个 Spring Boot 应用程序</h2>
-
 <p>当我第一次开始使用 Jenkins X 时，我尝试导入现有项目。即使我的应用程序使用了 Spring Boot，但是根目录中没有 <code>pom.xml</code>，所以 Jenkins X 认为它是一个 Node.js 应用程序。出于这个原因，我建议首先创建一个空白的 Spring Boot 应用程序，以保证 Jenkins X 正确创建。</p>
-
 <p>从 Cloud Shell 创建一个简单的 Spring Boot 应用程序：</p>
-
 <pre><code>jx create spring -d web -d actuator
-</code></pre>
-
-<p>此命令使用 <a href="https://start.spring.io/">Spring Initializr</a>，因此系统会提示你进行一些选择。以下是我的选择：</p>
-
+</code></pre><p>此命令使用 <a href="https://start.spring.io/">Spring Initializr</a>，因此系统会提示你进行一些选择。以下是我的选择：</p>
 <table>
 <thead>
 <tr>
@@ -378,65 +336,42 @@ sudo mv jx /usr/local/bin
 <th>ANSWER</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Language</td>
 <td>java</td>
 </tr>
-
 <tr>
 <td>Group</td>
 <td>com.okta.developer</td>
 </tr>
-
 <tr>
 <td>Artifact</td>
 <td>okta-spring-jx-example</td>
 </tr>
 </tbody>
 </table>
-
 <p>提示：为你的 artifact name 选取一个简洁的名称将减轻你的痛苦。Jenkins X 对于版本名称有53个字符的限制，<code>oktadeveloper/okta-spring-boot-jenkinsx-example</code> 将会使它超过两个字符。</p>
-
 <p>为 git 用户名、初始化 git 和提交消息都选择默认值。如果你不想使用个人帐户，可以选择要使用的组织。运行以下命令以查看应用程序的 CI/CD 流水线。</p>
-
 <pre><code>jx get activity -f okta-spring-jx-example -w
-</code></pre>
-
-<p>运行 <code>jx console</code>，单击生成的链接，然后导航到你的项目(如果你想要一个更富视觉效果的视图)。</p>
-
-<p><img src="218555ae4b7cda6108cb48d15e26a7b07bae408f50b13845496a07be904ac03e.png" alt="Image title" /></p>
-
+</code></pre><p>运行 <code>jx console</code>，单击生成的链接，然后导航到你的项目(如果你想要一个更富视觉效果的视图)。</p>
+<p><img src="218555ae4b7cda6108cb48d15e26a7b07bae408f50b13845496a07be904ac03e.png" alt="Image title"></p>
 <p>此过程将执行一些任务：</p>
-
 <ol>
 <li>为你的项目创建一个<a href="https://github.com/oktadeveloper/okta-spring-jx-example/releases/tag/v0.0.1">版本</a>。</li>
 <li>为演示环境项目创建 <a href="https://github.com/mraible/environment-marespring-staging/pull/1">pull request</a>。</li>
-<li>将其自动部署到演示环境，以便你可以查看它的运行情况。
-<code>
-Merge status checks all passed so the promotion worked!
-Application is available at: http://okta-spring-jx-example.jx-staging.35.230.106.169.nip.io
-</code></li>
+<li>将其自动部署到演示环境，以便你可以查看它的运行情况。</li>
 </ol>
-
-<p>注意：由于 Spring Boot 默认情况下不提供欢迎页面，所以打开上面的 URL 时将返回404。</p>
-
+<pre><code>Merge status checks all passed so the promotion worked!
+Application is available at: http://okta-spring-jx-example.jx-staging.35.230.106.169.nip.io
+</code></pre><p>注意：由于 Spring Boot 默认情况下不提供欢迎页面，所以打开上面的 URL 时将返回404。</p>
 <h2 id="使用-jenkins-x-将-spring-boot-应用程序部署到生产环境中">使用 Jenkins X 将 Spring Boot 应用程序部署到生产环境中</h2>
-
 <p>默认情况下，Jenkins X 只会自动部署到演示环境。你可以手动改进从<a href="http://jenkins-x.io/developing/promote/">演示到生产</a>使用：</p>
-
 <pre><code>jx promote okta-spring-jx-example --version 0.0.1 --env production
-</code></pre>
-
-<p>你可以使用 <code>jx edit environment</code> 更改生产环境，以使用自动部署。</p>
-
+</code></pre><p>你可以使用 <code>jx edit environment</code> 更改生产环境，以使用自动部署。</p>
 <p>既然你已经知道如何使用 Jenkins X 和一个简单的 Spring Boot 应用程序，让我们来看看如何通过一个更实际的示例使其工作。</p>
-
 <h2 id="保护你的-spring-boot-应用程序并添加-angular-pwa">保护你的 Spring Boot 应用程序并添加 Angular PWA</h2>
-
 <p>在过去的几个月里，我写了一系列有关使用 Ionic/Angular 和 Spring Boot 构建 PWA（渐进式 Web 应用程序）的博文。</p>
-
 <ol>
 <li>使用 Okta 保护你的加密货币财富跟踪 PWA</li>
 <li>使用 Okta（而不是本地存储）安全地存储用户的数据</li>
@@ -444,25 +379,14 @@ Application is available at: http://okta-spring-jx-example.jx-staging.35.230.106
 <li>将你的 Spring Boot + Angular PWA 部署为一个 Artifact
 这是该系列的最后一篇博客文章。我相信这是一个真实应用程序的很好的例子，因为它有许多单元和集成测试，包括与 Protractor 的端到端测试。让我们看看如何使用 Jenkins X 和 Kubernetes 自动化生产路径！</li>
 </ol>
-
 <p>克隆刚刚从GitHub创建的Spring Boot项目（确保在URL中更改{yourUsername}）：</p>
-
 <pre><code>git clone https://github.com/{yourUsername}/okta-spring-jx-example.git okta-jenkinsx
-</code></pre>
-
-<p>在邻近目录中，将创建的具有 Spring Boot + Angular 的项目克隆为一个 artifact：</p>
-
+</code></pre><p>在邻近目录中，将创建的具有 Spring Boot + Angular 的项目克隆为一个 artifact：</p>
 <pre><code>git clone https://github.com/oktadeveloper/okta-spring-boot-angular-auth-code-flow-example.git spring-boot-angular
-</code></pre>
-
-<p>在终端中，导航到 <code>okta-jenkinsx</code> 并删除不再需要的文件：</p>
-
+</code></pre><p>在终端中，导航到 <code>okta-jenkinsx</code> 并删除不再需要的文件：</p>
 <pre><code>cd okta-jenkinsx
 rm  -rf .mvn src mvnw* pom.xml
-</code></pre>
-
-<p>结果应该是包含以下文件的目录结构：</p>
-
+</code></pre><p>结果应该是包含以下文件的目录结构：</p>
 <pre><code>$ tree .
 .
 ├── charts
@@ -486,17 +410,10 @@ rm  -rf .mvn src mvnw* pom.xml
 └── skaffold.yaml
 
 4 directories, 15 files
-</code></pre>
-
-<p>将 <code>spring-boot-angular</code> 所有文件复制到 <code>okta-jenkinsx</code>。</p>
-
+</code></pre><p>将 <code>spring-boot-angular</code> 所有文件复制到 <code>okta-jenkinsx</code>。</p>
 <pre><code>cp  -r ../spring-boot-angular/* .
-</code></pre>
-
-<p>使用 Travis CI 测试此应用程序时，我运行了 <code>npm install</code> 作为该过程的一部分。使用 Jenkins X，使用一个容器（例如 <code>maven</code> 或者 <code>nodejs</code>）保存所有内容更简单，因此在 frontend-maven-plugin（在 <code>holdings-api/pom.xml</code>）中添加执行以运行 <code>npm install</code> （提示：你将需要执行 <code>id==’npm install'</code> 添加到现有的pom.xml中）。</p>
-
+</code></pre><p>使用 Travis CI 测试此应用程序时，我运行了 <code>npm install</code> 作为该过程的一部分。使用 Jenkins X，使用一个容器（例如 <code>maven</code> 或者 <code>nodejs</code>）保存所有内容更简单，因此在 frontend-maven-plugin（在 <code>holdings-api/pom.xml</code>）中添加执行以运行 <code>npm install</code> （提示：你将需要执行 <code>id==’npm install'</code> 添加到现有的pom.xml中）。</p>
 <p>现在是 <code>okta-jenkinsx</code> 在 IntelliJ IDEA、Eclipse、Netbeans 或 VS Code 等 IDE 中作为项目打开目录的好时机！</p>
-
 <pre><code>&lt;plugin&gt;
    &lt;groupId&gt;com.github.eirslett&lt;/groupId&gt;
    &lt;artifactId&gt;frontend-maven-plugin&lt;/artifactId&gt;
@@ -527,45 +444,32 @@ rm  -rf .mvn src mvnw* pom.xml
        ...
    &lt;/executions&gt;
 &lt;/plugin&gt;
-</code></pre>
-
-<p>注意：<code>--unsafe-perm</code> 标志是必要的，因为 Jenkins X <a href="https://github.com/sass/node-sass/issues/941">以 root 用户身份运行构建</a>。我从 <a href="https://github.com/sass/node-sass/blob/master/TROUBLESHOOTING.md#cannot-find-module-rootinstalljs">node-sass 的故障排除说明</a>中找到了这个解决方案。</p>
-
+</code></pre><p>注意：<code>--unsafe-perm</code> 标志是必要的，因为 Jenkins X <a href="https://github.com/sass/node-sass/issues/941">以 root 用户身份运行构建</a>。我从 <a href="https://github.com/sass/node-sass/blob/master/TROUBLESHOOTING.md#cannot-find-module-rootinstalljs">node-sass 的故障排除说明</a>中找到了这个解决方案。</p>
 <h2 id="增加-actuator-并关闭-https">增加 Actuator 并关闭 HTTPS</h2>
-
 <p>Jenkins X 依靠 Spring Boot 的 Actuator 进行健康检查。这意味着如果你不将其包含在你的项目中（或有 <code>/actuator/health</code> 防护），Jenkins X 会报告你的应用程序启动失败。</p>
-
 <p>将 Actuator starter 作为依赖项添加到 <code>holdings-api/pom.xml</code> 中：</p>
-
 <pre><code>&lt;dependency&gt;
    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
    &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
 &lt;/dependency&gt;
-</code></pre>
-
-<p>你还需要允许访问其运行健康检查。Jenkins X 将部署你的应用程序在一个 NGINX 服务器中,因此你也需要强制关闭 HTTPS，否则你将无法访问你的应用程序。修改 <code>holdings-api/src/main/java/.../SecurityConfiguration.java</code> 以允许 <code>holdings-api/src/main/java/.../SecurityConfiguration.java</code> 和删除 <code>requiresSecure()</code>。</p>
-
-<pre><code class="language-java">public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-   @Override
-   public void configure(WebSecurity web) throws Exception {
-       web.ignoring().antMatchers(&quot;/**/*.{js,html,css}&quot;);
-   }
-   @Override
-   protected void configure(HttpSecurity http) throws Exception {
+</code></pre><p>你还需要允许访问其运行健康检查。Jenkins X 将部署你的应用程序在一个 NGINX 服务器中,因此你也需要强制关闭 HTTPS，否则你将无法访问你的应用程序。修改 <code>holdings-api/src/main/java/.../SecurityConfiguration.java</code> 以允许 <code>holdings-api/src/main/java/.../SecurityConfiguration.java</code> 和删除 <code>requiresSecure()</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecurityConfiguration</span> <span style="color:#66d9ef">extends</span> WebSecurityConfigurerAdapter <span style="color:#f92672">{</span>
+   <span style="color:#a6e22e">@Override</span>
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>WebSecurity web<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+       web<span style="color:#f92672">.</span><span style="color:#a6e22e">ignoring</span><span style="color:#f92672">().</span><span style="color:#a6e22e">antMatchers</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/**/*.{js,html,css}&#34;</span><span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+   <span style="color:#a6e22e">@Override</span>
+   <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>HttpSecurity http<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
        http
-               .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-           .and()
-               .authorizeRequests()
-               .antMatchers(&quot;/&quot;, &quot;/home&quot;, &quot;/api/user&quot;, &quot;/actuator/health&quot;).permitAll()
-               .anyRequest().authenticated();
-   }
-}
-</code></pre>
-
-<h2 id="调整-dockerfile-和-jenkinsfile-中的路径">调整 Dockerfile 和 Jenkinsfile 中的路径</h2>
-
+               <span style="color:#f92672">.</span><span style="color:#a6e22e">csrf</span><span style="color:#f92672">().</span><span style="color:#a6e22e">csrfTokenRepository</span><span style="color:#f92672">(</span>CookieCsrfTokenRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">withHttpOnlyFalse</span><span style="color:#f92672">())</span>
+           <span style="color:#f92672">.</span><span style="color:#a6e22e">and</span><span style="color:#f92672">()</span>
+               <span style="color:#f92672">.</span><span style="color:#a6e22e">authorizeRequests</span><span style="color:#f92672">()</span>
+               <span style="color:#f92672">.</span><span style="color:#a6e22e">antMatchers</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/home&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/api/user&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/actuator/health&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">permitAll</span><span style="color:#f92672">()</span>
+               <span style="color:#f92672">.</span><span style="color:#a6e22e">anyRequest</span><span style="color:#f92672">().</span><span style="color:#a6e22e">authenticated</span><span style="color:#f92672">();</span>
+   <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="调整-dockerfile-和-jenkinsfile-中的路径">调整 Dockerfile 和 Jenkinsfile 中的路径</h2>
 <p>由于此项目构建在子目录而不是根目录中，因此请更新  <code>./Dockerfile</code> 以查找 <code>holdings-api</code> 文件。</p>
-
 <pre><code>FROM openjdk:8-jdk-slim
 ENV PORT 8080
 ENV CLASSPATH /opt/lib
@@ -578,10 +482,7 @@ COPY holdings-api/pom.xml holdings-api/target/lib* /opt/lib/
 COPY holdings-api/target/*.jar /opt/app.jar
 WORKDIR /opt
 CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]
-</code></pre>
-
-<p>你还需要更新 Jenkinsfile,以便它可以运行 <code>holdings-api</code> 目录中的任何 <code>mvn</code> 命令。也添加  <code>-Pprod</code> 配置文件。例如：</p>
-
+</code></pre><p>你还需要更新 Jenkinsfile,以便它可以运行 <code>holdings-api</code> 目录中的任何 <code>mvn</code> 命令。也添加  <code>-Pprod</code> 配置文件。例如：</p>
 <pre><code>// in the 'CI Build and push snapshot' stage
 steps {
  container('maven') {
@@ -600,14 +501,9 @@ dir ('./holdings-api') {
 dir ('./holdings-api') {
   sh &quot;mvn clean deploy -Pprod&quot;
 }
-</code></pre>
-
-<p>这应该足以让这个应用程序与 Jenkins X 一起使用。但是，除非你有一个 Okta 帐户并相应地配置它，否则你将无法登录它。</p>
-
+</code></pre><p>这应该足以让这个应用程序与 Jenkins X 一起使用。但是，除非你有一个 Okta 帐户并相应地配置它，否则你将无法登录它。</p>
 <h2 id="为什么使用okta">为什么使用Okta？</h2>
-
 <p>简而言之，我们使<a href="https://developer.okta.com/product/user-management/">标识管理</a>比你可能习惯的更简洁、更安全、更具可扩展性。Okta 是一种云服务，允许开发人员创建、编辑和安全存储用户帐户和用户帐户数据，并将其与一个或多个应用程序相连接。我们的 API 使你能够：</p>
-
 <ul>
 <li>对用户进行<a href="https://developer.okta.com/product/authentication/">身份验证</a>和<a href="https://developer.okta.com/product/authentication/">授权</a></li>
 <li>存储关于用户的数据</li>
@@ -616,57 +512,45 @@ dir ('./holdings-api') {
 <li>了解更多！查看我们的<a href="https://developer.okta.com/documentation/">产品文档</a>
 你心动了吗？注册一个永远免费的开发者帐户，当你完成后，请返回，以便我们可以通过 Spring Boot 和 Jenkins X 了解有关 CI/CD 的更多信息！</li>
 </ul>
-
 <h2 id="在-okta-中为-spring-boot-应用程序创建一个-web-应用程序">在 Okta 中为 Spring Boot 应用程序创建一个 Web 应用程序</h2>
-
 <p>完成设置过程后，登录到你的帐户并导航到 <strong>Applications &gt; Add Application</strong>。单击 <strong>Web</strong> 和 <strong>下一步</strong>。在下一页中，输入以下值并单击 <strong>Done</strong> (必须单击 <strong>Done</strong>，然后编辑以修改注销重定向 <strong>URI</strong>)。</p>
-
 <ul>
 <li>应用名称： <code>Jenkins X</code></li>
 <li>默认 URI： <code>http://localhost:8080</code></li>
 <li>登录重定向 URI： <code>http://localhost:8080/login</code></li>
 <li>注销重定向 URI： <code>http://localhost:8080</code>
-打开 <code>holdings-api/src/main/resources/application.yml</code> 并将你 org/app 中的值粘贴到其中。
-<code>
-okta:
-client:
-orgUrl: https://okta.okta.com
-token: XXX
-security:
-oauth2:
- client:
-   access-token-uri: https://okta.okta.com/oauth2/default/v1/token
-   user-authorization-uri: https://okta.okta.com/oauth2/default/v1/authorize
-   client-id: {clientId}
-   client-secret: {clientSecret}
- resource:
-   user-info-uri: https://okta.okta.com/oauth2/default/v1/userinfo
-</code></li>
+打开 <code>holdings-api/src/main/resources/application.yml</code> 并将你 org/app 中的值粘贴到其中。</li>
 </ul>
-
-<p>你将注意到 <code>token</code> 值是 <code>xxx</code>。这是因为我更喜欢从环境变量中读取它，而不是签入源代码控制。你可能也想为你的客户密钥执行此操作，但我只是为了简洁而做一个属性。要创建 API token：</p>
-
+<pre><code>okta:
+ client:
+   orgUrl: https://okta.okta.com
+   token: XXX
+security:
+   oauth2:
+     client:
+       access-token-uri: https://okta.okta.com/oauth2/default/v1/token
+       user-authorization-uri: https://okta.okta.com/oauth2/default/v1/authorize
+       client-id: {clientId}
+       client-secret: {clientSecret}
+     resource:
+       user-info-uri: https://okta.okta.com/oauth2/default/v1/userinfo
+</code></pre><p>你将注意到 <code>token</code> 值是 <code>xxx</code>。这是因为我更喜欢从环境变量中读取它，而不是签入源代码控制。你可能也想为你的客户密钥执行此操作，但我只是为了简洁而做一个属性。要创建 API token：</p>
 <ol>
 <li>导航到 <strong>API</strong> &gt; <strong>Tokens</strong>  ，然后单击 <strong>Create Token</strong></li>
 <li>为令牌命名（例如 “Jenkins X”），然后将其值设置为 <code>OKTA_CLIENT_TOKEN</code> 环境变量。
 你需要在组织的用户配置文件中添加一个 <code>holdings</code> 属性，以便将你的加密货币存储在 Okta 中。导航到 <strong>Users</strong> &gt; <strong>Profile Editor</strong>。点击 <strong>Profile</strong> 表格中的第一个配置文件。你可以通过其 Okta 标识来识别它。单击 <strong>Add Attribute</strong> 并使用以下值：</li>
 </ol>
-
 <ul>
 <li>显示名称： <code>Holdings</code></li>
 <li>变量名： <code>holdings</code></li>
 <li>描述： <code>Cryptocurrency Holdings</code>
-执行这些步骤后，你应该能够导航到 <code>http://localhost:8080</code>, 并在运行以下命令后登录：
-<code>
-cd holdings-api
+执行这些步骤后，你应该能够导航到 <code>http://localhost:8080</code>, 并在运行以下命令后登录：</li>
+</ul>
+<pre><code>cd holdings-api
 ./mvnw -Pprod package
 java -jar target/*.jar
-</code></li>
-</ul>
-
-<p>在 Jenkins X 中存储 Secrets
+</code></pre><p>在 Jenkins X 中存储 Secrets
 在本地存储环境变量非常简单。但是你如何在 Jenkins X 中做到这一点？看看它的凭证功能就知道了。下面是使用方法:</p>
-
 <ol>
 <li>在 Google Cloud Shell 上运行 <code>jx console</code>，以获取 Jenkins X 网址</li>
 <li>单击该链接，登录，然后单击顶部的 <strong>Administration</strong></li>
@@ -675,9 +559,7 @@ java -jar target/*.jar
 <li>将 Okta API token 复制/粘贴到 <strong>Secret</strong> 字段中
 当你在里面，添加 secrets：<code>OKTA_APP_ID</code>、<code>E2E_USERNAME</code> 和 <code>E2E_PASSWORD</code>。第一个是你创建的 <code>Jenkins X</code> OIDC 应用程序的 ID。您可以通过在 Okta 上导航到您的应用程序并从 URL 复制值来获得它的值。该  <code>E2E-*</code> 密钥应该是要用来运行终端到终端（Protractor）测试的凭证。你可能想为此创建一个新用户。</li>
 </ol>
-
 <p>你可以通过将这些值添加到  <code>environment</code> 顶部附近的部分来访问 <code>Jenkinsfile</code> 中的这些值  。</p>
-
 <pre><code>environment {
   ORG               = 'mraible'
   APP_NAME          = 'okta-spring-jx-example'
@@ -687,99 +569,76 @@ java -jar target/*.jar
   E2E_USERNAME      = credentials('E2E_USERNAME')
   E2E_PASSWORD      = credentials('E2E_PASSWORD')
 }
-</code></pre>
-
-<h2 id="将环境变量转移到-docker-容器">将环境变量转移到 Docker 容器</h2>
-
+</code></pre><h2 id="将环境变量转移到-docker-容器">将环境变量转移到 Docker 容器</h2>
 <p>要将 <code>OKTA_CLIENT_TOKEN</code> 环境变量转移到 Docker 容器，请查看：</p>
-
 <pre><code>sh &quot;make preview&quot;
-</code></pre>
-
-<p>并将其更改为：</p>
-
+</code></pre><p>并将其更改为：</p>
 <pre><code>sh &quot;make OKTA_CLIENT_TOKEN=\$OKTA_CLIENT_TOKEN preview&quot;
-</code></pre>
-
-<p>此时，你可以创建分支，提交更改，并验证 Jenkins X 中的所有内容是否正常工作。</p>
-
+</code></pre><p>此时，你可以创建分支，提交更改，并验证 Jenkins X 中的所有内容是否正常工作。</p>
 <pre><code>cd ..
 git checkout -b add-secure-app
 git add .
 git commit -m &quot;Add Bootiful PWA&quot;
 git push origin add-secure-app
-</code></pre>
-
-<p>打开浏览器并导航到 GitHub 上的存储库并创建 pull request。创建后它应该如下所示。</p>
-
-<p><img src="3c80d152f689f7af50ba0a8064b081e873bc7d6e8fac016c310eea9d7e8f1f74.png" alt="Add Bootiful PWA Pull Request" /></p>
-
+</code></pre><p>打开浏览器并导航到 GitHub 上的存储库并创建 pull request。创建后它应该如下所示。</p>
+<p><img src="3c80d152f689f7af50ba0a8064b081e873bc7d6e8fac016c310eea9d7e8f1f74.png" alt="Add Bootiful PWA Pull Request"></p>
 <p>如果你的 pull request 测试通过，你应该能看到一些绿色标记和 Jenkins X 的评论，说明你的应用程序在预览环境中可用。</p>
-
-<p><img src="acae02f7777d71517ccf208eb049d285b1ad704b94d6953c6bf942b4ad060e4c.png" alt="PR Success!" /></p>
-
+<p><img src="acae02f7777d71517ccf208eb049d285b1ad704b94d6953c6bf942b4ad060e4c.png" alt="PR Success!"></p>
 <p>如果你单击<strong>此处</strong>链接并尝试登录，则可能会从 Okta 得到一个错误，指出重定向 URI 尚未列入白名单。</p>
-
 <h2 id="在-okta-中自动添加重定向-uri">在 Okta 中自动添加重定向 URI</h2>
-
-<p>当你在 Okta 中创建应用程序并在本地运行它们时，很容易知道应用程序的重定向 URI 将是什么。对于这个特定的应用程序，它们将 <a href="http://localhost:8080/login">http://localhost:8080/login</a> 用于登录，<a href="http://localhost:8080">http://localhost:8080</a> 用于注销。当您进入生产环境时，URL通常也是众所周知的。但是，使用 Jenkins X，URL 是动态的，并根据你的 pull request 编号动态创建的。</p>
-
+<p>当你在 Okta 中创建应用程序并在本地运行它们时，很容易知道应用程序的重定向 URI 将是什么。对于这个特定的应用程序，它们将 http://localhost:8080/login 用于登录，http://localhost:8080 用于注销。当您进入生产环境时，URL通常也是众所周知的。但是，使用 Jenkins X，URL 是动态的，并根据你的 pull request 编号动态创建的。</p>
 <p>要使用 Okta 进行此操作，你可以创建一个 Java 类，该类与 Okta API 进行交互。创建 <code>holdings-api/src/test/java/.../cli/AppRedirectUriManager.java</code> 并使用以下代码完善它。</p>
-
-<pre><code class="language-java">package com.okta.developer.cli;
-import com.okta.sdk.client.Client;
-import com.okta.sdk.lang.Collections;
-import com.okta.sdk.resource.application.OpenIdConnectApplication;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-@SpringBootApplication
-public class AppRedirectUriManager implements ApplicationRunner {
-   private static final Logger log = LoggerFactory.getLogger(AppRedirectUriManager.class);
-   private final Client client;
-   @Value(&quot;${appId}&quot;)
-   private String appId;
-   @Value(&quot;${redirectUri}&quot;)
-   private String redirectUri;
-   @Value(&quot;${operation:add}&quot;)
-   private String operation;
-   public AppRedirectUriManager(Client client) {
-       this.client = client;
-   }
-   public static void main(String[] args) {
-       SpringApplication.run(AppRedirectUriManager.class, args);
-   }
-   @Override
-   public void run(ApplicationArguments args) {
-       log.info(&quot;Adjusting Okta settings: {appId: {}, redirectUri: {}, operation: {}}&quot;, appId, redirectUri, operation);
-       OpenIdConnectApplication app = (OpenIdConnectApplication) client.getApplication(appId);
-       String loginRedirectUri = redirectUri + &quot;/login&quot;;
-       // update redirect URIs
-       List&lt;String&gt; redirectUris = app.getSettings().getOAuthClient().getRedirectUris();
-       // use a set so values are unique
-       Set&lt;String&gt; updatedRedirectUris = new LinkedHashSet&lt;&gt;(redirectUris);
-       if (operation.equalsIgnoreCase(&quot;add&quot;)) {
-           updatedRedirectUris.add(loginRedirectUri);
-       } else if (operation.equalsIgnoreCase(&quot;remove&quot;)) {
-           updatedRedirectUris.remove(loginRedirectUri);
-       }
-       // todo: update logout redirect URIs with redirectUri (not currently available in Java SDK)
-       app.getSettings().getOAuthClient().setRedirectUris(Collections.toList(updatedRedirectUris));
-       app.update();
-       System.exit(0);
-   }
-}
-</code></pre>
-
-<p>该类使用 Spring Boot 的 CLI（命令行接口）支持，这使得可以使用 <a href="https://www.mojohaus.org/exec-maven-plugin/">Exec Maven 插件</a>调用它。要添加对 Maven 运行它的支持，请在 <code>holdings-api/pom.xml</code> 进行以下修改  。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.okta.developer.cli<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.okta.sdk.client.Client<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.okta.sdk.lang.Collections<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> com.okta.sdk.resource.application.OpenIdConnectApplication<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.slf4j.Logger<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.slf4j.LoggerFactory<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Value<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.boot.ApplicationArguments<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.boot.ApplicationRunner<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.boot.SpringApplication<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.springframework.boot.autoconfigure.SpringBootApplication<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.LinkedHashSet<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Set<span style="color:#f92672">;</span>
+<span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppRedirectUriManager</span> <span style="color:#66d9ef">implements</span> ApplicationRunner <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger log <span style="color:#f92672">=</span> LoggerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>AppRedirectUriManager<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Client client<span style="color:#f92672">;</span>
+   <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${appId}&#34;</span><span style="color:#f92672">)</span>
+   <span style="color:#66d9ef">private</span> String appId<span style="color:#f92672">;</span>
+   <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${redirectUri}&#34;</span><span style="color:#f92672">)</span>
+   <span style="color:#66d9ef">private</span> String redirectUri<span style="color:#f92672">;</span>
+   <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;${operation:add}&#34;</span><span style="color:#f92672">)</span>
+   <span style="color:#66d9ef">private</span> String operation<span style="color:#f92672">;</span>
+   <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AppRedirectUriManager</span><span style="color:#f92672">(</span>Client client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+       <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> client<span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+       SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>AppRedirectUriManager<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+   <span style="color:#a6e22e">@Override</span>
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>ApplicationArguments args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+       log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Adjusting Okta settings: {appId: {}, redirectUri: {}, operation: {}}&#34;</span><span style="color:#f92672">,</span> appId<span style="color:#f92672">,</span> redirectUri<span style="color:#f92672">,</span> operation<span style="color:#f92672">);</span>
+       OpenIdConnectApplication app <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>OpenIdConnectApplication<span style="color:#f92672">)</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">getApplication</span><span style="color:#f92672">(</span>appId<span style="color:#f92672">);</span>
+       String loginRedirectUri <span style="color:#f92672">=</span> redirectUri <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/login&#34;</span><span style="color:#f92672">;</span>
+       <span style="color:#75715e">// update redirect URIs
+</span><span style="color:#75715e"></span>       List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> redirectUris <span style="color:#f92672">=</span> app<span style="color:#f92672">.</span><span style="color:#a6e22e">getSettings</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getOAuthClient</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getRedirectUris</span><span style="color:#f92672">();</span>
+       <span style="color:#75715e">// use a set so values are unique
+</span><span style="color:#75715e"></span>       Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> updatedRedirectUris <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedHashSet<span style="color:#f92672">&lt;&gt;(</span>redirectUris<span style="color:#f92672">);</span>
+       <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>operation<span style="color:#f92672">.</span><span style="color:#a6e22e">equalsIgnoreCase</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;add&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+           updatedRedirectUris<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>loginRedirectUri<span style="color:#f92672">);</span>
+       <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>operation<span style="color:#f92672">.</span><span style="color:#a6e22e">equalsIgnoreCase</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;remove&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+           updatedRedirectUris<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>loginRedirectUri<span style="color:#f92672">);</span>
+       <span style="color:#f92672">}</span>
+       <span style="color:#75715e">// todo: update logout redirect URIs with redirectUri (not currently available in Java SDK)
+</span><span style="color:#75715e"></span>       app<span style="color:#f92672">.</span><span style="color:#a6e22e">getSettings</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getOAuthClient</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setRedirectUris</span><span style="color:#f92672">(</span>Collections<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">(</span>updatedRedirectUris<span style="color:#f92672">));</span>
+       app<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">();</span>
+       System<span style="color:#f92672">.</span><span style="color:#a6e22e">exit</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>该类使用 Spring Boot 的 CLI（命令行接口）支持，这使得可以使用 <a href="https://www.mojohaus.org/exec-maven-plugin/">Exec Maven 插件</a>调用它。要添加对 Maven 运行它的支持，请在 <code>holdings-api/pom.xml</code> 进行以下修改  。</p>
 <pre><code>&lt;properties&gt;
     ...
    &lt;exec-maven-plugin.version&gt;1.6.0&lt;/exec-maven-plugin.version&gt;
@@ -814,10 +673,7 @@ public class AppRedirectUriManager implements ApplicationRunner {
        &lt;/plugin&gt;
    &lt;/plugins&gt;
 &lt;/build&gt;
-</code></pre>
-
-<p>然后更新 <code>Jenkinsfile</code> 以在构建镜像之后添加一段 <code>mvn exec:java</code> 供运行。</p>
-
+</code></pre><p>然后更新 <code>Jenkinsfile</code> 以在构建镜像之后添加一段 <code>mvn exec:java</code> 供运行。</p>
 <pre><code>dir ('./charts/preview') {
   container('maven') {
     sh &quot;make preview&quot;
@@ -835,20 +691,12 @@ dir ('./holdings-api') {
     '''
   }
 }
-</code></pre>
-
-<p>提交并推送你的更改，应用程序应该更新为 http://{yourPreviewURL}/login 的重定向 URI。你需要手动为 http://{yourPreviewURL} 添加一个注销重定向 URI，  因为 <a href="https://github.com/okta/okta-sdk-java/issues/207">Okta 的 Java SDK 目前不支持此功能</a>。</p>
-
-<p><img src="579246f0b88ce645e6cb1ddbc57872a05694fa8600c89a490d09458f3c966376.png" alt="Okta app with URI settings" /></p>
-
+</code></pre><p>提交并推送你的更改，应用程序应该更新为 http://{yourPreviewURL}/login 的重定向 URI。你需要手动为 http://{yourPreviewURL} 添加一个注销重定向 URI，  因为 <a href="https://github.com/okta/okta-sdk-java/issues/207">Okta 的 Java SDK 目前不支持此功能</a>。</p>
+<p><img src="579246f0b88ce645e6cb1ddbc57872a05694fa8600c89a490d09458f3c966376.png" alt="Okta app with URI settings"></p>
 <p>要将你的 pull request 上传到演示环境，请将其合并，并将主分支推送到演示环境。不幸的是，你将无法登录。这是因为没有进程使用你的 Okta 应用程序注册登台站点的重定向 URI。如果手动添加 URI，一切都应该有效。</p>
-
 <h2 id="在-jenkins-x-中运行-protractor-测试">在 Jenkins X 中运行 Protractor 测试</h2>
-
 <p>对我来说，弄清楚如何在 Jenkins X 中运行端到端测试是最难的。我首先添加了一个新的 Maven 配置文件，它允许我使用 Maven 而不是 npm 运行测试。</p>
-
-<p>注意：要使此配置文件起作用，你需要将 <a href="http://localhost:8000/login">http://localhost:8000/login</a> 登录重定向 URI 添加到你的应用程序，并将 <a href="http://localhost:8000">http://localhost:8000</a> 作为注销重定向URI。</p>
-
+<p>注意：要使此配置文件起作用，你需要将 http://localhost:8000/login 登录重定向 URI 添加到你的应用程序，并将 http://localhost:8000 作为注销重定向URI。</p>
 <pre><code>&lt;profile&gt;
    &lt;id&gt;e2e&lt;/id&gt;
    &lt;properties&gt;
@@ -918,36 +766,21 @@ dir ('./holdings-api') {
        &lt;/plugins&gt;
    &lt;/build&gt;
 &lt;/profile&gt;
-</code></pre>
-
-<p>提示：你可能会注意到，我必须为 <code>e2e-update</code> 和 <code>e2e-test</code> 分两次不同的执行。我发现运行 <code>npm e2e</code> 与 frontend-maven-plugin 不兼容，因为它只调用其他 <code>npm run</code> 命令。看来你需要在使用 frontend-maven-plugin 时直接调用二进制文件。</p>
-
+</code></pre><p>提示：你可能会注意到，我必须为 <code>e2e-update</code> 和 <code>e2e-test</code> 分两次不同的执行。我发现运行 <code>npm e2e</code> 与 frontend-maven-plugin 不兼容，因为它只调用其他 <code>npm run</code> 命令。看来你需要在使用 frontend-maven-plugin 时直接调用二进制文件。</p>
 <p>这里使用的不是 <code>TRAVIS</code> 环境变量，而是 <code>CI</code> 变量。此更改需要更新 <code>crypto-pwa/test/protractor.conf.js</code> 来匹配。</p>
-
 <pre><code>baseUrl: (process.env.CI) ? 'http://localhost:' + process.env.PORT : 'http://localhost:8100',
-</code></pre>
-
-<p>进行这些更改，你应该能够运行 <code>./mvnw verify -Pprod,e2e</code> 以在本地运行端到端测试。请注意，你需要将 <code>E2E_USERNAME</code> 和 <code>E2E_PASSWORD</code> 定义为环境变量。</p>
-
+</code></pre><p>进行这些更改，你应该能够运行 <code>./mvnw verify -Pprod,e2e</code> 以在本地运行端到端测试。请注意，你需要将 <code>E2E_USERNAME</code> 和 <code>E2E_PASSWORD</code> 定义为环境变量。</p>
 <p>当我第一次在 Jenkins X 中尝试这个功能时，我发现 <code>jenkins-maven</code> 代理没有安装 Chrome。我发现很难安装并发现 <code>jenkins-nodejs</code> <a href="https://github.com/jenkins-x/builder-nodejs/blob/master/Dockerfile#L4">预安装了 Chrome 和 Xvfb</a>。当我第一次尝试它时，我遇到以下错误：</p>
-
 <pre><code>[21:51:08] E/launcher - unknown error: DevToolsActivePort file doesn't exist
-</code></pre>
-
-<p>此错误是由 Chrome on Linux 问题引起的  。我发现解决办法是在 Protractor 的 <code>chromeOptions</code> 中指定 <code>-disable-dev-shm-usage</code>。我还添加了一些推荐的额外标志。我特别喜欢 <code>--headless</code>，在本地运行时，因此浏览器不会弹出并妨碍我。如果我想实时看到这个过程，我可以快速删除该选项。</p>
-
+</code></pre><p>此错误是由 Chrome on Linux 问题引起的  。我发现解决办法是在 Protractor 的 <code>chromeOptions</code> 中指定 <code>-disable-dev-shm-usage</code>。我还添加了一些推荐的额外标志。我特别喜欢 <code>--headless</code>，在本地运行时，因此浏览器不会弹出并妨碍我。如果我想实时看到这个过程，我可以快速删除该选项。</p>
 <p>如果你希望在 Jenkins X 上看到项目的 Protractor 测试运行，则需要修改 <code>crypto-pwa/test/protractor.conf.js</code> 以指定以下内容 <code>chromeOptions</code>：</p>
-
 <pre><code>capabilities: {
   'browserName': 'chrome',
   'chromeOptions': {
     'args': ['--headless', ''--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage']
   }
 },
-</code></pre>
-
-<p>然后向 Jenkinsfile 添加一个新的 <code>Run e2e tests</code> 阶段，该阶段位于 “CI 构建”和“构建发布”阶段之间。如果有帮助，你可以看到最终的 <a href="https://github.com/oktadeveloper/okta-spring-jx-example/blob/master/Jenkinsfile">Jenkins 文件</a>。</p>
-
+</code></pre><p>然后向 Jenkinsfile 添加一个新的 <code>Run e2e tests</code> 阶段，该阶段位于 “CI 构建”和“构建发布”阶段之间。如果有帮助，你可以看到最终的 <a href="https://github.com/oktadeveloper/okta-spring-jx-example/blob/master/Jenkinsfile">Jenkins 文件</a>。</p>
 <pre><code>stage('Run e2e tests') {
  agent {
    label &quot;jenkins-nodejs&quot;
@@ -965,33 +798,22 @@ dir ('./holdings-api') {
    }
  }
 }
-</code></pre>
-
-<p>完成所有这些更改后，创建一个新分支，签入你的更改，并在 GitHub 上创建一个 pull request。</p>
-
+</code></pre><p>完成所有这些更改后，创建一个新分支，签入你的更改，并在 GitHub 上创建一个 pull request。</p>
 <pre><code>git checkout -b enable-e2e-tests
 git add .
 git commit -m &quot;Add stage for end-to-end tests&quot;
 git push origin enable-e2e-tests
-</code></pre>
-
-<p>我确实需要做一些额外的调整才能通过所有的 Protractor 测试：</p>
-
+</code></pre><p>我确实需要做一些额外的调整才能通过所有的 Protractor 测试：</p>
 <ol>
 <li>在 <code>crypto-pwa/e2e/spec/login.e2e-spec.ts</code> 中，我无法通过 <code>should show a login button</code> 测试，所以我忽略了它，将 it(…) 改为 xit(…)。</li>
 <li>在同一个文件中，我将2000 ms 超时更改为5000 ms，将5000 ms 超时更改为30000 ms。</li>
 <li>在 <code>crypto-pwa/test/protractor.conf.js</code> 中，我将 defaultTimeoutInterval 更改为 600000。
 第一次运行时测试可能会失败，因为未为新预览环境配置注销重定向URI。更新 Okta 应用程序的注销重定向 URI 以匹配你的 PR 的预览环境 URI，重新 pull request 测试，一切都应该通过！</li>
 </ol>
-
-<p><img src="4850f66b7c90bed1377a55e88f9a9d25b889059d0c11b772a8ed0803dd118683.png" alt="blog/spring-boot-jenkins-x/jenkinsx-everything-is-awesome.png" /></p>
-
+<p><img src="4850f66b7c90bed1377a55e88f9a9d25b889059d0c11b772a8ed0803dd118683.png" alt="blog/spring-boot-jenkins-x/jenkinsx-everything-is-awesome.png"></p>
 <p>你可以在 <a href="https://github.com/oktadeveloper/okta-spring-jx-example">GitHub</a> 上的此示例中找到已完成应用程序的源代码  。</p>
-
-<h2 id="了解有关-jenkins-x-kubernetes-和-spring-boot-的更多信息">了解有关 Jenkins X、Kubernetes 和 Spring Boot 的更多信息</h2>
-
+<h2 id="了解有关-jenkins-xkubernetes-和-spring-boot-的更多信息">了解有关 Jenkins X、Kubernetes 和 Spring Boot 的更多信息</h2>
 <p>要了解有关 Spring Boot、Jenkins X 和 Kubernetes 的更多信息，请查看以下资源：</p>
-
 <ul>
 <li><a href="https://developer.okta.com/blog/2018/06/18/spring-boot-angular-auth-code-flow">Deploy Your Secure Spring Boot + Angular PWA as a Single Artifact</a></li>
 <li><a href="https://developer.okta.com/blog/2017/12/04/basic-crud-angular-and-spring-boot">Build a Basic CRUD App with Angular 5.0 and Spring Boot 2.0</a></li>
@@ -999,13 +821,9 @@ git push origin enable-e2e-tests
 <li><a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">Kubernetes The Hard Way</a> by <a href="https://twitter.com/kelseyhightower">Kelsey Hightower</a>
 如果你在 Kubernetes 上运行生产应用程序，我建议你研究 Jenkins X.它提供了一种在相同环境中进行 CI/CD 的方法，快速迭代并为你的客户更快地交付业务价值。</li>
 </ul>
-
 <p>Jenkins X 还包括一个 DevPods 功能，可以在笔记本电脑上进行开发时，可以自动部署保存。我不确定 DevPods 是否适用于需要具有生产转换步骤的 JavaScript 应用程序。我宁愿让 webpack 和 Browsersync 在几秒钟内刷新我的本地浏览器，而不是等待几分钟创建并部署 Docker 镜像到 Kubernetes。</p>
-
 <p>要获得 Jenkins X 的精彩概述和演示，请观看 <a href="https://twitter.com/jstrachan">James Strachan</a> 在2018年6月的 <a href="https://virtualjug.com/">Virtual JUG</a> 会议上为 Kubernetes 发布的 <a href="https://youtu.be/53AtxQGXnMk">Jenkins X: Continuous Delivery</a>。</p>
-
 <p>如果你有任何疑问，请在下面添加评论，在 <a href="https://twitter.com/mraible">Twitter</a> 上发帖，或在我们的<a href="https://devforum.okta.com/">开发者论坛</a> 上发帖提问。要获得有关未来博客文章和开发人员智慧的通知，你可以在<a href="https://twitter.com/oktadev">Twitter上关注我的整个团队</a>。</p>
-
 <p><a href="https://developer.okta.com/blog/2018/07/11/ci-cd-spring-boot-jenkins-x-kubernetes">使用 Jenkins X 和 Kubernetes 将 CI/CD 添加到 Spring Boot 应用程序中</a>，最初于2018年7月11日发布到 Okta 开发人员博客。</p>
 
 </div>
@@ -1104,8 +922,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
+            <a href="/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/" class="link">
+              Happy Second Birthday Jenkins X!
             </a>
           </li>
         
@@ -1114,24 +932,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db b mt4 mb2 mr2">
             Related entries:
           </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/" class="link">
-              Happy Second Birthday Jenkins X!
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/" class="link">
-              了解如何使用 Jenkins-X UpdateBot
-            </a>
-          </li>
-        
-      
         
         
           <li class="db dib-l mb2 mr3">

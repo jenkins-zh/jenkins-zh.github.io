@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="使用 Python 制作酷炫多彩的 Jenkins 插件词云图" />
 <meta property="og:description" content="Jenkins 插件名称高频关键词有哪些？一切尽在酷炫多彩的词云图" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/" /><meta property="article:published_time" content="2020-06-29T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-06-29T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-29-generate-jenkins-plugins-word-cloud/" />
+<meta property="article:published_time" content="2020-06-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-29T00:00:00+00:00" />
 <meta itemprop="name" content="使用 Python 制作酷炫多彩的 Jenkins 插件词云图">
 <meta itemprop="description" content="Jenkins 插件名称高频关键词有哪些？一切尽在酷炫多彩的词云图">
-
-
 <meta itemprop="datePublished" content="2020-06-29T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-29T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="202">
 
 
 
-<meta itemprop="keywords" content="jenkins,wordcloud," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,wordcloud," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Python 制作酷炫多彩的 Jenkins 插件词云图"/>
 <meta name="twitter:description" content="Jenkins 插件名称高频关键词有哪些？一切尽在酷炫多彩的词云图"/>
 
@@ -285,115 +282,88 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="jenkins-logo-word-cloud.png" alt="jenkins-logo-word-cloud" /></p>
-
+<p><img src="jenkins-logo-word-cloud.png" alt="jenkins-logo-word-cloud"></p>
 <p>作为最流行的 CI/CD 工具，Jenkins 的优势之一是其生态强大，而这与其插件体系分不开的。
 目前 Jenkins 插件 1500+ （截止2020年06月17日，插件数量为1749）。</p>
-
 <p>近日发现词云比较好玩，于是想着以 Jenkins 插件名称为数据源，形成的词云会是什么样的呢，什么关键字会比较突出呢？
 想到就去做，带着问题，带着好奇心，开始了实践之旅～</p>
-
 <h2 id="插件基本字段说明">插件基本字段说明</h2>
-
 <p>以 Jenkins 中文本地化插件为例，在 Jenkins 官网插件详情页面可以看出：
 其 ID 为 localization-zh-cn，Name 为 Localization: Chinese (Simplified)。</p>
-
-<p><img src="localization-zh-cn.png" alt="localization-zh-cn" /></p>
-
+<p><img src="localization-zh-cn.png" alt="localization-zh-cn"></p>
 <h2 id="获取所有-jenkins-插件的名称">获取所有 Jenkins 插件的名称</h2>
-
 <p>如何获取所有 Jenkins 插件的名称呢？这里我想到3种方式，或许还有更多方式：</p>
-
 <ul>
-<li><p><a href="https://plugins.jenkins.io/">插件官网</a>爬虫抓取</p></li>
-
-<li><p><a href="https://github.com/jenkins-infra/repository-permissions-updater">插件权限文件</a>获取</p></li>
-
-<li><p><a href="http://updates.jenkins-ci.org/update-center.json">插件更新中心配置文件</a>获取</p></li>
+<li>
+<p><a href="https://plugins.jenkins.io/">插件官网</a>爬虫抓取</p>
+</li>
+<li>
+<p><a href="https://github.com/jenkins-infra/repository-permissions-updater">插件权限文件</a>获取</p>
+</li>
+<li>
+<p><a href="http://updates.jenkins-ci.org/update-center.json">插件更新中心配置文件</a>获取</p>
+</li>
 </ul>
-
 <p>对比上面的三种方式，插件权限文件中并没有 Name 字段，插件更新中心配置文件相对从插件官网抓取比较简单。
 所以计划从 update-center.json 进行解析，其中插件名称在 json 中对应字段为 title。</p>
-
-<p><img src="update-center-json.png" alt="update-center-json" /></p>
-
+<p><img src="update-center-json.png" alt="update-center-json"></p>
 <h2 id="生成-jenkins-插件名称文件">生成 Jenkins 插件名称文件</h2>
-
 <p>读取 update-center.json 中 plugin 的 title 字段，按行写入到 jenkins-plugins.txt 文件，代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: UTF-8 -*-</span>
+<span style="color:#f92672">import</span> json
 
-<pre><code class="language-python"># -*- coding: UTF-8 -*-
-import json
 
-
-if __name__ == &quot;__main__&quot;:
-    json_obj = json.load(open(&quot;update-center.json&quot;, &quot;r&quot;))
-    plugins_obj = json_obj[&quot;plugins&quot;]
-    with open(&quot;jenkins-plugins.txt&quot;, &quot;w&quot;) as fw:
-        for plugin_name in plugins_obj:
-            plugin_obj = plugins_obj[plugin_name]
-            print plugin_obj[&quot;title&quot;]
-            fw.write(plugin_obj[&quot;title&quot;].encode('utf-8') + &quot;\n&quot;)
-</code></pre>
-
-<p>jenkins-plugins.txt 文件共有 1749 行（与 Jenkins 1749个插件对应），其内容截图如下：</p>
-
-<p><img src="jenkins-plugins-txt.png" alt="jenkins-plugins-txt" /></p>
-
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    json_obj <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(open(<span style="color:#e6db74">&#34;update-center.json&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>))
+    plugins_obj <span style="color:#f92672">=</span> json_obj[<span style="color:#e6db74">&#34;plugins&#34;</span>]
+    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;jenkins-plugins.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> fw:
+        <span style="color:#66d9ef">for</span> plugin_name <span style="color:#f92672">in</span> plugins_obj:
+            plugin_obj <span style="color:#f92672">=</span> plugins_obj[plugin_name]
+            <span style="color:#66d9ef">print</span> plugin_obj[<span style="color:#e6db74">&#34;title&#34;</span>]
+            fw<span style="color:#f92672">.</span>write(plugin_obj[<span style="color:#e6db74">&#34;title&#34;</span>]<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>jenkins-plugins.txt 文件共有 1749 行（与 Jenkins 1749个插件对应），其内容截图如下：</p>
+<p><img src="jenkins-plugins-txt.png" alt="jenkins-plugins-txt"></p>
 <h2 id="生成词云图">生成词云图</h2>
-
 <p>这里使用 Python 代码生成词云图，词的来源为 jenkins-plugins.txt，代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: UTF-8 -*-</span>
 
-<pre><code class="language-python"># -*- coding: UTF-8 -*-
-
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-import numpy as np
-from PIL import Image
-
-
-def generate_word_cloud_image(background_image):
-    # mask
-    mask = np.array(Image.open(background_image))
-
-    # generate word cloud
-    wc = WordCloud(mask=mask, scale=1.5, mode='RGBA', background_color=&quot;white&quot;, max_words=2000).generate(text=text)
-
-    # show word cloud
-    plt.imshow(wc, interpolation='bilinear')
-    plt.axis('off')
-    plt.show()
-
-    # save to file
-    background_image = str(background_image).split(&quot;/&quot;)[-1].replace(&quot;.png&quot;, &quot;&quot;)
-    wc.to_file(&quot;word-cloud-img/&quot; + background_image + '-word-cloud.png')
+<span style="color:#f92672">from</span> wordcloud <span style="color:#f92672">import</span> WordCloud
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
 
 
-if __name__ == &quot;__main__&quot;:
-    with open('jenkins-plugins.txt') as f:
-        text = f.read()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_word_cloud_image</span>(background_image):
+    <span style="color:#75715e"># mask</span>
+    mask <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(Image<span style="color:#f92672">.</span>open(background_image))
 
-        for image_name in [&quot;background-img/kongfu.png&quot;, &quot;background-img/jenkins-logo.png&quot;]:
-            generate_word_cloud_image(background_image=image_name)
-</code></pre>
+    <span style="color:#75715e"># generate word cloud</span>
+    wc <span style="color:#f92672">=</span> WordCloud(mask<span style="color:#f92672">=</span>mask, scale<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>, mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;RGBA&#39;</span>, background_color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;white&#34;</span>, max_words<span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>)<span style="color:#f92672">.</span>generate(text<span style="color:#f92672">=</span>text)
 
-<p>生成的词云图各个关键字以不同大小和比例，绘制出一幅多彩的画卷，感觉很美观、很酷炫！</p>
+    <span style="color:#75715e"># show word cloud</span>
+    plt<span style="color:#f92672">.</span>imshow(wc, interpolation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bilinear&#39;</span>)
+    plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
+    plt<span style="color:#f92672">.</span>show()
 
+    <span style="color:#75715e"># save to file</span>
+    background_image <span style="color:#f92672">=</span> str(background_image)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;/&#34;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;.png&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+    wc<span style="color:#f92672">.</span>to_file(<span style="color:#e6db74">&#34;word-cloud-img/&#34;</span> <span style="color:#f92672">+</span> background_image <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-word-cloud.png&#39;</span>)
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;jenkins-plugins.txt&#39;</span>) <span style="color:#66d9ef">as</span> f:
+        text <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+
+        <span style="color:#66d9ef">for</span> image_name <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;background-img/kongfu.png&#34;</span>, <span style="color:#e6db74">&#34;background-img/jenkins-logo.png&#34;</span>]:
+            generate_word_cloud_image(background_image<span style="color:#f92672">=</span>image_name)
+</code></pre></div><p>生成的词云图各个关键字以不同大小和比例，绘制出一幅多彩的画卷，感觉很美观、很酷炫！</p>
 <p>以 Jenkins logo 为背景图片，生成的词云图如下：</p>
-
-<p><img src="jenkins-logo-word-cloud.png" alt="jenkins-logo-word-cloud" /></p>
-
+<p><img src="jenkins-logo-word-cloud.png" alt="jenkins-logo-word-cloud"></p>
 <p>以 Jenkins 中文社区的 kongfu 为背景图片，生成的词云图如下：</p>
-
-<p><img src="kongfu-word-cloud.png" alt="kongfu-word-cloud" /></p>
-
+<p><img src="kongfu-word-cloud.png" alt="kongfu-word-cloud"></p>
 <p>从词云图中可以看出，Pipeline 词频最高，Build、API、Job 次之，紧接着还有 Publisher、Notifier、Trigger、Step、GitHub 等等。</p>
-
 <h2 id="资源说明">资源说明</h2>
-
 <p>所有代码及文件可以在 GitHub 仓库找到，如果你也觉得好玩有趣，顺便点个 star 吧，谢谢～</p>
-
 <ul>
 <li><a href="https://github.com/donhui/jenkins-plugins-word-cloud">https://github.com/donhui/jenkins-plugins-word-cloud</a></li>
 </ul>
@@ -492,15 +462,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -558,35 +519,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
-              手把手教会你 Jenkins 备份与恢复
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -603,44 +537,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
             </a>
           </li>
         
@@ -657,44 +555,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -731,15 +593,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -954,15 +807,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -974,15 +818,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

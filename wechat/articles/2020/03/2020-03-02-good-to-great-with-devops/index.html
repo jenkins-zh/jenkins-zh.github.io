@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="DevOps 的出色表现" />
 <meta property="og:description" content="重点介绍了 2019 年 DevOps 状态报告的一些发现，包括 DevOps 的出现和盛行" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-02-good-to-great-with-devops/" /><meta property="article:published_time" content="2020-03-02T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-03-02T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-02-good-to-great-with-devops/" />
+<meta property="article:published_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-02T00:00:00+00:00" />
 <meta itemprop="name" content="DevOps 的出色表现">
 <meta itemprop="description" content="重点介绍了 2019 年 DevOps 状态报告的一些发现，包括 DevOps 的出现和盛行">
-
-
 <meta itemprop="datePublished" content="2020-03-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-02T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="58">
 
 
 
-<meta itemprop="keywords" content="DevOps,DevOps 状态,DevOps 状态报告,精英绩效,DevOps 指标,J 转换曲线," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="DevOps,DevOps 状态,DevOps 状态报告,精英绩效,DevOps 指标,J 转换曲线," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="DevOps 的出色表现"/>
 <meta name="twitter:description" content="重点介绍了 2019 年 DevOps 状态报告的一些发现，包括 DevOps 的出现和盛行"/>
 
@@ -298,59 +295,34 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
 <p>DevOps 不断发展，自从2009年提出此术语以来，DevOps 的状态每年都呈指数级增长。在2019年飞速发展的过程中，各种规模和形态的组织（从企业到初创公司）在 DevOps 方面都展现了极大的热情。每个组织都有其自己的 DevOps故事，其中一些故事尚未开始，一些故事还处于婴儿期，有些故事已经成熟，有些故事已经达到顶峰。 不同于其他故事，DevOps 故事源于不断改进。</p>
-
 <p>随着企业逐渐变得数字化和软件驱动，人们对 DevOps 旅程的本质和可能性有了更大的认识。不仅工程师或技术领导者，甚至商业领导者都对 DevOps 的概念、实践和应用非常感兴趣。对于实现商业成功的 DevOps 的需求已得到越来越广泛的接受。</p>
-
 <p><a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf">《 2019 年 DevOps 状态报告》</a>作为大量在线资源的提供者之一，可用于解和学习 DevOps 如何塑造跨行业的软件交付。该报告极大地总结了软件交付的趋势和挑战，它可以帮助团队研究可用于提升软件交付能力并最终成就卓越。</p>
-
 <p>在此报告中，IT 性能称为软件交付能力，以区分软件交付工作与 IT 服务台和其他支撑功能。这是一个期待已久的可喜变化。我也喜欢的关键更改之一是增加了运营指标以完成软件交付周期。该报告重点介绍了五个被称为“软件交付和运营（SDO）性能指标”的度量或指标，它们侧重于系统级结果。这有助于避免软件度量标准的常见陷阱，后者常常使不同的功能相互冲突，并导致以牺牲总结果为代价的局部优化。</p>
-
-<p><img src="img1.png" alt="图 1 ：5 个 SDO 性能指标" /></p>
-
+<p><img src="img1.png" alt="图 1 ：5 个 SDO 性能指标"></p>
 <p>该报告重点介绍了软件交付能力的四个方面，如下所示：</p>
-
 <ol>
 <li><strong>部署频率</strong> – 对于您从事的主应用程序或服务，您的组织多久部署一次代码？</li>
 <li><strong>变更的前置时间</strong> – 对于您从事的主应用程序或服务，您的变更前置时间是多少（即，从代码提交到成功在生产中运行的代码需要多长时间）？</li>
 <li><strong>恢复服务的时间</strong> – 对于您正在使用的主应用程序或服务，发生服务事件（例如计划外中断或服务受损）时，恢复服务通常需要多长时间？</li>
 <li><strong>变更失败率</strong> – 对于您使用的主应用程序或服务，导致服务质量下降或随后需要修复（例如，导致服务受损、服务中断，需要修改程序、回滚、向前修复、修补程序）的变更的百分比？</li>
 </ol>
-
 <p>然后对这四个方面进行度量，以对四个类别的性能进行排名：精英、高级、中级和低级。下表（从报告中引用）指示了各个方面的详细信息。</p>
-
-<p><img src="img2.png" alt="图 2 ：软件交付能力的各个方面" /></p>
-
-<hr />
-
-<p><strong><em>我强烈建议添加到此列表中的另一个方面是“团队敬业度指数”，即团队的快乐程度和参与度。我认为团队绩效与团队敬业度成正比。团队敬业度越高，即团队越快乐越敬业，他们产生的结果就越好。</em></strong></p>
-
-<hr />
-
+<p><img src="img2.png" alt="图 2 ：软件交付能力的各个方面"></p>
+<hr>
+<p><em><strong>我强烈建议添加到此列表中的另一个方面是“团队敬业度指数”，即团队的快乐程度和参与度。我认为团队绩效与团队敬业度成正比。团队敬业度越高，即团队越快乐越敬业，他们产生的结果就越好。</strong></em></p>
+<hr>
 <p>报告中的另一个主题是“ J 转换曲线”。下图突出显示了自动化如何帮助绩效低下的人员提升到中等性能水平，然后测试需求、技术负担和复杂性增加导致手动操作，从而导致进度变慢。这是一个有趣且值得注意的观察。它强调了自动化并不总是答案。如果您使错误的流程自动化，那么您得到的只是错误的结果，而且更快。</p>
-
-<p><img src="img3.png" alt="图 3 ：J 转换曲线" /></p>
-
+<p><img src="img3.png" alt="图 3 ：J 转换曲线"></p>
 <p>无休止的改进、学习、共享和利用专业知识可将您带到高水平或精英绩效水平 – 将团队提升为精英绩效的旅程需要的不仅仅是工具。在各个级别（即团队级别、领导级别和赞助者级别）的坚持、恒心和毅力对于从低绩效水平或中绩效水平取得突破以发挥团队最大潜力至关重要。如果我们踏上精英绩效之旅，您会发现自动化、技术实践和持续改进计划是您旅途的催化剂。鉴于测试需求、技术债务和日益增加的复杂性将成为您的阻碍，我发现锚定和引擎（帆船回顾展）格式提供了一种快速而有趣的方法，可在一幅图片中（如下所示）可视化催化剂（引擎）和阻滞剂（锚定）。</p>
-
-<p><img src="img4.png" alt="图 4 ：卓越绩效之旅" /></p>
-
+<p><img src="img4.png" alt="图 4 ：卓越绩效之旅"></p>
 <h2 id="行业看到了更高的精英绩效">行业看到了更高的精英绩效</h2>
-
 <p>该报告证实，精英表演者的比例几乎增加了两倍，低表现者的比例下降了，中等表演者的比例上升了。要注意的一项主要观察结果是，从低性能到中性能再到高性能的移动不是单向的。当面对复杂性增加时，团队（从 J 曲线中突出显示）可以从高位降为中级，也可以从中级降为低级。总体而言，很高兴看到向上增加。</p>
-
-<p><img src="img5.png" alt="图 5 ：绩效集群" /></p>
-
+<p><img src="img5.png" alt="图 5 ：绩效集群"></p>
 <h2 id="前进之路">前进之路</h2>
-
-<hr />
-
-<p><strong><em>软件交付性能可以通过多种方式确定业务成果。 组织推动软件交付绩效的能力包括文化，技术实践，清晰的变更流程，持续交付和基于价值的成果。 这些功能并不是一蹴而就的，需要对组织 DNA 进行根本性的改变。</em></strong></p>
-
-<hr />
-
+<hr>
+<p><em><strong>软件交付性能可以通过多种方式确定业务成果。 组织推动软件交付绩效的能力包括文化，技术实践，清晰的变更流程，持续交付和基于价值的成果。 这些功能并不是一蹴而就的，需要对组织 DNA 进行根本性的改变。</strong></em></p>
+<hr>
 <p>根据我在不同行业和公司中工作的经验，我可以确认这些软件交付能力集群不是静态的。上面列出的任何功能的更改都会对软件交付能力产生影响，您可能会发现能力集群在两个方向上都从一个级别波动到另一个级别。关键是要保持专注并通过定期将其嵌入组织的工作方式中来维持它。</p>
 
 </div>
@@ -454,6 +426,103 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/" class="link">
+              使用 Prometheus 和 Grafana 监控 Linux 进程
+            </a>
+          </li>
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/06/2020-06-01-Your-DevOps-Brain-Ways-of-Thinking-Ways-of-Working/" class="link">
+              你的 DevOps 大脑：思考方式和工作方式
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/" class="link">
+              使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-06-using-a-k3s-kubernetes-cluster-for-your-gitlab-project/" class="link">
+              为你的 GitLab 项目使用 k3s Kubernetes 集群
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/03/2020-03-24-7-devops-toolchains-orchestration-solutions-you-may-not-know/" class="link">
+              7 款你或许不知道的 DevOps 工具链编排解决方案
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/" class="link">
+              使用 Kubernetes 和 Jenkins 创建一个 CI/CD 流水线
+            </a>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-21-the-abc-of-devops-implementation-with-containerization-and-docker/" class="link">
+              使用容器化和 Docker 实现 DevOps 的基础知识
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-14-devops-trends-to-watch-for-in-2020/" class="link">
+              展望 2020 年 DevOps 的发展趋势
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/" class="link">
+              为 DevOps 构建新的运营模型
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/" class="link">
+              持续测试的那些事
+            </a>
+          </li>
+        
       
     </ul>
   </div>

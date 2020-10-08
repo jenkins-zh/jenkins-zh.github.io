@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cli on Jenkins 中文社区</title>
+    <title>cli on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/cli/</link>
-    <description>Recent content in Cli on Jenkins 中文社区</description>
+    <description>Recent content in cli on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 25 Oct 2019 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</guid>
-      <description>&amp;ldquo;人人都在重复造轮子，部分像实现插件管理的&amp;rdquo;细节&amp;rdquo;（签名元数据，制品校验和，从核心独立出来的插件&amp;hellip;）。 很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&amp;rdquo; JENKINS-53767
+      <description>&amp;ldquo;人人都在重复造轮子，部分像实现插件管理的&amp;quot;细节&amp;rdquo;（签名元数据，制品校验和，从核心独立出来的插件&amp;hellip;）。 很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&amp;quot; JENKINS-53767
 我的 Google Summer of Code project 项目试图解决这个问题，方法是创建一个库，该库将在 Jenkins 的不同实现中统一插件管理逻辑，并提供一个可以使用户轻松下载插件并在 Jenkins 启动之前查看插件信息的 CLI 工具。 我很高兴分享我们刚刚发布的 Alpha 版本，您可以在此处查看！
 GSoC 阶段 1 更新 当我考虑将插件管理器从 Jenkins 核心中移出时，由于依赖项的复杂性和数量，这最终成为了最具挑战性的第一步。相反，我们决定首先将 Jenkins Docker 中的 install-plugins.sh bash 脚本转换为 Java。 install-plugins.sh 脚本存在多个问题，即它是 bash 脚本并且扩展性有限，此外，它不会检索所有最新的更新中心的元数据。
 Alpha 版本详情 模仿官方 Jenkins Docker 镜像中 install-plugins.sh 脚本中的操作，新的插件管理库接收插件列表、它们的版本和（或） URL，从中可以下载插件，并下载所需的插件及其依赖。插件从更新中心下载到指定目录，然后可以加载到 Jenkins 中。当前，可以通过 plugins.txt 文件和（或） -plugins 的 cli 选项指定要下载的插件，我们计划进一步扩展可以接收的输入格式。 还支持用于不同更新中心的自定义版本说明符。

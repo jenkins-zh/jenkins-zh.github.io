@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Weibos on Jenkins 中文社区</title>
@@ -16,13 +16,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/weibo/weibo-operating-charter/</guid>
-      <description> Jenkins 官方微博运营章程 该文旨在说明 Jenkins 官方微博运营规范。
+      <description>Jenkins 官方微博运营章程 该文旨在说明 Jenkins 官方微博运营规范。
 需要讨论的问题  运营者选取形式
 志愿或其他形式 发布的内容
 同步微信公众号/同步 Twitter/类似其他机构官方账号与粉丝互动 发布内容的形式（分享/原创长微博）
-微博官方提供了分享微博和发布长微博的接口。 发布的时间/频率 微博的自动化
- 维护 Jenkins weibo plugin，需要进一步测试（较长时间无人维护，可能存在接口变动）
- 开发新的插件  对评论的回复  </description>
+微博官方提供了分享微博和发布长微博的接口。 发布的时间/频率 微博的自动化  维护 Jenkins weibo plugin，需要进一步测试（较长时间无人维护，可能存在接口变动） 开发新的插件   对评论的回复  </description>
     </item>
     
   </channel>

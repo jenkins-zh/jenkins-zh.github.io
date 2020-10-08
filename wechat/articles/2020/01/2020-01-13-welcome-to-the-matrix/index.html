@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="欢迎使用流水线指令-矩阵" />
 <meta property="og:description" content="介绍了声明式流水线中 `matrix` 指令的使用方法，并介绍了 `matrix` 指令在pipeline中的句式" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" /><meta property="article:published_time" content="2019-12-29T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-12-29T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" />
+<meta property="article:published_time" content="2019-12-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-29T00:00:00+00:00" />
 <meta itemprop="name" content="欢迎使用流水线指令-矩阵">
 <meta itemprop="description" content="介绍了声明式流水线中 `matrix` 指令的使用方法，并介绍了 `matrix` 指令在pipeline中的句式">
-
-
 <meta itemprop="datePublished" content="2019-12-29T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-12-29T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1029">
 
 
 
-<meta itemprop="keywords" content="Jenkins,pipeline," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Jenkins,pipeline," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="欢迎使用流水线指令-矩阵"/>
 <meta name="twitter:description" content="介绍了声明式流水线中 `matrix` 指令的使用方法，并介绍了 `matrix` 指令在pipeline中的句式"/>
 
@@ -298,19 +295,12 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="cover.jpg" alt="cover" /></p>
-
+<p><img src="cover.jpg" alt="cover"></p>
 <p>我经常发现自己需要在一堆不同的配置上执行相同的操作。到目前为止，意味着我需要在流水线上的同一阶段制作多个副本。当我需要修改时，必须在整个流水线的多个地方做相同的修改。对于一个更大型的流水线来说，即便维护很少的配置也会变得困难。
 声明式流水线1.5.0-beta1（可以从<a href="https://updates.jenkins.io/experimental/"> Jenkins 实验性更新中心</a>获取）添加了一个新的  <code>matrix</code> 部分，该部分能让我一次指定一个阶段列表，然后在多个配置上并行运行同一列表。让我们来看一看！</p>
-
 <h2 id="单一配置流水线">单一配置流水线</h2>
-
 <p>开始我会使用一个带有构建和测试阶段的简单流水线。我使用 <code>echo</code> 步骤作为构建和测试行为的占位符。</p>
-
 <p><em>Jenkinsfile</em></p>
-
 <pre><code>pipeline {
 	agent none
     stages {
@@ -331,51 +321,43 @@ var trackOutboundLink = function(id, url) {
         }
     }
 }
-</code></pre>
-
-<h2 id="多平台与浏览器的流水线">多平台与浏览器的流水线</h2>
-
+</code></pre><h2 id="多平台与浏览器的流水线">多平台与浏览器的流水线</h2>
 <p>我更喜欢在多系统以及浏览器结合的情况下执行我的构建和测试。新的 <code>metrix</code> 指令能让我定义一个 <code>axes</code> 的集合。每个 <code>axis</code> 有一个 <code>name</code> 以及包含了一个或多个 <code>values</code> 的列表。当流水线运行的时候，Jenkins 会将这些托管过来并将每个“轴”上所有可能值的组合运行在我的阶段内。一个“矩阵”上所有的元素都是并行运行的（只受限于可用的节点数量）。
 我的“矩阵”有两个“轴”： <code>PLATFORM</code> 和 <code>BROWSER</code> 。<code>PLATFORM</code> 有三个值 <code>BROWSER</code> 有四个值，所以我的阶段会运行12个不同的组合。我已经修改了我的 <code>echo</code> 步骤用来使用每个元素中“轴”的值。</p>
-
 <p><em>Jenkinsfile</em></p>
-
 <pre><code>pipeline {
-    agent none
-    stages {
-        stage('BuildAndTest') {
-            matrix {
-                agent any
-                axes {
-                    axis {
-                        name 'PLATFORM'
-                        values 'linux', 'windows', 'mac'
-                    }
-                    axis {
-                        name 'BROWSER'
-                        values 'firefox', 'chrome', 'safari', 'edge'
-                    }
-                }
-                stages {
-                    stage('Build') {
-                        steps {
-                            echo &quot;Do Build for ${PLATFORM} - ${BROWSER}&quot;
-                        }
-                    }
-                    stage('Test') {
-                        steps {
-                            echo &quot;Do Test for ${PLATFORM} - ${BROWSER}&quot;
-                        }
-                    }
-                }
-            }
-        }
-    }
+   agent none
+   stages {
+       stage('BuildAndTest') {
+           matrix {
+               agent any
+               axes {
+                   axis {
+                       name 'PLATFORM'
+                       values 'linux', 'windows', 'mac'
+                   }
+                   axis {
+                       name 'BROWSER'
+                       values 'firefox', 'chrome', 'safari', 'edge'
+                   }
+               }
+               stages {
+                   stage('Build') {
+                       steps {
+                           echo &quot;Do Build for ${PLATFORM} - ${BROWSER}&quot;
+                       }
+                   }
+                   stage('Test') {
+                       steps {
+                           echo &quot;Do Test for ${PLATFORM} - ${BROWSER}&quot;
+                       }
+                   }
+               }
+           }
+       }
+   }
 }
-</code></pre>
-
-<p><em>日志输出（部分内容）</em></p>
-
+</code></pre><p><em>日志输出（部分内容）</em></p>
 <pre><code>...
 [Pipeline] stage
 [Pipeline] { (BuildAndTest)
@@ -401,10 +383,7 @@ Do Build for mac - firefox
 Do Build for linux - chrome
 Do Test for windows - firefox
 ...
-</code></pre>
-
-<h2 id="排除无效的组合">排除无效的组合</h2>
-
+</code></pre><h2 id="排除无效的组合">排除无效的组合</h2>
 <p>现在我已经创建一个基本的“矩阵”了，我注意到我有一些无效的组合。  Edge 浏览器只在 Windows 系统上运行以及没有 Linux 版本的 Safari。
 我可以使用 <code>exclude</code> 命令去掉我的“矩阵”中无效的元素。每个 <code>exclude</code> 含有一个或多个带有 <code>name</code> 和 <code>values</code> 的 <code>axis</code> 指令。一个 <code>exclude</code> 中的 <code>axis</code> 指令会生成一组组合（类似于生成“矩阵”中的元素）。“矩阵”中的元素匹配一个 <code>exclude</code> 中所有需要从“矩阵”中移出的值。如果我有不止一个 <code>exclude</code> 指令，每个都将分别评估来移除元素。
 当需要处理一个长的排除列表时，我可以使用 <code>notValues</code> 而不是 <code>values</code> 去指定“轴”中我们<strong>不想</strong>排除的值。是的，这有点双重否定的意思，所以会有一点困惑。我只会在我真正想用的时候才会用它。
@@ -412,16 +391,13 @@ Do Test for windows - firefox
 <strong>重要</strong>
 本流水线使用两个“轴”，但是<strong>没有</strong>使用 <code>axis</code> 指令数量的限制。
 同样，在这个流水线里每个 <code>exclude</code> 指定这两个“轴”的值，但是这不是必须的。如果我们想只在“linux”元素中运行，我们需要使用以下的 <code>exclude</code> ：</p>
-
 <pre><code>exclude {
     axis {
         name 'PLATFORM'
         notValues 'linux'
     }
 }
-</code></pre>
-
-<pre><code>pipeline {
+</code></pre><pre><code>pipeline {
     agent none
     stages {
         stage('BuildAndTest') {
@@ -475,10 +451,7 @@ Do Test for windows - firefox
         }
     }
 }
-</code></pre>
-
-<p><em>日志输出（部分内容）</em></p>
-
+</code></pre><p><em>日志输出（部分内容）</em></p>
 <pre><code>...
 [Pipeline] stage
 [Pipeline] { (BuildAndTest)
@@ -495,13 +468,9 @@ Do Test for windows - firefox
 ...
 Do Build for linux - firefox
 ...
-</code></pre>
-
-<h2 id="运行时控制元素行为">运行时控制元素行为</h2>
-
+</code></pre><h2 id="运行时控制元素行为">运行时控制元素行为</h2>
 <p>在 <code>matrix</code> 指令中同样我可以添加“每个-元素”指令。这些相同的指令我可以添加到一个 <code>stage</code> 中让我可以控制“矩阵”中每一个元素的行为。这些指令可以从它们的元素的“轴”中获取值作为输入，允许我自定义每一个元素的行为以匹配它的“轴”的值。
 在我的 Jenkins 服务器中我已经配置了各个节点并为各个节点配置了系统名称的标签（“linux-agent”，“windows-agent”，和“mac-agent” ）。为了在正确的操作系统上运行“矩阵”中的元素，我配置了 Groovy 字符模板为元素配置标签。</p>
-
 <pre><code>matrix {
     axes { ... }
     excludes { ... }
@@ -511,11 +480,8 @@ Do Build for linux - firefox
     stages { ... }
     // ...
 }
-</code></pre>
-
-<p>有时我通过 Jenkins 的网页手动运行流水线任务。当我这样做时，我能够只选择一个运行的平台。 <code>axis</code> 和 <code>exclude</code> 指令定义了一个组成“矩阵”的一组静态的元素。这一组合的集合在运行开始之前就被创建出来，也早于任何的参数获取。也就意味着我不能在任务已经开始后从“矩阵”上添加或者移除元素。
+</code></pre><p>有时我通过 Jenkins 的网页手动运行流水线任务。当我这样做时，我能够只选择一个运行的平台。 <code>axis</code> 和 <code>exclude</code> 指令定义了一个组成“矩阵”的一组静态的元素。这一组合的集合在运行开始之前就被创建出来，也早于任何的参数获取。也就意味着我不能在任务已经开始后从“矩阵”上添加或者移除元素。
 另一方面，“每个-元素”指令，在运行时会被评估。我可以使用“每个-元素” <code>metrix</code> 中的 <code>when</code> 指令来控制“矩阵”中哪个元素会被执行。我添加了一个带有平台列表的 <code>choice</code> 字段，以及在 <code>when</code> 指令添加了判断，这样会确定是所有的平台都执行还是只执行我指定的平台的元素。</p>
-
 <pre><code>pipeline {
     parameters {
         choice(name: 'PLATFORM_FILTER', choices: ['all', 'linux', 'windows', 'mac'], description: 'Run on specific platform')
@@ -579,12 +545,8 @@ Do Build for linux - firefox
         }
     }
 }
-</code></pre>
-
-<p>如果我从 Jenkins 的 UI 页面上运行流水线设置 <code>PLATFORM_FILTER</code> 字段为 <code>mac</code> ，我会得到如下的输出：</p>
-
+</code></pre><p>如果我从 Jenkins 的 UI 页面上运行流水线设置 <code>PLATFORM_FILTER</code> 字段为 <code>mac</code> ，我会得到如下的输出：</p>
 <p><em>日志输出（部分内容 - PLATFORM_FILTER = &lsquo;mac&rsquo;）</em></p>
-
 <pre><code>...
 [Pipeline] stage
 [Pipeline] { (BuildAndTest)
@@ -612,17 +574,11 @@ Stage &quot;Matrix - OS = 'windows', BROWSER = 'edge'&quot; skipped due to when 
 Do Test for mac - safari
 Do Test for mac - firefox
 Do Test for mac - chrome
-</code></pre>
-
-<p><strong>重要</strong>
+</code></pre><p><strong>重要</strong>
 在<a href="https://www.cloudbees.com/devops-world/lisbon"> DevOps World | Jenkins World 2019</a> “<a href="https://sched.co/UeQe">声明式流水线2019：知识点，技巧，以及接下来的事情</a>”中与我一起参与。我会回顾过去的一年有哪些加入到了流水线（包括“矩阵”）以及探讨一些关于流水线下一步走向的想法。</p>
-
 <h2 id="结论">结论</h2>
-
 <p>这篇博客里面，我们已经看到了怎样使用 <code>matrix</code> 指令来构成简洁但又强大的声明式流水线。同样的一个不带有 <code>matrix</code> 的流水线会容易一些，但会消耗更多的时间同样也会更难理解和维护。</p>
-
 <h2 id="链接">链接</h2>
-
 <ul>
 <li><a href="https://updates.jenkins.io/experimental/">Jenkins 实验性更新中心</a></li>
 <li><a href="https://jenkins.io/doc/developer/publishing/releasing-experimental-updates/#using-the-experimental-update-center">使用 Jenkins 实验性更新中心</a></li>
@@ -696,6 +652,139 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
+            </a>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
+              Webhook 通用触发插件
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
+            </a>
+          </li>
+        
       
     </ul>
   </div>

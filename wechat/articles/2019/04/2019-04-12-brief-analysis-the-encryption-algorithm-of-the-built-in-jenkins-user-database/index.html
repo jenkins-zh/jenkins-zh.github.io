@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="简析 Jenkins 专有用户数据库加密算法" />
 <meta property="og:description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" /><meta property="article:published_time" content="2019-04-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-12T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-brief-analysis-the-encryption-algorithm-of-the-built-in-jenkins-user-database/" />
+<meta property="article:published_time" content="2019-04-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-12T00:00:00+00:00" />
 <meta itemprop="name" content="简析 Jenkins 专有用户数据库加密算法">
 <meta itemprop="description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析">
-
-
 <meta itemprop="datePublished" content="2019-04-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="291">
+<meta itemprop="wordCount" content="289">
 
 
 
-<meta itemprop="keywords" content="jenkins," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="简析 Jenkins 专有用户数据库加密算法"/>
 <meta name="twitter:description" content="本文对 Jenkins 专有用户数据库加密算法进行简要分析"/>
 
@@ -285,103 +282,81 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
 <h3 id="认识jenkins专有用户数据库">认识Jenkins专有用户数据库</h3>
-
 <p>Jenkins 访问控制分为：安全域（即认证）与授权策略。</p>
-
 <p>其中，安全域可以采用三种形式，分别为：Jenkins 专有用户数据库、LDAP、Servlet 容器代理。
-<img src="jenkins-security-realm.png" alt="jenkins-security-realm.png" /></p>
-
+<img src="jenkins-security-realm.png" alt="jenkins-security-realm.png"></p>
 <h3 id="在哪里看到加密后的用户密码信息">在哪里看到加密后的用户密码信息？</h3>
-
 <p>Jenkins 专有用户的数据信息存放位置：$JENKINS_HOME/users/</p>
-
 <p>每个用户的相关信息存放在各自的 config.xml 文件中： $JENKINS_HOME/users/$user/config.xml</p>
-
 <p>在 config.xml 文件中的 passwordHash 节点可以看到用户密码加密后的密文哈希值：
-<img src="jenkins-user-config.png" alt="jenkins-user-config.png" /></p>
-
+<img src="jenkins-user-config.png" alt="jenkins-user-config.png"></p>
 <h3 id="用户密码是用什么算法加密的呢">用户密码是用什么算法加密的呢？</h3>
-
 <p>那么问题来了，用户密码是用何种加密方式加密的呢？可否通过解密密文得到明文呢？</p>
-
 <p>在 <a href="https://github.com/jenkinsci/jenkins">GitHub</a> 上查看其源码，通过关键字 #jbcrypt 搜索定位到 HudsonPrivateSecurityRealm.java 这个文件。
 HudsonPrivateSecurityRealm.java 具体路径是：jenkins/core/src/main/java/hudson/security/HudsonPrivateSecurityRealm.java</p>
-
 <p>源码片段如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * {@link PasswordEncoder} that uses jBCrypt.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> PasswordEncoder JBCRYPT_ENCODER <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PasswordEncoder<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">encodePassword</span><span style="color:#f92672">(</span>String rawPass<span style="color:#f92672">,</span> Object _<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> DataAccessException <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> BCrypt<span style="color:#f92672">.</span><span style="color:#a6e22e">hashpw</span><span style="color:#f92672">(</span>rawPass<span style="color:#f92672">,</span>BCrypt<span style="color:#f92672">.</span><span style="color:#a6e22e">gensalt</span><span style="color:#f92672">());</span>
+        <span style="color:#f92672">}</span>
 
-<pre><code class="language-java">    /**
-     * {@link PasswordEncoder} that uses jBCrypt.
-     */
-    private static final PasswordEncoder JBCRYPT_ENCODER = new PasswordEncoder() {
-        public String encodePassword(String rawPass, Object _) throws DataAccessException {
-            return BCrypt.hashpw(rawPass,BCrypt.gensalt());
-        }
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isPasswordValid</span><span style="color:#f92672">(</span>String encPass<span style="color:#f92672">,</span> String rawPass<span style="color:#f92672">,</span> Object _<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> DataAccessException <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> BCrypt<span style="color:#f92672">.</span><span style="color:#a6e22e">checkpw</span><span style="color:#f92672">(</span>rawPass<span style="color:#f92672">,</span>encPass<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">};</span>
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * Combines {@link #JBCRYPT_ENCODER} and {@link #CLASSIC} into one so that we can continue
+</span><span style="color:#75715e">     * to accept {@link #CLASSIC} format but new encoding will always done via {@link #JBCRYPT_ENCODER}.
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> PasswordEncoder PASSWORD_ENCODER <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PasswordEncoder<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">/*
+</span><span style="color:#75715e">            CLASSIC encoder outputs &#34;salt:hash&#34; where salt is [a-z]+, so we use unique prefix &#39;#jbcyrpt&#34;
+</span><span style="color:#75715e">            to designate JBCRYPT-format hash.
+</span><span style="color:#75715e">            &#39;#&#39; is neither in base64 nor hex, which makes it a good choice.
+</span><span style="color:#75715e">         */</span>
+        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">encodePassword</span><span style="color:#f92672">(</span>String rawPass<span style="color:#f92672">,</span> Object salt<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> DataAccessException <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> JBCRYPT_HEADER<span style="color:#f92672">+</span>JBCRYPT_ENCODER<span style="color:#f92672">.</span><span style="color:#a6e22e">encodePassword</span><span style="color:#f92672">(</span>rawPass<span style="color:#f92672">,</span>salt<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
 
-        public boolean isPasswordValid(String encPass, String rawPass, Object _) throws DataAccessException {
-            return BCrypt.checkpw(rawPass,encPass);
-        }
-    };
-    /**
-     * Combines {@link #JBCRYPT_ENCODER} and {@link #CLASSIC} into one so that we can continue
-     * to accept {@link #CLASSIC} format but new encoding will always done via {@link #JBCRYPT_ENCODER}.
-     */
-    public static final PasswordEncoder PASSWORD_ENCODER = new PasswordEncoder() {
-        /*
-            CLASSIC encoder outputs &quot;salt:hash&quot; where salt is [a-z]+, so we use unique prefix '#jbcyrpt&quot;
-            to designate JBCRYPT-format hash.
-            '#' is neither in base64 nor hex, which makes it a good choice.
-         */
-        public String encodePassword(String rawPass, Object salt) throws DataAccessException {
-            return JBCRYPT_HEADER+JBCRYPT_ENCODER.encodePassword(rawPass,salt);
-        }
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isPasswordValid</span><span style="color:#f92672">(</span>String encPass<span style="color:#f92672">,</span> String rawPass<span style="color:#f92672">,</span> Object salt<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> DataAccessException <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>encPass<span style="color:#f92672">.</span><span style="color:#a6e22e">startsWith</span><span style="color:#f92672">(</span>JBCRYPT_HEADER<span style="color:#f92672">))</span>
+                <span style="color:#66d9ef">return</span> JBCRYPT_ENCODER<span style="color:#f92672">.</span><span style="color:#a6e22e">isPasswordValid</span><span style="color:#f92672">(</span>encPass<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>JBCRYPT_HEADER<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()),</span>rawPass<span style="color:#f92672">,</span>salt<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">else</span>
+                <span style="color:#66d9ef">return</span> CLASSIC<span style="color:#f92672">.</span><span style="color:#a6e22e">isPasswordValid</span><span style="color:#f92672">(</span>encPass<span style="color:#f92672">,</span>rawPass<span style="color:#f92672">,</span>salt<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
 
-        public boolean isPasswordValid(String encPass, String rawPass, Object salt) throws DataAccessException {
-            if (encPass.startsWith(JBCRYPT_HEADER))
-                return JBCRYPT_ENCODER.isPasswordValid(encPass.substring(JBCRYPT_HEADER.length()),rawPass,salt);
-            else
-                return CLASSIC.isPasswordValid(encPass,rawPass,salt);
-        }
-
-        private static final String JBCRYPT_HEADER = &quot;#jbcrypt:&quot;;
-    };
-</code></pre>
-
-<p>通过分析该源码得知：
-1. 明文通过 jbcrypt 算法得到密文 encPass
-2. 密文的格式为：salt: encPass，其中以 #jbcrypt 表示 salt 作为数据头</p>
-
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String JBCRYPT_HEADER <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#jbcrypt:&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">};</span>
+</code></pre></div><p>通过分析该源码得知：</p>
+<ol>
+<li>明文通过 jbcrypt 算法得到密文 encPass</li>
+<li>密文的格式为：salt: encPass，其中以 #jbcrypt 表示 salt 作为数据头</li>
+</ol>
 <h3 id="jbcrypt-是什么">jbcrypt 是什么？</h3>
-
 <p><a href="http://www.mindrot.org/projects/jBCrypt/">jbcrypt</a> 是 bcrypt 加密工具的 java 实现。
 它的 API 非常简单，DEMO 如下，在 HudsonPrivateSecurityRealm.java 中可以看到加密和校验时使用了如下 API：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Hash a password for the first time 
+</span><span style="color:#75715e"></span>String hashed <span style="color:#f92672">=</span> BCrypt<span style="color:#f92672">.</span><span style="color:#a6e22e">hashpw</span><span style="color:#f92672">(</span>password<span style="color:#f92672">,</span> BCrypt<span style="color:#f92672">.</span><span style="color:#a6e22e">gensalt</span><span style="color:#f92672">());</span> 
 
-<pre><code class="language-java">// Hash a password for the first time 
-String hashed = BCrypt.hashpw(password, BCrypt.gensalt()); 
+<span style="color:#75715e">// gensalt&#39;s log_rounds parameter determines the complexity the work factor is 2**log_rounds, and the default is 10 
+</span><span style="color:#75715e"></span>String hashed <span style="color:#f92672">=</span> BCrypt<span style="color:#f92672">.</span><span style="color:#a6e22e">hashpw</span><span style="color:#f92672">(</span>password<span style="color:#f92672">,</span> BCrypt<span style="color:#f92672">.</span><span style="color:#a6e22e">gensalt</span><span style="color:#f92672">(</span>12<span style="color:#f92672">));</span> 
 
-// gensalt's log_rounds parameter determines the complexity the work factor is 2**log_rounds, and the default is 10 
-String hashed = BCrypt.hashpw(password, BCrypt.gensalt(12)); 
-
-// Check that an unencrypted password matches one that has previously been hashed 
-if (BCrypt.checkpw(candidate, hashed)) 
-  System.out.println(&quot;It matches&quot;); 
-else 
-  System.out.println(&quot;It does not match&quot;);
-</code></pre>
-
-<p>经验证，用 jbcrypt 对同一个明文加密后因为 salt 一般不同，加密后的密文一般不同。</p>
-
+<span style="color:#75715e">// Check that an unencrypted password matches one that has previously been hashed 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>BCrypt<span style="color:#f92672">.</span><span style="color:#a6e22e">checkpw</span><span style="color:#f92672">(</span>candidate<span style="color:#f92672">,</span> hashed<span style="color:#f92672">))</span> 
+  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;It matches&#34;</span><span style="color:#f92672">);</span> 
+<span style="color:#66d9ef">else</span> 
+  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;It does not match&#34;</span><span style="color:#f92672">);</span>
+</code></pre></div><p>经验证，用 jbcrypt 对同一个明文加密后因为 salt 一般不同，加密后的密文一般不同。</p>
 <h3 id="bcrypt-精要概况">bcrypt 精要概况</h3>
-
 <ol>
 <li>bcrypt 是不可逆的加密算法，无法通过解密密文得到明文。</li>
 <li>bcrypt 和其他对称或非对称加密方式不同的是，不是直接解密得到明文，也不是二次加密比较密文，而是把明文和存储的密文一块运算得到另一个密文，如果这两个密文相同则验证成功。</li>
 </ol>
-
 <h3 id="总结">总结</h3>
-
 <p>综上， Jenkins 专有用户数据库使用了 jbcrypt 加密， jbcrypt 加密是不可逆的，而且对于同一个明文的加密结果一般不同。</p>
 
 </div>
@@ -472,15 +447,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -544,35 +510,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
-              手把手教会你 Jenkins 备份与恢复
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -589,44 +528,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
             </a>
           </li>
         
@@ -643,44 +546,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -717,15 +584,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -934,15 +792,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -954,15 +803,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

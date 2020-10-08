@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DEVOPS JENKINS on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/DEVOPS-JENKINS/</link>
+    <description>Recent content in DEVOPS JENKINS on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/DEVOPS-JENKINS/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2019 DEVOPS WORLD和JENKINS WORLD 获奖者公布</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-23-devops-world-jenkins-world/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-23-devops-world-jenkins-world/</guid>
+      <description>15个组织和个人荣获DevOps杰出成就，开源贡献和渠道合作伙伴绩效
+ DEVOPS WORLD | JENKINS WORLD，2019年8月15日在旧金山，由CloudBees，企业DevOps领导者推动经济持续发展，今天宣布了2019 DevOps world 和 Jenkins world 获奖者。该奖项表彰3个类别的成就：Jenkins 社区奖，表彰对 Jenkins 项目做出重大贡献的人；CloudBees 创新奖，表彰在 DevOps 转型中取得优秀成果的组织；和CloudBees 渠道合作奖，重点介绍在创收和帮助组织实现DevOps转型方向表现出色的合作伙伴。
+CloudBees创新将的获得者包括各种规模的组织，从风险投资的小型创业公司到全球技术巨头。Jenkins 社区将授予了4个人，他们为 Jenkins 社区做出了贡献。最后5个渠道合作伙伴因在勤奋卓越获得认可。
+JENKINS 社区奖 Jenkins 社区奖由 Jenkins 创始人兼 CloudBees 首席科学家 Kohsuke Kawaguchi 和 Jenkins 大使组成的小组选出。Jenkins 大使每年都会被提名，他们都是有影响力的 Jenkins 爱好者，热衷于与他人分享 Jenkins 的技术专长。
+“2019 Jenkins社区奖表彰了社区成员的努力，他们在几个关键领域为推进 Jenkins 做出了重大贡献“，Kawaguchi 表示，”今年的提交的质量比以往任何时候都要好。”
+2019 Jenkins 社区奖得主：  2019最有价值的 Jenkins 贡献者 - Oliver Gondža 2019Jenkins 安全 MVP - Victor Gazdag 2019最有价值的 Jenkins 倡导者 – 赵晓杰 2019最有创新的 Jenkins X 实现 - Vincent Behar  CloudBees创新奖* CloudBees 创新奖由一个评委团选出，评委团成员包括 CloudBees 首席执行管兼联合创始人 Sacha Labourey，DevOps.</description>
+    </item>
+    
+  </channel>
+</rss>

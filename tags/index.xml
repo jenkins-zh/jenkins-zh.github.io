@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jenkins 中文社区</title>
@@ -6,634 +6,13 @@
     <description>Recent content in Tags on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 15 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Advocacy and Outreach</title>
-      <link>https://jenkins-zh.cn/tags/advocacy-and-outreach/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/advocacy-and-outreach/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ai</title>
-      <link>https://jenkins-zh.cn/tags/ai/</link>
-      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Announcement</title>
-      <link>https://jenkins-zh.cn/tags/announcement/</link>
-      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/announcement/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ansible</title>
-      <link>https://jenkins-zh.cn/tags/ansible/</link>
-      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Api</title>
-      <link>https://jenkins-zh.cn/tags/api/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Argo</title>
-      <link>https://jenkins-zh.cn/tags/argo/</link>
-      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/argo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Asktheexperts</title>
-      <link>https://jenkins-zh.cn/tags/asktheexperts/</link>
-      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/asktheexperts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Authentication</title>
-      <link>https://jenkins-zh.cn/tags/authentication/</link>
-      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/authentication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Automation</title>
-      <link>https://jenkins-zh.cn/tags/automation/</link>
-      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/automation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>https://jenkins-zh.cn/tags/aws/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Azure Devops</title>
-      <link>https://jenkins-zh.cn/tags/azure-devops/</link>
-      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/azure-devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Benchmark</title>
-      <link>https://jenkins-zh.cn/tags/benchmark/</link>
-      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/benchmark/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://jenkins-zh.cn/tags/blog/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blueocean</title>
-      <link>https://jenkins-zh.cn/tags/blueocean/</link>
-      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/blueocean/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C Stat</title>
-      <link>https://jenkins-zh.cn/tags/c-stat/</link>
-      <pubDate>Mon, 18 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/c-stat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cd</title>
-      <link>https://jenkins-zh.cn/tags/cd/</link>
-      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/cd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cdf</title>
-      <link>https://jenkins-zh.cn/tags/cdf/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/cdf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cdsummit</title>
-      <link>https://jenkins-zh.cn/tags/cdsummit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/cdsummit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cfp</title>
-      <link>https://jenkins-zh.cn/tags/cfp/</link>
-      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/cfp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ci</title>
-      <link>https://jenkins-zh.cn/tags/ci/</link>
-      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/ci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ci Cd Pipeline</title>
-      <link>https://jenkins-zh.cn/tags/ci-cd-pipeline/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/ci-cd-pipeline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ci/Cd</title>
-      <link>https://jenkins-zh.cn/tags/ci-cd/</link>
-      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/ci-cd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cicd</title>
-      <link>https://jenkins-zh.cn/tags/cicd/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/cicd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cli</title>
-      <link>https://jenkins-zh.cn/tags/cli/</link>
-      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cloud Native</title>
-      <link>https://jenkins-zh.cn/tags/cloud-native/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/cloud-native/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cloudbees</title>
-      <link>https://jenkins-zh.cn/tags/cloudbees/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/cloudbees/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Community</title>
-      <link>https://jenkins-zh.cn/tags/community/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/community/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Community Bridge</title>
-      <link>https://jenkins-zh.cn/tags/community-bridge/</link>
-      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/community-bridge/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Communitybonding</title>
-      <link>https://jenkins-zh.cn/tags/communitybonding/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/communitybonding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Configuration</title>
-      <link>https://jenkins-zh.cn/tags/configuration/</link>
-      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/configuration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Configuration as Code</title>
-      <link>https://jenkins-zh.cn/tags/configuration-as-code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/configuration-as-code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Continuous Integration</title>
-      <link>https://jenkins-zh.cn/tags/continuous-integration/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/continuous-integration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Continuout Delivery</title>
-      <link>https://jenkins-zh.cn/tags/continuout-delivery/</link>
-      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/continuout-delivery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contributing</title>
-      <link>https://jenkins-zh.cn/tags/contributing/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/contributing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contributors</title>
-      <link>https://jenkins-zh.cn/tags/contributors/</link>
-      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/contributors/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contributorsummit</title>
-      <link>https://jenkins-zh.cn/tags/contributorsummit/</link>
-      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/contributorsummit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Core</title>
-      <link>https://jenkins-zh.cn/tags/core/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/core/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Coverage</title>
-      <link>https://jenkins-zh.cn/tags/coverage/</link>
-      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/coverage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Credentials</title>
-      <link>https://jenkins-zh.cn/tags/credentials/</link>
-      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/credentials/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Science</title>
-      <link>https://jenkins-zh.cn/tags/data-science/</link>
-      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datascience</title>
-      <link>https://jenkins-zh.cn/tags/datascience/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/datascience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Declarative Pipeline</title>
-      <link>https://jenkins-zh.cn/tags/declarative-pipeline/</link>
-      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/declarative-pipeline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deployment</title>
-      <link>https://jenkins-zh.cn/tags/deployment/</link>
-      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/deployment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Developer</title>
-      <link>https://jenkins-zh.cn/tags/developer/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/developer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devops</title>
-      <link>https://jenkins-zh.cn/tags/devops/</link>
-      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devops Jenkins</title>
-      <link>https://jenkins-zh.cn/tags/devops-jenkins/</link>
-      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/devops-jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devops 指标</title>
-      <link>https://jenkins-zh.cn/tags/devops-%E6%8C%87%E6%A0%87/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/devops-%E6%8C%87%E6%A0%87/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devops 状态</title>
-      <link>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devops 状态报告</title>
-      <link>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devopsworld2019</title>
-      <link>https://jenkins-zh.cn/tags/devopsworld2019/</link>
-      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/devopsworld2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://jenkins-zh.cn/tags/docker/</link>
-      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docs</title>
-      <link>https://jenkins-zh.cn/tags/docs/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/docs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Documentation</title>
-      <link>https://jenkins-zh.cn/tags/documentation/</link>
-      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/documentation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Elections</title>
-      <link>https://jenkins-zh.cn/tags/elections/</link>
-      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/elections/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Electron</title>
-      <link>https://jenkins-zh.cn/tags/electron/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/electron/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Events</title>
-      <link>https://jenkins-zh.cn/tags/events/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/events/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Evergreen</title>
-      <link>https://jenkins-zh.cn/tags/evergreen/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/evergreen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Flagger</title>
-      <link>https://jenkins-zh.cn/tags/flagger/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/flagger/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>General</title>
-      <link>https://jenkins-zh.cn/tags/general/</link>
-      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://jenkins-zh.cn/tags/git/</link>
-      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git Secrets</title>
-      <link>https://jenkins-zh.cn/tags/git-secrets/</link>
-      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/git-secrets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Github</title>
-      <link>https://jenkins-zh.cn/tags/github/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gitlab</title>
-      <link>https://jenkins-zh.cn/tags/gitlab/</link>
-      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/gitlab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://jenkins-zh.cn/tags/golang/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Governance</title>
-      <link>https://jenkins-zh.cn/tags/governance/</link>
-      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/governance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Grafana</title>
-      <link>https://jenkins-zh.cn/tags/grafana/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/grafana/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gsoc</title>
-      <link>https://jenkins-zh.cn/tags/gsoc/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/gsoc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gsoc2019</title>
-      <link>https://jenkins-zh.cn/tags/gsoc2019/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/gsoc2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gsoc2020</title>
-      <link>https://jenkins-zh.cn/tags/gsoc2020/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/gsoc2020/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hacktoberfest</title>
+      <title>hacktoberfest</title>
       <link>https://jenkins-zh.cn/tags/hacktoberfest/</link>
       <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
       
@@ -642,88 +21,7 @@
     </item>
     
     <item>
-      <title>Iaac</title>
-      <link>https://jenkins-zh.cn/tags/iaac/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/iaac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Infrastructure</title>
-      <link>https://jenkins-zh.cn/tags/infrastructure/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/infrastructure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Installers</title>
-      <link>https://jenkins-zh.cn/tags/installers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/installers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Istio</title>
-      <link>https://jenkins-zh.cn/tags/istio/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/istio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>J 转换曲线</title>
-      <link>https://jenkins-zh.cn/tags/j-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/j-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jacoco</title>
-      <link>https://jenkins-zh.cn/tags/jacoco/</link>
-      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/jacoco/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://jenkins-zh.cn/tags/java/</link>
-      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java11</title>
-      <link>https://jenkins-zh.cn/tags/java11/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/java11/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jcasc</title>
-      <link>https://jenkins-zh.cn/tags/jcasc/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/jcasc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jenkins</title>
+      <title>jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
       <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
       
@@ -732,349 +30,70 @@
     </item>
     
     <item>
-      <title>Jenkins Ci</title>
-      <link>https://jenkins-zh.cn/tags/jenkins-ci/</link>
-      <pubDate>Mon, 18 Nov 2019 00:00:00 +0000</pubDate>
+      <title>api</title>
+      <link>https://jenkins-zh.cn/tags/api/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/jenkins-ci/</guid>
+      <guid>https://jenkins-zh.cn/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jenkins X</title>
-      <link>https://jenkins-zh.cn/tags/jenkins-x/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      <title>developer</title>
+      <link>https://jenkins-zh.cn/tags/developer/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/jenkins-x/</guid>
+      <guid>https://jenkins-zh.cn/tags/developer/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jenkins 流水线</title>
-      <link>https://jenkins-zh.cn/tags/jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</link>
-      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      <title>git</title>
+      <link>https://jenkins-zh.cn/tags/git/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</guid>
+      <guid>https://jenkins-zh.cn/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jenkinsworld</title>
-      <link>https://jenkins-zh.cn/tags/jenkinsworld/</link>
-      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      <title>Github</title>
+      <link>https://jenkins-zh.cn/tags/Github/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/jenkinsworld/</guid>
+      <guid>https://jenkins-zh.cn/tags/Github/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jenkinsworld2018</title>
-      <link>https://jenkins-zh.cn/tags/jenkinsworld2018/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>gsoc</title>
+      <link>https://jenkins-zh.cn/tags/gsoc/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/jenkinsworld2018/</guid>
+      <guid>https://jenkins-zh.cn/tags/gsoc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jira</title>
-      <link>https://jenkins-zh.cn/tags/jira/</link>
-      <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
+      <title>gsoc2020</title>
+      <link>https://jenkins-zh.cn/tags/gsoc2020/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/jira/</guid>
+      <guid>https://jenkins-zh.cn/tags/gsoc2020/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jjb</title>
-      <link>https://jenkins-zh.cn/tags/jjb/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/jjb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jmh</title>
-      <link>https://jenkins-zh.cn/tags/jmh/</link>
-      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/jmh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jte</title>
-      <link>https://jenkins-zh.cn/tags/jte/</link>
-      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/jte/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>K8s</title>
-      <link>https://jenkins-zh.cn/tags/k8s/</link>
-      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kafka Kubernetes Helm</title>
-      <link>https://jenkins-zh.cn/tags/kafka-kubernetes-helm/</link>
-      <pubDate>Fri, 08 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/kafka-kubernetes-helm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kind</title>
-      <link>https://jenkins-zh.cn/tags/kind/</link>
-      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/kind/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubecon</title>
-      <link>https://jenkins-zh.cn/tags/kubecon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/kubecon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://jenkins-zh.cn/tags/kubernetes/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubesphere</title>
-      <link>https://jenkins-zh.cn/tags/kubesphere/</link>
-      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/kubesphere/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://jenkins-zh.cn/tags/linux/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machinelearning</title>
-      <link>https://jenkins-zh.cn/tags/machinelearning/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/machinelearning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maven</title>
-      <link>https://jenkins-zh.cn/tags/maven/</link>
-      <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/maven/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Monitoring</title>
-      <link>https://jenkins-zh.cn/tags/monitoring/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/monitoring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Multi Branch</title>
-      <link>https://jenkins-zh.cn/tags/multi-branch/</link>
-      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/multi-branch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Multibranch</title>
-      <link>https://jenkins-zh.cn/tags/multibranch/</link>
-      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/multibranch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mysql</title>
-      <link>https://jenkins-zh.cn/tags/mysql/</link>
-      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Neuroscience</title>
-      <link>https://jenkins-zh.cn/tags/neuroscience/</link>
-      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/neuroscience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Newcomer</title>
-      <link>https://jenkins-zh.cn/tags/newcomer/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/newcomer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nexus Oss</title>
-      <link>https://jenkins-zh.cn/tags/nexus-oss/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/nexus-oss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>https://jenkins-zh.cn/tags/nginx/</link>
-      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ngrok</title>
-      <link>https://jenkins-zh.cn/tags/ngrok/</link>
-      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/ngrok/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>https://jenkins-zh.cn/tags/open-source/</link>
-      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Opensource</title>
-      <link>https://jenkins-zh.cn/tags/opensource/</link>
-      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/opensource/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Outreach Programs</title>
-      <link>https://jenkins-zh.cn/tags/outreach-programs/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/outreach-programs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Outreachy</title>
-      <link>https://jenkins-zh.cn/tags/outreachy/</link>
-      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/outreachy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Outreachy2018</title>
-      <link>https://jenkins-zh.cn/tags/outreachy2018/</link>
-      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/outreachy2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Performance</title>
-      <link>https://jenkins-zh.cn/tags/performance/</link>
-      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/performance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pipeline</title>
-      <link>https://jenkins-zh.cn/tags/pipeline/</link>
-      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/pipeline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pipeline Authoring</title>
-      <link>https://jenkins-zh.cn/tags/pipeline-authoring/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/pipeline-authoring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Platform Sig</title>
-      <link>https://jenkins-zh.cn/tags/platform-sig/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/platform-sig/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Plugin</title>
+      <title>plugin</title>
       <link>https://jenkins-zh.cn/tags/plugin/</link>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/plugin/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Pluginmanagement</title>
-      <link>https://jenkins-zh.cn/tags/pluginmanagement/</link>
-      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/pluginmanagement/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Plugins</title>
+      <title>plugins</title>
       <link>https://jenkins-zh.cn/tags/plugins/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
@@ -1083,43 +102,97 @@
     </item>
     
     <item>
-      <title>Programming</title>
-      <link>https://jenkins-zh.cn/tags/programming/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <title>updateCenter</title>
+      <link>https://jenkins-zh.cn/tags/updateCenter/</link>
+      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/programming/</guid>
+      <guid>https://jenkins-zh.cn/tags/updateCenter/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Progressive Delivery</title>
-      <link>https://jenkins-zh.cn/tags/progressive-delivery/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      <title>ansible</title>
+      <link>https://jenkins-zh.cn/tags/ansible/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/progressive-delivery/</guid>
+      <guid>https://jenkins-zh.cn/tags/ansible/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>React</title>
-      <link>https://jenkins-zh.cn/tags/react/</link>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      <title>Continuout Delivery</title>
+      <link>https://jenkins-zh.cn/tags/Continuout-Delivery/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/react/</guid>
+      <guid>https://jenkins-zh.cn/tags/Continuout-Delivery/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>React Plugins Gsoc Gsoc2019</title>
-      <link>https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/</link>
-      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      <title>ci</title>
+      <link>https://jenkins-zh.cn/tags/ci/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/</guid>
+      <guid>https://jenkins-zh.cn/tags/ci/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Release</title>
+      <title>Ci Cd Pipeline</title>
+      <link>https://jenkins-zh.cn/tags/Ci-Cd-Pipeline/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Ci-Cd-Pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>continuous integration</title>
+      <link>https://jenkins-zh.cn/tags/continuous-integration/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/continuous-integration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins-x</title>
+      <link>https://jenkins-zh.cn/tags/jenkins-x/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jenkins-x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://jenkins-zh.cn/tags/kubernetes/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Argo</title>
+      <link>https://jenkins-zh.cn/tags/Argo/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Argo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://jenkins-zh.cn/tags/docker/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>release</title>
       <link>https://jenkins-zh.cn/tags/release/</link>
       <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
       
@@ -1128,286 +201,160 @@
     </item>
     
     <item>
-      <title>Remote File</title>
-      <link>https://jenkins-zh.cn/tags/remote-file/</link>
-      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      <title>AWS</title>
+      <link>https://jenkins-zh.cn/tags/AWS/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/remote-file/</guid>
+      <guid>https://jenkins-zh.cn/tags/AWS/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Remoting</title>
-      <link>https://jenkins-zh.cn/tags/remoting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>community</title>
+      <link>https://jenkins-zh.cn/tags/community/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/remoting/</guid>
+      <guid>https://jenkins-zh.cn/tags/community/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Scalability</title>
-      <link>https://jenkins-zh.cn/tags/scalability/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>infrastructure</title>
+      <link>https://jenkins-zh.cn/tags/infrastructure/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/scalability/</guid>
+      <guid>https://jenkins-zh.cn/tags/infrastructure/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Scm</title>
-      <link>https://jenkins-zh.cn/tags/scm/</link>
-      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      <title>documentation</title>
+      <link>https://jenkins-zh.cn/tags/documentation/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/scm/</guid>
+      <guid>https://jenkins-zh.cn/tags/documentation/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Screwdriver</title>
-      <link>https://jenkins-zh.cn/tags/screwdriver/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      <title>governance</title>
+      <link>https://jenkins-zh.cn/tags/governance/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/screwdriver/</guid>
+      <guid>https://jenkins-zh.cn/tags/governance/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Security</title>
-      <link>https://jenkins-zh.cn/tags/security/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      <title>opensource</title>
+      <link>https://jenkins-zh.cn/tags/opensource/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/security/</guid>
+      <guid>https://jenkins-zh.cn/tags/opensource/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Shared Library</title>
-      <link>https://jenkins-zh.cn/tags/shared-library/</link>
-      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      <title>communitybonding</title>
+      <link>https://jenkins-zh.cn/tags/communitybonding/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/shared-library/</guid>
+      <guid>https://jenkins-zh.cn/tags/communitybonding/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Shipper</title>
-      <link>https://jenkins-zh.cn/tags/shipper/</link>
-      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      <title>datascience</title>
+      <link>https://jenkins-zh.cn/tags/datascience/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/shipper/</guid>
+      <guid>https://jenkins-zh.cn/tags/datascience/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sig</title>
-      <link>https://jenkins-zh.cn/tags/sig/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      <title>machinelearning</title>
+      <link>https://jenkins-zh.cn/tags/machinelearning/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/sig/</guid>
+      <guid>https://jenkins-zh.cn/tags/machinelearning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://jenkins-zh.cn/tags/Linux/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://jenkins-zh.cn/tags/Monitoring/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://jenkins-zh.cn/tags/Programming/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software Development</title>
-      <link>https://jenkins-zh.cn/tags/software-development/</link>
+      <link>https://jenkins-zh.cn/tags/Software-Development/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/software-development/</guid>
+      <guid>https://jenkins-zh.cn/tags/Software-Development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software Engineering</title>
-      <link>https://jenkins-zh.cn/tags/software-engineering/</link>
+      <link>https://jenkins-zh.cn/tags/Software-Engineering/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/software-engineering/</guid>
+      <guid>https://jenkins-zh.cn/tags/Software-Engineering/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Spec</title>
-      <link>https://jenkins-zh.cn/tags/spec/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      <title>devops</title>
+      <link>https://jenkins-zh.cn/tags/devops/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/spec/</guid>
+      <guid>https://jenkins-zh.cn/tags/devops/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Spring Boot</title>
-      <link>https://jenkins-zh.cn/tags/spring-boot/</link>
-      <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
+      <title>kubesphere</title>
+      <link>https://jenkins-zh.cn/tags/kubesphere/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/spring-boot/</guid>
+      <guid>https://jenkins-zh.cn/tags/kubesphere/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Springboot</title>
-      <link>https://jenkins-zh.cn/tags/springboot/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      <title>open source</title>
+      <link>https://jenkins-zh.cn/tags/open-source/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/springboot/</guid>
+      <guid>https://jenkins-zh.cn/tags/open-source/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Survey</title>
-      <link>https://jenkins-zh.cn/tags/survey/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/survey/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>T Mobile</title>
-      <link>https://jenkins-zh.cn/tags/t-mobile/</link>
-      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/t-mobile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Template</title>
-      <link>https://jenkins-zh.cn/tags/template/</link>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/template/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Toolchains</title>
-      <link>https://jenkins-zh.cn/tags/toolchains/</link>
-      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/toolchains/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tools</title>
-      <link>https://jenkins-zh.cn/tags/tools/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ui</title>
-      <link>https://jenkins-zh.cn/tags/ui/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/ui/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Updatebot</title>
-      <link>https://jenkins-zh.cn/tags/updatebot/</link>
-      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/updatebot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Updatecenter</title>
-      <link>https://jenkins-zh.cn/tags/updatecenter/</link>
-      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/updatecenter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ux</title>
-      <link>https://jenkins-zh.cn/tags/ux/</link>
-      <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/ux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vault</title>
-      <link>https://jenkins-zh.cn/tags/vault/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/vault/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vscode</title>
-      <link>https://jenkins-zh.cn/tags/vscode/</link>
-      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/vscode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Webhook</title>
-      <link>https://jenkins-zh.cn/tags/webhook/</link>
-      <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/webhook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Webhooks</title>
-      <link>https://jenkins-zh.cn/tags/webhooks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/webhooks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Websocket</title>
-      <link>https://jenkins-zh.cn/tags/websocket/</link>
-      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/websocket/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Weekly</title>
-      <link>https://jenkins-zh.cn/tags/weekly/</link>
-      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/weekly/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wiki</title>
-      <link>https://jenkins-zh.cn/tags/wiki/</link>
-      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/wiki/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>https://jenkins-zh.cn/tags/windows/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wordcloud</title>
+      <title>wordcloud</title>
       <link>https://jenkins-zh.cn/tags/wordcloud/</link>
       <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -1416,29 +363,74 @@
     </item>
     
     <item>
-      <title>Wordpress</title>
-      <link>https://jenkins-zh.cn/tags/wordpress/</link>
-      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+      <title>ux</title>
+      <link>https://jenkins-zh.cn/tags/ux/</link>
+      <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/wordpress/</guid>
+      <guid>https://jenkins-zh.cn/tags/ux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>authentication</title>
+      <link>https://jenkins-zh.cn/tags/authentication/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grafana</title>
+      <link>https://jenkins-zh.cn/tags/Grafana/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Grafana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>https://jenkins-zh.cn/tags/Automation/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neuroscience</title>
+      <link>https://jenkins-zh.cn/tags/Neuroscience/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Neuroscience/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Work</title>
-      <link>https://jenkins-zh.cn/tags/work/</link>
+      <link>https://jenkins-zh.cn/tags/Work/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/work/</guid>
+      <guid>https://jenkins-zh.cn/tags/Work/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Zabbix</title>
-      <link>https://jenkins-zh.cn/tags/zabbix/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <title>platform-sig</title>
+      <link>https://jenkins-zh.cn/tags/platform-sig/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/zabbix/</guid>
+      <guid>https://jenkins-zh.cn/tags/platform-sig/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://jenkins-zh.cn/tags/windows/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -1452,20 +444,362 @@
     </item>
     
     <item>
-      <title>在线分享</title>
-      <link>https://jenkins-zh.cn/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/</link>
-      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      <title>Azure DevOps</title>
+      <link>https://jenkins-zh.cn/tags/Azure-DevOps/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/</guid>
+      <guid>https://jenkins-zh.cn/tags/Azure-DevOps/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>外挂程式 安全 性能 Gsoc Gsoc2019</title>
-      <link>https://jenkins-zh.cn/tags/%E5%A4%96%E6%8C%82%E7%A8%8B%E5%BC%8F-%E5%AE%89%E5%85%A8-%E6%80%A7%E8%83%BD-gsoc-gsoc2019/</link>
-      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      <title>announcement</title>
+      <link>https://jenkins-zh.cn/tags/announcement/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/%E5%A4%96%E6%8C%82%E7%A8%8B%E5%BC%8F-%E5%AE%89%E5%85%A8-%E6%80%A7%E8%83%BD-gsoc-gsoc2019/</guid>
+      <guid>https://jenkins-zh.cn/tags/announcement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>advocacy-and-outreach</title>
+      <link>https://jenkins-zh.cn/tags/advocacy-and-outreach/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/advocacy-and-outreach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>outreach-programs</title>
+      <link>https://jenkins-zh.cn/tags/outreach-programs/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/outreach-programs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nexus OSS</title>
+      <link>https://jenkins-zh.cn/tags/Nexus-OSS/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Nexus-OSS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Declarative Pipeline</title>
+      <link>https://jenkins-zh.cn/tags/Declarative-Pipeline/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Declarative-Pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pipeline</title>
+      <link>https://jenkins-zh.cn/tags/pipeline/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>https://jenkins-zh.cn/tags/Data-Science/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Data-Science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kind</title>
+      <link>https://jenkins-zh.cn/tags/Kind/</link>
+      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Kind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://jenkins-zh.cn/tags/MySQL/</link>
+      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/MySQL/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WordPress</title>
+      <link>https://jenkins-zh.cn/tags/WordPress/</link>
+      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/WordPress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud-native</title>
+      <link>https://jenkins-zh.cn/tags/cloud-native/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/cloud-native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://jenkins-zh.cn/tags/Golang/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://jenkins-zh.cn/tags/security/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vault</title>
+      <link>https://jenkins-zh.cn/tags/Vault/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Vault/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cicd</title>
+      <link>https://jenkins-zh.cn/tags/cicd/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iaac</title>
+      <link>https://jenkins-zh.cn/tags/Iaac/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Iaac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JCasC</title>
+      <link>https://jenkins-zh.cn/tags/JCasC/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/JCasC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jjb</title>
+      <link>https://jenkins-zh.cn/tags/Jjb/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Jjb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ui</title>
+      <link>https://jenkins-zh.cn/tags/ui/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ngrok</title>
+      <link>https://jenkins-zh.cn/tags/Ngrok/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Ngrok/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SCM</title>
+      <link>https://jenkins-zh.cn/tags/SCM/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/SCM/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>toolchains</title>
+      <link>https://jenkins-zh.cn/tags/toolchains/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/toolchains/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pipeline-authoring</title>
+      <link>https://jenkins-zh.cn/tags/pipeline-authoring/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/pipeline-authoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SIG</title>
+      <link>https://jenkins-zh.cn/tags/SIG/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/SIG/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://jenkins-zh.cn/tags/Configuration/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deployment</title>
+      <link>https://jenkins-zh.cn/tags/Deployment/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>https://jenkins-zh.cn/tags/k8s/</link>
+      <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CloudBees</title>
+      <link>https://jenkins-zh.cn/tags/CloudBees/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/CloudBees/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>community-bridge</title>
+      <link>https://jenkins-zh.cn/tags/community-bridge/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/community-bridge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VSCode</title>
+      <link>https://jenkins-zh.cn/tags/VSCode/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/VSCode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cd</title>
+      <link>https://jenkins-zh.cn/tags/cd/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cdf</title>
+      <link>https://jenkins-zh.cn/tags/cdf/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/cdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screwdriver</title>
+      <link>https://jenkins-zh.cn/tags/Screwdriver/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Screwdriver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps 指标</title>
+      <link>https://jenkins-zh.cn/tags/DevOps-%E6%8C%87%E6%A0%87/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/DevOps-%E6%8C%87%E6%A0%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps 状态</title>
+      <link>https://jenkins-zh.cn/tags/DevOps-%E7%8A%B6%E6%80%81/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/DevOps-%E7%8A%B6%E6%80%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps 状态报告</title>
+      <link>https://jenkins-zh.cn/tags/DevOps-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/DevOps-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>J 转换曲线</title>
+      <link>https://jenkins-zh.cn/tags/J-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/J-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>精英绩效</title>
+      <link>https://jenkins-zh.cn/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>T-Mobile</title>
+      <link>https://jenkins-zh.cn/tags/T-Mobile/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/T-Mobile/</guid>
       <description></description>
     </item>
     
@@ -1479,6 +813,303 @@
     </item>
     
     <item>
+      <title>events</title>
+      <link>https://jenkins-zh.cn/tags/events/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/events/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gsoc2019</title>
+      <link>https://jenkins-zh.cn/tags/gsoc2019/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/gsoc2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>治理</title>
+      <link>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>社区</title>
+      <link>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebSocket</title>
+      <link>https://jenkins-zh.cn/tags/WebSocket/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/WebSocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://jenkins-zh.cn/tags/Blog/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multi-branch</title>
+      <link>https://jenkins-zh.cn/tags/multi-branch/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/multi-branch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webhook</title>
+      <link>https://jenkins-zh.cn/tags/Webhook/</link>
+      <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Webhook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://jenkins-zh.cn/tags/java/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git Secrets</title>
+      <link>https://jenkins-zh.cn/tags/Git-Secrets/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Git-Secrets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins 流水线</title>
+      <link>https://jenkins-zh.cn/tags/Jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</link>
+      <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>contributors</title>
+      <link>https://jenkins-zh.cn/tags/contributors/</link>
+      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/contributors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wiki</title>
+      <link>https://jenkins-zh.cn/tags/wiki/</link>
+      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/wiki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C-STAT</title>
+      <link>https://jenkins-zh.cn/tags/C-STAT/</link>
+      <pubDate>Mon, 18 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/C-STAT/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins CI</title>
+      <link>https://jenkins-zh.cn/tags/Jenkins-CI/</link>
+      <pubDate>Mon, 18 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Jenkins-CI/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UpdateBot</title>
+      <link>https://jenkins-zh.cn/tags/UpdateBot/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/UpdateBot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://jenkins-zh.cn/tags/react/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react plugins gsoc gsoc2019</title>
+      <link>https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elections</title>
+      <link>https://jenkins-zh.cn/tags/elections/</link>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/elections/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kafka kubernetes helm</title>
+      <link>https://jenkins-zh.cn/tags/kafka-kubernetes-helm/</link>
+      <pubDate>Fri, 08 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/kafka-kubernetes-helm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>运营转型</title>
+      <link>https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>外挂程式 安全 性能 gsoc gsoc2019</title>
+      <link>https://jenkins-zh.cn/tags/%E5%A4%96%E6%8C%82%E7%A8%8B%E5%BC%8F-%E5%AE%89%E5%85%A8-%E6%80%A7%E8%83%BD-gsoc-gsoc2019/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E5%A4%96%E6%8C%82%E7%A8%8B%E5%BC%8F-%E5%AE%89%E5%85%A8-%E6%80%A7%E8%83%BD-gsoc-gsoc2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://jenkins-zh.cn/tags/cli/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pluginmanagement</title>
+      <link>https://jenkins-zh.cn/tags/pluginmanagement/</link>
+      <pubDate>Fri, 25 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/pluginmanagement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DEVOPS JENKINS</title>
+      <link>https://jenkins-zh.cn/tags/DEVOPS-JENKINS/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/DEVOPS-JENKINS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>template</title>
+      <link>https://jenkins-zh.cn/tags/template/</link>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>asktheexperts</title>
+      <link>https://jenkins-zh.cn/tags/asktheexperts/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/asktheexperts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>contributorsummit</title>
+      <link>https://jenkins-zh.cn/tags/contributorsummit/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/contributorsummit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devopsworld2019</title>
+      <link>https://jenkins-zh.cn/tags/devopsworld2019/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/devopsworld2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkinsworld</title>
+      <link>https://jenkins-zh.cn/tags/jenkinsworld/</link>
+      <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jenkinsworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitlab</title>
+      <link>https://jenkins-zh.cn/tags/gitlab/</link>
+      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multibranch</title>
+      <link>https://jenkins-zh.cn/tags/multibranch/</link>
+      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/multibranch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>贡献激励</title>
+      <link>https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>导师</title>
       <link>https://jenkins-zh.cn/tags/%E5%AF%BC%E5%B8%88/</link>
       <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
@@ -1488,29 +1119,29 @@
     </item>
     
     <item>
-      <title>开源</title>
-      <link>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</link>
-      <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>志愿者</title>
-      <link>https://jenkins-zh.cn/tags/%E5%BF%97%E6%84%BF%E8%80%85/</link>
-      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/%E5%BF%97%E6%84%BF%E8%80%85/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>招募</title>
       <link>https://jenkins-zh.cn/tags/%E6%8B%9B%E5%8B%9F/</link>
       <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/%E6%8B%9B%E5%8B%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>黑客松</title>
+      <link>https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/</link>
+      <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blueocean</title>
+      <link>https://jenkins-zh.cn/tags/blueocean/</link>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/blueocean/</guid>
       <description></description>
     </item>
     
@@ -1533,47 +1164,11 @@
     </item>
     
     <item>
-      <title>治理</title>
-      <link>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</link>
-      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>测试</title>
       <link>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>社区</title>
-      <link>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</link>
-      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>精英绩效</title>
-      <link>https://jenkins-zh.cn/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>贡献激励</title>
-      <link>https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/</link>
-      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/</guid>
       <description></description>
     </item>
     
@@ -1587,20 +1182,425 @@
     </item>
     
     <item>
-      <title>运营转型</title>
-      <link>https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/</link>
-      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      <title>志愿者</title>
+      <link>https://jenkins-zh.cn/tags/%E5%BF%97%E6%84%BF%E8%80%85/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/</guid>
+      <guid>https://jenkins-zh.cn/tags/%E5%BF%97%E6%84%BF%E8%80%85/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>黑客松</title>
-      <link>https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/</link>
-      <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
+      <title>remote-file</title>
+      <link>https://jenkins-zh.cn/tags/remote-file/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/</guid>
+      <guid>https://jenkins-zh.cn/tags/remote-file/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开源</title>
+      <link>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</link>
+      <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>core</title>
+      <link>https://jenkins-zh.cn/tags/core/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java11</title>
+      <link>https://jenkins-zh.cn/tags/java11/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/java11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>benchmark</title>
+      <link>https://jenkins-zh.cn/tags/benchmark/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>credentials</title>
+      <link>https://jenkins-zh.cn/tags/credentials/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/credentials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jmh</title>
+      <link>https://jenkins-zh.cn/tags/jmh/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jmh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://jenkins-zh.cn/tags/performance/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JTE</title>
+      <link>https://jenkins-zh.cn/tags/JTE/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/JTE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>在线分享</title>
+      <link>https://jenkins-zh.cn/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docs</title>
+      <link>https://jenkins-zh.cn/tags/docs/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/docs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring boot</title>
+      <link>https://jenkins-zh.cn/tags/spring-boot/</link>
+      <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coverage</title>
+      <link>https://jenkins-zh.cn/tags/coverage/</link>
+      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/coverage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jacoco</title>
+      <link>https://jenkins-zh.cn/tags/jacoco/</link>
+      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jacoco/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spec</title>
+      <link>https://jenkins-zh.cn/tags/spec/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/spec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>springboot</title>
+      <link>https://jenkins-zh.cn/tags/springboot/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/springboot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cfp</title>
+      <link>https://jenkins-zh.cn/tags/cfp/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/cfp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jira</title>
+      <link>https://jenkins-zh.cn/tags/jira/</link>
+      <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maven</title>
+      <link>https://jenkins-zh.cn/tags/maven/</link>
+      <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flagger</title>
+      <link>https://jenkins-zh.cn/tags/flagger/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/flagger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>istio</title>
+      <link>https://jenkins-zh.cn/tags/istio/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/istio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>progressive delivery</title>
+      <link>https://jenkins-zh.cn/tags/progressive-delivery/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/progressive-delivery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shipper</title>
+      <link>https://jenkins-zh.cn/tags/shipper/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/shipper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://jenkins-zh.cn/tags/nginx/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ai</title>
+      <link>https://jenkins-zh.cn/tags/ai/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zabbix</title>
+      <link>https://jenkins-zh.cn/tags/zabbix/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/zabbix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>contributing</title>
+      <link>https://jenkins-zh.cn/tags/contributing/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/contributing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>newcomer</title>
+      <link>https://jenkins-zh.cn/tags/newcomer/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/newcomer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general</title>
+      <link>https://jenkins-zh.cn/tags/general/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>weekly</title>
+      <link>https://jenkins-zh.cn/tags/weekly/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/weekly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Electron</title>
+      <link>https://jenkins-zh.cn/tags/Electron/</link>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/Electron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shared-library</title>
+      <link>https://jenkins-zh.cn/tags/shared-library/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/shared-library/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>outreachy</title>
+      <link>https://jenkins-zh.cn/tags/outreachy/</link>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/outreachy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>outreachy2018</title>
+      <link>https://jenkins-zh.cn/tags/outreachy2018/</link>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/outreachy2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cdsummit</title>
+      <link>https://jenkins-zh.cn/tags/cdsummit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/cdsummit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CI/CD</title>
+      <link>https://jenkins-zh.cn/tags/CI/CD/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/CI/CD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>configuration-as-code</title>
+      <link>https://jenkins-zh.cn/tags/configuration-as-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/configuration-as-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>evergreen</title>
+      <link>https://jenkins-zh.cn/tags/evergreen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/evergreen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>installers</title>
+      <link>https://jenkins-zh.cn/tags/installers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/installers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkinsworld2018</title>
+      <link>https://jenkins-zh.cn/tags/jenkinsworld2018/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/jenkinsworld2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubecon</title>
+      <link>https://jenkins-zh.cn/tags/kubecon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/kubecon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>remoting</title>
+      <link>https://jenkins-zh.cn/tags/remoting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/remoting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scalability</title>
+      <link>https://jenkins-zh.cn/tags/scalability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/scalability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>survey</title>
+      <link>https://jenkins-zh.cn/tags/survey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/survey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://jenkins-zh.cn/tags/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webhooks</title>
+      <link>https://jenkins-zh.cn/tags/webhooks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/webhooks/</guid>
       <description></description>
     </item>
     

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pipeline on Jenkins 中文社区</title>
+    <title>pipeline on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/pipeline/</link>
-    <description>Recent content in Pipeline on Jenkins 中文社区</description>
+    <description>Recent content in pipeline on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
@@ -27,7 +27,7 @@ Jenkins 的流水线插件版本2.5引入了对声明式流水线的支持。
 agent Jenkins 通过将分布式构建委托给“代理/agent”节点来提供执行分布式构建的能力。 这样做可以使您仅使用 Jenkins 服务器的一个实例来执行多个项目，而工作负载却被分配给了它的代理。 有关如何配置主/代理模式的详细信息超出了本博客的范围。请参阅 Jenkins 分布式构建以获取更多信息。
 代理应标记上标签，以便彼此轻松识别。 例如，节点可以通过其平台（Linux，Windows 等），其版本或位置等来标记。 “agent”部分配置流水线可以在哪些节点上运行。 指定 agent any 意味着 Jenkins 将在任何可用节点上运行任务。
 其用法的一个示例可以是：
-pipeline { agent any ... }  stages 本部分允许在流水线上生成不同的阶段，这些阶段将在运行任务时显示为不同的段。
+pipeline { agent any ... } stages 本部分允许在流水线上生成不同的阶段，这些阶段将在运行任务时显示为不同的段。
 一个包含阶段语句的示例流水线：
 pipeline { agent any stages { .</description>
     </item>
@@ -41,8 +41,9 @@ pipeline { agent any stages { .</description>
       <description>我经常发现自己需要在一堆不同的配置上执行相同的操作。到目前为止，意味着我需要在流水线上的同一阶段制作多个副本。当我需要修改时，必须在整个流水线的多个地方做相同的修改。对于一个更大型的流水线来说，即便维护很少的配置也会变得困难。 声明式流水线1.5.0-beta1（可以从Jenkins 实验性更新中心获取）添加了一个新的 matrix 部分，该部分能让我一次指定一个阶段列表，然后在多个配置上并行运行同一列表。让我们来看一看！
 单一配置流水线 开始我会使用一个带有构建和测试阶段的简单流水线。我使用 echo 步骤作为构建和测试行为的占位符。
 Jenkinsfile
-pipeline { agent none stages { stage(&#39;BuildAndTest&#39;) { agent any stages { stage(&#39;Build&#39;) { steps { echo &#39;Do Build&#39; } } stage(&#39;Test&#39;) { steps { echo &#39;Do Test&#39; } } } } } }  多平台与浏览器的流水线 我更喜欢在多系统以及浏览器结合的情况下执行我的构建和测试。新的 metrix 指令能让我定义一个 axes 的集合。每个 axis 有一个 name 以及包含了一个或多个 values 的列表。当流水线运行的时候，Jenkins 会将这些托管过来并将每个“轴”上所有可能值的组合运行在我的阶段内。一个“矩阵”上所有的元素都是并行运行的（只受限于可用的节点数量）。 我的“矩阵”有两个“轴”： PLATFORM 和 BROWSER 。PLATFORM 有三个值 BROWSER 有四个值，所以我的阶段会运行12个不同的组合。我已经修改了我的 echo 步骤用来使用每个元素中“轴”的值。
-Jenkinsfile</description>
+pipeline { agent none stages { stage(&#39;BuildAndTest&#39;) { agent any stages { stage(&#39;Build&#39;) { steps { echo &#39;Do Build&#39; } } stage(&#39;Test&#39;) { steps { echo &#39;Do Test&#39; } } } } } } 多平台与浏览器的流水线 我更喜欢在多系统以及浏览器结合的情况下执行我的构建和测试。新的 metrix 指令能让我定义一个 axes 的集合。每个 axis 有一个 name 以及包含了一个或多个 values 的列表。当流水线运行的时候，Jenkins 会将这些托管过来并将每个“轴”上所有可能值的组合运行在我的阶段内。一个“矩阵”上所有的元素都是并行运行的（只受限于可用的节点数量）。 我的“矩阵”有两个“轴”： PLATFORM 和 BROWSER 。PLATFORM 有三个值 BROWSER 有四个值，所以我的阶段会运行12个不同的组合。我已经修改了我的 echo 步骤用来使用每个元素中“轴”的值。
+Jenkinsfile
+pipeline { agent none stages { stage(&#39;BuildAndTest&#39;) { matrix { agent any axes { axis { name &#39;PLATFORM&#39; values &#39;linux&#39;, &#39;windows&#39;, &#39;mac&#39; } axis { name &#39;BROWSER&#39; values &#39;firefox&#39;, &#39;chrome&#39;, &#39;safari&#39;, &#39;edge&#39; } } stages { stage(&#39;Build&#39;) { steps { echo &amp;quot;Do Build for ${PLATFORM} - ${BROWSER}&amp;quot; } } stage(&#39;Test&#39;) { steps { echo &amp;quot;Do Test for ${PLATFORM} - ${BROWSER}&amp;quot; } } } } } } } 日志输出（部分内容）</description>
     </item>
     
     <item>
@@ -55,9 +56,10 @@ Jenkinsfile</description>
 我们会在 Docker 容器里运行 Jenkins，再使用 Jenkins 启动一个 Maven 容器，用来编译我们的代码，接着在另一个 Maven 容器中运行测试用例并生成制品（例如 jar 包），然后再在 Jenkins 容器中制作 Docker 镜像，最后将镜像推送到 Docker Hub。
 我们会用到两个 Github 仓库。
  Jenkins-complete：这是主仓库，包含了启动 Jenkins 容器所需的配置文件。 Simple-java-maven-app：使用 Maven 创建的 简单的 Java 应用。  在搭建之前，我们先来了解一下这两个仓库。
-了解 Jenkins-complete 这是我们构建 Jenkins 镜像的核心仓库，它包含了所需的配置文件。我们通过 Jenkins 官方提供的 Docker 镜像启动 Jenkins 容器，然后完成一些动作，例如安装插件、创建用户等。
+ 了解 Jenkins-complete 这是我们构建 Jenkins 镜像的核心仓库，它包含了所需的配置文件。我们通过 Jenkins 官方提供的 Docker 镜像启动 Jenkins 容器，然后完成一些动作，例如安装插件、创建用户等。
 安装好之后，我们会创建用来获取 Java 应用的 Github 凭据，还有推送镜像到 Dockerhub 的 Docker 凭据。最后，开始创建我们应用的流水线 job。
-这个过程很长，我们的目标是让所有这些事都自动化。主仓库包含的文件和详细配置会用来创建镜像。当创建好的镜像启动运行以后，我们就有了： 1. 新创建的 admin/admin 用户 2. 已经装好的一些插件 3. Docker 和 Github 凭据 4.</description>
+这个过程很长，我们的目标是让所有这些事都自动化。主仓库包含的文件和详细配置会用来创建镜像。当创建好的镜像启动运行以后，我们就有了：
+ 新创建的 admin/admin 用户 已经装好的一些插件 Docker 和 Github 凭据 新创建的名为 sample-maven-job 的流水线。  如果把源码列成树状，就看到下面的结构：</description>
     </item>
     
     <item>
@@ -68,8 +70,8 @@ Jenkinsfile</description>
       <guid>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</guid>
       <description>GitLab 分支源插件已经走出 beta 阶段，并已发布到 Jenkins 更新中心。 它允许您基于 GitLab 用户 或 组 或 子组 项目创建任务。 您可以:
  从 GitLab 用户/组/子组导入单个项目的分支作为任务（多分支流水线任务） 从 GitLab 用户/组/子组导入所有或部分项目的分支作为任务（GitLab 组任务或 GitLab 文件夹组织）  GitLab 组项目对项目进行扫描， 根据设置的规则导入流水线任务。 导入项目之后， Jenkins 立即基于 Jenkinsfile 流水线脚本运行任务并且将状态通知到 GitLab 流水线状态。 这个插件与其他分支源插件不同，它提供了 GitLab 服务器配置，可以在系统配置中配置。 Jenkins 配置即代码 (JCasC) 也可以用于配置服务器。 要想了解更多关于服务器配置的信息，请参考我之前的博客。
-要求  Jenkins - 2.176.2 (LTS)
- GitLab - v11.0+
+要求   Jenkins - 2.176.2 (LTS)
+  GitLab - v11.0+
   创建任务 要创建多分支流水线任务（使用 GitLab 分支源）或 GitLab 组任务，您必须将 GitLab 个人访问令牌添加到服务端配置。 凭据用于获取项目的元数据，并在 GitLab 服务器上设置 hook。 如果令牌具有管理访问权限，您还可以设置 系统 Hook，而 Web Hook 可以从任何用户令牌设置。</description>
     </item>
     
@@ -84,7 +86,7 @@ Jenkinsfile</description>
 该问题涉及到的重要的修复包含在如下的插件中，它们都需要 Jenkins 2.138.4 以及更新的版本：
  Pipeline: API 2.34 Pipeline: Basic Steps 2.18 (需要同步更新到 Pipeline: Groovy 2.70) Pipeline: Graph Analysis 1.10 Pipeline: Declarative 1.3.9 Blue Ocean 1.17.0  这里是一条使用了 unstable 步骤的流水线在 Blue Ocean 中的截图，只会把失败的阶段标识为不稳定的：
 例子 这里给出一些如何在你的流水线中使用该特性的示例：
- 使用新的步骤 warnError 用于捕获错误，并把构建和阶段标记为不稳定的。 warnError 只需要一个 字符串 的参数，用于当捕获到错误时以日志的形式输出。当 warnError 捕获到一个错误时，它会记录该消息以及错误，并设置构建和阶段的结果为不稳定的。效果如下：  warnError(&#39;Script failed!&#39;) { sh(&#39;false&#39;) }   使用新的步骤 unstable 设置构建和阶段结果为不稳定的。可以使用该步骤直接替换 currentBuild.</description>
+ 使用新的步骤 warnError 用于捕获错误，并把构建和阶段标记为不稳定的。 warnError 只需要一个 字符串 的参数，用于当捕获到错误时以日志的形式输出。当 warnError 捕获到一个错误时，它会记录该消息以及错误，并设置构建和阶段的结果为不稳定的。效果如下：  warnError(&#39;Script failed!&#39;) { sh(&#39;false&#39;) }  使用新的步骤 unstable 设置构建和阶段结果为不稳定的。可以使用该步骤直接替换 currentBuild.</description>
     </item>
     
     <item>
@@ -116,7 +118,7 @@ Jenkinsfile</description>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-31-pipeline-config-history-plugin/</guid>
       <description>流水线是在 Jenkins 中创建任务的有效的和现代的方式。 为了快速、简单地识别流水线变更，我们开发了流水线配置历史插件。 这个插件检测流水线的变更，并为用户提供一个选项，以明显地、可追溯地查看流水线配置两次构建（差异）之间的变更。
-一切是如何开始的 这一切开始于十年之前 —— 经典的任务类型 (例如：自由风格、Maven 等等)。 每隔一段时间，用户就会联系我们，因为他们的任务无法在一夜之间完成。 为什么这个任务失败了呢？ 这次失败和任务配置变更有关系吗？ 用户典型的回答是：&amp;rdquo;我们没有改任何东西&amp;rdquo;，但这是真的吗？ 我们思考了这个问题，并决定开发一个插件来帮助我们解决这个问题。 这就是plugin:jobConfigHistory[任务配置历史]的想法和开始。
+一切是如何开始的 这一切开始于十年之前 —— 经典的任务类型 (例如：自由风格、Maven 等等)。 每隔一段时间，用户就会联系我们，因为他们的任务无法在一夜之间完成。 为什么这个任务失败了呢？ 这次失败和任务配置变更有关系吗？ 用户典型的回答是：&amp;ldquo;我们没有改任何东西&amp;rdquo;，但这是真的吗？ 我们思考了这个问题，并决定开发一个插件来帮助我们解决这个问题。 这就是plugin:jobConfigHistory[任务配置历史]的想法和开始。
 现在可以查看任务配置的变更(例如其他分支、JDK版本等)，而且更常见的情况是，破坏构建的原因是任务配置的变更。
 多年来，该插件得到了开发，目前仍在开发中。 添加了新的功能，不仅可以查看任务配置，还可以查看全局和代理配置的变更。 还可以恢复旧的配置版本。 如今，这个插件已经有超过30,000次安装量。 多年来，JobConfigHistory 减轻了我们的日常工作 —— 我们有超过3000个 Jenkins 任务！ 然后出现了一种新的任务类型：流水线。
 流水线 —— 需要一些新的东西 流水线任务和经典的任务类型有根本地区别。 经典的任务类型是通过 Jenkins GUI 配置的，而流水线任务是配置即代码。 实际上，每个流水线任务都是通过 Jenkins GUI 创建的，然而这并不一定是流水线配置的位置。 流水线可以被配置：
@@ -167,7 +169,7 @@ Kubernetes 已经成为容器技术中必不可少的平台，甚至会作为未
 回答三 一条流水线加个开关设置是否跳过扫描。
 2. 有人做过增量包构建么？  有人做过增量包构建么？问下要用哪些插件，怎么做？ 经确认，提问人的需求是有一个代码仓库 x，然后 x 里有 a,b,c 三个模块，开发提交了 a 模块的代码，这时，只打包 a 模块的制品。
  回答一 要做的是在流水线里判断提交代码中修改了哪个模块，然后执行你的 ant 命令指定构建某个模块就好了。代码 demo 如下：
-pipeline{ agent any stages{ stage(&#39;build a&#39;){ when{ changeset &amp;quot;a/**&amp;quot; } steps{ echo &amp;quot;build a&amp;quot; } } stage(&#39;build b&#39;){ when{ changeset &amp;quot;b/**&amp;quot; } steps{ echo &amp;quot;build b&amp;quot; } } } }  回答二 增量包，四五年前我有过相关实践，构建工具也是 ant。记得当初是根据修改的文件路径，解析出 ant target 列表，然后根据事先声明好的依赖关系对它排序，然后执行 ant 构建命令，最后将生成的二进制包挑出来生成增量包，大致这么个思路。</description>
+pipeline{ agent any stages{ stage(&amp;#39;build a&amp;#39;){ when{ changeset &amp;#34;a/**&amp;#34; } steps{ echo &amp;#34;build a&amp;#34; } } stage(&amp;#39;build b&amp;#39;){ when{ changeset &amp;#34;b/**&amp;#34; } steps{ echo &amp;#34;build b&amp;#34; } } } } 回答二 增量包，四五年前我有过相关实践，构建工具也是 ant。记得当初是根据修改的文件路径，解析出 ant target 列表，然后根据事先声明好的依赖关系对它排序，然后执行 ant 构建命令，最后将生成的二进制包挑出来生成增量包，大致这么个思路。</description>
     </item>
     
     <item>
@@ -176,8 +178,8 @@ pipeline{ agent any stages{ stage(&#39;build a&#39;){ when{ changeset &amp;quot;
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</guid>
-      <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件： * GitLab API 插件 - 包装 GitLab Java APIs。 * GitLab 分支源插件 - 包括两个包： * io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 * io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。
-现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
+      <description>这是在 GSoC 2019中的一个 Jenkins 项目。 我们正致力于增加多分支流水线任务和文件夹组织对 GitLab 的支持。 这个计划是创建以下插件：
+ GitLab API 插件 - 包装 GitLab Java APIs。 GitLab 分支源插件 - 包括两个包：  io.jenkins.plugins.gitlabserverconfig - 管理服务器配置和 Web hooks 管理。理想情况下应该在另一个名为 GitLab Plugin 的插件中。 未来，这个包应该移动到新的插件中。 io.jenkins.plugins.gitlabbranchsource - 为多分支流水线任务（包括 Merge Requests ）和文件夹组织添加 GitLab 分支源。    现状  完全支持自由风格的任务和流水线（单分支）任务。 部分支持多分支流水线任务（没有 MRS 检测）。 不支持 Gitlab 文件夹组织。  这个项目的目标  实现一个依赖于 Gitlab API 插件的轻量级 Gitlab 插件。 遵循3个独立插件的约定，即 GitLab 插件，GitLab API 插件，GitLab 分支源插件。 实现 Gitlab 分支源插件，支持多分支管道作业。 支持新的 Jenkins 特性，例如 Jenkins 代码即配置 (JCasC)， 增量式工具。 清晰高效的设计。 支持新的 SCM 特性 APIs。 支持 Java 8 及更高版本。  构建插件 这个插件还没有二进制文件可用，因为这个插件还处于非常早期的 alpha 阶段，还没有为公众准备好。 如果您想尽早介入，可以尝试自己从源代码构建它。</description>
     </item>
     
     <item>
@@ -193,12 +195,14 @@ pipeline{ agent any stages{ stage(&#39;build a&#39;){ when{ changeset &amp;quot;
 随着基于微服务的体系结构的兴起，一个集中的 DevOps 团队可以同时支持许多不同的开发团队；所有这些团队都可能利用不同的编程语言和自动化测试工具。
 虽然开发团队之间的工具可能不同，但工作流通常是相同的：单元测试、静态代码分析、构建和发布制品、部署它，然后针对部署的应用程序执行不同类型的测试。
  模板引擎插件允许您从每个被团队定义可继承通用工作流的存储库中删除 Jenkinsfile 。作为替代每个存储库需定义整个流水线，团队提供一个使用工作流的工具配置文件。
- JTE 实战 让我们通过一个简单的示例来演示模板的可重用性： 流水线模板例子：  unit_test() build() static_code_analysis()  模板利用库提供的步骤概述工作流团队必须实现的步骤。虽然模板的执行方式与任何其他 Jenkinsfile 都一样（这意味着支持标准的脚本化和声明性语法），但模板的目标应该是以纯英语的方式阅读，并避免任何技术实现。
+ JTE 实战 让我们通过一个简单的示例来演示模板的可重用性： 流水线模板例子： unit_test() build() static_code_analysis() 模板利用库提供的步骤概述工作流团队必须实现的步骤。虽然模板的执行方式与任何其他 Jenkinsfile 都一样（这意味着支持标准的脚本化和声明性语法），但模板的目标应该是以纯英语的方式阅读，并避免任何技术实现。
  通过这种方式利用模板，您可以将流水线的业务逻辑（应该在什么时候发生）与技术实现（实际将要发生什么）分开。其结果是一个 CI/CD 管道，当同时支持多个团队时，该流水线被证明非常容易管理。
  此模板（ unit_test 、 build 和 static_code_analysis ）概述的步骤是专门命名的。通过这种方式，团队可以使用的不同库共享同一流水线。
-实现模板 使用模板引擎实现可共享流水线需要几个关键组件： 1. 流水线模板：概述要执行的工作流 2. 库：提供工作流步骤的技术实现 3. 配置文件：指定要使用的库及其配置
-步骤1、创建流水线配置存储库 流水线配置存储库用于存储团队继承的常见配置和流水线模板。
-这个示例流水线配置存储库稍后将被配置为治理层的一部分：JTE 的机制中允许您构建表示组织的层次结构配置。</description>
+实现模板 使用模板引擎实现可共享流水线需要几个关键组件：
+ 流水线模板：概述要执行的工作流 库：提供工作流步骤的技术实现 配置文件：指定要使用的库及其配置  步骤1、创建流水线配置存储库 流水线配置存储库用于存储团队继承的常见配置和流水线模板。
+这个示例流水线配置存储库稍后将被配置为治理层的一部分：JTE 的机制中允许您构建表示组织的层次结构配置。
+治理层包含三个方面：
+ 流水线模板 库资源清单 层的配置文件( pipeline_config.</description>
     </item>
     
     <item>
@@ -210,8 +214,8 @@ pipeline{ agent any stages{ stage(&#39;build a&#39;){ when{ changeset &amp;quot;
       <description>前段时间，Jenkins 中文社区建了一个“Jenkins 中文社区技术交流”的微信群。
 群里不温不火，不时有人抛出几个关于 Jenkins 流水线的问题。比如以下聊天记录：
 而这些问题都共同说明另一个问题：Jenkins 的流水线的普及度还很低。大家都苦恼着不知道如何写 Jenkins 流水线呢。
-所以，Jenkins 中文社区决定6月22日组织一场工作坊，手把手教大家如何写 Jenkins pipeline。工作坊内容包括： * 流水线基础讲解及其练习。 * 流水线高级部分讲解及其练习。 * 案例实战（注意啦，可是有案例的。不是虚的。）
-问题来了？谁是这次工作坊的教练呢？
+所以，Jenkins 中文社区决定6月22日组织一场工作坊，手把手教大家如何写 Jenkins pipeline。工作坊内容包括：
+ 流水线基础讲解及其练习。 流水线高级部分讲解及其练习。 案例实战（注意啦，可是有案例的。不是虚的。）  问题来了？谁是这次工作坊的教练呢？
 赵晓杰：jenkinsci Contributor，Jenkins 中文社区发起人。
 想参加的同学，请点击阅读原文报名参加。
 如果无法现场参加的同学可以发邮件至 events@mail.jenkins-zh.cn 申请 ZOOM 网络会议接入。另，我们鼓励由一人申请，并组织好其他人一起参与。这样多人一起进行工作坊，效果更佳。申请邮件中写明：申请人所在公司、地点、参与人数。
@@ -226,10 +230,13 @@ pipeline{ agent any stages{ stage(&#39;build a&#39;){ when{ changeset &amp;quot;
       <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/</guid>
       <description>在我们正在进行的 Kubernetes FAQ 系列中，我们回答了社区中一些常见的问题，本周我们将讨论在选择 CI/CD 工具时需要考虑什么。
 目前已经有大量的 CI/CD 工具可供选择-开源解决方案和商业解决方案。在这里，我们重点介绍在设置持续交付流水线时要考虑的一些最重要的注意事项。
-在这篇文章中你将学到： - 为什么需要自动化流水线 - 部署典型流水线的组件 - CD 流水线功能需要考虑 - 如何合并 GitOps
-为什么要创建自动化 CI/CD 流水线？ 自动化 CI/CD 流水线有许多好处： - 将您的上线时间从数周或数月减少到数天或数小时。通过自动化流水线，开发团队可以提高发布的速度以及代码的质量。以小增量连续添加的新功能和修复可以使产品具有更少的缺陷。 - 一个强大的开发团队。由于交付流水线的所有阶段都可供团队中的任何人检查、改进和验证，因此可以创建对构建的所有权，从而鼓励整个组织的强大团队合作和协作能力。 - 降低软件开发的风险和成本。自动化鼓励开发人员在继续前进之前分阶段验证代码更改，从而减少了缺陷最终出现在生产中的机会。 - 减少进展中的工作量。CD 流水线提供从开发到客户的快速反馈循环。这个迭代周期不仅可以帮助您构建正确的产品，而且还允许开发人员更快地进行产品改进，从而减少正在进行的工作。 典型的部署流水线 CD 流水线由几个不同的阶段组成; 一个工具不能满足所有这些步骤。
-以下是构成大多数自动化流水线的步骤： 1. 在笔记本电脑上编写代码，将其推入源代码仓库(如 Git)。 2. 代码通过单元、集成和其他自动化测试。如果测试通过，将构建成新的 Docker 镜像。 3. 将镜像推送到镜像仓库。 4. 将新镜像推送到集群中。 思考 CD 流水线的特性 创建流水线的困难之一是成功地将您想要使用的工具粘合在一起。这些是为流水线选择工具时要考虑的主要功能： - 端到端的安全性 - 能够使用完全可重现的审计跟踪进行回滚 - 内置可观察性和警报功能 - 平均快速部署时间以及平均快速恢复时间 - 简单的开发人员经验和工作流程
-流水线端到端的安全性 在市场上的 CI/CD 工具中，有些工具将 CI 和 CD 部分合并为一个工具。或者更糟糕的是，那些负责创建 CI/CD 流水线的人将组装一系列手工锻造的脚本，这些脚本可以在一个方向上通过流水线推送代码，或执行被称为CIOP 流水线。</description>
+在这篇文章中你将学到：
+ 为什么需要自动化流水线 部署典型流水线的组件 CD 流水线功能需要考虑 如何合并 GitOps  为什么要创建自动化 CI/CD 流水线？ 自动化 CI/CD 流水线有许多好处：
+ 将您的上线时间从数周或数月减少到数天或数小时。通过自动化流水线，开发团队可以提高发布的速度以及代码的质量。以小增量连续添加的新功能和修复可以使产品具有更少的缺陷。 一个强大的开发团队。由于交付流水线的所有阶段都可供团队中的任何人检查、改进和验证，因此可以创建对构建的所有权，从而鼓励整个组织的强大团队合作和协作能力。 降低软件开发的风险和成本。自动化鼓励开发人员在继续前进之前分阶段验证代码更改，从而减少了缺陷最终出现在生产中的机会。 减少进展中的工作量。CD 流水线提供从开发到客户的快速反馈循环。这个迭代周期不仅可以帮助您构建正确的产品，而且还允许开发人员更快地进行产品改进，从而减少正在进行的工作。   典型的部署流水线 CD 流水线由几个不同的阶段组成; 一个工具不能满足所有这些步骤。
+以下是构成大多数自动化流水线的步骤：
+ 在笔记本电脑上编写代码，将其推入源代码仓库(如 Git)。 代码通过单元、集成和其他自动化测试。如果测试通过，将构建成新的 Docker 镜像。 将镜像推送到镜像仓库。 将新镜像推送到集群中。   思考 CD 流水线的特性 创建流水线的困难之一是成功地将您想要使用的工具粘合在一起。这些是为流水线选择工具时要考虑的主要功能：
+ 端到端的安全性 能够使用完全可重现的审计跟踪进行回滚 内置可观察性和警报功能 平均快速部署时间以及平均快速恢复时间 简单的开发人员经验和工作流程  流水线端到端的安全性 在市场上的 CI/CD 工具中，有些工具将 CI 和 CD 部分合并为一个工具。或者更糟糕的是，那些负责创建 CI/CD 流水线的人将组装一系列手工锻造的脚本，这些脚本可以在一个方向上通过流水线推送代码，或执行被称为CIOP 流水线。
+出于多种原因，您不希望这样做。这是一种反模式，因为集群安全和其他凭据不在集群之外，这可能是不安全的。建议的方法是使用实​​现 Kubernetes Operator 的工具。</description>
     </item>
     
     <item>
@@ -242,7 +249,7 @@ pipeline{ agent any stages{ stage(&#39;build a&#39;){ when{ changeset &amp;quot;
 为此我使用了非常著名的基于 Spring 的宠物商店应用，它代表了一个很好的示例，因为大多数应用都遵循类似的体系结构。
 步骤  构建宠物商店应用。 运行一次 Sonar 质量检查。 使用该 Web 应用准备 Docker 镜像。 运行容器以及执行集成测试。 如果所有测试成功，推送该镜像到一个 dockerhub 账户。  所有的代码都在这里。
 这里是可用于以上步骤的 Jenkins 流水线代码：
-node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-world.git&#39; stage &#39;build&#39; sh &#39;mvn clean install&#39; stage(&#39;Results - 1&#39;) { junit &#39;**/target/surefire-reports/TEST-*.xml&#39; archive &#39;target/*.jar&#39; } stage &#39;bake image&#39; docker.withRegistry(&#39;https://registry.hub.docker.com&#39;,&#39;docker-hub-credentials&#39;) { def image = docker.build(&amp;quot;ravisankar/ravisankardevops:${env.BUILD_TAG}&amp;quot;,&#39;.&#39;) stage &#39;test image&#39; image.withRun(&#39;-p 8888:8888&#39;) {springboot -&amp;gt; sh &#39;while !</description>
+node { stage &amp;#39;checkout&amp;#39; git &amp;#39;https://gitlab.com/RavisankarCts/hello-world.git&amp;#39; stage &amp;#39;build&amp;#39; sh &amp;#39;mvn clean install&amp;#39; stage(&amp;#39;Results - 1&amp;#39;) { junit &amp;#39;**/target/surefire-reports/TEST-*.xml&amp;#39; archive &amp;#39;target/*.jar&amp;#39; } stage &amp;#39;bake image&amp;#39; docker.withRegistry(&amp;#39;https://registry.hub.docker.com&amp;#39;,&amp;#39;docker-hub-credentials&amp;#39;) { def image = docker.build(&amp;#34;ravisankar/ravisankardevops:${env.BUILD_TAG}&amp;#34;,&amp;#39;.&amp;#39;) stage &amp;#39;test image&amp;#39; image.withRun(&amp;#39;-p 8888:8888&amp;#39;) {springboot -&amp;gt; sh &amp;#39;while !</description>
     </item>
     
     <item>
@@ -256,7 +263,7 @@ node { stage &#39;checkout&#39; git &#39;https://gitlab.com/RavisankarCts/hello-
 Electron 是由 Github 开发，用 HTML，CSS 和 JavaScript 来构建跨平台桌面应用程序的一个开源库。
 本文将介绍 Electron 桌面应用的流水线的设计。
 但是如何介绍呢？倒是个大问题。笔者尝试直接贴代码，在代码注释中讲解。这是一次尝试，希望得到你的反馈。
-完整代码 pipeline { // 我们决定每一个阶段指定 agent，所以， // 流水线的 agent 设置为 none，这样不会占用 agent agent none // 指定整条流水线的环境变量 environment { APP_VERSION = &amp;quot;&amp;quot; APP_NAME = &amp;quot;electron-webpack-quick-start&amp;quot; } stages { stage(&amp;quot;生成版本号&amp;quot;){ agent {label &amp;quot;linux&amp;quot; } steps{ script{ APP_VERSION = generateVersion(&amp;quot;1.0.0&amp;quot;) echo &amp;quot;version is ${APP_VERSION}&amp;quot; }} } stage(&#39;并行构建&#39;) { // 快速失败，只要其中一个平台构建失败， // 整次构建算失败 failFast true // parallel 闭包内的阶段将并行执行 parallel { stage(&#39;Windows平台下构建&#39;) { agent {label &amp;quot;windows &amp;amp;&amp;amp; nodejs&amp;quot; } steps { echo &amp;quot;${APP_VERSION}&amp;quot; } } stage(&#39;Linux平台下构建&#39;) { agent {label &amp;quot;linux &amp;amp;&amp;amp; nodejs&amp;quot; } // 不同平台可能存在不同的环境变量 // environment 支持阶段级的环境变量 environment{ SUFFIX = &amp;quot;tar.</description>
+完整代码 pipeline { // 我们决定每一个阶段指定 agent，所以， // 流水线的 agent 设置为 none，这样不会占用 agent agent none // 指定整条流水线的环境变量 environment { APP_VERSION = &amp;#34;&amp;#34; APP_NAME = &amp;#34;electron-webpack-quick-start&amp;#34; } stages { stage(&amp;#34;生成版本号&amp;#34;){ agent {label &amp;#34;linux&amp;#34; } steps{ script{ APP_VERSION = generateVersion(&amp;#34;1.0.0&amp;#34;) echo &amp;#34;version is ${APP_VERSION}&amp;#34; }} } stage(&amp;#39;并行构建&amp;#39;) { // 快速失败，只要其中一个平台构建失败，  // 整次构建算失败  failFast true // parallel 闭包内的阶段将并行执行  parallel { stage(&amp;#39;Windows平台下构建&amp;#39;) { agent {label &amp;#34;windows &amp;amp;&amp;amp; nodejs&amp;#34; } steps { echo &amp;#34;${APP_VERSION}&amp;#34; } } stage(&amp;#39;Linux平台下构建&amp;#39;) { agent {label &amp;#34;linux &amp;amp;&amp;amp; nodejs&amp;#34; } // 不同平台可能存在不同的环境变量  // environment 支持阶段级的环境变量  environment{ SUFFIX = &amp;#34;tar.</description>
     </item>
     
     <item>

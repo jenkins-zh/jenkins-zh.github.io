@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jacoco on Jenkins 中文社区</title>
+    <title>jacoco on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/jacoco/</link>
-    <description>Recent content in Jacoco on Jenkins 中文社区</description>
+    <description>Recent content in jacoco on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 22 May 2019 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/</guid>
-      <description>使用 JaCoCo 统计功能测试代码覆盖率？ 对于 JaCoCo，有所了解但又不是很熟悉。 &amp;ldquo;有所了解&amp;rdquo;指的是在 CI 实践中已经使用 JaCoCo 对单元测试代码覆盖率统计： 当代码 push 到代码仓库后，用 JaCoCo 进行单元测试代码覆盖率统计，并将相应数据推送到 SonarQube。 &amp;ldquo;不是很熟&amp;rdquo;指的是应用场景也仅限于此，并未进行过多研究与实践。
+      <description>使用 JaCoCo 统计功能测试代码覆盖率？ 对于 JaCoCo，有所了解但又不是很熟悉。 &amp;ldquo;有所了解&amp;quot;指的是在 CI 实践中已经使用 JaCoCo 对单元测试代码覆盖率统计： 当代码 push 到代码仓库后，用 JaCoCo 进行单元测试代码覆盖率统计，并将相应数据推送到 SonarQube。 &amp;ldquo;不是很熟&amp;quot;指的是应用场景也仅限于此，并未进行过多研究与实践。
 前不久，有测试同事提出，想要在实际测试时，用 JaCoCo 统计功能测试代码覆盖率。 其主要目的是在经过功能测试后，通过查看代码覆盖率统计的相关指标，增强对软件质量的信心。 经查阅资料，证明这是可行的。
 由于对 JaCoCo 不甚了解，于是查阅官网资料对 JaCoCo 进一步了解。
 进一步了解 JaCoCo JaCoCo，即 Java Code Coverage，是一款开源的 Java 代码覆盖率统计工具。 它由 EclEmma 团队根据多年来使用和集成现有库的经验教训而创建。

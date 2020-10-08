@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins 中文社区</title>
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tutorial/summary/</guid>
-      <description> Table of contents  介绍 管理  节点 Docker JNLP 认证 找回密码 OIC 配置即代码  通知  邮件通知  Jenkins CLI Jenkins 论坛  </description>
+      <description>Table of contents  介绍 管理  节点  Docker JNLP   认证  找回密码 OIC   配置即代码   通知  邮件通知   Jenkins CLI Jenkins 论坛  </description>
     </item>
     
   </channel>

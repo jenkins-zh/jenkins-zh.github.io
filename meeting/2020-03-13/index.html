@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -40,34 +40,31 @@
   }
 </style>
 <meta property="og:title" content="" />
-<meta property="og:description" content=" Jenkins 中文社区基础设施运维
+<meta property="og:description" content="Jenkins 中文社区基础设施运维
 项目  https://github.com/jenkins-zh/jenkins-cli/ https://github.com/jenkins-zh/wechat-backend https://github.com/jenkins-zh/docker-zh https://github.com/jenkins-zh/mirror-proxy https://github.com/jenkins-zh/jenkins-zh  https://updates.jenkins.io/update-center.json https://updates.jenkins-zh.cn/update-center.json
-服务器  阿里云2台  其中一台有外网  UCloud 规划中  告警 安全 优化 考虑 HA
-自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）  长期  自动化运维以及运维团队的培养   " />
+服务器  阿里云2台  其中一台有外网   UCloud 规划中  告警 安全 优化 考虑 HA
+自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）   长期  自动化运维以及运维团队的培养    " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/meeting/2020-03-13/" /><meta property="article:published_time" content="2020-03-13T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-03-13T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/meeting/2020-03-13/" />
+<meta property="article:published_time" content="2020-03-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-13T00:00:00+00:00" />
 <meta itemprop="name" content="">
-<meta itemprop="description" content=" Jenkins 中文社区基础设施运维
+<meta itemprop="description" content="Jenkins 中文社区基础设施运维
 项目  https://github.com/jenkins-zh/jenkins-cli/ https://github.com/jenkins-zh/wechat-backend https://github.com/jenkins-zh/docker-zh https://github.com/jenkins-zh/mirror-proxy https://github.com/jenkins-zh/jenkins-zh  https://updates.jenkins.io/update-center.json https://updates.jenkins-zh.cn/update-center.json
-服务器  阿里云2台  其中一台有外网  UCloud 规划中  告警 安全 优化 考虑 HA
-自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）  长期  自动化运维以及运维团队的培养   ">
-
-
+服务器  阿里云2台  其中一台有外网   UCloud 规划中  告警 安全 优化 考虑 HA
+自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）   长期  自动化运维以及运维团队的培养    ">
 <meta itemprop="datePublished" content="2020-03-13T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-13T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="31">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=" Jenkins 中文社区基础设施运维
+<meta name="twitter:description" content="Jenkins 中文社区基础设施运维
 项目  https://github.com/jenkins-zh/jenkins-cli/ https://github.com/jenkins-zh/wechat-backend https://github.com/jenkins-zh/docker-zh https://github.com/jenkins-zh/mirror-proxy https://github.com/jenkins-zh/jenkins-zh  https://updates.jenkins.io/update-center.json https://updates.jenkins-zh.cn/update-center.json
-服务器  阿里云2台  其中一台有外网  UCloud 规划中  告警 安全 优化 考虑 HA
-自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）  长期  自动化运维以及运维团队的培养   "/>
+服务器  阿里云2台  其中一台有外网   UCloud 规划中  告警 安全 优化 考虑 HA
+自动化运维 人员要求  自我驱动 git linux  目标  近期  把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk 如何确保账号的安全性（服务器、阿里云等等）   长期  自动化运维以及运维团队的培养    "/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -210,12 +207,8 @@ var trackOutboundLink = function(id, url) {
         <div class="flex-l">
             <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-80">
                 <div class="prose">
-                    
-
-<p>Jenkins 中文社区基础设施运维</p>
-
+                    <p>Jenkins 中文社区基础设施运维</p>
 <h2 id="项目">项目</h2>
-
 <ul>
 <li><a href="https://github.com/jenkins-zh/jenkins-cli/">https://github.com/jenkins-zh/jenkins-cli/</a></li>
 <li><a href="https://github.com/jenkins-zh/wechat-backend">https://github.com/jenkins-zh/wechat-backend</a></li>
@@ -223,53 +216,41 @@ var trackOutboundLink = function(id, url) {
 <li><a href="https://github.com/jenkins-zh/mirror-proxy">https://github.com/jenkins-zh/mirror-proxy</a></li>
 <li><a href="https://github.com/jenkins-zh/jenkins-zh">https://github.com/jenkins-zh/jenkins-zh</a></li>
 </ul>
-
 <p><a href="https://updates.jenkins.io/update-center.json">https://updates.jenkins.io/update-center.json</a>
 <a href="https://updates.jenkins-zh.cn/update-center.json">https://updates.jenkins-zh.cn/update-center.json</a></p>
-
 <h2 id="服务器">服务器</h2>
-
 <ul>
 <li>阿里云2台
-
 <ul>
 <li>其中一台有外网</li>
-</ul></li>
+</ul>
+</li>
 <li>UCloud 规划中</li>
 </ul>
-
 <h2 id="告警">告警</h2>
-
 <h2 id="安全">安全</h2>
-
 <h2 id="优化">优化</h2>
-
 <p>考虑 HA</p>
-
 <h2 id="自动化运维">自动化运维</h2>
-
 <h2 id="人员要求">人员要求</h2>
-
 <ul>
 <li>自我驱动</li>
 <li>git</li>
 <li>linux</li>
 </ul>
-
 <h2 id="目标">目标</h2>
-
 <ul>
 <li>近期
-
 <ul>
 <li>把服务器的告警做起来，增加服务器的稳定性（HA或者其他方案）@anxk</li>
 <li>如何确保账号的安全性（服务器、阿里云等等）</li>
-</ul></li>
+</ul>
+</li>
 <li>长期
-
 <ul>
 <li>自动化运维以及运维团队的培养</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
                 </div>

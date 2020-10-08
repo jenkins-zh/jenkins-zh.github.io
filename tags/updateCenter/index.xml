@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>updateCenter on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/updateCenter/</link>
+    <description>Recent content in updateCenter on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/updateCenter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jenkins 国内插件源恢复正常啦</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-18-fix-jenkins-plugins-source/</link>
+      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-18-fix-jenkins-plugins-source/</guid>
+      <description>近期，Jenkins 中文社区微信群内有些童鞋提出国内插件源无法正常使用了，究竟是什么情况呢？
+ 对比插件源 经过对比，发现原来原始插件源和国内插件源返回的 JSON 内容几乎一致，导致国内插件源下载 URL 都指向了国外插件下载地址，国内有些网络的情况下会有直接下载失败的情况
+解决方案 发现插件源与国内插件源下载 URL 一致之后，发现最终原因竟是原有生成插件源的程序替换 URL 未成功，所以我们只要替换掉即可，修复 PR
+完美解决 重新将程序打包上传之后，插件源重新生成之后，插件更新基本正常解决。
+如何使用 如想知道如是使用国内插件源，请参考此页。源地址替换为插件源地址
+欢迎大家通过我们的论坛 或通过添加我们的微信小助手进群交流</description>
+    </item>
+    
+  </channel>
+</rss>

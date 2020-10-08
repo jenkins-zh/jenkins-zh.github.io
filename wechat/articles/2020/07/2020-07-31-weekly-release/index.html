@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="Jenkins 每周版更新" />
 <meta property="og:description" content="本次更新的版本包括：2.238~2.249" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/" /><meta property="article:published_time" content="2020-07-31T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-07-31T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/" />
+<meta property="article:published_time" content="2020-07-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-31T00:00:00+00:00" />
 <meta itemprop="name" content="Jenkins 每周版更新">
 <meta itemprop="description" content="本次更新的版本包括：2.238~2.249">
-
-
 <meta itemprop="datePublished" content="2020-07-31T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-31T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="651">
+<meta itemprop="wordCount" content="650">
 
 
 
-<meta itemprop="keywords" content="jenkins,release," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,release," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins 每周版更新"/>
 <meta name="twitter:description" content="本次更新的版本包括：2.238~2.249"/>
 
@@ -298,24 +295,17 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="great-wall.jpeg" alt="great-wall" /></p>
-
-<h2 id="2-249-2020-07-24">2.249 (2020-07-24)</h2>
-
+<p><img src="great-wall.jpeg" alt="great-wall"></p>
+<h2 id="2249-2020-07-24">2.249 (2020-07-24)</h2>
 <ul>
 <li>为某些构建步骤构建环境时，不再抛出异常（由 2.248 引入的缺陷的回归）。 特别是，对 Powershell 插件中的 Powershell 步骤有影响。 (issue 63168)</li>
 <li>对齐插件管理器表标题。 (pull 4858)</li>
 <li>修复了某些元素的标题（例如授权矩阵）的样式错误的问题。 (pull 4861)</li>
 </ul>
-
-<h2 id="2-248-2020-07-21">2.248 (2020-07-21)</h2>
-
+<h2 id="2248-2020-07-21">2.248 (2020-07-21)</h2>
 <blockquote>
 <p>由于发布基础设施的问题导致的意外，Windows MSI 软件包尚未发布。 解决方法是，手动下载并替换 JENKINS_HOME 中的 jenkins.war。</p>
 </blockquote>
-
 <ul>
 <li>停止支持 .NET Framework 2.0 将 Jenkins 服务和代理作为 Windows 服务启动。 现在需要 .NET Framework 4.0 或更高版本。 (公告, 升级指南, issue 60005, issue 61862, Windows 支持策略)</li>
 <li>将 Windows Service Wrapper（WinSW）从基于 .NET Framework 2.0 的 2.3.0 可执行文件更新为基于 .NET Framework 4.0 的 2.9.0。 包括多项改进和问题修复。 最值得注意的是，如果需要，服务安装程序现在将要求权限提升。 (变更摘要, WinSW 完整的变更日志, Windows Agent Installer 2.0 变更日志)</li>
@@ -344,30 +334,24 @@ var trackOutboundLink = function(id, url) {
 <li>内部: 从布局中删除内联资源。 (issue 60866)</li>
 <li>内部: 记录 Jenkins 核心问题分类指南。 (文档)</li>
 </ul>
-
-<h2 id="2-247-2020-07-21">2.247 (2020-07-21)</h2>
-
+<h2 id="2247-2020-07-21">2.247 (2020-07-21)</h2>
 <blockquote>
 <p>此发行版本未在发行基础设施上正确签名。 jenkins.war 的发行已被暂停，不建议使用。 安装程序和本地软件包未发布。
 在这次发布中没有显著的变更。</p>
 </blockquote>
-
-<h2 id="2-246-2020-07-21">2.246 (2020-07-21)</h2>
-
+<h2 id="2246-2020-07-21">2.246 (2020-07-21)</h2>
 <blockquote>
 <p>此发行版本未在发行基础设施上正确签名。 jenkins.war 的发行已被暂停，不建议使用。 安装程序和本地软件包未发布。
 在这次发布中没有显著的变更。</p>
 </blockquote>
-
-<h2 id="2-245-2020-07-15">2.245 (2020-07-15)</h2>
-
+<h2 id="2245-2020-07-15">2.245 (2020-07-15)</h2>
 <blockquote>
-<p>由于发布基础设施的问题导致的意外，Windows MSI 软件包尚未发布。 解决方法是，手动下载并替换 JENKINS_HOME 中的 jenkins.war。
-* 重要的安全修复 (安全公告)</p>
+<p>由于发布基础设施的问题导致的意外，Windows MSI 软件包尚未发布。 解决方法是，手动下载并替换 JENKINS_HOME 中的 jenkins.war。</p>
 </blockquote>
-
-<h2 id="2-244-2020-07-07">2.244 (2020-07-07)</h2>
-
+<ul>
+<li>重要的安全修复 (安全公告)</li>
+</ul>
+<h2 id="2244-2020-07-07">2.244 (2020-07-07)</h2>
 <ul>
 <li>清理更多与工作空间相关的目录，例如 Pipeline 库中的 @libs。 (issue 41805)</li>
 <li>更新意大利语本地化。 (pull 4810)</li>
@@ -376,9 +360,7 @@ var trackOutboundLink = function(id, url) {
 <li>开发者: 引入 API 来检查 ParameterDefinition 的有效性。 (issue 62889)</li>
 <li>开发者: 使插件可以访问 WorkspaceList.COMBINATOR。 (issue 41805)</li>
 </ul>
-
-<h2 id="2-243-2020-06-30">2.243 (2020-06-30)</h2>
-
+<h2 id="2243-2020-06-30">2.243 (2020-06-30)</h2>
 <ul>
 <li>更新管理页面上链接的样式。 (pull 4782)</li>
 <li>重新设计样式并改善 RSS 提要栏的可访问性。 (issue 62750)</li>
@@ -390,9 +372,7 @@ var trackOutboundLink = function(id, url) {
 <li>开发者: 从 User.toString() 中的 fullName 切换到 id。 (issue 62688)</li>
 <li>开发者: 现在可以通过 LabelExpression.autoComplete() 获得标签的自动完成功能。 弃用 hudson.model.AbstractProject.LabelValidator，推荐使用 jenkins.model.labels.LabelValidator。 但是旧版本还具有新的 checkItem() 方法，以允许其验证“非 Project” 项目。 弃用 hudson.model.AbstractProject.DescriptorImpl.validateLabelExpression()，推荐使用 LabelExpression.validate() (该方法可以接受任何种类的 Item 对象，而不仅仅是 AbstractProjects)。 汇总 LabelValidator 报告的所有告警与错误（包括旧的和新的）。 (issue 26097)</li>
 </ul>
-
-<h2 id="2-242-2020-06-23">2.242 (2020-06-23)</h2>
-
+<h2 id="2242-2020-06-23">2.242 (2020-06-23)</h2>
 <ul>
 <li>在安装了私有源插件的情况下浏览至插件管理时，不会记录异常(由 2.240 引入的缺陷回归)。 (issue 62622)</li>
 <li>使用暗黑主题时，删除“永久保留这次构建”的白色背景。 (pull 4814, 暗黑主题插件)</li>
@@ -404,18 +384,14 @@ var trackOutboundLink = function(id, url) {
 <li>开发者: 添加实验性的外部指纹存储（External Fingerprint Storage） API。 (issue 62345, pull 4731, JEP-226, 参考实施)</li>
 <li>开发者: 引入新的指纹API方法： Fingerprint#getPersistedFacets()、Fingerprint#delete(String) 和与文件无关的 CRUD 方法。 弃用 Fingerprint#save(File)。 (issue 62345, pull 4731, Fingerprint API Javadoc)</li>
 </ul>
-
-<h2 id="2-241-2020-06-16">2.241 (2020-06-16)</h2>
-
+<h2 id="2241-2020-06-16">2.241 (2020-06-16)</h2>
 <ul>
 <li>还原在“任务配置”页面、“帮助”页面和其他控件上的颜色(由 2.239 引入的缺陷回归)。 (pull 4781)</li>
 <li>将箭头图标从图片转换为 CSS。 (issue 62496)</li>
 <li>重新设置侧边栏小部件的样式，以具有更现代的外观。 (issue 62175)</li>
 <li>开发者: 插件现在可以更轻松地添加对在流水线中使用构建步骤的支持，并且可以访问相应的环境变量（例如，来自工具/环境块或 withEnv 之类的步骤）。 fingerprint 和 archiveArtifacts 流水线步骤将不再应用任何环境替代。 (issue 29144)</li>
 </ul>
-
-<h2 id="2-240-2020-06-08">2.240 (2020-06-08)</h2>
-
+<h2 id="2240-2020-06-08">2.240 (2020-06-08)</h2>
 <ul>
 <li>使 RSS 字段和与代理断开连接的图片对于暗黑主题透明展示。 (pull 4772)</li>
 <li>当存在较新版本的插件，但由于不满足要求而不能提供时，也在插件管理器中显示。 (issue 62332)</li>
@@ -426,9 +402,7 @@ var trackOutboundLink = function(id, url) {
 <li>用户在配置文件中设置自定义时区后，在“构建历史记录”小部件中显示正确的时间。 (issue 61972)</li>
 <li>内部: 删除非标准的 showDetails 内联资源。 (issue 60866)</li>
 </ul>
-
-<h2 id="2-239-2020-06-03">2.239 (2020-06-03)</h2>
-
+<h2 id="2239-2020-06-03">2.239 (2020-06-03)</h2>
 <ul>
 <li>发布 &lsquo;alpha&rsquo; 版的暗黑主题。 (issue 60924, pull 4752, 暗黑主题仓库)</li>
 <li>修复显示给具有扩展读取权限的用户的禁用文本区域的标记预览问题。 (issue 62433)</li>
@@ -443,9 +417,7 @@ var trackOutboundLink = function(id, url) {
 <li>内部: 如果 SlaveComputer#_connect 失败，则从原始线程中打印堆栈跟踪。 (pull 4754)</li>
 <li>开发者: 添加 CSS 和 JavaScript 的源映射。 (issue 62473)</li>
 </ul>
-
-<h2 id="2-238-2020-05-25">2.238 (2020-05-25)</h2>
-
+<h2 id="2238-2020-05-25">2.238 (2020-05-25)</h2>
 <ul>
 <li>修复代理启动期间涉及自定义记录器的死锁(由 2.231 引入的缺陷回归)。 (issue 62181)</li>
 <li>在 Jenkins-CLI -auth 参数中支持 Bearer token。 (pull 4673)</li>
@@ -568,15 +540,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -634,35 +597,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
-              手把手教会你 Jenkins 备份与恢复
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -679,44 +615,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
             </a>
           </li>
         
@@ -733,44 +633,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -807,15 +671,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -1030,15 +885,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -1050,15 +896,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

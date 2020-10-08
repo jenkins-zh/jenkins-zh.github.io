@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="Jenkins CLI 命令行 v0.0.26" />
 <meta property="og:description" content="jcli-v0.0.26 发布" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-24-jcli-v0.0.26/" /><meta property="article:published_time" content="2020-02-24T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-02-24T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-24-jcli-v0.0.26/" />
+<meta property="article:published_time" content="2020-02-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-24T00:00:00+00:00" />
 <meta itemprop="name" content="Jenkins CLI 命令行 v0.0.26">
 <meta itemprop="description" content="jcli-v0.0.26 发布">
-
-
 <meta itemprop="datePublished" content="2020-02-24T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-02-24T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="91">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins CLI 命令行 v0.0.26"/>
 <meta name="twitter:description" content="jcli-v0.0.26 发布"/>
 
@@ -289,48 +286,35 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="jenkins-cli.png" alt="jenkins-cli" /></p>
-
+<p><img src="jenkins-cli.png" alt="jenkins-cli"></p>
 <p>本次版本发布，增加了两种包发行版：<code>snapcraft</code>、<code>Chocolatey</code>。<code>snapcraft</code> 是由 <code>Ubuntu</code> 提供的一个全新的
 包管理器，它可以在 CentOS、Ubuntu、SUSE 等12种操作系统下使用。因此，Linux 用户可以更加方便地使用 <code>jcli</code>。
 命令行自动补全的特性可以大幅提高用户的工作效率，除了 <code>bash</code> 的用户外，<code>zsh</code> 以及 <code>powerShell</code> 的用户，现在也可以使用 <code>jcli</code> 的命令补全特性了。</p>
-
-<h2 id="功能">🚀 功能</h2>
-
+<h2 id="-功能">🚀 功能</h2>
 <ul>
 <li>支持查看 jcli 的变更日志 (#328) @LinuxSuRen</li>
 <li>支持根据父目录搜索任务 (#327) @LinuxSuRen</li>
 <li>支持升级所有的插件 (#258) @yJunS</li>
 <li>增加对 zsh 和 powerShell 的命令行补全的支持 (#296) @LinuxSuRen</li>
 </ul>
-
-<h2 id="缺陷修复">🐛 缺陷修复</h2>
-
+<h2 id="-缺陷修复">🐛 缺陷修复</h2>
 <ul>
 <li>修复了无法启动非 LTS 的 Jenkins (#322) @LinuxSuRen</li>
 <li>修复无法创建凭据的问题 (#325) @LinuxSuRen</li>
 </ul>
-
-<h2 id="文档完善">📝 文档完善</h2>
-
+<h2 id="-文档完善">📝 文档完善</h2>
 <ul>
 <li>增加对 snapcraft 的支持 (#321) @LinuxSuRen</li>
 <li>增加对 Chocolatey 的支持 (#312) @LinuxSuRen</li>
 <li>增加从 bintray 下载 jcli 的文档描述 (#299) @LinuxSuRen</li>
 </ul>
-
-<h2 id="维护">👻 维护</h2>
-
+<h2 id="-维护">👻 维护</h2>
 <ul>
 <li>在构建过程中，通过 GitHub Action 对临时文件的归档 (#333) @LinuxSuRen</li>
 <li>升级依赖 github.com/spf13/cobra 从 0.0.5 到 0.0.6 (#332) @dependabot-preview</li>
 <li>修复拼写错误 (#303) @afkbrb</li>
 </ul>
-
-<h2 id="测试">🚦 测试</h2>
-
+<h2 id="-测试">🚦 测试</h2>
 <ul>
 <li>增加对交互式命令的测试用例 (#297) @LinuxSuRen</li>
 </ul>

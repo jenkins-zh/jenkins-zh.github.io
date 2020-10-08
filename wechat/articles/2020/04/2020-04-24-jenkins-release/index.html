@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="Jenkins 长期支持版更新" />
 <meta property="og:description" content="本次更新的版本包括：2.176.3~2.176.4、2.190.1~2.190.3、2.204.1~2.204.6、2.222.1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-24-jenkins-release/" /><meta property="article:published_time" content="2020-04-22T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-04-22T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-24-jenkins-release/" />
+<meta property="article:published_time" content="2020-04-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-22T00:00:00+00:00" />
 <meta itemprop="name" content="Jenkins 长期支持版更新">
 <meta itemprop="description" content="本次更新的版本包括：2.176.3~2.176.4、2.190.1~2.190.3、2.204.1~2.204.6、2.222.1">
-
-
 <meta itemprop="datePublished" content="2020-04-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-04-22T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="907">
 
 
 
-<meta itemprop="keywords" content="jenkins,release," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,release," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins 长期支持版更新"/>
 <meta name="twitter:description" content="本次更新的版本包括：2.176.3~2.176.4、2.190.1~2.190.3、2.204.1~2.204.6、2.222.1"/>
 
@@ -298,18 +295,12 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="great-wall.jpeg" alt="great-wall" /></p>
-
-<h2 id="2-222-1-2020-03-25">2.222.1 (2020-03-25)</h2>
-
+<p><img src="great-wall.jpeg" alt="great-wall"></p>
+<h2 id="22221-2020-03-25">2.222.1 (2020-03-25)</h2>
 <blockquote>
 <p>Jenkins 启动时将不从磁盘加载全局构建丢弃程序的配置(JENKINS-61688)。 配置已保存，但在重新启动时将不加载。 Jenkins 2.222.1 将始终以 Job Build Discarder 的默认配置启动。 重新启动时将忽略自定义全局构建丢弃配置。 每次 Jenkins 重新启动时，都会配置默认的全局构建丢弃。</p>
 </blockquote>
-
-<h3 id="自-2-222-以来的变更">自 2.222 以来的变更：</h3>
-
+<h3 id="自-2222-以来的变更">自 2.222 以来的变更：</h3>
 <ul>
 <li>重要安全修复。 (安全公告)</li>
 <li>修复了任务配置表单中之前保存步骤中存在的拖放操作问题 (由 2.217 引入的缺陷回归)。 (issue 61429)</li>
@@ -318,13 +309,11 @@ var trackOutboundLink = function(id, url) {
 <li>与请求路由和 CSRF 保护有关的安全增强。 (相关升级指导)</li>
 <li>开发者: 在调试模式下，默认监听回送接口。 (pull 4515)</li>
 </ul>
-
-<h3 id="自-2-204-6-以来的重大变更">自 2.204.6 以来的重大变更:</h3>
-
+<h3 id="自-22046-以来的重大变更">自 2.204.6 以来的重大变更:</h3>
 <ul>
 <li>修改标题栏和 breadcrumbs 导航的布局和图标。 依赖于 Jenkins 布局细节的插件的实例（例如 Simple Theme Plugin）可能会遇到 UI/布局问题。 通过将 jenkins.ui.refresh 系统属性设置为 true，可以启用新的实验性标题颜色方案。 (issue 60920)</li>
 <li>添加全局配置的构建丢弃程序，删除未标记为“永久保留”的旧构建，即使没有配置、积极性较低、配置的按项目构建丢弃程序或者在构建完成后定期执行。 (pull 4368)</li>
-<li>将云配置从&rdquo;配置系统&rdquo;移动到&rdquo;管理节点&rdquo;页面上其自身的配置表单中。 (pull 4339)</li>
+<li>将云配置从&quot;配置系统&quot;移动到&quot;管理节点&quot;页面上其自身的配置表单中。 (pull 4339)</li>
 <li>删除全局安全配置中的启用安全复选框。 (issue 40228)</li>
 <li>删除禁用 CSRF 保护的功能。 从较旧版本的 Jenkins 升级的实例将启用 CSRF 保护和设置默认的发行者，如果之前被禁用。 (pull 4509)</li>
 <li>重新设计密码字段，以防止自动填写密码（登录表单除外）。 减少提供更新存储密码的浏览器。 通过将系统属性 hudson.Functions.hidingPasswordFields 设置为 false 来还原。 (pull 3991)</li>
@@ -341,34 +330,25 @@ var trackOutboundLink = function(id, url) {
 <li>验证另一个用户时，当前用户不再注销。 (issue 59107)</li>
 <li>Winstone 5.9: 修复对自定义系统日志的支持(由 2.204.5 引入的缺陷回归)。 (pull 4452, issue 57888, Winstone 5.9 变更日志, Jetty 9.4.27 变更日志)</li>
 </ul>
-
-<h2 id="2-204-6-2020-03-25">2.204.6 (2020-03-25)</h2>
-
+<h2 id="22046-2020-03-25">2.204.6 (2020-03-25)</h2>
 <ul>
 <li>重要安全修复。 (安全公告)</li>
 <li>与请求路由和 CSRF 保护有关的安全增强。 (相关升级指导)</li>
 </ul>
-
-<h1 id="2-204-5-2020-03-07">2.204.5 (2020-03-07)</h1>
-
+<h1 id="22045-2020-03-07">2.204.5 (2020-03-07)</h1>
 <blockquote>
 <p>此版本重新引入了 Jenkins 2.177 到 2.203.3 的系统日志记录自定义缺陷（JENKINS-57888 - 系统日志记录自定义），因为它不如其它被修复的缺陷那么严重。 计划在 2.22.1 版本中修复。</p>
 </blockquote>
-
 <ul>
 <li>修复最大表单内容大小和表单内容密钥的传递(由 Jenkins 2.204.3 和 Jetty 9.4.20 引入的缺陷回归)。 (issue 60409)</li>
 <li>修复由于 X-Forwarded-Host 和 X-Forwarded-Port 订阅问题而导致的将不正确的反向代理重定向到 127.0.0.1 的问题(由 Jenkins 2.204.3 和 Jetty 9.4.20 引入的缺陷回归)。 (issue 60199)</li>
 <li>将 Winstone 从 5.8 还原到 5.3，以解决 Winstone 更高版本中嵌入的 Jetty Web 容器引入的问题。 默认最大表单大小限制和反向代理重定向被还原(由 2.204.3 引入的缺陷回归)。 (issue 60409, issue 60199, Winstone 变更日志)</li>
 </ul>
-
-<h2 id="2-204-4-2020-03-03">2.204.4 (2020-03-03)</h2>
-
+<h2 id="22044-2020-03-03">2.204.4 (2020-03-03)</h2>
 <ul>
 <li>传递某些类型（例如域通配符）的证书时，修复 Jetty 不支持包含多个证书的密钥库的错误(由 2.204.3 引入的缺陷回归)。 (pull 4539, issue 60857, Winstone 5.8 发布说明)</li>
 </ul>
-
-<h2 id="2-204-3-2020-02-28">2.204.3 (2020-02-28)</h2>
-
+<h2 id="22043-2020-02-28">2.204.3 (2020-02-28)</h2>
 <ul>
 <li>内部: Winstone 5.7: 将 Jetty 线程池名称更改为 “Jetty（winstone）”。 (pull 4452, issue 60821, Winstone 5.7 发布说明)</li>
 <li>如果在运行安装向导之前已经通过脚本配置了 Jenkins 根 URL，即使跳过了创建 admin 用户的选项，也要跳过配置面板。 (issue 60750)</li>
@@ -379,9 +359,7 @@ var trackOutboundLink = function(id, url) {
 <li>Winstone 5.7: 修复对系统日志记录定制的支持 (由 2.177 引入的缺陷回归)。 (pull 4452, issue 57888, Winstone 5.7 release notes)</li>
 <li>修复代理脱机时代理 API 中的空指针异常（例如查询代理版本或操作系统说明）。 (issue 42658)</li>
 </ul>
-
-<h2 id="2-204-2-2020-01-29">2.204.2 (2020-01-29)</h2>
-
+<h2 id="22042-2020-01-29">2.204.2 (2020-01-29)</h2>
 <ul>
 <li>重要的安全修复。 (安全公告)</li>
 <li>验证另一个用户时，当前用户不再注销。 (issue 59107)</li>
@@ -392,116 +370,75 @@ var trackOutboundLink = function(id, url) {
 <li>修复在 CephFS 上创建空文件时的 AtomicFileWriter 性能问题。 (issue 60167)</li>
 <li>开发者: ViewGroupMixIn#getPrimaryView() 可能返回 null，需要基于这个周版本及以后的版本在插件中进行检查。 这是一个过渡状态，直到实现默认视图为止。 (issue 60092)</li>
 </ul>
-
-<h2 id="2-204-1-2019-12-18">2.204.1 (2019-12-18)</h2>
-
+<h2 id="22041-2019-12-18">2.204.1 (2019-12-18)</h2>
 <blockquote>
 <p>升级为 Jenkins 2.204.1 的 Configuration as code plugin 用户需要查看 LTS升级指南全局配置保存主题和 LTS 升级指南下载设置主题</p>
 </blockquote>
-
-<h3 id="自-2-204-以来的变更">自 2.204 以来的变更：</h3>
-
+<h3 id="自-2204-以来的变更">自 2.204 以来的变更：</h3>
 <ul>
 <li>将鼠标悬停在侧栏链接上时，显示带有完整链接名称的工具提示。 (issue 59508)</li>
 <li>防止错误的子任务提供者使构建永久运行。 (issue 59793)</li>
-
-<li><p>修复&rdquo;插件管理-已安装&rdquo;列表中卸载列的排序。 (issue 59665)</p>
-
-<h3 id="自-2-190-3-以来的重大变更">自 2.190.3 以来的重大变更:</h3></li>
-
-<li><p>在完成加载内存模型之前，请避免调用 Jenkins#save 持久数据。 这样可以防止 Jenkins 主配置损坏。 (issue 58993)</p></li>
-
-<li><p>删除使用用户浏览器下载更新中心元数据的功能（自 2015 年起不推荐使用）。 如果没有连接更新站点，Jenkins 将不再通知可用更新。 在这种情况下，建议使用更新站点的本地镜像，或使用 Juseppe 之类的自托管更新中心。 (pull 3970)</p></li>
-
-<li><p>允许按用户设置时区。 (issue 19887)</p></li>
-
-<li><p>为资源根 URL 添加一个选项，Jenkins 可以通过该选项为用户生成的静态资源（例如工作空间文件或已归档的制品）提供服务，而无需 Content-Security-Policy 标头。 (issue 41891)</p></li>
-
-<li><p>停止绑定 Maven 插件、 Subversion 插件和 Jenkins war 文件中的一些其他插件。 在极少数情况下，尝试安装与 1.310 版本之前的 Jenkins 兼容的插件时，可能会导致问题。 Jenkins 项目目前未发布任何此类插件。 (pull 4040)</p></li>
-
-<li><p>弃用 macOS 本地安装程序以使用 Homebrew。 (macOS 本地安装程序弃用博客文章)</p></li>
-
-<li><p>还原在 Firefox 的 Jenkins 经典 UI 中对表单提交的更改（此更改导致了带有&rdquo;文件&rdquo;输入的表单的缺陷回归）。 这样做是为了预料 Firefox 中的错误修正，此错误已被撤消。 (由 2.173 引入的缺陷回归) (issue 58296, issue 53462, Firefox issue 1370630)</p></li>
-
-<li><p>删除构建历史记录小部件中关于构建说明的 100 个字符长度限制。 (issue 19760, issue 31209)</p></li>
-
-<li><p>将 Remoting 从 3.33 更新到 3.36。 为入站 TCP 代理添加新的连接模式。 将最低必需的 Remoting 版本更新为 3.14。 添加命令行选项 &ldquo;-help&rdquo; 和 &ldquo;-version&rdquo;。 (Remoting 3.36 发布说明, pull 4193, Remoting 3.35 发布说明, pull 4208, pull 4186, issue 53461, pull 4165, Remoting 3.34 发布说明, 减少远程连接步骤)</p></li>
+<li>修复&quot;插件管理-已安装&quot;列表中卸载列的排序。 (issue 59665)</li>
 </ul>
-
-<h2 id="2-190-3-2019-11-20">2.190.3 (2019-11-20)</h2>
-
+<h3 id="自-21903-以来的重大变更">自 2.190.3 以来的重大变更:</h3>
+<ul>
+<li>在完成加载内存模型之前，请避免调用 Jenkins#save 持久数据。 这样可以防止 Jenkins 主配置损坏。 (issue 58993)</li>
+<li>删除使用用户浏览器下载更新中心元数据的功能（自 2015 年起不推荐使用）。 如果没有连接更新站点，Jenkins 将不再通知可用更新。 在这种情况下，建议使用更新站点的本地镜像，或使用 Juseppe 之类的自托管更新中心。 (pull 3970)</li>
+<li>允许按用户设置时区。 (issue 19887)</li>
+<li>为资源根 URL 添加一个选项，Jenkins 可以通过该选项为用户生成的静态资源（例如工作空间文件或已归档的制品）提供服务，而无需 Content-Security-Policy 标头。 (issue 41891)</li>
+<li>停止绑定 Maven 插件、 Subversion 插件和 Jenkins war 文件中的一些其他插件。 在极少数情况下，尝试安装与 1.310 版本之前的 Jenkins 兼容的插件时，可能会导致问题。 Jenkins 项目目前未发布任何此类插件。 (pull 4040)</li>
+<li>弃用 macOS 本地安装程序以使用 Homebrew。 (macOS 本地安装程序弃用博客文章)</li>
+<li>还原在 Firefox 的 Jenkins 经典 UI 中对表单提交的更改（此更改导致了带有&quot;文件&quot;输入的表单的缺陷回归）。 这样做是为了预料 Firefox 中的错误修正，此错误已被撤消。 (由 2.173 引入的缺陷回归) (issue 58296, issue 53462, Firefox issue 1370630)</li>
+<li>删除构建历史记录小部件中关于构建说明的 100 个字符长度限制。 (issue 19760, issue 31209)</li>
+<li>将 Remoting 从 3.33 更新到 3.36。 为入站 TCP 代理添加新的连接模式。 将最低必需的 Remoting 版本更新为 3.14。 添加命令行选项 &ldquo;-help&rdquo; 和 &ldquo;-version&rdquo;。 (Remoting 3.36 发布说明, pull 4193, Remoting 3.35 发布说明, pull 4208, pull 4186, issue 53461, pull 4165, Remoting 3.34 发布说明, 减少远程连接步骤)</li>
+</ul>
+<h2 id="21903-2019-11-20">2.190.3 (2019-11-20)</h2>
 <ul>
 <li>稳定性: 不允许用户使用 POST 在需要提交表单的 URL 上重新提交请求，因为那样无论如何都会失败。 (issue 59514)</li>
 <li>lastCompletedBuild 永久链接未缓存在 …/builds/permalinks 文件中。 (issue 56809)</li>
 <li>将标签固定到 Atom 供稿链接。 (issue 48375)</li>
-<li>在 Firefox 的 Jenkins 经典 UI 中还原表单提交的更改。 更改导致了带有&rdquo;文件&rdquo;格式的内容提交的表单的缺陷回归。 这样做是为了预料 Firefox 中的错误修正，此错误已被撤消。 (由 2.164.3 引入的缺陷回归) (issue 58296, issue 53462, Firefox issue 1370630)</li>
+<li>在 Firefox 的 Jenkins 经典 UI 中还原表单提交的更改。 更改导致了带有&quot;文件&quot;格式的内容提交的表单的缺陷回归。 这样做是为了预料 Firefox 中的错误修正，此错误已被撤消。 (由 2.164.3 引入的缺陷回归) (issue 58296, issue 53462, Firefox issue 1370630)</li>
 </ul>
-
-<h2 id="2-190-2-2019-10-28">2.190.2 (2019-10-28)</h2>
-
+<h2 id="21902-2019-10-28">2.190.2 (2019-10-28)</h2>
 <ul>
 <li>无法访问名称中带有表情符号的某些项目 URL 。 (issue 59406)</li>
 <li>在基于 HTTP 的 CLI 上增加客户端保持活动 ping 的频率，以防止超时。 (issue 59267)</li>
 <li>内部: 发生错误时，hudson.util.ProcessTree.OSProcess#getEnvironmentVariables 返回 null ，即使它不应该发生也是如此。 (issue 59580)</li>
 </ul>
-
-<h2 id="2-190-1-2019-09-25">2.190.1 (2019-09-25)</h2>
-
-<h3 id="自-2-190-以来的变更">自 2.190 以来的变更：</h3>
-
+<h2 id="21901-2019-09-25">2.190.1 (2019-09-25)</h2>
+<h3 id="自-2190-以来的变更">自 2.190 以来的变更：</h3>
 <ul>
 <li>重要的安全修复。 (2019-09-25 安全公告, 2019-08-28 安全公告)</li>
 <li>修复 RSS / Atom 提要中缺少的绝对 URL 。 (由 2.190 引入的缺陷回归) (issue 59167)</li>
-
-<li><p>当提示慢触发的管理警告时， Jenkins UI 中断。 (由 2.189 引入的缺陷回归) (issue 58938)</p>
-
-<h3 id="自-2-176-4-以来的重大变更">自 2.176.4 以来的重大变更:</h3></li>
-
-<li><p>Jenkins 不再在项目或构建目录中创建符号链接。 如果需要，可以安装 Build Symlink 插件来恢复此功能。 诸如 /job/…/lastStableBuild/ 之类的URL不受影响，仅影响直接访问 $JENKINS_HOME 文件系统的工具。 (issue 37862)</p></li>
-
-<li><p>从 Jenkins 核心中删除 Trilead SSH 库，并使其在新的独立插件中可用。 (issue 43610)</p></li>
-
-<li><p>在任务名称中添加对表情符号和其他非 UTF-8 字符的支持。 🎉 (issue 23349)</p></li>
-
-<li><p>更新 Windows Agent Installer 从 1.10.0 到 1.11 ，以 .NET 4.6 或更高版本运行时，在代理下载上启用 TLS 1.2 。 (issue 51577, 完整变更日志)</p></li>
-
-<li><p>更新 Winstone-Jetty 从 5.2 到 5.3 ，以更新 Jetty 到 9.4.18 。 (pull 4016, 完整变更日志, Jetty 9.4.18 变更日志, Jetty 9.4.17 变更日志, Jetty 9.4.16 变更日志)</p></li>
-
-<li><p>更新 JNA 从 4.5.2 到 5.3.1 ，以解决使用 OpenJDK 时在 AIX 上加载共享库的问题。 (issue 57515)</p></li>
-
-<li><p>更新 Remoting 到 3.33 。 (issue 57959, issue 50095, issue 57713, 完整变更日志)</p></li>
-
-<li><p>支持在流水线和其他任务类型的 fingerprint() 构建步骤中设置排除和大小写敏感。 (文档, pull 3915)</p></li>
-
-<li><p>提升 ListView 中 Configuration-as-Code 的兼容性。 (issue 57121)</p></li>
-
-<li><p>停止在 install-plugin CLI 命令中使用 name 参数。 (pull 4123)</p></li>
-
-<li><p>注销时删除超时的会话 cookie ，以防止与 header 太大等相关的错误。 (issue 25046)</p></li>
-
-<li><p>在 Jenkins URL 配置中添加对 IPv6 地址的支持。 (issue 58041)</p></li>
-
-<li><p>通过不同阴影的构建球，可以区分新项目、禁用项目和已中止构建的项目。 (pull 3997)</p></li>
-
-<li><p>当 cron 触发器的执行时间较长时，添加告警。 (issue 54854)</p></li>
-
-<li><p>在安装向导中分批安装插件以提高性能。 (pull 4124)</p></li>
-
-<li><p>现在可以通过设置系统属性 hudson.node_monitors.AbstractNodeMonitorDescriptor.periodMinutes 来更改节点监视器的默认大小（例如可用磁盘空间）。 (pull 4105, 受系统属性控制的 Jenkins 功能)</p></li>
+<li>当提示慢触发的管理警告时， Jenkins UI 中断。 (由 2.189 引入的缺陷回归) (issue 58938)</li>
 </ul>
-
-<h2 id="2-176-4-2019-09-25">2.176.4 (2019-09-25)</h2>
-
+<h3 id="自-21764-以来的重大变更">自 2.176.4 以来的重大变更:</h3>
+<ul>
+<li>Jenkins 不再在项目或构建目录中创建符号链接。 如果需要，可以安装 Build Symlink 插件来恢复此功能。 诸如 /job/…/lastStableBuild/ 之类的URL不受影响，仅影响直接访问 $JENKINS_HOME 文件系统的工具。 (issue 37862)</li>
+<li>从 Jenkins 核心中删除 Trilead SSH 库，并使其在新的独立插件中可用。 (issue 43610)</li>
+<li>在任务名称中添加对表情符号和其他非 UTF-8 字符的支持。 🎉 (issue 23349)</li>
+<li>更新 Windows Agent Installer 从 1.10.0 到 1.11 ，以 .NET 4.6 或更高版本运行时，在代理下载上启用 TLS 1.2 。 (issue 51577, 完整变更日志)</li>
+<li>更新 Winstone-Jetty 从 5.2 到 5.3 ，以更新 Jetty 到 9.4.18 。 (pull 4016, 完整变更日志, Jetty 9.4.18 变更日志, Jetty 9.4.17 变更日志, Jetty 9.4.16 变更日志)</li>
+<li>更新 JNA 从 4.5.2 到 5.3.1 ，以解决使用 OpenJDK 时在 AIX 上加载共享库的问题。 (issue 57515)</li>
+<li>更新 Remoting 到 3.33 。 (issue 57959, issue 50095, issue 57713, 完整变更日志)</li>
+<li>支持在流水线和其他任务类型的 fingerprint() 构建步骤中设置排除和大小写敏感。 (文档, pull 3915)</li>
+<li>提升 ListView 中 Configuration-as-Code 的兼容性。 (issue 57121)</li>
+<li>停止在 install-plugin CLI 命令中使用 name 参数。 (pull 4123)</li>
+<li>注销时删除超时的会话 cookie ，以防止与 header 太大等相关的错误。 (issue 25046)</li>
+<li>在 Jenkins URL 配置中添加对 IPv6 地址的支持。 (issue 58041)</li>
+<li>通过不同阴影的构建球，可以区分新项目、禁用项目和已中止构建的项目。 (pull 3997)</li>
+<li>当 cron 触发器的执行时间较长时，添加告警。 (issue 54854)</li>
+<li>在安装向导中分批安装插件以提高性能。 (pull 4124)</li>
+<li>现在可以通过设置系统属性 hudson.node_monitors.AbstractNodeMonitorDescriptor.periodMinutes 来更改节点监视器的默认大小（例如可用磁盘空间）。 (pull 4105, 受系统属性控制的 Jenkins 功能)</li>
+</ul>
+<h2 id="21764-2019-09-25">2.176.4 (2019-09-25)</h2>
 <blockquote>
 <p>2.176.4 和 2.190.1 包含相同的安全修复程序。 我们将提供 2.176.x LTS 系列的附加版本，以允许管理员应用安全更新，而无需进行重大升级。</p>
 </blockquote>
-
 <ul>
 <li>安全更新。 (安全公告)</li>
 </ul>
-
-<h2 id="2-176-3-2019-08-28">2.176.3 (2019-08-28)</h2>
-
+<h2 id="21763-2019-08-28">2.176.3 (2019-08-28)</h2>
 <ul>
 <li>重要的安全修复。 (安全公告)</li>
 <li>当其他插件对其仅具有可选依赖时，插件管理器 UI 不再阻止禁用插件。 (issue 33843)</li>
@@ -604,15 +541,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -675,48 +603,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
-              手把手教会你 Jenkins 备份与恢复
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
-            </a>
-          </li>
-        
       
         
         
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-20-weekly-release/" class="link">
               Jenkins 每周版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
             </a>
           </li>
         
@@ -733,33 +625,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/" class="link">
               使用 Jenkins 实现 CI/CD 多分支流水线
             </a>
@@ -769,44 +634,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -843,15 +672,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -1066,15 +886,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -1086,15 +897,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

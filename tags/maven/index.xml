@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Maven on Jenkins 中文社区</title>
+    <title>maven on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/maven/</link>
-    <description>Recent content in Maven on Jenkins 中文社区</description>
+    <description>Recent content in maven on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
@@ -18,14 +18,14 @@
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/</guid>
       <description>本文分上下两篇，上篇介绍了从产生 idea 到插件开发完成的过程； 下篇将介绍将插件托管到 Jenkins 插件更新中心的一系列过程。
-托管插件 托管插件包括一系列流程步骤。 笔者完成了它所有步骤（包括非必须的步骤），其中主要有两个具有标志性的任务： - 插件代码被托管在 jenkinsci GitHub 组织的一个仓库，然后作者拥有它的管理权限。
-笔者插件的代码仓库为：jenkinsci/maven-snapshot-check-plugin 。 - 你可以将插件发布到 Jenkins 项目的 Maven 仓库，它是 Jenkins 项目所使用的更新站点的数据来源。
-准备工作 在请求插件托管之前，需要完成以下几个步骤。
+托管插件 托管插件包括一系列流程步骤。 笔者完成了它所有步骤（包括非必须的步骤），其中主要有两个具有标志性的任务：
+ 插件代码被托管在 jenkinsci GitHub 组织的一个仓库，然后作者拥有它的管理权限。
+笔者插件的代码仓库为：jenkinsci/maven-snapshot-check-plugin 。 你可以将插件发布到 Jenkins 项目的 Maven 仓库，它是 Jenkins 项目所使用的更新站点的数据来源。  准备工作 在请求插件托管之前，需要完成以下几个步骤。
 查找类似的插件 Jenkins 社区欢迎任何人的贡献，但为了让 Jenkins 用户受益， 它要求查找解决相同或类似问题的插件，看看是否可以与现有的维护人员联手。 可以在 https://plugins.jenkins.io 查看所有的插件， 以确认是否已有类似的插件实现了你计划实现的功能。 笔者在之前已进行过查找，并没有找到可以实现笔者计划实现的功能的类似插件。
 命名规约 Jenkins 制定了一些与插件相关的命名规约。 插件开发者要确保遵循这些命名规约。
 artifactId 插件的 artifactId 被用于文件基本名称，是 Jenkins 插件和更新站点的唯一标识。
-它需要遵循一些发布规约： - 使用小写 ID ，并根据需要使用连字符分隔术语。 - 除非名称有任何意义，否则不要在 ID 中包含 jenkins 或 plugin 。
-插件名称 插件的名称在 Jenkins UI 和其它地方（如：插件站点）展示给用户。
+它需要遵循一些发布规约：
+ 使用小写 ID ，并根据需要使用连字符分隔术语。 除非名称有任何意义，否则不要在 ID 中包含 jenkins 或 plugin 。  插件名称 插件的名称在 Jenkins UI 和其它地方（如：插件站点）展示给用户。
 如果可以，建议使用简短的描述性名称，如 Subversion 。
 笔者所写的插件的名称为：Maven SNAPSHOT Check 。</description>
     </item>
@@ -42,7 +42,7 @@ artifactId 插件的 artifactId 被用于文件基本名称，是 Jenkins 插件
 类似问题也曾经给笔者带来过困扰，在最初没能去规避问题， 等到再想去解决问题时却发现困难重重，牵一发而动全身， 导致这个问题一直被搁置，而这也给笔者留下深刻的印象。
 等到再次制定 Maven 规范时，从一开始就考虑 强制禁止 SNAPSHOT 版本依赖发到生产环境。
 这里是通过在 Jenkins 构建时做校验实现的。 因为没有找到提供类似功能的 Jenkins 插件， 目前这个校验通过 shell 脚本来实现的， 具体的做法是在 Jenkins 任务中 Maven 构建之前增加一个 Execute shell 的步骤， 来判断 pom.xml 中是否包含 SNAPSHOT 关键字，如果包含，该次构建状态将被标记为失败。 脚本内容如下：
-#!/bin/bash if [[ ` grep -R --include=&amp;quot;pom.xml&amp;quot; SNAPSHOT .` =~ &amp;quot;SNAPSHOT&amp;quot; ]]; then echo &amp;quot;SNAPSHOT check failed&amp;quot; &amp;amp;&amp;amp; grep -R --include=&amp;quot;pom.</description>
+#!/bin/bash if [[ ` grep -R --include=&amp;#34;pom.xml&amp;#34; SNAPSHOT .` =~ &amp;#34;SNAPSHOT&amp;#34; ]]; then echo &amp;#34;SNAPSHOT check failed&amp;#34; &amp;amp;&amp;amp; grep -R --include=&amp;#34;pom.</description>
     </item>
     
   </channel>

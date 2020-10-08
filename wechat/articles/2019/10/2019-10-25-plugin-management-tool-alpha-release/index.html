@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="Alpha 版本的插件管理库和 CLI 工具" />
 <meta property="og:description" content="Alpha 版本的插件管理库和 CLI 工具" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/" /><meta property="article:published_time" content="2019-10-25T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-10-25T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/" />
+<meta property="article:published_time" content="2019-10-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-25T00:00:00+00:00" />
 <meta itemprop="name" content="Alpha 版本的插件管理库和 CLI 工具">
 <meta itemprop="description" content="Alpha 版本的插件管理库和 CLI 工具">
-
-
 <meta itemprop="datePublished" content="2019-10-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-10-25T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="94">
 
 
 
-<meta itemprop="keywords" content="plugins,pluginmanagement,platform-sig,cli,gsoc,gsoc2019," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="plugins,pluginmanagement,platform-sig,cli,gsoc,gsoc2019," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Alpha 版本的插件管理库和 CLI 工具"/>
 <meta name="twitter:description" content="Alpha 版本的插件管理库和 CLI 工具"/>
 
@@ -298,38 +295,22 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="devopsworld.jpg" alt="devopsworld File" /></p>
-
-<p><em>&ldquo;人人都在重复造轮子，部分像实现插件管理的&rdquo;细节&rdquo;（签名元数据，制品校验和，从核心独立出来的插件&hellip;）。
-很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&rdquo;</em> <a href="https://issues.jenkins-ci.org/browse/JENKINS-53767">JENKINS-53767</a></p>
-
+<p><img src="devopsworld.jpg" alt="devopsworld File"></p>
+<p><em>&ldquo;人人都在重复造轮子，部分像实现插件管理的&quot;细节&rdquo;（签名元数据，制品校验和，从核心独立出来的插件&hellip;）。
+很明显， Jenkins 应该为实时 Jenkins 实例之外的插件安装提供充足的工具。&quot;</em> <a href="https://issues.jenkins-ci.org/browse/JENKINS-53767">JENKINS-53767</a></p>
 <p>我的 <a href="https://jenkins.io/projects/gsoc/2019/plugin-installation-manager-tool-cli/">Google Summer of Code project</a> 项目试图解决这个问题，方法是创建一个库，该库将在 Jenkins 的不同实现中统一插件管理逻辑，并提供一个可以使用户轻松下载插件并在 Jenkins 启动之前查看插件信息的 CLI 工具。
 我很高兴分享我们刚刚发布的 Alpha 版本，您可以在<a href="https://github.com/jenkinsci/plugin-installation-manager-tool/releases">此处</a>查看！</p>
-
 <h2 id="gsoc-阶段-1-更新">GSoC 阶段 1 更新</h2>
-
 <p>当我考虑将<a href="https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/PluginManager.java">插件管理器</a>从 Jenkins 核心中移出时，由于依赖项的复杂性和数量，这最终成为了最具挑战性的第一步。相反，我们决定首先将 Jenkins Docker 中的 <a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">install-plugins.sh bash 脚本</a>转换为 Java。 install-plugins.sh 脚本存在多个问题，即它是 bash 脚本并且扩展性有限，此外，它不会检索所有最新的更新中心的元数据。</p>
-
 <h2 id="alpha-版本详情">Alpha 版本详情</h2>
-
 <p>模仿官方 Jenkins Docker 镜像中 <a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">install-plugins.sh</a> 脚本中的操作，新的插件管理库接收插件列表、它们的版本和（或） URL，从中可以下载插件，并下载所需的插件及其依赖。插件从更新中心下载到指定目录，然后可以加载到 Jenkins 中。当前，可以通过 plugins.txt 文件和（或） -plugins 的 cli 选项指定要下载的插件，我们计划进一步扩展可以接收的输入格式。 还支持用于不同更新中心的<a href="https://github.com/jenkinsci/docker#plugin-version-format">自定义版本说明符</a>。</p>
-
-<p><img src="pluginstxt.png" alt="Example plugins.txt File" /></p>
-
+<p><img src="pluginstxt.png" alt="Example plugins.txt File"></p>
 <p>该库将首先检查当前是否在用户指定的下载位置或用户指定的 Jenkins war 文件中安装了任何请求的插件。如果要求更高版本或更高版本作为依赖项，则将忽略或升级已安装的插件。确定插件下载 URL 后，库将下载插件并解析和下载其依赖。</p>
-
-<p><img src="downloadexample.png" alt="Example of Downloading Plugins" /></p>
-
-<p><img src="downloadedplugins.png" alt="Plugin Download Directory" /></p>
-
+<p><img src="downloadexample.png" alt="Example of Downloading Plugins"></p>
+<p><img src="downloadedplugins.png" alt="Plugin Download Directory"></p>
 <p>这仅仅是个开始：插件管理器库和 cli 工具仍在开发中。 有关 CLI 选项以及如何运行该工具的最新信息，请参见<a href="https://github.com/jenkinsci/plugin-installation-manager-tool/blob/master/README.md">存储库 README.md </a>。 即将提供更强大的输入解析，对安全警告和可用更新的支持，Docker集成以及其他功能！</p>
-
 <h2 id="链接和反馈">链接和反馈</h2>
-
 <p>欢迎通过<a href="https://gitter.im/jenkinsci/plugin-installation-manager-cli-tool">插件安装管理器 CLI 工具 Gitter 聊天室</a>或 <a href="mailto:jenkinsci-dev@googlegroups.com">Jenkins 开发者邮件列表</a>与我们联系。我希望收到您的问题，评论和反馈！我们在世界标准时间下午6点（星期二和星期四）开会。</p>
-
 <ul>
 <li><a href="https://docs.google.com/presentation/d/12Bo8w9SinrG5n82w-Unjx4MNq0mjkHFEOMc3Jf6rTQQ/edit#slide=id.p1">Phase 1 Presentation Slides</a></li>
 <li><a href="https://youtu.be/MDs0Vr7gnnA?t=196">Phase 1 Recorded Demo</a></li>

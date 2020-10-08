@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pipeline Authoring on Jenkins 中文社区</title>
+    <title>pipeline-authoring on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/pipeline-authoring/</link>
-    <description>Recent content in Pipeline Authoring on Jenkins 中文社区</description>
+    <description>Recent content in pipeline-authoring on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate>
@@ -38,12 +38,14 @@
 随着基于微服务的体系结构的兴起，一个集中的 DevOps 团队可以同时支持许多不同的开发团队；所有这些团队都可能利用不同的编程语言和自动化测试工具。
 虽然开发团队之间的工具可能不同，但工作流通常是相同的：单元测试、静态代码分析、构建和发布制品、部署它，然后针对部署的应用程序执行不同类型的测试。
  模板引擎插件允许您从每个被团队定义可继承通用工作流的存储库中删除 Jenkinsfile 。作为替代每个存储库需定义整个流水线，团队提供一个使用工作流的工具配置文件。
- JTE 实战 让我们通过一个简单的示例来演示模板的可重用性： 流水线模板例子：  unit_test() build() static_code_analysis()  模板利用库提供的步骤概述工作流团队必须实现的步骤。虽然模板的执行方式与任何其他 Jenkinsfile 都一样（这意味着支持标准的脚本化和声明性语法），但模板的目标应该是以纯英语的方式阅读，并避免任何技术实现。
+ JTE 实战 让我们通过一个简单的示例来演示模板的可重用性： 流水线模板例子： unit_test() build() static_code_analysis() 模板利用库提供的步骤概述工作流团队必须实现的步骤。虽然模板的执行方式与任何其他 Jenkinsfile 都一样（这意味着支持标准的脚本化和声明性语法），但模板的目标应该是以纯英语的方式阅读，并避免任何技术实现。
  通过这种方式利用模板，您可以将流水线的业务逻辑（应该在什么时候发生）与技术实现（实际将要发生什么）分开。其结果是一个 CI/CD 管道，当同时支持多个团队时，该流水线被证明非常容易管理。
  此模板（ unit_test 、 build 和 static_code_analysis ）概述的步骤是专门命名的。通过这种方式，团队可以使用的不同库共享同一流水线。
-实现模板 使用模板引擎实现可共享流水线需要几个关键组件： 1. 流水线模板：概述要执行的工作流 2. 库：提供工作流步骤的技术实现 3. 配置文件：指定要使用的库及其配置
-步骤1、创建流水线配置存储库 流水线配置存储库用于存储团队继承的常见配置和流水线模板。
-这个示例流水线配置存储库稍后将被配置为治理层的一部分：JTE 的机制中允许您构建表示组织的层次结构配置。</description>
+实现模板 使用模板引擎实现可共享流水线需要几个关键组件：
+ 流水线模板：概述要执行的工作流 库：提供工作流步骤的技术实现 配置文件：指定要使用的库及其配置  步骤1、创建流水线配置存储库 流水线配置存储库用于存储团队继承的常见配置和流水线模板。
+这个示例流水线配置存储库稍后将被配置为治理层的一部分：JTE 的机制中允许您构建表示组织的层次结构配置。
+治理层包含三个方面：
+ 流水线模板 库资源清单 层的配置文件( pipeline_config.</description>
     </item>
     
   </channel>

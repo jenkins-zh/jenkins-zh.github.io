@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="使用 Jenkins 实现 CI/CD 多分支流水线" />
 <meta property="og:description" content="基于 Jenkins 多分支流水线任务类型创建 CI/CD 多分支流水线" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/" /><meta property="article:published_time" content="2019-12-31T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-12-31T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-31-implement-cicd-for-multibranch-pipeline-in-jenkins/" />
+<meta property="article:published_time" content="2019-12-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-31T00:00:00+00:00" />
 <meta itemprop="name" content="使用 Jenkins 实现 CI/CD 多分支流水线">
 <meta itemprop="description" content="基于 Jenkins 多分支流水线任务类型创建 CI/CD 多分支流水线">
-
-
 <meta itemprop="datePublished" content="2019-12-31T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-12-31T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="201">
 
 
 
-<meta itemprop="keywords" content="jenkins,multi-branch," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,multi-branch," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Jenkins 实现 CI/CD 多分支流水线"/>
 <meta name="twitter:description" content="基于 Jenkins 多分支流水线任务类型创建 CI/CD 多分支流水线"/>
 
@@ -238,17 +235,14 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#什么是-jenkinsfile">什么是 Jenkinsfile</a></li>
-<li><a href="#来自-jenkins-的定义">来自 Jenkins 的定义</a></li>
-<li><a href="#创建一个简单多分支流水线任务的步骤">创建一个简单多分支流水线任务的步骤</a></li>
-<li><a href="#配置-webhooks">配置 Webhooks</a></li>
-<li><a href="#进一步阅读">进一步阅读</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#什么是-jenkinsfile">什么是 Jenkinsfile</a></li>
+    <li><a href="#来自-jenkins-的定义">来自 Jenkins 的定义</a></li>
+    <li><a href="#创建一个简单多分支流水线任务的步骤">创建一个简单多分支流水线任务的步骤</a></li>
+    <li><a href="#配置-webhooks">配置 Webhooks</a></li>
+    <li><a href="#进一步阅读">进一步阅读</a></li>
+  </ul>
 </nav>
 	
 
@@ -309,134 +303,132 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="cover.jpg" alt="Making multiple branches with Jenkins" /></p>
-
+<p><img src="cover.jpg" alt="Making multiple branches with Jenkins"></p>
 <h2 id="简介">简介</h2>
-
 <p>Jenkins 是一个持续集成服务器，用于从版本控制系统（VCS）中获取最新代码，然后对其进行构建、测试并将结果通知给开发人员。除了作为一个持续集成（CI）服务器之外，Jenkins 还可以做很多其它的事情。最初它被称为 Hudson，是川口耕介（Kohsuke Kawaguchi）基于 Java 编写的一个开源项目，因此，在安装和运行 Jenkins 之前，首先需要安装 <a href="https://dzone.com/articles/how-to-install-jdk-8-on-linux-operating-system-vid">Java 8</a>。</p>
-
 <p><a href="https://dzone.com/refcardz/declarative-pipeline-with-jenkins">多分支流水线</a>是 Jenkins 中的一种流水线类型，它允许您在 Jenkinsfile 的帮助下为源码管理（SCM）库中的每个分支自动地创建一支流水线。</p>
-
 <h2 id="什么是-jenkinsfile">什么是 Jenkinsfile</h2>
-
 <p>Jenkinsfile 是一个文本文件，被用来定义一个 Jenkins 流水线。在 Jenkinsfile 中可以使用<a href="https://dzone.com/articles/kotlin-dsl-from-theory-to-practice">领域特定语言（DSL）</a>编写运行 Jenkins 流水线所需要的步骤，从而将流水线实现为代码。</p>
-
 <h2 id="来自-jenkins-的定义">来自 Jenkins 的定义</h2>
-
 <p>使用多分支流水线，您可以为同一项目的不同分支实现不同的 Jenkinsfile，Jenkins 将会自动发现、管理和执行那些分支中包含 Jenkinsfile 的流水线。</p>
-
-<p><img src="multibranch-pipeline.png" alt="Architecture Diagram" /></p>
-
+<p><img src="multibranch-pipeline.png" alt="Architecture Diagram"></p>
 <h2 id="创建一个简单多分支流水线任务的步骤">创建一个简单多分支流水线任务的步骤</h2>
-
 <ol>
 <li>点击 Jenkins 工作台左上角的 <strong>New Item</strong> 选项：</li>
 </ol>
-
-<p><img src="new-item.png" alt="New Item" /></p>
-
-<ol>
+<p><img src="new-item.png" alt="New Item"></p>
+<ol start="2">
 <li>在 <strong>Enter an item name</strong> 中填入任务名，向下滚动，然后选择 <strong>Multibranch Pipeline</strong>，最后点击 <strong>OK</strong> 按钮：</li>
 </ol>
-
-<p><img src="select-multibranch.png" alt="Multibranch pipeline" /></p>
-
-<ol>
-<li><p>填写<strong>任务描述</strong>（可选）。</p></li>
-
-<li><p>添加一个<strong>分支源</strong>（例如：GitHub）并且填写代码仓库的位置。</p></li>
-
-<li><p>选择 <strong>Add</strong> 按钮添加凭证并点击 <strong>Jenkins</strong>。</p></li>
-
-<li><p>键入 GitHub <strong>用户名</strong>、<strong>密码</strong>、<strong>ID</strong> 和描述。</p></li>
-
-<li><p>从下拉菜单中选择凭证：</p></li>
+<p><img src="select-multibranch.png" alt="Multibranch pipeline"></p>
+<ol start="3">
+<li>
+<p>填写<strong>任务描述</strong>（可选）。</p>
+</li>
+<li>
+<p>添加一个<strong>分支源</strong>（例如：GitHub）并且填写代码仓库的位置。</p>
+</li>
+<li>
+<p>选择 <strong>Add</strong> 按钮添加凭证并点击 <strong>Jenkins</strong>。</p>
+</li>
+<li>
+<p>键入 GitHub <strong>用户名</strong>、<strong>密码</strong>、<strong>ID</strong> 和描述。</p>
+</li>
+<li>
+<p>从下拉菜单中选择凭证：</p>
+</li>
 </ol>
-
-<p><img src="select-repo.png" alt="Branch sources" /></p>
-
-<ol>
-<li><p>点击 <strong>Save</strong> 保存该多分支流水线任务。</p></li>
-
-<li><p>Jenkins 会自动扫描指定的仓库并为 Organization 文件夹添加索引。Organization 文件夹使得 Jenkins 能够监视整个 GitHub Organization 或 Bitbucket Team/Project，并自动为包含分支的仓库创建新的多分支流水线，然后拉取包括 Jenkinsfile 在内的源码：</p></li>
+<p><img src="select-repo.png" alt="Branch sources"></p>
+<ol start="8">
+<li>
+<p>点击 <strong>Save</strong> 保存该多分支流水线任务。</p>
+</li>
+<li>
+<p>Jenkins 会自动扫描指定的仓库并为 Organization 文件夹添加索引。Organization 文件夹使得 Jenkins 能够监视整个 GitHub Organization 或 Bitbucket Team/Project，并自动为包含分支的仓库创建新的多分支流水线，然后拉取包括 Jenkinsfile 在内的源码：</p>
+</li>
 </ol>
-
-<p><img src="scanning.png" alt="Scan repository log" /></p>
-
-<ol>
-<li><p>当前，这项功能仅适用于 GitHub 和 Bitbucket 中的仓库，分别由 <a href="https://plugins.jenkins.io/github-organization-folder">GitHub Organization Folder</a> 和 <a href="https://plugins.jenkins.io/cloudbees-bitbucket-branch-source">Bitbucket Branch Source</a> 这两个插件提供。</p></li>
-
-<li><p>一旦任务被成功创建，构建将会被自动触发：</p></li>
+<p><img src="scanning.png" alt="Scan repository log"></p>
+<ol start="10">
+<li>
+<p>当前，这项功能仅适用于 GitHub 和 Bitbucket 中的仓库，分别由 <a href="https://plugins.jenkins.io/github-organization-folder">GitHub Organization Folder</a> 和 <a href="https://plugins.jenkins.io/cloudbees-bitbucket-branch-source">Bitbucket Branch Source</a> 这两个插件提供。</p>
+</li>
+<li>
+<p>一旦任务被成功创建，构建将会被自动触发：</p>
+</li>
 </ol>
-
-<p><img src="jobs.png" alt="Builds triggered" /></p>
-
+<p><img src="jobs.png" alt="Builds triggered"></p>
 <h2 id="配置-webhooks">配置 Webhooks</h2>
-
-<ol>
-<li><p>我们需要配置 Jenkins 服务器以便与我们的 GitHub 仓库通信，为此，我们要获取 Jenkins 的 Hook URL。</p></li>
-
-<li><p>导航到 <strong>Manage Jenkins</strong> 页面，然后选择 <strong>Configure System</strong>。</p></li>
-
-<li><p>找到 <strong>GitHub</strong> 插件配置部分，然后点击 Advanced 按钮。</p></li>
-
-<li><p>选择 <strong>Specify another hook URL for GitHub configuration</strong>：</p></li>
+<ol start="12">
+<li>
+<p>我们需要配置 Jenkins 服务器以便与我们的 GitHub 仓库通信，为此，我们要获取 Jenkins 的 Hook URL。</p>
+</li>
+<li>
+<p>导航到 <strong>Manage Jenkins</strong> 页面，然后选择 <strong>Configure System</strong>。</p>
+</li>
+<li>
+<p>找到 <strong>GitHub</strong> 插件配置部分，然后点击 Advanced 按钮。</p>
+</li>
+<li>
+<p>选择 <strong>Specify another hook URL for GitHub configuration</strong>：</p>
+</li>
 </ol>
-
-<p><img src="n-ci-sepcify-hook.png" alt="Webhooks" /></p>
-
-<ol>
-<li><p>将文本框中的 URL 复制出来。</p></li>
-
-<li><p>单击 <strong>Save</strong>，返回到 Jenkins 工作台。</p></li>
-
-<li><p>打开浏览器，导航到 GitHub 选项卡，然后选择您的 <strong>GitHub</strong> 仓库。</p></li>
-
-<li><p>单击 <strong>Settings</strong>，导航到仓库设置：</p></li>
+<p><img src="n-ci-sepcify-hook.png" alt="Webhooks"></p>
+<ol start="16">
+<li>
+<p>将文本框中的 URL 复制出来。</p>
+</li>
+<li>
+<p>单击 <strong>Save</strong>，返回到 Jenkins 工作台。</p>
+</li>
+<li>
+<p>打开浏览器，导航到 GitHub 选项卡，然后选择您的 <strong>GitHub</strong> 仓库。</p>
+</li>
+<li>
+<p>单击 <strong>Settings</strong>，导航到仓库设置：</p>
+</li>
 </ol>
-
-<p><img src="settings.png" alt="Settings" /></p>
-
-<ol>
-<li><p>点击 Webhooks 部分。</p></li>
-
-<li><p>点击 <strong>Add Webhook</strong> 按钮，然后将 <strong>Hook URL</strong> 粘贴在 <strong>Playload URL</strong> 中。</p></li>
-
-<li><p>确保 Webhook 触发器已选中 <strong>Just the push event</strong> 选项。</p></li>
+<p><img src="settings.png" alt="Settings"></p>
+<ol start="20">
+<li>
+<p>点击 Webhooks 部分。</p>
+</li>
+<li>
+<p>点击 <strong>Add Webhook</strong> 按钮，然后将 <strong>Hook URL</strong> 粘贴在 <strong>Playload URL</strong> 中。</p>
+</li>
+<li>
+<p>确保 Webhook 触发器已选中 <strong>Just the push event</strong> 选项。</p>
+</li>
 </ol>
-
-<p><img src="add-webhook.png" alt="Add webhook" /></p>
-
-<ol>
-<li><p>点击击 <strong>Add webhook</strong>，就会把此 webhook 添加到您的仓库。</p></li>
-
-<li><p>正确添加 Webhook 后，您将会看到带有绿勾的 Webhook：</p></li>
+<p><img src="add-webhook.png" alt="Add webhook"></p>
+<ol start="23">
+<li>
+<p>点击击 <strong>Add webhook</strong>，就会把此 webhook 添加到您的仓库。</p>
+</li>
+<li>
+<p>正确添加 Webhook 后，您将会看到带有绿勾的 Webhook：</p>
+</li>
 </ol>
-
-<p><img src="green-tick.png" alt="Added webhook" /></p>
-
-<ol>
-<li><p>返回到仓库，然后切换到对应分支并更新任何文件。在此，我们更新 <strong>README.md</strong> 文件。</p></li>
-
-<li><p>现在将会看到 Jenkins 任务被自动触发：</p></li>
+<p><img src="green-tick.png" alt="Added webhook"></p>
+<ol start="25">
+<li>
+<p>返回到仓库，然后切换到对应分支并更新任何文件。在此，我们更新 <strong>README.md</strong> 文件。</p>
+</li>
+<li>
+<p>现在将会看到 Jenkins 任务被自动触发：</p>
+</li>
 </ol>
-
-<p><img src="cicd.png" alt="CI triggers" /></p>
-
-<ol>
-<li><p>流水线执行完成后，可以通过点击 <strong>Build History</strong> 下的构建号来验证执行过的构建。</p></li>
-
-<li><p>点击构建号，然后选择 <strong>Console Output</strong>，您便可以看到每个构建步骤的输出日志：</p></li>
+<p><img src="cicd.png" alt="CI triggers"></p>
+<ol start="27">
+<li>
+<p>流水线执行完成后，可以通过点击 <strong>Build History</strong> 下的构建号来验证执行过的构建。</p>
+</li>
+<li>
+<p>点击构建号，然后选择 <strong>Console Output</strong>，您便可以看到每个构建步骤的输出日志：</p>
+</li>
 </ol>
-
-<p><img src="console-output.png" alt="Console Output" /></p>
-
+<p><img src="console-output.png" alt="Console Output"></p>
 <h2 id="进一步阅读">进一步阅读</h2>
-
 <p><a href="https://dzone.com/articles/learn-how-to-setup-a-cicd-pipeline-from-scratch">Learn How to Set Up a CI/CD Pipeline From Scratch</a></p>
-
 <p><a href="https://dzone.com/articles/api-builder-a-simple-cicd-implementation-part-1">API Builder: A Simple CI/CD Implementation – Part 1</a></p>
 
 </div>
@@ -533,15 +525,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -605,35 +588,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
-              手把手教会你 Jenkins 备份与恢复
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -650,15 +606,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -667,75 +614,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
       
         
         
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
-            </a>
-          </li>
-        
-      
-        
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
       
         
         
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -772,15 +656,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -995,15 +870,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -1015,15 +881,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>插件管理 on Jenkins 中文社区</title>
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tutorial/management/plugin/update-center/</guid>
-      <description> Jenkins 安装完成后，默认的插件更新中心地址为 https://updates.jenkins.io/update-center.json
+      <description>Jenkins 安装完成后，默认的插件更新中心地址为 https://updates.jenkins.io/update-center.json
 除了正式版本以外，部分插件也会发布一些 alpha 或者 beta 版本，以便让部分用户体验实验性功能。我们可以在插件管理-》高级部分，修改为如下地址：
 https://updates.jenkins.io/experimental/update-center.json
 镜像地址    维护方 镜像中心地址     Jenkins 中文社区 https://updates.jenkins-zh.cn/update-center.json   清华大学 https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json   华为开源镜像站 https://mirrors.huaweicloud.com/jenkins/updates/update-center.json   腾讯 https://mirrors.cloud.tencent.com/jenkins/updates/update-center.json   ustc https://mirrors.ustc.edu.cn/jenkins/updates/update-center.json   bit https://mirror.bit.edu.cn/jenkins/updates/update-center.json    </description>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Release on Jenkins 中文社区</title>
+    <title>release on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/release/</link>
-    <description>Recent content in Release on Jenkins 中文社区</description>
+    <description>Recent content in release on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 03 Aug 2020 00:00:00 +0000</lastBuildDate>
@@ -36,7 +36,7 @@
       <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-25-weekly-release/</guid>
-      <description>2.237 (2020-05-18)  防止以 Java 11 运行时缺少 javax.annotation 类的导致的遥测告警(由 2.231 引入的缺陷回归)。 (issue 61920) 在类字段解组问题的情况下，防止 Old Data Monitor 插件加载失败。 (issue 62231) 确保在 UserLanguages 遥测初始化程序总是在扩展后运行。 (issue 60118) 确保 job/folder 创建事务正确检查请求的名称中是否包含无效字符。 (issue 61956) 开发者: 将 Apache Ant 从 1.10.7 更新到 1.10.8。 (pull 4725) 开发者: 将 JSTL API 库从 1.2.1 更新到 1.2.7。 (pull 4656, 变更日志更新到 1.2.5, 1.2.3 到 1.2.7 的差异, 1.2.1 到 1.2.3 的差异) 开发者: 在 Java API 中弃用 jenkins.model.Configuration。 (pull 4715)  2.</description>
+      <description>2.237 (2020-05-18)  防止以 Java 11 运行时缺少 javax.annotation 类的导致的遥测告警(由 2.231 引入的缺陷回归)。 (issue 61920) 在类字段解组问题的情况下，防止 Old Data Monitor 插件加载失败。 (issue 62231) 确保在 UserLanguages 遥测初始化程序总是在扩展后运行。 (issue 60118) 确保 job/folder 创建事务正确检查请求的名称中是否包含无效字符。 (issue 61956) 开发者: 将 Apache Ant 从 1.10.7 更新到 1.10.8。 (pull 4725) 开发者: 将 JSTL API 库从 1.2.1 更新到 1.2.7。 (pull 4656, 变更日志更新到 1.2.5, 1.2.3 到 1.2.7 的差异, 1.2.1 到 1.2.3 的差异) 开发者: 在 Java API 中弃用 jenkins.model.Configuration。 (pull 4715)  2.236 (2020-05-11)  使插件管理可以再次支持 Internet Explorer 11 (由 2.</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@
       
       <guid>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-24-jenkins-release/</guid>
       <description>2.222.1 (2020-03-25)  Jenkins 启动时将不从磁盘加载全局构建丢弃程序的配置(JENKINS-61688)。 配置已保存，但在重新启动时将不加载。 Jenkins 2.222.1 将始终以 Job Build Discarder 的默认配置启动。 重新启动时将忽略自定义全局构建丢弃配置。 每次 Jenkins 重新启动时，都会配置默认的全局构建丢弃。
- 自 2.222 以来的变更：  重要安全修复。 (安全公告) 修复了任务配置表单中之前保存步骤中存在的拖放操作问题 (由 2.217 引入的缺陷回归)。 (issue 61429) Winstone 5.9: 修复最大表单内容大小和表单内容密钥的传递(由 Jetty 9.4.20 和 Jenkins 2.205 引入的缺陷回归)。 (pull 4542, issue 60409, Winstone 5.9 变更日志, Jetty 9.4.27 变更日志) Winstone 5.9: 修复由于 X-Forwarded-Host 和 X-Forwarded-Port 订阅问题而导致的将不正确的反向代理重定向到 Host 的问题(由 Jetty 9.4.20 和 Jenkins 2.205 引入的缺陷回归)。 (pull 4542, issue 60199, Winstone 5.</description>
+ 自 2.222 以来的变更：  重要安全修复。 (安全公告) 修复了任务配置表单中之前保存步骤中存在的拖放操作问题 (由 2.217 引入的缺陷回归)。 (issue 61429) Winstone 5.9: 修复最大表单内容大小和表单内容密钥的传递(由 Jetty 9.4.20 和 Jenkins 2.205 引入的缺陷回归)。 (pull 4542, issue 60409, Winstone 5.9 变更日志, Jetty 9.4.27 变更日志) Winstone 5.9: 修复由于 X-Forwarded-Host 和 X-Forwarded-Port 订阅问题而导致的将不正确的反向代理重定向到 Host 的问题(由 Jetty 9.4.20 和 Jenkins 2.205 引入的缺陷回归)。 (pull 4542, issue 60199, Winstone 5.9 变更日志, Jetty 9.</description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@
       <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-17-jenkins-release/</guid>
-      <description>2.176.2 (2019-07-17)  用于等待外部进程完成的线程池可能会使类加载器泄露。 当分离的插件（其插件功能曾经是 Jenkins 本身的一部分）作为已经存在的其他插件的隐含依赖时，确保 Jenkins 在启动时对其进行安装。这简化了不使用更新中心的专用安装方案的兼容性，例如当从带有某些插件的预包装 Docker 镜像运行 Jenkins 时。 更新 WinP 从 1.27 到 1.28 ，以修复 Windows 正常进程关闭逻辑中缺少 DLL 和控制台窗口闪退的问题 用更简单的消息替换一些与代理通道有关的异常堆栈跟踪。  2.176.3 (2019-08-28)  当其他插件对其仅具有可选依赖时，插件管理器 UI 不再阻止禁用插件。 解决使用 &amp;ldquo;记住我&amp;rdquo; 时的性能问题。 (由 2.160 引入的缺陷回归) 测试代理配置时不要抛出异常。 (由 2.168 引入的缺陷回归) 防止 Jenkins 重启和用户会话无效时的偶发 IllegalStateException 异常。  2.176.4 (2019-09-25)  2.176.4 和 2.190.1 包含相同的安全修复程序。我们将提供 2.176.x LTS 系列的附加版本，以允许管理员应用安全更新，而无需进行重大升级。  2.190.1  修复 RSS / Atom 提要中缺少的绝对 URL 。 (由 2.</description>
+      <description>2.176.2 (2019-07-17)  用于等待外部进程完成的线程池可能会使类加载器泄露。 当分离的插件（其插件功能曾经是 Jenkins 本身的一部分）作为已经存在的其他插件的隐含依赖时，确保 Jenkins 在启动时对其进行安装。这简化了不使用更新中心的专用安装方案的兼容性，例如当从带有某些插件的预包装 Docker 镜像运行 Jenkins 时。 更新 WinP 从 1.27 到 1.28 ，以修复 Windows 正常进程关闭逻辑中缺少 DLL 和控制台窗口闪退的问题 用更简单的消息替换一些与代理通道有关的异常堆栈跟踪。  2.176.3 (2019-08-28)  当其他插件对其仅具有可选依赖时，插件管理器 UI 不再阻止禁用插件。 解决使用 &amp;ldquo;记住我&amp;rdquo; 时的性能问题。 (由 2.160 引入的缺陷回归) 测试代理配置时不要抛出异常。 (由 2.168 引入的缺陷回归) 防止 Jenkins 重启和用户会话无效时的偶发 IllegalStateException 异常。  2.176.4 (2019-09-25)  2.176.4 和 2.190.1 包含相同的安全修复程序。我们将提供 2.176.x LTS 系列的附加版本，以允许管理员应用安全更新，而无需进行重大升级。  2.190.1  修复 RSS / Atom 提要中缺少的绝对 URL 。 (由 2.190 引入的缺陷回归) 当提示慢触发的管理警告时，Jenkins UI 中断。(由 2.</description>
     </item>
     
     <item>
@@ -82,15 +82,14 @@
       <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-09-jenkins-release/</guid>
-      <description>2.176.1 (2019-06-10)  自 2.176 以来的变更：
- 恢复安装向导中用到的中文本地化资源。 (issue 57412) Robustness: 当 ComputerListener#onOnline() 发生运行时异常后不把节点设置为离线状态。 (issue 57111)  CLI 中通过参数 (-remoting option) 对远程模式的支持已经被移除。 (pull 3838, 博客发布)
- 移除符号 nonStoredPasswordParam 对密码参数定义的误导，因为，它会存储加密后的数据。 (issue 56776)
- 移除对 CCtray (cc.xml) 文件的默认支持。 要使用该功能，需要按照插件 CCtray XML Plugin。 (issue 40750)
- 增加 CLI 命令 stop-job 终止构建。 (issue 11888)
- 在日志配置中支持关闭一项日志记录器。 (issue 56200)
- 为 REST API 的响应增加运行参数过滤器。 (issue 56554)
- 构建结束后更新状态图标。 (issue 16750)
- 在 Jenkins 节点的界面上移除对 Java Web Start and JNLP 的误导性引用。 (pull 3998)</description>
+      <description>2.176.1 (2019-06-10)   自 2.176 以来的变更：
+ 恢复安装向导中用到的中文本地化资源。 (issue 57412) Robustness: 当 ComputerListener#onOnline() 发生运行时异常后不把节点设置为离线状态。 (issue 57111)    CLI 中通过参数 (-remoting option) 对远程模式的支持已经被移除。 (pull 3838, 博客发布)
+  移除符号 nonStoredPasswordParam 对密码参数定义的误导，因为，它会存储加密后的数据。 (issue 56776)
+  移除对 CCtray (cc.xml) 文件的默认支持。 要使用该功能，需要按照插件 CCtray XML Plugin。 (issue 40750)
+  增加 CLI 命令 stop-job 终止构建。 (issue 11888)
+  在日志配置中支持关闭一项日志记录器。 (issue 56200)
+  为 REST API 的响应增加运行参数过滤器。 (issue 56554)
+  构建结束后更新状态图标。 (issue 16750)</description>
     </item>
     
     <item>
@@ -123,7 +122,7 @@ Jenkins 社区从2009年开始以开源社区的身份参与到 GSoC 中，并�
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-09-jenkins-release/</guid>
-      <description> 2.175 (2019-04-28)  当构建完成后，更新状态图标 (issue 16750) 插件管理页面提供了更方便的插件更新选项，包括：“全选”、“兼容的“或”全不选“。 “兼容”的选择（之前为“全选”）已经不再包括含有任何兼容性警告的插件。 (issue 56477) 从连接 Jenkins 节点的界面上移除会误导到 Java Web Start 和 JNLP 的链接等引用。 (pull 3998) 再次启用 Stapler 请求分发 telemetry。 (pull 3999) 确保远程对象仅通过远程通道被序列化。 确定永远不会设计以 XML 形式持久化到磁盘中的类包括： FilePath, [Stream]TaskListener, and ProcessTree. (issue 47896) 修复在 Linux 代理安装器中看到的一些错误。 (issue 57071) 使得 Debian/Ubuntu 启动器脚本对 Java 11 兼容。 (issue 57096) 开发者：使得 mvn -f war hudson-dev:run支持${port}。 (pull 3984)  2.174 (2019-04-21)  重命名一个代理节点，保持旧的配置，导致重启后旧的代理节点再次出现。 (issue 56403) 嵌套的视图现在也可以根据名称搜索了。 (issue 43322)  </description>
+      <description>2.175 (2019-04-28)  当构建完成后，更新状态图标 (issue 16750) 插件管理页面提供了更方便的插件更新选项，包括：“全选”、“兼容的“或”全不选“。 “兼容”的选择（之前为“全选”）已经不再包括含有任何兼容性警告的插件。 (issue 56477) 从连接 Jenkins 节点的界面上移除会误导到 Java Web Start 和 JNLP 的链接等引用。 (pull 3998) 再次启用 Stapler 请求分发 telemetry。 (pull 3999) 确保远程对象仅通过远程通道被序列化。 确定永远不会设计以 XML 形式持久化到磁盘中的类包括： FilePath, [Stream]TaskListener, and ProcessTree. (issue 47896) 修复在 Linux 代理安装器中看到的一些错误。 (issue 57071) 使得 Debian/Ubuntu 启动器脚本对 Java 11 兼容。 (issue 57096) 开发者：使得 mvn -f war hudson-dev:run支持${port}。 (pull 3984)  2.174 (2019-04-21)  重命名一个代理节点，保持旧的配置，导致重启后旧的代理节点再次出现。 (issue 56403) 嵌套的视图现在也可以根据名称搜索了。 (issue 43322)  </description>
     </item>
     
   </channel>

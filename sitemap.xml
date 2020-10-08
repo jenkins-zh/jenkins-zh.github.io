@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -12,12 +12,82 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-08-github-codespaces/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-27-hacktoberfest/</loc>
     <lastmod>2020-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/hacktoberfest/</loc>
+    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
+    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/</loc>
+    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/api/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/developer/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/git/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Github/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gsoc/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gsoc2020/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/plugin/</loc>
+    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/plugins/</loc>
     <lastmod>2020-09-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -27,8 +97,28 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/updateCenter/</loc>
+    <lastmod>2020-09-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/meeting/2020-09-16/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/meeting/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/ansible/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Continuout-Delivery/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -47,7 +137,32 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/ci/</loc>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Ci-Cd-Pipeline/</loc>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/continuous-integration/</loc>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/</loc>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/jenkins-x/</loc>
+    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -57,12 +172,27 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Argo/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/docker/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/</loc>
     <lastmod>2020-08-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-03-jenkins-release/</loc>
+    <lastmod>2020-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/release/</loc>
     <lastmod>2020-08-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -77,13 +207,58 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/AWS/</loc>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/community/</loc>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/infrastructure/</loc>
+    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-15-jenkins-infrastructure-stats-updates-and-aws-sponsorship/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/documentation/</loc>
+    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/governance/</loc>
+    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/opensource/</loc>
+    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-10-on-jenkins-terminology-updates/</loc>
     <lastmod>2020-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/communitybonding/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/datascience/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/machinelearning/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -97,13 +272,58 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Linux/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Monitoring/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Programming/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Software-Development/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Software-Engineering/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-01-monitoring-linux-logs-with-kibana-and-rsyslog/</loc>
     <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/devops/</loc>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/kubesphere/</loc>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-30-kubesphere-devops-using-jenkins/</loc>
     <lastmod>2020-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/open-source/</loc>
+    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/wordcloud/</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -117,6 +337,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/ux/</loc>
+    <lastmod>2020-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/authentication/</loc>
+    <lastmod>2020-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/</loc>
     <lastmod>2020-06-17T00:00:00+00:00</lastmod>
   </url>
@@ -127,8 +357,28 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Grafana/</loc>
+    <lastmod>2020-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/</loc>
     <lastmod>2020-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Automation/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Neuroscience/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Work/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -137,13 +387,33 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/platform-sig/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/windows/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-28-docker-windows-agents/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/</loc>
     <lastmod>2020-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-25-weekly-release/</loc>
     <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Azure-DevOps/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -157,6 +427,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/announcement/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-18-docker-agent-image-renaming/</loc>
     <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
@@ -167,12 +442,27 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/advocacy-and-outreach/</loc>
+    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/outreach-programs/</loc>
+    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-15-call-for-user-stories-jenkins-is-the-way/</loc>
     <lastmod>2020-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/meeting/2020-05-13/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Nexus-OSS/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -187,6 +477,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Declarative-Pipeline/</loc>
+    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/pipeline/</loc>
+    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/</loc>
     <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
@@ -197,8 +497,28 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Data-Science/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-06-using-a-k3s-kubernetes-cluster-for-your-gitlab-project/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Kind/</loc>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/MySQL/</loc>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/WordPress/</loc>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -227,6 +547,26 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/cloud-native/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Golang/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/security/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Vault/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/</loc>
     <lastmod>2020-04-15T00:00:00+00:00</lastmod>
   </url>
@@ -242,12 +582,37 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/cicd/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Iaac/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/JCasC/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Jjb/</loc>
+    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/</loc>
     <lastmod>2020-04-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/meeting/2020-04-01/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/ui/</loc>
     <lastmod>2020-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -262,12 +627,27 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Ngrok/</loc>
+    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/SCM/</loc>
+    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-26-thanks-ucloud/</loc>
     <lastmod>2020-03-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-24-7-devops-toolchains-orchestration-solutions-you-may-not-know/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/toolchains/</loc>
     <lastmod>2020-03-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -279,6 +659,16 @@
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-17-jenkins-release/</loc>
     <lastmod>2020-03-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/pipeline-authoring/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/SIG/</loc>
+    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -297,6 +687,21 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Configuration/</loc>
+    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Deployment/</loc>
+    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/k8s/</loc>
+    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/</loc>
     <lastmod>2020-03-10T00:00:00+00:00</lastmod>
   </url>
@@ -307,13 +712,43 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/CloudBees/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-09-feature-flags-and-gitops-5-use-cases-to-help-you-git-r-done-45ga/</loc>
     <lastmod>2020-03-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/community-bridge/</loc>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/VSCode/</loc>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/</loc>
     <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/cd/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/cdf/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Screwdriver/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -327,8 +762,38 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/DevOps-%E6%8C%87%E6%A0%87/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/DevOps-%E7%8A%B6%E6%80%81/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/DevOps-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-02-good-to-great-with-devops/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/J-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/T-Mobile/</loc>
+    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -352,7 +817,22 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/</loc>
+    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/events/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -372,8 +852,28 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/WebSocket/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/02/2020-02-10-webSocket/</loc>
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Blog/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -384,6 +884,11 @@
   <url>
     <loc>https://jenkins-zh.cn/meeting/2020-01-08/</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/multi-branch/</loc>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -407,8 +912,18 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Webhook/</loc>
+    <lastmod>2019-12-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/</loc>
     <lastmod>2019-12-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/java/</loc>
+    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -427,7 +942,17 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/Git-Secrets/</loc>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-29-jenkins-cicd-with-git-secrets/</loc>
+    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</loc>
     <lastmod>2019-11-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -442,7 +967,17 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/contributors/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-22-plugin-docs-on-github/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/wiki/</loc>
     <lastmod>2019-11-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -452,13 +987,38 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/C-STAT/</loc>
+    <lastmod>2019-11-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Jenkins-CI/</loc>
+    <lastmod>2019-11-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-18-integration-of-c-stat-code-analysis-with-automated-jenkins-ci-build/</loc>
     <lastmod>2019-11-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/UpdateBot/</loc>
+    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-15-using-jenkins-x-updatebot/</loc>
     <lastmod>2019-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/react/</loc>
+    <lastmod>2019-11-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/</loc>
+    <lastmod>2019-11-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -477,6 +1037,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/elections/</loc>
+    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-12-2019-jenkins-board-and-officer-elections-update/</loc>
     <lastmod>2019-11-12T00:00:00+00:00</lastmod>
   </url>
@@ -487,12 +1052,22 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/kafka-kubernetes-helm/</loc>
+    <lastmod>2019-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/</loc>
     <lastmod>2019-11-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-06-building-new-operating-model-devops/</loc>
+    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/</loc>
     <lastmod>2019-11-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -512,7 +1087,22 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%A4%96%E6%8C%82%E7%A8%8B%E5%BC%8F-%E5%AE%89%E5%85%A8-%E6%80%A7%E8%83%BD-gsoc-gsoc2019/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/10/2019-10-25-plugin-management-tool-alpha-release/</loc>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/cli/</loc>
+    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/pluginmanagement/</loc>
     <lastmod>2019-10-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -542,6 +1132,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/DEVOPS-JENKINS/</loc>
+    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/meeting/2019-09-22/</loc>
     <lastmod>2019-09-22T00:00:00+00:00</lastmod>
   </url>
@@ -552,8 +1147,28 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/template/</loc>
+    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/meeting/2019-09-18/</loc>
     <lastmod>2019-09-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/asktheexperts/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/contributorsummit/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/devopsworld2019/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -562,8 +1177,28 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/jenkinsworld/</loc>
+    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/gitlab/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/multibranch/</loc>
+    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-11-introducing-gitlab-branch-source-plugin/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/about/</loc>
+    <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -573,6 +1208,11 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/09/2019-09-05-award/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -602,8 +1242,28 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%AF%BC%E5%B8%88/</loc>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%8B%9B%E5%8B%9F/</loc>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-16-tutor-recruitment/</loc>
     <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/</loc>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/blueocean/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -612,8 +1272,33 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-14-continuous-testing-what-why-and-how/</loc>
     <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%BF%97%E6%84%BF%E8%80%85/</loc>
+    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -637,6 +1322,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/remote-file/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/</loc>
     <lastmod>2019-08-05T00:00:00+00:00</lastmod>
   </url>
@@ -657,6 +1347,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2019-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-30-jenkins-meetup/</loc>
     <lastmod>2019-07-30T00:00:00+00:00</lastmod>
   </url>
@@ -669,6 +1364,16 @@
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-18-jenkins-weekly-release/</loc>
     <lastmod>2019-07-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/core/</loc>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/java11/</loc>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -697,13 +1402,38 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/benchmark/</loc>
+    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/credentials/</loc>
+    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-04-performance-testing-jenkins/</loc>
+    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/jmh/</loc>
+    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/performance/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-10-phase-1-multibranch-pipeline-support-for-gitlab/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/JTE/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -732,6 +1462,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2019-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-09-github-share/</loc>
     <lastmod>2019-06-09T00:00:00+00:00</lastmod>
   </url>
@@ -752,8 +1487,18 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/docs/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-27-docs-sig-announcement/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/spring-boot/</loc>
+    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -767,8 +1512,28 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/coverage/</loc>
+    <lastmod>2019-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/jacoco/</loc>
+    <lastmod>2019-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/</loc>
     <lastmod>2019-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/spec/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/springboot/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -807,6 +1572,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/cfp/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-13-jenkins-book-gift/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
   </url>
@@ -823,6 +1593,16 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-08-jenkins-plugin-develop-within-two-days-part02/</loc>
+    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/jira/</loc>
+    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/maven/</loc>
     <lastmod>2019-05-08T00:00:00+00:00</lastmod>
   </url>
   
@@ -852,8 +1632,33 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/flagger/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/istio/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/progressive-delivery/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/shipper/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/nginx/</loc>
+    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -872,6 +1677,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/ai/</loc>
+    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-22-jenkins-weekly-2.173/</loc>
     <lastmod>2019-04-22T00:00:00+00:00</lastmod>
   </url>
@@ -884,6 +1694,11 @@
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-17-aiops/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/zabbix/</loc>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -907,6 +1722,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/contributing/</loc>
+    <lastmod>2019-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/newcomer/</loc>
+    <lastmod>2019-04-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-08-becoming-contributor-intro/</loc>
     <lastmod>2019-04-08T00:00:00+00:00</lastmod>
   </url>
@@ -917,6 +1742,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/general/</loc>
+    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-18-weekly-version/</loc>
     <lastmod>2019-03-20T00:00:00+00:00</lastmod>
   </url>
@@ -924,6 +1754,16 @@
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/03/2019-03-20-cdf-launch/</loc>
     <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/weekly/</loc>
+    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/Electron/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -943,6 +1783,11 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/</loc>
+    <lastmod>2019-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/shared-library/</loc>
     <lastmod>2019-03-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -972,6 +1817,16 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/outreachy/</loc>
+    <lastmod>2019-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/outreachy2018/</loc>
+    <lastmod>2019-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/about/how-to-involve/</loc>
     <lastmod>2019-01-05T22:56:04+08:00</lastmod>
   </url>
@@ -984,10 +1839,6 @@
   <url>
     <loc>https://jenkins-zh.cn/about/course/</loc>
     <lastmod>2019-01-03T22:50:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/event/README/</loc>
   </url>
   
   <url>
@@ -1015,8 +1866,7 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/meeting/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+    <loc>https://jenkins-zh.cn/event/README/</loc>
   </url>
   
   <url>
@@ -1100,324 +1950,31 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tutorial/api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/advocacy-and-outreach/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/ai/</loc>
-    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tutorial/best-practice/Android/</loc>
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/announcement/</loc>
-    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/ansible/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/api/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/argo/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/asktheexperts/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/authentication/</loc>
-    <lastmod>2020-06-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/automation/</loc>
-    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/aws/</loc>
-    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/azure-devops/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/benchmark/</loc>
-    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/blog/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/blueocean/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/c-stat/</loc>
-    <lastmod>2019-11-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://jenkins-zh.cn/tutorial/api/</loc>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/cd/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/cdf/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/cdsummit/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/cfp/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/ci/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/ci-cd-pipeline/</loc>
-    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/ci-cd/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/cicd/</loc>
-    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/cli/</loc>
-    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/cloud-native/</loc>
-    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/cloudbees/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/community/</loc>
-    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/community-bridge/</loc>
-    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/communitybonding/</loc>
-    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/configuration/</loc>
-    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://jenkins-zh.cn/tags/CI/CD/</loc>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/configuration-as-code/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/continuous-integration/</loc>
-    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/continuout-delivery/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/contributing/</loc>
-    <lastmod>2019-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/contributors/</loc>
-    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/contributorsummit/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/core/</loc>
-    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/coverage/</loc>
-    <lastmod>2019-05-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/credentials/</loc>
-    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-5-custom-war-packager/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/data-science/</loc>
-    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/datascience/</loc>
-    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/declarative-pipeline/</loc>
-    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/deployment/</loc>
-    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/developer/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/devops/</loc>
-    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/devops-jenkins/</loc>
-    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/devops-%E6%8C%87%E6%A0%87/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/devops-%E7%8A%B6%E6%80%81%E6%8A%A5%E5%91%8A/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/devopsworld2019/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/docker/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1429,175 +1986,15 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/docs/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/documentation/</loc>
-    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/elections/</loc>
-    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/electron/</loc>
-    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/events/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://jenkins-zh.cn/tutorial/notify/</loc>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/evergreen/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/flagger/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/general/</loc>
-    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/git/</loc>
-    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/git-secrets/</loc>
-    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/github/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gitlab/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/golang/</loc>
-    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/governance/</loc>
-    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/grafana/</loc>
-    <lastmod>2020-06-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gsoc/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gsoc2019/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/gsoc2020/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/hacktoberfest/</loc>
-    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/iaac/</loc>
-    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/infrastructure/</loc>
-    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/installers/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/istio/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/j-%E8%BD%AC%E6%8D%A2%E6%9B%B2%E7%BA%BF/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jacoco/</loc>
-    <lastmod>2019-05-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/java/</loc>
-    <lastmod>2019-12-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/java11/</loc>
-    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jcasc/</loc>
-    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jenkins/</loc>
-    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1613,25 +2010,7 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/jenkins-ci/</loc>
-    <lastmod>2019-11-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-12-gasc/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jenkins-x/</loc>
-    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/</loc>
-    <lastmod>2019-09-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1651,176 +2030,19 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/jenkins-%E6%B5%81%E6%B0%B4%E7%BA%BF/</loc>
-    <lastmod>2019-11-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-26-security-updates/</loc>
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/jenkinsworld/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tags/jenkinsworld2018/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jira/</loc>
-    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jjb/</loc>
-    <lastmod>2020-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jmh/</loc>
-    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/jte/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/k8s/</loc>
-    <lastmod>2020-03-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/kafka-kubernetes-helm/</loc>
-    <lastmod>2019-11-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/kind/</loc>
-    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubecon/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/get-started/install/k8s/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/kubesphere/</loc>
-    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/linux/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/machinelearning/</loc>
-    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tutorial/management/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/maven/</loc>
-    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/monitoring/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/multi-branch/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/multibranch/</loc>
-    <lastmod>2019-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/mysql/</loc>
-    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/neuroscience/</loc>
-    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/newcomer/</loc>
-    <lastmod>2019-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/nexus-oss/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/nginx/</loc>
-    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/ngrok/</loc>
-    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/open-source/</loc>
-    <lastmod>2020-06-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/opensource/</loc>
-    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -1829,341 +2051,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/ops/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/outreach-programs/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/outreachy/</loc>
-    <lastmod>2019-02-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/outreachy2018/</loc>
-    <lastmod>2019-02-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/performance/</loc>
-    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/pipeline/</loc>
-    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/pipeline-authoring/</loc>
-    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/platform-sig/</loc>
-    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/plugin/</loc>
-    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/pluginmanagement/</loc>
-    <lastmod>2019-10-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/plugins/</loc>
-    <lastmod>2020-09-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/programming/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/progressive-delivery/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/react/</loc>
-    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/react-plugins-gsoc-gsoc2019/</loc>
-    <lastmod>2019-11-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/release/</loc>
-    <lastmod>2020-08-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/remote-file/</loc>
-    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/remoting/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/scalability/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/scm/</loc>
-    <lastmod>2020-03-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/screwdriver/</loc>
-    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/security/</loc>
-    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/shared-library/</loc>
-    <lastmod>2019-03-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/shipper/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/sig/</loc>
-    <lastmod>2020-03-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/software-development/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/software-engineering/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/spec/</loc>
-    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/sponsor/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/spring-boot/</loc>
-    <lastmod>2019-05-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/springboot/</loc>
-    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/survey/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/t-mobile/</loc>
-    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/template/</loc>
-    <lastmod>2019-09-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tutorial/get-started/install/tomcat/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/toolchains/</loc>
-    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/tools/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/ui/</loc>
-    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/updatebot/</loc>
-    <lastmod>2019-11-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/updatecenter/</loc>
-    <lastmod>2020-09-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tutorial/use-cases/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/ux/</loc>
-    <lastmod>2020-06-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/vault/</loc>
-    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/vscode/</loc>
-    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/webhook/</loc>
-    <lastmod>2019-12-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/webhooks/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/websocket/</loc>
-    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/weekly/</loc>
-    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/weibo/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/wiki/</loc>
-    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/windows/</loc>
-    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/wordcloud/</loc>
-    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/wordpress/</loc>
-    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/work/</loc>
-    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/zabbix/</loc>
-    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tutorial/notify/</loc>
   </url>
   
   <url>
@@ -2175,7 +2062,43 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/remoting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/scalability/</loc>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tutorial/scm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/sponsor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/survey/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tutorial/get-started/install/tomcat/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/webhooks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/weibo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/</loc>
   </url>
   
   <url>
@@ -2207,18 +2130,7 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/%E5%85%AC%E5%91%8A/</loc>
-    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tutorial/pipeline/shared-library/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/about/</loc>
-    <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -2242,19 +2154,7 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB/</loc>
-    <lastmod>2019-06-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tutorial/management/backup-restore/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E5%A4%96%E6%8C%82%E7%A8%8B%E5%BC%8F-%E5%AE%89%E5%85%A8-%E6%80%A7%E8%83%BD-gsoc-gsoc2019/</loc>
-    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2266,24 +2166,6 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/</loc>
-    <lastmod>2020-02-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E5%AF%BC%E5%B8%88/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2019-07-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tutorial/plugin-dev/pipeline/demo/</loc>
   </url>
   
@@ -2292,35 +2174,11 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/%E5%BF%97%E6%84%BF%E8%80%85/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tutorial/management/auth/lost-password/</loc>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-24-becoming-contributor-newbie-tickets/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E6%8B%9B%E5%8B%9F/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E4%BA%A4%E4%BB%98/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E6%8C%81%E7%BB%AD%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2368,12 +2226,6 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/%E6%B2%BB%E7%90%86/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/event/</loc>
   </url>
   
@@ -2386,25 +2238,7 @@
   </url>
   
   <url>
-    <loc>https://jenkins-zh.cn/tags/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jenkins-zh.cn/tutorial/get-started/install/war/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E7%A4%BE%E5%8C%BA/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E7%B2%BE%E8%8B%B1%E7%BB%A9%E6%95%88/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2413,29 +2247,10 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/management/agent/</loc>
-    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/management/auth/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E8%B4%A1%E7%8C%AE%E6%BF%80%E5%8A%B1/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
-    <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E8%BF%90%E8%90%A5%E8%BD%AC%E5%9E%8B/</loc>
-    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -2456,12 +2271,6 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tutorial/advanced/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jenkins-zh.cn/tags/%E9%BB%91%E5%AE%A2%E6%9D%BE/</loc>
-    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

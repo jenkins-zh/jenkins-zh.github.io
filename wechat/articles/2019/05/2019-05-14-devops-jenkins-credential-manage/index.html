@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="基于 Jenkins 的 DevOps 平台应该如何设计凭证管理" />
 <meta property="og:description" content="一种基于 Jenkins 的 DevOps 平台建设思路" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" /><meta property="article:published_time" content="2019-05-14T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-14T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-14-devops-jenkins-credential-manage/" />
+<meta property="article:published_time" content="2019-05-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-14T00:00:00+00:00" />
 <meta itemprop="name" content="基于 Jenkins 的 DevOps 平台应该如何设计凭证管理">
 <meta itemprop="description" content="一种基于 Jenkins 的 DevOps 平台建设思路">
-
-
 <meta itemprop="datePublished" content="2019-05-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="164">
+<meta itemprop="wordCount" content="160">
 
 
 
-<meta itemprop="keywords" content="jenkins,devops," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,devops," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="基于 Jenkins 的 DevOps 平台应该如何设计凭证管理"/>
 <meta name="twitter:description" content="一种基于 Jenkins 的 DevOps 平台建设思路"/>
 
@@ -234,23 +231,17 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#背景">背景</a></li>
-<li><a href="#期望实现的目标">期望实现的目标</a></li>
-<li><a href="#实现方式">实现方式</a></li>
-<li><a href="#会遇到的坑">会遇到的坑</a>
-<ul>
-<li><a href="#需要适配只认-jenkins-凭证的插件">需要适配只认 Jenkins 凭证的插件</a></li>
-<li><a href="#对凭证本身的加密">对凭证本身的加密</a></li>
-</ul></li>
-<li><a href="#小结">小结</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#背景">背景</a></li>
+        <li><a href="#期望实现的目标">期望实现的目标</a></li>
+        <li><a href="#实现方式">实现方式</a></li>
+        <li><a href="#会遇到的坑">会遇到的坑</a></li>
+        <li><a href="#小结">小结</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 	
 
@@ -311,74 +302,47 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="devops-platform-lock-jenkins.png" alt="" /></p>
-
+<p><img src="devops-platform-lock-jenkins.png" alt=""></p>
 <h3 id="背景">背景</h3>
-
 <p>了解到行业内有些团队是基于 Jenkins 开发 DevOps 平台。而基于 Jenkins 实现的 DevOps 平台，就不得不考虑凭证的管理问题。</p>
-
 <p>本文就此问题进行讨论，尝试找出相对合理的管理凭证的方案。</p>
-
 <p>一开始我们想到的方案可能是这样的：用户在 DevOps 平台增加凭证后，DevOps 再将凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，使用的是存储在 Jenkins 上的凭证，而不是 DevOps 平台上的。</p>
-
-<p>但是，仔细想想，这样做会存在以下问题：
-* Jenkins 与 DevOps 平台之间的凭证数据会存在不一致问题。
-* 存在一定的安全隐患。通过 Jenkins 脚本命令行很容易就把所有密码的明文拿到。哪天 Jenkins 被注入了，所有的凭证一下子就被扒走。
-* 无法实现 Jenkins 高可用，因为凭证存在 Jenkins master 机器上。</p>
-
+<p>但是，仔细想想，这样做会存在以下问题：</p>
+<ul>
+<li>Jenkins 与 DevOps 平台之间的凭证数据会存在不一致问题。</li>
+<li>存在一定的安全隐患。通过 Jenkins 脚本命令行很容易就把所有密码的明文拿到。哪天 Jenkins 被注入了，所有的凭证一下子就被扒走。</li>
+<li>无法实现 Jenkins 高可用，因为凭证存在 Jenkins master 机器上。</li>
+</ul>
 <p>那么，有没有更好的办法呢？</p>
-
 <h3 id="期望实现的目标">期望实现的目标</h3>
-
-<p>先定我们觉得更合理的目标，然后讨论如何实现。以下是笔者觉得合理的目标：
-&gt; 用户还是在 DevOps 管理自己的凭证。但是 DevOps 不需要将自己凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，从 DevOps 上取。</p>
-
+<p>先定我们觉得更合理的目标，然后讨论如何实现。以下是笔者觉得合理的目标：</p>
+<blockquote>
+<p>用户还是在 DevOps 管理自己的凭证。但是 DevOps 不需要将自己凭证同步到 Jenkins 上。Jenkins 任务在使用凭证时，从 DevOps 上取。</p>
+</blockquote>
 <h3 id="实现方式">实现方式</h3>
-
-<p>Jenkins 有一个 <a href="[https://jenkins.io/doc/pipeline/steps/credentials-binding/](https://jenkins.io/doc/pipeline/steps/credentials-binding/)">Credentials Binding Plugin</a> 插件，在 Jenkins pipeline 中的用法如下：</p>
-
-<pre><code class="language-groovy">withCredentials([usernameColonPassword(credentialsId: 'mylogin', variable: 'USERPASS')]) {
-    sh '''
-      curl -u &quot;$USERPASS&quot; https://private.server/ &gt; output
-    '''
-  }
-</code></pre>
-
-<p><code>withCredentials</code> 方法做的事情就是从 Jenkins 的凭证列表中取出 id 为 mylogin 的凭证，并将值赋到变量名为 USERPASS 的变量中。接下来，你就可以在闭包中使用该变量了。</p>
-
+<p>Jenkins 有一个 <a href="%5Bhttps://jenkins.io/doc/pipeline/steps/credentials-binding/%5D(https://jenkins.io/doc/pipeline/steps/credentials-binding/)">Credentials Binding Plugin</a> 插件，在 Jenkins pipeline 中的用法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">withCredentials<span style="color:#f92672">([</span>usernameColonPassword<span style="color:#f92672">(</span>credentialsId: <span style="color:#e6db74">&#39;mylogin&#39;</span><span style="color:#f92672">,</span> variable: <span style="color:#e6db74">&#39;USERPASS&#39;</span><span style="color:#f92672">)])</span> <span style="color:#f92672">{</span>
+    sh <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">      curl -u &#34;$USERPASS&#34; https://private.server/ &gt; output
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+  <span style="color:#f92672">}</span>
+</code></pre></div><p><code>withCredentials</code> 方法做的事情就是从 Jenkins 的凭证列表中取出 id 为 mylogin 的凭证，并将值赋到变量名为 USERPASS 的变量中。接下来，你就可以在闭包中使用该变量了。</p>
 <p>说到这里，不知道读者朋友是否已经有思路了？</p>
-
 <p>思路就是实现一个和 Credentials Binding Plugin 插件类似功能的方法，比如叫 <code>zWithCredentials</code>（后文还会提到）。与 <code>withCredentials</code> 不同的是，<code>zWithCredentials</code> 根据凭证 id 获取凭证时，不是从 Jenkins 上获取，而是从 DevOps 平台获取。</p>
-
 <h3 id="会遇到的坑">会遇到的坑</h3>
-
 <h4 id="需要适配只认-jenkins-凭证的插件">需要适配只认 Jenkins 凭证的插件</h4>
-
 <p><code>withCredentials</code> 方法是将凭证的内容存到变量中，这可以满足一大部分场景。但是有一种场景是无法满足的。就是某些 Jenkins 插件的步骤接收参数时，参数值必须是 Jenkins 凭证管理系统中的 id。比如 git 步骤中 credentialsId 参数：</p>
-
-<pre><code class="language-groovy">git branch: 'master',
-    credentialsId: '12345-1234-4696-af25-123455',
-    url: 'ssh://git@bitbucket.org:company/repo.git'
-</code></pre>
-
-<p>这种情况，我们不可能修改现有的插件。因为那样做的成本太高了。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">git branch: <span style="color:#e6db74">&#39;master&#39;</span><span style="color:#f92672">,</span>
+    credentialsId: <span style="color:#e6db74">&#39;12345-1234-4696-af25-123455&#39;</span><span style="color:#f92672">,</span>
+    url: <span style="color:#e6db74">&#39;ssh://git@bitbucket.org:company/repo.git&#39;</span>
+</code></pre></div><p>这种情况，我们不可能修改现有的插件。因为那样做的成本太高了。</p>
 <p>那怎么办呢？</p>
-
 <p>笔者想到的办法是在 <code>zWithCredentials</code> 中做一些 hack 操作。也就是 <code>zWithCredentials</code> 除了从 DevOps 平台获取凭证，还在 Jenkins 中创建一个 Jenkins 凭证。在 Jenkins 任务执行完成后，再将这个临时凭证删除。这样就可以适配那些只认 Jenkins 凭证 id 的插件了。</p>
-
 <h4 id="对凭证本身的加密">对凭证本身的加密</h4>
-
 <p>DevOps 平台在存储凭证、传输凭证给 Jenkins 时，都需要对凭证进行加密。至于使用何种加密方式，交给读者思考了。</p>
-
 <h3 id="小结">小结</h3>
-
 <p>以上解决方案对 Jenkins 本身的改造几乎没有，我们只通过一个插件就解耦了 Jenkins 的凭证管理和 DevOps 平台的凭证管理。</p>
-
 <p>思路已经有了。具体怎么实现，由于一些原因不能开源，虽然实现起来不算难。还请读者见谅。</p>
-
 <p>最后，希望能和遇到同样问题的同学进行交流。看看是否还可以有更好的设计思路。</p>
 
 </div>
@@ -475,15 +439,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -547,35 +502,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
-              手把手教会你 Jenkins 备份与恢复
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -592,44 +520,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
             </a>
           </li>
         
@@ -646,44 +538,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -720,15 +576,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -937,15 +784,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -957,15 +795,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

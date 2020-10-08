@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -41,30 +41,27 @@
 </style>
 <meta property="og:title" content="全局变量中获取用户信息" />
 <meta property="og:description" content="Jenkins 的流水线可以是自动触发，也可以有某个用户手动触发。如果我们希望能够或者触发某条流水线的用户信息时，可以参考下面给出的例子：
-pipeline { agent any stages { stage(&#39;clone&#39;) { steps { script { echo currentBuild.getBuildCauses().toString() } } } } }  参考的输出内容如下：
-[{&quot;_class&quot;:&quot;hudson.model.Cause$UserIdCause&quot;,&quot;shortDescription&quot;:&quot;Started by user escape-hatch-admin&quot;,&quot;userId&quot;:&quot;escape-hatch-admin&quot;,&quot;userName&quot;:&quot;escape-hatch-admin&quot;}]  如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 _class 为 hudson.model.Cause$UserIdCause 的元素，就能拿到用户名和用户ID了。
+pipeline { agent any stages { stage(&#39;clone&#39;) { steps { script { echo currentBuild.getBuildCauses().toString() } } } } } 参考的输出内容如下：
+[{&quot;_class&quot;:&quot;hudson.model.Cause$UserIdCause&quot;,&quot;shortDescription&quot;:&quot;Started by user escape-hatch-admin&quot;,&quot;userId&quot;:&quot;escape-hatch-admin&quot;,&quot;userName&quot;:&quot;escape-hatch-admin&quot;}] 如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 _class 为 hudson.model.Cause$UserIdCause 的元素，就能拿到用户名和用户ID了。
 原理 Jenkins 流水线（包括其他类型的任务）在触发时，会将被触发的原因记录到 Cause 中，而且，这个 Cause 可能会有多个。如果我们想要记录更多个性化的触发原因的话，可以使用 Jenkins 提供的扩展点。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jenkins-zh.cn/tutorial/get-started/global-variable/user/" />
 
 <meta itemprop="name" content="全局变量中获取用户信息">
 <meta itemprop="description" content="Jenkins 的流水线可以是自动触发，也可以有某个用户手动触发。如果我们希望能够或者触发某条流水线的用户信息时，可以参考下面给出的例子：
-pipeline { agent any stages { stage(&#39;clone&#39;) { steps { script { echo currentBuild.getBuildCauses().toString() } } } } }  参考的输出内容如下：
-[{&quot;_class&quot;:&quot;hudson.model.Cause$UserIdCause&quot;,&quot;shortDescription&quot;:&quot;Started by user escape-hatch-admin&quot;,&quot;userId&quot;:&quot;escape-hatch-admin&quot;,&quot;userName&quot;:&quot;escape-hatch-admin&quot;}]  如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 _class 为 hudson.model.Cause$UserIdCause 的元素，就能拿到用户名和用户ID了。
+pipeline { agent any stages { stage(&#39;clone&#39;) { steps { script { echo currentBuild.getBuildCauses().toString() } } } } } 参考的输出内容如下：
+[{&quot;_class&quot;:&quot;hudson.model.Cause$UserIdCause&quot;,&quot;shortDescription&quot;:&quot;Started by user escape-hatch-admin&quot;,&quot;userId&quot;:&quot;escape-hatch-admin&quot;,&quot;userName&quot;:&quot;escape-hatch-admin&quot;}] 如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 _class 为 hudson.model.Cause$UserIdCause 的元素，就能拿到用户名和用户ID了。
 原理 Jenkins 流水线（包括其他类型的任务）在触发时，会将被触发的原因记录到 Cause 中，而且，这个 Cause 可能会有多个。如果我们想要记录更多个性化的触发原因的话，可以使用 Jenkins 提供的扩展点。">
-
-
 
 <meta itemprop="wordCount" content="40">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="全局变量中获取用户信息"/>
 <meta name="twitter:description" content="Jenkins 的流水线可以是自动触发，也可以有某个用户手动触发。如果我们希望能够或者触发某条流水线的用户信息时，可以参考下面给出的例子：
-pipeline { agent any stages { stage(&#39;clone&#39;) { steps { script { echo currentBuild.getBuildCauses().toString() } } } } }  参考的输出内容如下：
-[{&quot;_class&quot;:&quot;hudson.model.Cause$UserIdCause&quot;,&quot;shortDescription&quot;:&quot;Started by user escape-hatch-admin&quot;,&quot;userId&quot;:&quot;escape-hatch-admin&quot;,&quot;userName&quot;:&quot;escape-hatch-admin&quot;}]  如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 _class 为 hudson.model.Cause$UserIdCause 的元素，就能拿到用户名和用户ID了。
+pipeline { agent any stages { stage(&#39;clone&#39;) { steps { script { echo currentBuild.getBuildCauses().toString() } } } } } 参考的输出内容如下：
+[{&quot;_class&quot;:&quot;hudson.model.Cause$UserIdCause&quot;,&quot;shortDescription&quot;:&quot;Started by user escape-hatch-admin&quot;,&quot;userId&quot;:&quot;escape-hatch-admin&quot;,&quot;userName&quot;:&quot;escape-hatch-admin&quot;}] 如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 _class 为 hudson.model.Cause$UserIdCause 的元素，就能拿到用户名和用户ID了。
 原理 Jenkins 流水线（包括其他类型的任务）在触发时，会将被触发的原因记录到 Cause 中，而且，这个 Cause 可能会有多个。如果我们想要记录更多个性化的触发原因的话，可以使用 Jenkins 提供的扩展点。"/>
 
   
@@ -209,10 +206,7 @@ var trackOutboundLink = function(id, url) {
             <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-80">
                 <div class="prose">
                     <h1>全局变量中获取用户信息</h1>
-                    
-
-<p>Jenkins 的流水线可以是自动触发，也可以有某个用户手动触发。如果我们希望能够或者触发某条流水线的用户信息时，可以参考下面给出的例子：</p>
-
+                    <p>Jenkins 的流水线可以是自动触发，也可以有某个用户手动触发。如果我们希望能够或者触发某条流水线的用户信息时，可以参考下面给出的例子：</p>
 <pre><code>pipeline {
     agent any
 
@@ -226,17 +220,10 @@ var trackOutboundLink = function(id, url) {
         }
     }
 }
-</code></pre>
-
-<p>参考的输出内容如下：</p>
-
+</code></pre><p>参考的输出内容如下：</p>
 <pre><code>[{&quot;_class&quot;:&quot;hudson.model.Cause$UserIdCause&quot;,&quot;shortDescription&quot;:&quot;Started by user escape-hatch-admin&quot;,&quot;userId&quot;:&quot;escape-hatch-admin&quot;,&quot;userName&quot;:&quot;escape-hatch-admin&quot;}]
-</code></pre>
-
-<p>如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 <code>_class</code> 为 <code>hudson.model.Cause$UserIdCause</code> 的元素，就能拿到用户名和用户ID了。</p>
-
+</code></pre><p>如果只想通过上面给的例子拿到用户信息的话，读者只需要遍历上面的数组，找到 <code>_class</code> 为 <code>hudson.model.Cause$UserIdCause</code> 的元素，就能拿到用户名和用户ID了。</p>
 <h2 id="原理">原理</h2>
-
 <p>Jenkins 流水线（包括其他类型的任务）在触发时，会将被触发的原因记录到 <code>Cause</code> 中，而且，这个 <code>Cause</code> 可能会有多个。如果我们想要记录更多个性化的触发原因的话，可以使用 Jenkins 提供的扩展点。</p>
 
                 </div>

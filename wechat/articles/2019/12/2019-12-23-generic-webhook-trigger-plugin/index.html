@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="Webhook 通用触发插件" />
 <meta property="og:description" content="介绍通用 Webhook 触发插件，使用 Webhook 插件构建 Jenkins 自动化服务" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" /><meta property="article:published_time" content="2019-12-23T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-12-23T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" />
+<meta property="article:published_time" content="2019-12-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-23T00:00:00+00:00" />
 <meta itemprop="name" content="Webhook 通用触发插件">
 <meta itemprop="description" content="介绍通用 Webhook 触发插件，使用 Webhook 插件构建 Jenkins 自动化服务">
-
-
 <meta itemprop="datePublished" content="2019-12-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-12-23T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="194">
 
 
 
-<meta itemprop="keywords" content="Jenkins,Webhook," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Jenkins,Webhook," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Webhook 通用触发插件"/>
 <meta name="twitter:description" content="介绍通用 Webhook 触发插件，使用 Webhook 插件构建 Jenkins 自动化服务"/>
 
@@ -298,80 +295,59 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="cover.png" alt="cover" /></p>
-
+<p><img src="cover.png" alt="cover"></p>
 <p>这篇文章将介绍我在 Jenkins 上遇到的一些常见问题，以及如何通过开发<a href="https://plugins.jenkins.io/generic-webhook-trigger">通用 Webhook 触发插件</a>来解决这些问题。</p>
-
 <h2 id="问题">问题</h2>
-
 <p>在使用 Jenkins 工作时，我经常遇到同样的问题：</p>
-
 <ul>
 <li><strong>代码重复和安全性</strong>-每个仓库中的 <code>Jenkinsfiles</code>。</li>
 <li><strong>分支不是功能</strong>-<code>master</code> 上的参数化任务通常会混合与不同功能相关的参数。</li>
 <li><strong>记录不良的触发器插件</strong>-记录正常服务但记录不佳的使用插件</li>
 </ul>
-
 <h2 id="代码重复和安全性">代码重复和安全性</h2>
-
 <p>每个 Git 仓库中都有 Jenkinsfiles，使开发人员可以使这些文件分开。开发人员 push 他们的项目，并且很难维护共享代码的模式。</p>
-
 <p>我几乎用共享库解决了代码重复问题，但是它不允许我设置必须遵循的严格模式。任何开发人员仍然可以决定不调用<a href="https://jenkins.io/doc/book/pipeline/shared-libraries/">共享库</a>提供的功能。</p>
-
 <p>还允许开发人员运行 Jenkinsfiles 中的任何代码的安全性方面。例如，开发人员可能会打印从凭据收集的密码。让开发人员在 Jenkins 节点上执行任何代码对我来说似乎不合适。</p>
-
 <h2 id="分支不是功能">分支不是功能</h2>
-
 <p>在 Bitbucket 中有项目，每个项目都有 git 仓库的集合。像这样：</p>
-
 <ul>
 <li><code>PROJ_1</code>
-
 <ul>
 <li><code>REPO_1</code></li>
 <li><code>REPO_2</code></li>
-</ul></li>
+</ul>
+</li>
 <li><code>PROJ_2</code>
-
 <ul>
 <li><code>REPO_3</code></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>让我们考虑一下我们要为这些仓库提供的一些功能：</p>
-
 <ul>
 <li>pull request 验证</li>
 <li>构建快照（如果需要的话，也可以预发布）</li>
 <li>构建发布</li>
 </ul>
-
 <p>如果开发人员习惯于在 Bitbucket 中像这样组织仓库，我们是否应该在 Jenkins 中以同样的方式组织它们？而且，如果他们浏览 Jenkins，是否不应该为每种功能（例如 <code>pull-request</code>，<code>snapshot</code> 和 <code>release</code>）找到一份构建任务？每个具有仅与该功能相关的参数的任务。我认同！像这样：</p>
-
 <ul>
 <li><code>/</code> - Jenkins root
-
 <ul>
 <li><code>/PROJ_1</code> - 一个文件夹，列出 git 仓库。
-
 <ul>
 <li><code>/PROJ_1/REPO_1</code> - 一个文件夹，列出与该仓库相关的任务。</li>
 <li><code>/PROJ_1/REPO_1/release</code> - 一份构建任务，执行发布。</li>
 <li><code>/PROJ_1/REPO_1/snapshot</code> - 一份构建任务，执行快照发布。</li>
 <li><code>/PROJ_1/REPO_1/pull-request</code> - 一份构建任务，验证 pull-request。</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><code>…​</code></li>
 </ul>
-
 <p>在此示例中，<code>snapshot</code> 和 <code>release</code> 任务都可以在同一 git 分支上工作。不同之处在于它们提供的功能。它们的参数可以很好地记录下来，因为您不必混合与发行版和快照相关的参数。使用<a href="https://plugins.jenkins.io/workflow-multibranch">多分支流水线插件</a>无法做到这一点，在多分支流水线插件中，您将参数指定为每个分支的 <code>properties</code>。</p>
-
 <h2 id="文献资料">文献资料</h2>
-
 <p>Webhooks 通常在提供它们的服务中有据可查。例如：</p>
-
 <ul>
 <li><a href="https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html">Bitbucket Cloud</a></li>
 <li><a href="https://confluence.atlassian.com/bitbucketserver/managing-webhooks-in-bitbucket-server-938025878.html">Bitbucket Server</a></li>
@@ -381,56 +357,40 @@ var trackOutboundLink = function(id, url) {
 <li><a href="https://blog.assembla.com/assemblablog/tabid/12618/bid/107614/assembla-bigplans-integration-how-to.aspx">Assembla</a></li>
 <li><a href="https://developer.atlassian.com/server/jira/platform/webhooks/">Jira</a></li>
 </ul>
-
 <p>令我困扰的是，即使我理解了这些 webhooks，我也无法使用它们。因为我需要在所使用的插件中进行开发，以便提供从 Webhook 到构建的任何值。从 PR 到实际发布，该过程可能需要几个月的时间。这样简单的事情实际上应该不是问题。</p>
-
 <h2 id="解决方案">解决方案</h2>
-
 <p>我的解决方案几乎可以追溯到基本知识：我们有一个自动化服务（Jenkins），我们想在外部 Webhooks 上触发它。我们想从该 Webhook 收集信息并将其提供给我们的构建。为了支持它，我创建了<a href="https://plugins.jenkins.io/generic-webhook-trigger">通用 Webhook 触发器插件</a>。</p>
-
 <p><a href="https://github.com/jenkinsci/generic-webhook-trigger-plugin/">仓库</a>中提供了最新文档，并且有一个完整的示例，其中使用 <code>configuration-as-code</code> 实现了 GitLab。在<a href="https://github.com/tomasbjerre/jenkins-configuration-as-code-sandbox">这里</a>查看仓库。</p>
-
 <h2 id="代码重复和安全性-1">代码重复和安全性</h2>
-
 <p>我制定了所有开发人员都必须遵循的约定。而不是让开发人员从 Jenkinsfiles 显式调用基础结构。遵循一些规则，例如：</p>
-
 <ul>
 <li>所有的 git 仓库都应该从仓库的根开始构建。</li>
 <li>如果包含 <code>gradlew</code>
-
 <ul>
 <li>使用 <code>./gradlew build</code> 完成构建</li>
 <li>使用 <code>./gradlew release</code> 完成发布</li>
 <li>&hellip;&hellip;等等</li>
-</ul></li>
+</ul>
+</li>
 <li>如果包含 <code>package.json</code>
-
 <ul>
 <li>使用 <code>npm run build</code> 完成构建</li>
 <li>使用 <code>npm run release</code> 完成发布</li>
 <li>&hellip;&hellip;等等</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>有了这些规则，流水线就可以完全通用，并且在仓库中不需要 Jenkinsfiles。由于某些原因，某些 git 仓库可能需要禁用测试用例。这可以通过允许仓库添加一个特殊文件，也就是 <code>jenkins-settings.json</code> 来解决，让基础架构发现其<a href="https://github.com/tomasbjerre/jenkins-configuration-as-code-sandbox/blob/master/vars/buildRepo.groovy#L52">内容并对其采取行动</a>。</p>
-
 <p>即使没有执行 CI，这也可以帮助开发人员。当他们克隆一个新的，未知的仓库时，他们将知道可以发出哪些命令及其语义。</p>
-
 <h2 id="分支不是功能-1">分支不是功能</h2>
-
 <p>我实现：</p>
-
 <ul>
 <li>Jenkins 任务配置-使用<a href="https://github.com/jenkinsci/job-dsl-plugin/wiki">任务 DSL</a>。</li>
 <li>Jenkins 的构建过程-使用 <a href="https://jenkins.io/blog/2019/12/14/generic-webhook-trigger-plugin/doc/book/pipeline/">Pipelines</a> 和<a href="https://jenkins.io/doc/book/pipeline/shared-libraries/">共享库</a>。</li>
 </ul>
-
 <p>通过与 <a href="https://github.com/jenkinsci/job-dsl-plugin/wiki">Job DSL</a> 中的 git 服务集成，我可以自动找到 git 仓库。我创建动态组织在文件夹中的任务。还调用 git 服务来设置触发这些任务的 webhooks。任务是普通的流水线，不是多分支，它们不使用 Git 中的 Jenkinsfile，而是使用 <a href="https://github.com/jenkinsci/job-dsl-plugin/wiki">Job DSL</a> 在任务中配置的 Jenksinfile。因此，所有任务配置和流水线均受版本控制。这一切都在<a href="https://github.com/tomasbjerre/jenkins-configuration-as-code-sandbox/blob/master/jobs/applicationRepo.groovy">这里</a>发生。</p>
-
 <h2 id="文献资料-1">文献资料</h2>
-
 <p>该插件使用 <code>JSONPath</code> 以及 <code>XPath</code> 从 JSON 提取值并将其提供给构建。让用户从 webhook 中选择所需的内容。它还具有一个正则表达式过滤器，以允许在某些情况下不触发。</p>
-
 <p>该插件不是很大，只是 webhook、<code>JSONPath/XPath</code> 和正则表达式之间的粘合剂。所有这些部分都已被很好地记录下来，我会尽力维护该插件。这是一个非常有据可查的解决方案！</p>
 
 </div>
@@ -512,6 +472,139 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
+              手把手教会你 Jenkins 备份与恢复
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
+              如何使用 Jenkins 声明式流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
+              以代码的形式构建 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
+              T-Mobile 和 Jenkins 案例研究
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
+              2019 年 Google 编程之夏活动报告
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
+              WebSocket
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
+              欢迎使用流水线指令-矩阵
+            </a>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
+              Jenkins 健康检查顾问
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
+              在大型企业里维护多分支流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
+              使用Active-Choices-Plugin插件将十个Job合成一个
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
+              Electron 应用的流水线设计
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
+              批量修改 Jenkins 任务的技巧
+            </a>
+          </li>
+        
       
     </ul>
   </div>

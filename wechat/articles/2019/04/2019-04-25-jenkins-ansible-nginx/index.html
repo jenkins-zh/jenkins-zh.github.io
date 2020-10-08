@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx" />
 <meta property="og:description" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" /><meta property="article:published_time" content="2019-04-25T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-25T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-25-jenkins-ansible-nginx/" />
+<meta property="article:published_time" content="2019-04-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-25T00:00:00+00:00" />
 <meta itemprop="name" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx">
 <meta itemprop="description" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx">
-
-
 <meta itemprop="datePublished" content="2019-04-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="451">
+<meta itemprop="wordCount" content="440">
 
 
 
-<meta itemprop="keywords" content="jenkins,ansible,nginx," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins,ansible,nginx," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx"/>
 <meta name="twitter:description" content="使用 Jenkins &#43; Ansible 实现自动化部署 Nginx"/>
 
@@ -234,23 +231,21 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-实验环境介绍">1. 实验环境介绍</a></li>
-<li><a href="#2-启动实验环境">2. 启动实验环境</a></li>
-<li><a href="#3-在-jenkins-上创建部署任务">3. 在 Jenkins 上创建部署任务</a></li>
-<li><a href="#4-手工触发一次自动化构建">4. 手工触发一次自动化构建</a></li>
-<li><a href="#5-代码讲解">5. 代码讲解</a>
-<ul>
-<li><a href="#5-1流水线逻辑">5.1流水线逻辑</a></li>
-<li><a href="#5-2-部署逻辑">5.2 部署逻辑</a></li>
-<li><a href="#5-3-配置管理">5.3 配置管理</a></li>
-<li><a href="#总结">总结</a></li>
-<li><a href="#附录">附录</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1-实验环境介绍">1. 实验环境介绍</a></li>
+    <li><a href="#2-启动实验环境">2. 启动实验环境</a></li>
+    <li><a href="#3-在-jenkins-上创建部署任务">3. 在 Jenkins 上创建部署任务</a></li>
+    <li><a href="#4-手工触发一次自动化构建">4. 手工触发一次自动化构建</a></li>
+    <li><a href="#5-代码讲解">5. 代码讲解</a>
+      <ul>
+        <li><a href="#51流水线逻辑">5.1流水线逻辑</a></li>
+        <li><a href="#52-部署逻辑">5.2 部署逻辑</a></li>
+        <li><a href="#53-配置管理">5.3 配置管理</a></li>
+        <li><a href="#总结">总结</a></li>
+        <li><a href="#附录">附录</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 	
 
@@ -311,189 +306,153 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p>本文介绍如何使用 Jenkins + Ansible 实现对 Nginx 的自动化部署。最终达到的效果有如下几点：
-1. 只要你将 Nginx 的配置推送到 GitHub 中，Jenkins 就会自动执行部署，然后目标服务器的 Nginx 配置自动生效。这个过程是幂等（idempotent）的，只要代码不变，执行多少遍，最终效果不变。
-2. 如果目标机器没有安装 Nginx，则会自动安装 Nginx。
-3. 自动设置服务器防火墙规则。</p>
-
+<p>本文介绍如何使用 Jenkins + Ansible 实现对 Nginx 的自动化部署。最终达到的效果有如下几点：</p>
+<ol>
+<li>只要你将 Nginx 的配置推送到 GitHub 中，Jenkins 就会自动执行部署，然后目标服务器的 Nginx 配置自动生效。这个过程是幂等（idempotent）的，只要代码不变，执行多少遍，最终效果不变。</li>
+<li>如果目标机器没有安装 Nginx，则会自动安装 Nginx。</li>
+<li>自动设置服务器防火墙规则。</li>
+</ol>
 <h2 id="1-实验环境介绍">1. 实验环境介绍</h2>
-
 <p>本次实验使用 Docker Compose 搭建 Jenkins 及 Jenkins agent。使用 Vagrant 启动一台虚拟机，用于部署 Nginx。使用 Vagrant 是可选的，读者可以使用 VirtualBox 启动一个虚拟机。使用 Vagrant 完全是为了自动化搭建实验环境。</p>
-
 <p>以下是整个实验环境的架构图：
-<img src="pc1.png" alt="Jenkins Ansible Nginx" /></p>
-
+<img src="pc1.png" alt="Jenkins Ansible Nginx"></p>
 <p>注意，图中的 <code>5123 &lt;-&gt; 80</code> 代表将宿主机的 5123 端口请求转发到虚拟机中的 80 端口。</p>
-
 <ul>
 <li><a href="https://vagrantup.com">Vagrant</a>：虚拟机管理工具，通过它，我们可以使用文本来定义、管理虚拟机。</li>
 <li><a href="https://www.ansible.com/">Ansible</a>：自动化运维工具</li>
 <li><a href="https://docs.docker.com/compose/">Docker Compose</a>：它是一个用于定义和运行多容器 Docker 应用程序的工具。可以使用 YAML 文件来配置应用程序的服务。</li>
 </ul>
-
 <h2 id="2-启动实验环境">2. 启动实验环境</h2>
-
 <ol>
-<li>克隆代码并进入文件夹
-<code>bash
-git clone https://github.com/zacker330/jenkins-ansible-nginx.git
+<li>
+<p>克隆代码并进入文件夹</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/zacker330/jenkins-ansible-nginx.git
 cd jenkins-ansible-nginx
-</code></li>
-<li>构建 Jenkins agent 的镜像
- 需要自定义 Jenkins agent 镜像有两个原因：
-
+</code></pre></div></li>
+<li>
+<p>构建 Jenkins agent 的镜像
+需要自定义 Jenkins agent 镜像有两个原因：</p>
 <ol>
 <li>本次实验，使用 Swarm 插件实现 Jenkins master  与 agent 之间的通信，所以 Jenkins agent 需要启动 swarm 客户端。</li>
-<li>Jenkins agent 必须支持 Ansible。
-<code>bash
-docker build -f JenkinsSlaveAnsibleDockerfile -t jenkins-swarm-ansible .
-</code></li>
-</ol></li>
-<li>启动 Jenkins master 及 Jenkins agent
-<code>bash
-docker-compose up -d
-</code>
-通过 <code>http://localhost:8080</code> 访问 Jenkins master，如果出现“解锁密码”页面，如下图，则执行命令 <code>docker-compose logs jenkins</code> 查看 Jenkins master 启动日志。将日志中的解锁密码输入到表单中。然后就一步步按提示安装即可。
-<img src="pc2.png" alt="解锁Jenkins" /></li>
-<li>安装 Jenkins 插件
-本次实验需要安装以下插件：
-
+<li>Jenkins agent 必须支持 Ansible。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -f JenkinsSlaveAnsibleDockerfile -t jenkins-swarm-ansible .
+</code></pre></div></li>
+<li>
+<p>启动 Jenkins master 及 Jenkins agent</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d
+</code></pre></div><p>通过 <code>http://localhost:8080</code> 访问 Jenkins master，如果出现“解锁密码”页面，如下图，则执行命令 <code>docker-compose logs jenkins</code> 查看 Jenkins master 启动日志。将日志中的解锁密码输入到表单中。然后就一步步按提示安装即可。
+<img src="pc2.png" alt="解锁Jenkins"></p>
+</li>
+<li>
+<p>安装 Jenkins 插件
+本次实验需要安装以下插件：</p>
 <ul>
 <li>Pipeline 2.6：<a href="https://plugins.jenkins.io/workflow-aggregator">https://plugins.jenkins.io/workflow-aggregator</a></li>
 <li>Swarm 3.15：<a href="https://plugins.jenkins.io/swarm">https://plugins.jenkins.io/swarm</a>
 用于 实现 Jenkins master 与 Jenkins agent 自动连接</li>
 <li>Git 3.9.3：<a href="https://plugins.jenkins.io/git">https://plugins.jenkins.io/git</a></li>
-</ul></li>
-
-<li><p>配置 Jenkins master 不执行任务
+</ul>
+</li>
+<li>
+<p>配置 Jenkins master 不执行任务
 进入页面：<a href="http://localhost:8080/computer/(master)/configure">http://localhost:8080/computer/(master)/configure</a>，如下图所示设置：
-<img src="pc9.png" alt="image.png" /></p></li>
-
-<li><p>确认 Jenkins 安全配置有打开端口，以供 Jenkins agent 连接。
+<img src="pc9.png" alt="image.png"></p>
+</li>
+<li>
+<p>确认 Jenkins 安全配置有打开端口，以供 Jenkins agent 连接。
 我们设置 Jenkins master 开放的端口，端口可以是固定的 50000 ，也可以设置为随机。设置链接：<a href="http://localhost:8080/configureSecurity/">http://localhost:8080/configureSecurity/</a>。
-<img src="pc3.png" alt="image.png" /></p></li>
-
-<li><p>启动目标机器，用于部署 Nginx
+<img src="pc3.png" alt="image.png"></p>
+</li>
+<li>
+<p>启动目标机器，用于部署 Nginx
 在命令行中执行以下命令：</p>
-
-<pre><code class="language-bash">vagrant up 
-</code></pre>
-
-<p>注意，Vagrantfile 文件中的 <code>config.vm.box</code> 值必须改成你的 vagrant box 。</p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vagrant up 
+</code></pre></div><p>注意，Vagrantfile 文件中的 <code>config.vm.box</code> 值必须改成你的 vagrant box 。</p>
+</li>
 </ol>
-
 <p>至此，实验环境已经搭建好了。接下来就可以新建 Jenkins 任务了。</p>
-
 <h2 id="3-在-jenkins-上创建部署任务">3. 在 Jenkins 上创建部署任务</h2>
-
 <ol>
 <li>新建流水线任务
-<img src="pc4.png" alt="新建流水线任务" /></li>
-
-<li><p>配置流水线
+<img src="pc4.png" alt="新建流水线任务"></li>
+<li>配置流水线
 配置 Jenkins 任务从远程仓库拉取 Jenkinsfile，如下图所示：
-<img src="pc5.png" alt="配置流水线" />
-除此之外，不需要其它配置了，是不是很简单？</p>
-
-<h2 id="4-手工触发一次自动化构建">4. 手工触发一次自动化构建</h2>
-
-<p>点击“立即构建”：
-<img src="pc6.png" alt="image.png" />
-最终执行日志如下：
-<img src="pc7.png" alt="部署日志" /></p></li>
+<img src="pc5.png" alt="配置流水线">
+除此之外，不需要其它配置了，是不是很简单？</li>
 </ol>
-
+<h2 id="4-手工触发一次自动化构建">4. 手工触发一次自动化构建</h2>
+<p>点击“立即构建”：
+<img src="pc6.png" alt="image.png">
+最终执行日志如下：
+<img src="pc7.png" alt="部署日志"></p>
 <p>至此，部署已经完成。以后修改 Nginx 的配置，只需要修改代码，然后推送到远程仓库，就会自动化部署。不需要手工登录到目标机器手工修改了。</p>
-
 <p>最后，我们可以通过访问 <code>http://localhost:5123</code>，如果出现如下页面说明部署成功：</p>
-
-<p><img src="pc8.png" alt="部署成功" /></p>
-
+<p><img src="pc8.png" alt="部署成功"></p>
 <h2 id="5-代码讲解">5. 代码讲解</h2>
-
 <p>以上步骤并不能看出自动化部署真正做了什么。那是因为我们所有的逻辑都写在代码中。是的，可以说是 <strong>everything is code</strong>。</p>
-
 <p>接下来我们介绍代码仓库。</p>
-
-<pre><code class="language-bash">% tree -L 2
-├── JenkinsSlaveAnsibleDockerfile # Jenkins agent 镜像 Dockerfile
-├── Jenkinsfile  # 流水线逻辑
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% tree -L <span style="color:#ae81ff">2</span>
+├── JenkinsSlaveAnsibleDockerfile <span style="color:#75715e"># Jenkins agent 镜像 Dockerfile</span>
+├── Jenkinsfile  <span style="color:#75715e"># 流水线逻辑</span>
 ├── README.md
-├── Vagrantfile # Vagrant 虚拟机定义文件
-├── docker-compose.yml # Jenkins 实现环境
-├── env-conf # 所有应用配置
-│   └── dev   # dev 环境的配置
-├── deploy  # Ansible 部署脚本所在文件夹
+├── Vagrantfile <span style="color:#75715e"># Vagrant 虚拟机定义文件</span>
+├── docker-compose.yml <span style="color:#75715e"># Jenkins 实现环境</span>
+├── env-conf <span style="color:#75715e"># 所有应用配置</span>
+│   └── dev   <span style="color:#75715e"># dev 环境的配置</span>
+├── deploy  <span style="color:#75715e"># Ansible 部署脚本所在文件夹</span>
 │   ├── playbook.yaml
 │   └── roles
-└── swarm-client.sh # Jenkins swarm 插件的客户端
-</code></pre>
-
-<h3 id="5-1流水线逻辑">5.1流水线逻辑</h3>
-
+└── swarm-client.sh <span style="color:#75715e"># Jenkins swarm 插件的客户端</span>
+</code></pre></div><h3 id="51流水线逻辑">5.1流水线逻辑</h3>
 <p>Jenkinsfile 文件用于描述整条流水线的逻辑。代码如下：</p>
-
-<pre><code class="language-groovy">pipeline{
-  // 任务执行在具有 ansible 标签的 agent 上
-  agent { label &quot;ansible&quot;}
-  environment{
-     // 设置 Ansible 不检查 HOST_KEY 
-    ANSIBLE_HOST_KEY_CHECKING = false
-  }
-  triggers {
-     pollSCM('H/1 * * * *')
-  }
-  stages{
-    stage(&quot;deploy nginx&quot;){
-      steps{
-        sh &quot;ansible-playbook -i env-conf/dev  deploy/playbook.yaml&quot;
-      }
-}}}
-</code></pre>
-
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">pipeline<span style="color:#f92672">{</span>
+  <span style="color:#75715e">// 任务执行在具有 ansible 标签的 agent 上
+</span><span style="color:#75715e"></span>  agent <span style="color:#f92672">{</span> label <span style="color:#e6db74">&#34;ansible&#34;</span><span style="color:#f92672">}</span>
+  environment<span style="color:#f92672">{</span>
+     <span style="color:#75715e">// 设置 Ansible 不检查 HOST_KEY 
+</span><span style="color:#75715e"></span>    ANSIBLE_HOST_KEY_CHECKING <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">}</span>
+  triggers <span style="color:#f92672">{</span>
+     pollSCM<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;H/1 * * * *&#39;</span><span style="color:#f92672">)</span>
+  <span style="color:#f92672">}</span>
+  stages<span style="color:#f92672">{</span>
+    stage<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;deploy nginx&#34;</span><span style="color:#f92672">){</span>
+      steps<span style="color:#f92672">{</span>
+        sh <span style="color:#e6db74">&#34;ansible-playbook -i env-conf/dev  deploy/playbook.yaml&#34;</span>
+      <span style="color:#f92672">}</span>
+<span style="color:#f92672">}}}</span>
+</code></pre></div><ul>
 <li><code>environment</code> 部分：用于定义流水线执行过程中的环境变量。</li>
 <li><code>triggers</code> 部分：用于定义流水线的触发机制。<code>pollSCM</code> 定义了每分钟判断一次代码是否有变化，如果有变化则自动执行流水线。</li>
 <li><code>agent</code> 部分：用于定义整条流水线的执行环境。</li>
 <li><code>stages</code> 部分：流水线的所有阶段，都被定义在这部分。</li>
 </ul>
-
 <p>以上只是定义流水线是如何执行的，目前整条流水线只有一个 <code>deploy nginx</code> 阶段，并且只执行了一条 <code>ansible-playbook</code> 命令。但是它并没有告诉我们部署逻辑是怎么样的。</p>
-
-<h3 id="5-2-部署逻辑">5.2 部署逻辑</h3>
-
+<h3 id="52-部署逻辑">5.2 部署逻辑</h3>
 <p>所有的部署逻辑，包括 Nginx 的安装启动、配置的更新以及加载，都放在 Ansible 脚本中。对 Ansible 不熟的同学，可以在本文末尾找到介绍 Ansible 的文章。</p>
-
 <p>整个部署逻辑的入口在 <code>deploy/playbook.yaml</code>，代码如下：</p>
-
-<pre><code class="language-yaml">---
-- hosts: &quot;nginx&quot;
-  become: true
-  roles:
-    # Nginx 的部署
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+- <span style="color:#66d9ef">hosts</span>: <span style="color:#e6db74">&#34;nginx&#34;</span>
+  <span style="color:#66d9ef">become</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#66d9ef">roles</span>:
+    <span style="color:#75715e"># Nginx 的部署</span>
     - ansible-role-nginx
-    # 对防火墙的设置
+    <span style="color:#75715e"># 对防火墙的设置</span>
     - ansible-role-firewall
-</code></pre>
-
-<ul>
+</code></pre></div><ul>
 <li><code>hosts</code>：定义了 playbook 部署的目标主机分组名为 <code>nginx</code>。</li>
 <li><code>roles</code>：包含了两个执行具体部署动作的 role，至于 role 内部逻辑，不在本文讨论范围，有兴趣的同学阅读源码。</li>
 </ul>
-
-<h3 id="5-3-配置管理">5.3 配置管理</h3>
-
+<h3 id="53-配置管理">5.3 配置管理</h3>
 <p>谈到部署，就不得不谈配置管理。</p>
-
-<p>回顾前文中流水线中执行的 shell 命令：<code>ansible-playbook -i env-conf/dev  deploy/playbook.yaml</code> 我们通过 <code>-i</code> 参数指定部署时所使用的环境配置。通过这种方式实现环境配置与执行脚本的分离。这样带来以下几个好处：
-1. 新增环境时，只需要复制现有的环境，然后将里面的变量的值改成新环境的即可。比如，要对测试环境进行部署，只需要将 <code>-i</code> 参数值改成：<code>env-conf/test</code>。
-2. 对配置版本化控制。</p>
-
+<p>回顾前文中流水线中执行的 shell 命令：<code>ansible-playbook -i env-conf/dev  deploy/playbook.yaml</code> 我们通过 <code>-i</code> 参数指定部署时所使用的环境配置。通过这种方式实现环境配置与执行脚本的分离。这样带来以下几个好处：</p>
+<ol>
+<li>新增环境时，只需要复制现有的环境，然后将里面的变量的值改成新环境的即可。比如，要对测试环境进行部署，只需要将 <code>-i</code> 参数值改成：<code>env-conf/test</code>。</li>
+<li>对配置版本化控制。</li>
+</ol>
 <p>本次实验中，各个环境的配置放在 <code>env-conf</code> 目录中，目前只有 dev 环境，以下是 <code>env-conf/</code> 目录结构：</p>
-
-<pre><code class="language-bash">% cd env-conf/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% cd env-conf/
 % tree
 └── dev
     ├── group_vars
@@ -501,33 +460,25 @@ docker-compose up -d
     ├── host_vars
     │   └── 192.168.52.10
     └── hosts
-</code></pre>
-
-<ul>
+</code></pre></div><ul>
 <li>hosts文件：Ansible 中通过“分组”来实现对主机的管理。hosts 文件内容如下：
-<code>
-[nginx]
+<pre><code>[nginx]
 192.168.52.10
-</code></li>
+</code></pre></li>
 <li>host_vars 目录：用于存放主机级别的配置变量，本例中 <code>192.168.52.10</code> 是一个 YAML 格式文件。注意文件名是该主机的 IP。我们在文件中放主机相关的配置，比如 Ansible 连接主机时使用到的用户名和密码。</li>
 <li>group_vars 目录：用于存放组级别的配置变量。比如 nginx.yaml 对应的就是 <code>nginx</code> 这个组的的配置变量。文件名与 <code>hosts</code> 中的组名对应。</li>
 </ul>
-
 <h3 id="总结">总结</h3>
-
-<p>到此，我们完整的自动化部署已经讲解完成。但是还遗留下一些问题：
-1. 本文只是安装了一个“空”的 Nginx，但是没有介绍 Nginx 真正配置。
-2. 目前主机的连接信息（SSH 密码）是明文写在 <code>host_vars/192.168.52.10</code> 文件中的，存在安全风险。
-3. 没有介绍如何当 Java 应用部署时，如何自动更新 Nginx 的配置。</p>
-
+<p>到此，我们完整的自动化部署已经讲解完成。但是还遗留下一些问题：</p>
+<ol>
+<li>本文只是安装了一个“空”的 Nginx，但是没有介绍 Nginx 真正配置。</li>
+<li>目前主机的连接信息（SSH 密码）是明文写在 <code>host_vars/192.168.52.10</code> 文件中的，存在安全风险。</li>
+<li>没有介绍如何当 Java 应用部署时，如何自动更新 Nginx 的配置。</li>
+</ol>
 <p>本文属于使用 Jenkins + Ansible 实现自动化部署的入门文章，笔者将根据读者的反馈决定是否写续集。</p>
-
 <p>如果觉得本文讲的 Jenkins 流水线逻辑部分不够过瘾，可以考虑入手一本最近才出版的《Jenkins 2.x实践指南》。长按下图进行扫码购买。</p>
-
-<p><img src="jenkins-2x-in-practice.jpeg" alt="" /></p>
-
+<p><img src="jenkins-2x-in-practice.jpeg" alt=""></p>
 <h3 id="附录">附录</h3>
-
 <ul>
 <li>本次实验环境代码：<a href="https://github.com/zacker330/jenkins-ansible-nginx">https://github.com/zacker330/jenkins-ansible-nginx</a></li>
 <li>简单易懂 Ansible 系列 —— 解决了什么：<a href="https://showme.codes/2017-06-12/ansible-introduce/">https://showme.codes/2017-06-12/ansible-introduce/</a></li>
@@ -634,15 +585,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -706,35 +648,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
-              手把手教会你 Jenkins 备份与恢复
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -751,44 +666,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
             </a>
           </li>
         
@@ -805,44 +684,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -879,15 +722,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -1096,15 +930,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -1116,15 +941,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

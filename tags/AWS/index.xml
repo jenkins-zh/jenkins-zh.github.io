@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/AWS/</link>
+    <description>Recent content in AWS on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/AWS/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jenkins 基础设施：统计、更新、AWS 赞助</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-15-jenkins-infrastructure-stats-updates-and-aws-sponsorship/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-15-jenkins-infrastructure-stats-updates-and-aws-sponsorship/</guid>
+      <description>Jenkins 项目在很大程度上依赖于其基础架构。我们使用诸如 www.jenkins.io 和 plugins.jenkins.io 之类的网站，诸如 issue.jenkins.io 之类的议题系统，诸如 ci.jenkins.io 之类的 CI/CD 基础设施以及许多其他服务。为了提供有关 Jenkins 基础设施规模的一些信息，以下是 2020 年 4 月的一些数据：
+ 超过 60 万人访问了 www.jenkins.io 超过 25 万个 Jenkins 服务器定期检查 Jenkins 软件包服务器和 Jenkins 更新服务器 ci.jenkins.io 上有超过 43000 个持续集成工作 超过 950 个插件在 ci.jenkins.io 上运行了他们的持续集成流水线  jenkins.io 的国家（地区）访客
+Jenkins 项目是一个开源项目，由其出色的社区构建和维护。像在任何组织中一样，有特定的人员来确保那些服务始终处于运行状态。欢迎大家加入。基础设施也不例外，我们一直在寻找基础设施的新贡献者！
+尽管我们无法公开共享诸如机密和证书之类的所有内容，但我们仍会尽量保持透明，以使每个人都可以理解和改进我们的基础结构而无需特权访问。有什么比使用 Git 管理基础架构工作更好的方法？
+谁说的 GitOps？ 自 2008 年 3 月在 GitHub 上创建 Jenkins-infra 组织以来，已有 650 多人参与了 80 多个 git 存储库。这些贡献使 Jenkins 社区变成了现在的样子。如果您在该处找不到任何东西，则可能意味着需要一些帮助。
+最近，在 Gavin Mogan、Tim Jacomb、Alex Earl 的帮助下，在许多方面都取得了重大成就，例如自动化 Jenkins 版本，刷新 plugins.</description>
+    </item>
+    
+    <item>
+      <title>AWS 上的云原生 Jenkins</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-23-cloud-native-jenkins-on-aws/</link>
+      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/08/2019-08-23-cloud-native-jenkins-on-aws/</guid>
+      <description>我们使用 Jenkins 搭建持续交付流水线，和其他很多团队一样，这些年我们围绕 Jenkins 创建了很多工作流程和自动化。Jenkins 是我们团队取得成功的关键，让我们能够在上一季度顺利进入生产677次，搭建及部署时长平均为12分钟。
+我们的大部分应用和基础设施可以看作云原生，但当时 Jenkins 服务并不完全适合这个分类：服务在单个服务器上运行，同时很多任务直接在 master 上运行，其部分手动配置包括 secret、插件、定时任务和 startup hacking 的普通膨胀，该膨胀是自2014年首次搭建起不断累积而成。
+Jenkins 不仅变成了单体服务和单点故障，而且拆除及重建 Jenkins 对企业也是很大的风险。
+我们决定必须做出改变。这篇博客说明了我们如何运用 Terraform、Packer、Docker、Vault、和 ELB、ASG、ALB 或 EFS 等 AWS 服务实现 Jenkins Cloud-native，以及我们一路走来的收获。
+Jenkins 状态 当时不得不面对的关键问题是：如果我们将 Jenkins 服务置于一个容器/自动缩放实例中，我们需要恢复何种状态？
+问题的答案并不简单，值得一提的是，有个 Jenkins 特别兴趣小组（SIG）已经识别出所有导致这一 Jenkins 状态的存储组件。这是一个很棒的起点，因为我们至少得确保那篇文章列出的所有存储类型都考虑在内。
+捷径 这不是新问题。很多团队使用 Docker 容器运行 Jenkins，官方 Jenkins Docker 镜像也得到良好维护。如《Jenkins Dokcer 镜像》文档中解释的：
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts 这会把 workspace 存在 /var/jenkins_home。所有的 Jenkins 数据（包括插件和配置）都存在上述目录里。创建一个明确的 volume 可以方便管理和附加到另一个容器进行升级。
+上述示例装载主机上的 jenkins_home，其中包括所有 Jenkins 状态。然后该目录可以存在一个外部磁盘上，比如 Kubernetes 持久化存储卷。或者，如果 Jenkins 在 EC2 上运行，该目录可存在一个外部 EBS 或 EFS 卷上。</description>
+    </item>
+    
+    <item>
+      <title>10节课带你深入学习 DevOps 工程</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2019/06/2019-06-17-10-courses-to-learn-devops-engineering-in-depth/</guid>
+      <description>DevOps 现在真的很热门，对于杰出的工程师和 DevOps 专业人员来说有许多工作机会。 如果你想成为一名 DevOps 工程师，那么你来对地方了。在本文中，我将分享一下最好的在线培训课程， 让你成为 DevOps 专业人员。
+Devops 最重要的优势，它可以帮助你更好地发布软件并且利用现代自动化工具对环境和软件开发过程中提供更多控制。这就是 DevOps 专业人员需求呈指数增长的原因。除了 Data Science 和 Machine Learning 外，它也是薪酬最高的 IT 工作之一。
+根据 Glassdoor 的数据，DevOps 的工程师每年的收入从105000美元到146000美元不等。这意味着，如果你正在寻找加薪或想在美好年纪从事一些令人兴奋的工作赚更多的钱，学习 DevOps 可能是一个不错的选择。
+学习像 Jenkins 这样的持续集成工具和像 Docker 这样的容器以及一般的 DevOps 技能，在技术领域获得了巨大的动力。这与几年前的移动应用程序开发类似。
+公司希望新的开发人员能够管理 Web 应用程序的整个生命周期。这意味着开发和部署应用程序。
+为了成为一名有效的 DevOps 工程师，您必须扩展对软件开发中使用的不同工具的知识，包括构建工具（如 Maven、 Ant 和 Gradle ）、单元测试工具（如 Junit 和 Selenium ）、部署工具（如 Docker ）、监控工具（如 New Relic ）、基础设施自动化工具（如 Chef 和 Puppet ）、源代码控制工具，如 Git 和 Github，以及持续集成工具，如 Jenkins 和 TeamCity。这些课程为基本的 DevOps 工具提供了很好的介绍。
+十节面向经验丰富的开发人员 DevOps 课程 在不浪费更多时间的情况下，这里列出了一些学习 DevOps 的最佳课程以及在软件开发和部署过程中实现自动化所需的基本工具。</description>
+    </item>
+    
+  </channel>
+</rss>

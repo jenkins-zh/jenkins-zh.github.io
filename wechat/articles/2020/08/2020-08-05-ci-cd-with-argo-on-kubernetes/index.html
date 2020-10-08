@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="在 Kubernetes 上使用 Argo 实现 CI/CD" />
 <meta property="og:description" content="讲解了Argo 的组成部分，展示了具体的配置文件说明了 Argo 是如何在 Kubernetes 实现 CI/CD 的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" /><meta property="article:published_time" content="2020-08-05T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-08-05T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" />
+<meta property="article:published_time" content="2020-08-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-05T00:00:00+00:00" />
 <meta itemprop="name" content="在 Kubernetes 上使用 Argo 实现 CI/CD">
 <meta itemprop="description" content="讲解了Argo 的组成部分，展示了具体的配置文件说明了 Argo 是如何在 Kubernetes 实现 CI/CD 的">
-
-
 <meta itemprop="datePublished" content="2020-08-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-08-05T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="736">
 
 
 
-<meta itemprop="keywords" content="Docker,Kubernetes,Argo,Continuous Integration,Continuout Delivery," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Docker,Kubernetes,Argo,Continuous Integration,Continuout Delivery," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 Kubernetes 上使用 Argo 实现 CI/CD"/>
 <meta name="twitter:description" content="讲解了Argo 的组成部分，展示了具体的配置文件说明了 Argo 是如何在 Kubernetes 实现 CI/CD 的"/>
 
@@ -298,30 +295,17 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="cover.jpg" alt="cover" /></p>
-
+<p><img src="cover.jpg" alt="cover"></p>
 <p>持续集成和持续交付是一些人为之努力的目标。它让一切事物变得更简单。当然，市面上有许多 CI/CD 工具，但是随着 Kubernetes 的日渐盛行，所有这些工具都需要做相应的调整。比如说，<a href="https://jenkins.io/">Jenkins</a>，这款非常成熟的 CI/CD 工具在全球范围内被广泛使用，但是这款工具缺乏创新并且感觉有点笨重。同样的话也适用于 <a href="https://www.spinnaker.io/">Spinnaker</a>。一款出色的企业解决方案拥有让工作深入开展下去的资源，但是让 CI/CD 工具以一种快速、整洁的方式升级不是一个理想的选择。还有其他的一些工具可以为更简单的工作流提供更多的支持。其中一个就是我们本文中将要介绍的 <strong>Argo</strong>。</p>
-
-<p><img src="argo-logo.png" alt="argo-logo" /></p>
-
+<p><img src="argo-logo.png" alt="argo-logo"></p>
 <p>Argo 与众不同的地方在于它管理实际 CI/CD 的方式。它是专门为了 Kubernetes 开发的并且通过 CRD（Custom Resource Definitions）集成到 Kubernetes 中。它定义了一个新的名为‘<strong>工作流</strong>’的 CRD 。在这个工作流中你可以通过一个 yaml 格式的文件定义你需要执行的操作。每一步均运行在位于 Kubernetes 集群内<strong>它自己的 Docker 容器</strong>里面。</p>
-
 <p><a href="https://github.com/argoproj/argo">argoproj/argo</a></p>
-
-<h2 id="argo-argo-cd-argo-ci">Argo/Argo CD/Argo CI</h2>
-
+<h2 id="argoargo-cdargo-ci">Argo/Argo CD/Argo CI</h2>
 <p>Argo 项目有几个正在开发的项目仓库。<strong><a href="https://github.com/argoproj/argo">Argo</a></strong> 是主项目，聚焦于 Kubernetes 工作流以一种更通用的方式来被使用。<strong><a href="https://github.com/argoproj/argo-cd">Argo CD</a></strong> 是一种处理部署的 GitOps 方法，也就意味着 Kubernetes 集群从版本仓库镜像到任意位置时 git 仓库是事实上的唯一来源。<strong><a href="https://github.com/argoproj/argo-ci">Argo CI</a></strong> 看起来已经不再维护了，但是它曾经是作为 CI 工具用来基于 git 变更触发工作流的。为了安装  CI/CD 工具，你需要 Argo 以及它的工作流，同样也一个需要触发它们的 CI 工具。因为 Argo CI 已经没有开发活动了，我自己写了一个 Argo CI，可以通过 Bitbucket webhooks 触发 Argo 工作流。使用自己开发的 CI 工具，我开始试着使用 Argo 构建了一个功能全面的 CI/CD 工具。</p>
-
 <p><a href="https://github.com/BouweCeunen/argo-continuous-integration">BouweCeunen/argo-continuous-integration</a></p>
-
 <h2 id="argo-工作流">Argo 工作流</h2>
-
 <p>Argo 拥有自己的 CRD，称其为工作流。它具有由一个 <strong>generateName</strong> 组成的元数据。它将作为在工作流步骤中运行节点的名称前缀。它可以定义 <strong>volumns</strong>，如同你在普通的 Kubernetes 上下文中指定那样。它们可以在定义后当做模板来使用。工作流中的 <strong>arguments</strong> 可以包含你的仓库名称，版本号等信息。在配置正确后，你可以开始定义工作流步骤中的 <strong>templates</strong>。你也可以定义一个模板，这个模板包含我在本例中所做的其他模板。定义一个 <em>cicd</em> 模板作为入口。这个模板包含多个步骤，依次包含所有其他的模板。每一个模板都有一个输入参数，用来在工作流步骤中传递数据。这取决于你定义多少步骤。需要记住的是每个步骤都运行在它自己的 Docker 容器中，充分利用你的 Kubernetes 集群资源而不必在 AWS 上拆分 EC2 实例。类似这样的事情在例如 Jenkins 上会是一个问题。</p>
-
 <p><em>&lsquo;checkout&rsquo;</em> 模板将会拉取一个仓库然后将其传递给其他需要使用的模板。它也可以传递到 git commit 它之后会被用作一个镜像 tag 。<em>‘build-push-docker’</em> 将会构建和推送 Docker 容器到 Docker Registry。运行测试的话，如果所有步骤执行成功你将会得到一个 <em>‘run-tests’</em> 的模板，它将会被 <em>‘deploy-kubernetes’</em> 模板部署到你的 Kubernetes 集群。</p>
-
 <pre><code>apiVersion: argoproj.io/v1alpha1  
 kind: Workflow  
 metadata:  
@@ -375,12 +359,8 @@ from: &quot;{{steps.checkout.outputs.artifacts.source}}&quot;
 parameters:  
 - name: image-tag  
 value: &quot;{{steps.checkout.outputs.parameters.tag}}&quot;
-</code></pre>
-
-<h2 id="artifactory-library">Artifactory Library</h2>
-
+</code></pre><h2 id="artifactory-library">Artifactory Library</h2>
 <p>Argo 使用 ‘artifactory library’ 存储步骤间执行状态。它会使下一个步骤使用上个步骤构建的东西成为可能。所有的步骤在 Kubernetes 它们自身的 Docker 容器运行，所以状态可以通过一个 artifact library 传递。这里有一些可以使用的库。其中一个是 AWS S3，但是同样也可以使用例如 Google Cloud Storage 这样的库。所有可用的库都在 <a href="https://github.com/argoproj/argo/blob/master/ARTIFACT_REPO.md">GitHub</a> 页面列出（译者：该链接已 404，请移步 <a href="https://github.com/argoproj/argo">Argo GitHub</a> 查看）。运行了一部分 CI/CD 流水线之后，我开始想知道它是怎样影响我的 S3 存储的。如果你也想知道，你只需要很少的时间就能想出来。CI/CD 流水线结束后，产物已不再需要了。我写了一个小的<a href="https://github.com/BouweCeunen/argo-continuous-integration/tree/master/kubernetes/cronjobs">定时任务</a>用来每次删除我的 S3 bucket，以及清理工作流这样它们就不会出现在 Argo UI。下面的 ConfigMap 展示了 Argo 工作流控制器的配置。</p>
-
 <pre><code>apiVersion: v1  
 kind: ConfigMap  
 metadata:  
@@ -400,12 +380,8 @@ memory: 100Mi
 limits:  
 cpu: 400m  
 memory: 800Mi
-</code></pre>
-
-<h2 id="git-检出">Git 检出</h2>
-
+</code></pre><h2 id="git-检出">Git 检出</h2>
 <p>首先，检出 git 仓库。这对构建 Docker 容器以及使用仓库中的 <a href="https://github.com/ansible/ansible">Ansible</a> 脚本执行部署来说是必须的。为了让 Argo 获取一些例如 Bitbucket 账号这样的私有信息，需要有相应的凭据。这可以通过在模板中定义 <em>‘git’</em> 来实现。<em>‘sshPrivateKeySecret’</em> 获取 id_rsa key，用来访问私有仓库。在这个例子中，则是从一个名为 ‘bitbucket-creds’ 的 Kubernetes Secret。id_rsa 存储的秘钥同样也可以存储 Kubernetes Secrets 的其他值。然后作为一个 <strong>artifact</strong> 输出该仓库然后暴露出后面被用来作为镜像 tag 的  git commit。</p>
-
 <pre><code>- name: checkout  
 inputs:  
 artifacts:  
@@ -439,12 +415,8 @@ parameters:
 - name: tag  
 valueFrom:  
 path: /tmp/git-commit
-</code></pre>
-
-<h2 id="docker-构建">Docker 构建</h2>
-
-<p>下一步就是构建你的 Docker 容器以便于他们用于运行你的测试。你可以在 Argo 工作流中定义 <strong>‘sidecars’</strong>，它会运行一个 Docker 守护进程这样你可以在自己的 Docker 容器中构建 Docker 容器。这里同样参考了 docker-in-docker 或 <strong>dind</strong>。为了能够推送容器到你的私有 Docker registry，需要设置凭据。通过在根目录下装载文件完成该工作。当执行 ‘_kubectl create secret docker-registry credentials_’ 在 Kubernetes 中创建一个 Docker Secret 时，会生成一个 .dockerconfigjson。在 ‘_spec_’ 下该卷会挂载到你的根工作流。通过在一个模板中定义它们使得在 Argo 工作流内构建和推送你的 Docker 容器会变得非常简单，如下面写的那样。</p>
-
+</code></pre><h2 id="docker-构建">Docker 构建</h2>
+<p>下一步就是构建你的 Docker 容器以便于他们用于运行你的测试。你可以在 Argo 工作流中定义 <strong>‘sidecars’</strong>，它会运行一个 Docker 守护进程这样你可以在自己的 Docker 容器中构建 Docker 容器。这里同样参考了 docker-in-docker 或 <strong>dind</strong>。为了能够推送容器到你的私有 Docker registry，需要设置凭据。通过在根目录下装载文件完成该工作。当执行 ‘<em>kubectl create secret docker-registry credentials</em>’ 在 Kubernetes 中创建一个 Docker Secret 时，会生成一个 .dockerconfigjson。在 ‘<em>spec</em>’ 下该卷会挂载到你的根工作流。通过在一个模板中定义它们使得在 Argo 工作流内构建和推送你的 Docker 容器会变得非常简单，如下面写的那样。</p>
 <pre><code>- name: build-push-docker  
 inputs:  
 artifacts:  
@@ -488,12 +460,8 @@ memory: 800Mi
 securityContext:  
 privileged: true  
 mirrorVolumeMounts: true
-</code></pre>
-
-<h2 id="持续集成">持续集成</h2>
-
+</code></pre><h2 id="持续集成">持续集成</h2>
 <p>CI 部分跟前面的差不多，它不包括用来部署应用程序到运行测试的 Kubernetes 集群的 Ansible。它可以对实际部署执行全面的集成测试。在 Ansible 配置里面，‘kubectl exec’ 配合 ‘yarn test’ 可以用来在匹配的 pod 中执行测试。如果成功，它将自行清理并继续接下来的工作流。我使用 Ansible 而不是工作流本身执行测试的目的在于工作流提供的实际部署细节很少，比如命名空间，集群名字等等。使用 Ansible 你可以自动设置环境的权限，Argo 不需要知道任何关于部署在哪执行以及怎样正确执行测试这样的细节信息。</p>
-
 <pre><code>- name: run-tests  
 inputs:  
 artifacts:  
@@ -510,12 +478,8 @@ workingDir: /src
 command: [sh, -c]  
 args: [&quot;cd /src/ansible \  
 &amp;&amp; ansible-playbook run-backend-test-on-k8s.yml -i environments/backend-test/backend-k8s -e docker_image_tag={{inputs.parameters.image-tag}}&quot;]
-</code></pre>
-
-<h2 id="持续交付">持续交付</h2>
-
+</code></pre><h2 id="持续交付">持续交付</h2>
 <p>CD 部分会部署应用程序到 Kubernetes。通过执行一个运行 <a href="https://github.com/ansible/ansible">Ansible</a> 的模板来实现。如你所见，这个模板有一些输入，例如 git 仓库，该仓库是从 <em><em>cicd</em></em> 模板传下来的。还有镜像 tag 这样 Ansible 就会知道需要把哪个 Docker 容器部署到 Kubernetes。我自己构建了一个定制的容器里面包括 Ansible、Kubectl 以及 <a href="https://github.com/fugue/credstash">credstash</a>，模板的参数使用 credstash 在 yamls 做了定义。</p>
-
 <pre><code>- name: deploy-kubernetes  
 inputs:  
 artifacts:  
@@ -539,10 +503,7 @@ workingDir: /src
 command: [sh, -c]  
 args: [&quot;cd /src/ansible \  
 &amp;&amp; ansible-playbook deploy-backend-to-k8s.yml -i environments/backend/backend-k8s -e docker_image_tag={{inputs.parameters.image-tag}}&quot;]
-</code></pre>
-
-<p>同样重要的是修改 Argo 的 ClusterRole 这样就可以部署到 Kubernetes  集群的所有命名空间里面。ClusterRole 定义如下，这样就可以部署所有的 CRD 例如 Deployments、Services 等等。</p>
-
+</code></pre><p>同样重要的是修改 Argo 的 ClusterRole 这样就可以部署到 Kubernetes  集群的所有命名空间里面。ClusterRole 定义如下，这样就可以部署所有的 CRD 例如 Deployments、Services 等等。</p>
 <pre><code>apiVersion: rbac.authorization.k8s.io/v1  
 kind: ClusterRole  
 metadata:  
@@ -562,18 +523,11 @@ resources:
 - workflows  
 - configmaps  
 verbs: [&quot;*&quot;]
-</code></pre>
-
-<h2 id="ui-控制面板">UI 控制面板</h2>
-
+</code></pre><h2 id="ui-控制面板">UI 控制面板</h2>
 <p><a href="https://github.com/argoproj/argo-ui">argoproj/argo-ui</a></p>
-
 <p>如果其他所有的新兴工具那样，都需要从某一个地方开始而对于 Argo 来说则是通过控制面板开始。功能最小化但是包含了所有需要做的东西。Argo 展示了所有工作流以及它们的步骤，它会自动更新所有进度以及日志都可以从这里看到。这样就会非常简单的监控所有的执行情况。当下不要期望太多，我希望他们会一直优化它，它会有很多潜力可待发掘。</p>
-
-<p><img src="ui-dashboard.png" alt="ui-dashboard" /></p>
-
+<p><img src="ui-dashboard.png" alt="ui-dashboard"></p>
 <h2 id="总结">总结</h2>
-
 <p>Argo 非常容易理解，它集成在 Kubernetes 使用 Kubernetes 集群实现 CI/CD。它比我们说的 Spinnaker、Istio 等等这些工具更简洁，更轻量。安装简单可以完成所需的工作。Argo 的主程序定义了自己的 CRD，称为 ‘Workflow’。Argo CI 已经不再开发了，但是我创建了一个自己的<a href="https://github.com/BouweCeunen/argo-continuous-integration">实现程序</a>。Argo CD 是一个管理部署的 GitOps 方法。与我自己实现的 Argo CI 以及 Argo 工作流一起，在 Kubernetes 集群设置运行一个 CI/CD 流水线成为可能。</p>
 
 </div>
@@ -662,6 +616,49 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
+      
+        
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/" class="link">
+              使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-13-using-nexus-oss-as-a-proxy-cache-for-docker-images/" class="link">
+              使用 Nexus OSS 为 Docker 镜像提供代理/缓存功能
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/" class="link">
+              使用 kind 和 Docker 启动本地的 Kubernetes
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/02/2020-02-21-the-abc-of-devops-implementation-with-containerization-and-docker/" class="link">
+              使用容器化和 Docker 实现 DevOps 的基础知识
+            </a>
+          </li>
+        
       
     </ul>
   </div>

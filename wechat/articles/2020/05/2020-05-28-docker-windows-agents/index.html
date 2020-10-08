@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="Windows Docker Agent 镜像可以常规使用了" />
 <meta property="og:description" content="介绍了几个官方的 Windows Docker Agent 镜像" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-28-docker-windows-agents/" /><meta property="article:published_time" content="2020-05-28T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-05-28T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/05/2020-05-28-docker-windows-agents/" />
+<meta property="article:published_time" content="2020-05-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-28T00:00:00+00:00" />
 <meta itemprop="name" content="Windows Docker Agent 镜像可以常规使用了">
 <meta itemprop="description" content="介绍了几个官方的 Windows Docker Agent 镜像">
-
-
 <meta itemprop="datePublished" content="2020-05-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-28T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="283">
 
 
 
-<meta itemprop="keywords" content="公告,docker,platform-sig,windows," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="公告,docker,platform-sig,windows," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Windows Docker Agent 镜像可以常规使用了"/>
 <meta name="twitter:description" content="介绍了几个官方的 Windows Docker Agent 镜像"/>
 
@@ -298,98 +295,62 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="dockerJenkins_social.png" alt="dockerJenkins" /></p>
-
+<p><img src="dockerJenkins_social.png" alt="dockerJenkins"></p>
 <p>我们想宣布可以使用官方 Windows agent Docker 镜像，这些镜像允许在 Docker 和 Kubernetes 上使用 Windows 操作系统配置 Jenkins agent。</p>
-
 <h2 id="新镜像">新镜像</h2>
-
 <p>现在，所有 agent 的正式 Docker 镜像都提供 <code>nanoserver-1809</code> 和 <code>windowsservercore-1809</code> 标签，其中包括 Windows 镜像以及当前的 Java 8（类似于 <code>latest</code> 标签）。
 我们还提供了明确的 Java 选择，例如 <code>jdk8-windowsservercore-1809</code> 或 <code>jdk11-nanoserver-1809</code>。
 版本标记也可用，例如 <code>jenkins/agent:4.3-4-jdk8-nanoserver-1809</code>。</p>
-
 <ul>
-<li><p><a href="https://hub.docker.com/r/jenkins/agent">jenkins/agent</a> 是一个基础的 agent，它捆绑 agent.jar 来进行 agent&lt;= =&gt; master之间的通讯，最有用的是可以作为其他镜像的基础镜像。Windows 镜像从版本 <a href="https://github.com/jenkinsci/docker-agent/releases/tag/4.3-4">4.3-4</a> 开始可用。</p></li>
-
-<li><p><a href="https://hub.docker.com/r/jenkins/inbound-agent">jenkins/inbound-agent</a> 是一个基于上面 jenkins/agent 镜像的 agent，它提供了用 PowerShell 编写的包装类脚本，以帮助指定 agent.jar 的参数。Windows 镜像从版本 <a href="https://github.com/jenkinsci/docker-agent/releases/tag/4.3-4">4.3-4</a> 开始可用。</p></li>
-
-<li><p><a href="ttps://hub.docker.com/r/jenkins/ssh-agent">jenkins/ssh-agent</a> 是一个安装了 OpenSSH 的镜像， 应该与 <a href="https://plugins.jenkins.io/ssh-slaves">SSH Build Agents Plugin</a> 一起使用。Windows 镜像从版本 <a href="https://github.com/jenkinsci/docker-ssh-agent/releases/tag/2.1.0">2.1.0</a> 开始可用。</p></li>
+<li>
+<p><a href="https://hub.docker.com/r/jenkins/agent">jenkins/agent</a> 是一个基础的 agent，它捆绑 agent.jar 来进行 agent&lt;= =&gt; master之间的通讯，最有用的是可以作为其他镜像的基础镜像。Windows 镜像从版本 <a href="https://github.com/jenkinsci/docker-agent/releases/tag/4.3-4">4.3-4</a> 开始可用。</p>
+</li>
+<li>
+<p><a href="https://hub.docker.com/r/jenkins/inbound-agent">jenkins/inbound-agent</a> 是一个基于上面 jenkins/agent 镜像的 agent，它提供了用 PowerShell 编写的包装类脚本，以帮助指定 agent.jar 的参数。Windows 镜像从版本 <a href="https://github.com/jenkinsci/docker-agent/releases/tag/4.3-4">4.3-4</a> 开始可用。</p>
+</li>
+<li>
+<p><a href="ttps://hub.docker.com/r/jenkins/ssh-agent">jenkins/ssh-agent</a> 是一个安装了 OpenSSH 的镜像， 应该与 <a href="https://plugins.jenkins.io/ssh-slaves">SSH Build Agents Plugin</a> 一起使用。Windows 镜像从版本 <a href="https://github.com/jenkinsci/docker-ssh-agent/releases/tag/2.1.0">2.1.0</a> 开始可用。</p>
+</li>
 </ul>
-
 <h2 id="使用-windows-docker-镜像">使用 Windows Docker 镜像</h2>
-
 <p>要使用新镜像，您将需要支持运行 Windows 容器的合适 Docker 或 Kubernetes 环境。对于 Windows 桌面用户，最简单的方法是使用<a href="https://docs.docker.com/docker-for-windows/">Docker for Windows</a>。<a href="https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/">此处</a>记录了 Kubernetes 对于 Windows 的支持。</p>
-
-<h3 id="jenkins-agent">jenkins/agent</h3>
-
+<h3 id="jenkinsagent">jenkins/agent</h3>
 <p>jenkins/agent 镜像是 JDK 和 agent.jar（Jenkins Remoting 库）的简单 agent。</p>
-
 <p>该镜像有两个主要用途：</p>
-
 <ol>
 <li>作为其他 Docker 镜像的基础镜像（例如 Dockerfile 中的 <code>FROM jenkins/agent:jdk8-nanoserver-1809</code>），jenkins/inbound-agent 就是基于这个镜像。</li>
 <li>该镜像还可用于通过 <em>Launch agent via execution of command on the master</em> 的 <em>Launch method</em> 启动agent，这允许主服务器自动在 docker 容器内启动 agent。</li>
 </ol>
-
 <p>要针对第二个用途运行 agent，请在设置 <em>Remote root directory</em> 为 <code>C:\Users\jenkins\agent</code> 后，在 Jenkins 主服务器上指定以下命令：</p>
-
 <pre><code> docker run -i --rm --name agent --init jenkins/agent:jdk8-windowsservercore-1809 java -jar C:/ProgramData/Jenkins/agent.jar
-</code></pre>
-
-<h3 id="jenkins-inbound-agent">jenkins/inbound-agent</h3>
-
+</code></pre><h3 id="jenkinsinbound-agent">jenkins/inbound-agent</h3>
 <p>inbound-agent Docker 镜像尝试提供与 agent.jar 可执行文件的更高级别的交互。它提供了一个围绕 agent.jar 的 PowerShell 包装类脚本，并且被指定为入口点，因此您只需要传递一些命令行参数即可运行 agent。已打开一个 <a href="https://github.com/jenkinsci/docker-inbound-agent">pull request</a>，其中记录了这些命令行参数和环境变量。</p>
-
 <p>示例：</p>
-
 <pre><code> docker run jenkins/inbound-agent:windowsservercore-1809 `
     -Url http://jenkins-server:port `
     -WorkDir=C:/Users/jenkins/Agent `
     -Secret &lt;SECRET&gt; `
     -Name &lt;AGENTNAME&gt;
-</code></pre>
-
-<p>使用环境变量的示例：</p>
-
+</code></pre><p>使用环境变量的示例：</p>
 <pre><code> docker run -e &quot;JENKINS_URL=http://jenkins-server:port&quot; -e &quot;JENKINS_AGENT_NAME=AGENTNAME&quot; `
     jenkins/inbound-agent:windowsservercore-1809 `
     -WorkDir=C:/Users/jenkins/Agent `
     -Secret &lt;SECRET&gt; `
     -Name &lt;AGENTNAME&gt;
-</code></pre>
-
-<hr />
-
-<h2 id="注意-url-name-和-secret-是必选参数-但可以将其指定为命令行参数或环境变量">注意：<code>-Url</code>、<code>-Name</code> 和 <code>-Secret</code> 是必选参数，但可以将其指定为命令行参数或环境变量。</h2>
-
-<h3 id="jenkins-ssh-agent">jenkins/ssh-agent</h3>
-
+</code></pre><hr>
+<h2 id="注意-url-name-和--secret-是必选参数但可以将其指定为命令行参数或环境变量">注意：<code>-Url</code>、<code>-Name</code> 和 <code>-Secret</code> 是必选参数，但可以将其指定为命令行参数或环境变量。</h2>
+<h3 id="jenkinsssh-agent">jenkins/ssh-agent</h3>
 <p>如上所述，jenkins/ssh-agent docker 镜像基于与主机的 SSH 通信，而不是基于远程 TCP 或 WebSocket 协议。 该镜像设置了一个 <code>jenkins</code> 用户和 OpenSSH 服务器，以便主服务器可以通过 SSH 连接到 agent。该镜像需要 SSH 公钥作为参数，并将该密钥放入 <code>jenkins</code> 用户的 <code>authorized_keys</code> 文件中，应在主服务器上的 agent 配置中指定私钥，以允许主服务器连接。</p>
-
 <p>示例：</p>
-
 <pre><code> docker run jenkins/ssh-agent:jdk8-windowsservercore-1809 &quot;&lt;public key&gt;&quot;
-</code></pre>
-
-<p>使用 <code>docker run</code> 时，还可以将公钥作为环境变量传递。</p>
-
+</code></pre><p>使用 <code>docker run</code> 时，还可以将公钥作为环境变量传递。</p>
 <p>示例：</p>
-
 <pre><code> docker run -e &quot;JENKINS_AGENT_SSH_PUBKEY=&lt;public key&gt;&quot; jenkins/ssh-agent:jdk8-windowsservercore-1809
-</code></pre>
-
-<p>然后，将能够作为 “jenkins” 使用 <a href="https://plugins.jenkins.io/ssh-slaves/">SSH Build Agents Plugin</a>与匹配的私钥连接该 agent。</p>
-
+</code></pre><p>然后，将能够作为 “jenkins” 使用 <a href="https://plugins.jenkins.io/ssh-slaves/">SSH Build Agents Plugin</a>与匹配的私钥连接该 agent。</p>
 <h2 id="下一步计划">下一步计划?</h2>
-
 <p>我们正在考虑提供基于 <em>Windows Server 2019 build 1909</em> 的版本，以便 Jenkins 用户可以在 GKE 群集上运行这些镜像（请参阅<a href="https://github.com/jenkinsci/docker-agent/issues/134">此问题</a>）。</p>
-
 <p>我们还正在研究提供多体系结构清单，以使 Windows 镜像成为 <code>latest</code> 标签的一部分。</p>
-
 <p>还有一个<a href="https://github.com/jenkinsci/docker/pull/924">开放的 pull-request</a>，用于为 Jenkins 主服务器创建基于 Windows 的 Docker 镜像。对此没有很多要求，但是为了使 Windows 用户的产品完善，创建了这个 pull request。</p>
-
 <p>对于与 Windows 不相关的计划，请参阅 <a href="http://jenkins-zh.cn/wechat/articles/2020/05/2020-05-18-docker-agent-image-renaming/">agent 的 Docker镜像：新名称和下一步</a>博客文章。</p>
 
 </div>

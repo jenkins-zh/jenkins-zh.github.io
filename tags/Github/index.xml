@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/Github/</link>
+    <description>Recent content in Github on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/Github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSoC: GitHub Checks API 项目第三阶段总结</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/</guid>
+      <description>这篇文章将介绍 GitHub Checks API 项目在谷歌编程之夏第三阶段的相关工作。
+在这个夏天的尾声，GitHub Checks API 项目迎来了它在 GSoC 的最后一段旅程。在这篇文章当中，我将向你们展示我们在这最后一个阶段中的相关工作：
+ 流水线支持 Rerun 请求支持 Git SCM 支持 文档的完善  以上的特性已经合并在了最新发布的 Checks API 插件 与 GitHub Checks 插件 的 1.0.0 版本中。
+流水线支持 对流水线的支持让用户无需依赖任何 Checks API 的实现就可以直接在他们编写的流水线当中轻松发布 checks。
+上图中的 check 可以通过如下脚本实现：
+publishChecks name: &amp;#39;pipeline check&amp;#39;, title: &amp;#39;pipeline &amp;#39;, summary: &amp;#39;# A pipeline check example&amp;#39;, text: &amp;#34;## This check is published through the pipeline script&amp;#34;, detailsURL: &amp;#39;https://ci.jenkins.io&amp;#39; 如果你想要发布 checks 到 GitHub，请安装 GitHub 的实现 并查阅 GitHub API 文档 了解各个参数的相关用途。其中，detailsURL 会拥有一个链接到此次 Jenkins 构建页面的默认值。</description>
+    </item>
+    
+    <item>
+      <title>GSoC: GitHub Checks API 项目第一阶段总结</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-07-github-checks-api-plugin-project-coding-phase-1/</guid>
+      <description>这篇博客将介绍 GSoC 项目 GitHub Checks API Plugin 在一阶段的相关进展。
+简单来说，GitHub Checks API 就是一套可高度定制化接受 CI 报告的接口。 CI 工具可以通过该接口反馈信息给特定的 Pull Request，随后，用户便可以直接在 GitHub 的 UI 界面上直观的浏览 CI 报告。
+更激动人心的是，它可以针对指定的代码行进行注释，这类似于开发者平时在代码审查时留下的评论。
+同时，在 Jenkins 这边，Warnings Next Generation Plugin 能通过源代码视图实现类似的功能。
+因此，通过使用 GitHub Checks API 将这些信息直接反馈给 GitHub 能使 Jenkins 对 GitHub 用户更加友好。
+阶段一实现的相关特性 在过去的一个月里，我们团队的工作主要集中在 General Checks API 和 GitHub Checks API 的实现上。
+General Checks API 尽管 General Checks API 是基于 GitHub Checks API 的语义实现的，我们仍然希望能提供这样的泛化接口为其他平台的相关概念做好准备，例如：GitLab 上的 Commit Status API。 在今后，我们欢迎所有人贡献针对这些平台的相关实现。</description>
+    </item>
+    
+    <item>
+      <title>GitHub App 身份验证支持已发布</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-17-github-app-authentication-support-released/</guid>
+      <description>我很高兴的宣布在 Jenkins 中作为 GitHub 应用进行身份验证现已支持。这是许多用户期待已久的功能。它已在 GitHub Branch Source 2.7.1 中发布，现在可以在 Jenkins 更新中心使用。
+身份验证为 GitHub 应用带来了很多好处：
+ 更高的请求频率限制 - GitHub 应用程序的速率限制随您的组织规模而定，而基于用户的令牌的限制为 5000，无论您拥有多少存储库。 与用户无关的身份验证 - 每个 GitHub 应用都有自己的用户独立身份验证。不再需要“机器人”用户或确定谁应该是 2FA 或 OAuth 令牌的所有者。 改进的安全性和更严格的权限 - 与服务用户及其个人访问令牌相比，GitHub Apps 提供了更精细的权限。这使 Jenkins GitHub 应用程序需要更少的权限集即可正常运行。 访问 GitHub Checks API - GitHub Apps 可以访问 GitHub Checks API 以从 Jenkins 作业创建检查运行和检查套件，并提供有关提交和代码注释的详细反馈。  开始使用 安装 GitHub Branch Source 插件，确保版本为 2.7.1 或更高。
+配置 GitHub Organization 文件夹 遵循 GitHub App Authentication setup guide。这些说明也可在 GitHub 上的插件 README 文件中看到。</description>
+    </item>
+    
+    <item>
+      <title>Jenkins 教程：使用 Ngrok 配置（SCM）Github 触发器和 Git 轮询</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-27-jenkins-tutorial-configure-scm-github-triggers-and-git-polling-using-ngrok/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-27-jenkins-tutorial-configure-scm-github-triggers-and-git-polling-using-ngrok/</guid>
+      <description>总览 Jenkins 是领先的开源自动化服务。它提供了 1500+ 个插件来支持构建，部署和自动化任何项目。在本文中，我们将研究如何在作业上配置 Github 触发器，以及如何使用 Webhook 与 Github 相通，该 Webhook 指示何时轮询作业以构建对项目进行的更改。
+前提条件 您需要在 Github 中有一个项目。
+您将需要启动并运行 Jenkins 服务。
+入门 安装和运行 Ngrok Ngrok 是一个反向代理，它接受公共地址上的流量，并将该流量中继到计算机上运行的 ngrok 进程，然后再中继到您指定的本地地址。
+因此，通过您选择的任何一种方法，前往 Ngrok 并注册一个帐户。然后，您应该会看到下面的截图，其中显示了如何解压缩和运行它。
+运行./ngrok http 8080，它将指向我们的 Jenkins 服务。
+运行该命令后，您将收到代理主机名，如下所示：
+转发 http://xxxxx.ngrok.io -&amp;gt; http://localhost:8080
+转发 https://xxxxx.ngrok.io -&amp;gt; http://localhost:8080
+设置 Github Webhook 因此，跳转到 Github 项目并单击设置，在左侧面板上应该会看到 webhooks，现在单击该按钮。
+添加我们的 webhook：
+设置 Jenkins 项目或流水线作业 选择 Github 挂钩触发器进行 GitScm 轮询：
+然后，使用您的 GitHub 帐户设置 Jenkins Pipeline：
+开始准备测试我们的工作！使用您指定的 develop，master 等分支将提交提交到您的项目。
+推送完成后，您应该开始看到您的工作建立了最新的推送，您可以跳转到 Github Hook Log 并检查 Webhook 是否通过 Ngrok 进行了代理。</description>
+    </item>
+    
+  </channel>
+</rss>

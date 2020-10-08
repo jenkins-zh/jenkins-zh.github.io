@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Monitoring on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/Monitoring/</link>
+    <description>Recent content in Monitoring on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/Monitoring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Kibana 和 Rsyslog 监控 Linux 日志</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-01-monitoring-linux-logs-with-kibana-and-rsyslog/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-01-monitoring-linux-logs-with-kibana-and-rsyslog/</guid>
+      <description>如果你是一名系统管理员，或者是一名好奇的软件开发工程师，那么你很有可能在平常挖掘日志信息的时候找到一些很有价值的信息。
+有时你或许想监控虚拟机的 SSH 指令。
+有时你或许想查看下你的应用程序服务器在某一天某一个特定的时间出现了什么样的错误信息。
+或者你为了想一探究竟到底是谁停了你的一个虚拟机的 systemd 服务。
+如果你想从这几个地方了解的话，或许你来对地方了。
+在这篇文章当中，我们将会构建一个完整的日志监控流水线，使用 ELK 堆栈（ElasticSearch、Logstash、和 Kibana）和 Rsyslog 作为一个强力的系统日志服务器。
+在开始动手之前，让我们先快速的考虑下技术因素，让我们讨论下为什么我们使用 Kibana 监控 Linux 日志。
+Ⅰ-为什么你需要监控 Linux 日志？ 监控 Linux 日志是非常关键的，而且每一名 DevOps 工程师都需要知道怎样做。理由如下:
+  你可以通过日志得到实时可视化的反馈: 这或许是众多日志监控理由中最关键的一个，你可以构建一些有意义的可视化视图（例如表格，饼状图，图表或者柱状图）来为你的日志赋予一些意义。
+  你可以汇总这些信息来构建高级以及复杂的仪表盘: 有时一个原始数据是不够的，你或许想加上一些其他的日志或者将它们与其他日志比较从而了解一个整体的变化趋势。一个具有表达式处理功能的可视化平台可以让你这样操作这些信息。
+  你可以快速过滤一个特定的术语或者是一个给定的时间段: 如果你只对 SSH 日志感兴趣，你可以为其构建一个指定的仪表盘。
+  以一种快捷和优雅的方式，日志是可导航的: 我知道从日志文件中无止尽的日志信息中抓取信息的痛苦。我宁愿有一个平台来专门做这件事。
+  Ⅱ- 你将会学习到什么 这篇入门文章你将会学习到下面的一些知识:
+  日志在 Linux 系统是如何处理的（Ubuntu 或 Debian）以及什么是 rsyslog。
+  怎样安装 ELK 堆栈（ElasticSearch 7.2，LogStash 和 Kibana）以及这些工具是用来做什么的。
+  怎样配置 rsyslog 从而将日志转发到 Logstash。</description>
+    </item>
+    
+    <item>
+      <title>使用 Prometheus 和 Grafana 监控 Linux 进程</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/06/2020-06-03-monitoring-linux-processes-using-prometheus-and-grafana/</guid>
+      <description>无论你是否是一名 Linux 系统管理员或是一名 DevOps 工程师，你都会在监控服务器性能指标的时候花费很长时间。
+有时候实例运行非常慢但是哪里出的问题却没有任何线索。
+有一些不响应的实例会阻止你在这些实例上执行类似 top 或者 htop 的远程命令。
+服务器有一个瓶颈存在，但是你并不能简单快速的找到问题所在。
+ 如果我们有一个完整的仪表盘可以帮助我们跟踪整体性能以及独立的进程该怎么操作？
+  可以在该链接中实时查看: http://grafana.devconnected.com/d/nZMDMoiZk/grafana-top?orgId=1&amp;amp;refresh=5s
+ 这篇入门文章旨在如何为 Linux 系统管理员创建一个完整的监控仪表盘
+该仪表盘会展示完全可定制并且可扩展到分布式架构的多个实例的不同面板。
+你将会学到什么 在即将踏入技术旅途之前，让我们快速看下通过阅读这篇文章你将学到哪些东西:
+  了解在 Unix 系统性能监控方面的最新技术；
+  怎样安装最新版本的 Prometheus v2.9.2、Pushgateway v0.8.0 以及 Grafana v6.2；
+  构建一个简单的 bash 脚本用来导出指标项到 Pushgateway；
+  构建一个完整的 Grafana 仪表盘包括最新的面板例如 ‘Gauge’ 和 ‘Bar Gauge’。
+  额外内容: 集成 ad-hoc 过滤器跟踪单个进程或实例。
+  现在我们大体浏览了一下我们将要学习哪些东西，并且没有进一步的要求，让我们介绍一些当前 Unix 系统中目前已有的内容。
+Unix 进程监控基础 当提到 Unix 系统进程监控的时候，在你脑海中出现的有好几个选项。</description>
+    </item>
+    
+  </channel>
+</rss>

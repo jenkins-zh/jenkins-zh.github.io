@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="Jenkins CLI 命令行 v0.0.24" />
 <meta property="og:description" content="jcli-v0.0.24 发布" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/" /><meta property="article:published_time" content="2019-12-26T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-12-26T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/12/2019-12-26-jcli-v0.0.24/" />
+<meta property="article:published_time" content="2019-12-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-26T00:00:00+00:00" />
 <meta itemprop="name" content="Jenkins CLI 命令行 v0.0.24">
 <meta itemprop="description" content="jcli-v0.0.24 发布">
-
-
 <meta itemprop="datePublished" content="2019-12-26T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-12-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="189">
+<meta itemprop="wordCount" content="186">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins CLI 命令行 v0.0.24"/>
 <meta name="twitter:description" content="jcli-v0.0.24 发布"/>
 
@@ -289,22 +286,17 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="jenkins-cli.png" alt="jenkins-cli" /></p>
-
+<p><img src="jenkins-cli.png" alt="jenkins-cli"></p>
 <p>本次发布，主要增加了 jcli 对凭据、计算节点的管理能力，以及通过 jcli 启动 jenkins.war。
 对于部分子命令，还可以通过参数 <code>--doctor</code> 来实现错误诊断。</p>
-
-<p>部分数据指标
-* 测试覆盖率：87.1%
-* 下载量：2.8k+
-* 贡献者：9</p>
-
+<p>部分数据指标</p>
+<ul>
+<li>测试覆盖率：87.1%</li>
+<li>下载量：2.8k+</li>
+<li>贡献者：9</li>
+</ul>
 <p>更多内容，请参考<a href="http://jcli.jenkins-zh.cn/zh/">官方文档</a></p>
-
-<h2 id="功能">🚀 功能</h2>
-
+<h2 id="-功能">🚀 功能</h2>
 <ul>
 <li>增加对配置即代码插件的支持 (#265) @LinuxSuRen</li>
 <li>为 jcli 增加 Docker 镜像 (#260) @LinuxSuRen</li>
@@ -327,25 +319,19 @@ var trackOutboundLink = function(id, url) {
 <li>支持启动 Jenkins (#262) @LinuxSuRen</li>
 <li>支持列出 Jenkins 的计算节点 (#259) @LinuxSuRen</li>
 </ul>
-
-<h2 id="缺陷修复">🐛 缺陷修复</h2>
-
+<h2 id="-缺陷修复">🐛 缺陷修复</h2>
 <ul>
 <li>修复 PO 文件中的拼写错误 (#282) @anxk</li>
 <li>修复了当没有配置文件时命令崩溃的问题 (#269) @LinuxSuRen</li>
 <li>修复由 lgtm.com 发现的告警 (#293) @LinuxSuRen</li>
 <li>修复由于代码重构导致的 bash 下的命令行无法自动补全 (#294) @LinuxSuRen</li>
 </ul>
-
-<h2 id="文档完善">📝 文档完善</h2>
-
+<h2 id="-文档完善">📝 文档完善</h2>
 <ul>
 <li>增加对开发环境要求的描述 (#263) @yJunS</li>
 <li>增加下载 jcli 的其他方式的描述 (#264) @LinuxSuRen</li>
 </ul>
-
-<h2 id="维护">👻 维护</h2>
-
+<h2 id="-维护">👻 维护</h2>
 <ul>
 <li>移除 markdown 模板中的链接 (#271) @LinuxSuRen</li>
 <li>优化 jcli 的开发版 docker 镜像，使得更小 (#268) @LinuxSuRen</li>
@@ -354,9 +340,7 @@ var trackOutboundLink = function(id, url) {
 <li>把 github.com/onsi/gomega 从 1.7.1 升级到 1.8.1 (#287) @dependabot-preview</li>
 <li>把 github.com/AlecAivazis/survey/v2 从 2.0.4 升级到 2.0.5 (#270) @dependabot-preview</li>
 </ul>
-
-<h2 id="测试">🚦 测试</h2>
-
+<h2 id="-测试">🚦 测试</h2>
 <ul>
 <li>为 open 子命令增加测试用例 (#272) @LinuxSuRen</li>
 </ul>

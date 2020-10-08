@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="Jenkins 自动化安装插件" />
 <meta property="og:description" content="Jenkins 批量安装指定版本插件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" /><meta property="article:published_time" content="2019-05-07T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-07T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/05/2019-05-07-jenkins-install-plugins-shell/" />
+<meta property="article:published_time" content="2019-05-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-07T00:00:00+00:00" />
 <meta itemprop="name" content="Jenkins 自动化安装插件">
 <meta itemprop="description" content="Jenkins 批量安装指定版本插件">
-
-
 <meta itemprop="datePublished" content="2019-05-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="128">
+<meta itemprop="wordCount" content="127">
 
 
 
-<meta itemprop="keywords" content="jenkins," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="jenkins," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins 自动化安装插件"/>
 <meta name="twitter:description" content="Jenkins 批量安装指定版本插件"/>
 
@@ -290,74 +287,50 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
 <h3 id="手工安装-jenkins-插件的方法">手工安装 Jenkins 插件的方法</h3>
-
 <p>通常，我们有两种方法安装 Jenkins 插件。第一种方法是到 Jenkins 插件管理页面搜索插件，然后安装。第二种方法是上传 Jenkins 插件的 hpi 文件安装。这两种方法能满足大多数人的需求。</p>
-
 <p>第一种方法，如下图所示：
-<img src="pc1.png" alt="搜索安装" /></p>
-
+<img src="pc1.png" alt="搜索安装"></p>
 <p>第二种方法，如下图所示：
-<img src="pc2.png" alt="上传插件" /></p>
-
+<img src="pc2.png" alt="上传插件"></p>
 <p>但是对于需要保证 Jenkins 稳定或在 Jenkins 上进行二次开发的同学来说，以上方法是无法满足需求的。</p>
-
 <p>第一种方法是无法指定插件的版本。第二种方式必须自己找到该插件的依赖树，然后根据依赖关系一个个地安装。是的，手工上传插件的这种方法，Jenkins 是不会自动下载依赖的。</p>
-
 <p>还有，就是这两种方式都无法实现批量安装。</p>
-
 <h3 id="自动安装插件的方法">自动安装插件的方法</h3>
-
 <p>那么，有什么方法能指定插件的版本，又能自动下载它的依赖，还能批量下载呢？</p>
-
 <p>幸运的是，Jenkins 的 Docker 镜像的代码仓库里的 install-plugins.sh 脚本已经实现。只不过需要我们拿过来小小修改才能使用。笔者修改后创建了相应的代码仓库：<a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">jenkins-install-plugins-shell</a> 。链接在文章末尾。</p>
-
-<p>以下是 jenkins-install-plugins-shell 的使用方法：
-1. 将代码 clone 到 JENKINS_HOME 目录中。</p>
-
+<p>以下是 jenkins-install-plugins-shell 的使用方法：</p>
+<ol>
+<li>将代码 clone 到 JENKINS_HOME 目录中。</li>
+</ol>
 <pre><code>cd $JENKINS_HOME
 git clone https://github.com/zacker330/jenkins-install-plugins-shell.git
 cd jenkins-install-plugins-shell
-</code></pre>
-
-<ol>
+</code></pre><ol start="2">
 <li>在 plugins.txt 中加入希望安装的插件
-在 <code>jenkins-install-plugins-shell</code> 目录中，有一个 plugins.txt 文件，在文件中写入希望安装的插件及版本号。例如：
-<code>
-ansible:1.0
+在 <code>jenkins-install-plugins-shell</code> 目录中，有一个 plugins.txt 文件，在文件中写入希望安装的插件及版本号。例如：</li>
+</ol>
+<pre><code>ansible:1.0
 powershell:1.3
-</code></li>
-
-<li><p>执行安装</p>
-
-<pre><code class="language-bash"># Jenkins War 的路径，用于分析
-export JENKINS_WAR_PATH=&lt;Jenkins war文件的路径&gt;
+</code></pre><ol start="3">
+<li>执行安装</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># Jenkins War 的路径，用于分析</span>
+export JENKINS_WAR_PATH<span style="color:#f92672">=</span>&lt;Jenkins war文件的路径&gt;
 chmod +x install-plugins.sh jenkins-support
 ./install-plugins.sh &lt; plugins.txt
-</code></pre></li>
-
-<li><p>重启 Jenkins
-install-plugins 本质上做的事情就只是将插件从云端下载到 JENKINS_HOME 下的 plugins 目录中。要使安装的插件生效，还需要重启 Jenkins。</p></li>
+</code></pre></div><ol start="4">
+<li>重启 Jenkins
+install-plugins 本质上做的事情就只是将插件从云端下载到 JENKINS_HOME 下的 plugins 目录中。要使安装的插件生效，还需要重启 Jenkins。</li>
 </ol>
-
 <h3 id="关于-jenkins-插件的名称">关于 Jenkins 插件的名称</h3>
-
 <p>Jenkins 插件有两个名称。一个叫 display name，一个叫 short name。比如 Ansible 插件的 disply name 为 Ansible plugin，short  name 为 ansible。</p>
-
 <p>如何知道一个插件的 short name 呢？可以在 Jenkins 插件官网上找到，比如 Ansible 的：</p>
-
-<p><img src="pc3.png" alt="image.png" /></p>
-
+<p><img src="pc3.png" alt="image.png"></p>
 <p>在 <code>plugins.txt</code> 中使用的是 short name。</p>
-
 <h3 id="总结">总结</h3>
-
 <p>笔者为什么一定要确定 Jenkins 插件的版本？是因为插件的版本会影响 Jenkins 流水线的可靠性。所以，笔者才会这么在意 Jenkins 插件的版本。</p>
-
 <h3 id="附录">附录</h3>
-
 <ul>
 <li>Jenkins 官方 Docker 镜像中的自动化插件安装脚本：<a href="https://github.com/jenkinsci/docker/blob/master/install-plugins.sh">https://github.com/jenkinsci/docker/blob/master/install-plugins.sh</a></li>
 <li>笔者修改后的自动化插件安装脚本：
@@ -452,15 +425,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
-              DevOps 的打开方式: 构建和部署
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
               Jenkins 长期支持版更新
             </a>
@@ -524,35 +488,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-12-how-to-backup-and-restore-jenkins/" class="link">
-              手把手教会你 Jenkins 备份与恢复
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/05/2020-05-08-how-to-use-the-jenkins-declarative-pipeline/" class="link">
-              如何使用 Jenkins 声明式流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/04/2020-04-24-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
-              Kubernetes 构造可自由扩展的 Jenkins
             </a>
           </li>
         
@@ -569,44 +506,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/04/2020-04-08-build-jenkins-as-a-code/" class="link">
-              以代码的形式构建 Jenkins
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2020/03/2020-03-17-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-28-t-mobile-and-jenkins-case-study/" class="link">
-              T-Mobile 和 Jenkins 案例研究
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-18-google-summer-of-code-2019-report/" class="link">
-              2019 年 Google 编程之夏活动报告
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-10-webSocket/" class="link">
-              WebSocket
             </a>
           </li>
         
@@ -623,44 +524,8 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/01/2020-01-13-welcome-to-the-matrix/" class="link">
-              欢迎使用流水线指令-矩阵
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-23-generic-webhook-trigger-plugin/" class="link">
-              Webhook 通用触发插件
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/12/2019-12-19-full-build-automation-for-java-application-using-docker/" class="link">
               使用 Docker 全自动构建 Java 应用
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/12/2019-12-11-jenkins-health-advisor-by-cloudbees-is-here/" class="link">
-              Jenkins 健康检查顾问
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/08/2019-08-05-jenkins-multi-branch-pipeline/" class="link">
-              在大型企业里维护多分支流水线
             </a>
           </li>
         
@@ -697,15 +562,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/07/2019-07-09-jenkins-release/" class="link">
               Jenkins 长期支持版更新
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-26-using-active-choices-plugin-merge-jobs/" class="link">
-              使用Active-Choices-Plugin插件将十个Job合成一个
             </a>
           </li>
         
@@ -914,15 +770,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
         
           <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/03/2019-03-13-electron-pipeline-demo/" class="link">
-              Electron 应用的流水线设计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-03-13-ready-for-CDF/" class="link">
               为 Continuous Delivery Foundation 的成立感到兴奋
             </a>
@@ -934,15 +781,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           <li class="db dib-l mb2 mr3">
             <a href="/wechat/articles/2019/03/2019-01-08-mpl-modular-pipeline-library/" class="link">
               MPL - 模块化的流水线库
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/02/2019-02-27-jenkins-script-console-in-practice/" class="link">
-              批量修改 Jenkins 任务的技巧
             </a>
           </li>
         

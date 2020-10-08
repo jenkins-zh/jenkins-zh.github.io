@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>安装 on Jenkins 中文社区</title>
@@ -40,9 +40,10 @@ Tomcat 和 Jenkins 都是用 Java 语言开发的，因此，我们首先需要�
 安装 首先，我们需要下载 Tomcat 和 Jenkins： 首先，我们需要有 Java 的运行环境，JRE 或者 JDK 都可以。下面提供几种安装的方式：
  macOS 下安装 brew cask install adoptopenjdk8  注意，本文的实验环境是 Java8
 然后，我们需要下载 Tomcat 和 Jenkins：
-wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz tar xzvf apache-tomcat-7.0.105.tar.gz wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war mv jenkins.war apache-tomcat-7.0.105/webapps  另外，我们可以通过 Jenkins CLI 来下载和启动 Jenkins
+wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.105/bin/apache-tomcat-7.0.105.tar.gz tar xzvf apache-tomcat-7.0.105.tar.gz wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/2.256/jenkins.war mv jenkins.war apache-tomcat-7.0.105/webapps 另外，我们可以通过 Jenkins CLI 来下载和启动 Jenkins
 jcli center download --war-version 2.256
-启动 Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。</description>
+启动 Tomcat 分别支持以交互式、守护进程的方式来启动，如果你对这两个概念还不够清楚的话，我下面会给出简单的解释。
+ 交互式；执行的命令会阻塞当前窗口，直到程序退出后才会结束。 守护进程；命令执行完成后，立刻结束，但是程序不会退出，会在后台一直运行。  当我们学习、调试时，可以采用交互式的方式来启动，这样的话，会比较方便。</description>
     </item>
     
     <item>

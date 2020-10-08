@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="介绍 Jenkins 模板引擎" />
 <meta property="og:description" content="这是 StevenTerrana 的客座帖子，他是 Booz Allen Hamilton 的首席技术专家，也是模板引擎插件的首席工程师。他参加了流水线设计特别兴趣小组" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" /><meta property="article:published_time" content="2019-07-01T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-07-01T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/07/2019-07-01-introducing-the-jenkins-templating-engine/" />
+<meta property="article:published_time" content="2019-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-07-01T00:00:00+00:00" />
 <meta itemprop="name" content="介绍 Jenkins 模板引擎">
 <meta itemprop="description" content="这是 StevenTerrana 的客座帖子，他是 Booz Allen Hamilton 的首席技术专家，也是模板引擎插件的首席工程师。他参加了流水线设计特别兴趣小组">
-
-
 <meta itemprop="datePublished" content="2019-07-01T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="398">
+<meta itemprop="wordCount" content="392">
 
 
 
-<meta itemprop="keywords" content="JTE,pipeline,plugin,pipeline-authoring," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="JTE,pipeline,plugin,pipeline-authoring," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="介绍 Jenkins 模板引擎"/>
 <meta name="twitter:description" content="这是 StevenTerrana 的客座帖子，他是 Booz Allen Hamilton 的首席技术专家，也是模板引擎插件的首席工程师。他参加了流水线设计特别兴趣小组"/>
 
@@ -233,35 +230,34 @@ var trackOutboundLink = function(id, url) {
 	
 		<p class="b">内容目录</p>
   	<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#流水线模板">流水线模板</a></li>
-<li><a href="#jte-实战">JTE 实战</a></li>
-<li><a href="#实现模板">实现模板</a>
-<ul>
-<li><a href="#步骤1-创建流水线配置存储库">步骤1、创建流水线配置存储库</a></li>
-<li><a href="#步骤2-创建流水线模板">步骤2、创建流水线模板</a></li>
-<li><a href="#步骤3-创建库">步骤3、 创建库</a></li>
-<li><a href="#步骤4-实施步骤">步骤4、实施步骤</a></li>
-<li><a href="#步骤5-创建配置文件">步骤5、创建配置文件</a></li>
-<li><a href="#步骤6-在-jenkins-中配置治理层">步骤6、在 Jenkins 中配置治理层</a></li>
-<li><a href="#步骤7-为两个应用程序创建多分支流水线">步骤7、为两个应用程序创建多分支流水线</a></li>
-<li><a href="#步骤8-运行流水线">步骤8、运行流水线</a></li>
-</ul></li>
-<li><a href="#模板引擎的好处">模板引擎的好处</a></li>
-<li><a href="#应用组织治理">应用组织治理</a></li>
-<li><a href="#优化代码重用">优化代码重用</a></li>
-<li><a href="#简化流水线可维护性">简化流水线可维护性</a></li>
-<li><a href="#参与进来">参与进来！</a></li>
-<li><a href="#高级功能">高级功能</a></li>
-<li><a href="#更多资源">更多资源</a>
-<ul>
-<li><a href="#对于这个演示">对于这个演示</a></li>
-<li><a href="#其他资源">其他资源</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#流水线模板">流水线模板</a></li>
+    <li><a href="#jte-实战">JTE 实战</a></li>
+    <li><a href="#实现模板">实现模板</a>
+      <ul>
+        <li><a href="#步骤1创建流水线配置存储库">步骤1、创建流水线配置存储库</a></li>
+        <li><a href="#步骤2创建流水线模板">步骤2、创建流水线模板</a></li>
+        <li><a href="#步骤3-创建库">步骤3、 创建库</a></li>
+        <li><a href="#步骤4实施步骤">步骤4、实施步骤</a></li>
+        <li><a href="#步骤5创建配置文件">步骤5、创建配置文件</a></li>
+        <li><a href="#步骤6在-jenkins-中配置治理层">步骤6、在 Jenkins 中配置治理层</a></li>
+        <li><a href="#步骤7为两个应用程序创建多分支流水线">步骤7、为两个应用程序创建多分支流水线</a></li>
+        <li><a href="#步骤8运行流水线">步骤8、运行流水线</a></li>
+      </ul>
+    </li>
+    <li><a href="#模板引擎的好处">模板引擎的好处</a></li>
+    <li><a href="#应用组织治理">应用组织治理</a></li>
+    <li><a href="#优化代码重用">优化代码重用</a></li>
+    <li><a href="#简化流水线可维护性">简化流水线可维护性</a></li>
+    <li><a href="#参与进来">参与进来！</a></li>
+    <li><a href="#高级功能">高级功能</a></li>
+    <li><a href="#更多资源">更多资源</a>
+      <ul>
+        <li><a href="#对于这个演示">对于这个演示</a></li>
+        <li><a href="#其他资源">其他资源</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 	
 
@@ -322,89 +318,57 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="JTE.jpg" alt="JTE" /></p>
-
+<p><img src="JTE.jpg" alt="JTE"></p>
 <p>在企业范围内实施 DevSecOps 实践具有挑战性。由于组织内的不同应用程序正在使用多种编程语言、自动化测试框架和安全遵从性安全合规工具，因此每个团队构建和维护流水线变得很难。</p>
-
 <p>无论应用程序使用哪个特定的技术栈，大多数流水线都将遵循相同的通用工作流。<a href="https://plugins.jenkins.io/templating-engine">模板引擎插件</a>（简写为 JTE ，用于 Jenkins 模板引擎）允许您通过创建不依赖于工具的模板化工作流来获取效率，每个团队都可以重用这些工作流。</p>
-
 <p>作为公共部门和私营部门客户的技术顾问，我们在 Booz Allen 发现，每个新项目都要从头开始建造 DevSecOps 流水线。通过开发 Jenkins 模板引擎，我们已经看到流水线开发从几个月减少到几天，现在我们可以重用工具集成，同时为 Jenkins 流水线带来新的治理级别。</p>
-
 <h2 id="流水线模板">流水线模板</h2>
-
 <p>组织受益于让应用程序开发人员专注于他们最擅长的工作：构建应用程序。支持这个，意味着建立一个集中式的 DevOps 团队，负责维护平台基础设施，并创建开发团队使用的 CI/CD 流水线。</p>
-
 <p>随着基于微服务的体系结构的兴起，一个集中的 DevOps 团队可以同时支持许多不同的开发团队；所有这些团队都可能利用不同的编程语言和自动化测试工具。</p>
-
 <p>虽然开发团队之间的工具可能不同，但工作流通常是相同的：单元测试、静态代码分析、构建和发布制品、部署它，然后针对部署的应用程序执行不同类型的测试。</p>
-
 <blockquote>
 <p>模板引擎插件允许您从每个被团队定义可继承通用工作流的存储库中删除 Jenkinsfile 。作为替代每个存储库需定义整个流水线，团队提供一个使用工作流的工具配置文件。</p>
 </blockquote>
-
 <h2 id="jte-实战">JTE 实战</h2>
-
 <p>让我们通过一个简单的示例来演示模板的可重用性：
-      流水线模板例子：
-      <code>
-      unit_test()
-      build()
-      static_code_analysis()
-</code>
+流水线模板例子：
+<code>unit_test() build() static_code_analysis()</code>
 模板利用库提供的步骤概述工作流团队必须实现的步骤。虽然模板的执行方式与任何其他 <code>Jenkinsfile</code> 都一样（这意味着支持标准的脚本化和声明性语法），但模板的目标应该是以纯英语的方式阅读，并避免任何技术实现。</p>
-
 <blockquote>
 <p>通过这种方式利用模板，您可以将流水线的业务逻辑（应该在什么时候发生）与技术实现（实际将要发生什么）分开。其结果是一个 CI/CD 管道，当同时支持多个团队时，该流水线被证明非常容易管理。</p>
 </blockquote>
-
 <p>此模板（ <code>unit_test</code> 、 <code>build</code> 和 <code>static_code_analysis</code> ）概述的步骤是专门命名的。通过这种方式，团队可以使用的不同库共享同一流水线。</p>
-
 <h2 id="实现模板">实现模板</h2>
-
-<p>使用模板引擎实现可共享流水线需要几个关键组件：
-1.  <strong>流水线模板</strong>：概述要执行的工作流
-2.  <strong>库</strong>：提供工作流步骤的技术实现
-3.  <strong>配置文件</strong>：指定要使用的库及其配置</p>
-
-<h3 id="步骤1-创建流水线配置存储库">步骤1、创建流水线配置存储库</h3>
-
+<p>使用模板引擎实现可共享流水线需要几个关键组件：</p>
+<ol>
+<li><strong>流水线模板</strong>：概述要执行的工作流</li>
+<li><strong>库</strong>：提供工作流步骤的技术实现</li>
+<li><strong>配置文件</strong>：指定要使用的库及其配置</li>
+</ol>
+<h3 id="步骤1创建流水线配置存储库">步骤1、创建流水线配置存储库</h3>
 <p>流水线配置存储库用于存储团队继承的常见配置和流水线模板。</p>
-
 <p>这个<a href="https://github.com/steven-terrana/example-jte-configuration">示例流水线配置存储库</a>稍后将被配置为<a href="https://boozallen.github.io/jenkins-templating-engine/pages/Governance/index.html#governance-tier">治理层</a>的一部分：JTE 的机制中允许您构建表示组织的层次结构配置。</p>
-
-<p>治理层包含三个方面：
-1.  流水线模板
-2.  库资源清单
-3.  层的配置文件( <code>pipeline_config.groovy</code> )</p>
-
+<p>治理层包含三个方面：</p>
+<ol>
+<li>流水线模板</li>
+<li>库资源清单</li>
+<li>层的配置文件( <code>pipeline_config.groovy</code> )</li>
+</ol>
 <blockquote>
 <p>治理层的流水线模板和配置文件存储在流水线配置存储库中。</p>
 </blockquote>
-
 <p>在 Jenkins 中配置治理层时，您将为包含上述组件的存储库以及可以找到这些制品的基本目录提供源代码管理位置。</p>
-
-<h3 id="步骤2-创建流水线模板">步骤2、创建流水线模板</h3>
-
+<h3 id="步骤2创建流水线模板">步骤2、创建流水线模板</h3>
 <p>接下来，我们将为治理层创建一个 <code>Jenkinsfile</code> 。在 JTE 中， <code>Jenkinsfile</code> 是执行将使用的默认流水线模板。</p>
-
 <pre><code>Jenkinsfile
 unit_test()
 build()
 static_code_analysis()
-</code></pre>
-
-<h3 id="步骤3-创建库">步骤3、 创建库</h3>
-
+</code></pre><h3 id="步骤3-创建库">步骤3、 创建库</h3>
 <p>模板引擎插件实现了一个版本的 Jenkins 共享库，以增强库的可重用性。库是源代码存储库中的根目录，并且该存储库已在治理层上配置为库源。</p>
-
 <p>在我们的示例中，流水线模板需要执行单元测试、打包制品和运行静态代码分析。</p>
-
 <p>假设我们有一些团队使用 <strong>Gradle</strong> ，一些团队使用 <strong>Maven</strong> 来构建和测试他们的应用程序，但是他们都将使用 SonarQube 来执行静态代码分析。</p>
-
 <p>在这个场景中，我们应该创建 <code>gradle</code> 、 <code>maven</code> 和 <code>sonarqube</code> 库。</p>
-
 <pre><code>|- gradle/
   \-- build.groovy
   \-- unit_test.groovy
@@ -413,81 +377,52 @@ static_code_analysis()
   \-- unit_test.groovy
 |- sonarqube/
   \-- static_code_analysis.groovy
-</code></pre>
-
-<h3 id="步骤4-实施步骤">步骤4、实施步骤</h3>
-
+</code></pre><h3 id="步骤4实施步骤">步骤4、实施步骤</h3>
 <p>实现库步骤与将常规全局变量作为默认 Jenkins 共享库的一部分写入完全相同。</p>
-
 <p>为了这个演示的目的，我们将让每个步骤打印出步骤名称和贡献库。</p>
-
-<pre><code class="language-groovy">gradle/build.groovy
-void call(){
-    println &quot;gradle: build()&quot;
-}
-</code></pre>
-
-<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">gradle<span style="color:#f92672">/</span>build<span style="color:#f92672">.</span><span style="color:#a6e22e">groovy</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(){</span>
+    println <span style="color:#e6db74">&#34;gradle: build()&#34;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><blockquote>
 <p>读更多关于 <a href="https://boozallen.github.io/jenkins-templating-engine/pages/Library_Development/index.html">JTE 开发库</a>。</p>
 </blockquote>
-
-<h3 id="步骤5-创建配置文件">步骤5、创建配置文件</h3>
-
+<h3 id="步骤5创建配置文件">步骤5、创建配置文件</h3>
 <p>JTE 的配置文件名为 <code>pipeline_config.groovy</code> 。</p>
-
 <p>在治理层，我们将建立一个配置文件，具体说明应用程序之间的共同配置。在此情况下，两种应用都是使用 <code>sonarqube</code>  库。</p>
-
-<pre><code class="language-groovy">pipeline_config.groovy
-libraries{
-  merge = true // allow individual apps to contribute additional libraries
-  sonarqube
-}
-</code></pre>
-
-<p>接下来，我们将创建另外两个表示 <a href="https://github.com/steven-terrana/example-jte-app-maven">Maven</a> 和 <a href="https://github.com/steven-terrana/example-jte-app-gradle">Gradle</a> 应用程序的存储库。在这些存储库中，我们只需要一个特定的 <code>pipeline_config.groovy</code> 文件。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">pipeline_config<span style="color:#f92672">.</span><span style="color:#a6e22e">groovy</span>
+libraries<span style="color:#f92672">{</span>
+  merge <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#75715e">// allow individual apps to contribute additional libraries
+</span><span style="color:#75715e"></span>  sonarqube
+<span style="color:#f92672">}</span>
+</code></pre></div><p>接下来，我们将创建另外两个表示 <a href="https://github.com/steven-terrana/example-jte-app-maven">Maven</a> 和 <a href="https://github.com/steven-terrana/example-jte-app-gradle">Gradle</a> 应用程序的存储库。在这些存储库中，我们只需要一个特定的 <code>pipeline_config.groovy</code> 文件。</p>
 <p>这些存储库都包含应用程序 <code>pipeline_config.groovy</code> 配置文件。</p>
-
-<pre><code class="language-groovy">maven app: pipeline_config.groovy
-libraries{
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">maven app: pipeline_config<span style="color:#f92672">.</span><span style="color:#a6e22e">groovy</span>
+libraries<span style="color:#f92672">{</span>
     maven
-}
-</code></pre>
-
-<pre><code class="language-groovy">gradle app: pipeline_config.groovy
-libraries{
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">gradle app: pipeline_config<span style="color:#f92672">.</span><span style="color:#a6e22e">groovy</span>
+libraries<span style="color:#f92672">{</span>
     gradle
-}
-</code></pre>
-
-<h3 id="步骤6-在-jenkins-中配置治理层">步骤6、在 Jenkins 中配置治理层</h3>
-
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="步骤6在-jenkins-中配置治理层">步骤6、在 Jenkins 中配置治理层</h3>
 <p>既然我们有了<a href="https://github.com/steven-terrana/example-jte-configuration">流水线配置存储库</a>和<a href="https://github.com/steven-terrana/example-jte-libraries">库源存储库</a>，那么就可以在 Jenkins 中配置<a href="https://boozallen.github.io/jenkins-templating-engine/pages/Governance/index.html#governance-tier">治理层</a>：</p>
-
-<p><img src="governance_tier.png" alt="governance_tier" /></p>
-
+<p><img src="governance_tier.png" alt="governance_tier"></p>
 <blockquote>
 <p>上图中显示的配置可以在以下找到 <code>Manage Jenkins &gt;&gt; Configure System</code> 。</p>
-
+</blockquote>
+<blockquote>
 <p>通过模板引擎，您可以通过 Jenkins 中的文件夹表示此结构，从而创建与组织分类相匹配的流水线治理层次结构。</p>
 </blockquote>
-
-<h3 id="步骤7-为两个应用程序创建多分支流水线">步骤7、为两个应用程序创建多分支流水线</h3>
-
+<h3 id="步骤7为两个应用程序创建多分支流水线">步骤7、为两个应用程序创建多分支流水线</h3>
 <p>当为每个应用程序创建多分支流水线项目时，模板引擎插件提供一个名为 <strong>Jenkins 模板引擎</strong>的新 <code>Project Recognizer</code> 。项目设置为在存储库中的所有分支使用模板引擎框架。。</p>
-
-<p><img src="project_recognizer.png" alt="project_recognizer" /></p>
-
+<p><img src="project_recognizer.png" alt="project_recognizer"></p>
 <blockquote>
 <p>您还可以为 GitHub 组织项目设置 <strong>Jenkins 模板引擎</strong>项目识别器，使您能够轻松地在整个 GitHub 组织中共享相同的流水线！</p>
 </blockquote>
-
-<h3 id="步骤8-运行流水线">步骤8、运行流水线</h3>
-
+<h3 id="步骤8运行流水线">步骤8、运行流水线</h3>
 <p>就这样！现在，这两个应用程序将利用完全相同的流水线模板，同时具有选择工作流每个阶段应使用哪些工具的灵活性。</p>
-
 <p>下面是两个应用程序运行流水线的控制台日志的示例输出：</p>
-
 <pre><code>Gradle:
 [JTE] Obtained Template Configuration File pipeline_config.groovy from git https://github.com/steven-terrana/example-jte-configuration
 [JTE] Obtained Template Configuration File pipeline_config.groovy from git https://github.com/steven-terrana/example-jte-app-gradle.git
@@ -505,9 +440,7 @@ gradle: build()
 [Pipeline] echo
 sonarqube: static_code_analysis()
 [Pipeline] End of Pipeline
-</code></pre>
-
-<pre><code>Maven:
+</code></pre><pre><code>Maven:
 [JTE] Obtained Template Configuration File pipeline_config.groovy from git https://github.com/steven-terrana/example-jte-configuration
 [JTE] Obtained Template Configuration File pipeline_config.groovy from git https://github.com/steven-terrana/example-jte-app-maven.git
 [JTE] Loading Library sonarqube from git https://github.com/steven-terrana/example-jte-libraries.git
@@ -524,32 +457,18 @@ maven: build()
 [Pipeline] echo
 sonarqube: static_code_analysis()
 [Pipeline] End of Pipeline
-</code></pre>
-
-<h2 id="模板引擎的好处">模板引擎的好处</h2>
-
-<p><img src="jte_benefits.png" alt="jte_benefits" /></p>
-
+</code></pre><h2 id="模板引擎的好处">模板引擎的好处</h2>
+<p><img src="jte_benefits.png" alt="jte_benefits"></p>
 <h2 id="应用组织治理">应用组织治理</h2>
-
 <p>利用模板引擎插件，您可以定义企业级的、经过批准的工作流，无论使用什么工具，团队都可以使用这些工作流。这种自上而下的方法使得在组织中扩展和执行 DevSecOps 原则变得非常容易。</p>
-
 <h2 id="优化代码重用">优化代码重用</h2>
-
 <p>实际上，组织中的每个团队都不需要反复思考如何做相同的事情。在 Booz Allen ，我们已经看到流水线开发时间从几个月减少到几天，因为我们不断地重复使用和扩展模板引擎库组合，作为解决方案交付平台的一部分。</p>
-
 <h2 id="简化流水线可维护性">简化流水线可维护性</h2>
-
 <p>通常，DevOps 工程师会发现自己同时为多个开发团队构建和支持流水线。通过将工作流与技术实现分离，并将流水线定义合并到一个集中的位置，模板引擎插件允许 DevOps 工程师更快地扩展。</p>
-
 <h2 id="参与进来">参与进来！</h2>
-
 <p><a href="https://plugins.jenkins.io/templating-engine">模板引擎插件</a>是开源的，并在 Jenkins 更新中心提供。</p>
-
 <p>我们总是感谢反馈和贡献！如果你有一个有趣的用例或者想问一些问题，可以试试 <a href="https://gitter.im/jenkinsci/templating-engine-plugin">Gitter 上的模板引擎插件</a>。</p>
-
 <h2 id="高级功能">高级功能</h2>
-
 <ul>
 <li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Governance/conditional_inheritance.html">配置文件条件继承</a></li>
 <li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Library_Development/externalizing_config.html">外部化库配置</a></li>
@@ -558,20 +477,15 @@ sonarqube: static_code_analysis()
 <li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Templating/configuration_files/default_step_implementation.html">默认步骤实现</a></li>
 <li><a href="https://boozallen.github.io/jenkins-templating-engine/pages/Templating/configuration_files/sandboxing.html">配置文件 DSL 沙盒</a></li>
 </ul>
-
 <h2 id="更多资源">更多资源</h2>
-
 <h3 id="对于这个演示">对于这个演示</h3>
-
 <ul>
 <li><a href="https://github.com/steven-terrana/example-jte-configuration">Pipeline 配置存储库</a></li>
 <li><a href="https://github.com/steven-terrana/example-jte-libraries">示例库</a></li>
 <li><a href="https://github.com/steven-terrana/example-jte-app-maven">Maven 存储库示例</a></li>
 <li><a href="https://github.com/steven-terrana/example-jte-app-gradle">Gradle 存储库示例</a></li>
 </ul>
-
 <h3 id="其他资源">其他资源</h3>
-
 <ul>
 <li><a href="https://boozallen.github.io/jenkins-templating-engine/">模板引擎文档</a></li>
 <li><a href="https://github.com/jenkinsci/templating-engine-plugin">源代码</a></li>
@@ -659,6 +573,9 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
+      
+        
+        
       
     </ul>
   </div>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Progressive Delivery on Jenkins 中文社区</title>
+    <title>progressive delivery on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/progressive-delivery/</link>
-    <description>Recent content in Progressive Delivery on Jenkins 中文社区</description>
+    <description>Recent content in progressive delivery on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
@@ -18,10 +18,10 @@
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-26-progressive-delivery-with-jenkins-x/</guid>
       <description>这是渐进式交付系列的第二篇文章，第一篇请看：Kubernetes 中的渐进式交付：蓝绿部署和金丝雀部署。
-我使用的我的 Croc Hunter 示例项目评估了 Jenkins X 中金丝雀部署和蓝绿色部署的三种渐进式交付方案。 - Shipper 为 Jenkins X 构建的 Helm 图表启用了蓝绿部署和多集群部署，但是对图表的内容有限制。 你可以在 staging 和生产环境之间做蓝绿部署。 - Istio 允许通过创建一个虚拟服务将一定比例的流量发送到 staging 或预览环境。 - Flagger 构建在 Istio 之上，并添加了金丝雀部署，可以根据指标自动进行滚动部署和回滚。 Jenkins X 可以通过创建一个 Canary 对象自动启用金丝雀功能，从而实现优雅的滚动部署，以升级到生产环境。
-这里可以查看 Shipper、Isito 和 Flager 的示例代码。
+我使用的我的 Croc Hunter 示例项目评估了 Jenkins X 中金丝雀部署和蓝绿色部署的三种渐进式交付方案。
+ Shipper 为 Jenkins X 构建的 Helm 图表启用了蓝绿部署和多集群部署，但是对图表的内容有限制。 你可以在 staging 和生产环境之间做蓝绿部署。 Istio 允许通过创建一个虚拟服务将一定比例的流量发送到 staging 或预览环境。 Flagger 构建在 Istio 之上，并添加了金丝雀部署，可以根据指标自动进行滚动部署和回滚。 Jenkins X 可以通过创建一个 Canary 对象自动启用金丝雀功能，从而实现优雅的滚动部署，以升级到生产环境。  这里可以查看 Shipper、Isito 和 Flager 的示例代码。
 Shipper 由于 Shipper 对创建的 Helm 图表有多个限制，因此我必须对应用做一些更改。 而且 Jenkins X 只从 master 分支构建 Helm 包，所以我们不能做 PRs 的滚动部署，只能对 master 分支做滚动部署。
-应用标签不能包含发布名称，例如： app: {{ template “fullname” . }} 不起作用， 需要一些类似这样的标签： app: {{ .</description>
+应用标签不能包含发布名称，例如： app: {{ template “fullname” . }}  不起作用， 需要一些类似这样的标签： app: {{ .Values.appLabel }}。</description>
     </item>
     
     <item>
@@ -35,7 +35,8 @@ Shipper 由于 Shipper 对创建的 Helm 图表有多个限制，因此我必须
 Shipper shipper 是来自 booking.com 的一个项目， 它对 Kubernetes 进行了扩展，添加了复杂的部署策略和多集群编排（文档）。 它支持从一个集群到多个集群的部署，允许多区域部署。
 Shipper 通过一个 shipperctl 命令行进行安装。 它增加不同集群的配置文件来进行管理。 请注意这个与 GKE 上下文相关的问题。
 Shipper 使用 Helm 包来部署，但是它们没有随着 Helm 一起安装，它们不会在 helm list 的输出显示。 同样地，deployments 的版本必须是 apps/v1 ， 否则 shipper 将不能编辑 deployment 来添加正确的标签和副本数量。
-使用 shipper 部署都是与从旧版本(现有版本)过渡到新版本(竞争版本)相关。 这是通过创建一个新的应用对象实现的， 它定义了部署需要通过的多个阶段。例如下面 3 个步骤过程： 1. Staging：部署新版本到一个 pod ，没有流量 2. 50 / 50：部署新版本到 50% 的 pods，50% 的流量 3. Full on：部署新版本到全部的 pods，全部的流量</description>
+使用 shipper 部署都是与从旧版本(现有版本)过渡到新版本(竞争版本)相关。 这是通过创建一个新的应用对象实现的， 它定义了部署需要通过的多个阶段。例如下面 3 个步骤过程：
+ Staging：部署新版本到一个 pod ，没有流量 50 / 50：部署新版本到 50% 的 pods，50% 的流量 Full on：部署新版本到全部的 pods，全部的流量  strategy: steps: - name: staging capacity: contender: 1 incumbent: 100 traffic: contender: 0 incumbent: 100 - name: 50/50 capacity: contender: 50 incumbent: 50 traffic: contender: 50 incumbent: 50 - name: full on capacity: contender: 100 incumbent: 0 traffic: contender: 100 incumbent: 0 如果发布的某个步骤没有将流量发送到 pods ， 则可以使用 kubectl port-forward 访问它们，如：kubectl port-forward mypod 8080:8080， 这对于在用户看到新版本之前进行测试非常有用。</description>
     </item>
     
   </channel>

@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="使用 Visual Studio Code 验证 JCasC 配置文件" />
 <meta property="og:description" content="介绍 Visual Studio Code 新的 JCasC 插件以及如何使用该插件来验证您的 YAML 配置文件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/" /><meta property="article:published_time" content="2020-03-06T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-03-06T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/03/2020-03-06-validating-jcasc-configuration-files-using-visual-studio-code/" />
+<meta property="article:published_time" content="2020-03-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-06T00:00:00+00:00" />
 <meta itemprop="name" content="使用 Visual Studio Code 验证 JCasC 配置文件">
 <meta itemprop="description" content="介绍 Visual Studio Code 新的 JCasC 插件以及如何使用该插件来验证您的 YAML 配置文件">
-
-
 <meta itemprop="datePublished" content="2020-03-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-06T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="124">
 
 
 
-<meta itemprop="keywords" content="community-bridge,JCasC,VSCode,community," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="community-bridge,JCasC,VSCode,community," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Visual Studio Code 验证 JCasC 配置文件"/>
 <meta name="twitter:description" content="介绍 Visual Studio Code 新的 JCasC 插件以及如何使用该插件来验证您的 YAML 配置文件"/>
 
@@ -298,67 +295,50 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="cover.png" alt="封面图" /></p>
-
+<p><img src="cover.png" alt="封面图"></p>
 <h2 id="配置即代码插件">配置即代码插件</h2>
-
 <p>问题陈述：将现有的模式验证工作流程脚本语言 <a href="https://plugins.jenkins.io/configuration-as-code/">Jenkins 配置即代码插件</a>转换为基于 Java 的重写，从而增强其可读性和可测试性，并由该测试框架提供支持。通过开发 VSCode 插件来促进自动完成和验证，从而增强开发人员的经验，这将有助于开发人员在应用到 Jenkins 实例之前编写正确的 yaml 文件。</p>
-
 <p><a href="https://plugins.jenkins.io/configuration-as-code/">配置即代码插件</a>已被设计为 Jenkins 基于声明式配置文件配置的基本方式，无需成为 Jenkins 专家亦可编写这样的文件，只需将配置过程中转换成用于在 web UI 中执行的代码即可。该插件使用此类模式来验证要应用于 Jenkins 实例的文件。</p>
-
 <p>启用了新的 JSON 模式后，开发人员现在可以针对其测试 yaml 文件。该模式检查 <code>descriptors</code>，即可以应用于插件或 Jenkins 核心的配置，使用正确的类型并在某些情况下提供帮助文本。 VSCode 允许我们通过一些修改立即测试架构。该项目是 <a href="https://communitybridge.org/">Community Bridge</a> 计划的一部分，Community Bridge 计划是 Linux 基金会创建的一个平台，旨在使开发人员以及支持他们的个人和公司提高开源技术的可持续性、安全性和多样性。您可以看一下<a href="https://people.communitybridge.org/project/bce45251-1ff4-4131-9699-0a0017b31495"> Jenkins Community Bridge 项目</a>。</p>
-
 <h2 id="启用架构验证的步骤">启用架构验证的步骤</h2>
-
 <ol>
-<li><p>第一步安装 <a href="https://marketplace.visualstudio.com/items?itemName=jcasc-developers.jcasc-plugin">Visual Studio Code 的 JCasC 插件</a>，并通过扩展列表打开扩展。使用 <code>Ctrl + Shift + X</code> 在 VSCode 编辑器中打开扩展列表的快捷方式。</p></li>
-
-<li><p>为了启用验证，我们需要将其包括在工作空间设置中。依次导航到 <code>File</code>，<code>Preference</code> 和 <code>Settings</code>。内部设置中搜索 <code>json</code>，内部 <code>settings.json</code> 中包含以下配置。</p></li>
+<li>
+<p>第一步安装 <a href="https://marketplace.visualstudio.com/items?itemName=jcasc-developers.jcasc-plugin">Visual Studio Code 的 JCasC 插件</a>，并通过扩展列表打开扩展。使用 <code>Ctrl + Shift + X</code> 在 VSCode 编辑器中打开扩展列表的快捷方式。</p>
+</li>
+<li>
+<p>为了启用验证，我们需要将其包括在工作空间设置中。依次导航到 <code>File</code>，<code>Preference</code> 和 <code>Settings</code>。内部设置中搜索 <code>json</code>，内部 <code>settings.json</code> 中包含以下配置。</p>
+</li>
 </ol>
-
 <pre><code>{
 &quot;yaml.schemas&quot;: {
         &quot;schema.json&quot;: &quot;y[a]?ml&quot;
     }
 }
-</code></pre>
-
-<p>您可以将全局模式指定为 schema.json 的值，schema.json 是模式的文件名。这会将架构应用于所有 yaml 文件。例如：<code>.[y [a]？ml]</code></p>
-
-<ol>
-<li><p>使用 VSCode 可以完成以下任务：</p>
-
+</code></pre><p>您可以将全局模式指定为 schema.json 的值，schema.json 是模式的文件名。这会将架构应用于所有 yaml 文件。例如：<code>.[y [a]？ml]</code></p>
+<ol start="3">
+<li>
+<p>使用 VSCode 可以完成以下任务：</p>
 <ul>
 <li>自动完成（Ctrl + Space）：自动补全所有命令。</li>
 <li>文档大纲（Ctrl + Shift + O）：提供文件中所有已完成节点的文档概述。</li>
-</ul></li>
-
-<li><p>在工作目录下创建一个名为 jenkins.yml 的新文件。例如，参考以下文件的内容：</p></li>
+</ul>
+</li>
+<li>
+<p>在工作目录下创建一个名为 jenkins.yml 的新文件。例如，参考以下文件的内容：</p>
+</li>
 </ol>
-
 <pre><code>jenkins:
   systemMessage: “Hello World”
   numExecutors: 2
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>上面的 yaml 文件根据架构有效，vscode 为您提供验证和自动完成功能。</li>
 </ul>
-
 <h2 id="截图">截图</h2>
-
-<p><img src="vscode.png" alt="vscode" /></p>
-
-<p><img src="userDocs1.png" alt="参考文档1" /></p>
-
-<p><img src="userDocs2.png" alt="参考文档2" /></p>
-
+<p><img src="vscode.png" alt="vscode"></p>
+<p><img src="userDocs1.png" alt="参考文档1"></p>
+<p><img src="userDocs2.png" alt="参考文档2"></p>
 <p>我们于 2 月 26 日举行了在线 <a href="https://www.meetup.com/Jenkins-online-meetup/events/268823268">meetup</a>（译注：该 meetup 已举办，Video 及 Slides 链接见最下方），讨论该插件以及如何使用它来验证您的 YAML 配置文件。对于有关架构的任何建议或讨论，请随时加入我们的 <a href="https://gitter.im/jenkinsci/jcasc-devtools-project">gitter 频道</a>。可以在 <a href="https://github.com/jenkinsci/configuration-as-code-plugin/issues">Github</a> 上提交问题。</p>
-
 <h2 id="链接">链接</h2>
-
 <ul>
 <li><a href="https://www.youtube.com/watch?v=nlm-ZaW9FPo&amp;feature=youtu.be">Video</a></li>
 <li><a href="https://www.slideshare.net/SladynNunes/jenkins-jcasc-online-meetup">Slides</a></li>

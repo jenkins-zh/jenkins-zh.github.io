@@ -21,7 +21,7 @@
   
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.71.0" />
 
   
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,21 +42,18 @@
 <meta property="og:title" content="使用 Vault 与 Kubernetes 为密码提供强有力的保障" />
 <meta property="og:description" content="结合具体的例子讲解了 Vault 和 Kubernetes 的集成，从而为 Kubernetes 运行的应用程序更安全的使用密码" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/" /><meta property="article:published_time" content="2020-04-15T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-04-15T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/04/2019-04-15-effective-secret-with-vault-and-kubernetes/" />
+<meta property="article:published_time" content="2020-04-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-15T00:00:00+00:00" />
 <meta itemprop="name" content="使用 Vault 与 Kubernetes 为密码提供强有力的保障">
 <meta itemprop="description" content="结合具体的例子讲解了 Vault 和 Kubernetes 的集成，从而为 Kubernetes 运行的应用程序更安全的使用密码">
-
-
 <meta itemprop="datePublished" content="2020-04-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-04-15T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1404">
 
 
 
-<meta itemprop="keywords" content="Kubernetes,Vault,Cloud Native,Golang,Security," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Kubernetes,Vault,Cloud Native,Golang,Security," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Vault 与 Kubernetes 为密码提供强有力的保障"/>
 <meta name="twitter:description" content="结合具体的例子讲解了 Vault 和 Kubernetes 的集成，从而为 Kubernetes 运行的应用程序更安全的使用密码"/>
 
@@ -298,40 +295,33 @@ var trackOutboundLink = function(id, url) {
 
 <div class="prose" id="prose">
 
-
-
-<p><img src="cover.jpg" alt="cover" /></p>
-
+<p><img src="cover.jpg" alt="cover"></p>
 <h2 id="介绍">介绍</h2>
-
 <p>Kubernetes 已经成为了容器编排方案的工业标准，而来自 HashiCorp 的  Vault 则是密码管理的工业标准。那问题来了: 怎样将这两项技术结合使用从而可以让你在 Kubernetes 的应用程序中使用来自于 Vault 中心实例的密码呢？</p>
-
 <p>一种解决方法是使用 <a href="https://www.vaultproject.io/docs/auth/approle.html">AppRole</a> 认证。<a href="https://github.com/Boostport/kubernetes-vault">Boostport</a> 为 AppRoles 在 Kubernetes 上的使用提供了完美的集成。另一个可行的方法是使用  <a href="https://www.vaultproject.io/docs/auth/kubernetes.html">Kubernetes 认证</a>。这种认证机制为 Vault 和 Kubernetes 集群创建一个可信的联系因而你可以使用一个服务账号到 Vault 进行认证。后期你可以使用 <a href="https://www.vaultproject.io/docs/auth/kubernetes.html">Kubernetes 的 Vault 节点</a>获取和更新认证令牌。</p>
-
 <p>这篇实践的文章中，我会向你展示如何使用一些 Go 助手工具实现诸如认证更新令牌这些相同的工作，并且还会进一步实现-从 Vault 到 Kubernetes 同步预定义的密码子集。</p>
-
 <p><em>等级: 高级</em></p>
-
 <h2 id="准备工作">准备工作</h2>
-
 <p>简单起见我有一些选项:</p>
-
 <ul>
-<li><p>用多种不同的方法启动一个 Kubernetes 集群。通常来说，<code>minikube</code> 用来测试或者开发。我会使用 <code>kubeadm</code> 因为它非常简单的就可以启动一个*真正的*集群。</p></li>
-
-<li><p>在 Kubernetes 中，会使用 <code>default</code> 命名空间。</p></li>
-
-<li><p>Vault 会在*开发*模式下运行。<em>不要像在生产环境下那样使用它！</em> 确保在环境变量中设置了 <code>VAULT_ADDR</code>。</p></li>
-
-<li><p>代码示例中会使用 Ubuntu。这些已经在 GCE 上配置为 2 vCPU 和 7.5 GB 的 Ubuntu 18.10 VM 上进行了测试。（可以看看 GCP 上 $300 的免费套餐，就是说说而已哈&hellip;）</p></li>
-
-<li><p>除非另有说明，将会使用 Bash。</p></li>
+<li>
+<p>用多种不同的方法启动一个 Kubernetes 集群。通常来说，<code>minikube</code> 用来测试或者开发。我会使用 <code>kubeadm</code> 因为它非常简单的就可以启动一个<em>真正的</em>集群。</p>
+</li>
+<li>
+<p>在 Kubernetes 中，会使用 <code>default</code> 命名空间。</p>
+</li>
+<li>
+<p>Vault 会在<em>开发</em>模式下运行。<em>不要像在生产环境下那样使用它！</em> 确保在环境变量中设置了 <code>VAULT_ADDR</code>。</p>
+</li>
+<li>
+<p>代码示例中会使用 Ubuntu。这些已经在 GCE 上配置为 2 vCPU 和 7.5 GB 的 Ubuntu 18.10 VM 上进行了测试。（可以看看 GCP 上 $300 的免费套餐，就是说说而已哈&hellip;）</p>
+</li>
+<li>
+<p>除非另有说明，将会使用 Bash。</p>
+</li>
 </ul>
-
 <h2 id="kubernetes">Kubernetes</h2>
-
 <p>让我们从一个简单的测试集群开始。下面的代码你会看到一个简单节点的安装步骤是什么样的。</p>
-
 <pre><code># 1) Install Kubernetes on a Ubuntu machine
 sudo -i
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
@@ -356,26 +346,17 @@ kubectl get nodes -o wide
 # For details, see: 
 # - https://kubernetes.io/docs/setup/independent/install-kubeadm/
 # - https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
-</code></pre>
-
-<h2 id="vault">Vault</h2>
-
+</code></pre><h2 id="vault">Vault</h2>
 <h3 id="安装">安装</h3>
-
 <p>Vault 的安装非常的直接: 下载解压二进制包即可:</p>
-
 <pre><code># Install Vault
 sudo apt install -y zip
 curl -OL https://releases.hashicorp.com/vault/1.1.1/vault_1.1.1_linux_amd64.zip
 unzip vault_1.1.1_linux_amd64.zip
 sudo mv vault /usr/local/bin/
 vault -autocomplete-install &amp;&amp; exec $SHELL
-</code></pre>
-
-<h3 id="运行一个-vault-服务器">运行一个 Vault 服务器</h3>
-
-<p>我们会以*开发*模式运行一个 Vault 服务器。同样，这也非常的简单。请记住，当启动一个开发服务器的时候，一个 root 令牌会被写入到 <code>$HOME/.vault-token</code> 中，对 root 用户来说同样如此。使用 <code>&amp;</code> 符号会让 Vault 进程在后台运行因此我们可以继续使用相同的 shell。</p>
-
+</code></pre><h3 id="运行一个-vault-服务器">运行一个 Vault 服务器</h3>
+<p>我们会以<em>开发</em>模式运行一个 Vault 服务器。同样，这也非常的简单。请记住，当启动一个开发服务器的时候，一个 root 令牌会被写入到 <code>$HOME/.vault-token</code> 中，对 root 用户来说同样如此。使用 <code>&amp;</code> 符号会让 Vault 进程在后台运行因此我们可以继续使用相同的 shell。</p>
 <pre><code>$ vault server -dev -dev-listen-address=0.0.0.0:8200 &amp;
 ==&gt; Vault server configuration:
 
@@ -388,14 +369,9 @@ vault -autocomplete-install &amp;&amp; exec $SHELL
                  Storage: inmem
                  Version: Vault v1.1.1
              Version Sha: a3dcd63451cf6da1d04928b601bbe9748d53842e
-</code></pre>
-
-<h3 id="配置-kubernetes-认证">配置 Kubernetes 认证</h3>
-
+</code></pre><h3 id="配置-kubernetes-认证">配置 Kubernetes 认证</h3>
 <p>现在我们必须确保 Kubernetes 可以通过 Kubernetes 认证与 Vault 进行通信。这将会在 Kubernetes 和 Vault 之间建立一个信任的联系。预命名的 <code>vault-demo-role</code> 将会映射策略以及定义一个 TTL。</p>
-
 <p>因为我们使用 <code>kubeadm</code> 启动的 Kubernetes 集群，它非常轻松的就可以找到 <code>kubernetes_ca_cert</code> 参数的证书颁发机构（CA）存储的值。如果使用一个在云安装的 Kubernetes 该过程会比较困难一些。</p>
-
 <pre><code># NOTE: You may need to set these addresses differently.
 export INTERNAL_IP=$(dig +short `hostname -f`)
 export VAULT_ADDR=http://${INTERNAL_IP}:8200
@@ -428,12 +404,8 @@ vault kv put secret/demo/second green=lantern poison=ivy
 vault kv put secret/demo/greek/alpha philosopher=plato
 vault kv put secret/demo/greek/beta god=zeus
 vault kv put secret/demo/greek/gamma mountain=olympus
-</code></pre>
-
-<h3 id="基于角色的访问控制-rbac">基于角色的访问控制（RBAC）</h3>
-
+</code></pre><h3 id="基于角色的访问控制rbac">基于角色的访问控制（RBAC）</h3>
 <p>在 Kubernetes 这边，我们现在需要安装设置相匹配的 RBAC。首先我们创建一个名称为 <code>vault-serviceaccount</code> 的服务账号。然后我们会添加一个叫做 <code>vault-closterrolebinding</code> 的集群角色绑定，因而我们新创建的服务账号可以被允许使用默认的集群角色 <code>system:auth-delegator</code> 发送认证请求。角色 <code>vault-secrectadmin-role</code> 和角色绑定 <code>vault-secretadmin-rolebinding</code> 也绑定到了 <code>vault-serviceaccount</code> 上这样我们就可以同步密码了。</p>
-
 <pre><code>---
 apiVersion: v1
 kind: ServiceAccount
@@ -476,37 +448,29 @@ roleRef:
   kind: Role
   name: vault-secretadmin-role
   apiGroup: rbac.authorization.k8s.io
-</code></pre>
-
-<p>让我们应用下面的配置:</p>
-
+</code></pre><p>让我们应用下面的配置:</p>
 <pre><code>$ k apply -f vault-rbac.yaml 
 serviceaccount/vault-serviceaccount created
 clusterrolebinding.rbac.authorization.k8s.io/vault-clusterrolebinding created
 role.rbac.authorization.k8s.io/vault-secret-admin-role created
 rolebinding.rbac.authorization.k8s.io/vault-demo-secret-admin-rolebinding created
-</code></pre>
-
-<p>准备工作完成了。现在我们可以移步到我们的用例上了。</p>
-
+</code></pre><p>准备工作完成了。现在我们可以移步到我们的用例上了。</p>
 <h2 id="用例">用例</h2>
-
 <p>我们将会覆盖下面的这三个用例:</p>
-
 <ul>
-<li><p>第一个例子会演示怎样认证到 Vault 然后使用一个初始化的容器获取一个认证令牌。</p></li>
-
-<li><p>第二个例子会演示怎样使用 sidecar 容器更新这个令牌。</p></li>
-
-<li><p>第三个例子将会演示怎样从 Vault 到 Kubernetes 同步密码。</p></li>
+<li>
+<p>第一个例子会演示怎样认证到 Vault 然后使用一个初始化的容器获取一个认证令牌。</p>
+</li>
+<li>
+<p>第二个例子会演示怎样使用 sidecar 容器更新这个令牌。</p>
+</li>
+<li>
+<p>第三个例子将会演示怎样从 Vault 到 Kubernetes 同步密码。</p>
+</li>
 </ul>
-
 <p>所有这三个用例均由我在 PostFinance 的同事构建的三个 Docker 镜像上运行的。特别感谢 Marc Sauter，他在 <a href="https://github.com/sethvargo/vault-kubernetes-authenticator">Seth Vargo</a> 工作的启发下编纂了最初的实现方案。创建的这三个镜像-在 <a href="https://hub.docker.com/u/postfinance">Docker Hub</a> 上均可获取到-包括了一点 Go 的助手工具，代码均可以从 <a href="https://github.com/postfinance/vault-kubernetes">GitHub</a> 上找到。</p>
-
 <h3 id="使用初始容器进行认证">使用初始容器进行认证</h3>
-
-<p>第一个例子会展示 <code>vault-kubernetes-authenticator</code> （简称 *auther*）镜像的用法。auther 在一个初始容器中运行，使用服务账号 <code>vault-serviceaccount</code> 向 Vault 进行认证然后将 Vault 的认证令牌写入到 <code>/home/vault/.vault-token</code> 中。</p>
-
+<p>第一个例子会展示 <code>vault-kubernetes-authenticator</code> （简称 <em>auther</em>）镜像的用法。auther 在一个初始容器中运行，使用服务账号 <code>vault-serviceaccount</code> 向 Vault 进行认证然后将 Vault 的认证令牌写入到 <code>/home/vault/.vault-token</code> 中。</p>
 <pre><code>---
 apiVersion: apps/v1
 kind: Deployment
@@ -549,10 +513,7 @@ spec:
         volumeMounts:
         - name: vault-token
           mountPath: /home/vault
-</code></pre>
-
-<p>我们应用这些配置然后执行一些测试来验证所有配置都能成功运行。</p>
-
+</code></pre><p>我们应用这些配置然后执行一些测试来验证所有配置都能成功运行。</p>
 <pre><code>$ envsubst &lt; vault-kubernetes-authenticator-demo.yaml | k apply -f -
 deployment.apps/vault-kubernetes-authenticator-demo created
 
@@ -577,12 +538,8 @@ s.xrrJoCARIC0Z84vcvcwuH5XG
 {&quot;request_id&quot;:&quot;12660a6b-7ad0-85bc-8841-d21c7cc8248a&quot;,&quot;lease_id&quot;:&quot;&quot;,&quot;renewable&quot;:false,&quot;lease_duration&quot;:0,&quot;data&quot;:{&quot;data&quot;:{&quot;password&quot;:&quot;123456&quot;},&quot;metadata&quot;:{&quot;created_time&quot;:&quot;2019-04-16T05:11:44.651116748Z&quot;,&quot;deletion_time&quot;:&quot;&quot;,&quot;destroyed&quot;:false,&quot;version&quot;:1}},&quot;wrap_info&quot;:null,&quot;warnings&quot;:null,&quot;auth&quot;:null}
 ~ $ wget --header=&quot;X-Vault-Token: $(cat /home/vault/.vault-token)&quot; -q -O - ${VAULT_ADDR}/v1/secret/data/sensitive-password
 wget: server returned error: HTTP/1.1 403 Forbidden
-</code></pre>
-
-<h3 id="使用-sidecar-更新令牌">使用 Sidecar 更新令牌</h3>
-
-<p>第二个例子将向你展示 <code>vault-kubernetes-token-renewer</code> （简称 *renewer*）镜像的使用。renewer 运行在一个 sidecar 容器中，周期性地检查 TTL 然后根据检查的情况更新认证令牌。</p>
-
+</code></pre><h3 id="使用-sidecar-更新令牌">使用 Sidecar 更新令牌</h3>
+<p>第二个例子将向你展示 <code>vault-kubernetes-token-renewer</code> （简称 <em>renewer</em>）镜像的使用。renewer 运行在一个 sidecar 容器中，周期性地检查 TTL 然后根据检查的情况更新认证令牌。</p>
 <pre><code>---
 apiVersion: apps/v1
 kind: Deployment
@@ -639,10 +596,7 @@ spec:
           volumeMounts:
             - name: vault-token
               mountPath: /home/vault
-</code></pre>
-
-<p>我们也同样应用一下这些配置然后做一些验证。（我删除了先前的 deployment。）</p>
-
+</code></pre><p>我们也同样应用一下这些配置然后做一些验证。（我删除了先前的 deployment。）</p>
 <pre><code>$ envsubst &lt; vault-kubernetes-token-renewer-demo.yaml | k apply -f -
 deployment.apps/vault-kubernetes-token-renewer-demo created
 
@@ -663,12 +617,8 @@ $ k logs vault-kubernetes-token-renewer-demo-694cc7dbbd-rkbbs -c vault-kubernete
 $ k logs vault-kubernetes-token-renewer-demo-694cc7dbbd-rkbbs -c vault-kubernetes-token-renewer 
 2019/04/16 15:40:56 start renewer loop
 2019/04/16 15:40:56 token renewed
-</code></pre>
-
-<h3 id="从-vault-到-kubernetes-同步密码">从 Vault 到 Kubernetes 同步密码</h3>
-
-<p>第三个例子将向你展示 <code>vault-kubernetes-synchronizer</code> （简称 *syncer*）的用法。syncer 可以用在多个方面。在这个 demo 里面，一个 Kubernetes 任务将被用来从预定义的路径一次性同步 Vault 密码。这些 Vault 密码将会被写入到相应的 Kubernetes 密码中。</p>
-
+</code></pre><h3 id="从-vault-到-kubernetes-同步密码">从 Vault 到 Kubernetes 同步密码</h3>
+<p>第三个例子将向你展示 <code>vault-kubernetes-synchronizer</code> （简称 <em>syncer</em>）的用法。syncer 可以用在多个方面。在这个 demo 里面，一个 Kubernetes 任务将被用来从预定义的路径一次性同步 Vault 密码。这些 Vault 密码将会被写入到相应的 Kubernetes 密码中。</p>
 <pre><code>---
 apiVersion: batch/v1
 kind: Job
@@ -714,10 +664,7 @@ spec:
               value: /home/vault/.vault-token
             - name: VAULT_SECRETS
               value: secret/demo/first,secret/demo/second,secret/demo/first:third,secret/demo/greek/
-</code></pre>
-
-<p>同样，我们也应用一下这些配置然后看看所有的配置是否如预期一样运行正常:</p>
-
+</code></pre><p>同样，我们也应用一下这些配置然后看看所有的配置是否如预期一样运行正常:</p>
 <pre><code>$ envsubst &lt; vault-kubernetes-synchronizer-demo.yaml | k apply -f -
 job.batch/vault-kubernetes-synchronizer-demo created
 
@@ -779,16 +726,10 @@ Type:  Opaque
 Data
 ====
 philosopher:  5 bytes
-</code></pre>
-
-<p>syncer 同样可以用在 Kubernetes 的 cron 任务中从 Vault 周期性同步密码或者同步到另一个  Kubernetes deployment 的初始容器中，这样密码就会保持最新状态。</p>
-
+</code></pre><p>syncer 同样可以用在 Kubernetes 的 cron 任务中从 Vault 周期性同步密码或者同步到另一个  Kubernetes deployment 的初始容器中，这样密码就会保持最新状态。</p>
 <p>需要注意的是 Kubernetes 密码保护不是很好。Seth Vargo 在最近的 FOSDEM <a href="https://fosdem.org/2019/schedule/event/base64_not_encryption/">访谈</a>中指出，默认情况下，它们仅做了 base64 编码和存储，就像在 etcd 中那样。你应该允许<a href="https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/">数据的静态加密</a>。也请确保你只同步那些你的 Kubernetes 应用程序使用的那些密码，这些密码由相应的 Vault 策略以及命名角色保护。除此之外，该方法还允许你以云原生行为使用密码。你的应用程序不能直接访问 Vault 密码可以被注入到环境变量中。</p>
-
 <h2 id="结论">结论</h2>
-
 <p>Kubernetes 和 Vault 这两项技术在结合使用或者集成它们使用时均是很棒的组合。集成的方案看似不简单但是依旧可行。这篇文章中我已经向你展示了怎样实现这两者的集成，希望会对你有所帮助。</p>
-
 <p>你或许会问了为什么明明可以用 Vault 官方提供的镜像运行一个节点用来实现相同的事情却偏偏选择了一些第三方提供的镜像呢。原因如下: Vault 节点需要一个配置文件而不是环境变量，这也就意味着你必须去管理其他的配置映射。并且当前的节点不能同步密码。另外，第三方的镜像更轻量。官方的 Vault 镜像大概 100 MB。而 auther 和 renewer 镜像大约也就 10 MB syncer 镜像大约40 MB。</p>
 
 </div>
@@ -877,6 +818,85 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
           </li>
         
               
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link">
+              DevOps 的打开方式: 构建和部署
+            </a>
+          </li>
+        
+      
+        
+          <li class="db b mt4 mb2 mr2">
+            Related entries:
+          </li>
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="link">
+              在 Kubernetes 上使用 Argo 实现 CI/CD
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-20-devops-with-docker-kubernetes-and-azure-devops/" class="link">
+              使用 Docker、Kubernetes 和 Azure DevOps 实现 DevOps
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/05/2020-05-06-using-a-k3s-kubernetes-cluster-for-your-gitlab-project/" class="link">
+              为你的 GitLab 项目使用 k3s Kubernetes 集群
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-29-starting-local-kubernetes-using-kind-and-docker/" class="link">
+              使用 kind 和 Docker 启动本地的 Kubernetes
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/04/2020-04-22-scale-your-jenkins-agents-using-kubernetes/" class="link">
+              Kubernetes 构造可自由扩展的 Jenkins
+            </a>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/03/2020-03-10-create-a-ci-cd-pipeline-with-kubernetes-and-jenkins/" class="link">
+              使用 Kubernetes 和 Jenkins 创建一个 CI/CD 流水线
+            </a>
+          </li>
+        
+      
+        
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/" class="link">
+              在 Kubernetes 上使用 Jenkins 
+            </a>
+          </li>
+        
       
     </ul>
   </div>

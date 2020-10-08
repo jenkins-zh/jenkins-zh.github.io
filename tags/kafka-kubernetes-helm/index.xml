@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kafka Kubernetes Helm on Jenkins 中文社区</title>
+    <title>kafka kubernetes helm on Jenkins 中文社区</title>
     <link>https://jenkins-zh.cn/tags/kafka-kubernetes-helm/</link>
-    <description>Recent content in Kafka Kubernetes Helm on Jenkins 中文社区</description>
+    <description>Recent content in kafka kubernetes helm on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 08 Nov 2019 00:00:00 +0000</lastBuildDate>
@@ -18,8 +18,9 @@
       
       <guid>https://jenkins-zh.cn/wechat/articles/2019/11/2019-11-08-remoting-over-apache-kafka-plugin-with-kafka-launcher-in-kubernetes/</guid>
       <description>我是越南 FPT 大学的 Long Nguyen ，我的 Google Summer of Code 2019 项目是 Remoting over Apache Kafka with Kubernetes features 。这是我第一次为 Jenkins 做贡献，我非常兴奋地宣布在第一阶段已经完成的功能。
-项目介绍 当前版本的 Remoting over Apache Kafka plugin 远程处理需要用户手动配置整个系统，包括 zookeeper 、 kafka 和远程处理代理。它也不支持动态代理配置，因此很难实现具有伸缩性的扩展。我的项目旨在解决两个问题： 1. 提供 Apache-Kafka 集群的现成解决方案。 2. Kubernetes 集群中的动态代理配置。
-当前状态  支持凭据的 Kubernetes 连接器。 Kubernetes 功能中的 ApacheKafka 预配功能已完全实现。 Helm chart 部分实现。  Kubernetes 中的 Apache-Kafka 配置 此功能是 2.0 版本的一部分，因此尚未正式发布。您可以通过使用 Experimental Update Center 更新到 2.0.0-alpha 版本或直接从 master 分支构建来尝试该功能：</description>
+项目介绍 当前版本的 Remoting over Apache Kafka plugin 远程处理需要用户手动配置整个系统，包括 zookeeper 、 kafka 和远程处理代理。它也不支持动态代理配置，因此很难实现具有伸缩性的扩展。我的项目旨在解决两个问题：
+ 提供 Apache-Kafka 集群的现成解决方案。 Kubernetes 集群中的动态代理配置。  当前状态  支持凭据的 Kubernetes 连接器。 Kubernetes 功能中的 ApacheKafka 预配功能已完全实现。 Helm chart 部分实现。  Kubernetes 中的 Apache-Kafka 配置 此功能是 2.0 版本的一部分，因此尚未正式发布。您可以通过使用 Experimental Update Center 更新到 2.0.0-alpha 版本或直接从 master 分支构建来尝试该功能：
+git clone https://github.</description>
     </item>
     
   </channel>
