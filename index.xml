@@ -37,6 +37,16 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins 每周版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-09-weekly-release/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-09-weekly-release/</guid>
+      <description>2.256 (2020-09-08)  避免在 hudson.FilePath 中的有关匿名类的日志告警。 (issue 63563)  2.255 (2020-08-31) 104 sunny0 cloudy0 storm * 开发者: 忽略不稳定的 UpdateCenter2Test.install 测试。 (pull 4916)
+2.254 (2020-08-25)  停止预格式化代理日志以防止死锁（由 2.231 引入的缺陷的回归）。 (issue 63458) “全局/系统读取”权限正式变为“整体可用 (GA) ” 状态。 (pull 4909, JEP-224) 设置 Cross-Origin-Opener-Policy 为 same-origin。 (pull 4910) 通过使用新的浏览器标签打开配置屏幕的内联帮助中的插件链接，避免丢失正在进行的工作。 (issue 63429) 开发者: 从 f:dropdownList 中删除未使用的 description 属性。 (issue 63220)  2.253 (2020-08-18)  基于 Alpine 的 Jenkins Docker 镜像的重大更新。 基于 Alpine 的 Jenkins Docker 镜像现在使用 Alpine 3.</description>
+    </item>
+    
+    <item>
       <title>GitHub 推出 Codespaces Beta</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-08-github-codespaces/</link>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
