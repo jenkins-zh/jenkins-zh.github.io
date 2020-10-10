@@ -40,23 +40,41 @@
   }
 </style>
 <meta property="og:title" content="直接使用 Jenkins war 包" />
-<meta property="og:description" content="TODO" />
+<meta property="og:description" content="我们可以通过执行 java 命令的方式启动 Jenkins，命令如下：
+java -jar jenkins.war
+通常情况下，我们不推荐在生产环境中使用这种方式。最主要的是，这种方式无法作为守护程序来运行。
+服务的默认端口是 8080，应用上下文为 /。因此，默认的访问路径就是 http://localhost:8080/
+原理 这里简单地描述下 Jenkins 为什么可以直接用 Java 就可以启动。因为，Jenkins 的 war 包中内置了一个应用服务器，也就是 jetty。 Jetty 是 Java 实现的一个轻量级的 Servlet 容器。
+参数 我们可以在 Jenkins 启动时，通过设置参数、环境变量的方式达到修改 Jenkins 行为的效果：
+   参数 解释     --httpPort=8080 指定 Web 访问的端口   --httpsPort=8083 指定 HTTPS 协议的 Web 访问的端口   --prefix=/jenkins 应用上下文   --webroot=/var/cache/jenkins Web 程序的根目录   --argumentsRealm.passwd.admin=admin 管理员的密码   --argumentsRealm." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jenkins-zh.cn/tutorial/get-started/install/war/" />
 
 <meta itemprop="name" content="直接使用 Jenkins war 包">
-<meta itemprop="description" content="TODO">
+<meta itemprop="description" content="我们可以通过执行 java 命令的方式启动 Jenkins，命令如下：
+java -jar jenkins.war
+通常情况下，我们不推荐在生产环境中使用这种方式。最主要的是，这种方式无法作为守护程序来运行。
+服务的默认端口是 8080，应用上下文为 /。因此，默认的访问路径就是 http://localhost:8080/
+原理 这里简单地描述下 Jenkins 为什么可以直接用 Java 就可以启动。因为，Jenkins 的 war 包中内置了一个应用服务器，也就是 jetty。 Jetty 是 Java 实现的一个轻量级的 Servlet 容器。
+参数 我们可以在 Jenkins 启动时，通过设置参数、环境变量的方式达到修改 Jenkins 行为的效果：
+   参数 解释     --httpPort=8080 指定 Web 访问的端口   --httpsPort=8083 指定 HTTPS 协议的 Web 访问的端口   --prefix=/jenkins 应用上下文   --webroot=/var/cache/jenkins Web 程序的根目录   --argumentsRealm.passwd.admin=admin 管理员的密码   --argumentsRealm.">
 
 
 
-<meta itemprop="wordCount" content="1">
+<meta itemprop="wordCount" content="71">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="直接使用 Jenkins war 包"/>
-<meta name="twitter:description" content="TODO"/>
+<meta name="twitter:description" content="我们可以通过执行 java 命令的方式启动 Jenkins，命令如下：
+java -jar jenkins.war
+通常情况下，我们不推荐在生产环境中使用这种方式。最主要的是，这种方式无法作为守护程序来运行。
+服务的默认端口是 8080，应用上下文为 /。因此，默认的访问路径就是 http://localhost:8080/
+原理 这里简单地描述下 Jenkins 为什么可以直接用 Java 就可以启动。因为，Jenkins 的 war 包中内置了一个应用服务器，也就是 jetty。 Jetty 是 Java 实现的一个轻量级的 Servlet 容器。
+参数 我们可以在 Jenkins 启动时，通过设置参数、环境变量的方式达到修改 Jenkins 行为的效果：
+   参数 解释     --httpPort=8080 指定 Web 访问的端口   --httpsPort=8083 指定 HTTPS 协议的 Web 访问的端口   --prefix=/jenkins 应用上下文   --webroot=/var/cache/jenkins Web 程序的根目录   --argumentsRealm.passwd.admin=admin 管理员的密码   --argumentsRealm."/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -200,7 +218,103 @@ var trackOutboundLink = function(id, url) {
             <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-80">
                 <div class="prose">
                     <h1>直接使用 Jenkins war 包</h1>
-                    <p>TODO</p>
+                    
+
+<p>我们可以通过执行 <code>java</code> 命令的方式启动 Jenkins，命令如下：</p>
+
+<p><code>java -jar jenkins.war</code></p>
+
+<p>通常情况下，我们不推荐在生产环境中使用这种方式。最主要的是，这种方式无法作为守护程序来运行。</p>
+
+<p>服务的默认端口是 8080，应用上下文为 <code>/</code>。因此，默认的访问路径就是 <a href="http://localhost:8080/">http://localhost:8080/</a></p>
+
+<h2 id="原理">原理</h2>
+
+<p>这里简单地描述下 Jenkins 为什么可以直接用 Java 就可以启动。因为，Jenkins 的 war 包中内置了一个应用服务器，也就是 <code>jetty</code>。
+Jetty 是 Java 实现的一个轻量级的 Servlet 容器。</p>
+
+<h2 id="参数">参数</h2>
+
+<p>我们可以在 Jenkins 启动时，通过设置参数、环境变量的方式达到修改 Jenkins 行为的效果：</p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>解释</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>--httpPort=8080</code></td>
+<td>指定 Web 访问的端口</td>
+</tr>
+
+<tr>
+<td><code>--httpsPort=8083</code></td>
+<td>指定 HTTPS 协议的 Web 访问的端口</td>
+</tr>
+
+<tr>
+<td><code>--prefix=/jenkins</code></td>
+<td>应用上下文</td>
+</tr>
+
+<tr>
+<td><code>--webroot=/var/cache/jenkins</code></td>
+<td>Web 程序的根目录</td>
+</tr>
+
+<tr>
+<td><code>--argumentsRealm.passwd.admin=admin</code></td>
+<td>管理员的密码</td>
+</tr>
+
+<tr>
+<td><code>--argumentsRealm.roles.admin=admin</code></td>
+<td>管理员的角色</td>
+</tr>
+
+<tr>
+<td><code>--httpsPrivateKey=/var/lib/jenkins/pk</code></td>
+<td>HTTPS 协议密钥文件</td>
+</tr>
+
+<tr>
+<td><code>--httpsCertificate=/var/lib/jenkins/cert</code></td>
+<td>HTTPS 协议证书文件</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>环境变量</th>
+<th>解释</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>-Djenkins.install.runSetupWizard=true</code></td>
+<td>是否运行设置向导</td>
+</tr>
+
+<tr>
+<td><code>-Djenkins.security.ApiTokenProperty.adminCanGenerateNewTokens=false</code></td>
+<td>是否允许管理员为其他用户生成 Token</td>
+</tr>
+
+<tr>
+<td><code>-Dcom.cloudbees.hudson.plugins.folder.computed.ThrottleComputationQueueTaskDispatcher.LIMIT=10</code></td>
+<td>多分支扫描的并发数限制</td>
+</tr>
+</tbody>
+</table>
+
+<p>更多的参数以及环境变量可以通过阅读代码来获取，例如：<a href="https://github.com/jenkinsci/jenkins/blob/449c5aced523a6e66fe3d6a804e5dbfd5c5c67c6/core/src/main/java/jenkins/install/InstallUtil.java#L146">runSetupWizard</a>的代码。</p>
 
                 </div>
 
