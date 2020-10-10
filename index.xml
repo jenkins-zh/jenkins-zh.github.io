@@ -37,6 +37,15 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins 长期支持版更新</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-10-jenkins-release/</link>
+      <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-10-jenkins-release/</guid>
+      <description>2.249.1 (2020-09-09) 自 2.249 以来的变更：  Jenkins 2.252 和 2.235.4 的重要安全修复。 (安全公告) 停止预格式化代理日志以防止死锁(由 2.231 引入的缺陷回归)。 (issue 63458) 修复将 API token 复制到剪贴板的按钮(由 2.238 引入的缺陷回归)。 (issue 63274) 将包装选项卡还原为多行，而不是溢出(由 2.248 引入的缺陷回归)。 (issue 63180) 标准化小部件颜色，使其与新调色板一致。 (修复暗黑主题中的面包屑刷新) 空的已安装插件表文本将再次可读(由 2.249 引入的缺陷回归)。 (issue 63276) 在“构建时间趋势”页面中显示构建时间数据(由 2.245 引入的缺陷回归)。 (issue 63232) 在日语文档和消息中用 agent 替换对 slave 的文本引用。 (issue 63166) 修复退格键有时无法从 Mac 上的脚本控制台删除文本的问题 (由 2.248 引入的缺陷回归)。 (issue 63342) 修复正则表达式验证器 UI 位置 (由 2.244 引入的缺陷回归)。 (issue 63308) 防止并发构建删除。 (issue 61687)  自 2.</description>
+    </item>
+    
+    <item>
       <title>Jenkins 每周版更新</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-09-weekly-release/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>

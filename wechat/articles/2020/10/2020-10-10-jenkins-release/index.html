@@ -14,7 +14,7 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="本次更新的版本包括：2.222.2~2.235.2">
+  <meta name="description" content="本次更新的版本包括：2.235.3~2.249.1">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -40,25 +40,25 @@
   }
 </style>
 <meta property="og:title" content="Jenkins 长期支持版更新" />
-<meta property="og:description" content="本次更新的版本包括：2.222.2~2.235.2" />
+<meta property="og:description" content="本次更新的版本包括：2.235.3~2.249.1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-03-jenkins-release/" /><meta property="article:published_time" content="2020-08-03T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2020-08-03T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-10-jenkins-release/" /><meta property="article:published_time" content="2020-10-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-10-10T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="Jenkins 长期支持版更新">
-<meta itemprop="description" content="本次更新的版本包括：2.222.2~2.235.2">
+<meta itemprop="description" content="本次更新的版本包括：2.235.3~2.249.1">
 
 
-<meta itemprop="datePublished" content="2020-08-03T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-08-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="286">
+<meta itemprop="datePublished" content="2020-10-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-10-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="438">
 
 
 
 <meta itemprop="keywords" content="jenkins,release," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jenkins 长期支持版更新"/>
-<meta name="twitter:description" content="本次更新的版本包括：2.222.2~2.235.2"/>
+<meta name="twitter:description" content="本次更新的版本包括：2.235.3~2.249.1"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -251,17 +251,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-05-ci-cd-with-argo-on-kubernetes/" class="dib f6 pl1 hover-bg-light-gray br-100" title="在 Kubernetes 上使用 Argo 实现 CI/CD ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2020/07/2020-07-31-weekly-release/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 每周版更新">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-09-weekly-release/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 每周版更新">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -287,7 +279,7 @@ var trackOutboundLink = function(id, url) {
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      本次更新的版本包括：2.222.2~2.235.2
+      本次更新的版本包括：2.235.3~2.249.1
     </div>
   
 
@@ -302,74 +294,75 @@ var trackOutboundLink = function(id, url) {
 
 <p><img src="great-wall.jpeg" alt="great-wall" /></p>
 
-<h2 id="2-235-2-2020-07-15">2.235.2 (2020-07-15)</h2>
+<h2 id="2-249-1-2020-09-09">2.249.1 (2020-09-09)</h2>
+
+<h3 id="自-2-249-以来的变更">自 2.249 以来的变更：</h3>
 
 <ul>
-<li>重要的安全修复。 (安全公告)</li>
-<li>修复 &ndash;httpKeepAliveTimeout 选项无效的问题(由 2.235.1 引入的缺陷回顾)。 (issue 61823, pull 4812, Winstone 5.9.1 变更日志)</li>
-<li>修复模式关闭后按钮等待时间太久的问题(由 2.233 和 2.235.1 引入的缺陷回归)。 (issue 62560)</li>
+<li>Jenkins 2.252 和 2.235.4 的重要安全修复。 (安全公告)</li>
+<li>停止预格式化代理日志以防止死锁(由 2.231 引入的缺陷回归)。 (issue 63458)</li>
+<li>修复将 API token 复制到剪贴板的按钮(由 2.238 引入的缺陷回归)。 (issue 63274)</li>
+<li>将包装选项卡还原为多行，而不是溢出(由 2.248 引入的缺陷回归)。 (issue 63180)</li>
+<li>标准化小部件颜色，使其与新调色板一致。 (修复暗黑主题中的面包屑刷新)</li>
+<li>空的已安装插件表文本将再次可读(由 2.249 引入的缺陷回归)。 (issue 63276)</li>
+<li>在“构建时间趋势”页面中显示构建时间数据(由 2.245 引入的缺陷回归)。 (issue 63232)</li>
+<li>在日语文档和消息中用 agent 替换对 slave 的文本引用。 (issue 63166)</li>
+<li>修复退格键有时无法从 Mac 上的脚本控制台删除文本的问题 (由 2.248 引入的缺陷回归)。 (issue 63342)</li>
+<li>修复正则表达式验证器 UI 位置 (由 2.244 引入的缺陷回归)。 (issue 63308)</li>
+<li>防止并发构建删除。 (issue 61687)</li>
 </ul>
 
-<h2 id="2-235-1-2020-06-17">2.235.1 (2020-06-17)</h2>
-
-<h3 id="自-2-235-以来的变更">自 2.235 以来的变更：</h3>
+<h3 id="自-2-235-5-以来的重大变更">自 2.235.5 以来的重大变更:</h3>
 
 <ul>
-<li>使插件管理可以再次支持 Internet Explorer 11 (由 2.231 引入的缺陷回归)。 (issue 62163)</li>
-<li>防止以 Java 11 运行时缺少 javax.annotation 类的导致的遥测告警(由 2.231 引入的缺陷回归)。 (issue 61920)</li>
-<li>修复代理启动期间涉及自定义记录器的死锁(由 2.231 引入的缺陷回归)。 (issue 62181)</li>
-<li>在类字段解组问题的情况下，防止 Old Data Monitor 插件加载失败。 (issue 62231)</li>
+<li>发布 &lsquo;alpha&rsquo; 版本暗黑主题。 (issue 60924, pull 4752, issue 62515, pull 4763, pull 4772, pull 4814, pull 4842, pull 4843, 暗黑主题仓库, Jenkins 暗黑主题简介)</li>
+<li>停止支持 .NET Framework 2.0 将 Jenkins 服务器和代理作为 Windows 服务启动。 需要 .NET Framework 4.0 或更高版本。 (公告, 升级指南, issue 60005, issue 61862, Windows 支持策略)</li>
+<li>基于 .NET Framework 2.0 的 Windows Service Wrapper（WinSW） 2.3.0 可执行文件更新为 基于 .NET Framework 4.0 的 2.9.0 版本。 包括许多改进和错误修正。 最值得注意的是，如果需要，服务安装程序现在将要求权限提升。 (变更摘要, 完整的 WinSW 变更日志, Windows Agent Installer 2.0 变更日志)</li>
+<li>当存在较新版本的插件，但由于需求未满足而未提供时，在插件管理器中显示。 在更新管理器和管理监视器中显示已弃用插件的警告。 (pull 4073, issue 59136, pull 4742, issue 62332)</li>
+<li>为 Jenkins UI 提供更现代化的外观。 (issue 62698, pull 4808, issue 61973, pull 4700, issue 62750, pull 4816, issue 56109, pull 4820, issue 63002, pull 4835, “配置 UI 辅助功能：从表到 Divs 的迁移”, pull 4782, issue 4767, issue 62175)</li>
+<li>从页脚中删除页面生成时间戳。 (issue 61806)</li>
+<li>允许具有“全局/管理”权限的用户配置节点监视并从磁盘重新加载配置。 (issue 62264, pull 4724, issue 61458, pull 4728)</li>
+<li>添加对“节点监视配置”、配置云、查看代理配置、系统信息和日志系统读取支持。 (issue 61206)</li>
+<li>在 Jenkins-CLI -auth 参数中支持 Bearer token。 (pull 4673)</li>
+<li>安全增强: 即使没有加密的 Secret 字段支持，密码形式的控制值也总是以加密形式来回传递。 如果出现问题，可以通过在启动时将系统属性 hudson.util.Secret.AUTO_ENCRYPT_PASSWORD_CONTROL 设置为 false 来禁用此功能。 (issue 61808)</li>
+<li>安全增强: 当用户缺少“项目/配置”权限时，即使没有加密的 Secret字段支持，也请始终在项目相关的配置表单中使用占位符值作为密码表单控制值。 如果出现问题，可以通过将系统属性 hudson.util.Secret.BLANK_NONSECRET_PASSWORD_FIELDS_WITHOUT_ITEM_CONFIGURE 设置为 false 来禁用此功能。 (issue 61808)</li>
+<li>修复 Windows 服务 serviceaccount 配置中的默认域名。 (issue 12660, Windows Service Wrapper 2.7.0 变更日志)</li>
+<li>将 Winstone 从 5.9 更新到 5.10。 将 Jetty 从 9.4.27.v20200227 更新到 9.4.30.v20200611。 添加 -httpsRedirectHttp 选项，以激活自动 HTTP 请求重定向到 HTTPs。 (pull 4811, 9.4.28.v20200408 变更日志, 9.4.29.v20200521 变更日志, 9.4.30.v20200611 变更日志)</li>
+<li>修复 &ndash;httpKeepAliveTimeout 选项不生效的问题(由 2.224 引入的缺陷回归)。 (issue 61823)</li>
+<li>将 Stapler 从 1.259 更新到 1.260。 (issue 61438, pull 4813, Stapler 1.260 变更日志)</li>
+<li>添加了为 Shell 和 Windows 批处理构建步骤过滤掉环境变量的功能。 (issue 62014)</li>
+<li>修复由 Util.isOverridden() 异常引起的 IllegalArgumentException: Method not found 错误(由 2.241 引入的缺陷回归)。 (issue 62723)</li>
+<li>从 JNLP 启动文件中删除返回的 Jenkins URL，以便可以通过 Java Web Start 连接 WebSocket 代理。 (issue 63014)</li>
+<li>允许从配置页面选择指纹存储引擎。 添加新的外部指纹存储 API 方法。 (pull 4834, issue 62345, pull 4731, JEP-226, Fingerprint API Javadoc, Redis 参考实施)</li>
+<li>开发者: 添加 alert-success 横幅。 (issue 62747)</li>
+<li>开发者: 添加新的扩展点以定义构建步骤环境过滤器（当前为 Beta 版本）。 (issue 62014)</li>
+<li>内部: 升级到 Remoting 4.5。 这会将 agent.jar 和 remoting.jar 切换到 CDF 拥有的代码签名证书。 (pull 4832, Remoting 4.4 变更日志, Remoting 4.5 变更日志)</li>
 </ul>
 
-<h3 id="自-2-222-4-以来的重大变更">自 2.222.4 以来的重大变更:</h3>
+<h2 id="2-235-5-2020-08-17-中有什么新内容">2.235.5 (2020-08-17) 中有什么新内容</h2>
 
 <ul>
-<li>插件管理的各种改进，包括： 默认情况下，它不再显示所有可用的插件；使用搜索字段查找插件。 现在，默认情况下按人气对它们进行排序。 此外，类别不再用于对插件进行分组，而是将其显示为标签。 (issue 61166, pull 4580, pull 4513, pull 4588, pull 4534, pull 4591, pull 4535, pull 4589, pull 4584)</li>
-<li>将管理 Jenkins 页面上的条目进行分类，并以网格化显示。 (pull 4546)</li>
-<li>删除“自动刷新”功能，包括现在已过时的自动刷新遥测功能。 (pull 4503)</li>
-<li>具有扩展读取权限的用户现在将获得外观更具只读性的 UI。 (issue 61202, pull 4479, Read-only Jenkins Configuration blog post)</li>
-<li>允许具有“全局/系统读取”权限的用户查看关于 Jenkins 、插件管理、全局安全配置和系统日志。 (issue 61205, issue 61201, issue 61203, issue 61207, issue 61455, issue 61208, issue 61208)</li>
-<li>在具有全局/系统读取或项目/扩展读取权限的用户的只读配置表单上，区分已定义（*****）和未定义（N/A）密码。 (issue 61812)</li>
-<li>允许具有“全局/管理”权限的用户访问系统信息、准备关机和关于 Jenkins 的管理链接。 现在，具有该权限的用户也可以配置全局配置中的使用情况统计信息。 (issue 61456, issue 61453, issue 61457, issue 61455)</li>
-<li>尽可能使用浏览器提供的当前系统字体。 更改正文和标题的字体大小，以提高一致性和可读性。 (issue 60921)</li>
-<li>重新设置了按钮样式。 增加了对于大按钮、超链接样式按钮和图标样式按钮的支持。 (issue 61840)</li>
-<li>重新设置帮助图标的样式。 (pull 4663)</li>
-<li>改进告警横幅的样式，使其更具视觉吸引力并更好地匹配现有的用户界面组件。 现在，警报在显示时完全覆盖了导航栏，而不是仅覆盖导航栏的一部分。 (issue 61478)</li>
-<li>禁止将非管理员用户的错误堆栈跟踪作为核心功能。 (issue 60410)</li>
+<li>重要安全修复。 (安全公告)</li>
+<li>基于 Alpine 的 Jenkins Docker 镜像的重大更新。 (升级指南)</li>
 </ul>
 
-<h2 id="2-222-4-2020-05-24">2.222.4 (2020-05-24)</h2>
-
-<ul>
-<li>当根目录 URL 配置指向先前配置的根目录 URL 时，防止表单验证出现 “404 Not Found” 错误（由 2.222.1 引入的缺陷回归）。 (issue 62133)</li>
-<li>升级到 Remoting 4.2.1，以解决 WebSockets 上的大量有效负载的问题。 需要具有 Remoting 4.2.1 或更高版本的配套 agent.jar。 (issue 61409, pull 4601, pull 4596, Remoting 4.2.1 变更日志, WebSockets 博客文章, JEP-222)</li>
-<li>更新 Groovy Init hooks，使其在任务配置修改后运行。 (issue 61694)</li>
-<li>修复安装向导中错误消息之间的间隔（由 2.222.1 引入的缺陷回归）。 (issue 61660)</li>
-<li>修复 git 插件之类的工具（这些工具会在 PATH 中搜索其可执行文件）的输入字段提示 (由 2.222.1 引入的缺陷回归)。 (issue 61711)</li>
-<li>删除只读用户在 textarea 表单元素下方的灰色条。 (issue 61284)</li>
-<li>在具有“全局/系统读取”或“项目/扩展读取”权限的用户的只读配置表单上，区分已定义（*****）和未定义（N/A）密码。 (issue 61812)</li>
-<li>具有扩展读取权限的用户现在将获得外观更具只读性的 UI。 (issue 61202, pull 4479, issue 61321, pull 4541)</li>
-</ul>
-
-<h2 id="2-222-3-2020-04-22">2.222.3 (2020-04-22)</h2>
-
-<ul>
-<li>重新启动时使用保存的全局构建丢弃配置。 (issue 61688)</li>
-<li>修复设置密码后代理表单验证的问题(由 2.222.1 引入的缺陷回归)。 (issue 61692)</li>
-<li>防止在没有工具安装程序元数据的情况下单击自定义更新中心的立即检查时的 NullPointerException。 (issue 60788)</li>
-<li>防止出现 &ldquo;Jenkins.instance is missing&rdquo; 的情况。 (pull 4525, issue 60454, issue 55070, issue 59992, issue 61192)</li>
-<li>开发者: 使 h.checkAnyPermission 和 <l:layout permissions="..."> 可以在非 AccessControlled 的对象上工作。 (issue 61465)</li>
-<li>开发者: 通过删除不推荐使用的 findbugs 注解来防止虚假的不推荐使用消息。 (issue 61279)</li>
-</ul>
-
-<h2 id="2-222-2-2020-04-22">2.222.2 (2020-04-22)</h2>
+<h2 id="2-235-4-2020-08-12-中有什么新内容">2.235.4 (2020-08-12) 中有什么新内容</h2>
 
 <blockquote>
-<p>Jenkins 2.222.2 未打包或发布。 计划在 2.222.2 中进行的所有更改都包含在 2.222.3 中。</p>
+<p>Jenkins 长期支持软件包仓库使用了新的 GPG 签名密钥。 按照 Linux 仓库库签名博客文章中的说明在计算机上安装新的公共密钥。</p>
 </blockquote>
 
 <ul>
-<li>Jenkins 2.222.2 未放置在制品仓库中或下载站点上。</li>
+<li>重要安全修复。 (安全公告)</li>
+<li>将新的 64 位 Windows 安装程序与服务帐户检查和端口验证一起使用。 支持 64 位的 Java 8 和 64 位的 Java 11。 (公告, 升级指南)</li>
+<li>配置 SCM 触发器后可以优雅地关闭。 (issue 62695)</li>
+<li>修复由于 Util.isOverridden() 中的行为异常导致的 IllegalArgumentException: Method not found 错误(由 2.241 引入的缺陷回归)。 (issue 62723)</li>
+</ul>
+
+<h2 id="2-235-3-2020-07-27-中有什么新内容">2.235.3 (2020-07-27) 中有什么新内容</h2>
+
+<ul>
+<li>更新 Jenkins 长期支持仓库的 Debian 和 Red Hat 仓库的签名密钥。 (公告与升级指南)</li>
 </ul>
 
 </div>
@@ -403,14 +396,14 @@ var trackOutboundLink = function(id, url) {
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-10-jenkins-release/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
     “Jenkins 长期支持版更新”
-  </a> 更新于：August 3, 2020
+  </a> 更新于：October 10, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/08/2020-08-03-jenkins-release.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/10/2020-10-10-jenkins-release.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -442,12 +435,6 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
               
       
         
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/10/2020-10-10-jenkins-release/" class="link">
-              Jenkins 长期支持版更新
-            </a>
-          </li>
         
       
         
@@ -491,6 +478,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         
       
         
+        
+          <li class="db dib-l mb2 mr3">
+            <a href="/wechat/articles/2020/08/2020-08-03-jenkins-release/" class="link">
+              Jenkins 长期支持版更新
+            </a>
+          </li>
         
       
         
@@ -1021,7 +1014,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/08\/2020-08-03-jenkins-release\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/10\/2020-10-10-jenkins-release\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();
