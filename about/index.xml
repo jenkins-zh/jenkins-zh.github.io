@@ -94,7 +94,7 @@ jenkins-infra/wechat: master fork/wechat: master dev-01 local: master dev-01  �
       
       <guid>https://jenkins-zh.cn/about/social-media/</guid>
       <description>社区所有的技术、活动类的文章都会同步发布到下面的社交媒体平台上。
-   媒体 方式 负责人     微信公众号 人工  LinuxSuRen    开源中国 自动同步  LinuxSuRen    知乎 人工  LinuxSuRen    哔哩哔哩 人工  LinuxSuRen    微博 人工  donhui    领英 人工  LinuxSuRen    思否 SegmentFault 人工  LinuxSuRen    CSDN 人工  P01son6415    简书 人工  yJunS    掘金 人工  zacker330    腾讯 云+社区 自动同步  LinuxSuRen    企鹅号 自动同步  LinuxSuRen    百家号 自动同步  LinuxSuRen     </description>
+   媒体 方式 负责人     微信公众号 人工  LinuxSuRen    开源中国 自动同步  LinuxSuRen    知乎 人工  LinuxSuRen    哔哩哔哩 人工  LinuxSuRen    微博 人工  donhui    领英 人工  LinuxSuRen    思否 SegmentFault 人工  LinuxSuRen    CSDN 自动同步  LinuxSuRen    简书 人工  yJunS    掘金 人工  zacker330    腾讯 云+社区 自动同步  LinuxSuRen    企鹅号 自动同步  LinuxSuRen    百家号 自动同步  LinuxSuRen     </description>
     </item>
     
     <item>
