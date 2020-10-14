@@ -37,6 +37,23 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>使用 Bitbucket 流水线创建最简单的 CI</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-14-setup-the-simplest-ci-with-bitbucket-pipeline/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-14-setup-the-simplest-ci-with-bitbucket-pipeline/</guid>
+      <description>最近我写了一篇关于 CI 和 CD 之间核心区别的文章，我觉得是时候把这些理论运用到实际当中了。
+在我印象中我参与开发的所有项目使用的源码控制平台都是使用的 Artlassian 的 Bitbucket。对于想要寻找一款免费、UI 整洁、能够为追踪你的代码提供了所有必要功能的版本控制系统来说，它是一个再棒不过的选择了。
+除了所有版本控制系统提供的基本功能以外，Bitbucket 添加了一些扩展比如集成了 CI/CD 功能，可以让我们推送代码之后将变更更准确的部署上去。
+好处就是不需要额外的工具了，只需要 Bitbucket 以及 JavaScript。
+配置 Bitbucket 仓库设置完成后，剩下需要完成的工作就是在配置你的仓库允许使用 Pipelines。滚动到 PIPELINE 部分点击 Settings。你会看到如下所示配置:
+点击切换开关，你会得到一个配置 bitbucket-pipelines.yml 文件的选项。这个文件将会告诉 Bitbucket 在代码推送到仓库后需要执行哪些命令。点击 “Configure bitbucket-pipeline.yml” 按钮会指引你转到 Pipeline 菜单:
+这里你可以选择多种语言模板。我们这里最感兴趣的就是 JavaScript 的。我们可以使用它作为基础然后依据我们自己的喜好进行修改。
+修改配置文件 修改模板以及添加一些另外的步骤，我们得到如下文件:
+image: node:10.15.3 pipelines: default: - step: name: Deploy caches: - node script: - npm install - npm run build - npm run test - npm run deploy  我们将每一行进行拆分，看看都做了哪些事情:</description>
+    </item>
+    
+    <item>
       <title>Jenkins 完全系列视频教程制作组招募</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-12-contributors-recruit/</link>
       <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>

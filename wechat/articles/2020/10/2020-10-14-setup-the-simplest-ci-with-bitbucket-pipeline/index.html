@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>什么是 CI/CD? - Jenkins 中文社区</title>
+  <title>使用 Bitbucket 流水线创建最简单的 CI - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="本文介绍了 CI/CD 的概念及应用场景">
+  <meta name="description" content="具体讲解了怎样使用 Bitbucket 构建一个简单的 CI 流水线">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -39,24 +39,26 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="什么是 CI/CD?" />
-<meta property="og:description" content="本文介绍了 CI/CD 的概念及应用场景" />
+<meta property="og:title" content="使用 Bitbucket 流水线创建最简单的 CI" />
+<meta property="og:description" content="具体讲解了怎样使用 Bitbucket 构建一个简单的 CI 流水线" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/" />
+<meta property="og:url" content="https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-14-setup-the-simplest-ci-with-bitbucket-pipeline/" /><meta property="article:published_time" content="2020-10-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-10-14T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="什么是 CI/CD?">
-<meta itemprop="description" content="本文介绍了 CI/CD 的概念及应用场景">
-
-
-
-<meta itemprop="wordCount" content="159">
+<meta itemprop="name" content="使用 Bitbucket 流水线创建最简单的 CI">
+<meta itemprop="description" content="具体讲解了怎样使用 Bitbucket 构建一个简单的 CI 流水线">
 
 
+<meta itemprop="datePublished" content="2020-10-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-10-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="196">
 
-<meta itemprop="keywords" content="ci,cd," />
+
+
+<meta itemprop="keywords" content="Continuous Integration,Frontend,Web Development,Pipeline,Ci," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="什么是 CI/CD?"/>
-<meta name="twitter:description" content="本文介绍了 CI/CD 的概念及应用场景"/>
+<meta name="twitter:title" content="使用 Bitbucket 流水线创建最简单的 CI"/>
+<meta name="twitter:description" content="具体讲解了怎样使用 Bitbucket 构建一个简单的 CI 流水线"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -209,12 +211,16 @@ var trackOutboundLink = function(id, url) {
     
       
         <h3 class="f4 dib author">
-            Li Yudong
+            s1mple_zj
         </h3>
 
       
       
-      <a href="https://github.com/P01son6415" target="_blank" class="link dim v-mid dib">
+        <p class="lh-copy measure center mt0 f6 black-60 bio">
+          You only got one shot,do not miss your chance to blow.
+        </p>
+      
+      <a href="https://github.com/0N0thing" target="_blank" class="link dim v-mid dib">
         <svg version="1.1" fill="gray" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18" viewBox="0 0 27 32">
 <path d="M9.28 21.44q0.064-0.128-0.064-0.256-0.16-0.128-0.256-0.032-0.064 0.128 0.064 0.224 0.16 0.128 0.256 0.064zM8.768 20.704q-0.096-0.128-0.224-0.096-0.096 0.096 0 0.224 0.128 0.16 0.224 0.096t0-0.224zM8.032 19.968q0.032-0.064-0.096-0.128-0.128-0.032-0.128 0.032-0.064 0.096 0.064 0.16 0.16 0.032 0.16-0.064zM8.416 20.384q0.032 0 0.032-0.064t-0.064-0.096q-0.128-0.128-0.192-0.064t0.032 0.192q0.096 0.096 0.192 0.032zM9.952 21.728q0.032-0.128-0.16-0.192-0.16-0.064-0.224 0.064t0.16 0.192q0.16 0.064 0.224-0.064zM10.688 21.792q0-0.16-0.192-0.16t-0.192 0.16 0.192 0.128 0.192-0.128zM11.392 21.664q-0.032-0.128-0.224-0.096t-0.16 0.16q0.032 0.16 0.192 0.096t0.192-0.16zM22.848 16q0-3.776-2.656-6.464t-6.464-2.688-6.464 2.688-2.688 6.464q0 2.976 1.76 5.376t4.48 3.296q0.32 0.064 0.48-0.096t0.16-0.352q0-0.928-0.032-1.696-0.096 0.032-0.256 0.064t-0.64 0.032-0.864-0.096-0.768-0.352-0.544-0.736q-0.416-1.056-1.024-1.312-0.032-0.032-0.064-0.064l-0.16-0.16t-0.096-0.16 0.064-0.128 0.352-0.064q0.096 0 0.256 0.032t0.544 0.288 0.576 0.64q0.288 0.48 0.672 0.736t0.768 0.256 0.704-0.064 0.512-0.16q0.128-0.864 0.608-1.248-0.896-0.096-1.536-0.32t-1.312-0.704-0.992-1.344-0.352-2.144q0-1.408 0.96-2.464-0.448-1.088 0.096-2.4 0.32-0.128 0.96 0.128t1.088 0.512l0.448 0.288q1.056-0.288 2.304-0.288t2.272 0.288q0.192-0.128 0.512-0.32t0.992-0.448 1.024-0.16q0.512 1.312 0.096 2.4 0.928 1.056 0.928 2.464 0 1.024-0.256 1.792t-0.64 1.248-0.928 0.8-1.12 0.448-1.216 0.224q0.608 0.544 0.608 1.696 0 0.704 0 1.6t-0.032 0.896q0 0.224 0.16 0.352t0.48 0.096q2.752-0.928 4.512-3.296t1.728-5.376zM27.424 7.424v17.152q0 2.112-1.504 3.616t-3.648 1.536h-17.12q-2.144 0-3.648-1.536t-1.504-3.616v-17.152q0-2.112 1.504-3.616t3.648-1.536h17.12q2.144 0 3.648 1.536t1.504 3.616z"></path>
 </svg>
@@ -223,9 +229,9 @@ var trackOutboundLink = function(id, url) {
 
   
   <div>
-    作者：<span class="originalAuthor">Izzyazeri</span>
+    作者：<span class="originalAuthor">Ferenc Almasi</span>
     <div>
-      <a class="originalLink" href="https://dzone.com/articles/what-is-cicd" target="_blank">原文链接</a>
+      <a class="originalLink" href="https://medium.com/swlh/setup-the-simplest-ci-with-bitbucket-pipelines-7989e934e700" target="_blank">原文链接</a>
     </div>
   </div>
   
@@ -245,17 +251,9 @@ var trackOutboundLink = function(id, url) {
 		</a>
 		
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2019/02/2019-02-27-windows-installers/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Windows 安装程序更新 ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-19-scaling-network-connections/" class="dib f6 pr1 hover-bg-light-gray br-100" title="从 Jenkins Master 扩展网络连接">
+			<a href="https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-12-contributors-recruit/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Jenkins 完全系列视频教程制作组招募">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -275,13 +273,13 @@ var trackOutboundLink = function(id, url) {
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">什么是 CI/CD?</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">使用 Bitbucket 流水线创建最简单的 CI</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      本文介绍了 CI/CD 的概念及应用场景
+      具体讲解了怎样使用 Bitbucket 构建一个简单的 CI 流水线
     </div>
   
 
@@ -294,118 +292,135 @@ var trackOutboundLink = function(id, url) {
 
 
 
-<p>CI/CD 的出现改变了开发人员和测试人员发布软件的方式。本文是描述这一变化的系列文章第一篇，
-这些文章将提供各种工具和流程的讲解，以帮助开发人员更好的使用 CI/CD。</p>
+<p><img src="cover.jpg" alt="cover" /></p>
 
-<p><img src="pic1.png" alt="pipeline.png" /></p>
+<p>最近我写了一篇关于 <a href="https://www.webtips.dev/ci-vs-cd">CI 和 CD</a> 之间核心区别的文章，我觉得是时候把这些理论运用到实际当中了。</p>
 
-<p>从最初的 <a href="https://en.wikipedia.org/wiki/Waterfall_model">瀑布模型</a>，
-到后来的 <a href="https://en.wikipedia.org/wiki/Agile_software_development">敏捷开发</a>，
-再到今天的 <a href="https://aws.amazon.com/devops/what-is-devops/">DevOps</a>，
-这是现代开发人员构建出色产品的技术路线。
-随着 DevOps 的兴起，出现了持续集成，持续交付（CI/CD）和持续部署的新方法，
-而传统的软件开发和交付方式在迅速变得过时。过去的敏捷时代里，
-大多数公司的软件发布周期是每月、每季度甚至每年（还记得那些日子吗？），
-而在现在 DevOps 时代，每周、每天甚至每天多次都是常态。
-当 SaaS 成为业界主流后尤其如此，您可以轻松地动态更新应用程序，
-而无需强迫用户下载更新组件。很多时候，用户甚至都不会注意到正在发生变化。</p>
+<p>在我印象中我参与开发的所有项目使用的源码控制平台都是使用的 Artlassian 的 <a href="https://bitbucket.org/product/">Bitbucket</a>。对于想要寻找一款免费、UI 整洁、能够为追踪你的代码提供了所有必要功能的版本控制系统来说，它是一个再棒不过的选择了。</p>
 
-<p>开发团队通过软件交付流水线（Pipeline）实现自动化，以缩短交付周期，
-大多数团队都有自动化流程来检查代码并部署到新环境。
-我们一直在关注自动化测试流程，但这将在之后的文章中介绍。
-今天，我们将介绍什么是 CI/CD/CD ，以及现代软件公司如何使用工具将部署代码的流程自动化。</p>
+<p>除了所有版本控制系统提供的基本功能以外，Bitbucket 添加了一些扩展比如集成了 CI/CD 功能，可以让我们推送代码之后将变更更准确的部署上去。</p>
 
-<p><strong>持续集成</strong>注重将各个开发者的工作集合到一个代码仓库中，通常每天会进行几次，
-主要目的是尽早发现集成错误，使团队更加紧密结合，更好地协作。
-<strong>持续交付</strong>的目的是最小化部署或发布过程中团队固有的摩擦，
-它的实现通常能够将构建部署的每个步骤自动化，以便任何时刻能够安全地完成代码发布（理想情况下）。
-<strong>持续部署</strong>是一种更高程度的自动化，无论何时代码有较大改动，
-都会自动进行构建／部署。</p>
+<p>好处就是不需要额外的工具了，只需要 Bitbucket 以及 JavaScript。</p>
 
-<p>以上的每一个阶段都是<strong>交付流水线</strong>的一部分。
-<a href="http://www.informit.com/articles/article.aspx?p=1621865&amp;seqNum=2">Humble 和 Ferley</a>
-在他们的书作《持续交付：通过自动化构建、测试和部署实现可靠软件版本发布》中解释说：
-「对软件的每次更改都要经过一个复杂的过程才能发布，该过程包括多个测试和部署阶段进行软件的构建。
-反过来看，这个过程需要许多人之间的合作，甚至可能需要几个团队间合作。
-部署流水线对这一过程进行建模，并且它的持续集成和发布管理工具能让您在代码从版本控制转移到各种测试和部署时，
-查看和控制每次更改的过程。」</p>
+<h2 id="配置-bitbucket">配置 Bitbucket</h2>
 
-<p><img src="pic2.png" alt="pipeline.png" /></p>
+<p>仓库设置完成后，剩下需要完成的工作就是在配置你的仓库允许使用 Pipelines。滚动到 <code>PIPELINE</code> 部分点击 <strong>Settings</strong>。你会看到如下所示配置:</p>
 
-<h2 id="持续集成-ci">持续集成（CI）</h2>
+<p><img src="pipeline-configuration.png" alt="pipeline-configuration" /></p>
 
-<p>通过持续集成，开发人员能够频繁地将其代码集成到公共代码仓库的主分支中。
-开发人员能够在任何时候多次向仓库提交作品，而不是独立地开发每个功能模块并在开发周期结束时一一提交。</p>
+<p>点击切换开关，你会得到一个配置 <code>bitbucket-pipelines.yml</code> 文件的选项。这个文件将会告诉 Bitbucket 在代码推送到仓库后需要执行哪些命令。点击 “Configure bitbucket-pipeline.yml” 按钮会指引你转到 <strong>Pipeline</strong> 菜单:</p>
 
-<p>这里的一个重要思想就是让开发人员更快更、频繁地做到这一点，从而降低集成的开销。
-实际情况中，开发人员在集成时经常会发现新代码和已有代码存在冲突。
-如果集成较早并更加频繁，那么冲突将更容易解决且执行成本更低。</p>
+<p><img src="pipeline-menu.png" alt="pipeline-menu" /></p>
 
-<p>当然，这里也有一些权衡，这个流程不提供额外的质量保障。
-事实上，许多组织发现这样的集成方式开销更大，因为它们依赖人工确保新代码不会引起新的 bug 或者破坏现有代码。
-为了减少集成期间的摩擦，持续集成依赖于测试套件和自动化测试。
-然而，要认识到自动化测试和持续测试是完全不同的这一点很重要，我们会在文章结尾处详细说明。</p>
+<p>这里你可以选择多种语言模板。我们这里最感兴趣的就是 JavaScript 的。我们可以使用它作为基础然后依据我们自己的喜好进行修改。</p>
 
-<p>CI 的目标是将集成简化成一个简单、易于重复的日常开发任务，
-这样有助于降低总体的构建成本并在开发周期的早期发现缺陷。
-要想有效地使用 CI 必须转变开发团队的习惯，要鼓励频繁迭代构建，
-并且在发现 bug 的早期积极解决。</p>
+<h2 id="修改配置文件">修改配置文件</h2>
 
-<p>持续交付（CD）实际上是 CI 的扩展，其中软件交付流程进一步自动化，以便随时轻松地部署到生成环境中。
-成熟的持续交付方案也展示了一个始终可部署的代码库。使用 CD 后，软件发布将成为一个没有任何紧张感的例行事件。
-开发团队可以在日常开发的任何时间进行产品级的发布，而不需要详细的发布方案或者特殊的后期测试。</p>
+<p>修改模板以及添加一些另外的步骤，我们得到如下文件:</p>
 
-<p>CD 集中依赖于部署流水线，团队通过流水线自动化测试和部署过程。此流水线是一个自动化系统，
-可以针对构建执行一组渐进的测试套件。CD 具有高度的自动化，并且在一些云计算环境中也易于配置。</p>
+<pre><code>image: node:10.15.3
 
-<p>在流水线的每个阶段，如果构建无法通过关键测试会向团队发出警报。否则，将继续进入下一个测试，
-并在连续通过测试后自动进入下一个阶段。流水线的最后一个部分会将构建部署到和生产环境等效的环境中。
-这是一个整体的过程，因为构建、部署和环境都是一起执行和测试的，它能让构建在实际的生产环境可部署和可验证。</p>
+pipelines:
 
-<p>AWS 上提供了可靠的当前 CI/CD 的展示，亚马逊是云计算的提供商之一，提供出色的 CI/CD 流水线环境和实验过程，
-有众多开发资源可供选择，您可以将它们在一个易于配置和监控的流水线中组合起来。</p>
+    default:
 
-<p><img src="pic3.png" alt="pipeline.png" /></p>
+        - step:
 
-<p>许多人认为持续交付的吸引力主要在于，它自动化了从提交代码到仓库，再到测试和发布产品过程的所有步骤。
-这是构建和测试过程细致的自动化，但是如何发布以及发布什么仍然是需要人工操作，持续部署可以改变这一点。</p>
+            name: Deploy
 
-<h2 id="持续部署-cd">持续部署（CD）</h2>
+            caches:
 
-<p>持续部署扩展了持续交付，以便软件构建在通过所有测试时自动部署。在这样的流程中，
-不需要人为决定何时及如何投入生产环境。CI/CD 系统的最后一步将在构建后的组件/包退出流水线时自动部署。
-此类自动部署可以配置为快速向客户分发组件、功能模块或修复补丁，并准确说明当前提供的内容。</p>
+                - node
 
-<p>采用持续部署的组织可以将新功能快速传递给用户，得到用户对于新版本的快速反馈，并且可以迅速处理任何明显的缺陷。
-用户对无用或者误解需求的功能的快速反馈有助于团队规划投入，避免将精力集中于不容易产生回报的地方。</p>
+            script:
 
-<p>随着 DevOps 的发展，新的用来实现 CI/CD 流水线的自动化工具也在不断涌现。这些工具通常能与各种开发工具配合，
-包括像 GitHub 这样的代码仓库和 Jira 这样的 bug 跟踪工具。此外，随着 SaaS 这种交付方式变得更受欢迎，
-许多工具都可以在现代开发人员运行应用程序的云环境中运行，例如 <a href="https://cloud.google.com/">GCP</a> 和 AWS。</p>
+                - npm install
 
-<p>最受欢迎的自动化工具是 <a href="https://jenkins.io/">Jenkins</a>（以前的 Hudson），
-这是一个由数百名贡献者和商业公司 <a href="https://www.cloudbees.com/">Cloudbees</a> 支持的开源项目。
-Cloudbees 甚至聘请了 Jenkins 的创始人，并提供了一些 Jenkins 培训项目和附加组件。
-除了开源项目之外，还有一些更现代化的商业产品例如 CircleCI，Codeship 和 Shippable。
-这些产品各有优缺点，我鼓励开发人员在开发流程中一一尝试它们，以了解它们在您的环境中的工作方式，
-以及它们如何与您的工具、云平台、容器系统等协作。</p>
+                - npm run build
 
-<p>在 mabl 中，我们在 <a href="https://www.mabl.com/blog/validating-100-million-pages-kubernetes">Google Cloud Platform 上进行构建</a>，
-因此，我们正在寻找与 GSP 兼容或者最好是已经集成进 GSO 的产品。我们尝试过 CircleCI，Codeship 和 Shippable，
-下面有一个简单的表格，展示了每个工具的一些细节：</p>
+                - npm run test
 
-<p><img src="pic4.png" alt="pipeline.png" /></p>
+                - npm run deploy
+</code></pre>
 
-<p><img src="pic5.png" alt="pipeline.png" /></p>
+<p>我们将每一行进行拆分，看看都做了哪些事情:</p>
 
-<p>我们最终选择了 <a href="http://codeship.com/">Codeship</a>，我认为我们的选择是正确的，
-也感谢 Codeship 团队的支持。</p>
+<ul>
+<li><p>我们在配置文件里面使用 <code>node: 10.15.3</code> 作为 docker 镜像。这里你可以自定义 docker 镜像。</p></li>
 
-<h2 id="接下来">接下来？</h2>
+<li><p>下一步，我们为 <code>default</code> 部分定义了一个步骤，这部分包括所有定义的代码分支，也就是说如果我们触发了推送动作，它将自动触发流水线。</p></li>
 
-<p>一旦部署了现代化的 CI/CD 流水线，您可能会意识到开发人员工作流程中的一些工具和流程也需要进行现代化改造。
-测试是一个要着重关注的领域，如果您的部署频率是每天或者一天多次，您的每次测试可能需要数小时甚至一晚上才能完成。
-mabl 正在使用机器学习解决这个问题。</p>
+<li><p>我们可以使用 <code>step</code> 关键词定义步骤。这里我们为其指定一个“*Deploy*” 名称，并告诉它在 <code>caches</code> 关键字内部缓存节点。</p></li>
+
+<li><p>最后，在 <code>scripts</code> 关键词内，将会指定一些我们想要执行的命令。首先安装依赖、构建项目、运行测试、最后部署到我们的站点。</p></li>
+</ul>
+
+<p>为了确保有效，将配置文件放到你的项目的根目录上提交到仓库里面。</p>
+
+<h2 id="配置部署脚本">配置部署脚本</h2>
+
+<p>最终的步骤里，我们调用 <code>npm run deploy</code>，它是在我们的 <code>package.json</code> 中定义的，使用下面命令运行一个 JavaScript 文件: <code>node tools/deploy.js</code> 这个文件。这个文件将会处理我们组件的部署工作:</p>
+
+<pre><code>const FtpDeploy = require('ftp-deploy');
+
+const ftpDeploy = new FtpDeploy();
+
+const config = {
+
+	user: process.env.FTP_USERNAME,
+
+	password: process.env.FTP_PASSWORD,
+
+	host: process.env.FTP_HOST,
+
+	localRoot: __dirname + '/../dist/',
+
+	remoteRoot: process.env.FTP_REMOTE_PATH,
+
+	include: ['*']
+
+};
+
+ftpDeploy.deploy(config, (error) =&gt; {
+
+	if (error) {
+
+		console.log(error);
+
+	} else {
+
+		console.log('deployed successfully');
+
+	}
+
+});
+</code></pre>
+
+<p>正如你所看到的，我使用了一个名为 <a href="https://www.npmjs.com/package/ftp-deploy">ftp-deploy</a> 的包，你可以使用 <code>npm i ftp-deploy</code> 安装它。我们在 line:1 导入它，在 line:4 为其创建一个配置对象。</p>
+
+<p>配置对象里面包括创建一个 FTP 连接所需要的所有字段。为了避免在代码中存储凭据，我们从环境变量中传递这些值。这些变量从 Bitbucket 中获取。你可以在 <code>PIPELINE</code> 的 <strong>Repository variables</strong> 处定义它们。</p>
+
+<p><img src="repository-variables.png" alt="repository-variables" /></p>
+
+<p>设置部署脚本使用的环境变量名以及它们的值。选中 <strong>Secured</strong> 将会永久隐藏这些值。</p>
+
+<p>回到配置部分，<code>localRoot</code> 的值用来告诉 <code>ftpDeploy</code> 需要拷贝哪一个目录。使用 <code>__dirname</code> 参数指向的是部署脚本的目录。我的项目配置如下所示:</p>
+
+<p><img src="project-configuration.png" alt="project-configuration" /></p>
+
+<p>这里印证了我为什么在例子中返回上一级目录使用的是 <code>/../</code>。</p>
+
+<p>另一方面，<code>remoteRoot</code> 指向了 FTP 服务器的一个目录。最后，使用 <code>include</code> 我们可以定义哪些文件需要拷贝。使用星号说明我们将复制 dist 目录下的所有文件。</p>
+
+<p>然后我们在 <code>ftpDeploy</code> 调用 <code>deploy</code> 然后传给我们的配置对象和一个回调函数。本例这里有一个错误，我们将其日志打印出来了。除此之外，这个部署是成功的。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>我们可以在 <strong>Pipeline</strong> 菜单下监控部署情况。你会注意到开始的一个新的构建名称是我们在 <code>bitbucket-pipelines.yml</code> 文件中事先定义好的。</p>
+
+<p>将变更推送到远程仓库自动触发部署操作，如果你的部署文件正确配置了&ndash;<em>当然你运行的测试也通过了</em>&ndash;流水线会显示绿色然后本地推送的变更几秒内就会应用到产品中。✅</p>
+
+<p><img src="deploy.png" alt="deploy" /></p>
 
 </div>
 
@@ -438,14 +453,14 @@ mabl 正在使用机器学习解决这个问题。</p>
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f4 dark-gray mb2">
-  <a href="https://jenkins-zh.cn/wechat/articles/2019/04/2019-04-12-what-is-cicd/" class="hide-child link primary-color">
+  <a href="https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-14-setup-the-simplest-ci-with-bitbucket-pipeline/" class="hide-child link primary-color">
   <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
 </span>
-    “什么是 CI/CD?”
-  </a> 更新于：January 1, 0001
+    “使用 Bitbucket 流水线创建最简单的 CI”
+  </a> 更新于：October 14, 2020
 </h6>
 
-      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2019/04/2019-04-12-what-is-cicd.md" class="
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/wechat/articles/2020/10/2020-10-14-setup-the-simplest-ci-with-bitbucket-pipeline.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 " target="_blank">完善此页</a>
 
@@ -463,133 +478,36 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
         </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/ci">
-              ci
+            <a class="tag" href="/tags/Continuous-Integration">
+              Continuous Integration
             </a>
           </li>
         
           <li class="db dib-l mr3">
-            <a class="tag" href="/tags/cd">
-              cd
+            <a class="tag" href="/tags/Frontend">
+              Frontend
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Web-Development">
+              Web Development
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Pipeline">
+              Pipeline
+            </a>
+          </li>
+        
+          <li class="db dib-l mr3">
+            <a class="tag" href="/tags/Ci">
+              Ci
             </a>
           </li>
         
               
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/10/2020-10-14-setup-the-simplest-ci-with-bitbucket-pipeline/" class="link">
-              使用 Bitbucket 流水线创建最简单的 CI
-            </a>
-          </li>
-        
-      
-        
-          <li class="db b mt4 mb2 mr2">
-            Related entries:
-          </li>
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2020/02/2020-02-17-happy-second-birthday-jenkins-x/" class="link">
-              Happy Second Birthday Jenkins X!
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/07/2019-07-29-leveraging-jenkins-on-kubernetes/" class="link">
-              在 Kubernetes 上使用 Jenkins 
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/06/2019-06-14-setup-jenkins-ci-in-30-minutes/" class="link">
-              30分钟搞定 Jenkins CI
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-24-achieve-cicd-with-jenkins-x-kubernetes-and-spring/" class="link">
-              使用 Jenkins X、Kubernetes 和 Spring Boot 实现 CI/CD
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-22-jacoco-coverage-for-functional-test/" class="link">
-              基于 Jenkins &#43; JaCoCo 实现功能测试代码覆盖率统计
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-17-from-jenkins-to-jenkins-x/" class="link">
-              从 Jenkins 到 Jenkins X
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/05/2019-05-16-cloud-agnostic-automated-cicd-for-k8s/" class="link">
-              与云无关的用于 Kubernetes 的自动化 CI/CD 
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-30-what-cicd-tool-should-i-use/" class="link">
-              应该使用什么 CI/CD 工具？
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-10-getting-started-with-docker-for-java-applications/" class="link">
-              Java 应用使用 Docker 的入门指南：建立一个 CI/CD 流水线
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-03-the-benefits-and-challenges-of-continuous-integration/" class="link">
-              持续集成的收益与挑战
-            </a>
-          </li>
-        
-      
-        
-        
-          <li class="db dib-l mb2 mr3">
-            <a href="/wechat/articles/2019/04/2019-04-15-kubecon-cn/" class="link">
-              Jenkins 中文社区邀您来上海共同参与2019年的国际开源盛宴
-            </a>
-          </li>
-        
-      
-        
-        
       
     </ul>
   </div>
@@ -615,7 +533,7 @@ function copyMe(){
 
   var articleHeader = document.createElement("div");
   tempElements.push(articleHeader);
-  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2019\/04\/2019-04-12-what-is-cicd\/\">Jenkins 中文社区</a>";
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/wechat\/articles\/2020\/10\/2020-10-14-setup-the-simplest-ci-with-bitbucket-pipeline\/\">Jenkins 中文社区</a>";
 
   
   var rangeToSelect = document.createRange();

@@ -185,7 +185,7 @@
     <item>
       <title>Ci</title>
       <link>https://jenkins-zh.cn/tags/ci/</link>
-      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/ci/</guid>
       <description></description>
@@ -293,7 +293,7 @@
     <item>
       <title>Continuous Integration</title>
       <link>https://jenkins-zh.cn/tags/continuous-integration/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/continuous-integration/</guid>
       <description></description>
@@ -530,6 +530,15 @@
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/flagger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frontend</title>
+      <link>https://jenkins-zh.cn/tags/frontend/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/frontend/</guid>
       <description></description>
     </item>
     
@@ -1031,7 +1040,7 @@
     <item>
       <title>Pipeline</title>
       <link>https://jenkins-zh.cn/tags/pipeline/</link>
-      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/pipeline/</guid>
       <description></description>
@@ -1349,6 +1358,15 @@
       <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>https://jenkins-zh.cn/tags/web-development/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/web-development/</guid>
       <description></description>
     </item>
     
