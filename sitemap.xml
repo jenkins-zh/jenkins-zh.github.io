@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/meeting/2020-10-28/</loc>
+    <lastmod>2020-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2020/10/2020-10-14-setup-the-simplest-ci-with-bitbucket-pipeline/</loc>
     <lastmod>2020-10-14T00:00:00+00:00</lastmod>
   </url>
@@ -1041,7 +1046,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/meeting/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -6,10 +6,19 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2020-10-28/</link>
+      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2020-10-28/</guid>
+      <description> Jenkins 系列教程  现状  存储 钉钉  片头、片尾 录制周期 反馈  目前收集到的反馈很少，如何才能有更多的反馈？（问卷？） 片尾增加哔哩哔哩的地址，让感兴趣的人关注下（需要简单设计下效果，通过录音来宣传） 单个视频剪辑成多个的话，衔接的不好   </description>
+    </item>
     
     <item>
       <title></title>
