@@ -37,6 +37,21 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>使用 AWS、k3s、Rancher、Vault 和 ArgoCD 在 Kubernetes 上集成 GitOps</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/11/2020-11-04-implementing-gitops-on-kubernetes-using-aws-k3s-rancher-vault-and-argocd/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/11/2020-11-04-implementing-gitops-on-kubernetes-using-aws-k3s-rancher-vault-and-argocd/</guid>
+      <description>随着 Kubernetes 将自己打造为容器编排的工业标准以来，为你的应用和工具寻找一条能够高效使用声明式模型的途径是成功的关键因素。这篇文章中，我将带领大家在 AWS 上设置一个 k3s Kubernetes 集群，然后集成 ArgoCD 和 Vault 创建一个安全的 GitOps。可以从这里检出基础设施代码和 Kubernetes unbrella 应用代码。
+以下是我们将会使用的组件/工具:
+ AWS &amp;ndash; 底层基础设施云服务方案提供商。它将管理让 Kubernetes 正常运行的虚拟机和网络。并允许通过外部世界进入集群内部。
+ k3s &amp;ndash; 由 rancher 开发的一套精简版本的 Kubernetes 发行版。它清理了许多 alpha 和云插件，它还允许使用关系型的数据库（这里使用的是 RDS）以替代 etcd 作为后台存储。
+ Rancher &amp;ndash; 一款以 API 驱动的可以轻松管理 Kubernetes 集群的 UI 工具。
+ Vault &amp;ndash; Hashicorp 的密钥管理系统。我将会使用集成在 vault 的 Banzai Cloud 的 bank-vault，它会允许通过使用一个 Admission Webhook 的方式将密钥直接注入到 pod 中。这将大大减少你将密钥存储到 Git 仓库的需求。
+ ArgoCD &amp;ndash; 一款 GitOps 工具允许你使用 Git 维护 Kubernetes 资源的状态。ArgoCD 会自动同步 Kubernetes 资源到你的 Git 仓库中，这样同样可以使集群中的配置清单手动修改后能够被自动恢复。这样能够确保你的声明式部署模型。</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://jenkins-zh.cn/meeting/2020-10-28/</link>
       <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>

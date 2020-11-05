@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2020/11/2020-11-04-implementing-gitops-on-kubernetes-using-aws-k3s-rancher-vault-and-argocd/</loc>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/meeting/2020-10-28/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
   </url>
@@ -1177,7 +1182,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/argo/</loc>
-    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1740,6 +1745,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/k3s/</loc>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/k8s/</loc>
     <lastmod>2020-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1764,7 +1775,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/kubernetes/</loc>
-    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1949,6 +1960,12 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/rancher/</loc>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/react/</loc>
     <lastmod>2019-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -2122,7 +2139,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/vault/</loc>
-    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2157,7 +2174,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2020-10-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

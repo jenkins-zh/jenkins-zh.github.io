@@ -59,7 +59,7 @@
     <item>
       <title>Argo</title>
       <link>https://jenkins-zh.cn/tags/argo/</link>
-      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/argo/</guid>
       <description></description>
@@ -822,6 +822,15 @@
     </item>
     
     <item>
+      <title>K3s</title>
+      <link>https://jenkins-zh.cn/tags/k3s/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/k3s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>K8s</title>
       <link>https://jenkins-zh.cn/tags/k8s/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
@@ -860,7 +869,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://jenkins-zh.cn/tags/kubernetes/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/kubernetes/</guid>
       <description></description>
@@ -1110,6 +1119,15 @@
     </item>
     
     <item>
+      <title>Rancher</title>
+      <link>https://jenkins-zh.cn/tags/rancher/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/rancher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>React</title>
       <link>https://jenkins-zh.cn/tags/react/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
@@ -1346,7 +1364,7 @@
     <item>
       <title>Vault</title>
       <link>https://jenkins-zh.cn/tags/vault/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/vault/</guid>
       <description></description>
