@@ -37,6 +37,21 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
+      <title>Jenkins CLI 命令行 v0.0.31</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2020/11/2020-11-23-jcli-v0.0.31/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2020/11/2020-11-23-jcli-v0.0.31/</guid>
+      <description>截止到编辑本文时，GitHub 上统计到的下载量为：9.4k(+2000)次。GitHub 上的 Star 数为216(+29)，码云上的 Star 数为228(+56)。
+很久没有发布 jcli 了。但是，这次绝对值得升级它。让我们一起来看看都有哪些新功能吧。
+通常，当你首次安装时，需要给 jcli 添加配置文件。然后，从 Jenkins 界面生成 Token 后还需要写入到配置文件中，这个过程显得很繁琐。但是，从这个版本开始，你可能就不再需要这么做了。因为，已经可以自动地获取 Token 并配置好了。你需要的只是执行下面的命令：
+jcli center login
+该命令会弹出浏览器，并打开 Jenkins 界面，你只要成功登录 Jenkins 后配置文件就会自动回写好。但是，这里还存在一个限制。那就是，你的电脑必须能够与 Jenkins 所在的服务器双向通信。此外，你还需要安装一个pipeline-restful-api-plugin 插件。
+第二个特性，和 Jenkins formula（配方）有关。首先要感谢 @oleg-nenashev 发起并维护着Custom Jenkins WAR packager这个项目。在这个项目的基础上，我们可以生成一个自定义的 Jenkins 发行版。jcli 则执行从已有的 Jenkins 中导出一个配方。而且，还可以把一个配方文件中的插件安装到另外一个 Jenkins 上。具体请参考下面的命令：
+jcli plugin formula &amp;gt; formual.yaml # 导出 YAML 格式的配方文件 jcli plugin install --formula formual.yaml # 从配方文件中安装插件  第三个特性，就是可以以 Docker 容器的形式来运行 Jenkins jcli center start -m docker</description>
+    </item>
+    
+    <item>
       <title>使用 AWS、k3s、Rancher、Vault 和 ArgoCD 在 Kubernetes 上集成 GitOps</title>
       <link>https://jenkins-zh.cn/wechat/articles/2020/11/2020-11-04-implementing-gitops-on-kubernetes-using-aws-k3s-rancher-vault-and-argocd/</link>
       <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>

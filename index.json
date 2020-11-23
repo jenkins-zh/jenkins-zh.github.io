@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/wechat/articles/2020/11/2020-11-23-jcli-v0.0.31/",
+        "title": "Jenkins CLI 命令行 v0.0.31",
+        "type": "wechat",
+        "date": "2020-11-23 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "jcli-v0.0.31 发布",
+        "content": " 截止到编辑本文时，GitHub 上统计到的下载量为：9.4k(+2000)次。GitHub 上的 Star 数为216(+29)，码云上的 Star 数为228(+56)。\n很久没有发布 jcli 了。但是，这次绝对值得升级它。让我们一起来看看都有哪些新功能吧。\n通常，当你首次安装时，需要给 jcli 添加配置文件。然后，从 Jenkins 界面生成 Token 后还需要写入到配置文件中，这个过程显得很繁琐。但是，从这个版本开始，你可能就不再需要这么做了。因为，已经可以自动地获取 Token 并配置好了。你需要的只是执行下面的命令：\njcli center login\n该命令会弹出浏览器，并打开 Jenkins 界面，你只要成功登录 Jenkins 后配置文件就会自动回写好。但是，这里还存在一个限制。那就是，你的电脑必须能够与 Jenkins 所在的服务器双向通信。此外，你还需要安装一个pipeline-restful-api-plugin 插件。\n第二个特性，和 Jenkins formula（配方）有关。首先要感谢 @oleg-nenashev 发起并维护着Custom Jenkins WAR packager这个项目。在这个项目的基础上，我们可以生成一个自定义的 Jenkins 发行版。jcli 则执行从已有的 Jenkins 中导出一个配方。而且，还可以把一个配方文件中的插件安装到另外一个 Jenkins 上。具体请参考下面的命令：\njcli plugin formula \u0026gt; formual.yaml # 导出 YAML 格式的配方文件 jcli plugin install --formula formual.yaml # 从配方文件中安装插件  第三个特性，就是可以以 Docker 容器的形式来运行 Jenkins jcli center start -m docker\n那么，接下来呢？我了解到有很多接触 Jenkins 时间不长的人，当遇到插件安装报错时会感到很困惑，不知道该怎么办。有一些情况下，可能是插件之间的依赖、版本上出了问题。那么，这些都是可以通过命令行快速地、自动地修复的。如果你对此感兴趣，欢迎关注这个问题，并且给我们提 Pull Request.\n想升级吗？快执行升级命令吧：jcli version upgrade\nhttps://github.com/jenkins-zh/jenkins-cli/releases/tag/v0.0.31\n🚀 功能  优化插件上传命令 (#440) @LinuxSuRen 优化 jcli 版本升级的命令 (#435) @LinuxSuRen 支持通过 Jenkins 配方安装插件 (#469) @LinuxSuRen 支持自动获取 Jenkins 用户 Token (#469) @LinuxSuRen 支持连接 SSH 服务器 (#468) @LinuxSuRen 支持启动 Jenkins 容器 (#464) @LinuxSuRen 支持下载指定版本的插件 (#465) @LinuxSuRen 支持从环境变量中获取代理配置 (#414) @LinuxSuRen 支持输出 CWP 中的版本 (#462) @LinuxSuRen 支持导出 Jenkins 配方文件 (#458) @LinuxSuRen 为所有命令增加超时时间配置 (#446) @LinuxSuRen 支持在非管理员用户下自我升级 (#437) @LinuxSuRen  📝 文档完善  增加更多包管理器有关的文档 (#461) @LinuxSuRen  👻 维护  Bump github.com/spf13/cobra from 1.0.0 to 1.1.1 (#452 #453) @dependabot-preview Bump github.com/AlecAivazis/survey/v2 from 2.0.8 to 2.2.2 (#445 #459) @dependabot-preview Bump github.com/onsi/ginkgo from 1.14.0 to 1.14.2 (#449 #451) @dependabot-preview Bump github.com/onsi/gomega from 1.10.1 to 1.10.3 (#448 #450) @dependabot-preview Bump golang.org/x/text from 0.3.2 to 0.3.4 (#444 #454) @dependabot-preview Bump go.uber.org/zap from 1.15.0 to 1.16.0 (#447) @dependabot-preview Bump github.com/golang/mock from 1.4.3 to 1.4.4 (#442) @dependabot-preview  ",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": "jenkins-cli.png"
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2020/11/2020-11-04-implementing-gitops-on-kubernetes-using-aws-k3s-rancher-vault-and-argocd/",
         "title": "使用 AWS、k3s、Rancher、Vault 和 ArgoCD 在 Kubernetes 上集成 GitOps",
         "type": "wechat",
@@ -5385,7 +5398,7 @@
         "uri": "https://jenkins-zh.cn/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2020-11-04 00:00:00 +0000 UTC",
+        "date": "2020-11-23 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
