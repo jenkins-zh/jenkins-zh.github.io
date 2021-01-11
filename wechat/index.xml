@@ -6,10 +6,23 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 21 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>KubeSphere 使用外置 Jenkins</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/01/2021-01-11-exteranl-jenkins-in-kubesphere/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/01/2021-01-11-exteranl-jenkins-in-kubesphere/</guid>
+      <description>相信很多 KubeSphere 的用户之前在以 Jenkins 作为 CI/CD 工具，但是，KubeSphere 默认会安装一个新的 Jenkins，无法直接使用已有的 Jenkins 作为 CI/CD 引擎。这对于希望能上生产，但是又不方便迁移已有流水线的用户来说，还是有很多不方便的地方。本文的目标，就是给大家提供一个让 KubeSphere 可以使用外置 Jenkins 的方案。
+限制 该方案并不是一个完美的终极方案，因此，在你开始使用外置 Jenkins 之前，请先评估下面的限制：
+ KubeSphere 上已有的流水线将会无法使用 如果你已有的 Jenkins 中安装了不兼容的插件，可能会导致部分功能无法使用 不会把旧的 Jenkins 上的流水线迁移到 KubeSphere 上  鉴于方案可能会有如上所属的风险，请*不要*直接在你的生产环境上操作！另外，请确保你有一个备份环境，并且在备份环境上进行如下的方案实施。
+实验环境 CentOS Linux release 7.9.2009 (Core)  安装依赖：
+yum update -y &amp;amp;&amp;amp; yum install wget curl vim bash-completion -y  安装 KubeSphere 为了不影响已有的业务，我们最好还是找个空白的环境，安装一个新的 KubeSphere 会比较稳妥。下面，我们首先把安装工具 kk 下载好。值得一提的是，KubeSphere 社区为了能够让用户更方便地体验到最新交付的 feature 或者修复的缺陷，提供了每日构建版，也就是所谓的：nightly build。想要体验找个 nightly build 最好的办法是使用最新开发中的的 kk。</description>
+    </item>
     
     <item>
       <title>Jenkins 安全修复 SECURITY-626 的紧急通知</title>
