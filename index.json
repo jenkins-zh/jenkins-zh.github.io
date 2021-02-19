@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/wechat/articles/2021/02/2021-02-02-jcli-v0.0.33/",
+        "title": "Jenkins CLI 命令行 v0.0.33",
+        "type": "wechat",
+        "date": "2021-02-02 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "jcli-v0.0.33 发布",
+        "content": " 在某些场景下，我们可能需要增加或者删除流水线参数。如果有相当数量的流水线需要手动处理的话，将会是一件非常无聊、工作量大的事情。现在，你可以通过这个命令来添加参数了：jcli job param init-job --add '[{\u0026quot;name\u0026quot;:\u0026quot;name\u0026quot;,\u0026quot;value\u0026quot;:\u0026quot;my name\u0026quot;,\u0026quot;desc\u0026quot;:\u0026quot;this is a name\u0026quot;}]'\n如果从多个不同的任务中删除特定的构建历史，也非常简单：jcli job history init-job -d 1\n有时候，下载 jenkins.war 会非常地慢。但是，现在 jcli 可以利用多线程并发下载的方式来加速：\n# jcli center download -t 8 start to download with 8 threads, size: 67287051, unit: 8410881  另外，还有一个重要的功能是，jcli 可以通过简单的命令来实现以 Docker 的方式启动 Jenkins：\njcli center start -m docker --image kubespheredev/ks-jenkins --version 2.249.1 --c-user root --port 9090 --setup-wizard=false\n截止到编辑本文时，GitHub 上统计到的下载量为：11,168 次。GitHub 上的 Star 数为234(+18)，码云上的 Star 数为251(+23)。\n🚀 功能  修复命令 center start 的随机 web 目录参数无效的问题 (#520) 支持删除构建历史 (#519) 支持增加或者删除流水线参数 (#513) 支持在配置文件中添加执行 shell 的项 (#518) 增加用于多线程下载 jenkins.war 的参数 (#517) 支持在启动 Jenkins 前强制拉取镜像 (#503) 分离部分代码到另外一个项目中 (#500) 修复在 Linux 下无法自我升级的问题 (#495) 重构命令 computer launch (#491) 增加命令别名的支持 (#494) 分离命令行插件的代码到一个单独的项目中 (#492) 支持以容器的形式运行 golang JNLP 节点 (#489 #488)  👻 维护  依赖包等的升级  ",
+        "auhtor": "linuxsuren",
+        "translator": "",
+        "original": "",
+        "poster": "jenkins-cli.png"
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2021/01/2021-01-11-exteranl-jenkins-in-kubesphere/",
         "title": "KubeSphere 使用外置 Jenkins",
         "type": "wechat",
@@ -5424,7 +5437,7 @@
         "uri": "https://jenkins-zh.cn/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2021-01-11 00:00:00 +0000 UTC",
+        "date": "2021-02-02 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
