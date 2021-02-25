@@ -6,7 +6,7 @@
         "date": "2019-09-07 00:00:00 +0000 UTC",
         "tags": [],
         "description": "社区捐助",
-        "content": " 社区得以持续、健康地发展，需要很多方面的支持，尤其对于社区的基础运营、活动组织上，资金和物资的捐助是非常重要的。\n用途 对于所收到的资金、物资捐助，我们都会用于社区基础设施（域名、服务器等）、线下活动、社区成员奖励。\n列表 为了对给予社区捐助的朋友们表示感谢，我们在此列出来：\n   捐助者 金额（单位：元） 日期 备注     shaw4fatty 19.2 2020-11-24 哔哩哔哩充电🔋   UCloud 2170 2020-04-04 2核2G 2M 80G系统盘 1年，地区北京，台数1台   霍格沃兹测试学院 10,000 2019-11-05 社区捐赠    geshujiang  100 2019-05-11 活动链接    资金去向    用途 金额 日期 申请人     open4u域名购买 29 2020.7.12  linuxsuren    阿里云服务器升级 786.57 2020.6.9  linuxsuren    购买梯子帐号（一年） 276 2020.02.23  linuxsuren , yJunS , donhui , linan607    购买阿里云服务器 5,640 2019.11.8  linuxsuren    阿里云服务器带宽充值 100 2019.10.24  linuxsuren     ",
+        "content": " 社区得以持续、健康地发展，需要很多方面的支持，尤其对于社区的基础运营、活动组织上，资金和物资的捐助是非常重要的。\n用途 对于所收到的资金、物资捐助，我们都会用于社区基础设施（域名、服务器等）、线下活动、社区成员奖励。\n列表 为了对给予社区捐助的朋友们表示感谢，我们在此列出来：\n   捐助者 金额（单位：元） 日期 备注     shaw4fatty 19.2 2020-11-24 哔哩哔哩充电🔋   UCloud 2170 2020-04-04 2核2G 2M 80G系统盘 1年，地区北京，台数1台   霍格沃兹测试学院 10,000 2019-11-05 社区捐赠    geshujiang  100 2019-05-11 活动链接    资金去向    用途 金额 日期 申请人     购买梯子帐号（一年） 180 2021.02.22  linuxsuren , yJunS , wst021    open4u域名购买 29 2020.7.12  linuxsuren    阿里云服务器升级 786.57 2020.6.9  linuxsuren    购买梯子帐号（一年） 276 2020.02.23  linuxsuren , yJunS , donhui , linan607    购买阿里云服务器 5,640 2019.11.8  linuxsuren    阿里云服务器带宽充值 100 2019.10.24  linuxsuren     ",
         "auhtor": "linuxsuren",
         "translator": "",
         "original": "",
@@ -24,6 +24,19 @@
         "translator": "",
         "original": "",
         "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/wechat/articles/2021/02/2021-02-26-jenkins-contributor-summit-online-feb-23-25/",
+        "title": "“Jenkins 贡献者线上峰会 - 二月 23 日至 25 日”",
+        "type": "wechat",
+        "date": "2021-02-21 00:00:00 +0000 UTC",
+        "tags": ["commuinty", "events"],
+        "description": "介绍此次线上峰会的时间、会议议程",
+        "content": " Jenkins 贡献者峰会让 Jenkins 项目目前以及将来的贡献者们能够齐聚一堂。今年我们主持本次线上峰会是为了鼓励全世界的贡献者们相互了解、讨论、规划未来。\n此次贡献者峰会将于 2021 年 2 月 23 日至 2 月 25 日举行。此次会议旨在组织社区成员们一起学习、交流、规划 Jenkins 社区未来的发展方向。在 Jenkins 社区里，我们珍视所有形式的贡献并真诚欢迎新成员加入进来。\n点击注册加入\n会议形式 线上会议能够让会议的时间和主题更加自由。方便贡献者们在一个相对更小的讨论小组里在线上讨论一些特定的议题。\n开幕式 开幕式将于 2021 年 2 月 23 日 15 时（北京时间 23 时）开始。在欢迎环节与回顾环节结束后，我们将会听取 Jenkins 各个领域的负责人介绍过去一年的成果以及未来一年的展望。\n 安全 - Daniel Beck\n 基础设施 - Olivier Vernin\n 版本发布 - Tim Jacomb\n 用户体验 - Félix Queiruga\n 中文本地化 - 赵晓杰(Rick)\n 配置即代码 - Tim Jacomb\n Google 编程之夏 - Kara de la Marck\n 文档化 - Mark Waite\n 活动组织 - Alyssa Tong\n 云原生 - Kara de la Marck\n 平台 - Mark Waite\n  以上活动进行结束后，我们将会创建一些线上的“分会场”，对一些特定的议题感兴趣的小伙伴们可以参与进来，选择一个合适的时间，准备一个讨论的议程草案。\n小组讨论 小组讨论（“tracks”），将会在会议进行时持续开放 48 小时。这些小组讨论将会聚焦一些特定的议题。小组讨论的负责人将会组织会议，推进小组讨论进行，在闭幕式上分享小组讨论的成果。\n闭幕式 闭幕式将于 2021 年 2 月 25 日 15 时（北京时间 23 时）开始。欢迎仪式以及回顾结束后，我们将会听取小组讨论的负责人分享小组讨论的成果。\n我们将会把一些项目添加到 Jenkins 路线图当中，这些项目将会由特别兴趣小组进行调研，后期将会在其他地方进行更深入的讨论。\n",
+        "auhtor": "Mark Waite",
+        "translator": "0N0thing",
+        "original": "https://www.jenkins.io/blog/2021/02/16/contributor-summit-online/",
+        "poster": "cover.jpg"
     },
     {
         "uri": "https://jenkins-zh.cn/wechat/articles/2021/02/2021-02-02-jcli-v0.0.33/",
@@ -3471,6 +3484,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/tags/commuinty/",
+        "title": "Commuinty",
+        "type": "tags",
+        "date": "2021-02-21 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "",
+        "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
         "uri": "https://jenkins-zh.cn/tags/community/",
         "title": "Community",
         "type": "tags",
@@ -3890,7 +3916,7 @@
         "uri": "https://jenkins-zh.cn/tags/events/",
         "title": "Events",
         "type": "tags",
-        "date": "2020-02-18 00:00:00 +0000 UTC",
+        "date": "2021-02-21 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -5437,7 +5463,7 @@
         "uri": "https://jenkins-zh.cn/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2021-02-02 00:00:00 +0000 UTC",
+        "date": "2021-02-21 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",

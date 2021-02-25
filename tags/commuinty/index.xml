@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Commuinty on Jenkins 中文社区</title>
+    <link>https://jenkins-zh.cn/tags/commuinty/</link>
+    <description>Recent content in Commuinty on Jenkins 中文社区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jenkins-zh.cn/tags/commuinty/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>“Jenkins 贡献者线上峰会 - 二月 23 日至 25 日”</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/02/2021-02-26-jenkins-contributor-summit-online-feb-23-25/</link>
+      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/02/2021-02-26-jenkins-contributor-summit-online-feb-23-25/</guid>
+      <description>Jenkins 贡献者峰会让 Jenkins 项目目前以及将来的贡献者们能够齐聚一堂。今年我们主持本次线上峰会是为了鼓励全世界的贡献者们相互了解、讨论、规划未来。
+此次贡献者峰会将于 2021 年 2 月 23 日至 2 月 25 日举行。此次会议旨在组织社区成员们一起学习、交流、规划 Jenkins 社区未来的发展方向。在 Jenkins 社区里，我们珍视所有形式的贡献并真诚欢迎新成员加入进来。
+点击注册加入
+会议形式 线上会议能够让会议的时间和主题更加自由。方便贡献者们在一个相对更小的讨论小组里在线上讨论一些特定的议题。
+开幕式 开幕式将于 2021 年 2 月 23 日 15 时（北京时间 23 时）开始。在欢迎环节与回顾环节结束后，我们将会听取 Jenkins 各个领域的负责人介绍过去一年的成果以及未来一年的展望。
+ 安全 - Daniel Beck
+ 基础设施 - Olivier Vernin
+ 版本发布 - Tim Jacomb
+ 用户体验 - Félix Queiruga
+ 中文本地化 - 赵晓杰(Rick)
+ 配置即代码 - Tim Jacomb
+ Google 编程之夏 - Kara de la Marck</description>
+    </item>
+    
+  </channel>
+</rss>
