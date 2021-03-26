@@ -6,10 +6,26 @@
     <description>Recent content in Gsoc on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020 Google 编程之夏活动总结</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-24-google-summer-of-code-2020-summary/</link>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-24-google-summer-of-code-2020-summary/</guid>
+      <description>随着十月份导师峰会与课题回顾的结束，现在我们宣布 Google 编程之夏 2020 活动在 Jenkins 社区圆满结束。我们谨代表 Jenkins 团队，感谢所有今年参与到此次活动的参与者们: 学生、导师、申请者以及各位贡献者。Google 编程之夏活动的顺利举行离不开 Jenkins 社区各位成员的积极参与。
+如果一直关注 Jenkins 博客，你已经看到课题团队创建了很多 GSoC 2020 文章。这里，我们着重聚焦一些此次活动的“高光时刻”。
+项目 2020 年，我们有 7 名学生参与进了 Jenkins 导师组织中。有 6 个 Jenkins 项目 1 个 Jenkins X 项目。按照往年惯例，在 GSoC 我们一般将注意力集中于对 Jenkins 用户与社区成员比较重要的问题上。这些项目具有备受期待的新特性以及对后期 Jenkins 长期发展具有关键意义的架构变更。
+以下为今年我们参与的项目:
+ Sladyn Nunes - 自定义 Jenkins 发行版构建服务
+ Sumit Sarin - 外部指纹存储
+ Rishabh Budhouliya - Git 插件性能提升
+ Kezhi Xiong - Jenkins GitHub Checks API 插件</description>
+    </item>
     
     <item>
       <title>GSoC: GitHub Checks API 项目第三阶段总结</title>

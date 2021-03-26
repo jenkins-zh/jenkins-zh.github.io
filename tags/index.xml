@@ -257,7 +257,7 @@
     <item>
       <title>Community</title>
       <link>https://jenkins-zh.cn/tags/community/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/community/</guid>
       <description></description>
@@ -518,7 +518,7 @@
     <item>
       <title>Events</title>
       <link>https://jenkins-zh.cn/tags/events/</link>
-      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/events/</guid>
       <description></description>
@@ -626,7 +626,7 @@
     <item>
       <title>Gsoc</title>
       <link>https://jenkins-zh.cn/tags/gsoc/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/gsoc/</guid>
       <description></description>
@@ -644,7 +644,7 @@
     <item>
       <title>Gsoc2020</title>
       <link>https://jenkins-zh.cn/tags/gsoc2020/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/gsoc2020/</guid>
       <description></description>
@@ -743,7 +743,7 @@
     <item>
       <title>Jenkins</title>
       <link>https://jenkins-zh.cn/tags/jenkins/</link>
-      <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/jenkins/</guid>
       <description></description>
@@ -917,6 +917,15 @@
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mentor</title>
+      <link>https://jenkins-zh.cn/tags/mentor/</link>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/mentor/</guid>
       <description></description>
     </item>
     
