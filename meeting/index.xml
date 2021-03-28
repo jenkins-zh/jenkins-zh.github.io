@@ -6,10 +6,19 @@
     <description>Recent content on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 28 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/meeting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://jenkins-zh.cn/meeting/2021-03-03/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/meeting/2021-03-03/</guid>
+      <description>活动  场地，Rick 可以帮忙协调 讲师 DevOps 相关的都可以，Tekton、Gitlab CI  Jenkins 系列教程 暑期计划 yJunS 是该活动的 owner</description>
+    </item>
     
     <item>
       <title></title>
