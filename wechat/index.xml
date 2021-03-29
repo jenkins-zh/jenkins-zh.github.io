@@ -6,10 +6,23 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 24 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>“Jenkins Docker 镜像重大更新”</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-29-jenkins-docker-image-update/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-29-jenkins-docker-image-update/</guid>
+      <description>从 Jenkins 2.279 和 2.263.4 开始，Jenkins 项目会更新基础操作系统和 Java 的版本，涉及到的镜像包括：jenkins/jenkins:latest 和 jenkins/jenkins:lts。会将 OpenJDK 8u242 替换为 AdoptOpenJDK 8u282，将 Debian 9 (&amp;ldquo;Stretch&amp;rdquo;) 替换为 Debian 10 (&amp;ldquo;Buster&amp;rdquo;)。
+为什么？ 我们更改基础镜像，是为了可以有更好的操作系统的支持，以及包含更多 Java 发行版本。
+更好的操作系统支持 由 Jenkins 提供的 Docker 镜像依赖于操作系统提供者对于系统安全的维护。
+我们的 Docker 镜像已经使用了 Debian 9 (&amp;ldquo;Stretch&amp;rdquo;) 很多年。Debian 9 的安全更新已于 2020 年 7 月 6 日停止更新。Debian 9 长期支持版本的安全更新也将于 2022 年 6 月停止更新。使用 Debian 10 可以让我们得到由操作系统安全团队更好的维护。
+更多 Java 发行版 Debian 9 Docker 镜像是基于 openjdk:8-jdk-stretch 的。它的最后一次更新是在一年前，包含 JDK 8u242. 我们需要一个及时维护的 Docker 基础镜像，和 JDK 发布以及操作系统的更新保持一定的节奏，这样控制器就可以运行在最新的 Java 以及操作系统的之上。</description>
+    </item>
     
     <item>
       <title>2020 Google 编程之夏活动总结</title>
