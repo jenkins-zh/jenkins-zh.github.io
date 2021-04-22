@@ -26,6 +26,19 @@
         "poster": ""
     },
     {
+        "uri": "https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-31-update-center-certificate-rotation/",
+        "title": "Jenkins 更新中心证书更新",
+        "type": "wechat",
+        "date": "2021-03-31 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "Jenkins 更新中心证书更新，部分版本的用户需要注意及时更新",
+        "content": " 2021 年 3 月 29 日，我们会更新 Jenkins 更新中心的证书。当前的证书将会于 2021 年 4 月过期。当新证书启用后，Jenkins 2.178 之前的版本（2018 年）就无法与默认的更新中心以及实验性更新中心通讯。对于自行部署的更新中心，则不会收到影响。对于插件更新，更新中心会支持一年内的 Jenkins core 的版本，2.204 就是最老的版本。\n你如果不定期更新的话，请查阅 Jenkins 安全公告，并以此作为依据来更新你的 Jenkins 版本。\n哪些人？ 还在使用 Jenkins 2.178 之前版本的用户，将于 2021 年 3 月 29 日证书更新后无法获得任何更新。\n对于 Jenkins 开发者，如果使用的 Jenkins 是 2.178 之前的版本的话，在执行 mvn hpi:run 命令测试插件时看不到插件更新。插件开发者可以把最小依赖更新到相对较新的版本。在指导手册“如何选择 Jenkins 版本”中有关于最小 Jenkins 版本的说明。另外，开发者也可以通过参数 mvn -Djenkins.version=2.249.1 hpi:run 来测试更高的版本。\n对于运行的 Jenkins 版本高于 2.178 的用户，则不会受到影响。\n做了什么？ Jenkins 通过更新中心来检查核心以及插件的更新。该服务使用带有根证书的证书丢元信息做签名。Jenkins 中带有该根证书，因此可以保证更新中心的数据可信。当有更新可用时，会有提示信息出现在 Jenkins 界面上以提醒用户更新。\n为什么？ 绑定在 Jenkins 中的根证书创建于 2011 年 4 月，有效期至 2021 年 4 月。这是 2018 年 4 月更新的 Jenkins 核心的根证书。现在，该使用新的根证书了。最新根证书的过期日期为 2028 年 4 月。\n你可以从 INFRA-2902 这个工单中了解到更多证书更新的细节。\n总之，只要更新你的实例，就不会有任何问题。\n相关链接：\n INFRA-2902 - 更新中心证书的更新 INFRA-2732 - 手动更新证书 INFRA-1502 - 增加新的根证书（2018年） jenkins-infra/update-center2 - Jenkins 更新中心证书 updates.jenkins.io - Jenkins 更新中心 advisories - Jenkins 安全公告  ",
+        "auhtor": "Olivier Vernin",
+        "translator": "LinuxSuRen",
+        "original": "https://www.jenkins.io/blog/2021/03/15/update-center-certificate-rotation/",
+        "poster": "certificate-rotation-opengraph.png"
+    },
+    {
         "uri": "https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-29-jenkins-docker-image-update/",
         "title": "“Jenkins Docker 镜像重大更新”",
         "type": "wechat",
@@ -5515,7 +5528,7 @@
         "uri": "https://jenkins-zh.cn/wechat/",
         "title": "Wechats",
         "type": "wechat",
-        "date": "2021-03-29 00:00:00 +0000 UTC",
+        "date": "2021-03-31 00:00:00 +0000 UTC",
         "tags": [],
         "description": "",
         "content": "",
@@ -5987,6 +6000,19 @@
         "tags": [],
         "description": "",
         "content": "",
+        "auhtor": "",
+        "translator": "",
+        "original": "",
+        "poster": ""
+    },
+    {
+        "uri": "https://jenkins-zh.cn/about/summer-2021/",
+        "title": "开源软件供应链点亮计划 - 暑期2021",
+        "type": "about",
+        "date": "0001-01-01 00:00:00 +0000 UTC",
+        "tags": [],
+        "description": "通过 CLI 对 Jenkins 实现安全升级",
+        "content": " 项目标题 通过 CLI 对 Jenkins 实现安全升级\n项目难度 中\n技能要求  Golang Java Jenkins RESTful  背景 Jenkins 有 1500+ 由社区提供的插件，利用这些插件，几乎可以完成任何你想完成的任务。但是，在这众多的插件中，并没有非常严格的标准，因此，用户有可能会使用到部分对兼容性、安全性等方面表现不是很好的插件。那么，升级 Jenkins 或者插件将会是一件非常繁琐、甚至容易出问题的操作。\nJenkins CLI 是用 Golang 实现的，目前可以实现对 Jenkins 的大部分操作，部分非核心功能是通过插件实现。\n概述 当用户执行升级操作时，命令行（CLI）给出一个升级向导，通过询问用户的方式进行交互式地升级：\n 是否希望升级 Jenkins，以及希望升级到哪个版本  给出可以升级的版本列表，并给出相关的安全、稳定性、更新日期等信息  是否希望升级插件  根据官方社区公布的安全漏洞，给出建议升级的插件列表以及目标版本 用户可以看到插件的当前维护信息，例如：star、watch、安装量、最新发布日期等  启动临时升级环境  安装目标版本的 Jenkins 以及插件  对临时环境的 Jenkins 执行兼容性测试  针对不同的插件执行不同的 API 测试 给出一个非常容易扩展的方式来对不同插件的兼容性测试进行补充  输出兼容性测试报告 提示用户是否要进行备份 提示用户是否要进行升级  快速上手 你可以通过新人友好的 issues 快速了解 Jenkins CLI.\n另外，该项目中也许会需要开发（或维护）一个 Jenkins 插件，你可以参考官方插件教程，以及由 Jenkins 中文社区给出的中文视频教程。\n关于 Jenkins 备份、恢复，你也可以参考一些已有的插件。\n社区联系人  开源软件供应链点亮计划，社区管理员，史彦军 导师，Rick  相关代码仓库  https://github.com/jenkins-zh/jenkins-cli https://github.com/jenkinsci/pipeline-restful-api-plugin  ",
         "auhtor": "",
         "translator": "",
         "original": "",

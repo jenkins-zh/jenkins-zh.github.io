@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-31-update-center-certificate-rotation/</loc>
+    <lastmod>2021-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-29-jenkins-docker-image-update/</loc>
     <lastmod>2021-03-29T00:00:00+00:00</lastmod>
   </url>
@@ -2226,7 +2231,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2021-03-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2400,6 +2405,10 @@
     <loc>https://jenkins-zh.cn/tags/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2019-07-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/about/summer-2021/</loc>
   </url>
   
   <url>

@@ -10,11 +10,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Wechats - Jenkins 中文社区</title>
+  <title>开源软件供应链点亮计划 - 暑期2021 - Jenkins 中文社区</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   
-  <meta name="description" content="共建开放、包容、活跃的 Jenkins 社区">
+  <meta name="description" content="通过 CLI 对 Jenkins 实现安全升级">
   
   
   <meta name="keywords" content="Jenkins,Jenkins中文社区,Jenkins官方公众号,持续集成,持续交付,开源社区,DevOps">
@@ -27,7 +27,6 @@
   <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
   
 
-  <link rel="alternate" type="application/rss&#43;xml" href="https://jenkins-zh.cn/wechat/index.xml">
   <link href='/dist/main.css' rel='stylesheet' type="text/css" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
@@ -40,18 +39,24 @@
     display: inline;
   }
 </style>
-<meta property="og:title" content="Wechats" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://jenkins-zh.cn/wechat/" />
-<meta property="og:updated_time" content="2020-10-12T00:00:00&#43;00:00"/>
+<meta property="og:title" content="开源软件供应链点亮计划 - 暑期2021" />
+<meta property="og:description" content="通过 CLI 对 Jenkins 实现安全升级" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jenkins-zh.cn/about/summer-2021/" />
 
-<meta itemprop="name" content="Wechats">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="开源软件供应链点亮计划 - 暑期2021">
+<meta itemprop="description" content="通过 CLI 对 Jenkins 实现安全升级">
 
+
+
+<meta itemprop="wordCount" content="69">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Wechats"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="开源软件供应链点亮计划 - 暑期2021"/>
+<meta name="twitter:description" content="通过 CLI 对 Jenkins 实现安全升级"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4216293-5"></script>
@@ -95,7 +100,7 @@ var trackOutboundLink = function(id, url) {
         <li class="f5 dib mr4" role="menuitem">
             
             
-          <a href="/wechat/" class="dim link gray "
+          <a href="/wechat/" class="dim link light-silver"
             >
             博客
               
@@ -188,521 +193,281 @@ var trackOutboundLink = function(id, url) {
   
   <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
     
+<main>
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+      
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+
+
+
+
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+
+	<div date-pref>
+		<a href=".." class="dib f6 pl1 hover-bg-light-gray br-100">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+      <path transform="rotate(90 11.704999923706055,12.000000000000002) " d="m15.41,7.41l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-4.58,-4.59l4.58,-4.59z" id="svg_1"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+		</a>
+		
+		
+			<a href="https://jenkins-zh.cn/about/about-site/" class="dib f6 pl1 hover-bg-light-gray br-100" title="关于本站 ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-80-l mw8 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <button id="copyMe" onclick="copyMe()" style="display: none">Copy Me</button>
+        <div class="documentation-copy center mw8">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
   
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">开源软件供应链点亮计划 - 暑期2021</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
-  <div class="w-100 ph4 pb5 pb6-ns pt1 mt4 pt3-ns">
-
-  <div class="flex">
-    
-
-    <div class="w-100 w-80-l ph0 ph4-l">
-      <article class="w-100 nested-copy-line-height nested-links nested-img">
-        <h1 class="primary-color-dark f2">
-          Wechats
-        </h1>
-        <div class=" mid-gray f5 f4-l">
-          
-        </div>
-      </article>
-
-      
-
-      <div class="flex flex-wrap">
-        
-        <section class="flex-ns flex-wrap justify-between w-100">
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/10/2020-10-12-contributors-recruit/" class="link primary-color dim">Jenkins 完全系列视频教程制作组招募</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Jenkins 中文社区联合多家国内的技术社区共同推出系列教程
-        
-
-        <a href="/wechat/articles/2020/10/2020-10-12-contributors-recruit/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
+    <div class="f4 fw4 lh-copy">
+      通过 CLI 对 Jenkins 实现安全升级
     </div>
+  
 
+  
+</aside>
 
-  </div>
-</div>
 
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
 
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
+<div class="prose" id="prose">
 
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/10/2020-10-10-jenkins-release/" class="link primary-color dim">Jenkins 长期支持版更新</a>
-    </h1>
 
-    <div class="lh-copy links">
-      
-          本次更新的版本包括：2.235.3~2.249.1
-        
 
-        <a href="/wechat/articles/2020/10/2020-10-10-jenkins-release/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
+<h2 id="项目标题">项目标题</h2>
 
-    </div>
+<p>通过 CLI 对 Jenkins 实现安全升级</p>
 
+<h2 id="项目难度">项目难度</h2>
 
-  </div>
-</div>
+<p>中</p>
 
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
+<h2 id="技能要求">技能要求</h2>
 
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/10/2020-10-09-weekly-release/" class="link primary-color dim">Jenkins 每周版更新</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          本次更新的版本包括：2.250~2.256
-        
-
-        <a href="/wechat/articles/2020/10/2020-10-09-weekly-release/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/10/2020-10-08-github-codespaces/" class="link primary-color dim">GitHub 推出 Codespaces Beta</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Codespaces 功能解读
-        
-
-        <a href="/wechat/articles/2020/10/2020-10-08-github-codespaces/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/09/2020-09-27-hacktoberfest/" class="link primary-color dim">2020年10月 Hacktoberfest 纪念版T恤还是种树</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Jenkins 中文社区邀请你参加 Hacktoberfest
-        
-
-        <a href="/wechat/articles/2020/09/2020-09-27-hacktoberfest/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/" class="link primary-color dim">GSoC: GitHub Checks API 项目第三阶段总结</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          GitHub Checks API 插件项目 - 编码阶段 3
-        
-
-        <a href="/wechat/articles/2020/09/2020-09-25-github-checks-api-plugin-project-coding-phase-3/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/09/2020-09-18-fix-jenkins-plugins-source/" class="link primary-color dim">Jenkins 国内插件源恢复正常啦</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          修复 Jenkins 国内插件源，恢复正常使用
-        
-
-        <a href="/wechat/articles/2020/09/2020-09-18-fix-jenkins-plugins-source/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/09/2020-09-09-ci-cd-with-jenkins-and-ansible/" class="link primary-color dim">使用 Jenkins 和 Ansible 实现 CI/CD</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          以一个 Spring Boot + JS 的项目为例，讲解了如何通过 Jenkins 以及 Ansible 实现 CI/CD
-        
-
-        <a href="/wechat/articles/2020/09/2020-09-09-ci-cd-with-jenkins-and-ansible/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/09/2020-09-07-jenkins-json-build/" class="link primary-color dim">对Jenkinsfile语法说不，开源项目Jenkins Json Build挺你</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          使用JSON配置文件驱动Jenkins构建
-        
-
-        <a href="/wechat/articles/2020/09/2020-09-07-jenkins-json-build/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-          
-            <div class="relative  weight-0" style="max-width: 350px">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="link primary-color dim">DevOps 的打开方式: 构建和部署</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          介绍了一下 Jenkins X 的组成部分通过具体的实践告诉读者正确打开在 Kubernetes 上实现 CI/CD 的方式
-        
-
-        <a href="/wechat/articles/2020/09/2020-09-02-devops-adoption-approach-build-and-deploy/" class="f6 mt2 db link primary-color dim">
-          查看更多 &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-            
-          
-        </section>
-      </div>
-
-      
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/wechat/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/wechat/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/wechat/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/wechat/page/20/">20</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/wechat/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/wechat/page/20/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
+<ul>
+<li>Golang</li>
+<li>Java</li>
+<li>Jenkins</li>
+<li>RESTful</li>
 </ul>
 
+<h2 id="背景">背景</h2>
 
-    </div>
+<p>Jenkins 有 1500+ 由社区提供的<a href="http://plugins.jenkins.io/">插件</a>，利用这些插件，几乎可以完成任何你想完成的任务。但是，在这众多的插件中，并没有非常严格的标准，因此，用户有可能会使用到部分对兼容性、安全性等方面表现不是很好的插件。那么，升级 Jenkins 或者插件将会是一件非常繁琐、甚至容易出问题的操作。</p>
 
-  </div>
+<p><a href="https://github.com/jenkins-zh/jenkins-cli">Jenkins CLI</a> 是用 Golang 实现的，目前可以实现对 Jenkins 的大部分操作，部分非核心功能是<a href="https://github.com/jenkins-zh/jcli-plugins">通过插件实现</a>。</p>
+
+<h2 id="概述">概述</h2>
+
+<p>当用户执行升级操作时，命令行（CLI）给出一个升级向导，通过询问用户的方式进行交互式地升级：</p>
+
+<ul>
+<li>是否希望升级 Jenkins，以及希望升级到哪个版本
+
+<ul>
+<li>给出可以升级的版本列表，并给出相关的安全、稳定性、更新日期等信息</li>
+</ul></li>
+<li>是否希望升级插件
+
+<ul>
+<li>根据官方社区公布的安全漏洞，给出建议升级的插件列表以及目标版本</li>
+<li>用户可以看到插件的当前维护信息，例如：star、watch、安装量、最新发布日期等</li>
+</ul></li>
+<li>启动临时升级环境
+
+<ul>
+<li>安装目标版本的 Jenkins 以及插件</li>
+</ul></li>
+<li>对临时环境的 Jenkins 执行兼容性测试
+
+<ul>
+<li>针对不同的插件执行不同的 API 测试</li>
+<li>给出一个非常容易扩展的方式来对不同插件的兼容性测试进行补充</li>
+</ul></li>
+<li>输出兼容性测试报告</li>
+<li>提示用户是否要进行备份</li>
+<li>提示用户是否要进行升级</li>
+</ul>
+
+<h2 id="快速上手">快速上手</h2>
+
+<p>你可以通过<a href="https://github.com/jenkins-zh/jenkins-cli/issues?q=is%3Aissue+is%3Aopen+label%3Anewbie">新人友好的 issues</a> 快速了解 <a href="https://github.com/jenkins-zh/jenkins-cli">Jenkins CLI</a>.</p>
+
+<p>另外，该项目中也许会需要开发（或维护）一个 Jenkins 插件，你可以参考<a href="https://www.jenkins.io/doc/developer/">官方插件教程</a>，以及由 Jenkins 中文社区给出的<a href="https://www.bilibili.com/video/BV1fp4y1r7Dd">中文视频教程</a>。</p>
+
+<p>关于 Jenkins 备份、恢复，你也可以参考<a href="https://github.com/jenkinsci/?q=backup&amp;type=&amp;language=&amp;sort=">一些已有的插件</a>。</p>
+
+<h2 id="社区联系人">社区联系人</h2>
+
+<ul>
+<li>开源软件供应链点亮计划，社区管理员，<a href="https://github.com/yJunS">史彦军</a></li>
+<li>导师，<a href="https://github.com/LinuxSuRen/">Rick</a></li>
+</ul>
+
+<h2 id="相关代码仓库">相关代码仓库</h2>
+
+<ul>
+<li><a href="https://github.com/jenkins-zh/jenkins-cli">https://github.com/jenkins-zh/jenkins-cli</a></li>
+<li><a href="https://github.com/jenkinsci/pipeline-restful-api-plugin">https://github.com/jenkinsci/pipeline-restful-api-plugin</a></li>
+</ul>
 
 </div>
+
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+
+</aside>
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="jenkins-zh/jenkins-zh.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="linuxsuren"
+        async>
+</script>
+
+
+          
+
+        </div>
+      </div>
+      
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f4 dark-gray mb2">
+  <a href="https://jenkins-zh.cn/about/summer-2021/" class="hide-child link primary-color">
+  <span class="nl3 child"><svg class="grow" fill="" height="14px" viewBox="0 0 24 24" width="14px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+</span>
+    “开源软件供应链点亮计划 - 暑期2021”
+  </a> 更新于：January 1, 0001
+</h6>
+
+      <a href="https://github.com/jenkins-zh/jenkins-zh/edit/master/content/about/summer-2021.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+" target="_blank">完善此页</a>
+
+      
+
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+if(window.location.search == "?copy=true") {
+  showCopyBut();
+}
+
+function copyMe(){
+  var tempElements = [];
+
+  var logoZone = document.createElement("div");
+  logoZone.innerHTML = "<a href=\"https://jenkins-zh.cn\"><img width=\"520\" src=\"https://jenkins-zh.cn/wechat/images/grey-backgroud-jenkins-slogan.jpg\"/></a>";
+  document.getElementById('prose').append(logoZone);
+  tempElements.push(logoZone);
+  var doc = document.getElementsByClassName('documentation-copy')[0];
+
+  var articleHeader = document.createElement("div");
+  tempElements.push(articleHeader);
+  articleHeader.innerHTML = "本文首发于：<a href=\"https:\/\/jenkins-zh.cn\/about\/summer-2021\/\">Jenkins 中文社区</a>";
+
+  
+  var rangeToSelect = document.createRange();
+  rangeToSelect.selectNodeContents(doc);
+
+  var data = window.getSelection();
+  data.addRange(rangeToSelect);
+
+  tempElements.push(appendArticleFooter(data.getRangeAt(0)));
+  data.getRangeAt(0).insertNode(articleHeader);
+  document.execCommand("copy", true, null);
+
+  
+  for(var i in tempElements) {
+    tempElements[i].remove();
+  }
+  clearSelection();
+
+  hideCopyBut();
+}
+
+function clearSelection(){
+  window.getSelection().empty();
+}
+
+function showCopyBut() {
+  document.getElementById('copyMe').style="";
+}
+
+function hideCopyBut() {
+  document.getElementById('copyMe').style="display:none";
+}
+
+function appendArticleFooter(range) {
+  var articleFooter = createArticleFooter();
+  range.insertNode(articleFooter);
+  return articleFooter;
+}
+
+function createArticleFooter() {
+  var articleFooter = document.createElement("div");
+  var authors = document.getElementsByClassName("author");
+  var originalAuthors = document.getElementsByClassName("originalAuthor");
+  var originalLinks = document.getElementsByClassName("originalLink");
+  var articleFooterHtml = "";
+  var isTranslated = false;
+  if(originalAuthors.length > 0){
+    articleFooterHtml += "<div>";
+    if(originalLinks.length > 0){
+      articleFooterHtml += "<a href=" + originalLinks[0].innerText + ">原文链接</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    articleFooterHtml += "作者：" + originalAuthors[0].innerText;
+    articleFooterHtml += "</div>";
+    isTranslated = true;
+  }
+  if(authors.length > 0){
+    articleFooterHtml += "<div>";
+    if(isTranslated) {
+      articleFooterHtml += "译者：" + authors[0].innerText;
+    } else {
+      articleFooterHtml += "作者：" + authors[0].innerText;
+    }
+    articleFooterHtml += "</div>";
+  }
+  articleFooter.innerHTML = articleFooterHtml;
+  return articleFooter;
+}
+</script>
 
   </main>
 
