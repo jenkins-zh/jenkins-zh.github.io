@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2021/04/2021-04-15-jenkins-operator-sub-project/</loc>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2021/03/2021-03-31-update-center-certificate-rotation/</loc>
     <lastmod>2021-03-31T00:00:00+00:00</lastmod>
   </url>
@@ -2231,7 +2236,7 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/</loc>
-    <lastmod>2021-03-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
