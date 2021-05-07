@@ -6,10 +6,31 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jenkins X 3.x GA 来了！</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/05/2021-05-07-jenkins-x-3.x-is-here/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/05/2021-05-07-jenkins-x-3.x-is-here/</guid>
+      <description>Jenkins X 3.x 正式发布！
+我非常激动的向大家宣布 Jenkins X 3.0 GA 版本正式发布啦！
+Jenkins X 在 kubernetes 上自动执行 CI/CD，这将帮助你提升:
+ 自动化 CI/CD 流水线可以让你将精力放在应用程序的代码实现上，Jenkins X 会为你的项目自动创建通过 GitOps 管理的 Tekton CI/CD 流水线，这将会使你的流水线在不同仓库中保持更新或者为特定仓库覆盖流水线或步骤变得非常简单。
+ 通过 GitOps 在不同的环境自动升级版本化产物，比如暂存区，准生产，生产环境。不管这些环境是否在同一个 kubernetes 集群中运行或者你为这些环境使用了多集群方式。
+ 环境预览能够让你通过 Pull Requests 提交代码变更，之后会自动创建一个预览环境，在 Kubernetes 上运行你的代码，这样会让你在代码允许合并到主分支之前能更快的得到来自团队的反馈。
+ ChatOps 在 Pull Requests 进行反馈时可以进行评论，允许/挂起变更，触发一个为其他测试以及 ChatOps 命令而设计的可选流水线。
+  Demo demo 将会演示如何使用 Jenkins X 进行代码开发
+
+文档 主要改动的文档有:
+ 带有模块化插件以及提升扩展点后的新架构
+ 3.x 开始都做了那些变更
+ 3.x 与 2.x 的对比</description>
+    </item>
     
     <item>
       <title>Jenkins Operator 成为官方子项目</title>
