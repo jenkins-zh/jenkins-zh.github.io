@@ -37,23 +37,11 @@ GitHub 请您使用同一个 GitHub 账号来与大家交流，不欢迎使用�
     </item>
     
     <item>
-      <title>用JCasC配置插件</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2021/07/2021-07-03-jenkins-JCasC-tutorial-translation/</link>
-      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jenkins-zh.cn/wechat/articles/2021/07/2021-07-03-jenkins-JCasC-tutorial-translation/</guid>
-      <description>用 JCasC 配置插件 这个博客是写给任何对用 Jenkins 的 JCasC 配置插件感兴趣的人，具体会讲解如何获得 YAML 格式的配置信息和如何在不通过 Jenkins 的图形界面的情况下更改插件的信息。
-如果你是 JCasC 的新手并且想了解关于 JCasC 更多的内容，你可以先去看下列链接中的内容，来更好的理解 JCasC。
- JCasC Documentation Overview of JCasC (Video Presentation) Manage JCasC (DevOps World 2018)  概要 下面是大致的步骤：
- 简要介绍 jenkins.yaml 文件 在 Jenkins 的图形界面上配置插件 下载配置文件 本地更新 JCasC 文件 在 Jenkins 服务器上加载 jenkins.yaml 文件 在图形界面上验证  简要介绍 jenkins.yaml 文件  jenkins.yaml 文件里有 Jenkins 实例的配置信息。 JCasC 插件用.yaml 文件来配置 Jenkins 实例。 jenkins.yaml 文件的默认位置是在 $JENKINS_HOME/jenkins.yaml，Jenkins 服务器在你应用新的配置后会自动从这个位置读取配置文件。 按照以下步骤：Manage Jenkins &amp;gt; Configuration as Code &amp;gt; Download Configuration，下载你的 jenkins.</description>
-    </item>
-    
-    <item>
       <title>Jenkins 中文社区议题公开征集</title>
-      <link>https://jenkins-zh.cn/wechat/articles/2021/07/2091-07-19-call-for-paper/</link>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/07/2021-07-19-call-for-paper/</link>
       <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jenkins-zh.cn/wechat/articles/2021/07/2091-07-19-call-for-paper/</guid>
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/07/2021-07-19-call-for-paper/</guid>
       <description>Jenkins 中文社区议题公开征集，加入我们，一起聊聊！
 Jenkins 中文社区作为开放的技术社区，深受广大 Jenkins 用户和技术爱好者的欢迎。出于对 Jenkins 技术的不断追求以及对开源世界共同的热爱，这里也聚集了一批活跃的社区用户。他们在这里自主学习技术、自由交流实践经验，在逐渐提升自己技术成长的同时，也以在线分享、线下分享和博客等方式，将 Jenkins 相关的知识分享给更多用户和小伙伴，往期更多精彩历史，请前往哔哩哔哩 《Jenkins 系列视频教程～从入门到精通》或 Jenkins 公众号获取。
 为了更好地与 Jenkins 用户和爱好者进行分享和交流，也为热爱分享的用户们提供一个专业的平台，Jenkins 中文社区管理团队特发起“议题公开征集计划”，诚邀对 Jenkins、DevOps 相关议题感兴趣的伙伴，共同参与到社区之中。
@@ -61,6 +49,18 @@ Jenkins 中文社区作为开放的技术社区，深受广大 Jenkins 用户和
 议题提交通道 您可以通过发送邮件到 admins@jenkins-zh.cn，或者直接提交 issue 到 GitHub https://github.com/jenkins-zh/jenkins-zh/issues/new
 议题范围  任何 Jenkins 相关的使用、踩坑经验 杜绝商业产品宣传  议题格式 分享题目： 议题简述： 适合人群： 预计时长： 提议大纲：  另外，为了方便组委会联系您，以及对活动的安排，请您提供如下个人信息：
 姓名： 性别： 所在城市： 微信：  Q&amp;amp;A  我对 Jenkins 的了解不多，使用时间也不是很久，还可以分享吗？  我们对难易程度、高深与否没有限制，只要是您的心得体会、实际经验统统可以  分享时长有限制吗？  从 10 分钟到 1 个小时，都是非常欢迎  议题征集有的截止日期是什么时候？  本次征集长期有效，组委会根据提交的内容、日期来进行安排  分享是在线呢，还是线下进行？  如果分享者对在线或者线下分享都可以的话，当某个城市的分享者够三位以上时，我们优先会考虑安排线下活动，其他情况则是在哔哩哔哩直播   让我们一起，共建开放、包容、活跃的 Jenkins 社区，感兴趣的小伙伴不要错过哦～</description>
+    </item>
+    
+    <item>
+      <title>用JCasC配置插件</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/07/2021-07-03-jenkins-JCasC-tutorial-translation/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/07/2021-07-03-jenkins-JCasC-tutorial-translation/</guid>
+      <description>用 JCasC 配置插件 这个博客是写给任何对用 Jenkins 的 JCasC 配置插件感兴趣的人，具体会讲解如何获得 YAML 格式的配置信息和如何在不通过 Jenkins 的图形界面的情况下更改插件的信息。
+如果你是 JCasC 的新手并且想了解关于 JCasC 更多的内容，你可以先去看下列链接中的内容，来更好的理解 JCasC。
+ JCasC Documentation Overview of JCasC (Video Presentation) Manage JCasC (DevOps World 2018)  概要 下面是大致的步骤：
+ 简要介绍 jenkins.yaml 文件 在 Jenkins 的图形界面上配置插件 下载配置文件 本地更新 JCasC 文件 在 Jenkins 服务器上加载 jenkins.yaml 文件 在图形界面上验证  简要介绍 jenkins.yaml 文件  jenkins.yaml 文件里有 Jenkins 实例的配置信息。 JCasC 插件用.yaml 文件来配置 Jenkins 实例。 jenkins.yaml 文件的默认位置是在 $JENKINS_HOME/jenkins.yaml，Jenkins 服务器在你应用新的配置后会自动从这个位置读取配置文件。 按照以下步骤：Manage Jenkins &amp;gt; Configuration as Code &amp;gt; Download Configuration，下载你的 jenkins.</description>
     </item>
     
     <item>
