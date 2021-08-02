@@ -6,10 +6,22 @@
     <description>Recent content in Wechats on Jenkins 中文社区</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 19 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jenkins-zh.cn/wechat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用JCasC配置插件</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/07/2021-07-03-jenkins-JCasC-tutorial-translation/</link>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/07/2021-07-03-jenkins-JCasC-tutorial-translation/</guid>
+      <description>用 JCasC 配置插件 这个博客是写给任何对用 Jenkins 的 JCasC 配置插件感兴趣的人，具体会讲解如何获得 YAML 格式的配置信息和如何在不通过 Jenkins 的图形界面的情况下更改插件的信息。
+如果你是 JCasC 的新手并且想了解关于 JCasC 更多的内容，你可以先去看下列链接中的内容，来更好的理解 JCasC。
+ JCasC Documentation Overview of JCasC (Video Presentation) Manage JCasC (DevOps World 2018)  概要 下面是大致的步骤：
+ 简要介绍 jenkins.yaml 文件 在 Jenkins 的图形界面上配置插件 下载配置文件 本地更新 JCasC 文件 在 Jenkins 服务器上加载 jenkins.yaml 文件 在图形界面上验证  简要介绍 jenkins.yaml 文件  jenkins.yaml 文件里有 Jenkins 实例的配置信息。 JCasC 插件用.yaml 文件来配置 Jenkins 实例。 jenkins.yaml 文件的默认位置是在 $JENKINS_HOME/jenkins.yaml，Jenkins 服务器在你应用新的配置后会自动从这个位置读取配置文件。 按照以下步骤：Manage Jenkins &amp;gt; Configuration as Code &amp;gt; Download Configuration，下载你的 jenkins.</description>
+    </item>
     
     <item>
       <title>Jenkins 中文社区议题公开征集</title>
