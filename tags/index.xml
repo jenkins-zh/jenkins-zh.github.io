@@ -597,6 +597,15 @@
     </item>
     
     <item>
+      <title>Gitops</title>
+      <link>https://jenkins-zh.cn/tags/gitops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/gitops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Golang</title>
       <link>https://jenkins-zh.cn/tags/golang/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
@@ -683,6 +692,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/installers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interoperability</title>
+      <link>https://jenkins-zh.cn/tags/interoperability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/interoperability/</guid>
       <description></description>
     </item>
     
@@ -1313,6 +1331,15 @@
       <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jenkins-zh.cn/tags/t-mobile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tekton</title>
+      <link>https://jenkins-zh.cn/tags/tekton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/tags/tekton/</guid>
       <description></description>
     </item>
     

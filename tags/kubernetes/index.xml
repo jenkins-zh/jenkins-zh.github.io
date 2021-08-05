@@ -276,5 +276,22 @@ Jenkins 中文社区邀您参与社区共同成长 在开源盛会开展的同�
  所有的构建都在 master 节点上跑，在这个节点上运行所有的组件. (我给这个阶段起了个可爱的名字， Hello Jenkins) 创建一个 Jenkins EC2 代理，并且在这个代理上运行所有的构建，怎么说呢， 就是大而全，这个节点什么都能做。如果需要同时做多条任务，那就把这个大而全的节点克隆一份。 (这个阶段我起的名字是 Monster Agent.) 为每种服务创建不同的 Jenkins EC2 的节点 (这个阶段我起的名字叫做 Snowflake Agent.) 在容器中运行流水线的所有步骤。 打个比方，在 Jenkins 中使用 Docker Plugin 这个插件将代理挂载到容器中，或者使用 multi-stage Dockerfiles 把所有构建，测试打包的流程都封装起来。这两种方法都是很好的容器抽象化的开端，并且允许您轻松地将制品从一个容器复制到另一个容器。当然了，每一种方法都是需要访问 Docker engine 的。为了让我的 Jenkins 代理能够正常工作，现在我用以下几种方式来管理 docker host 在我的 Jenkins 主容器中运行一个Docker engine - Docker in Docker (DinD) 把主机上的 Docker socket 挂载到我的容器中来，让我的容器能够以 sidecar 的方式运行。 为 Jenkins 主服务器配置单个外部 EC2 Docker 主机，以用于在容器中启动构建 使用 EC2 插件和包含 Docker Engine 的 AMI 动态启动代理，然后运行多阶段 Dockerfile 中的所有步骤  以上这些阶段各有利弊，但都是为了让我们从管理 Jenkins 节点中解放出来。不过，最近我又进阶到了另外一个阶段：Jenkins on Kubernetes.</description>
     </item>
     
+    <item>
+      <title>在 Jenkins 上轻松重用 Tekton 和 Jenkins X</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/08/2021-08-04-easily-reuse-tekton-and-jenkins-x-from-jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/08/2021-08-04-easily-reuse-tekton-and-jenkins-x-from-jenkins/</guid>
+      <description>什么是 Tekton？ Tekton 是一款强大且灵活的开源框架，它被用来创建 CI/CD 系统，允许开发者们在云提供商本地系统上构建、测试以及部署。
+为什么使用 Tekton？ Tekton 流水线有诸多好处:
+ 它们是云原生的并且专为 kubernetes 设计。
+ 每个 Tekton Pipeline 可以完全声明性也可完全自描述；它本身不依赖于任何外部的 Jenkins 控制器、插件或插件/控制器配置。
+ 每个 Pipeline Task 运行在一个独立的 Pod 内，它完全独立于其他 pods 以及流水线并完全由 Kubernetes 调度从而最大限度的提升弹性以及优化资源使用。一个糟糕的流水线并不会影响另外一个， kubernetes 会统一调度它们。
+ 每个步骤可以是运行在任何容器镜像的任何命令，不管你需要什么样的密钥、挂载存储、环境变量和资源限制
+ 不需要绑定一个 JVM 或者 Jenkins Remoting 容器到 pod 内因此可以帮你保持资源以及降低成本。
+  为什么将 Jenkins 与 Tekton 使用到一起去呢？ Jenkins 是目前最流行的开源的自动化服务器。许许多多的开发者每天使用它用来完成一些工作。Jenkins 现在也可以使用于自动化 Tekton 流水线，这意味着可以帮助越来越多的团队为他们的 CI 和 CD 数字化转型到云原生方案提供可能。这样，你可以使用 Tekton 流水线引擎同时从使用 Jenkins 作为编排工具，用户界面以及报告引擎中获益。
+介绍下 Jenkins Tekton 插件 Jenkins Tekton Client 插件可以让你轻松的使用 Jenkins 自动化创建运行 Tekton 流水线。它弥补了 Kubernetes 学习的鸿沟并可以通过 Jenkins 调用 Tekton Pipelines。这就允许了用户在没有学习 Kubernetes 相关知识的前提下上手和工作。</description>
+    </item>
+    
   </channel>
 </rss>

@@ -2928,6 +2928,23 @@ sudo rpm — import https://pkg.jenkins.io/debian/jenkins.io.key sudo wget -O /e
     </item>
     
     <item>
+      <title>在 Jenkins 上轻松重用 Tekton 和 Jenkins X</title>
+      <link>https://jenkins-zh.cn/wechat/articles/2021/08/2021-08-04-easily-reuse-tekton-and-jenkins-x-from-jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jenkins-zh.cn/wechat/articles/2021/08/2021-08-04-easily-reuse-tekton-and-jenkins-x-from-jenkins/</guid>
+      <description>什么是 Tekton？ Tekton 是一款强大且灵活的开源框架，它被用来创建 CI/CD 系统，允许开发者们在云提供商本地系统上构建、测试以及部署。
+为什么使用 Tekton？ Tekton 流水线有诸多好处:
+ 它们是云原生的并且专为 kubernetes 设计。
+ 每个 Tekton Pipeline 可以完全声明性也可完全自描述；它本身不依赖于任何外部的 Jenkins 控制器、插件或插件/控制器配置。
+ 每个 Pipeline Task 运行在一个独立的 Pod 内，它完全独立于其他 pods 以及流水线并完全由 Kubernetes 调度从而最大限度的提升弹性以及优化资源使用。一个糟糕的流水线并不会影响另外一个， kubernetes 会统一调度它们。
+ 每个步骤可以是运行在任何容器镜像的任何命令，不管你需要什么样的密钥、挂载存储、环境变量和资源限制
+ 不需要绑定一个 JVM 或者 Jenkins Remoting 容器到 pod 内因此可以帮你保持资源以及降低成本。
+  为什么将 Jenkins 与 Tekton 使用到一起去呢？ Jenkins 是目前最流行的开源的自动化服务器。许许多多的开发者每天使用它用来完成一些工作。Jenkins 现在也可以使用于自动化 Tekton 流水线，这意味着可以帮助越来越多的团队为他们的 CI 和 CD 数字化转型到云原生方案提供可能。这样，你可以使用 Tekton 流水线引擎同时从使用 Jenkins 作为编排工具，用户界面以及报告引擎中获益。
+介绍下 Jenkins Tekton 插件 Jenkins Tekton Client 插件可以让你轻松的使用 Jenkins 自动化创建运行 Tekton 流水线。它弥补了 Kubernetes 学习的鸿沟并可以通过 Jenkins 调用 Tekton Pipelines。这就允许了用户在没有学习 Kubernetes 相关知识的前提下上手和工作。</description>
+    </item>
+    
+    <item>
       <title>在 VS Code 中校验 Jenkinsfile</title>
       <link>https://jenkins-zh.cn/wechat/articles/2018/11/2018-11-21-validate-jenkinsfile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

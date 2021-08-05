@@ -1620,6 +1620,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/gitops/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/golang/</loc>
     <lastmod>2020-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -1675,6 +1680,11 @@
   
   <url>
     <loc>https://jenkins-zh.cn/tags/installers/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/tags/interoperability/</loc>
     <priority>0</priority>
   </url>
   
@@ -2165,6 +2175,11 @@
   </url>
   
   <url>
+    <loc>https://jenkins-zh.cn/tags/tekton/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jenkins-zh.cn/tags/template/</loc>
     <lastmod>2019-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -2371,6 +2386,10 @@
   
   <url>
     <loc>https://jenkins-zh.cn/wechat/articles/2018/12/2018-12-25-year-in-review/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jenkins-zh.cn/wechat/articles/2021/08/2021-08-04-easily-reuse-tekton-and-jenkins-x-from-jenkins/</loc>
   </url>
   
   <url>
